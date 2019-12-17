@@ -50,6 +50,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DataTypes\TileMapInfo.Generated.cs" />
+    <Compile Include="DataTypes\TopDownValues.Generated.cs" />
+    <Compile Include="Entities\PlayerCharacter.cs" />
+    <Compile Include="Entities\PlayerCharacter.Generated.cs">
+      <DependentUpon>PlayerCharacter.cs</DependentUpon>
+    </Compile>
     <Compile Include="FileAliases.Generated.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Game1.Generated.cs" />
@@ -89,6 +94,11 @@
     <Compile Include="TileGraphics\TileNodeNetworkCreator.cs" />
     <Compile Include="TileGraphics\Tileset.cs" />
     <Compile Include="TileGraphics\TilesetExtensionMethods.cs" />
+    <Compile Include="TopDown\AnimationSet.Generated.cs" />
+    <Compile Include="TopDown\DirectionBasedAnimationLayer.Generated.cs" />
+    <Compile Include="TopDown\Enums.Generated.cs" />
+    <Compile Include="TopDown\Interfaces.Generated.cs" />
+    <Compile Include="TopDown\TopDownAiInput.Generated.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FlatRedBall.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -126,6 +136,10 @@
     <Content Include="Content\shader.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="content\entities\playercharacter\topdownvalues.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TopDownValues</Name>
+    </None>
     <None Include="Libraries\DesktopGl\Debug\FlatRedBall.Forms.dll" />
     <None Include="Libraries\DesktopGl\Debug\GumCoreXnaPc.dll" />
     <None Include="Libraries\DesktopGl\Debug\StateInterpolation.dll" />
