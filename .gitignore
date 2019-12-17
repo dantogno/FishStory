@@ -8,5 +8,6 @@ FishStory/Content/TiledObjects.Generated.xml
 FishStory/FishStory.csproj.user
 FishStory/FishStory/Libraries/DesktopGl/Debug/FlatRedBall.Forms.dll
 FishStory/FishStory/bin/x86/Debug/*
+FishStory/FishStory/bin/DesktopGL/x86/Debug/*
 *.cache
 FishStory/FishStory/obj/*

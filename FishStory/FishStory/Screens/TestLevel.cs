@@ -16,7 +16,7 @@ using FlatRedBall.Localization;
 
 namespace FishStory.Screens
 {
-    public partial class GameScreen
+    public partial class TestLevel
     {
 
         void CustomInitialize()
@@ -33,8 +33,7 @@ namespace FishStory.Screens
 
         void CustomDestroy()
         {
-            WaterCollision.RemoveFromManagers();
-            SolidCollision.RemoveFromManagers();
+
 
         }
 

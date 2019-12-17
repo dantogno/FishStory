@@ -51,6 +51,14 @@
   <ItemGroup>
     <Compile Include="DataTypes\TileMapInfo.Generated.cs" />
     <Compile Include="DataTypes\TopDownValues.Generated.cs" />
+    <Compile Include="Entities\Entrance.cs" />
+    <Compile Include="Entities\Entrance.Generated.cs">
+      <DependentUpon>Entrance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Exit.cs" />
+    <Compile Include="Entities\Exit.Generated.cs">
+      <DependentUpon>Exit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\PlayerCharacter.cs" />
     <Compile Include="Entities\PlayerCharacter.Generated.cs">
       <DependentUpon>PlayerCharacter.cs</DependentUpon>
@@ -65,8 +73,22 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screens\GameScreen.cs" />
+    <Compile Include="Screens\GameScreen.Event.cs">
+      <DependentUpon>GameScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\GameScreen.Generated.cs">
       <DependentUpon>GameScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\GameScreen.Generated.Event.cs">
+      <DependentUpon>GameScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\TestLevel.cs" />
+    <Compile Include="Screens\TestLevel.Generated.cs">
+      <DependentUpon>testlevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\TestLevel2.cs" />
+    <Compile Include="Screens\TestLevel2.Generated.cs">
+      <DependentUpon>TestLevel2.cs</DependentUpon>
     </Compile>
     <Compile Include="Setup\CameraSetup.cs" />
     <Compile Include="TileCollisions\CollidableListVsTileShapeCollectionRelationship.cs" />
