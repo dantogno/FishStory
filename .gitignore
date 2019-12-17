@@ -1,0 +1,8 @@
+*Generated.cs
+*.Generated.*.cs
+FishStory/obj/
+.vs/
+FishStory/bin/
+FishStory/Content/TiledObjects.Generated.xml
+*.aeproperties
+FishStory/FishStory.csproj.user
