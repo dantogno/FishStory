@@ -83,7 +83,6 @@
     <Compile Include="GameScriptingCore\Script.cs" />
     <Compile Include="GameScriptingCore\ScriptEngine.cs" />
     <Compile Include="GlobalContent.Generated.cs" />
-    <Compile Include="GlueControl\GlueControlManager.Generated.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />
     <Compile Include="Performance\PoolList.Generated.cs" />
     <Compile Include="Program.cs" />
@@ -134,14 +133,8 @@
     <Compile Include="TileGraphics\TileNodeNetworkCreator.cs" />
     <Compile Include="TileGraphics\Tileset.cs" />
     <Compile Include="TileGraphics\TilesetExtensionMethods.cs" />
-    <Compile Include="TopDown\AnimationSet.Generated.cs" />
-    <Compile Include="TopDown\DirectionBasedAnimationLayer.Generated.cs" />
     <Compile Include="TopDown\Enums.cs" />
-    <Compile Include="TopDown\Enums.Generated.cs" />
     <Compile Include="TopDown\Interfaces.cs" />
-    <Compile Include="TopDown\Interfaces.Generated.cs" />
-    <Compile Include="TopDown\TopDownAiInput.cs" />
-    <Compile Include="TopDown\TopDownAiInput.Generated.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FlatRedBall.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -247,7 +240,9 @@
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="GlueControl\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
