@@ -1,0 +1,4 @@
+"Name (string, required)",Icon (string),Value (int),Description (string)
+Fishing Rod,,,
+Low Quality Bait,,,
+Medium Quality Bait,,,

@@ -49,6 +49,9 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DataTypes\ItemDefinition.Generated.cs" />
+    <Compile Include="DataTypes\NpcRelationship.cs" />
+    <Compile Include="DataTypes\PlayerData.cs" />
     <Compile Include="DataTypes\TileMapInfo.Generated.cs" />
     <Compile Include="DataTypes\TopDownValues.Generated.cs" />
     <Compile Include="Entities\Entrance.cs" />
@@ -59,13 +62,19 @@
     <Compile Include="Entities\Exit.Generated.cs">
       <DependentUpon>Exit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\NPC.cs" />
+    <Compile Include="Entities\NPC.Generated.cs">
+      <DependentUpon>NPC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\PlayerCharacter.cs" />
     <Compile Include="Entities\PlayerCharacter.Generated.cs">
       <DependentUpon>PlayerCharacter.cs</DependentUpon>
     </Compile>
     <Compile Include="FileAliases.Generated.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Game1.Generated.cs" />
+    <Compile Include="Game1.Generated.cs">
+      <DependentUpon>Game1.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameScriptingCore\AfterThatDecision.cs" />
     <Compile Include="GameScriptingCore\DecisionAndList.cs" />
     <Compile Include="GameScriptingCore\DecisionOrList.cs" />
@@ -82,6 +91,7 @@
     <Compile Include="GameScriptingCore\ScriptEngine.cs" />
     <Compile Include="GlobalContent.Generated.cs" />
     <Compile Include="GlueControl\GlueControlManager.Generated.cs" />
+    <Compile Include="Managers\PlayerDataManager.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />
     <Compile Include="Performance\PoolList.Generated.cs" />
     <Compile Include="Program.cs" />
@@ -98,7 +108,7 @@
     </Compile>
     <Compile Include="Screens\TestLevel.cs" />
     <Compile Include="Screens\TestLevel.Generated.cs">
-      <DependentUpon>testlevel.cs</DependentUpon>
+      <DependentUpon>TestLevel.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\TestLevel2.cs" />
     <Compile Include="Screens\TestLevel2.Generated.cs">
@@ -121,7 +131,9 @@
     <Compile Include="TileGraphics\MapTilesetTile.cs" />
     <Compile Include="TileGraphics\NamedValue.cs" />
     <Compile Include="TileGraphics\ReducedTileMapInfo.cs" />
-    <Compile Include="TileGraphics\ReducedTileMapInfo.TiledMapSave.cs" />
+    <Compile Include="TileGraphics\ReducedTileMapInfo.TiledMapSave.cs">
+      <DependentUpon>ReducedTileMapInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="TileGraphics\TileAnimation.cs" />
     <Compile Include="TileGraphics\TileAnimationFrame.cs" />
     <Compile Include="TileGraphics\TiledMapSave.Conversion.cs" />
@@ -175,6 +187,10 @@
     <None Include="content\entities\playercharacter\topdownvalues.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TopDownValues</Name>
+    </None>
+    <None Include="content\globalcontent\itemdefinition.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ItemDefinition</Name>
     </None>
     <None Include="Libraries\DesktopGl\Debug\FlatRedBall.Forms.dll" />
     <None Include="Libraries\DesktopGl\Debug\GumCoreXnaPc.dll" />
