@@ -8,7 +8,15 @@
   <SetOrthogonalResolution>false</SetOrthogonalResolution>
   <OrthogonalWidth>800</OrthogonalWidth>
   <OrthogonalHeight>600</OrthogonalHeight>
-  <Screens />
+  <Screens>
+    <ScreenSave>
+      <Tags>
+        <string>GLUE</string>
+      </Tags>
+      <Source>GLUE</Source>
+      <Name>Screens\GameScreen</Name>
+    </ScreenSave>
+  </Screens>
   <Entities />
   <GlobalFiles />
   <GlobalContentSettingsSave>
@@ -16,6 +24,7 @@
     <RecordLockContention>false</RecordLockContention>
   </GlobalContentSettingsSave>
   <SyncedProjects />
+  <StartUpScreen>Screens\GameScreen</StartUpScreen>
   <ResolutionPresets />
   <PerformanceSettingsSave>
     <ThrowExceptionOnPostInitializeContentLoad>false</ThrowExceptionOnPostInitializeContentLoad>

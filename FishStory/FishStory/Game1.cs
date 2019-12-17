@@ -61,7 +61,7 @@ namespace FishStory
             GlobalContent.Initialize();
 
             			CameraSetup.SetupCamera(SpriteManager.Camera, graphics);
-Type startScreenType = null;
+            Type startScreenType = typeof(FishStory.Screens.GameScreen);
 
             var commandLineArgs = Environment.GetCommandLineArgs();
             if (commandLineArgs.Length > 0)
