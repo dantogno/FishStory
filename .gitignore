@@ -6,3 +6,4 @@ FishStory/bin/
 FishStory/Content/TiledObjects.Generated.xml
 *.aeproperties
 FishStory/FishStory.csproj.user
+FishStory/FishStory/Libraries/DesktopGl/Debug/FlatRedBall.Forms.dll
