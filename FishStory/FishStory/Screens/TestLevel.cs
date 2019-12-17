@@ -11,8 +11,8 @@ using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
-
-
+using FishStory.Managers;
+using FishStory.DataTypes;
 
 namespace FishStory.Screens
 {
@@ -21,8 +21,34 @@ namespace FishStory.Screens
 
         void CustomInitialize()
         {
+            InitializeScript();
 
+        }
 
+        private void InitializeScript()
+        {
+            var If = script;
+            var Do = script;
+
+            If.Check(() => PlayerCharacterInstance.X > 100);
+            Do.Call(() =>
+            {
+                PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Fishing_Rod);
+                FlatRedBall.Debugging.Debugger.CommandLineWrite("You got the fishing rod!");
+            });
+
+            If.Check(() =>
+            {
+                return PlayerDataManager.PlayerData.Has(ItemDefinition.Fishing_Rod) &&
+                    PlayerCharacterInstance.X < -100;
+            });
+
+            Do.Call(() =>
+            {
+                PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Low_Quality_Bait);
+                FlatRedBall.Debugging.Debugger.CommandLineWrite("You got that worm!");
+
+            });
         }
 
         void CustomActivity(bool firstTimeCalled)

@@ -11,24 +11,22 @@ using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
-
-
+using FlatRedBall.Scripting;
 
 namespace FishStory.Screens
 {
     public partial class GameScreen
     {
+        protected ScreenScript<GameScreen> script;
 
         void CustomInitialize()
         {
-
-
+            script = new ScreenScript<GameScreen>(this);
         }
 
         void CustomActivity(bool firstTimeCalled)
         {
-
-
+            script.Activity();
         }
 
         void CustomDestroy()
