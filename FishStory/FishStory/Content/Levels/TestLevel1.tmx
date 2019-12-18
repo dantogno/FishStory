@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="50" height="50" tilewidth="8" tileheight="8" infinite="0" nextlayerid="5" nextobjectid="1">
+ <tileset firstgid="1" source="FullTileSet-LayeredGIMP.tsx"/>
+ <layer id="1" name="GroundLevel" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzdmcly4jAQhpUx2AnJZc6JgYSwEx6AQBXx8iS5gOExGLiQKibL+87feEE4CC+g1NiHr1rCQi259asl0G8ZKwNdgvXLE4WxucrYTGPsVZHk6w5lUCsz9lje1dPYLuhxdf/ZosLYH7AEq8ppPkRW11EGNfT/WNnV09guvt+r7Or+s0UV8wBLsKqe5kNkdcSgDGro/7G6q4dts8VYqyV+TraL7/equ7r/bHGPeYAlWN0f7yOpz8AXvb9KtG220Wc7fnudKy8eMA+wBCtQ6+KddU/z6fcR+KL3V422zQ767MRvr3PlRQ3zAEuwArUextA7zaffh18fFxl7AQYwi3LqE+Bgv5qC14Icf2P0/QIMYKpy6hOaA/Zch/bdohx/Y+znL8AApiKnTvljprq8qnL8jSnOwABmQU59Auaau7YoD8rwd+r6HNQZewZDzhKj+gF9aPv6MKgNsIBdT+f/XPoYNDB+MOQsMWqE9KG6MeH1YVAbYAG7kc7/ufQxaGL8YMhZYtQ8oA9tXx8GtQEWsJvp/J9LHwPk22cw5Cwxau3rI4gHpw+D2gAL2K10/s+lj7j5Y+rHI+P5g2IR1kcW8wftV46Wj/zxTR8435nAAnYlG/qY+XmQzx8435nAAnY1u/owcBcxgQXs+2zo49D5ysBdxAQWsB8yog/1/z5fxdXHXM3H/WOel/uH9v18lcX8QWf2eQ704fj7Vcb1QWtqmgd9qPk4X211ngN9BPtVxvWRl9+vHC8XZl0fUzUf+tjGIwf5w/HIuj6C/wcl6UO5ZawAikAFmlc+e/5Qd/9zytCHcod5gCLQvDLNS8b9w0mQPy4uGfsFlJh288TYX/AOPoj64Rhd3v6sPi6uMD6gxLSbPuYB3sEH0diPkerF6fLuNH0EeTCmPi5KGB9QYto1YvD25Fpig3ls6vsx+gRfT+I4+Wsx8v+PBPrg41HA90rXjF1fi+0aMXjru9Yv01z4GH2Cr744TgXdneNRfWgJ9cHN4+Yquj0fDz4u4c/IhrVEcfqNd/HecH1F3T9mKfVxU4puz8cjHJewDWuJ4rRu41nb9RV1/5gm1Qcfj4j2wTv3x+zV47LuwHa8eETkj/Dvu5H68HS8jUdE+29rKDyffjy28RDpw8vnwe8MMvQRXkNH4nNMS0f1UXA1Htyj4uijlFAfgrEd/Lx/2AbzEOmj6J7bgzwYRx/heETpQ6BzkdZFdruuRPrg87kaUx+lZPr4B7w++tE=
+  </data>
+ </layer>
+ <layer id="3" name="Bridges" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztz8ENwCAMBEEaItCJg3H/tWRb4IUi7Uj7v2tNkiRJkiRJkiRJkiRJ+pforb20KGlT9durzsXDD1qUtKme26vOxeAHLUraVOP2qnMx+UGLkjbVvL1KJz7UKgwB
+  </data>
+ </layer>
+ <layer id="4" name="Floating" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt0bsRgzAUBVFV4m8GGRSCkQQUpaa9JSgAv8B7ZjbWfaOUrtVuFz/wI+0eveAc7RG94BztGb3gHO0VveAc7R29QJIkSZIkSZIkSZLU4zOktFKmQpU22ukYotf1+4zcQZkKVdpop2OMXvdflon/oJUyFaq00U7HFL2wzzJzB62UqVCljXY65uiF6vUFz7oVSQ==
+  </data>
+ </layer>
+</map>
