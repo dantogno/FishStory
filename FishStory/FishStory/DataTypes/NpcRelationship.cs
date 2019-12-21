@@ -12,5 +12,9 @@ namespace FishStory.DataTypes
         public List<int> EventsTriggered { get; set; } =
             new List<int>();
 
+
+
+
+
     }
 }

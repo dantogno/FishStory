@@ -11,7 +11,8 @@ namespace FishStory.DataTypes
         public Dictionary<string, int> ItemInventory { get; set; } =
             new Dictionary<string, int>();
 
-        
+        public Dictionary<string, NpcRelationship> NpcRelationships { get; set; } =
+            new Dictionary<string, NpcRelationship>();
 
         public void AwardItem(string itemKey)
         {
@@ -37,5 +38,7 @@ namespace FishStory.DataTypes
             return inventoryCount >= desiredCount;
         }
         
+
+
     }
 }

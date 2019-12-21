@@ -49,6 +49,14 @@ namespace FishStory.Screens
                 FlatRedBall.Debugging.Debugger.CommandLineWrite("You got that worm!");
 
             });
+
+
+
+            If.Check(() =>
+            {
+                return PlayerDataManager.PlayerData.NpcRelationships["Dave"].EventsTriggered
+                    .Contains(5);
+            });
         }
 
         void CustomActivity(bool firstTimeCalled)
