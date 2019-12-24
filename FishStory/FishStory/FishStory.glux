@@ -237,6 +237,21 @@
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">File</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
+          <SourceName>DialogBoxInstance (FishStory.GumRuntimes.DialogBoxRuntime)</SourceName>
+          <InstanceName>DialogBox</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
       </NamedObjects>
     </ScreenSave>
     <ScreenSave>
