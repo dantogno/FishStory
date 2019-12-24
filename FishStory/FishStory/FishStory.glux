@@ -832,6 +832,38 @@
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
+        <NamedObjectSave>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>Width</Member>
+            <ValueAsFloat>24</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>Height</Member>
+            <ValueAsFloat>24</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>X</Member>
+            <ValueAsFloat>20</ValueAsFloat>
+          </CustomProperty>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>AxisAlignedRectangle</SourceClassType>
+          <InstanceName>ActivityCollision</InstanceName>
+          <HasPublicProperty>true</HasPublicProperty>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
       </NamedObjects>
       <ReferencedFiles>
         <ReferencedFileSave>

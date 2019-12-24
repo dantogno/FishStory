@@ -13,22 +13,35 @@ namespace FishStory.Entities
 {
     public partial class PlayerCharacter
     {
-        /// <summary>
-        /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
-        /// This method is called when the Entity is added to managers. Entities which are instantiated but not
-        /// added to managers will not have this method called.
-        /// </summary>
+        float collisionOffset;
+
+        #region Initialize
+
         private void CustomInitialize()
         {
-
-
+            collisionOffset = ActivityCollision.RelativeX;
+            this.PossibleDirections = PossibleDirections.EightWay;
         }
+
+        #endregion
+
+        #region Custom Activity
 
         private void CustomActivity()
         {
-
+            UpdateActivityCollisionPosition();
 
         }
+
+        private void UpdateActivityCollisionPosition()
+        {
+            var vector = this.DirectionFacing.ToVector() * collisionOffset;
+
+            this.ActivityCollision.RelativePosition = vector;
+
+        }
+
+        #endregion
 
         private void CustomDestroy()
         {
