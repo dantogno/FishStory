@@ -30,33 +30,33 @@ namespace FishStory.Screens
             var If = script;
             var Do = script;
 
-            If.Check(() => PlayerCharacterInstance.X > 100);
-            Do.Call(() =>
-            {
-                PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Fishing_Rod);
-                FlatRedBall.Debugging.Debugger.CommandLineWrite("You got the fishing rod!");
-            });
+            //If.Check(() => PlayerCharacterInstance.X > 100);
+            //Do.Call(() =>
+            //{
+            //    PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Fishing_Rod);
+            //    FlatRedBall.Debugging.Debugger.CommandLineWrite("You got the fishing rod!");
+            //});
 
-            If.Check(() =>
-            {
-                return PlayerDataManager.PlayerData.Has(ItemDefinition.Fishing_Rod) &&
-                    PlayerCharacterInstance.X < -100;
-            });
+            //If.Check(() =>
+            //{
+            //    return PlayerDataManager.PlayerData.Has(ItemDefinition.Fishing_Rod) &&
+            //        PlayerCharacterInstance.X < -100;
+            //});
 
-            Do.Call(() =>
-            {
-                PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Low_Quality_Bait);
-                FlatRedBall.Debugging.Debugger.CommandLineWrite("You got that worm!");
+            //Do.Call(() =>
+            //{
+            //    PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Low_Quality_Bait);
+            //    FlatRedBall.Debugging.Debugger.CommandLineWrite("You got that worm!");
 
-            });
+            //});
 
 
 
-            If.Check(() =>
-            {
-                return PlayerDataManager.PlayerData.NpcRelationships["Dave"].EventsTriggered
-                    .Contains(5);
-            });
+            //If.Check(() =>
+            //{
+            //    return PlayerDataManager.PlayerData.NpcRelationships["Dave"].EventsTriggered
+            //        .Contains(5);
+            //});
         }
 
         void CustomActivity(bool firstTimeCalled)

@@ -17,6 +17,20 @@
           "Name": "ActivityCollision"
         }
       ]
+    },
+    {
+      "Name": "Entities\\NPC",
+      "SelectedProperties": [],
+      "InstanceManagementValuesList": [
+        {
+          "SelectedProperties": [],
+          "Name": "SpriteInstance"
+        },
+        {
+          "SelectedProperties": [],
+          "Name": "BodyCollision"
+        }
+      ]
     }
   ]
 }
