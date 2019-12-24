@@ -303,6 +303,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>text</Name>
     </None>
+    <None Include="content\levels\mastertilesheet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>mastertilesheet</Name>
+    </None>
+    <None Include="content\levels\mastertilesheet.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>mastertilesheet</Name>
+    </None>
+    <None Include="content\levels\testlevel1.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TestLevel1</Name>
+    </None>
     <None Include="Libraries\DesktopGl\Debug\FlatRedBall.Forms.dll" />
     <None Include="Libraries\DesktopGl\Debug\GumCoreXnaPc.dll" />
     <None Include="Libraries\DesktopGl\Debug\StateInterpolation.dll" />

@@ -347,6 +347,14 @@
       <Source>GLUE</Source>
       <BaseScreen>Screens\GameScreen</BaseScreen>
       <Name>Screens\MainLevel</Name>
+      <ReferencedFiles>
+        <ReferencedFileSave>
+          <Name>Levels/TestLevel1.tmx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.TileGraphics.LayeredTileMap</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+      </ReferencedFiles>
       <NamedObjects>
         <NamedObjectSave>
           <Properties>
@@ -900,13 +908,18 @@
         <Version>2.2.1.0</Version>
         <VersionRequirement>EqualToOrNewerThan</VersionRequirement>
       </PluginRequirement>
+      <PluginRequirement>
+        <Name>Tiled Plugin</Name>
+        <Version>2.7.0.1</Version>
+        <VersionRequirement>EqualToOrNewerThan</VersionRequirement>
+      </PluginRequirement>
     </RequiredPlugins>
   </PluginData>
   <DisplaySettings>
     <Is2D>true</Is2D>
     <GenerateDisplayCode>true</GenerateDisplayCode>
-    <ResolutionWidth>800</ResolutionWidth>
-    <ResolutionHeight>600</ResolutionHeight>
+    <ResolutionWidth>640</ResolutionWidth>
+    <ResolutionHeight>480</ResolutionHeight>
     <FixedAspectRatio>false</FixedAspectRatio>
     <AspectRatioWidth>16</AspectRatioWidth>
     <AspectRatioHeight>9</AspectRatioHeight>
@@ -914,7 +927,7 @@
     <SupportPortrait>false</SupportPortrait>
     <RunInFullScreen>false</RunInFullScreen>
     <AllowWindowResizing>false</AllowWindowResizing>
-    <Scale>100</Scale>
+    <Scale>200</Scale>
     <ScaleGum>100</ScaleGum>
     <ResizeBehavior>StretchVisibleArea</ResizeBehavior>
     <ResizeBehaviorGum>StretchVisibleArea</ResizeBehaviorGum>

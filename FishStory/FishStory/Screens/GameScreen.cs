@@ -59,9 +59,10 @@ namespace FishStory.Screens
 
             CameraActivity();
 
+            UiActivity();
+
             CollisionActivity();
 
-            UiActivity();
         }
 
         void CameraActivity()
@@ -89,7 +90,10 @@ namespace FishStory.Screens
 
         private void UiActivity()
         {
-
+            if (DialogBox.Visible && PlayerCharacterInstance.TalkInput.WasJustPressed)
+            {
+                DialogBox.Visible = false;
+            }
         }
 
         #endregion

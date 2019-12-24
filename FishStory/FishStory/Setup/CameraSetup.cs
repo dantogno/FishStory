@@ -32,9 +32,9 @@
             static Microsoft.Xna.Framework.GraphicsDeviceManager graphicsDeviceManager;
             public static CameraSetupData Data = new CameraSetupData
             {
-                Scale = 100f,
-                ResolutionWidth = 800,
-                ResolutionHeight = 600,
+                Scale = 200f,
+                ResolutionWidth = 640,
+                ResolutionHeight = 480,
                 Is2D = true,
                 IsFullScreen = false,
                 AllowWidowResizing = false,
