@@ -22,6 +22,8 @@ namespace FishStory.Screens
         void CustomInitialize()
         {
             script = new ScreenScript<GameScreen>(this);
+
+            DialogBox.Visible = false;
         }
 
         void CustomActivity(bool firstTimeCalled)

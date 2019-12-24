@@ -54,6 +54,7 @@
     <Compile Include="DataTypes\PlayerData.cs" />
     <Compile Include="DataTypes\TileMapInfo.Generated.cs" />
     <Compile Include="DataTypes\TopDownValues.Generated.cs" />
+    <Compile Include="DialogTreePlugin\RootObject.Generated.cs" />
     <Compile Include="Entities\Entrance.cs" />
     <Compile Include="Entities\Entrance.Generated.cs">
       <DependentUpon>Entrance.cs</DependentUpon>
@@ -95,9 +96,13 @@
     <Compile Include="GumRuntimes\ColoredRectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ContainerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DialogBoxRuntime.cs" />
-    <Compile Include="GumRuntimes\DialogBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DialogBoxRuntime.Generated.cs">
+      <DependentUpon>DialogBoxRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\GameScreenGumRuntime.cs" />
-    <Compile Include="GumRuntimes\GameScreenGumRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\GameScreenGumRuntime.Generated.cs">
+      <DependentUpon>GameScreenGumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\PolygonRuntime.Generated.cs" />
@@ -121,7 +126,7 @@
     </Compile>
     <Compile Include="Screens\MainLevel.cs" />
     <Compile Include="Screens\MainLevel.Generated.cs">
-      <DependentUpon>mainlevel.cs</DependentUpon>
+      <DependentUpon>MainLevel.cs</DependentUpon>
     </Compile>
     <Compile Include="Setup\CameraSetup.cs" />
     <Compile Include="TileCollisions\CollidableListVsTileShapeCollectionRelationship.cs" />
@@ -187,6 +192,7 @@
       <HintPath>Libraries\DesktopGl\Debug\StateInterpolation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +202,10 @@
     <None Include="content\entities\playercharacter\topdownvalues.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TopDownValues</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\dialog1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Dialog1</Name>
     </None>
     <None Include="content\globalcontent\itemdefinition.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
