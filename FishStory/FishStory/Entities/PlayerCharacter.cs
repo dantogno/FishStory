@@ -15,12 +15,28 @@ namespace FishStory.Entities
     {
         float collisionOffset;
 
+        public IPressableInput TalkInput;
+
+        public NPC NpcForAction { get; set; }
+
         #region Initialize
 
         private void CustomInitialize()
         {
             collisionOffset = ActivityCollision.RelativeX;
             this.PossibleDirections = PossibleDirections.EightWay;
+        }
+
+        partial void CustomInitializeTopDownInput()
+        {
+            if(InputDevice is Keyboard keyboard)
+            {
+                TalkInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Space);
+            }
+            else if(InputDevice is Xbox360GamePad gamepad)
+            {
+                TalkInput = gamepad.GetButton(Xbox360GamePad.Button.A);
+            }
         }
 
         #endregion
