@@ -14,15 +14,6 @@
         <string>GLUE</string>
       </Tags>
       <Source>GLUE</Source>
-      <Events>
-        <EventResponseSave>
-          <EventName>PlayerCharacterInstanceVsExitListCollisionOccurred</EventName>
-          <SourceObject>PlayerCharacterInstanceVsExitList</SourceObject>
-          <SourceObjectEvent>CollisionOccurred</SourceObjectEvent>
-          <BeforeOrAfter>Before</BeforeOrAfter>
-          <DelegateType />
-        </EventResponseSave>
-      </Events>
       <Name>Screens\GameScreen</Name>
       <NamedObjects>
         <NamedObjectSave>
@@ -231,67 +222,9 @@
           </Properties>
           <SourceType>FlatRedBallType</SourceType>
           <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
-          <SourceClassGenericType>Entities\Exit</SourceClassGenericType>
-          <InstanceName>ExitList</InstanceName>
-          <ExposedInDerived>true</ExposedInDerived>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>true</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
           <SourceClassGenericType>Entities\Entrance</SourceClassGenericType>
           <InstanceName>EntranceList</InstanceName>
           <ExposedInDerived>true</ExposedInDerived>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>true</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsAutoNameEnabled</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionName</Name>
-              <ValueAsString>PlayerCharacterInstance</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionName</Name>
-              <ValueAsString>ExitList</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>CollisionElasticity</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsCollisionActive</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceClassType>FlatRedBall.Math.Collision.PositionedObjectVsListRelationship&lt;FishStory.Entities.PlayerCharacter, Entities.Exit&gt;</SourceClassType>
-          <InstanceName>PlayerCharacterInstanceVsExitList</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -304,141 +237,8 @@
       </Tags>
       <Source>GLUE</Source>
       <BaseScreen>Screens\GameScreen</BaseScreen>
-      <Name>Screens\TestLevel</Name>
+      <Name>Screens\MainLevel</Name>
       <NamedObjects>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
-          <SourceClassGenericType>Entities\Exit</SourceClassGenericType>
-          <InstanceName>ExitList</InstanceName>
-          <ExposedInDerived>true</ExposedInDerived>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <DefinedByBase>true</DefinedByBase>
-          <InstantiatedByBase>true</InstantiatedByBase>
-          <ContainedObjects>
-            <NamedObjectSave>
-              <CustomProperty>
-                <Type>float</Type>
-                <Member>Y</Member>
-                <ValueAsFloat>150</ValueAsFloat>
-              </CustomProperty>
-              <CustomProperty>
-                <Type>string</Type>
-                <Member>LevelName</Member>
-                <ValueAsString>TestLevel2</ValueAsString>
-              </CustomProperty>
-              <Properties>
-                <PropertySave>
-                  <Name>SourceType</Name>
-                  <ValueAsObject xsi:type="SourceType">Entity</ValueAsObject>
-                </PropertySave>
-              </Properties>
-              <SourceType>Entity</SourceType>
-              <SourceClassType>Entities\Exit</SourceClassType>
-              <InstanceName>ToLevel2</InstanceName>
-              <AttachToContainer>true</AttachToContainer>
-              <GenerateTimedEmit>true</GenerateTimedEmit>
-              <IndependentOfCamera>true</IndependentOfCamera>
-            </NamedObjectSave>
-          </ContainedObjects>
-          <IndependentOfCamera>true</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
-          <SourceClassGenericType>Entities\Entrance</SourceClassGenericType>
-          <InstanceName>EntranceList</InstanceName>
-          <ExposedInDerived>true</ExposedInDerived>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <DefinedByBase>true</DefinedByBase>
-          <InstantiatedByBase>true</InstantiatedByBase>
-          <IndependentOfCamera>true</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">Entity</ValueAsObject>
-            </PropertySave>
-          </Properties>
-          <SourceType>Entity</SourceType>
-          <SourceClassType>Entities\PlayerCharacter</SourceClassType>
-          <InstanceName>PlayerCharacterInstance</InstanceName>
-          <ExposedInDerived>true</ExposedInDerived>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <DefinedByBase>true</DefinedByBase>
-          <InstantiatedByBase>true</InstantiatedByBase>
-          <IndependentOfCamera>true</IndependentOfCamera>
-        </NamedObjectSave>
-      </NamedObjects>
-    </ScreenSave>
-    <ScreenSave>
-      <Tags>
-        <string>GLUE</string>
-      </Tags>
-      <Source>GLUE</Source>
-      <BaseScreen>Screens\GameScreen</BaseScreen>
-      <Name>Screens\TestLevel2</Name>
-      <NamedObjects>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
-          <SourceClassGenericType>Entities\Exit</SourceClassGenericType>
-          <InstanceName>ExitList</InstanceName>
-          <ExposedInDerived>true</ExposedInDerived>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <DefinedByBase>true</DefinedByBase>
-          <InstantiatedByBase>true</InstantiatedByBase>
-          <ContainedObjects>
-            <NamedObjectSave>
-              <CustomProperty>
-                <Type>float</Type>
-                <Member>Y</Member>
-                <ValueAsFloat>-150</ValueAsFloat>
-              </CustomProperty>
-              <CustomProperty>
-                <Type>string</Type>
-                <Member>LevelName</Member>
-                <ValueAsString>TestLevel</ValueAsString>
-              </CustomProperty>
-              <Properties>
-                <PropertySave>
-                  <Name>SourceType</Name>
-                  <ValueAsObject xsi:type="SourceType">Entity</ValueAsObject>
-                </PropertySave>
-              </Properties>
-              <SourceType>Entity</SourceType>
-              <SourceClassType>Entities\Exit</SourceClassType>
-              <InstanceName>ToLevel1</InstanceName>
-              <AttachToContainer>true</AttachToContainer>
-              <GenerateTimedEmit>true</GenerateTimedEmit>
-              <IndependentOfCamera>true</IndependentOfCamera>
-            </NamedObjectSave>
-          </ContainedObjects>
-          <IndependentOfCamera>true</IndependentOfCamera>
-        </NamedObjectSave>
         <NamedObjectSave>
           <Properties>
             <PropertySave>
@@ -843,6 +643,11 @@
         <NamedObjectSave>
           <CustomProperty>
             <Type>float</Type>
+            <Member>X</Member>
+            <ValueAsFloat>20</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
             <Member>Width</Member>
             <ValueAsFloat>24</ValueAsFloat>
           </CustomProperty>
@@ -850,11 +655,6 @@
             <Type>float</Type>
             <Member>Height</Member>
             <ValueAsFloat>24</ValueAsFloat>
-          </CustomProperty>
-          <CustomProperty>
-            <Type>float</Type>
-            <Member>X</Member>
-            <ValueAsFloat>20</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>
@@ -899,7 +699,7 @@
     <RecordLockContention>false</RecordLockContention>
   </GlobalContentSettingsSave>
   <SyncedProjects />
-  <StartUpScreen>Screens\TestLevel</StartUpScreen>
+  <StartUpScreen>Screens\MainLevel</StartUpScreen>
   <ResolutionPresets />
   <PerformanceSettingsSave>
     <ThrowExceptionOnPostInitializeContentLoad>false</ThrowExceptionOnPostInitializeContentLoad>

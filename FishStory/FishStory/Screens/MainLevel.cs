@@ -16,7 +16,7 @@ using FishStory.DataTypes;
 
 namespace FishStory.Screens
 {
-    public partial class TestLevel
+    public partial class MainLevel
     {
 
         void CustomInitialize()

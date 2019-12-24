@@ -106,13 +106,9 @@
     <Compile Include="Screens\GameScreen.Generated.Event.cs">
       <DependentUpon>GameScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\TestLevel.cs" />
-    <Compile Include="Screens\TestLevel.Generated.cs">
-      <DependentUpon>TestLevel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\TestLevel2.cs" />
-    <Compile Include="Screens\TestLevel2.Generated.cs">
-      <DependentUpon>TestLevel2.cs</DependentUpon>
+    <Compile Include="Screens\MainLevel.cs" />
+    <Compile Include="Screens\MainLevel.Generated.cs">
+      <DependentUpon>mainlevel.cs</DependentUpon>
     </Compile>
     <Compile Include="Setup\CameraSetup.cs" />
     <Compile Include="TileCollisions\CollidableListVsTileShapeCollectionRelationship.cs" />
