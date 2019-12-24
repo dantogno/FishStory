@@ -52,7 +52,7 @@
             </PropertySave>
             <PropertySave>
               <Name>CollisionCreationOptions</Name>
-              <ValueAsInt>2</ValueAsInt>
+              <ValueAsInt>3</ValueAsInt>
             </PropertySave>
             <PropertySave>
               <Name>CollisionTileSize</Name>
@@ -73,6 +73,14 @@
             <PropertySave>
               <Name>CollisionFillTop</Name>
               <ValueAsFloat>240</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionPropertyName</Name>
+              <ValueAsString>SolidCollision</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>SourceTmxName</Name>
+              <ValueAsString>Map</ValueAsString>
             </PropertySave>
           </Properties>
           <SourceType>FlatRedBallType</SourceType>
@@ -366,7 +374,7 @@
       <Name>Screens\MainLevel</Name>
       <ReferencedFiles>
         <ReferencedFileSave>
-          <Name>Levels/TestLevel1.tmx</Name>
+          <Name>Levels/Town.tmx</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>FlatRedBall.TileGraphics.LayeredTileMap</RuntimeType>
           <ProjectsToExcludeFrom />
@@ -416,7 +424,7 @@
             </PropertySave>
           </Properties>
           <SourceType>File</SourceType>
-          <SourceFile>Levels/TestLevel1.tmx</SourceFile>
+          <SourceFile>Levels/Town.tmx</SourceFile>
           <SourceName>Entire File (LayeredTileMap)</SourceName>
           <SourceClassType>LayeredTileMap</SourceClassType>
           <InstanceName>Map</InstanceName>
