@@ -60,6 +60,8 @@ namespace FishStory.Screens
             CameraActivity();
 
             CollisionActivity();
+
+            UiActivity();
         }
 
         void CameraActivity()
@@ -83,6 +85,11 @@ namespace FishStory.Screens
                 }
 
             }
+        }
+
+        private void UiActivity()
+        {
+
         }
 
         #endregion
