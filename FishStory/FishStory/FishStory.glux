@@ -927,7 +927,7 @@
     <SupportPortrait>false</SupportPortrait>
     <RunInFullScreen>false</RunInFullScreen>
     <AllowWindowResizing>false</AllowWindowResizing>
-    <Scale>200</Scale>
+    <Scale>100</Scale>
     <ScaleGum>100</ScaleGum>
     <ResizeBehavior>StretchVisibleArea</ResizeBehavior>
     <ResizeBehaviorGum>StretchVisibleArea</ResizeBehaviorGum>
