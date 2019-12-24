@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset version="1.2" tiledversion="1.3.1" name="MasterTileSheet" tilewidth="16" tileheight="16" tilecount="16384" columns="128">
  <image source="MasterTileSheet.png" width="2048" height="2048"/>
+ <tile id="6600">
+  <animation>
+   <frame tileid="6600" duration="100"/>
+   <frame tileid="6856" duration="100"/>
+   <frame tileid="7112" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="6601">
+  <animation>
+   <frame tileid="6601" duration="100"/>
+   <frame tileid="6857" duration="100"/>
+   <frame tileid="7113" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="6728">
+  <animation>
+   <frame tileid="6728" duration="100"/>
+   <frame tileid="6984" duration="100"/>
+   <frame tileid="7240" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="6729">
+  <animation>
+   <frame tileid="6729" duration="100"/>
+   <frame tileid="6985" duration="100"/>
+   <frame tileid="7241" duration="100"/>
+  </animation>
+ </tile>
  <tile id="7090">
   <animation>
    <frame tileid="7090" duration="100"/>
