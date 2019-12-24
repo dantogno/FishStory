@@ -160,10 +160,14 @@
               <Name>CollisionType</Name>
               <ValueAsInt>1</ValueAsInt>
             </PropertySave>
+            <PropertySave>
+              <Name>FirstSubCollisionSelectedItem</Name>
+              <ValueAsString>BodyCollision</ValueAsString>
+            </PropertySave>
           </Properties>
           <SourceType>FlatRedBallType</SourceType>
           <SourceClassType>FlatRedBall.Math.Collision.CollidableVsTileShapeCollectionRelationship&lt;FishStory.Entities.PlayerCharacter&gt;</SourceClassType>
-          <InstanceName>PlayerCharacterInstanceVsSolidCollision</InstanceName>
+          <InstanceName>PlayerCharacterInstanceBodyCollisionVsSolidCollision</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -206,10 +210,14 @@
               <Name>CollisionType</Name>
               <ValueAsInt>1</ValueAsInt>
             </PropertySave>
+            <PropertySave>
+              <Name>FirstSubCollisionSelectedItem</Name>
+              <ValueAsString>BodyCollision</ValueAsString>
+            </PropertySave>
           </Properties>
           <SourceType>FlatRedBallType</SourceType>
           <SourceClassType>FlatRedBall.Math.Collision.CollidableVsTileShapeCollectionRelationship&lt;FishStory.Entities.PlayerCharacter&gt;</SourceClassType>
-          <InstanceName>PlayerCharacterInstanceVsWaterCollision</InstanceName>
+          <InstanceName>PlayerCharacterInstanceBodyCollisionVsWaterCollision</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -826,7 +834,7 @@
           </Properties>
           <SourceType>FlatRedBallType</SourceType>
           <SourceClassType>Circle</SourceClassType>
-          <InstanceName>CircleInstance</InstanceName>
+          <InstanceName>BodyCollision</InstanceName>
           <HasPublicProperty>true</HasPublicProperty>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>

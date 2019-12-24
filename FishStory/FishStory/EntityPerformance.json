@@ -1,0 +1,22 @@
+{
+  "EntityManagementValueList": [
+    {
+      "Name": "Entities\\PlayerCharacter",
+      "SelectedProperties": [],
+      "InstanceManagementValuesList": [
+        {
+          "SelectedProperties": [],
+          "Name": "SpriteInstance"
+        },
+        {
+          "SelectedProperties": [],
+          "Name": "BodyCollision"
+        },
+        {
+          "SelectedProperties": [],
+          "Name": "ActivityCollision"
+        }
+      ]
+    }
+  ]
+}
