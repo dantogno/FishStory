@@ -12,6 +12,7 @@ using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
 using FlatRedBall.Scripting;
+using Microsoft.Xna.Framework;
 
 namespace FishStory.Screens
 {
@@ -29,6 +30,14 @@ namespace FishStory.Screens
         void CustomActivity(bool firstTimeCalled)
         {
             script.Activity();
+
+            CameraActivity();
+        }
+
+        private void CameraActivity()
+        {
+            var difference = (PlayerCharacterInstance.Position - Camera.Main.Position).ToVector2();
+            Camera.Main.Velocity = difference.ToVector3();
         }
 
         void CustomDestroy()
