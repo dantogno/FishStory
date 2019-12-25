@@ -81,8 +81,10 @@ namespace FishStory.Screens
 
                 if(PlayerCharacterInstance.NpcForAction != null)
                 {
-                    DialogBox.Visible = true;
-                    PlayerCharacterInstance.InputEnabled = false;
+                    if(DialogBox.TryShow())
+                    {
+                        PlayerCharacterInstance.InputEnabled = false;
+                    }
                 }
 
             }
@@ -92,7 +94,10 @@ namespace FishStory.Screens
         {
             if (DialogBox.Visible && PlayerCharacterInstance.TalkInput.WasJustPressed)
             {
-                DialogBox.Visible = false;
+                if(DialogBox.TryHide())
+                {
+                    PlayerCharacterInstance.InputEnabled = true;
+                }
             }
         }
 
