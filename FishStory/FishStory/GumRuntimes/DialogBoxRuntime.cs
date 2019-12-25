@@ -55,6 +55,18 @@ namespace FishStory.GumRuntimes
             var passage = dialogTree.passages.FirstOrDefault(item => item.pid == currentNodeId);
 
             this.TextInstance.Text = passage.StrippedText;
+
+            while(this.DialogOptions.Children.Count() > 0)
+            {
+                this.DialogOptions.Children.Last().Parent = null;
+            }
+
+            for(int i = 0; i < 3; i++)
+            {
+                var option = new SelectableOptionRuntime();
+                option.Text = "Option " + (i + 1);
+                this.DialogOptions.AddChild(option);
+            }
         }
     }
 }

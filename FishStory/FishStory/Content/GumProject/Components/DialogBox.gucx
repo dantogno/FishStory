@@ -47,6 +47,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>DialogOptions.Contained Type</Name>
+      <Value xsi:type="xsd:string">SelectableOption</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>DialogOptions.Height</Name>
       <Value xsi:type="xsd:float">10</Value>
@@ -202,12 +208,6 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>string</Type>
-      <Name>TextInstance1.Parent</Name>
-      <Value xsi:type="xsd:string">DialogOptions</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>float</Type>
       <Name>Width</Name>
       <Value xsi:type="xsd:float">512</Value>
@@ -249,18 +249,6 @@
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>TextInstance2.Parent</Name>
-      <Value xsi:type="xsd:string">DialogOptions</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>TextInstance3.Parent</Name>
-      <Value xsi:type="xsd:string">DialogOptions</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
   </State>
   <Instance>
     <Name>NineSliceInstance</Name>
@@ -280,21 +268,6 @@
   <Instance>
     <Name>DialogOptions</Name>
     <BaseType>Container</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>TextInstance1</Name>
-    <BaseType>Text</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>TextInstance2</Name>
-    <BaseType>Text</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>TextInstance3</Name>
-    <BaseType>Text</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

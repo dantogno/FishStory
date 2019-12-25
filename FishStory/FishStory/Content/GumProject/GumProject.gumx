@@ -16,6 +16,10 @@
     <Name>DialogBox</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
+  <ComponentReference>
+    <Name>SelectableOption</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
   <StandardElementReference>
     <Name>Circle</Name>
     <ElementType>Standard</ElementType>

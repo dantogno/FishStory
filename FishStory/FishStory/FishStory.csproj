@@ -107,6 +107,8 @@
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\PolygonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\RectangleRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\SelectableOptionRuntime.cs" />
+    <Compile Include="GumRuntimes\SelectableOptionRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="Managers\PlayerDataManager.cs" />
@@ -214,6 +216,10 @@
     <None Include="content\gumproject\components\dialogbox.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>dialogbox</Name>
+    </None>
+    <None Include="content\gumproject\components\selectableoption.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>selectableoption</Name>
     </None>
     <None Include="content\gumproject\fontcache\font18arial.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
