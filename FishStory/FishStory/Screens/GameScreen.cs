@@ -81,7 +81,7 @@ namespace FishStory.Screens
 
                 if(PlayerCharacterInstance.NpcForAction != null)
                 {
-                    if(DialogBox.TryShow())
+                    if(DialogBox.TryShow(nameof(GlobalContent.Dialog1)))
                     {
                         PlayerCharacterInstance.InputEnabled = false;
                     }
