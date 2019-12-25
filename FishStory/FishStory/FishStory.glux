@@ -280,6 +280,11 @@
                 <Member>X</Member>
                 <ValueAsFloat>300</ValueAsFloat>
               </CustomProperty>
+              <CustomProperty>
+                <Type>string</Type>
+                <Member>TwineDialogId</Member>
+                <ValueAsString>Dialog1</ValueAsString>
+              </CustomProperty>
               <Properties>
                 <PropertySave>
                   <Name>SourceType</Name>

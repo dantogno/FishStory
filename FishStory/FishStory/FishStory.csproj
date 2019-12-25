@@ -108,7 +108,9 @@
     <Compile Include="GumRuntimes\PolygonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\RectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\SelectableOptionRuntime.cs" />
-    <Compile Include="GumRuntimes\SelectableOptionRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\SelectableOptionRuntime.Generated.cs">
+      <DependentUpon>SelectableOptionRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="Managers\PlayerDataManager.cs" />

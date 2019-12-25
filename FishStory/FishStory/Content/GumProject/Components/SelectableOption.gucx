@@ -77,6 +77,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>SelectedStateState</Type>
+      <Name>SelectedStateState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>State</Type>
       <Name>State</Name>
       <SetsValue>true</SetsValue>
@@ -124,6 +129,27 @@
       <SetsValue>true</SetsValue>
     </Variable>
   </State>
+  <Category>
+    <Name>SelectedState</Name>
+    <State>
+      <Name>Selected</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>RectangleInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Deselected</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>RectangleInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>TextInstance</Name>
     <BaseType>Text</BaseType>

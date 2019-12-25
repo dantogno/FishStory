@@ -36,12 +36,34 @@ namespace FishStory.Screens
             DialogBox.Visible = false;
 
             InitializeCollision();
+
+            InitializeUi();
         }
 
         private void InitializeCollision()
         {
             PlayerCharacterInstanceActivityCollisionVsNPCListBodyCollision.CollisionOccurred +=
                 HandlePlayerVsNpcActivityCollision;
+        }
+
+        private void InitializeUi()
+        {
+            if(PlayerCharacterInstance.InputDevice is Keyboard keyboard)
+            {
+                DialogBox.UpInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Up)
+                    .Or(keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.W));
+
+                DialogBox.DownInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Down)
+                    .Or(keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.S));
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+
+            DialogBox.SelectInput = PlayerCharacterInstance.TalkInput;
+
+            DialogBox.AfterHide += HandleDialogBoxHide;
         }
 
         private void HandlePlayerVsNpcActivityCollision(PlayerCharacter player, NPC npc)
@@ -92,13 +114,13 @@ namespace FishStory.Screens
 
         private void UiActivity()
         {
-            if (DialogBox.Visible && PlayerCharacterInstance.TalkInput.WasJustPressed)
-            {
-                if(DialogBox.TryHide())
-                {
-                    PlayerCharacterInstance.InputEnabled = true;
-                }
-            }
+
+            DialogBox.CustomActivity();
+        }
+
+        private void HandleDialogBoxHide()
+        {
+            PlayerCharacterInstance.InputEnabled = true;
         }
 
         #endregion
