@@ -135,6 +135,78 @@
               <Name>SourceType</Name>
               <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
             </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
+          <SourceClassGenericType>Entities\Entrance</SourceClassGenericType>
+          <InstanceName>EntranceList</InstanceName>
+          <ExposedInDerived>true</ExposedInDerived>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">File</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
+          <SourceName>DialogBoxInstance (FishStory.GumRuntimes.DialogBoxRuntime)</SourceName>
+          <InstanceName>DialogBox</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
+          <SourceClassGenericType>Entities\NPC</SourceClassGenericType>
+          <InstanceName>NPCList</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <ContainedObjects>
+            <NamedObjectSave>
+              <CustomProperty>
+                <Type>string</Type>
+                <Member>TwineDialogId</Member>
+                <ValueAsString>Dialog1</ValueAsString>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>float</Type>
+                <Member>X</Member>
+                <ValueAsFloat>300</ValueAsFloat>
+              </CustomProperty>
+              <Properties>
+                <PropertySave>
+                  <Name>SourceType</Name>
+                  <ValueAsObject xsi:type="SourceType">Entity</ValueAsObject>
+                </PropertySave>
+              </Properties>
+              <SourceType>Entity</SourceType>
+              <SourceClassType>Entities\NPC</SourceClassType>
+              <InstanceName>NPC1</InstanceName>
+              <AttachToContainer>true</AttachToContainer>
+              <GenerateTimedEmit>true</GenerateTimedEmit>
+              <IndependentOfCamera>true</IndependentOfCamera>
+            </NamedObjectSave>
+          </ContainedObjects>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
             <PropertySave>
               <Name>IsAutoNameEnabled</Name>
               <ValueAsBool>true</ValueAsBool>
@@ -235,78 +307,6 @@
               <Name>SourceType</Name>
               <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
             </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
-          <SourceClassGenericType>Entities\Entrance</SourceClassGenericType>
-          <InstanceName>EntranceList</InstanceName>
-          <ExposedInDerived>true</ExposedInDerived>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>true</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">File</ValueAsObject>
-            </PropertySave>
-          </Properties>
-          <SourceType>File</SourceType>
-          <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
-          <SourceName>DialogBoxInstance (FishStory.GumRuntimes.DialogBoxRuntime)</SourceName>
-          <InstanceName>DialogBox</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>true</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
-          <SourceClassGenericType>Entities\NPC</SourceClassGenericType>
-          <InstanceName>NPCList</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <ContainedObjects>
-            <NamedObjectSave>
-              <CustomProperty>
-                <Type>string</Type>
-                <Member>TwineDialogId</Member>
-                <ValueAsString>Dialog1</ValueAsString>
-              </CustomProperty>
-              <CustomProperty>
-                <Type>float</Type>
-                <Member>X</Member>
-                <ValueAsFloat>300</ValueAsFloat>
-              </CustomProperty>
-              <Properties>
-                <PropertySave>
-                  <Name>SourceType</Name>
-                  <ValueAsObject xsi:type="SourceType">Entity</ValueAsObject>
-                </PropertySave>
-              </Properties>
-              <SourceType>Entity</SourceType>
-              <SourceClassType>Entities\NPC</SourceClassType>
-              <InstanceName>NPC1</InstanceName>
-              <AttachToContainer>true</AttachToContainer>
-              <GenerateTimedEmit>true</GenerateTimedEmit>
-              <IndependentOfCamera>true</IndependentOfCamera>
-            </NamedObjectSave>
-          </ContainedObjects>
-          <IndependentOfCamera>true</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
             <PropertySave>
               <Name>IsAutoNameEnabled</Name>
               <ValueAsBool>true</ValueAsBool>
@@ -369,6 +369,56 @@
           <SourceClassType>LayeredTileMap</SourceClassType>
           <InstanceName>Map</InstanceName>
           <SetByDerived>true</SetByDerived>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+            <PropertySave>
+              <Name>IsAutoNameEnabled</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstCollisionName</Name>
+              <ValueAsString>PlayerCharacterInstance</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondCollisionName</Name>
+              <ValueAsString>NPCList</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstCollisionMass</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondCollisionMass</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionElasticity</Name>
+              <ValueAsFloat>1</ValueAsFloat>
+            </PropertySave>
+            <PropertySave>
+              <Name>IsCollisionActive</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+            <PropertySave>
+              <Name>FirstSubCollisionSelectedItem</Name>
+              <ValueAsString>BodyCollision</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>SecondSubCollisionSelectedItem</Name>
+              <ValueAsString>BodyCollision</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceClassType>FlatRedBall.Math.Collision.PositionedObjectVsListRelationship&lt;FishStory.Entities.PlayerCharacter, Entities.NPC&gt;</SourceClassType>
+          <InstanceName>PlayerCharacterInstanceBodyCollisionVsNPCListBodyCollision</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -713,7 +763,7 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>Radius</Member>
-            <ValueAsFloat>16</ValueAsFloat>
+            <ValueAsFloat>10</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>Microsoft.Xna.Framework.Color</Type>
@@ -814,6 +864,16 @@
             <Member>TextureScale</Member>
             <ValueAsFloat>1</ValueAsFloat>
           </CustomProperty>
+          <CustomProperty>
+            <Type>FlatRedBall.Graphics.Animation.AnimationChainList</Type>
+            <Member>AnimationChains</Member>
+            <ValueAsString>AnimationChainListFile</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>string</Type>
+            <Member>CurrentChainName</Member>
+            <ValueAsString>IdleDown</ValueAsString>
+          </CustomProperty>
           <Properties>
             <PropertySave>
               <Name>SourceType</Name>
@@ -831,7 +891,7 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>Radius</Member>
-            <ValueAsFloat>16</ValueAsFloat>
+            <ValueAsFloat>10</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>
@@ -875,6 +935,27 @@
           <SourceClassType>AxisAlignedRectangle</SourceClassType>
           <InstanceName>ActivityCollision</InstanceName>
           <HasPublicProperty>true</HasPublicProperty>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <CustomProperty>
+            <Type>FlatRedBall.Sprite</Type>
+            <Member>AnimatedObject</Member>
+            <ValueAsString>SpriteInstance</ValueAsString>
+          </CustomProperty>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>AnimationController</SourceClassType>
+          <InstanceName>AnimationControllerInstance</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>

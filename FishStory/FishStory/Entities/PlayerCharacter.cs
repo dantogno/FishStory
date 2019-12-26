@@ -13,11 +13,15 @@ namespace FishStory.Entities
 {
     public partial class PlayerCharacter
     {
+        #region Fields/Properties
+
         float collisionOffset;
 
         public IPressableInput TalkInput;
 
         public NPC NpcForAction { get; set; }
+
+        #endregion
 
         #region Initialize
 
@@ -25,6 +29,8 @@ namespace FishStory.Entities
         {
             collisionOffset = ActivityCollision.RelativeX;
             this.PossibleDirections = PossibleDirections.EightWay;
+
+            this.AnimationControllerInstance.Layers.Add(mTopDownAnimationLayer);
         }
 
         partial void CustomInitializeTopDownInput()

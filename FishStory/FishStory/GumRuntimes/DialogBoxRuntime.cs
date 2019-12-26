@@ -148,9 +148,12 @@ namespace FishStory.GumRuntimes
 
             ShowLinks(passage);
 
-            foreach(var tag in passage.tags)
+            if(passage.tags != null)
             {
-                DialogTagShown(tag);
+                foreach(var tag in passage.tags)
+                {
+                    DialogTagShown(tag);
+                }
             }
         }
 
