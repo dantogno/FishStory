@@ -23,7 +23,7 @@ namespace FishStory.Screens
 
         protected ScreenScript<GameScreen> script;
 
-
+        List<string> dialogTagsThisFrame = new List<string>();
 
         #endregion
 
@@ -64,6 +64,8 @@ namespace FishStory.Screens
             DialogBox.SelectInput = PlayerCharacterInstance.TalkInput;
 
             DialogBox.AfterHide += HandleDialogBoxHide;
+
+            DialogBox.DialogTagShown += HandleDialogTagShown;
         }
 
         private void HandlePlayerVsNpcActivityCollision(PlayerCharacter player, NPC npc)
@@ -77,7 +79,7 @@ namespace FishStory.Screens
 
         void CustomActivity(bool firstTimeCalled)
         {
-            script.Activity();
+            dialogTagsThisFrame.Clear();
 
             CameraActivity();
 
@@ -85,6 +87,8 @@ namespace FishStory.Screens
 
             CollisionActivity();
 
+            // do script *after* the UI
+            script.Activity();
         }
 
         void CameraActivity()
@@ -122,6 +126,18 @@ namespace FishStory.Screens
         {
             PlayerCharacterInstance.InputEnabled = true;
         }
+
+        private void HandleDialogTagShown(string tag)
+        {
+            dialogTagsThisFrame.Add(tag);
+        }
+
+        #endregion
+
+        #region Script-helping methods
+
+        public bool HasTag(string tag) =>
+            dialogTagsThisFrame.Contains(tag);
 
         #endregion
 

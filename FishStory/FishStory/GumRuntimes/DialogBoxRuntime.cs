@@ -87,6 +87,7 @@ namespace FishStory.GumRuntimes
         #region Events/Properties
 
         public Action AfterHide;
+        public Action<string> DialogTagShown;
 
         #endregion
 
@@ -116,7 +117,7 @@ namespace FishStory.GumRuntimes
 
         public bool TryShow(string dialogName)
         {
-            dialogTree = GlobalContent.Dialog1;
+            dialogTree = GlobalContent.GetFile(dialogName) as RootObject;
             currentNodeId = dialogTree.startnode;
 
             UpdateToCurrentTreeAndNode();
@@ -146,6 +147,11 @@ namespace FishStory.GumRuntimes
             }
 
             ShowLinks(passage);
+
+            foreach(var tag in passage.tags)
+            {
+                DialogTagShown(tag);
+            }
         }
 
 

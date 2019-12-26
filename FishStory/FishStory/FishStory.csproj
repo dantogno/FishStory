@@ -71,6 +71,7 @@
     <Compile Include="Entities\PlayerCharacter.Generated.cs">
       <DependentUpon>PlayerCharacter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Factories\NPCFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Game1.Generated.cs">
@@ -203,6 +204,18 @@
     <Content Include="Content\shader.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="content\entities\npc\boy1.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Boy1</Name>
+    </None>
+    <None Include="content\entities\npc\boy2.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Boy2</Name>
+    </None>
+    <None Include="content\entities\npc\children_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>children_1</Name>
+    </None>
     <None Include="content\entities\playercharacter\topdownvalues.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TopDownValues</Name>

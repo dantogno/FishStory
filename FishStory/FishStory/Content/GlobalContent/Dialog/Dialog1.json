@@ -95,7 +95,10 @@
       "position": {
         "x": "523",
         "y": "223"
-      }
+      },
+      "tags": [
+        "Option4Tag"
+      ]
     }
   ],
   "name": "MyStory1",
