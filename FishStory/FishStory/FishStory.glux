@@ -887,6 +887,18 @@
           <CreatesDictionary>true</CreatesDictionary>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Levels/MasterTileSheet.png</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>Microsoft.Xna.Framework.Graphics.Texture2D</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Entities/PlayerCharacter/AnimationChainListFile.achx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
       </ReferencedFiles>
       <Is2D>true</Is2D>
     </EntitySave>
@@ -927,6 +939,13 @@
       <DestroyOnUnload>false</DestroyOnUnload>
       <HasPublicProperty>true</HasPublicProperty>
       <RuntimeType>DialogTreePlugin.SaveClasses.DialogTreeRaw.RootObject</RuntimeType>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>Levels/MasterTileSheet.png</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
   </GlobalFiles>
@@ -994,6 +1013,11 @@
       <PluginRequirement>
         <Name>Tiled Plugin</Name>
         <Version>2.7.0.1</Version>
+        <VersionRequirement>EqualToOrNewerThan</VersionRequirement>
+      </PluginRequirement>
+      <PluginRequirement>
+        <Name>Animation Editor</Name>
+        <Version>3.2.1</Version>
         <VersionRequirement>EqualToOrNewerThan</VersionRequirement>
       </PluginRequirement>
     </RequiredPlugins>

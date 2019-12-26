@@ -216,6 +216,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>children_1</Name>
     </None>
+    <None Include="content\entities\playercharacter\animationchainlistfile.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>AnimationChainListFile</Name>
+    </None>
     <None Include="content\entities\playercharacter\topdownvalues.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TopDownValues</Name>
