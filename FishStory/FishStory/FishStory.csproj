@@ -224,6 +224,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TopDownValues</Name>
     </None>
+    <None Include="content\globalcontent\dialog\boy1dialog.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Boy1Dialog</Name>
+    </None>
     <None Include="content\globalcontent\dialog\dialog1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Dialog1</Name>

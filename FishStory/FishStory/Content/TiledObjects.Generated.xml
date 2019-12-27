@@ -3,5 +3,6 @@
   <objecttype name="NPC">
     <property name="CharacterName" type="string" />
     <property name="TwineDialogId" type="string" />
+    <property name="Animation" type="AnimationChainList" default="Boy1" />
   </objecttype>
 </objecttypes>

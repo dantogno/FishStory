@@ -171,34 +171,9 @@
           <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
           <SourceClassGenericType>Entities\NPC</SourceClassGenericType>
           <InstanceName>NPCList</InstanceName>
+          <ExposedInDerived>true</ExposedInDerived>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
-          <ContainedObjects>
-            <NamedObjectSave>
-              <CustomProperty>
-                <Type>string</Type>
-                <Member>TwineDialogId</Member>
-                <ValueAsString>Dialog1</ValueAsString>
-              </CustomProperty>
-              <CustomProperty>
-                <Type>float</Type>
-                <Member>X</Member>
-                <ValueAsFloat>300</ValueAsFloat>
-              </CustomProperty>
-              <Properties>
-                <PropertySave>
-                  <Name>SourceType</Name>
-                  <ValueAsObject xsi:type="SourceType">Entity</ValueAsObject>
-                </PropertySave>
-              </Properties>
-              <SourceType>Entity</SourceType>
-              <SourceClassType>Entities\NPC</SourceClassType>
-              <InstanceName>NPC1</InstanceName>
-              <AttachToContainer>true</AttachToContainer>
-              <GenerateTimedEmit>true</GenerateTimedEmit>
-              <IndependentOfCamera>true</IndependentOfCamera>
-            </NamedObjectSave>
-          </ContainedObjects>
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
         <NamedObjectSave>
@@ -497,6 +472,24 @@
           <DefinedByBase>true</DefinedByBase>
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
+          <SourceClassGenericType>Entities\NPC</SourceClassGenericType>
+          <InstanceName>NPCList</InstanceName>
+          <ExposedInDerived>true</ExposedInDerived>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <DefinedByBase>true</DefinedByBase>
+          <InstantiatedByBase>true</InstantiatedByBase>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
       </NamedObjects>
     </ScreenSave>
   </Screens>
@@ -702,16 +695,6 @@
           <Properties>
             <PropertySave>
               <Name>Type</Name>
-              <ValueAsString>string</ValueAsString>
-            </PropertySave>
-          </Properties>
-          <Name>TwineDialogId</Name>
-          <Type>string</Type>
-        </CustomVariable>
-        <CustomVariable>
-          <Properties>
-            <PropertySave>
-              <Name>Type</Name>
               <ValueAsString>float</ValueAsString>
             </PropertySave>
           </Properties>
@@ -729,6 +712,29 @@
           <Name>Y</Name>
           <Type>float</Type>
           <DefaultValue xsi:type="xsd:float">0</DefaultValue>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>string</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>TwineDialogId</Name>
+          <Type>string</Type>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>AnimationChainList</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>Animation</Name>
+          <Type>AnimationChainList</Type>
+          <DefaultValue xsi:type="xsd:string">Boy1</DefaultValue>
+          <SourceObject>SpriteInstance</SourceObject>
+          <SourceObjectProperty>AnimationChains</SourceObjectProperty>
         </CustomVariable>
       </CustomVariables>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
@@ -799,6 +805,7 @@
         <ReferencedFileSave>
           <Name>Entities/NPC/Boy1.achx</Name>
           <IsSharedStatic>true</IsSharedStatic>
+          <HasPublicProperty>true</HasPublicProperty>
           <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
@@ -1031,6 +1038,14 @@
       <IsSharedStatic>true</IsSharedStatic>
       <DestroyOnUnload>false</DestroyOnUnload>
       <HasPublicProperty>true</HasPublicProperty>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/Dialog/Boy1Dialog.json</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <RuntimeType>DialogTreePlugin.SaveClasses.DialogTreeRaw.RootObject</RuntimeType>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
   </GlobalFiles>

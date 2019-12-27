@@ -13,6 +13,8 @@ using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
 using FishStory.Managers;
 using FishStory.DataTypes;
+using FishStory.Factories;
+using FishStory.Entities;
 
 namespace FishStory.Screens
 {
@@ -30,12 +32,13 @@ namespace FishStory.Screens
             var If = script;
             var Do = script;
 
-            //If.Check(() => PlayerCharacterInstance.X > 100);
-            //Do.Call(() =>
-            //{
-            //    PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Fishing_Rod);
-            //    FlatRedBall.Debugging.Debugger.CommandLineWrite("You got the fishing rod!");
-            //});
+            If.Check(() => PlayerCharacterInstance.Y < -100);
+            Do.Call(() =>
+            {
+                var npc = NPCFactory.CreateNew(20, -150);
+                npc.TwineDialogId = nameof(GlobalContent.Dialog1);
+                npc.Animation = NPC.Boy1;
+            });
 
             //If.Check(() =>
             //{
