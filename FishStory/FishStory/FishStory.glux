@@ -330,7 +330,7 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>Z</Member>
-            <ValueAsFloat>-1</ValueAsFloat>
+            <ValueAsFloat>-2</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>
