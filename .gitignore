@@ -11,3 +11,4 @@ FishStory/FishStory/bin/x86/Debug/*
 FishStory/FishStory/bin/DesktopGL/x86/Debug/*
 *.cache
 FishStory/FishStory/obj/*
+*.Generated.*
