@@ -393,7 +393,7 @@
             </PropertySave>
             <PropertySave>
               <Name>FirstCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
+              <ValueAsFloat>0</ValueAsFloat>
             </PropertySave>
             <PropertySave>
               <Name>SecondCollisionMass</Name>
@@ -414,6 +414,10 @@
             <PropertySave>
               <Name>SecondSubCollisionSelectedItem</Name>
               <ValueAsString>BodyCollision</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionType</Name>
+              <ValueAsInt>1</ValueAsInt>
             </PropertySave>
           </Properties>
           <SourceType>FlatRedBallType</SourceType>
