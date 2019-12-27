@@ -14,6 +14,7 @@ using FlatRedBall.Localization;
 using FlatRedBall.Scripting;
 using Microsoft.Xna.Framework;
 using FishStory.Entities;
+using FlatRedBall.TileEntities;
 
 namespace FishStory.Screens
 {
@@ -32,6 +33,8 @@ namespace FishStory.Screens
         void CustomInitialize()
         {
             script = new ScreenScript<GameScreen>(this);
+
+            TileEntityInstantiator.CreateEntitiesFrom(Map);
 
             DialogBox.Visible = false;
 
