@@ -36,6 +36,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = NPCFactory.CreateNew(20, -150);
+                npc.Name = "WhateverName";
                 npc.TwineDialogId = nameof(GlobalContent.Dialog1);
                 npc.Animation = NPC.Boy1;
             });

@@ -41,6 +41,8 @@ namespace FishStory.Screens
             InitializeCollision();
 
             InitializeUi();
+
+            InitializeRestartVariables();
         }
 
         private void InitializeCollision()
@@ -76,6 +78,14 @@ namespace FishStory.Screens
             player.NpcForAction = npc;
         }
 
+        private void InitializeRestartVariables()
+        {
+            RestartVariables.Add(
+                $"this.{nameof(PlayerCharacterInstance)}.{nameof(PlayerCharacterInstance.X)}");
+            RestartVariables.Add(
+                $"this.{nameof(PlayerCharacterInstance)}.{nameof(PlayerCharacterInstance.Y)}");
+        }
+
         #endregion
 
         #region Activity
@@ -83,7 +93,10 @@ namespace FishStory.Screens
         void CustomActivity(bool firstTimeCalled)
         {
             dialogTagsThisFrame.Clear();
-
+            if(InputManager.Mouse.ButtonPushed(Mouse.MouseButtons.RightButton))
+            {
+                RestartScreen(true);
+            }
             CameraActivity();
 
             UiActivity();
