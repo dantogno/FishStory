@@ -32,14 +32,14 @@ namespace FishStory.Screens
             var If = script;
             var Do = script;
 
-            If.Check(() => PlayerCharacterInstance.Y < -100);
-            Do.Call(() =>
-            {
-                var npc = NPCFactory.CreateNew(20, -150);
-                npc.Name = "WhateverName";
-                npc.TwineDialogId = nameof(GlobalContent.Dialog1);
-                npc.Animation = NPC.Boy1;
-            });
+            //If.Check(() => PlayerCharacterInstance.Y < -100);
+            //Do.Call(() =>
+            //{
+            //    var npc = NPCFactory.CreateNew(20, -150);
+            //    npc.Name = "WhateverName";
+            //    npc.TwineDialogId = nameof(GlobalContent.Dialog1);
+            //    npc.Animation = NPC.Boy1;
+            //});
 
             //If.Check(() =>
             //{

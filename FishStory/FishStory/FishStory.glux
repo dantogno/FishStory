@@ -28,12 +28,12 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>X</Member>
-            <ValueAsFloat>100</ValueAsFloat>
+            <ValueAsFloat>500</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
             <Member>Y</Member>
-            <ValueAsFloat>-100</ValueAsFloat>
+            <ValueAsFloat>-500</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>
@@ -318,7 +318,7 @@
             </PropertySave>
             <PropertySave>
               <Name>IsCollisionActive</Name>
-              <ValueAsBool>false</ValueAsBool>
+              <ValueAsBool>true</ValueAsBool>
             </PropertySave>
             <PropertySave>
               <Name>FirstSubCollisionSelectedItem</Name>
@@ -327,6 +327,10 @@
             <PropertySave>
               <Name>SecondSubCollisionSelectedItem</Name>
               <ValueAsString>BodyCollision</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionType</Name>
+              <ValueAsInt>0</ValueAsInt>
             </PropertySave>
           </Properties>
           <SourceType>FlatRedBallType</SourceType>
@@ -1144,7 +1148,7 @@
     <SupportPortrait>false</SupportPortrait>
     <RunInFullScreen>false</RunInFullScreen>
     <AllowWindowResizing>false</AllowWindowResizing>
-    <Scale>100</Scale>
+    <Scale>200</Scale>
     <ScaleGum>100</ScaleGum>
     <ResizeBehavior>StretchVisibleArea</ResizeBehavior>
     <ResizeBehaviorGum>StretchVisibleArea</ResizeBehaviorGum>

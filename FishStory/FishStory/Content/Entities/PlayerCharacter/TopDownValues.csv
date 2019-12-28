@@ -1,2 +1,2 @@
 "Name (string, required)",UsesAcceleration (System.Boolean),MaxSpeed (System.Single),AccelerationTime (System.Single),DecelerationTime (System.Single),UpdateDirectionFromVelocity (System.Boolean)
-Default,True,170,0.15,0.1,True
+Default,True,90,0.1,0.1,True

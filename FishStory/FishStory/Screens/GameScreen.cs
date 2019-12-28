@@ -38,11 +38,19 @@ namespace FishStory.Screens
 
             DialogBox.Visible = false;
 
+            InitializeCamera();
+
             InitializeCollision();
 
             InitializeUi();
 
             InitializeRestartVariables();
+        }
+
+        private void InitializeCamera()
+        {
+            Camera.Main.X = PlayerCharacterInstance.X;
+            Camera.Main.Y = PlayerCharacterInstance.Y;
         }
 
         private void InitializeCollision()
