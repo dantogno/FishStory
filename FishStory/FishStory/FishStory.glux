@@ -25,6 +25,16 @@
       </ReferencedFiles>
       <NamedObjects>
         <NamedObjectSave>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>X</Member>
+            <ValueAsFloat>100</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>Y</Member>
+            <ValueAsFloat>-100</ValueAsFloat>
+          </CustomProperty>
           <Properties>
             <PropertySave>
               <Name>SourceType</Name>
