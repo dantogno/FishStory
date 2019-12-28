@@ -115,7 +115,7 @@
             </PropertySave>
             <PropertySave>
               <Name>CollisionCreationOptions</Name>
-              <ValueAsInt>1</ValueAsInt>
+              <ValueAsInt>3</ValueAsInt>
             </PropertySave>
             <PropertySave>
               <Name>CollisionTileSize</Name>
@@ -128,6 +128,18 @@
             <PropertySave>
               <Name>CollisionFillHeight</Name>
               <ValueAsInt>4</ValueAsInt>
+            </PropertySave>
+            <PropertySave>
+              <Name>SourceTmxName</Name>
+              <ValueAsString>Map</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionTileTypeName</Name>
+              <ValueAsString />
+            </PropertySave>
+            <PropertySave>
+              <Name>CollisionPropertyName</Name>
+              <ValueAsString>WaterCollision</ValueAsString>
             </PropertySave>
           </Properties>
           <SourceType>FlatRedBallType</SourceType>
@@ -182,6 +194,28 @@
           <SourceClassGenericType>Entities\NPC</SourceClassGenericType>
           <InstanceName>NPCList</InstanceName>
           <ExposedInDerived>true</ExposedInDerived>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>Z</Member>
+            <ValueAsFloat>-2</ValueAsFloat>
+          </CustomProperty>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>LayeredTileMap</SourceClassType>
+          <InstanceName>Map</InstanceName>
+          <SetByDerived>true</SetByDerived>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -336,28 +370,6 @@
           <SourceType>FlatRedBallType</SourceType>
           <SourceClassType>FlatRedBall.Math.Collision.PositionedObjectVsListRelationship&lt;FishStory.Entities.PlayerCharacter, Entities.NPC&gt;</SourceClassType>
           <InstanceName>PlayerCharacterInstanceActivityCollisionVsNPCListBodyCollision</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>true</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <CustomProperty>
-            <Type>float</Type>
-            <Member>Z</Member>
-            <ValueAsFloat>-2</ValueAsFloat>
-          </CustomProperty>
-          <Properties>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceFile />
-          <SourceName />
-          <SourceClassType>LayeredTileMap</SourceClassType>
-          <InstanceName>Map</InstanceName>
-          <SetByDerived>true</SetByDerived>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
