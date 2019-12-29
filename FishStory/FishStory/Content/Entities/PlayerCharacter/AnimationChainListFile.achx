@@ -286,4 +286,28 @@
       <RelativeY>10</RelativeY>
     </Frame>
   </AnimationChain>
+  <AnimationChain>
+    <Name>FishUp</Name>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>1713</LeftCoordinate>
+      <RightCoordinate>1730</RightCoordinate>
+      <TopCoordinate>1883</TopCoordinate>
+      <BottomCoordinate>1914</BottomCoordinate>
+      <RelativeY>12</RelativeY>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>FishDown</Name>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>1735</LeftCoordinate>
+      <RightCoordinate>1750</RightCoordinate>
+      <TopCoordinate>1883</TopCoordinate>
+      <BottomCoordinate>1918</BottomCoordinate>
+      <RelativeY>10</RelativeY>
+    </Frame>
+  </AnimationChain>
 </AnimationChainArraySave>
