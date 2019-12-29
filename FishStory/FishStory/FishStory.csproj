@@ -108,9 +108,13 @@
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\NotificationBoxRuntime.cs" />
-    <Compile Include="GumRuntimes\NotificationBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\NotificationBoxRuntime.Generated.cs">
+      <DependentUpon>NotificationBoxRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\NotificationRuntime.cs" />
-    <Compile Include="GumRuntimes\NotificationRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\NotificationRuntime.Generated.cs">
+      <DependentUpon>NotificationRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\PolygonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\RectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\SelectableOptionRuntime.cs" />
