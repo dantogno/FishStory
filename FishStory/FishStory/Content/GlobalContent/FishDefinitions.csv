@@ -1,0 +1,4 @@
+"Name (string, required)",Value (int)
+Normal Fish,100
+Tiny Fish,30
+Huge fish,200

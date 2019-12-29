@@ -9,4 +9,9 @@
     <BaseType>DialogBox</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
+  <Instance>
+    <Name>NotificationBoxInstance</Name>
+    <BaseType>NotificationBox</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
 </ScreenSave>

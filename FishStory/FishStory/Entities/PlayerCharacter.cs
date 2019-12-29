@@ -15,7 +15,11 @@ namespace FishStory.Entities
     {
         #region Fields/Properties
 
-        float collisionOffset;
+        float actionCollisionOffset;
+
+        float fishingCollisionOffset;
+        float fishingCollisionUnrotatedWidth;
+        float fishingCollisionUnrotatedHeight;
 
         public IPressableInput TalkInput;
 
@@ -27,7 +31,12 @@ namespace FishStory.Entities
 
         private void CustomInitialize()
         {
-            collisionOffset = ActivityCollision.RelativeX;
+            actionCollisionOffset = ActivityCollision.RelativeX;
+
+            fishingCollisionOffset = FishingCollision.RelativeX;
+            fishingCollisionUnrotatedWidth = FishingCollision.Width ;
+            fishingCollisionUnrotatedHeight = FishingCollision.Height;
+
             this.PossibleDirections = PossibleDirections.EightWay;
 
             this.AnimationControllerInstance.Layers.Add(mTopDownAnimationLayer);
@@ -57,10 +66,24 @@ namespace FishStory.Entities
 
         private void UpdateActivityCollisionPosition()
         {
-            var vector = this.DirectionFacing.ToVector() * collisionOffset;
+            var actionVector = this.DirectionFacing.ToVector() * actionCollisionOffset;
+            this.ActivityCollision.RelativePosition = actionVector;
 
-            this.ActivityCollision.RelativePosition = vector;
+            var fishingVector = this.DirectionFacing.ToVector() * fishingCollisionOffset;
 
+            this.FishingCollision.RelativePosition = fishingVector;
+
+            if (DirectionFacing == TopDownDirection.Left ||
+                DirectionFacing == TopDownDirection.Right)
+            {
+                FishingCollision.Width = fishingCollisionUnrotatedWidth;
+                FishingCollision.Height = fishingCollisionUnrotatedHeight;
+            }
+            else
+            {
+                FishingCollision.Width = fishingCollisionUnrotatedHeight;
+                FishingCollision.Height = fishingCollisionUnrotatedWidth;
+            }
         }
 
         #endregion

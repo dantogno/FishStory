@@ -978,6 +978,43 @@
         </NamedObjectSave>
         <NamedObjectSave>
           <CustomProperty>
+            <Type>float</Type>
+            <Member>X</Member>
+            <ValueAsFloat>30</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>Width</Member>
+            <ValueAsFloat>40</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>Height</Member>
+            <ValueAsFloat>24</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>Microsoft.Xna.Framework.Color</Type>
+            <Member>Color</Member>
+            <ValueAsString>SkyBlue</ValueAsString>
+          </CustomProperty>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>AxisAlignedRectangle</SourceClassType>
+          <InstanceName>FishingCollision</InstanceName>
+          <HasPublicProperty>true</HasPublicProperty>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <CustomProperty>
             <Type>FlatRedBall.Sprite</Type>
             <Member>AnimatedObject</Member>
             <ValueAsString>SpriteInstance</ValueAsString>
@@ -1072,6 +1109,14 @@
       <DestroyOnUnload>false</DestroyOnUnload>
       <HasPublicProperty>true</HasPublicProperty>
       <RuntimeType>DialogTreePlugin.SaveClasses.DialogTreeRaw.RootObject</RuntimeType>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/FishDefinitions.csv</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <CreatesDictionary>true</CreatesDictionary>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
   </GlobalFiles>

@@ -119,6 +119,7 @@ namespace FishStory.Screens
         {
             var difference = (PlayerCharacterInstance.Position - Camera.Main.Position).ToVector2();
             Camera.Main.Velocity = difference.ToVector3();
+
         }
 
         private void CollisionActivity()
@@ -142,8 +143,14 @@ namespace FishStory.Screens
 
         private void UiActivity()
         {
+            if(InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space))
+            {
+                GameScreenGum.NotificationBoxInstance.AddNotification($"You pushed space at {DateTime.Now.ToShortTimeString()}");
+            }
 
             DialogBox.CustomActivity();
+
+            GameScreenGum.NotificationBoxInstance.CustomActivity();
         }
 
         private void HandleDialogBoxHide()
