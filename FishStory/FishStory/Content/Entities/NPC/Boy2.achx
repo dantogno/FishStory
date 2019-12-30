@@ -12,6 +12,7 @@
       <RightCoordinate>26</RightCoordinate>
       <TopCoordinate>144</TopCoordinate>
       <BottomCoordinate>180</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>children_1.png</TextureName>
@@ -20,6 +21,7 @@
       <RightCoordinate>52</RightCoordinate>
       <TopCoordinate>144</TopCoordinate>
       <BottomCoordinate>180</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>children_1.png</TextureName>
@@ -28,6 +30,7 @@
       <RightCoordinate>78</RightCoordinate>
       <TopCoordinate>144</TopCoordinate>
       <BottomCoordinate>180</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>children_1.png</TextureName>
@@ -36,6 +39,7 @@
       <RightCoordinate>52</RightCoordinate>
       <TopCoordinate>144</TopCoordinate>
       <BottomCoordinate>180</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -47,6 +51,7 @@
       <RightCoordinate>26</RightCoordinate>
       <TopCoordinate>180</TopCoordinate>
       <BottomCoordinate>216</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>children_1.png</TextureName>
@@ -55,6 +60,7 @@
       <RightCoordinate>52</RightCoordinate>
       <TopCoordinate>180</TopCoordinate>
       <BottomCoordinate>216</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>children_1.png</TextureName>
@@ -63,6 +69,7 @@
       <RightCoordinate>78</RightCoordinate>
       <TopCoordinate>180</TopCoordinate>
       <BottomCoordinate>216</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>children_1.png</TextureName>
@@ -71,6 +78,7 @@
       <RightCoordinate>52</RightCoordinate>
       <TopCoordinate>180</TopCoordinate>
       <BottomCoordinate>216</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -82,6 +90,7 @@
       <RightCoordinate>26</RightCoordinate>
       <TopCoordinate>216</TopCoordinate>
       <BottomCoordinate>252</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>children_1.png</TextureName>
@@ -90,6 +99,7 @@
       <RightCoordinate>52</RightCoordinate>
       <TopCoordinate>216</TopCoordinate>
       <BottomCoordinate>252</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>children_1.png</TextureName>
@@ -98,6 +108,7 @@
       <RightCoordinate>78</RightCoordinate>
       <TopCoordinate>216</TopCoordinate>
       <BottomCoordinate>252</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>children_1.png</TextureName>
@@ -106,6 +117,7 @@
       <RightCoordinate>52</RightCoordinate>
       <TopCoordinate>216</TopCoordinate>
       <BottomCoordinate>252</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -117,6 +129,7 @@
       <RightCoordinate>26</RightCoordinate>
       <TopCoordinate>252</TopCoordinate>
       <BottomCoordinate>288</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>children_1.png</TextureName>
@@ -125,6 +138,7 @@
       <RightCoordinate>52</RightCoordinate>
       <TopCoordinate>252</TopCoordinate>
       <BottomCoordinate>288</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>children_1.png</TextureName>
@@ -133,6 +147,7 @@
       <RightCoordinate>78</RightCoordinate>
       <TopCoordinate>252</TopCoordinate>
       <BottomCoordinate>288</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
     <Frame>
       <TextureName>children_1.png</TextureName>
@@ -141,6 +156,7 @@
       <RightCoordinate>52</RightCoordinate>
       <TopCoordinate>252</TopCoordinate>
       <BottomCoordinate>288</BottomCoordinate>
+      <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
 </AnimationChainArraySave>
