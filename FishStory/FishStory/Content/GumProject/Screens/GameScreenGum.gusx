@@ -14,4 +14,9 @@
     <BaseType>NotificationBox</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
+  <Instance>
+    <Name>StoreInstance</Name>
+    <BaseType>Store</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
 </ScreenSave>

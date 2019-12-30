@@ -140,9 +140,10 @@ namespace FishStory.GumRuntimes
             Passage passage = CurrentPassage;
 
             const string storePrefix = "store=";
-            if (passage.StrippedText.StartsWith(storePrefix))
+            if (passage.StrippedText.ToLowerInvariant().StartsWith(storePrefix))
             {
-                StoreShouldShow(passage.StrippedText.Substring(storePrefix.Length));
+                var storeName = passage.StrippedText.Substring(storePrefix.Length);
+                StoreShouldShow(storeName);
                 if (TryHide())
                 {
                     AfterHide();

@@ -53,7 +53,7 @@
     <Compile Include="DataTypes\ItemDefinition.Generated.cs" />
     <Compile Include="DataTypes\NpcRelationship.cs" />
     <Compile Include="DataTypes\PlayerData.cs" />
-    <Compile Include="DataTypes\Shop1.Generated.cs" />
+    <Compile Include="DataTypes\Shop.Generated.cs" />
     <Compile Include="DataTypes\TileMapInfo.Generated.cs" />
     <Compile Include="DataTypes\TopDownValues.Generated.cs" />
     <Compile Include="DialogTreePlugin\RootObject.Generated.cs" />
@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="Factories\NPCFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
+    <Compile Include="Forms\StoreListBoxItem.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Game1.Generated.cs">
       <DependentUpon>Game1.cs</DependentUpon>
@@ -160,6 +161,10 @@
     <Compile Include="GumRuntimes\DefaultForms\SliderRuntime.cs" />
     <Compile Include="GumRuntimes\DefaultForms\SliderRuntime.Generated.cs">
       <DependentUpon>SliderRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GumRuntimes\DefaultForms\StoreListItemRuntime.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\StoreListItemRuntime.Generated.cs">
+      <DependentUpon>StoreListItemRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\DefaultForms\TextBoxRuntime.cs" />
     <Compile Include="GumRuntimes\DefaultForms\TextBoxRuntime.Generated.cs">
@@ -400,6 +405,10 @@
     <None Include="content\gumproject\components\defaultforms\slider.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>slider</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\storelistitem.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>storelistitem</Name>
     </None>
     <None Include="content\gumproject\components\defaultforms\textbox.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

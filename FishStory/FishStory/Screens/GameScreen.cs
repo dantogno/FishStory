@@ -77,10 +77,15 @@ namespace FishStory.Screens
             DialogBox.SelectInput = PlayerCharacterInstance.TalkInput;
 
             DialogBox.AfterHide += HandleDialogBoxHide;
-
+            DialogBox.StoreShouldShow += HandleStoreShouldShow;
             DialogBox.DialogTagShown += HandleDialogTagShown;
-        }
 
+            GameScreenGum.StoreInstance.CancelInput = PlayerCharacterInstance.CancelInput;
+            GameScreenGum.StoreInstance.Visible = false;
+
+            GameScreenGum.NotificationBoxInstance.UpdateVisibility();
+        }
+        
         private void HandlePlayerVsNpcActivityCollision(PlayerCharacter player, NPC npc)
         {
             player.NpcForAction = npc;
@@ -141,6 +146,8 @@ namespace FishStory.Screens
             }
         }
 
+        #region UI Activity
+
         private void UiActivity()
         {
             //if(InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space))
@@ -150,7 +157,16 @@ namespace FishStory.Screens
 
             DialogBox.CustomActivity();
 
+            GameScreenGum.StoreInstance.CustomActivity();
+
             GameScreenGum.NotificationBoxInstance.CustomActivity();
+        }
+
+        private void HandleStoreShouldShow(string storeName)
+        {
+            GameScreenGum.StoreInstance.Visible = true;
+
+            GameScreenGum.StoreInstance.PopulateFromStoreName(storeName);
         }
 
         private void HandleDialogBoxHide()
@@ -162,6 +178,8 @@ namespace FishStory.Screens
         {
             dialogTagsThisFrame.Add(tag);
         }
+
+        #endregion
 
         #endregion
 

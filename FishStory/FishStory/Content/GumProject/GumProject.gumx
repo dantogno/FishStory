@@ -61,6 +61,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>DefaultForms/StoreListItem</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>DefaultForms/TextBox</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

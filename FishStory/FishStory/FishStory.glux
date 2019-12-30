@@ -1190,6 +1190,15 @@
       <Name>TopDownValues</Name>
       <GenerateCode>true</GenerateCode>
     </CustomClassSave>
+    <CustomClassSave>
+      <CsvFilesUsingThis>
+        <string>GlobalContent/Shops/Shop1.csv</string>
+      </CsvFilesUsingThis>
+      <RequiredProperties />
+      <Name>Shop</Name>
+      <GenerateCode>true</GenerateCode>
+      <CustomNamespace />
+    </CustomClassSave>
   </CustomClasses>
   <TranslatedFiles />
   <ApplyToFixedResolutionPlatforms>true</ApplyToFixedResolutionPlatforms>
