@@ -77,10 +77,15 @@ namespace FishStory.Screens
             DialogBox.SelectInput = PlayerCharacterInstance.TalkInput;
 
             DialogBox.AfterHide += HandleDialogBoxHide;
-
+            DialogBox.StoreShouldShow += HandleStoreShouldShow;
             DialogBox.DialogTagShown += HandleDialogTagShown;
-        }
 
+            GameScreenGum.StoreInstance.CancelInput = PlayerCharacterInstance.CancelInput;
+            GameScreenGum.StoreInstance.Visible = false;
+
+            GameScreenGum.NotificationBoxInstance.UpdateVisibility();
+        }
+        
         private void HandlePlayerVsNpcActivityCollision(PlayerCharacter player, NPC npc)
         {
             player.NpcForAction = npc;
@@ -132,7 +137,7 @@ namespace FishStory.Screens
 
                 if(PlayerCharacterInstance.NpcForAction != null)
                 {
-                    if(DialogBox.TryShow(nameof(GlobalContent.Dialog1)))
+                    if(DialogBox.TryShow(PlayerCharacterInstance.NpcForAction.TwineDialogId))
                     {
                         PlayerCharacterInstance.InputEnabled = false;
                     }
@@ -141,16 +146,27 @@ namespace FishStory.Screens
             }
         }
 
+        #region UI Activity
+
         private void UiActivity()
         {
-            if(InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space))
-            {
-                GameScreenGum.NotificationBoxInstance.AddNotification($"You pushed space at {DateTime.Now.ToShortTimeString()}");
-            }
+            //if(InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space))
+            //{
+            //    GameScreenGum.NotificationBoxInstance.AddNotification($"You pushed space at {DateTime.Now.ToShortTimeString()}");
+            //}
 
             DialogBox.CustomActivity();
 
+            GameScreenGum.StoreInstance.CustomActivity();
+
             GameScreenGum.NotificationBoxInstance.CustomActivity();
+        }
+
+        private void HandleStoreShouldShow(string storeName)
+        {
+            GameScreenGum.StoreInstance.Visible = true;
+
+            GameScreenGum.StoreInstance.PopulateFromStoreName(storeName);
         }
 
         private void HandleDialogBoxHide()
@@ -162,6 +178,8 @@ namespace FishStory.Screens
         {
             dialogTagsThisFrame.Add(tag);
         }
+
+        #endregion
 
         #endregion
 

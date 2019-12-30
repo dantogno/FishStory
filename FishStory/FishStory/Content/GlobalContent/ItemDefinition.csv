@@ -1,4 +1,4 @@
-"Name (string, required)",Icon (string),Value (int),Description (string)
-Fishing Rod,,,
-Low Quality Bait,,,
-Medium Quality Bait,,,
+"Name (string, required)",Icon (string),PlayerBuyingCost (int),PlayerSellingCost (int),Description (string)
+Fishing Rod,,250,0,
+Low Quality Bait,,50,0,
+Medium Quality Bait,,80,0,

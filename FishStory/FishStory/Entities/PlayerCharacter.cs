@@ -22,6 +22,7 @@ namespace FishStory.Entities
         float fishingCollisionUnrotatedHeight;
 
         public IPressableInput TalkInput;
+        public IPressableInput CancelInput;
 
         public NPC NpcForAction { get; set; }
 
@@ -47,10 +48,12 @@ namespace FishStory.Entities
             if(InputDevice is Keyboard keyboard)
             {
                 TalkInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Space);
+                CancelInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Escape);
             }
             else if(InputDevice is Xbox360GamePad gamepad)
             {
                 TalkInput = gamepad.GetButton(Xbox360GamePad.Button.A);
+                throw new NotImplementedException();
             }
         }
 

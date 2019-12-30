@@ -53,6 +53,7 @@
     <Compile Include="DataTypes\ItemDefinition.Generated.cs" />
     <Compile Include="DataTypes\NpcRelationship.cs" />
     <Compile Include="DataTypes\PlayerData.cs" />
+    <Compile Include="DataTypes\Shop.Generated.cs" />
     <Compile Include="DataTypes\TileMapInfo.Generated.cs" />
     <Compile Include="DataTypes\TopDownValues.Generated.cs" />
     <Compile Include="DialogTreePlugin\RootObject.Generated.cs" />
@@ -94,9 +95,43 @@
     <Compile Include="GameScriptingCore\ScriptEngine.cs" />
     <Compile Include="GlobalContent.Generated.cs" />
     <Compile Include="GlueControl\GlueControlManager.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\IButtonBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\ICheckBoxBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\IComboBoxBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\IListBoxBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\IListBoxItemBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\IPasswordBoxBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\IRadioButtonBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\IScrollBarBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\IScrollViewerBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\ISliderBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\ITextBoxBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\IToggleBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\ITreeViewBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\ITreeViewItemBehavior.Generated.cs" />
+    <Compile Include="GumRuntimes\Behaviors\IUserControlBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\CircleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ColoredRectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ContainerRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ButtonRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\CheckBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ColoredFrameRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ComboBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ListBoxItemRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ListBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\PasswordBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\RadioButtonRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ScrollBarRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ScrollBarThumbRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ScrollViewerRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\SliderRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\StoreListItemRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\TextBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ToggleButtonRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\TreeViewItemRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\TreeViewRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\TreeViewToggleButtonRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\UserControlRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DialogBoxRuntime.cs" />
     <Compile Include="GumRuntimes\DialogBoxRuntime.Generated.cs">
       <DependentUpon>DialogBoxRuntime.cs</DependentUpon>
@@ -122,6 +157,7 @@
       <DependentUpon>SelectableOptionRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\StoreRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="Managers\PlayerDataManager.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />
@@ -249,6 +285,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Dialog1</Name>
     </None>
+    <None Include="content\globalcontent\dialog\shopdialog.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ShopDialog</Name>
+    </None>
     <None Include="content\globalcontent\fishdefinitions.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishDefinitions</Name>
@@ -256,6 +296,86 @@
     <None Include="content\globalcontent\itemdefinition.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ItemDefinition</Name>
+    </None>
+    <None Include="content\globalcontent\shops\shop1.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Shop1</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\button.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>button</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\checkbox.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>checkbox</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\coloredframe.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>coloredframe</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\combobox.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>combobox</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\listbox.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>listbox</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\listboxitem.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>listboxitem</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\passwordbox.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>passwordbox</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\radiobutton.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>radiobutton</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\scrollbar.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>scrollbar</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\scrollbarthumb.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>scrollbarthumb</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\scrollviewer.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>scrollviewer</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\slider.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>slider</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\storelistitem.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>storelistitem</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\textbox.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>textbox</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\togglebutton.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>togglebutton</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\treeview.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>treeview</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\treeviewitem.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>treeviewitem</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\treeviewtogglebutton.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>treeviewtogglebutton</Name>
+    </None>
+    <None Include="content\gumproject\components\defaultforms\usercontrol.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>usercontrol</Name>
     </None>
     <None Include="content\gumproject\components\dialogbox.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -272,6 +392,10 @@
     <None Include="content\gumproject\components\selectableoption.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>selectableoption</Name>
+    </None>
+    <None Include="content\gumproject\components\store.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>store</Name>
     </None>
     <None Include="content\gumproject\fontcache\font18arial.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -360,6 +484,10 @@
     <None Include="content\gumproject\standards\text.gutx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>text</Name>
+    </None>
+    <None Include="content\gumproject\uispritesheet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>uispritesheet</Name>
     </None>
     <None Include="content\levels\mastertilesheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

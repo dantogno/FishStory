@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="75" height="75" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="2">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="75" height="75" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="3">
  <tileset firstgid="1" source="MasterTileSheet.tsx"/>
  <layer id="1" name="Tile Layer 1" width="75" height="75">
   <data encoding="base64" compression="gzip">
@@ -31,5 +31,12 @@
    H4sIAAAAAAAACu3QMQoAIQADwfiIK/X/z5RDxEq0FWYgpN8EAAAAAAAAAAAAAAAAAAAAAOAtpSZfG/+PvdlIqzOt7mkFAAAASwe1n2sS5FcAAA==
   </data>
  </layer>
- <objectgroup id="6" name="Entities"/>
+ <objectgroup id="6" name="Entities">
+  <object id="2" gid="15361" x="638" y="891" width="16" height="16">
+   <properties>
+    <property name="Animation" value="Boy1"/>
+    <property name="TwineDialogId" value="ShopDialog"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

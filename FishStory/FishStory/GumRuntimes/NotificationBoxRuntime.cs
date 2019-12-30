@@ -40,7 +40,7 @@ namespace FishStory.GumRuntimes
             UpdateVisibility();
         }
 
-        private void UpdateVisibility()
+        public void UpdateVisibility()
         {
             Visible = NotificationContainer.Children.Count() > 0;
         }
