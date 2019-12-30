@@ -86,8 +86,9 @@ namespace FishStory.GumRuntimes
 
         #region Events/Properties
 
-        public Action AfterHide;
-        public Action<string> DialogTagShown;
+        public event Action AfterHide;
+        public event Action<string> DialogTagShown;
+        public event Action<string> StoreShouldShow;
 
         #endregion
 
@@ -138,21 +139,29 @@ namespace FishStory.GumRuntimes
         {
             Passage passage = CurrentPassage;
 
-            this.TextInstance.Text = passage.StrippedText;
-
-            // clear out the dialog options
-            while (this.DialogOptions.Children.Count() > 0)
+            const string storePrefix = "store=";
+            if (passage.StrippedText.StartsWith(storePrefix))
             {
-                this.DialogOptions.Children.Last().Parent = null;
+                StoreShouldShow(passage.StrippedText.Substring(storePrefix.Length));
             }
-
-            ShowLinks(passage);
-
-            if(passage.tags != null)
+            else
             {
-                foreach(var tag in passage.tags)
+                this.TextInstance.Text = passage.StrippedText;
+
+                // clear out the dialog options
+                while (this.DialogOptions.Children.Count() > 0)
                 {
-                    DialogTagShown(tag);
+                    this.DialogOptions.Children.Last().Parent = null;
+                }
+
+                ShowLinks(passage);
+
+                if(passage.tags != null)
+                {
+                    foreach(var tag in passage.tags)
+                    {
+                        DialogTagShown(tag);
+                    }
                 }
             }
         }

@@ -132,7 +132,7 @@ namespace FishStory.Screens
 
                 if(PlayerCharacterInstance.NpcForAction != null)
                 {
-                    if(DialogBox.TryShow(nameof(GlobalContent.Dialog1)))
+                    if(DialogBox.TryShow(PlayerCharacterInstance.NpcForAction.TwineDialogId))
                     {
                         PlayerCharacterInstance.InputEnabled = false;
                     }
@@ -143,10 +143,10 @@ namespace FishStory.Screens
 
         private void UiActivity()
         {
-            if(InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space))
-            {
-                GameScreenGum.NotificationBoxInstance.AddNotification($"You pushed space at {DateTime.Now.ToShortTimeString()}");
-            }
+            //if(InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space))
+            //{
+            //    GameScreenGum.NotificationBoxInstance.AddNotification($"You pushed space at {DateTime.Now.ToShortTimeString()}");
+            //}
 
             DialogBox.CustomActivity();
 
