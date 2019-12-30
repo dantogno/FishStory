@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="Factories\NPCFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
+    <Compile Include="Forms\StoreListBoxItem.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Game1.Generated.cs">
       <DependentUpon>Game1.cs</DependentUpon>
@@ -157,7 +158,10 @@
       <DependentUpon>SelectableOptionRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
-    <Compile Include="GumRuntimes\StoreRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\StoreRuntime.cs" />
+    <Compile Include="GumRuntimes\StoreRuntime.Generated.cs">
+      <DependentUpon>StoreRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="Managers\PlayerDataManager.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />

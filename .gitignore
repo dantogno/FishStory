@@ -12,3 +12,4 @@ FishStory/FishStory/bin/DesktopGL/x86/Debug/*
 *.cache
 FishStory/FishStory/obj/*
 *.Generated.*
+FishStory/FishStory/FishStory.csproj.user
