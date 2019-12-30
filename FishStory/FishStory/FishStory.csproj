@@ -317,6 +317,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>children_1</Name>
     </None>
+    <None Include="content\entities\npc\travelmerchant.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TravelMerchant</Name>
+    </None>
     <None Include="content\entities\playercharacter\animationchainlistfile.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>AnimationChainListFile</Name>
