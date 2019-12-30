@@ -214,6 +214,7 @@
     <Compile Include="GumRuntimes\StoreRuntime.Generated.cs">
       <DependentUpon>StoreRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="Managers\PlayerDataManager.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />
     <Compile Include="Performance\PoolList.Generated.cs" />
@@ -523,6 +524,10 @@
     <None Include="content\gumproject\standards\standardgraphics\red_topright.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>red_topright</Name>
+    </None>
+    <None Include="content\gumproject\standards\text.gutx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>text</Name>
     </None>
     <None Include="content\gumproject\uispritesheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
