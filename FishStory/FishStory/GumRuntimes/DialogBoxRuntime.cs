@@ -143,6 +143,10 @@ namespace FishStory.GumRuntimes
             if (passage.StrippedText.StartsWith(storePrefix))
             {
                 StoreShouldShow(passage.StrippedText.Substring(storePrefix.Length));
+                if (TryHide())
+                {
+                    AfterHide();
+                }
             }
             else
             {
