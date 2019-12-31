@@ -311,6 +311,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ShopDialog</Name>
     </None>
+    <None Include="content\globalcontent\dialog\welcomedialog.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>WelcomeDialog</Name>
+    </None>
     <None Include="content\globalcontent\fishdefinitions.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishDefinitions</Name>

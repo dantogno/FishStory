@@ -1,0 +1,64 @@
+{
+  "passages": [
+    {
+      "text": "Hello, I am an NPC.\n[[Nice Dialog Option]] \n[[Mean Dialog Option]] ",
+      "links": [
+        {
+          "name": "Nice Dialog Option",
+          "link": "Nice Dialog Option",
+          "pid": "3"
+        },
+        {
+          "name": "Mean Dialog Option",
+          "link": "Mean Dialog Option",
+          "pid": "2"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "252",
+        "y": "105.5"
+      }
+    },
+    {
+      "text": "Leave me alone.",
+      "name": "Mean Dialog Option",
+      "pid": "2",
+      "position": {
+        "x": "180",
+        "y": "259.5"
+      }
+    },
+    {
+      "text": "Hi, how are you? [[NPC response]] ",
+      "links": [
+        {
+          "name": "NPC response",
+          "link": "NPC response",
+          "pid": "4"
+        }
+      ],
+      "name": "Nice Dialog Option",
+      "pid": "3",
+      "position": {
+        "x": "456",
+        "y": "197.5"
+      }
+    },
+    {
+      "text": "Great! Thanks for asking.",
+      "name": "NPC response",
+      "pid": "4",
+      "position": {
+        "x": "492",
+        "y": "333.5"
+      }
+    }
+  ],
+  "name": "DavidTestDialog",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "AEC83C83-5F86-41F7-BD5A-88B2BB1EBD39"
+}
