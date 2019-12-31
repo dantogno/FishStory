@@ -21,6 +21,14 @@ namespace FishStory.GumRuntimes
 
             listBox.ListBoxItemGumType = typeof(GumRuntimes.DefaultForms.StoreListItemRuntime);
             listBox.ListBoxItemFormsType = typeof(Forms.StoreListBoxItem);
+            listBox.SelectionChanged += HandleListBoxSelectionChanged;
+
+            this.CloseButton.FormsControl.Click += (not, used) => this.Visible = false;
+        }
+
+        private void HandleListBoxSelectionChanged(object sender, SelectionChangedEventArgs args)
+        {
+
         }
 
         public void CustomActivity()

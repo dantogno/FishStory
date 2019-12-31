@@ -19,4 +19,9 @@
     <BaseType>Store</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
+  <Instance>
+    <Name>InventoryInstance</Name>
+    <BaseType>Inventory</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
 </ScreenSave>

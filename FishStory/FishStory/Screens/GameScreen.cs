@@ -87,9 +87,13 @@ namespace FishStory.Screens
 
             #endregion
 
+            #region Store
             GameScreenGum.StoreInstance.CancelInput = PlayerCharacterInstance.CancelInput;
             GameScreenGum.StoreInstance.Visible = false;
             GameScreenGum.StoreInstance.BuyButtonClick += HandleBuyClicked;
+            #endregion
+
+            GameScreenGum.InventoryInstance.Visible = false;
 
             GameScreenGum.NotificationBoxInstance.UpdateVisibility();
         }
@@ -119,7 +123,7 @@ namespace FishStory.Screens
                 RestartScreen(true);
             }
             CameraActivity();
-
+            
             UiActivity();
 
             CollisionActivity();
@@ -180,6 +184,8 @@ namespace FishStory.Screens
             GameScreenGum.StoreInstance.CustomActivity();
 
             GameScreenGum.NotificationBoxInstance.CustomActivity();
+
+            InventoryUiActivity();
         }
 
         private void AddNotification(string notification) =>
@@ -234,6 +240,17 @@ namespace FishStory.Screens
             PlayerDataManager.PlayerData.AwardItem(itemToBuy.Name);
 
             GameScreenGum.StoreInstance.PlayerMoneyText = $"${PlayerDataManager.PlayerData.Money}";
+        }
+
+        private void InventoryUiActivity()
+        {
+            var inventory = GameScreenGum.InventoryInstance;
+            if (inventory.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed)
+            {
+                inventory.Visible = true;
+                inventory.FillWithInventory(PlayerDataManager.PlayerData.ItemInventory);
+                inventory.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
+            }
         }
 
         #endregion

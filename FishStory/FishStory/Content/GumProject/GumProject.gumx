@@ -29,6 +29,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>DefaultForms/InventoryListItem</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>DefaultForms/ListBox</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
@@ -90,6 +94,10 @@
   </ComponentReference>
   <ComponentReference>
     <Name>DialogBox</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>Inventory</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>

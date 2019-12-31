@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="Factories\NPCFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
+    <Compile Include="Forms\InventoryListBoxItem.cs" />
     <Compile Include="Forms\StoreListBoxItem.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Game1.Generated.cs">
@@ -123,6 +124,10 @@
     <Compile Include="GumRuntimes\DefaultForms\CheckBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ColoredFrameRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ComboBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\InventoryListItemRuntime.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\InventoryListItemRuntime.Generated.cs">
+      <DependentUpon>InventoryListItemRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ListBoxItemRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ListBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\PasswordBoxRuntime.Generated.cs" />
@@ -131,6 +136,10 @@
     <Compile Include="GumRuntimes\DefaultForms\ScrollBarThumbRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ScrollViewerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\SliderRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\StoreListItem1Runtime.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\StoreListItem1Runtime.Generated.cs">
+      <DependentUpon>StoreListItem1Runtime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\StoreListItemRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\TextBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ToggleButtonRuntime.Generated.cs" />
@@ -147,6 +156,10 @@
       <DependentUpon>GameScreenGumRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
+    <Compile Include="GumRuntimes\InventoryRuntime.cs" />
+    <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs">
+      <DependentUpon>InventoryRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\NotificationBoxRuntime.cs" />
     <Compile Include="GumRuntimes\NotificationBoxRuntime.Generated.cs">
@@ -326,6 +339,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>combobox</Name>
     </None>
+    <None Include="content\gumproject\components\defaultforms\inventorylistitem.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>inventorylistitem</Name>
+    </None>
     <None Include="content\gumproject\components\defaultforms\listbox.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>listbox</Name>
@@ -389,6 +406,10 @@
     <None Include="content\gumproject\components\dialogbox.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>dialogbox</Name>
+    </None>
+    <None Include="content\gumproject\components\inventory.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>inventory</Name>
     </None>
     <None Include="content\gumproject\components\notification.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
