@@ -1,7 +1,7 @@
 {
   "passages": [
     {
-      "text": "Welcome! What brings you to our island community?\n[[I'm retired.]] \n[[I'm on vacation!]]\n[[I'm just passing through.]]",
+      "text": "Welcome! What brings you to our island community?\nI'm retired. \nI'm on vacation!\nI'm just passing through.",
       "links": [
         {
           "name": "I'm retired.",
@@ -19,6 +19,8 @@
           "pid": "4"
         }
       ],
+      "statements": [],
+      "actions": [],
       "name": "Start",
       "pid": "1",
       "position": {
@@ -27,7 +29,7 @@
       }
     },
     {
-      "text": "Excellent! We have many activities to keep you busy during retirement. [[Fishing festival]] ",
+      "text": "Excellent! We have many activities to keep you busy during retirement. Fishing festival",
       "links": [
         {
           "name": "Fishing festival",
@@ -35,6 +37,8 @@
           "pid": "5"
         }
       ],
+      "statements": [],
+      "actions": [],
       "name": "I'm retired.",
       "pid": "2",
       "position": {
@@ -43,7 +47,7 @@
       }
     },
     {
-      "text": "Excellent! This is a great spot to spend a holiday. [[Fishing festival]] ",
+      "text": "Excellent! This is a great spot to spend a holiday. Fishing festival",
       "links": [
         {
           "name": "Fishing festival",
@@ -51,6 +55,8 @@
           "pid": "5"
         }
       ],
+      "statements": [],
+      "actions": [],
       "name": "I'm on vacation!",
       "pid": "3",
       "position": {
@@ -59,7 +65,7 @@
       }
     },
     {
-      "text": "I see. A wanderer of sorts? [[Fishing festival]] ",
+      "text": "I see. A wanderer of sorts? Fishing festival",
       "links": [
         {
           "name": "Fishing festival",
@@ -67,6 +73,8 @@
           "pid": "5"
         }
       ],
+      "statements": [],
+      "actions": [],
       "name": "I'm just passing through.",
       "pid": "4",
       "position": {
@@ -75,21 +83,26 @@
       }
     },
     {
-      "text": "Allow me to introduce myself. I'm Mayor Thompson. You've come at a good time! Today marks the start of our annual fishing festival. \n[[I'm here to fish!|Festival 2]]\n[[Fishing festival?|Festival 2]]\n[[...|Festival 2]]",
+      "text": "Allow me to introduce myself. I'm Mayor Thompson. You've come at a good time! Today marks the start of our annual fishing festival. \nI'm here to fish!\nFishing festival?\n...",
       "links": [
         {
-          "name": "I'm here to fish!|Festival 2",
-          "link": "I'm here to fish!|Festival 2"
+          "name": "I'm here to fish!",
+          "link": "Festival 2",
+          "pid": "6"
         },
         {
-          "name": "Fishing festival?|Festival 2",
-          "link": "Fishing festival?|Festival 2"
+          "name": "Fishing festival?",
+          "link": "Festival 2",
+          "pid": "6"
         },
         {
-          "name": "...|Festival 2",
-          "link": "...|Festival 2"
+          "name": "...",
+          "link": "Festival 2",
+          "pid": "6"
         }
       ],
+      "statements": [],
+      "actions": [],
       "name": "Fishing festival",
       "pid": "5",
       "position": {
@@ -98,21 +111,26 @@
       }
     },
     {
-      "text": "In fact, the ferry you took here will be the last ship coming to port for the next five days!\n[[I'm just in time!|Festival 3]]\n[[Do you have enough supplies on the island?|Festival 3]]\n[[So you're telling me I'm stuck here for five days?|Festival 3]]",
+      "text": "In fact, the ferry you took here will be the last ship coming to port for the next five days!\nI'm just in time!\nDo you have enough supplies on the island?\nSo you're telling me I'm stuck here for five days?",
       "links": [
         {
-          "name": "I'm just in time!|Festival 3",
-          "link": "I'm just in time!|Festival 3"
+          "name": "I'm just in time!",
+          "link": "Festival 3",
+          "pid": "7"
         },
         {
-          "name": "Do you have enough supplies on the island?|Festival 3",
-          "link": "Do you have enough supplies on the island?|Festival 3"
+          "name": "Do you have enough supplies on the island?",
+          "link": "Festival 3",
+          "pid": "7"
         },
         {
-          "name": "So you're telling me I'm stuck here for five days?|Festival 3",
-          "link": "So you're telling me I'm stuck here for five days?|Festival 3"
+          "name": "So you're telling me I'm stuck here for five days?",
+          "link": "Festival 3",
+          "pid": "7"
         }
       ],
+      "statements": [],
+      "actions": [],
       "name": "Festival 2",
       "pid": "6",
       "position": {
@@ -121,7 +139,7 @@
       }
     },
     {
-      "text": "Boats disrupt the fish, so we lock down the port during the festival. But don't worry, we have comfortable living arrangements for visitors and we'll have enough fish to satisfy a giant's appetite! [[Festival 4]]",
+      "text": "Boats disrupt the fish, so we lock down the port during the festival. But don't worry, we have comfortable living arrangements for visitors and we'll have enough fish to satisfy a giant's appetite! Festival 4",
       "links": [
         {
           "name": "Festival 4",
@@ -129,6 +147,8 @@
           "pid": "8"
         }
       ],
+      "statements": [],
+      "actions": [],
       "name": "Festival 3",
       "pid": "7",
       "position": {
@@ -137,7 +157,7 @@
       }
     },
     {
-      "text": "There's no pressure to participate, but here's a festival badge and a pamplet about the rules, just in case. I'll just collect the entrance fee now. [[Festival 4.1]]",
+      "text": "There's no pressure to participate, but here's a festival badge and a pamphlet about the rules, just in case. I'll just collect the entrance fee now. Festival 4.1",
       "links": [
         {
           "name": "Festival 4.1",
@@ -145,6 +165,8 @@
           "pid": "11"
         }
       ],
+      "statements": [],
+      "actions": [],
       "name": "Festival 4",
       "pid": "8",
       "position": {
@@ -153,7 +175,7 @@
       }
     },
     {
-      "text": "[Mayor Thompson took $5. He wouldn't take no for an answer.] [[Festival 6]]\n",
+      "text": "`` Festival 6",
       "links": [
         {
           "name": "Festival 6",
@@ -161,6 +183,8 @@
           "pid": "10"
         }
       ],
+      "statements": [],
+      "actions": [],
       "name": "Festival 5",
       "pid": "9",
       "position": {
@@ -169,7 +193,9 @@
       }
     },
     {
-      "text": "[You received: Festival Badge, Festival Pamphlet]",
+      "text": "``",
+      "statements": [],
+      "actions": [],
       "name": "Festival 6",
       "pid": "10",
       "position": {
@@ -178,7 +204,7 @@
       }
     },
     {
-      "text": "When you're ready to call it a night, talk to Amanda by the brick buildings behind me. She'll get you setup with proper accomodations for the duration of the festival. Ready, set, FISH! [[Festival 5]] ",
+      "text": "When you're ready to call it a night, talk to Amanda by the brick buildings behind me. She'll get you setup with proper accomodations for the duration of the festival. Ready, set, FISH! Festival 5",
       "links": [
         {
           "name": "Festival 5",
@@ -186,6 +212,8 @@
           "pid": "9"
         }
       ],
+      "statements": [],
+      "actions": [],
       "name": "Festival 4.1",
       "pid": "11",
       "position": {
