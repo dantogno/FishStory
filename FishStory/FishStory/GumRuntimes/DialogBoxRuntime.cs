@@ -145,34 +145,36 @@ namespace FishStory.GumRuntimes
         private void UpdateToCurrentTreeAndNode()
         {
             Passage passage = CurrentPassage;
-
-            const string storePrefix = "store=";
-            if (passage.StrippedText.ToLowerInvariant().StartsWith(storePrefix))
+            if (passage != null)
             {
-                var storeName = passage.StrippedText.Substring(storePrefix.Length);
-                StoreShouldShow(storeName);
-                if (TryHide())
+                const string storePrefix = "store=";
+                if (passage.StrippedText.ToLowerInvariant().StartsWith(storePrefix))
                 {
-                    AfterHide();
-                }
-            }
-            else
-            {
-                this.TextInstance.Text = passage.StrippedText;
-
-                // clear out the dialog options
-                while (this.DialogOptions.Children.Count() > 0)
-                {
-                    this.DialogOptions.Children.Last().Parent = null;
-                }
-
-                ShowLinks(passage);
-
-                if(passage.tags != null)
-                {
-                    foreach(var tag in passage.tags)
+                    var storeName = passage.StrippedText.Substring(storePrefix.Length);
+                    StoreShouldShow(storeName);
+                    if (TryHide())
                     {
-                        DialogTagShown(tag);
+                        AfterHide();
+                    }
+                }
+                else
+                {
+                    this.TextInstance.Text = passage.StrippedText;
+
+                    // clear out the dialog options
+                    while (this.DialogOptions.Children.Count() > 0)
+                    {
+                        this.DialogOptions.Children.Last().Parent = null;
+                    }
+
+                    ShowLinks(passage);
+
+                    if (passage.tags != null)
+                    {
+                        foreach (var tag in passage.tags)
+                        {
+                            DialogTagShown(tag);
+                        }
                     }
                 }
             }
@@ -247,22 +249,21 @@ namespace FishStory.GumRuntimes
         {
             var selectedIndex = SelectedIndex;
 
-            if(selectedIndex == null)
-            {
-                if (TryHide())
-                {
-                    AfterHide();
-                }
-            }
-            else
+            if (CurrentPassage != null && selectedIndex != null)
             {
                 var currentPassage = CurrentPassage;
 
                 var link = currentPassage.links[selectedIndex.Value];
 
                 currentNodeId = link.pid;
-
                 UpdateToCurrentTreeAndNode();
+            }
+            else
+            {
+                if (TryHide())
+                {
+                    AfterHide();
+                }
             }
         }
 
