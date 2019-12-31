@@ -1,17 +1,22 @@
 {
   "passages": [
     {
-      "text": "Hello, I am an NPC.\n[[Nice Dialog Option]] \n[[Mean Dialog Option]] ",
+      "text": "Welcome! What brings you to our island community?\n[[I'm retired.]] \n[[I'm on vacation!]]\n[[I'm just passing through.]]",
       "links": [
         {
-          "name": "Nice Dialog Option",
-          "link": "Nice Dialog Option",
+          "name": "I'm retired.",
+          "link": "I'm retired.",
+          "pid": "2"
+        },
+        {
+          "name": "I'm on vacation!",
+          "link": "I'm on vacation!",
           "pid": "3"
         },
         {
-          "name": "Mean Dialog Option",
-          "link": "Mean Dialog Option",
-          "pid": "2"
+          "name": "I'm just passing through.",
+          "link": "I'm just passing through.",
+          "pid": "4"
         }
       ],
       "name": "Start",
@@ -22,41 +27,174 @@
       }
     },
     {
-      "text": "Leave me alone.",
-      "name": "Mean Dialog Option",
-      "pid": "2",
-      "position": {
-        "x": "180",
-        "y": "259.5"
-      }
-    },
-    {
-      "text": "Hi, how are you? [[NPC response]] ",
+      "text": "Excellent! We have many activities to keep you busy during retirement. [[Fishing festival]] ",
       "links": [
         {
-          "name": "NPC response",
-          "link": "NPC response",
-          "pid": "4"
+          "name": "Fishing festival",
+          "link": "Fishing festival",
+          "pid": "5"
         }
       ],
-      "name": "Nice Dialog Option",
-      "pid": "3",
+      "name": "I'm retired.",
+      "pid": "2",
       "position": {
-        "x": "456",
-        "y": "197.5"
+        "x": "70",
+        "y": "255.5"
       }
     },
     {
-      "text": "Great! Thanks for asking.",
-      "name": "NPC response",
+      "text": "Excellent! This is a great spot to spend a holiday. [[Fishing festival]] ",
+      "links": [
+        {
+          "name": "Fishing festival",
+          "link": "Fishing festival",
+          "pid": "5"
+        }
+      ],
+      "name": "I'm on vacation!",
+      "pid": "3",
+      "position": {
+        "x": "280",
+        "y": "251.5"
+      }
+    },
+    {
+      "text": "I see. A wanderer of sorts? [[Fishing festival]] ",
+      "links": [
+        {
+          "name": "Fishing festival",
+          "link": "Fishing festival",
+          "pid": "5"
+        }
+      ],
+      "name": "I'm just passing through.",
       "pid": "4",
       "position": {
-        "x": "492",
-        "y": "333.5"
+        "x": "440",
+        "y": "255.5"
+      }
+    },
+    {
+      "text": "Allow me to introduce myself. I'm Mayor Thompson. You've come at a good time! Today marks the start of our annual fishing festival. \n[[I'm here to fish!|Festival 2]]\n[[Fishing festival?|Festival 2]]\n[[...|Festival 2]]",
+      "links": [
+        {
+          "name": "I'm here to fish!|Festival 2",
+          "link": "I'm here to fish!|Festival 2"
+        },
+        {
+          "name": "Fishing festival?|Festival 2",
+          "link": "Fishing festival?|Festival 2"
+        },
+        {
+          "name": "...|Festival 2",
+          "link": "...|Festival 2"
+        }
+      ],
+      "name": "Fishing festival",
+      "pid": "5",
+      "position": {
+        "x": "194",
+        "y": "421.5"
+      }
+    },
+    {
+      "text": "In fact, the ferry you took here will be the last ship coming to port for the next five days!\n[[I'm just in time!|Festival 3]]\n[[Do you have enough supplies on the island?|Festival 3]]\n[[So you're telling me I'm stuck here for five days?|Festival 3]]",
+      "links": [
+        {
+          "name": "I'm just in time!|Festival 3",
+          "link": "I'm just in time!|Festival 3"
+        },
+        {
+          "name": "Do you have enough supplies on the island?|Festival 3",
+          "link": "Do you have enough supplies on the island?|Festival 3"
+        },
+        {
+          "name": "So you're telling me I'm stuck here for five days?|Festival 3",
+          "link": "So you're telling me I'm stuck here for five days?|Festival 3"
+        }
+      ],
+      "name": "Festival 2",
+      "pid": "6",
+      "position": {
+        "x": "194",
+        "y": "571.5"
+      }
+    },
+    {
+      "text": "Boats disrupt the fish, so we lock down the port during the festival. But don't worry, we have comfortable living arrangements for visitors and we'll have enough fish to satisfy a giant's appetite! [[Festival 4]]",
+      "links": [
+        {
+          "name": "Festival 4",
+          "link": "Festival 4",
+          "pid": "8"
+        }
+      ],
+      "name": "Festival 3",
+      "pid": "7",
+      "position": {
+        "x": "194",
+        "y": "721.5"
+      }
+    },
+    {
+      "text": "There's no pressure to participate, but here's a festival badge and a pamplet about the rules, just in case. I'll just collect the entrance fee now. [[Festival 4.1]]",
+      "links": [
+        {
+          "name": "Festival 4.1",
+          "link": "Festival 4.1",
+          "pid": "11"
+        }
+      ],
+      "name": "Festival 4",
+      "pid": "8",
+      "position": {
+        "x": "194",
+        "y": "871.5"
+      }
+    },
+    {
+      "text": "[Mayor Thompson took $5. He wouldn't take no for an answer.] [[Festival 6]]\n",
+      "links": [
+        {
+          "name": "Festival 6",
+          "link": "Festival 6",
+          "pid": "10"
+        }
+      ],
+      "name": "Festival 5",
+      "pid": "9",
+      "position": {
+        "x": "240",
+        "y": "1041.5"
+      }
+    },
+    {
+      "text": "[You received: Festival Badge, Festival Pamphlet]",
+      "name": "Festival 6",
+      "pid": "10",
+      "position": {
+        "x": "240",
+        "y": "1191.5"
+      }
+    },
+    {
+      "text": "When you're ready to call it a night, talk to Amanda by the brick buildings behind me. She'll get you setup with proper accomodations for the duration of the festival. Ready, set, FISH! [[Festival 5]] ",
+      "links": [
+        {
+          "name": "Festival 5",
+          "link": "Festival 5",
+          "pid": "9"
+        }
+      ],
+      "name": "Festival 4.1",
+      "pid": "11",
+      "position": {
+        "x": "438",
+        "y": "873.5"
       }
     }
   ],
-  "name": "DavidTestDialog",
+  "name": "WelcomeDialog",
   "startnode": "1",
   "creator": "Twine",
   "creator-version": "2.2.1",
