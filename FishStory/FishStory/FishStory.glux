@@ -28,12 +28,12 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>X</Member>
-            <ValueAsFloat>500</ValueAsFloat>
+            <ValueAsFloat>1102</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
             <Member>Y</Member>
-            <ValueAsFloat>-500</ValueAsFloat>
+            <ValueAsFloat>-722</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>
@@ -202,7 +202,7 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>Z</Member>
-            <ValueAsFloat>-2</ValueAsFloat>
+            <ValueAsFloat>-3</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>
@@ -1145,6 +1145,14 @@
     </ReferencedFileSave>
     <ReferencedFileSave>
       <Name>GlobalContent/Dialog/ShopDialog.json</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <RuntimeType>DialogTreePlugin.SaveClasses.DialogTreeRaw.RootObject</RuntimeType>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/Dialog/WelcomeDialog.json</Name>
       <IsSharedStatic>true</IsSharedStatic>
       <DestroyOnUnload>false</DestroyOnUnload>
       <HasPublicProperty>true</HasPublicProperty>
