@@ -188,7 +188,7 @@ namespace FishStory.GumRuntimes
                 foreach (var link in passage.links)
                 {
                     var option = new SelectableOptionRuntime();
-                    option.Text = link.name;
+                    option.Text = link.StrippedName;
                     option.CurrentSelectedStateState = SelectableOptionRuntime.SelectedState.Deselected;
                     this.DialogOptions.AddChild(option);
                 }
@@ -254,8 +254,15 @@ namespace FishStory.GumRuntimes
                 var currentPassage = CurrentPassage;
 
                 var link = currentPassage.links[selectedIndex.Value];
-
-                currentNodeId = link.pid;
+                if (link.pid.IsNullOrWhitespace())
+                {
+                    currentNodeId = dialogTree.passages.Single(p => p.name == link.StrippedLink).pid;
+                }
+                else
+                {
+                    currentNodeId = link.pid;
+                }
+                
                 UpdateToCurrentTreeAndNode();
             }
             else
