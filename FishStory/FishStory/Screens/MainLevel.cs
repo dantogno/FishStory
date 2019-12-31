@@ -32,6 +32,8 @@ namespace FishStory.Screens
             var If = script;
             var Do = script;
 
+            //If.Check(() => true);
+            //Do.Call(() => PlayerDataManager.PlayerData.AwardItem("NameOfItem"));
             //If.Check(() => PlayerCharacterInstance.Y < -100);
             //Do.Call(() =>
             //{
