@@ -15,6 +15,9 @@ using FlatRedBall.Scripting;
 using Microsoft.Xna.Framework;
 using FishStory.Entities;
 using FlatRedBall.TileEntities;
+using FishStory.Managers;
+using FlatRedBall.Gui;
+using FishStory.DataTypes;
 
 namespace FishStory.Screens
 {
@@ -61,7 +64,9 @@ namespace FishStory.Screens
 
         private void InitializeUi()
         {
-            if(PlayerCharacterInstance.InputDevice is Keyboard keyboard)
+            #region Initialize Dialog Box
+
+            if (PlayerCharacterInstance.InputDevice is Keyboard keyboard)
             {
                 DialogBox.UpInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Up)
                     .Or(keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.W));
@@ -80,12 +85,15 @@ namespace FishStory.Screens
             DialogBox.StoreShouldShow += HandleStoreShouldShow;
             DialogBox.DialogTagShown += HandleDialogTagShown;
 
+            #endregion
+
             GameScreenGum.StoreInstance.CancelInput = PlayerCharacterInstance.CancelInput;
             GameScreenGum.StoreInstance.Visible = false;
+            GameScreenGum.StoreInstance.BuyButtonClick += HandleBuyClicked;
 
             GameScreenGum.NotificationBoxInstance.UpdateVisibility();
         }
-        
+
         private void HandlePlayerVsNpcActivityCollision(PlayerCharacter player, NPC npc)
         {
             player.NpcForAction = npc;
@@ -116,8 +124,20 @@ namespace FishStory.Screens
 
             CollisionActivity();
 
+            DebuggingActivity();
+
             // do script *after* the UI
             script.Activity();
+        }
+
+        private void DebuggingActivity()
+        {
+            var keyboard = InputManager.Keyboard;
+
+            if(DebuggingVariables.AwardMoneyByPressingM && keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.M))
+            {
+                AwardMoney(50);
+            }
         }
 
         void CameraActivity()
@@ -162,11 +182,15 @@ namespace FishStory.Screens
             GameScreenGum.NotificationBoxInstance.CustomActivity();
         }
 
+        private void AddNotification(string notification) =>
+            GameScreenGum.NotificationBoxInstance.AddNotification(notification);
         private void HandleStoreShouldShow(string storeName)
         {
-            GameScreenGum.StoreInstance.Visible = true;
+            var store = GameScreenGum.StoreInstance;
+            store.Visible = true;
+            store.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
 
-            GameScreenGum.StoreInstance.PopulateFromStoreName(storeName);
+            store.PopulateFromStoreName(storeName);
         }
 
         private void HandleDialogBoxHide()
@@ -179,6 +203,39 @@ namespace FishStory.Screens
             dialogTagsThisFrame.Add(tag);
         }
 
+        private void HandleBuyClicked(IWindow window)
+        {
+
+            if(GameScreenGum.StoreInstance.SelectedShopItem == null)
+            {
+                AddNotification("Select item first, then click buy");
+            }
+            else
+            {
+                var itemToBuy = 
+                    GlobalContent.ItemDefinition[GameScreenGum.StoreInstance.SelectedShopItem.Item];
+
+                if(itemToBuy.PlayerBuyingCost > PlayerDataManager.PlayerData.Money)
+                {
+                    AddNotification("You do not have enough money");
+                }
+                else
+                {
+                    BuyItem(itemToBuy);
+                }
+            }
+            //if(PlayerDataManager.PlayerData.Money >= itemToBuy.)
+        }
+
+        private void BuyItem(ItemDefinition itemToBuy)
+        {
+            AddNotification($"Bought {itemToBuy.Name}");
+            PlayerDataManager.PlayerData.Money -= itemToBuy.PlayerBuyingCost;
+            PlayerDataManager.PlayerData.AwardItem(itemToBuy.Name);
+
+            GameScreenGum.StoreInstance.PlayerMoneyText = $"${PlayerDataManager.PlayerData.Money}";
+        }
+
         #endregion
 
         #endregion
@@ -187,6 +244,13 @@ namespace FishStory.Screens
 
         public bool HasTag(string tag) =>
             dialogTagsThisFrame.Contains(tag);
+
+        public void AwardMoney(int amountOfMoney)
+        {
+            GameScreenGum.NotificationBoxInstance.AddNotification($"Earned ${amountOfMoney}");
+
+            PlayerDataManager.PlayerData.Money += amountOfMoney;
+        }
 
         #endregion
 

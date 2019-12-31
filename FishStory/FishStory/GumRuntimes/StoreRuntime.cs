@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using FishStory.DataTypes;
 using FlatRedBall.Forms.Controls;
 using FlatRedBall.Input;
 
@@ -11,7 +12,7 @@ namespace FishStory.GumRuntimes
         public IPressableInput CancelInput { get; internal set; }
         ListBox listBox;
 
-
+        public ShopItem SelectedShopItem => listBox.SelectedObject as ShopItem;
 
         partial void CustomInitialize () 
         {
@@ -37,7 +38,9 @@ namespace FishStory.GumRuntimes
         {
             var shop = GlobalContent.Shop1;
 
-            foreach(var item in shop.Values)
+            listBox.Items.Clear();
+
+            foreach (var item in shop.Values)
             {
                 listBox.Items.Add(item);
             }

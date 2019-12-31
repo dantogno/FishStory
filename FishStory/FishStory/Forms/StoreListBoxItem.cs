@@ -17,7 +17,7 @@ namespace FishStory.Forms
 
         public override void UpdateToObject(object shopAsObject)
         {
-            var shop = shopAsObject as Shop;
+            var shop = shopAsObject as ShopItem;
             var item = GlobalContent.ItemDefinition[shop.Item];
             var storeListItem = Visual as GumRuntimes.DefaultForms.StoreListItemRuntime;
 
