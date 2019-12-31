@@ -29,7 +29,14 @@ namespace FishStory.GumRuntimes
 
                 if (selectedOption == null)
                 {
-                    return null;
+                    if(CurrentPassage.links?.Count() == 1)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
                 else
                 {
@@ -174,7 +181,7 @@ namespace FishStory.GumRuntimes
 
         private void ShowLinks(Passage passage)
         {
-            if(passage.links != null)
+            if(passage.links != null && passage.links.Count() > 1)
             {
                 foreach (var link in passage.links)
                 {
