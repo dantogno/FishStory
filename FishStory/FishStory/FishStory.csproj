@@ -54,9 +54,14 @@
     <Compile Include="DataTypes\NpcRelationship.cs" />
     <Compile Include="DataTypes\PlayerData.cs" />
     <Compile Include="DataTypes\Shop.Generated.cs" />
+    <Compile Include="DataTypes\ShopItem.Generated.cs" />
     <Compile Include="DataTypes\TileMapInfo.Generated.cs" />
     <Compile Include="DataTypes\TopDownValues.Generated.cs" />
     <Compile Include="DialogTreePlugin\RootObject.Generated.cs" />
+    <Compile Include="Entities\DebuggingVariables.cs" />
+    <Compile Include="Entities\DebuggingVariables.Generated.cs">
+      <DependentUpon>DebuggingVariables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Entrance.cs" />
     <Compile Include="Entities\Entrance.Generated.cs">
       <DependentUpon>Entrance.cs</DependentUpon>
