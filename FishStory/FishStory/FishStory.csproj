@@ -78,6 +78,7 @@
     <Compile Include="Entities\PlayerCharacter.Generated.cs">
       <DependentUpon>PlayerCharacter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\NPCFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
     <Compile Include="Forms\InventoryListBoxItem.cs" />
