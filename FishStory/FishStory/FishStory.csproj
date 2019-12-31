@@ -136,10 +136,6 @@
     <Compile Include="GumRuntimes\DefaultForms\ScrollBarThumbRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ScrollViewerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\SliderRuntime.Generated.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\StoreListItem1Runtime.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\StoreListItem1Runtime.Generated.cs">
-      <DependentUpon>StoreListItem1Runtime.cs</DependentUpon>
-    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\StoreListItemRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\TextBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ToggleButtonRuntime.Generated.cs" />
