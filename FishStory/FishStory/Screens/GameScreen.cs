@@ -18,6 +18,7 @@ using FlatRedBall.TileEntities;
 using FishStory.Managers;
 using FlatRedBall.Gui;
 using FishStory.DataTypes;
+using FishStory.GumRuntimes;
 
 namespace FishStory.Screens
 {
@@ -64,7 +65,7 @@ namespace FishStory.Screens
 
         private void InitializeUi()
         {
-            #region Initialize Dialog Box
+            #region Dialog Box
 
             if (PlayerCharacterInstance.InputDevice is Keyboard keyboard)
             {
@@ -83,6 +84,7 @@ namespace FishStory.Screens
 
             DialogBox.AfterHide += HandleDialogBoxHide;
             DialogBox.StoreShouldShow += HandleStoreShouldShow;
+            DialogBox.SellingShouldShow += HandleSellingShouldShow;
             DialogBox.DialogTagShown += HandleDialogTagShown;
 
             #endregion
@@ -93,7 +95,12 @@ namespace FishStory.Screens
             GameScreenGum.StoreInstance.BuyButtonClick += HandleBuyClicked;
             #endregion
 
-            GameScreenGum.InventoryInstance.Visible = false;
+            #region Inventory
+
+            var inventory = GameScreenGum.InventoryInstance;
+            inventory.Visible = false;
+            inventory.SellClicked += HandleSellClicked;
+            #endregion
 
             GameScreenGum.NotificationBoxInstance.UpdateVisibility();
         }
@@ -190,6 +197,7 @@ namespace FishStory.Screens
 
         private void AddNotification(string notification) =>
             GameScreenGum.NotificationBoxInstance.AddNotification(notification);
+
         private void HandleStoreShouldShow(string storeName)
         {
             var store = GameScreenGum.StoreInstance;
@@ -197,6 +205,31 @@ namespace FishStory.Screens
             store.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
 
             store.PopulateFromStoreName(storeName);
+        }
+
+        private void HandleSellingShouldShow()
+        {
+            ShowInventory(InventoryRuntime.ViewOrSell.Sell);
+        }
+
+        private void HandleSellClicked()
+        {
+            var inventory = GameScreenGum.InventoryInstance;
+            var selectedItemName = inventory.SelectedItemName;
+
+            if(!string.IsNullOrEmpty(selectedItemName))
+            {
+                var item = GlobalContent.ItemDefinition[selectedItemName];
+
+                if(item.PlayerSellingCost == 0)
+                {
+                    AddNotification("Item cannot be sold");
+                }
+                else
+                {
+                    // todo - handle selling here!
+                }
+            }
         }
 
         private void HandleDialogBoxHide()
@@ -247,10 +280,18 @@ namespace FishStory.Screens
             var inventory = GameScreenGum.InventoryInstance;
             if (inventory.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed)
             {
-                inventory.Visible = true;
-                inventory.FillWithInventory(PlayerDataManager.PlayerData.ItemInventory);
-                inventory.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
+                ShowInventory(InventoryRuntime.ViewOrSell.View);
             }
+        }
+
+        private static void ShowInventory(InventoryRuntime.ViewOrSell state)
+        {
+            var inventory = GameScreenGum.InventoryInstance;
+
+            inventory.Visible = true;
+            inventory.CurrentViewOrSellState = state;
+            inventory.FillWithInventory(PlayerDataManager.PlayerData.ItemInventory);
+            inventory.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
         }
 
         #endregion

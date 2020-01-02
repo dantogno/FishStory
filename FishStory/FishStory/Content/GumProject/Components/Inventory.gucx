@@ -6,6 +6,48 @@
     <Name>Default</Name>
     <Variable>
       <Type>string</Type>
+      <Name>SellButton.Text</Name>
+      <Value xsi:type="xsd:string">Sell</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>SellButton.X</Name>
+      <Value xsi:type="xsd:float">160</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>SellButton.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>SellButton.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>SellButton.Y</Name>
+      <Value xsi:type="xsd:float">163</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>SellButton.Y Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>SellButton.Y Units</Name>
+      <Value xsi:type="xsd:int">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
       <Name>CloseButton.Text</Name>
       <Value xsi:type="xsd:string">X</Value>
       <SetsValue>true</SetsValue>
@@ -599,6 +641,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ViewOrSellState</Type>
+      <Name>ViewOrSellState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>Width</Name>
       <Value xsi:type="xsd:float">0</Value>
@@ -647,6 +694,39 @@
       <SetsValue>true</SetsValue>
     </Variable>
   </State>
+  <Category>
+    <Name>ViewOrSell</Name>
+    <State>
+      <Name>View</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>SellButton.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>ColoredFrameInstance2.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Sell</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>ColoredFrameInstance2.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>SellButton.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>ListBoxInstance</Name>
     <BaseType>DefaultForms/ListBox</BaseType>
@@ -695,6 +775,11 @@
   <Instance>
     <Name>DescriptionText</Name>
     <BaseType>Text</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>SellButton</Name>
+    <BaseType>DefaultForms/Button</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

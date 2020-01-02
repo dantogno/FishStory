@@ -1,42 +1,56 @@
 {
   "passages": [
     {
-      "text": "So you want to buy something?\n[[Yes->SelectYes]]\n[[No->SelectNo]]",
+      "text": "So you want to buy something?\n[[Buy->SelectBuy]]\n[[Sell->SelectSell]]\n[[No->SelectNo]]",
       "links": [
         {
-          "name": "Yes",
-          "link": "SelectYes",
-          "pid": "2"
+          "name": "Buy",
+          "link": "SelectBuy",
+          "pid": "3"
+        },
+        {
+          "name": "Sell",
+          "link": "SelectSell",
+          "pid": "4"
         },
         {
           "name": "No",
           "link": "SelectNo",
-          "pid": "3"
+          "pid": "2"
         }
       ],
       "name": "Untitled Passage",
       "pid": "1",
       "position": {
         "x": "404",
-        "y": "170.5"
-      }
-    },
-    {
-      "text": "Store=Shop1",
-      "name": "SelectYes",
-      "pid": "2",
-      "position": {
-        "x": "329",
-        "y": "320.5"
+        "y": "170"
       }
     },
     {
       "text": "Okay, goodbye.",
       "name": "SelectNo",
+      "pid": "2",
+      "position": {
+        "x": "357",
+        "y": "318"
+      }
+    },
+    {
+      "text": "Store=Shop1",
+      "name": "SelectBuy",
       "pid": "3",
       "position": {
-        "x": "479",
-        "y": "320.5"
+        "x": "160",
+        "y": "297"
+      }
+    },
+    {
+      "text": "Sell=",
+      "name": "SelectSell",
+      "pid": "4",
+      "position": {
+        "x": "599",
+        "y": "320"
       }
     }
   ],

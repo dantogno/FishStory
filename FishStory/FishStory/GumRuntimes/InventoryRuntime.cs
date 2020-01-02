@@ -8,7 +8,17 @@ namespace FishStory.GumRuntimes
 {
     public partial class InventoryRuntime
     {
+        #region Fields/Properties
+
         ListBox listBox;
+
+        public Action SellClicked;
+
+        public string SelectedItemName => (listBox.SelectedObject as ItemWithCount).ItemName;
+
+        #endregion
+
+        #region Initialize
 
         partial void CustomInitialize () 
         {
@@ -20,7 +30,12 @@ namespace FishStory.GumRuntimes
 
             this.CloseButton.FormsControl.Click += (not, used) => this.Visible = false;
 
+            this.SellButton.FormsControl.Click += (not, used) => SellClicked();
         }
+
+        #endregion
+
+        #region Activity
 
         private void HandleListBoxSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
@@ -59,5 +74,7 @@ namespace FishStory.GumRuntimes
             }
             UpdateCurrentDescription();
         }
+
+        #endregion
     }
 }

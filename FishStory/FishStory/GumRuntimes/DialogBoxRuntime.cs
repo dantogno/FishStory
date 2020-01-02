@@ -96,6 +96,7 @@ namespace FishStory.GumRuntimes
         public event Action AfterHide;
         public event Action<string> DialogTagShown;
         public event Action<string> StoreShouldShow;
+        public event Action SellingShouldShow;
 
         #endregion
 
@@ -148,10 +149,19 @@ namespace FishStory.GumRuntimes
             if (passage != null)
             {
                 const string storePrefix = "store=";
+                const string sellPrefix = "sell=";
                 if (passage.StrippedText.ToLowerInvariant().StartsWith(storePrefix))
                 {
                     var storeName = passage.StrippedText.Substring(storePrefix.Length);
                     StoreShouldShow(storeName);
+                    if (TryHide())
+                    {
+                        AfterHide();
+                    }
+                }
+                else if(passage.StrippedText.ToLowerInvariant().StartsWith(sellPrefix))
+                {
+                    SellingShouldShow();
                     if (TryHide())
                     {
                         AfterHide();
