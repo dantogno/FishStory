@@ -159,4 +159,16 @@
       <RelativeY>14</RelativeY>
     </Frame>
   </AnimationChain>
+  <AnimationChain>
+    <Name>Idle</Name>
+    <Frame>
+      <TextureName>children_1.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>26</LeftCoordinate>
+      <RightCoordinate>52</RightCoordinate>
+      <TopCoordinate>144</TopCoordinate>
+      <BottomCoordinate>180</BottomCoordinate>
+      <RelativeY>14</RelativeY>
+    </Frame>
+  </AnimationChain>
 </AnimationChainArraySave>
