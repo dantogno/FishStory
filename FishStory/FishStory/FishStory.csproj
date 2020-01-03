@@ -272,6 +272,26 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>AfroBeardJersey</Name>
     </None>
+    <None Include="content\entities\npc\baldlabcoat.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BaldLabCoat</Name>
+    </None>
+    <None Include="content\entities\npc\baldmanblackjersey.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BaldManBlackJersey</Name>
+    </None>
+    <None Include="content\entities\npc\blondebluenun.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BlondeBlueNun</Name>
+    </None>
+    <None Include="content\entities\npc\blondeboyredtunic.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BlondeBoyRedTunic</Name>
+    </None>
+    <None Include="content\entities\npc\bluecladmessenger.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BlueCladMessenger</Name>
+    </None>
     <None Include="content\entities\npc\boy1.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Boy1</Name>
@@ -291,6 +311,18 @@
     <None Include="content\entities\npc\detective.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Detective</Name>
+    </None>
+    <None Include="content\entities\npc\greenoutfitwithhat.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>GreenOutfitWithHat</Name>
+    </None>
+    <None Include="content\entities\npc\ladyinbluegold.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>LadyInBlueGold</Name>
+    </None>
+    <None Include="content\entities\npc\ladyinredgold.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>LadyInRedGold</Name>
     </None>
     <None Include="content\entities\npc\travelmerchant.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
