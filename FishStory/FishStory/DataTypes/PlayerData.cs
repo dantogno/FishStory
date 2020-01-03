@@ -28,6 +28,11 @@ namespace FishStory.DataTypes
             }
         }
 
+        public void RemoveItem(string itemKey)
+        {
+            ItemInventory[itemKey]--;
+        }
+
         public bool Has(string itemKey, int desiredCount = 1)
         {
             var inventoryCount = 0;

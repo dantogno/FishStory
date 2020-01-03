@@ -1,4 +1,5 @@
-﻿using Gum.Wireframe;
+﻿using FishStory.GumRuntimes.DefaultForms;
+using Gum.Wireframe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace FishStory.Forms
     {
         public string ItemName { get; set; }
         public int Count { get; set; }
+        public int? SellPrice { get; set; }
+        public InventoryListItemRuntime.ViewOrSell ViewOrSell{ get; set; }
     }
 
     public class InventoryListBoxItem : FlatRedBall.Forms.Controls.ListBoxItem
@@ -28,6 +31,8 @@ namespace FishStory.Forms
 
             storeListItem.ItemName = item.ItemName;
             storeListItem.Stock = item.Count.ToString();
+            storeListItem.Price = item.SellPrice?.ToString();
+            storeListItem.CurrentViewOrSellState = item.ViewOrSell;
         }
     }
 }

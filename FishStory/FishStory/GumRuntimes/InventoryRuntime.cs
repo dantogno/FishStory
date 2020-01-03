@@ -14,8 +14,15 @@ namespace FishStory.GumRuntimes
 
         public Action SellClicked;
 
-        public string SelectedItemName => (listBox.SelectedObject as ItemWithCount).ItemName;
-
+        public string SelectedItemName
+        {
+            get => (listBox.SelectedObject as ItemWithCount)?.ItemName;
+            set
+            {
+                listBox.SelectedObject = listBox.Items
+                    .FirstOrDefault(item => ((ItemWithCount)item).ItemName == value);
+            }
+        }
         #endregion
 
         #region Initialize
@@ -63,14 +70,25 @@ namespace FishStory.GumRuntimes
             {
                 if(kvp.Value > 0)
                 {
-                    var item = new ItemWithCount
-                    {
-                        ItemName = kvp.Key,
-                        Count = kvp.Value
-                    };
-                    listBox.Items.Add(item);
-                }
+                    var item = GlobalContent.ItemDefinition[kvp.Key];
 
+                    var shouldShow = item.PlayerSellingCost > 0 ||
+                        CurrentViewOrSellState == ViewOrSell.View;
+
+                    if(shouldShow)
+                    {
+                        var itemWithCount = new ItemWithCount
+                        {
+                            ItemName = kvp.Key,
+                            Count = kvp.Value,
+                            SellPrice = item.PlayerSellingCost,
+                            ViewOrSell = this.CurrentViewOrSellState == ViewOrSell.View 
+                                ? DefaultForms.InventoryListItemRuntime.ViewOrSell.View 
+                                : DefaultForms.InventoryListItemRuntime.ViewOrSell.Sell
+                        };
+                        listBox.Items.Add(itemWithCount);
+                    }
+                }
             }
             UpdateCurrentDescription();
         }
