@@ -221,13 +221,26 @@ namespace FishStory.Screens
             {
                 var item = GlobalContent.ItemDefinition[selectedItemName];
 
-                if(item.PlayerSellingCost == 0)
+                if(item.PlayerSellingCost <= 0)
                 {
                     AddNotification("Item cannot be sold");
                 }
                 else
                 {
-                    // todo - handle selling here!
+                    // remove the item from inventory
+                    PlayerDataManager.PlayerData.RemoveItem(selectedItemName);
+
+                    // award money
+                    PlayerDataManager.PlayerData.Money += item.PlayerSellingCost;
+
+                    // refresh the UI
+                    inventory.FillWithInventory(PlayerDataManager.PlayerData.ItemInventory);
+                    inventory.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
+
+                    inventory.SelectedItemName = selectedItemName;
+
+                    // Show the notification
+                    AddNotification($"Sold {selectedItemName}");
                 }
             }
         }
