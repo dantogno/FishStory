@@ -1,5 +1,6 @@
 using FishStory.Forms;
 using FlatRedBall.Forms.Controls;
+using FlatRedBall.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,10 @@ namespace FishStory.GumRuntimes
         ListBox listBox;
 
         public Action SellClicked;
+
+        public IPressableInput CancelInput { get; internal set; }
+        public IPressableInput InventoryInput { get; internal set; }
+
 
         public string SelectedItemName
         {
@@ -43,6 +48,21 @@ namespace FishStory.GumRuntimes
         #endregion
 
         #region Activity
+
+        public void CustomActivity()
+        {
+            if (Visible)
+            {
+                if (CancelInput.WasJustPressed)
+                {
+                    Visible = false;
+                }
+                if(CurrentViewOrSellState == ViewOrSell.View && InventoryInput.WasJustPressed)
+                {
+                    Visible = false;
+                }
+            }
+        }
 
         private void HandleListBoxSelectionChanged(object sender, SelectionChangedEventArgs args)
         {

@@ -100,6 +100,8 @@ namespace FishStory.Screens
             var inventory = GameScreenGum.InventoryInstance;
             inventory.Visible = false;
             inventory.SellClicked += HandleSellClicked;
+            inventory.CancelInput = PlayerCharacterInstance.CancelInput;
+            inventory.InventoryInput = PlayerCharacterInstance.InventoryInput;
             #endregion
 
             GameScreenGum.NotificationBoxInstance.UpdateVisibility();
@@ -291,7 +293,11 @@ namespace FishStory.Screens
         private void InventoryUiActivity()
         {
             var inventory = GameScreenGum.InventoryInstance;
-            if (inventory.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed)
+            if(inventory.Visible)
+            {
+                inventory.CustomActivity();
+            }
+            else if (inventory.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed)
             {
                 ShowInventory(InventoryRuntime.ViewOrSell.View);
             }
