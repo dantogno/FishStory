@@ -13,3 +13,4 @@ FishStory/FishStory/bin/DesktopGL/x86/Debug/*
 FishStory/FishStory/obj/*
 *.Generated.*
 FishStory/FishStory/FishStory.csproj.user
+*.csvSettings
