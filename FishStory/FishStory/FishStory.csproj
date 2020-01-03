@@ -352,6 +352,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Dialog1</Name>
     </None>
+    <None Include="content\globalcontent\dialog\mayorafterwelcome.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>MayorAfterWelcome</Name>
+    </None>
     <None Include="content\globalcontent\dialog\shopdialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ShopDialog</Name>

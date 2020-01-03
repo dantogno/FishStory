@@ -32,6 +32,20 @@ namespace FishStory.Screens
             var If = script;
             var Do = script;
 
+            If.Check(() => HasTag("HasSeenWelcomeDialog"));
+            Do.Call(() =>
+            {
+                var npc = this.NPCList.FindByName("Mayor");
+                npc.TwineDialogId = nameof(GlobalContent.MayorAfterWelcome);
+                PlayerDataManager.PlayerData.AwardItem("Festival Badge");
+                PlayerDataManager.PlayerData.AwardItem("Festival Pamphlet");
+                // Magic numbers to save time here... this is referenced in dialog as well.
+                PlayerDataManager.PlayerData.Money -= 5;
+                AddNotification("-$5.");
+                AddNotification("Recieved: Festival Badge");
+                AddNotification("Recieved: Festival Pamphlet");
+            });
+            
             //If.Check(() => true);
             //Do.Call(() => PlayerDataManager.PlayerData.AwardItem("NameOfItem"));
             //If.Check(() => PlayerCharacterInstance.Y < -100);

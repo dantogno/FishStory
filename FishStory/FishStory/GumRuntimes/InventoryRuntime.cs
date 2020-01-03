@@ -1,5 +1,6 @@
 using FishStory.Forms;
 using FlatRedBall.Forms.Controls;
+using FlatRedBall.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,19 @@ namespace FishStory.GumRuntimes
 
         public Action SellClicked;
 
-        public string SelectedItemName => (listBox.SelectedObject as ItemWithCount).ItemName;
+        public IPressableInput CancelInput { get; internal set; }
+        public IPressableInput InventoryInput { get; internal set; }
 
+
+        public string SelectedItemName
+        {
+            get => (listBox.SelectedObject as ItemWithCount)?.ItemName;
+            set
+            {
+                listBox.SelectedObject = listBox.Items
+                    .FirstOrDefault(item => ((ItemWithCount)item).ItemName == value);
+            }
+        }
         #endregion
 
         #region Initialize
@@ -36,6 +48,21 @@ namespace FishStory.GumRuntimes
         #endregion
 
         #region Activity
+
+        public void CustomActivity()
+        {
+            if (Visible)
+            {
+                if (CancelInput.WasJustPressed)
+                {
+                    Visible = false;
+                }
+                if(CurrentViewOrSellState == ViewOrSell.View && InventoryInput.WasJustPressed)
+                {
+                    Visible = false;
+                }
+            }
+        }
 
         private void HandleListBoxSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
@@ -63,14 +90,25 @@ namespace FishStory.GumRuntimes
             {
                 if(kvp.Value > 0)
                 {
-                    var item = new ItemWithCount
-                    {
-                        ItemName = kvp.Key,
-                        Count = kvp.Value
-                    };
-                    listBox.Items.Add(item);
-                }
+                    var item = GlobalContent.ItemDefinition[kvp.Key];
 
+                    var shouldShow = item.PlayerSellingCost > 0 ||
+                        CurrentViewOrSellState == ViewOrSell.View;
+
+                    if(shouldShow)
+                    {
+                        var itemWithCount = new ItemWithCount
+                        {
+                            ItemName = kvp.Key,
+                            Count = kvp.Value,
+                            SellPrice = item.PlayerSellingCost,
+                            ViewOrSell = this.CurrentViewOrSellState == ViewOrSell.View 
+                                ? DefaultForms.InventoryListItemRuntime.ViewOrSell.View 
+                                : DefaultForms.InventoryListItemRuntime.ViewOrSell.Sell
+                        };
+                        listBox.Items.Add(itemWithCount);
+                    }
+                }
             }
             UpdateCurrentDescription();
         }

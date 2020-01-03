@@ -38,17 +38,29 @@ namespace FishStory.Screens
         {
             script = new ScreenScript<GameScreen>(this);
 
-            TileEntityInstantiator.CreateEntitiesFrom(Map);
+            InitializeEntitiesFromMap();
 
             DialogBox.Visible = false;
 
             InitializeCamera();
+
+            SpriteManager.OrderedSortType = FlatRedBall.Graphics.SortType.ZSecondaryParentY;
 
             InitializeCollision();
 
             InitializeUi();
 
             InitializeRestartVariables();
+        }
+
+        private void InitializeEntitiesFromMap()
+        {
+            TileEntityInstantiator.CreateEntitiesFrom(Map);
+
+            foreach(var npc in NPCList)
+            {
+                npc.Z = 0; // same as player so they sort
+            }
         }
 
         private void InitializeCamera()
@@ -100,6 +112,8 @@ namespace FishStory.Screens
             var inventory = GameScreenGum.InventoryInstance;
             inventory.Visible = false;
             inventory.SellClicked += HandleSellClicked;
+            inventory.CancelInput = PlayerCharacterInstance.CancelInput;
+            inventory.InventoryInput = PlayerCharacterInstance.InventoryInput;
             #endregion
 
             GameScreenGum.NotificationBoxInstance.UpdateVisibility();
@@ -195,7 +209,7 @@ namespace FishStory.Screens
             InventoryUiActivity();
         }
 
-        private void AddNotification(string notification) =>
+        protected void AddNotification(string notification) =>
             GameScreenGum.NotificationBoxInstance.AddNotification(notification);
 
         private void HandleStoreShouldShow(string storeName)
@@ -221,13 +235,26 @@ namespace FishStory.Screens
             {
                 var item = GlobalContent.ItemDefinition[selectedItemName];
 
-                if(item.PlayerSellingCost == 0)
+                if(item.PlayerSellingCost <= 0)
                 {
                     AddNotification("Item cannot be sold");
                 }
                 else
                 {
-                    // todo - handle selling here!
+                    // remove the item from inventory
+                    PlayerDataManager.PlayerData.RemoveItem(selectedItemName);
+
+                    // award money
+                    PlayerDataManager.PlayerData.Money += item.PlayerSellingCost;
+
+                    // refresh the UI
+                    inventory.FillWithInventory(PlayerDataManager.PlayerData.ItemInventory);
+                    inventory.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
+
+                    inventory.SelectedItemName = selectedItemName;
+
+                    // Show the notification
+                    AddNotification($"Sold {selectedItemName}");
                 }
             }
         }
@@ -278,7 +305,11 @@ namespace FishStory.Screens
         private void InventoryUiActivity()
         {
             var inventory = GameScreenGum.InventoryInstance;
-            if (inventory.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed)
+            if(inventory.Visible)
+            {
+                inventory.CustomActivity();
+            }
+            else if (inventory.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed)
             {
                 ShowInventory(InventoryRuntime.ViewOrSell.View);
             }

@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Enjoy the festival!",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "539.5",
+        "y": "572.5"
+      }
+    }
+  ],
+  "name": "MayorAfterWelcome",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "909DB852-49CE-44F9-B551-26FC13C22E50"
+}

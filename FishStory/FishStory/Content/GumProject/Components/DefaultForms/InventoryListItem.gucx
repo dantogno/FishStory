@@ -76,6 +76,79 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>ColorCategoryState</Type>
+      <Name>PriceTextInstance.ColorCategoryState</Name>
+      <Value xsi:type="xsd:string">Black</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>PriceTextInstance.HorizontalAlignment</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>PriceTextInstance.Text</Name>
+      <Value xsi:type="xsd:string">$250</Value>
+      <ExposedAsName>Price</ExposedAsName>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>PriceTextInstance.VerticalAlignment</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>PriceTextInstance.Width</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>PriceTextInstance.Width Units</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>PriceTextInstance.X</Name>
+      <Value xsi:type="xsd:float">62</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>PriceTextInstance.X Origin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>PriceTextInstance.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>PriceTextInstance.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>PriceTextInstance.Y Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>PriceTextInstance.Y Units</Name>
+      <Value xsi:type="xsd:int">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>State</Type>
       <Name>State</Name>
       <SetsValue>true</SetsValue>
@@ -120,7 +193,7 @@
     <Variable>
       <Type>float</Type>
       <Name>StockTextInstance.X</Name>
-      <Value xsi:type="xsd:float">75</Value>
+      <Value xsi:type="xsd:float">81</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -226,6 +299,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ViewOrSellState</Type>
+      <Name>ViewOrSellState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>Width</Name>
       <Value xsi:type="xsd:float">0</Value>
@@ -304,6 +382,27 @@
       </Variable>
     </State>
   </Category>
+  <Category>
+    <Name>ViewOrSell</Name>
+    <State>
+      <Name>View</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>PriceTextInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Sell</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>PriceTextInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>BackgroundInstance</Name>
     <BaseType>DefaultForms/ColoredFrame</BaseType>
@@ -316,6 +415,11 @@
   </Instance>
   <Instance>
     <Name>StockTextInstance</Name>
+    <BaseType>Text</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>PriceTextInstance</Name>
     <BaseType>Text</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>

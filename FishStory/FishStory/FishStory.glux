@@ -1254,6 +1254,14 @@
       <RuntimeType>DialogTreePlugin.SaveClasses.DialogTreeRaw.RootObject</RuntimeType>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/Dialog/MayorAfterWelcome.json</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <RuntimeType>DialogTreePlugin.SaveClasses.DialogTreeRaw.RootObject</RuntimeType>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
   </GlobalFiles>
   <GlobalContentSettingsSave>
     <LoadAsynchronously>false</LoadAsynchronously>
