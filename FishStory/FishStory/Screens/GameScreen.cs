@@ -38,17 +38,29 @@ namespace FishStory.Screens
         {
             script = new ScreenScript<GameScreen>(this);
 
-            TileEntityInstantiator.CreateEntitiesFrom(Map);
+            InitializeEntitiesFromMap();
 
             DialogBox.Visible = false;
 
             InitializeCamera();
+
+            SpriteManager.OrderedSortType = FlatRedBall.Graphics.SortType.ZSecondaryParentY;
 
             InitializeCollision();
 
             InitializeUi();
 
             InitializeRestartVariables();
+        }
+
+        private void InitializeEntitiesFromMap()
+        {
+            TileEntityInstantiator.CreateEntitiesFrom(Map);
+
+            foreach(var npc in NPCList)
+            {
+                npc.Z = 0; // same as player so they sort
+            }
         }
 
         private void InitializeCamera()
