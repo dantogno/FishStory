@@ -195,7 +195,7 @@ namespace FishStory.Screens
             InventoryUiActivity();
         }
 
-        private void AddNotification(string notification) =>
+        protected void AddNotification(string notification) =>
             GameScreenGum.NotificationBoxInstance.AddNotification(notification);
 
         private void HandleStoreShouldShow(string storeName)

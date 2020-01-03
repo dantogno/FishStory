@@ -10,8 +10,8 @@ namespace FishStory.DataTypes
     {
         public Dictionary<string, int> ItemInventory { get; set; } =
             new Dictionary<string, int>();
-        
-        public int Money { get; set; }
+
+        public int Money { get; set; } = 25;
 
         public Dictionary<string, NpcRelationship> NpcRelationships { get; set; } =
             new Dictionary<string, NpcRelationship>();

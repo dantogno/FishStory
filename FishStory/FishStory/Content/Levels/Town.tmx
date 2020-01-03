@@ -38,7 +38,7 @@
     <property name="TwineDialogId" value="ShopDialog"/>
    </properties>
   </object>
-  <object id="3" gid="15361" x="734.667" y="685" width="16" height="16">
+  <object id="3" name="Mayor" gid="15361" x="734.667" y="685" width="16" height="16">
    <properties>
     <property name="Animation" value="Detective"/>
     <property name="TwineDialogId" value="WelcomeDialog"/>
