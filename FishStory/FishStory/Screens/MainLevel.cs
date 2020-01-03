@@ -31,7 +31,7 @@ namespace FishStory.Screens
         {
             var If = script;
             var Do = script;
-
+            PlayerCharacterInstance.DirectionFacing = TopDownDirection.Left;
             If.Check(() => HasTag("HasSeenWelcomeDialog"));
             Do.Call(() =>
             {

@@ -16,6 +16,12 @@
    <property name="WaterCollision" value=""/>
   </properties>
  </tile>
+ <tile id="6" type="NPC">
+  <properties>
+   <property name="Animation" value=""/>
+   <property name="TwineDialogId" value=""/>
+  </properties>
+ </tile>
  <tile id="8">
   <properties>
    <property name="WaterCollision" value=""/>
@@ -478,12 +484,6 @@
  <tile id="8104">
   <properties>
    <property name="WaterCollision" value=""/>
-  </properties>
- </tile>
- <tile id="15360" type="NPC">
-  <properties>
-   <property name="Animation" value=""/>
-   <property name="TwineDialogId" value=""/>
   </properties>
  </tile>
 </tileset>
