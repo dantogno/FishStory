@@ -312,6 +312,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Detective</Name>
     </None>
+    <None Include="content\entities\npc\farmerguy.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FarmerGuy</Name>
+    </None>
     <None Include="content\entities\npc\greenoutfitwithhat.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GreenOutfitWithHat</Name>
