@@ -49,7 +49,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DataTypes\FishDefinitions.Generated.cs" />
     <Compile Include="DataTypes\ItemDefinition.Generated.cs" />
     <Compile Include="DataTypes\NpcRelationship.cs" />
     <Compile Include="DataTypes\PlayerData.cs" />
@@ -65,6 +64,10 @@
     <Compile Include="Entities\Entrance.cs" />
     <Compile Include="Entities\Entrance.Generated.cs">
       <DependentUpon>Entrance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ExclamationIcon.cs" />
+    <Compile Include="Entities\ExclamationIcon.Generated.cs">
+      <DependentUpon>ExclamationIcon.cs</DependentUpon>
     </Compile>
     <Compile Include="Entities\Exit.cs" />
     <Compile Include="Entities\Exit.Generated.cs">
@@ -268,6 +271,10 @@
     <Content Include="Content\shader.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="content\entities\exclamationicon\animationchainlistfile.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>AnimationChainListFile</Name>
+    </None>
     <None Include="content\entities\npc\afrobeardjersey.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>AfroBeardJersey</Name>
@@ -367,10 +374,6 @@
     <None Include="content\globalcontent\dialog\welcomedialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>WelcomeDialog</Name>
-    </None>
-    <None Include="content\globalcontent\fishdefinitions.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>FishDefinitions</Name>
     </None>
     <None Include="content\globalcontent\itemdefinition.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

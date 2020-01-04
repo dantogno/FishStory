@@ -195,6 +195,12 @@ namespace FishStory.Screens
             }
             else if(PlayerCharacterInstance.IsFishing && PlayerCharacterInstance.TalkInput.WasJustPressed)
             {
+                if(PlayerCharacterInstance.IsFishOnLine)
+                {
+                    string fishCaught = ItemDefinition.Regular_Fish;
+                    PlayerDataManager.PlayerData.AwardItem(fishCaught);
+                    AddNotification($"Caught {fishCaught}");
+                }
                 PlayerCharacterInstance.StopFishing();
             }
         }

@@ -29,6 +29,10 @@ namespace FishStory.Entities
 
         public bool IsFishing => this.CurrentMovement?.Name == "Fishing";
 
+        double? nextFishTime;
+        public bool IsFishOnLine { get; private set; }
+        bool hasShownExclamation = false;
+
         #endregion
 
         #region Initialize
@@ -69,6 +73,39 @@ namespace FishStory.Entities
         {
             UpdateActivityCollisionPosition();
 
+            if(IsFishing)
+            {
+                DoFishingActivity();
+            }
+
+        }
+
+        private void DoFishingActivity()
+        {
+            if(TimeManager.CurrentScreenTime > nextFishTime && hasShownExclamation == false)
+            {
+                DoFishAvailableLogic();
+            }
+        }
+
+        private void DoFishAvailableLogic()
+        {
+            hasShownExclamation = true;
+            ExclamationIconInstance.Visible = true;
+            ExclamationIconInstance.BeginAnimations();
+
+            var timeFishIsAvailable = 1;
+            IsFishOnLine = true;
+            this.Call(StopFishAvailable)
+                .After(timeFishIsAvailable);
+        }
+
+        private void StopFishAvailable()
+        {
+            ExclamationIconInstance.Visible = false;
+            IsFishOnLine = false;
+
+            hasShownExclamation = false;
         }
 
         private void UpdateActivityCollisionPosition()
@@ -96,10 +133,25 @@ namespace FishStory.Entities
         public void StartFishing()
         {
             this.CurrentMovement = TopDownValues["Fishing"];
+            SetNextFishTime();
         }
+
+        private void SetNextFishTime()
+        {
+            const float minTimeForFish = 1;
+            const float maxTimeForFish = 5;
+
+            var randomTime = FlatRedBallServices.Random.Between(minTimeForFish, maxTimeForFish);
+
+            nextFishTime = TimeManager.CurrentScreenTime + randomTime;
+            hasShownExclamation = false;
+            ExclamationIconInstance.Visible = false;
+        }
+
         public void StopFishing()
         {
             this.CurrentMovement = TopDownValues["Default"];
+            nextFishTime = null;
         }
         #endregion
 
