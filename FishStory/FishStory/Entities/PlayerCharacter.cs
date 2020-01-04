@@ -27,6 +27,8 @@ namespace FishStory.Entities
 
         public NPC NpcForAction { get; set; }
 
+        public bool IsFishing => this.CurrentMovement?.Name == "Fishing";
+
         #endregion
 
         #region Initialize
@@ -91,6 +93,14 @@ namespace FishStory.Entities
             }
         }
 
+        public void StartFishing()
+        {
+            this.CurrentMovement = TopDownValues["Fishing"];
+        }
+        public void StopFishing()
+        {
+            this.CurrentMovement = TopDownValues["Default"];
+        }
         #endregion
 
         private void CustomDestroy()
@@ -104,5 +114,6 @@ namespace FishStory.Entities
 
 
         }
+
     }
 }

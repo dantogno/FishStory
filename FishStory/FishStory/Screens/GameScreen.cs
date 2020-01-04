@@ -174,7 +174,7 @@ namespace FishStory.Screens
 
         private void CollisionActivity()
         {
-            if(PlayerCharacterInstance.TalkInput?.WasJustPressed == true && DialogBox.Visible == false)
+            if(PlayerCharacterInstance.TalkInput.WasJustPressed && DialogBox.Visible == false)
             {
                 PlayerCharacterInstance.NpcForAction = null;
 
@@ -187,7 +187,15 @@ namespace FishStory.Screens
                         PlayerCharacterInstance.InputEnabled = false;
                     }
                 }
+            }
 
+            if(PlayerCharacterInstance.IsFishing == false && PlayerCharacterInstance.TalkInput.WasJustPressed && PlayerCharacterInstanceFishingCollisionVsWaterCollision.DoCollisions())
+            {
+                PlayerCharacterInstance.StartFishing();
+            }
+            else if(PlayerCharacterInstance.IsFishing && PlayerCharacterInstance.TalkInput.WasJustPressed)
+            {
+                PlayerCharacterInstance.StopFishing();
             }
         }
 
