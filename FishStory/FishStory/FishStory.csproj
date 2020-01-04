@@ -307,6 +307,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Boy2</Name>
     </None>
+    <None Include="content\entities\npc\braidedhairwoman.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BraidedHairWoman</Name>
+    </None>
     <None Include="content\entities\npc\brunetteboybluetunic.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BrunetteBoyBlueTunic</Name>
@@ -314,6 +318,10 @@
     <None Include="content\entities\npc\children_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>children_1</Name>
+    </None>
+    <None Include="content\entities\npc\deckardcainwithcane.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>DeckardCainWithCane</Name>
     </None>
     <None Include="content\entities\npc\detective.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
