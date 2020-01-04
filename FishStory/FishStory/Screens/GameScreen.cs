@@ -189,11 +189,11 @@ namespace FishStory.Screens
                 }
             }
 
-            if(PlayerCharacterInstance.IsFishing == false && PlayerCharacterInstance.FishInput.WasJustPressed && PlayerCharacterInstanceFishingCollisionVsWaterCollision.DoCollisions())
+            if(PlayerCharacterInstance.IsFishing == false && PlayerCharacterInstance.TalkInput.WasJustPressed && PlayerCharacterInstanceFishingCollisionVsWaterCollision.DoCollisions())
             {
                 PlayerCharacterInstance.StartFishing();
             }
-            else if(PlayerCharacterInstance.IsFishing && PlayerCharacterInstance.FishInput.WasJustPressed)
+            else if(PlayerCharacterInstance.IsFishing && PlayerCharacterInstance.TalkInput.WasJustPressed)
             {
                 PlayerCharacterInstance.StopFishing();
             }

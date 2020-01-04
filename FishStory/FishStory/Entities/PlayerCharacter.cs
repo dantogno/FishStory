@@ -24,7 +24,6 @@ namespace FishStory.Entities
         public IPressableInput TalkInput;
         public IPressableInput CancelInput;
         public IPressableInput InventoryInput;
-        public IPressableInput FishInput;
 
         public NPC NpcForAction { get; set; }
 
@@ -54,7 +53,6 @@ namespace FishStory.Entities
                 TalkInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Space);
                 CancelInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Escape);
                 InventoryInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.I);
-                FishInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.F);
             }
             else if(InputDevice is Xbox360GamePad gamepad)
             {
