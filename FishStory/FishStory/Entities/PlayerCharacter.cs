@@ -24,8 +24,11 @@ namespace FishStory.Entities
         public IPressableInput TalkInput;
         public IPressableInput CancelInput;
         public IPressableInput InventoryInput;
+        public IPressableInput FishInput;
 
         public NPC NpcForAction { get; set; }
+
+        public bool IsFishing => this.CurrentMovement?.Name == "Fishing";
 
         #endregion
 
@@ -51,6 +54,7 @@ namespace FishStory.Entities
                 TalkInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Space);
                 CancelInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Escape);
                 InventoryInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.I);
+                FishInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.F);
             }
             else if(InputDevice is Xbox360GamePad gamepad)
             {
@@ -91,6 +95,14 @@ namespace FishStory.Entities
             }
         }
 
+        public void StartFishing()
+        {
+            this.CurrentMovement = TopDownValues["Fishing"];
+        }
+        public void StopFishing()
+        {
+            this.CurrentMovement = TopDownValues["Default"];
+        }
         #endregion
 
         private void CustomDestroy()
@@ -104,5 +116,6 @@ namespace FishStory.Entities
 
 
         }
+
     }
 }
