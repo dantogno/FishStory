@@ -8,26 +8,34 @@
     <Frame>
       <TextureName>../../levels/mastertilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>86</LeftCoordinate>
-      <RightCoordinate>103</RightCoordinate>
-      <TopCoordinate>1763</TopCoordinate>
-      <BottomCoordinate>1792</BottomCoordinate>
+      <LeftCoordinate>1</LeftCoordinate>
+      <RightCoordinate>17</RightCoordinate>
+      <TopCoordinate>1577</TopCoordinate>
+      <BottomCoordinate>1593</BottomCoordinate>
     </Frame>
     <Frame>
       <TextureName>../../levels/mastertilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>124</LeftCoordinate>
-      <RightCoordinate>141</RightCoordinate>
-      <TopCoordinate>1762</TopCoordinate>
-      <BottomCoordinate>1792</BottomCoordinate>
+      <LeftCoordinate>17</LeftCoordinate>
+      <RightCoordinate>33</RightCoordinate>
+      <TopCoordinate>1577</TopCoordinate>
+      <BottomCoordinate>1593</BottomCoordinate>
     </Frame>
     <Frame>
       <TextureName>../../levels/mastertilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>162</LeftCoordinate>
-      <RightCoordinate>179</RightCoordinate>
-      <TopCoordinate>1762</TopCoordinate>
-      <BottomCoordinate>1792</BottomCoordinate>
+      <LeftCoordinate>33</LeftCoordinate>
+      <RightCoordinate>49</RightCoordinate>
+      <TopCoordinate>1577</TopCoordinate>
+      <BottomCoordinate>1593</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>49</LeftCoordinate>
+      <RightCoordinate>65</RightCoordinate>
+      <TopCoordinate>1577</TopCoordinate>
+      <BottomCoordinate>1593</BottomCoordinate>
     </Frame>
   </AnimationChain>
   <AnimationChain>
@@ -35,34 +43,10 @@
     <Frame>
       <TextureName>../../levels/mastertilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>124</LeftCoordinate>
-      <RightCoordinate>141</RightCoordinate>
-      <TopCoordinate>1834</TopCoordinate>
-      <BottomCoordinate>1864</BottomCoordinate>
-    </Frame>
-    <Frame>
-      <TextureName>../../levels/mastertilesheet.png</TextureName>
-      <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>162</LeftCoordinate>
-      <RightCoordinate>179</RightCoordinate>
-      <TopCoordinate>1834</TopCoordinate>
-      <BottomCoordinate>1864</BottomCoordinate>
-    </Frame>
-    <Frame>
-      <TextureName>../../levels/mastertilesheet.png</TextureName>
-      <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>124</LeftCoordinate>
-      <RightCoordinate>141</RightCoordinate>
-      <TopCoordinate>1834</TopCoordinate>
-      <BottomCoordinate>1864</BottomCoordinate>
-    </Frame>
-    <Frame>
-      <TextureName>../../levels/mastertilesheet.png</TextureName>
-      <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>162</LeftCoordinate>
-      <RightCoordinate>179</RightCoordinate>
-      <TopCoordinate>1834</TopCoordinate>
-      <BottomCoordinate>1864</BottomCoordinate>
+      <LeftCoordinate>64</LeftCoordinate>
+      <RightCoordinate>80</RightCoordinate>
+      <TopCoordinate>1577</TopCoordinate>
+      <BottomCoordinate>1593</BottomCoordinate>
     </Frame>
   </AnimationChain>
 </AnimationChainArraySave>

@@ -1330,7 +1330,7 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>Y</Member>
-            <ValueAsFloat>10</ValueAsFloat>
+            <ValueAsFloat>28</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>bool</Type>
