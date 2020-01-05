@@ -84,20 +84,19 @@ namespace FishStory.Entities
         {
             if(TimeManager.CurrentScreenTime > nextFishTime && hasShownExclamation == false)
             {
-                DoFishAvailableLogic();
+                PerformFishIsAvailableLogic();
             }
         }
 
-        private void DoFishAvailableLogic()
+        private void PerformFishIsAvailableLogic()
         {
             hasShownExclamation = true;
             ExclamationIconInstance.Visible = true;
             ExclamationIconInstance.BeginAnimations();
 
-            var timeFishIsAvailable = 1;
             IsFishOnLine = true;
             this.Call(StopFishAvailable)
-                .After(timeFishIsAvailable);
+                .After(TimeFishExclamationShows);
         }
 
         private void StopFishAvailable()
@@ -106,6 +105,8 @@ namespace FishStory.Entities
             IsFishOnLine = false;
 
             hasShownExclamation = false;
+
+            SetNextFishTime();
         }
 
         private void UpdateActivityCollisionPosition()
@@ -138,8 +139,8 @@ namespace FishStory.Entities
 
         private void SetNextFishTime()
         {
-            const float minTimeForFish = 1;
-            const float maxTimeForFish = 5;
+            const float minTimeForFish = 2f;
+            const float maxTimeForFish = 12;
 
             var randomTime = FlatRedBallServices.Random.Between(minTimeForFish, maxTimeForFish);
 
