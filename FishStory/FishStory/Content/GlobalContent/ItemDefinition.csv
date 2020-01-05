@@ -1,7 +1,15 @@
-"Name (string, required)",Icon (string),PlayerBuyingCost (int),PlayerSellingCost (int),Description (string)
-Fishing Rod,,250,0,This might work for hitting fish in the face
-Low Quality Bait,,50,0,Cheap stuff
-Medium Quality Bait,,80,0,More expenseive stuff but still sucky
-Festival Badge,,,0,"""The bearer of this badge may officially participate in the 203rd Ensomme Fishing Festival."""
-Festival Pamphlet,,,0,"""Need a place to stay? Swing by Festival HQ just west of the docks. Ensomme has plenty of accomodations for visitors during the Fishing Festival."""
-Regular Fish,,0,20,Some regular ol fish
+"Name (string, required)",Icon (string),IsBait (bool),PlayerBuyingCost (int),PlayerSellingCost (int),Description (string)
+Fishing Rod,,,250,0,This might work for hitting fish in the face
+Low Quality Bait,,,50,0,Cheap stuff
+Medium Quality Bait,,,80,0,More expenseive stuff but still sucky
+Festival Badge,,,,0,"""The bearer of this badge may officially participate in the 203rd Ensomme Fishing Festival."""
+Festival Pamphlet,,,,0,"""Need a place to stay? Swing by Festival HQ just west of the docks. Ensomme has plenty of accomodations for visitors during the Fishing Festival."""
+Regular Fish,,,0,20,Some regular ol fish
+Bass,,,,30,Bass Fish Description
+Squid,,,,30,Squid Fish Description
+Shark,,,,50,Shark Fish Description
+Clam,,,,45,Clam Fish Description
+Trash,,,,35,Trash Description
+Earthworm,,true,,0,Wormy worm
+Lure,,true,,0,Lure description
+Minnow,,true,,0,Minnow

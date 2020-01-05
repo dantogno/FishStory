@@ -49,6 +49,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DataTypes\DefaultLootTable.Generated.cs" />
     <Compile Include="DataTypes\ItemDefinition.Generated.cs" />
     <Compile Include="DataTypes\NpcRelationship.cs" />
     <Compile Include="DataTypes\PlayerData.cs" />
@@ -382,6 +383,10 @@
     <None Include="content\globalcontent\dialog\welcomedialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>WelcomeDialog</Name>
+    </None>
+    <None Include="content\globalcontent\fishingloottables\spreadsheetfile.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>SpreadsheetFile</Name>
     </None>
     <None Include="content\globalcontent\itemdefinition.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
