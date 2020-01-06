@@ -13,7 +13,7 @@
  </layer>
  <layer id="4" name="Tile Layer 3" width="100" height="100">
   <data encoding="base64" compression="gzip">
-   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
+   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
   </data>
  </layer>
  <layer id="3" name="Tile Layer 4" width="100" height="100">
@@ -28,7 +28,7 @@
  </layer>
  <layer id="7" name="Tile Layer 6" width="100" height="100" opacity="0.79">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAECu3Z0QnAIAwFwAwhRZxbSsetojPUQC8Qxa/Ivc9EKAIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAg8L3A1SLK6Fl13+vlPCFwjwz6zuGRx4kIzCRAgAABAgQIECBAgAABAgQIECBAgACBnwjYkeQK2o4kVx5+Q4AAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBDIJPACihnF8ECcAAA=
+   H4sIAAAAAAAECu3ZQQqAIBAF0DlEhETHjuiS3iEjly4DB3oDKs5GeX85EYoAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIDAWKDu474uAQIECBAgQIAAAQIEvhBYt4ilradKP9+bfYbA2TI4eg6XPGZE4E0CBAgQIECAAAECBAgQIECAAAECBAgQ+ImAGUmuoM1IcuXhNwQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgACBTAI3j3yhP0CcAAA=
   </data>
  </layer>
  <objectgroup id="6" name="Entities">
@@ -46,13 +46,13 @@
   </object>
   <object id="5" name="BaitMerchant" gid="7" x="527.205" y="762.773" width="16" height="16">
    <properties>
-    <property name="Animation" value="BaldLabCoat"/>
+    <property name="Animation" value="Boy2"/>
     <property name="TwineDialogId" value="WelcomeDialog"/>
    </properties>
   </object>
-  <object id="6" name="Identifier" gid="7" x="556.5" y="634.25" width="16" height="16">
+  <object id="6" name="Identifier" gid="7" x="589.833" y="616.583" width="16" height="16">
    <properties>
-    <property name="Animation" value="GreenOutfitWithHat"/>
+    <property name="Animation" value="DeckardCainWithCane"/>
     <property name="TwineDialogId" value="WelcomeDialog"/>
    </properties>
   </object>
@@ -64,7 +64,7 @@
   </object>
   <object id="8" name="FishMonger" gid="7" x="731" y="763.5" width="16" height="16">
    <properties>
-    <property name="Animation" value="BaldManBlackJersey"/>
+    <property name="Animation" value="BaldLabCoat"/>
     <property name="TwineDialogId" value="WelcomeDialog"/>
    </properties>
   </object>
