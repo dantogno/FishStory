@@ -44,6 +44,8 @@ namespace FishStory.Screens
 
             DialogBox.Visible = false;
 
+            InitializePlayer();
+
             InitializeCamera();
 
             SpriteManager.OrderedSortType = FlatRedBall.Graphics.SortType.ZSecondaryParentY;
@@ -57,6 +59,11 @@ namespace FishStory.Screens
 #if DEBUG
             DebugInitialize();
 #endif
+        }
+
+        private void InitializePlayer()
+        {
+            PlayerCharacterInstance.FishLost += HandleFishLost;
         }
 
 #if DEBUG
@@ -227,10 +234,15 @@ namespace FishStory.Screens
                 }
                 else
                 {
-                    GameScreenGum.DialogBoxInstance.TryShow(baitSelection, HandleFishingLinkSelected);
+                    if(DialogBox.TryShow(baitSelection, HandleFishingLinkSelected))
+                    {
+                        PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                    }
                 }
             }
-            else if(PlayerCharacterInstance.IsFishing && PlayerCharacterInstance.TalkInput.WasJustPressed)
+            else if(PlayerCharacterInstance.IsFishing && 
+                PlayerCharacterInstance.TalkInput.WasJustPressed &&
+                PlayerCharacterInstance.LastTimeFishingStarted != TimeManager.CurrentScreenTime)
             {
                 if(PlayerCharacterInstance.IsFishOnLine)
                 {
@@ -246,12 +258,19 @@ namespace FishStory.Screens
         {
             var text = selectedLink.name;
 
+            PlayerCharacterInstance.ObjectsBlockingInput.Remove(DialogBox);
+            DialogBox.TryHide();
             if(text == "Cancel")
             {
                 // do nothing
             }
             else
             {
+                var itemName = text.Substring(0, text.LastIndexOf(" ("));
+
+                PlayerDataManager.PlayerData.RemoveItem(itemName);
+                AddNotification($"Used {itemName}");
+
                 PlayerCharacterInstance.StartFishing();
             }
         }
@@ -286,7 +305,7 @@ namespace FishStory.Screens
                 foreach(var item in itemsToLookAt)
                 {
                     var link = new DialogTreePlugin.SaveClasses.DialogTreeRaw.Link();
-                    link.name = item.Key;
+                    link.name = $"{item.Key} ({item.Value})";
                     links.Add(link);
                 }
 
@@ -303,6 +322,11 @@ namespace FishStory.Screens
 
                 return rootObject;
             }
+        }
+
+        private void HandleFishLost()
+        {
+            AddNotification("Fish got away with bait");
         }
 
         #region UI Activity

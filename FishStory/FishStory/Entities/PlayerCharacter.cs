@@ -33,7 +33,11 @@ namespace FishStory.Entities
         public bool IsFishOnLine { get; private set; }
         bool hasShownExclamation = false;
 
+        public double LastTimeFishingStarted { get; set; }
+
         public List<object> ObjectsBlockingInput { get; private set; } = new List<object>();
+
+        public event Action FishLost;
 
         #endregion
 
@@ -105,12 +109,17 @@ namespace FishStory.Entities
 
         private void StopFishAvailable()
         {
-            ExclamationIconInstance.Visible = false;
-            IsFishOnLine = false;
+            if(IsFishOnLine)
+            {
+                ExclamationIconInstance.Visible = false;
+                IsFishOnLine = false;
 
-            hasShownExclamation = false;
+                hasShownExclamation = false;
+                StopFishing();
+                FishLost?.Invoke();
 
-            SetNextFishTime();
+            }
+
         }
 
         private void UpdateActivityCollisionPosition()
@@ -138,6 +147,7 @@ namespace FishStory.Entities
         public void StartFishing()
         {
             this.CurrentMovement = TopDownValues["Fishing"];
+            LastTimeFishingStarted = TimeManager.CurrentScreenTime;
             SetNextFishTime();
         }
 
@@ -157,6 +167,8 @@ namespace FishStory.Entities
         {
             this.CurrentMovement = TopDownValues["Default"];
             nextFishTime = null;
+            IsFishOnLine = false;
+            ExclamationIconInstance.Visible = false;
         }
         #endregion
 

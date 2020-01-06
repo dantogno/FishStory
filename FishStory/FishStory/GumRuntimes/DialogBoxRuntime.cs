@@ -276,7 +276,7 @@ namespace FishStory.GumRuntimes
                 var link = currentPassage.links[selectedIndex.Value];
                 if (link.pid.IsNullOrWhitespace())
                 {
-                    currentNodeId = dialogTree.passages.Single(p => p.name == link.StrippedLink).pid;
+                    currentNodeId = dialogTree.passages.FirstOrDefault(p => p.name == link.StrippedLink)?.pid;
                 }
                 else
                 {
