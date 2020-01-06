@@ -33,6 +33,8 @@ namespace FishStory.Entities
         public bool IsFishOnLine { get; private set; }
         bool hasShownExclamation = false;
 
+        public List<object> ObjectsBlockingInput { get; private set; } = new List<object>();
+
         #endregion
 
         #region Initialize
@@ -72,6 +74,8 @@ namespace FishStory.Entities
         private void CustomActivity()
         {
             UpdateActivityCollisionPosition();
+
+            InputEnabled = ObjectsBlockingInput.Count == 0;
 
             if(IsFishing)
             {

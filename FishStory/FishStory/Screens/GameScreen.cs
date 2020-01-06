@@ -20,6 +20,7 @@ using FlatRedBall.Gui;
 using FishStory.DataTypes;
 using FishStory.GumRuntimes;
 using static DialogTreePlugin.SaveClasses.DialogTreeRaw;
+using DialogTreePlugin.SaveClasses;
 
 namespace FishStory.Screens
 {
@@ -211,7 +212,7 @@ namespace FishStory.Screens
                 {
                     if(DialogBox.TryShow(PlayerCharacterInstance.NpcForAction.TwineDialogId))
                     {
-                        PlayerCharacterInstance.InputEnabled = false;
+                        PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                     }
                 }
             }
@@ -226,9 +227,7 @@ namespace FishStory.Screens
                 }
                 else
                 {
-                    GameScreenGum.DialogBoxInstance.TryShow(baitSelection);
-
-                    PlayerCharacterInstance.StartFishing();
+                    GameScreenGum.DialogBoxInstance.TryShow(baitSelection, HandleFishingLinkSelected);
                 }
             }
             else if(PlayerCharacterInstance.IsFishing && PlayerCharacterInstance.TalkInput.WasJustPressed)
@@ -240,6 +239,20 @@ namespace FishStory.Screens
                     AddNotification($"Caught {fishCaught}");
                 }
                 PlayerCharacterInstance.StopFishing();
+            }
+        }
+
+        private void HandleFishingLinkSelected(DialogTreeRaw.Link selectedLink)
+        {
+            var text = selectedLink.name;
+
+            if(text == "Cancel")
+            {
+                // do nothing
+            }
+            else
+            {
+                PlayerCharacterInstance.StartFishing();
             }
         }
 
@@ -362,7 +375,10 @@ namespace FishStory.Screens
 
         private void HandleDialogBoxHide()
         {
-            PlayerCharacterInstance.InputEnabled = true;
+            if(PlayerCharacterInstance.ObjectsBlockingInput.Contains(DialogBox))
+            {
+                PlayerCharacterInstance.ObjectsBlockingInput.Remove(DialogBox);
+            }
         }
 
         private void HandleDialogTagShown(string tag)

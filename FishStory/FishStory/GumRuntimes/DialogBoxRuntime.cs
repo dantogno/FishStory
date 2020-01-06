@@ -21,6 +21,8 @@ namespace FishStory.GumRuntimes
         public IPressableInput DownInput { get; set; }
         public IPressableInput SelectInput { get; set; }
 
+        Action<Link> linkSelected;
+
         public int? SelectedIndex
         {
             get
@@ -131,8 +133,9 @@ namespace FishStory.GumRuntimes
             return TryShow(rootObject);
         }
 
-        public bool TryShow(RootObject rootObject)
+        public bool TryShow(RootObject rootObject, Action<Link> linkSelected = null)
         {
+            this.linkSelected = linkSelected;
             dialogTree = rootObject;
             currentNodeId = dialogTree.startnode;
 
@@ -279,7 +282,10 @@ namespace FishStory.GumRuntimes
                 {
                     currentNodeId = link.pid;
                 }
-                
+
+                linkSelected?.Invoke(link);
+
+
                 UpdateToCurrentTreeAndNode();
             }
             else
