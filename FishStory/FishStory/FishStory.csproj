@@ -49,7 +49,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DataTypes\DefaultLootTable.Generated.cs" />
+    <Compile Include="DataTypes\FishingLootTable.Generated.cs" />
     <Compile Include="DataTypes\ItemDefinition.Generated.cs" />
     <Compile Include="DataTypes\NpcRelationship.cs" />
     <Compile Include="DataTypes\PlayerData.cs" />

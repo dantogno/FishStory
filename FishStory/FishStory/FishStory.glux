@@ -1548,6 +1548,15 @@
       <GenerateCode>true</GenerateCode>
       <CustomNamespace />
     </CustomClassSave>
+    <CustomClassSave>
+      <CsvFilesUsingThis>
+        <string>GlobalContent/FishingLootTables/DefaultLootTable.csv</string>
+      </CsvFilesUsingThis>
+      <RequiredProperties />
+      <Name>FishingLootTable</Name>
+      <GenerateCode>true</GenerateCode>
+      <CustomNamespace />
+    </CustomClassSave>
   </CustomClasses>
   <TranslatedFiles />
   <ApplyToFixedResolutionPlatforms>true</ApplyToFixedResolutionPlatforms>

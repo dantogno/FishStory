@@ -39,6 +39,8 @@ namespace FishStory.Entities
 
         public event Action FishLost;
 
+        public string CurrentBait { get; private set; }
+
         #endregion
 
         #region Initialize
@@ -144,8 +146,9 @@ namespace FishStory.Entities
             }
         }
 
-        public void StartFishing()
+        public void StartFishing(string baitType)
         {
+            this.CurrentBait = baitType;
             this.CurrentMovement = TopDownValues["Fishing"];
             LastTimeFishingStarted = TimeManager.CurrentScreenTime;
             SetNextFishTime();
