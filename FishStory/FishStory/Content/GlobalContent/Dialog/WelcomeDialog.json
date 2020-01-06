@@ -153,7 +153,7 @@
       }
     },
     {
-      "text": "[Mayor Thompson took $5. He wouldn't take no for an answer.]\n",
+      "text": "[Mayor Thompson took $5. She wouldn't take no for an answer.]\n",
       "name": "Festival 5",
       "pid": "9",
       "position": {
@@ -165,7 +165,7 @@
       ]
     },
     {
-      "text": "When you're ready to call it a night, talk to Amanda by the brick buildings behind me. She'll get you setup with proper accomodations for the duration of the festival. Ready, set, FISH! [[Festival 5]] ",
+      "text": "When you're ready to call it a night, talk to Anthony by the blue flags in the town square. He'll get you setup with proper accomodations for the duration of the festival. Ready, set, FISH! [[Festival 5]] ",
       "links": [
         {
           "name": "Festival 5",
