@@ -19,16 +19,31 @@ using FishStory.Managers;
 using FlatRedBall.Gui;
 using FishStory.DataTypes;
 using FishStory.GumRuntimes;
+using static DialogTreePlugin.SaveClasses.DialogTreeRaw;
+using DialogTreePlugin.SaveClasses;
 
 namespace FishStory.Screens
 {
     public partial class GameScreen
     {
+        struct FishWeight
+        {
+            public string Fish;
+            public float Weight;
+
+            public override string ToString()
+            {
+                return $"{Fish} {Weight}";
+            }
+        }
+
         #region Fields/Properties
 
         protected ScreenScript<GameScreen> script;
 
         List<string> dialogTagsThisFrame = new List<string>();
+
+        Dictionary<string, List<string>> ItemsBought = new Dictionary<string, List<string>>();
 
         #endregion
 
@@ -42,6 +57,8 @@ namespace FishStory.Screens
 
             DialogBox.Visible = false;
 
+            InitializePlayer();
+
             InitializeCamera();
 
             SpriteManager.OrderedSortType = FlatRedBall.Graphics.SortType.ZSecondaryParentY;
@@ -51,7 +68,38 @@ namespace FishStory.Screens
             InitializeUi();
 
             InitializeRestartVariables();
+
+#if DEBUG
+            DebugInitialize();
+#endif
         }
+
+        private void InitializePlayer()
+        {
+            PlayerCharacterInstance.FishLost += HandleFishLost;
+        }
+
+#if DEBUG
+        private void DebugInitialize()
+        {
+            if(DebuggingVariables.AwardTonsOfBait)
+            {
+                void Award(string item) => PlayerDataManager.PlayerData.AwardItem(item);
+                Award(DataTypes.ItemDefinition.Minnow);
+                Award(DataTypes.ItemDefinition.Minnow);
+                Award(DataTypes.ItemDefinition.Minnow);
+
+                Award(DataTypes.ItemDefinition.Lure);
+                Award(DataTypes.ItemDefinition.Lure);
+                Award(DataTypes.ItemDefinition.Lure);
+
+                Award(DataTypes.ItemDefinition.Earthworm);
+                Award(DataTypes.ItemDefinition.Earthworm);
+                Award(DataTypes.ItemDefinition.Earthworm);
+
+            }
+        }
+#endif
 
         private void InitializeEntitiesFromMap()
         {
@@ -147,7 +195,7 @@ namespace FishStory.Screens
             
             UiActivity();
 
-            CollisionActivity();
+            PlayerCollisionActivity();
 
             DebuggingActivity();
 
@@ -172,23 +220,184 @@ namespace FishStory.Screens
 
         }
 
-        private void CollisionActivity()
+        private void PlayerCollisionActivity()
         {
-            if(PlayerCharacterInstance.TalkInput?.WasJustPressed == true && DialogBox.Visible == false)
+            if (PlayerCharacterInstance.TalkInput.WasJustPressed && DialogBox.Visible == false)
             {
                 PlayerCharacterInstance.NpcForAction = null;
 
                 PlayerCharacterInstanceActivityCollisionVsNPCListBodyCollision.DoCollisions();
 
-                if(PlayerCharacterInstance.NpcForAction != null)
+                if (PlayerCharacterInstance.NpcForAction != null)
                 {
-                    if(DialogBox.TryShow(PlayerCharacterInstance.NpcForAction.TwineDialogId))
+                    if (DialogBox.TryShow(PlayerCharacterInstance.NpcForAction.TwineDialogId))
                     {
-                        PlayerCharacterInstance.InputEnabled = false;
+                        PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                     }
                 }
-
             }
+
+            DoFishingActivity();
+        }
+
+        private void DoFishingActivity()
+        {
+            if (PlayerCharacterInstance.IsFishing == false && PlayerCharacterInstance.TalkInput.WasJustPressed &&
+                PlayerCharacterInstanceFishingCollisionVsWaterCollision.DoCollisions())
+            {
+                var baitSelection = GetBaitRootObject();
+
+                if (baitSelection == null)
+                {
+                    AddNotification("Can't fish - no bait");
+                }
+                else
+                {
+                    if (DialogBox.TryShow(baitSelection, HandleFishingLinkSelected))
+                    {
+                        PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                    }
+                }
+            }
+            else if (PlayerCharacterInstance.IsFishing &&
+                PlayerCharacterInstance.TalkInput.WasJustPressed &&
+                PlayerCharacterInstance.LastTimeFishingStarted != TimeManager.CurrentScreenTime)
+            {
+                if (PlayerCharacterInstance.IsFishOnLine)
+                {
+                    string fishCaught = GetFishCaught(PlayerCharacterInstance.CurrentBait);
+                    PlayerDataManager.PlayerData.AwardItem(fishCaught);
+                    AddNotification($"Caught {fishCaught}");
+                }
+                PlayerCharacterInstance.StopFishing();
+            }
+        }
+
+        private string GetFishCaught(string baitType)
+        {
+            var lootTable = GlobalContent.DefaultLootTable;
+
+            var field = typeof(FishingLootTable).GetField(baitType);
+
+            if(field == null)
+            {
+                throw new InvalidOperationException($"Trying to find a row for bait {baitType} but couldn't find it");
+            }
+
+            List<FishWeight> fishWeights = new List<FishWeight>();
+
+            foreach(var kvp in lootTable)
+            {
+                var weightAsObject = field.GetValue(kvp.Value);
+                int weight = 0;
+                if (weightAsObject != null)
+                {
+                    weight = (int)weightAsObject;
+                }
+
+                if(weight != 0)
+                {
+                    var fishWeight = new FishWeight
+                    {
+                        Fish = kvp.Key,
+                        Weight = weight
+                    };
+                    fishWeights.Add(fishWeight);
+                }
+            }
+
+            var sum = fishWeights.Sum(item => item.Weight);
+
+            var randomValue = FlatRedBallServices.Random.Between(0, sum);
+
+            var sumSoFar = 0.0f;
+
+            foreach(var item in fishWeights)
+            {
+                sumSoFar += item.Weight;
+
+                if(randomValue < sumSoFar)
+                {
+                    return item.Fish;
+                }
+            }
+
+            return fishWeights.Last().Fish;
+        }
+
+        private void HandleFishingLinkSelected(DialogTreeRaw.Link selectedLink)
+        {
+            var text = selectedLink.name;
+
+            PlayerCharacterInstance.ObjectsBlockingInput.Remove(DialogBox);
+            DialogBox.TryHide();
+            if(text == "Cancel")
+            {
+                // do nothing
+            }
+            else
+            {
+                var baitType = text.Substring(0, text.LastIndexOf(" ("));
+
+                PlayerDataManager.PlayerData.RemoveItem(baitType);
+                AddNotification($"Used {baitType}");
+
+                PlayerCharacterInstance.StartFishing(baitType);
+            }
+        }
+
+        private RootObject GetBaitRootObject()
+        {
+            var rootObject = new RootObject();
+            rootObject.startnode = "start";
+
+            List<Passage> passages = new List<Passage>();
+
+            var mainPassage = new Passage();
+            mainPassage.name = "start";
+            mainPassage.pid = "start";
+            mainPassage.text = "Select Bait";
+
+            var inventory = PlayerDataManager.PlayerData.ItemInventory;
+
+            var itemsToLookAt = inventory
+                .Where(item => item.Value > 0)
+                .Where(item => GlobalContent.ItemDefinition[item.Key].IsBait)
+                .ToList();
+
+            if(itemsToLookAt.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                var links = new List<DialogTreePlugin.SaveClasses.DialogTreeRaw.Link>();
+
+                foreach(var item in itemsToLookAt)
+                {
+                    var link = new DialogTreePlugin.SaveClasses.DialogTreeRaw.Link();
+                    link.name = $"{item.Key} ({item.Value})";
+                    links.Add(link);
+                }
+
+                links.Add(new DialogTreePlugin.SaveClasses.DialogTreeRaw.Link
+                {
+                    name = "Cancel"
+                });
+
+                mainPassage.links = links.ToArray();
+
+                passages.Add(mainPassage);
+
+                rootObject.passages = passages.ToArray();
+
+                return rootObject;
+            }
+        }
+
+        private void HandleFishLost()
+        {
+            AddNotification("Fish got away with bait");
         }
 
         #region UI Activity
@@ -218,7 +427,7 @@ namespace FishStory.Screens
             store.Visible = true;
             store.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
 
-            store.PopulateFromStoreName(storeName);
+            store.PopulateFromStoreName(storeName, ItemsBought);
         }
 
         private void HandleSellingShouldShow()
@@ -261,7 +470,10 @@ namespace FishStory.Screens
 
         private void HandleDialogBoxHide()
         {
-            PlayerCharacterInstance.InputEnabled = true;
+            if(PlayerCharacterInstance.ObjectsBlockingInput.Contains(DialogBox))
+            {
+                PlayerCharacterInstance.ObjectsBlockingInput.Remove(DialogBox);
+            }
         }
 
         private void HandleDialogTagShown(string tag)

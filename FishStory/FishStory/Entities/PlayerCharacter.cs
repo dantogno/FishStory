@@ -27,6 +27,20 @@ namespace FishStory.Entities
 
         public NPC NpcForAction { get; set; }
 
+        public bool IsFishing => this.CurrentMovement?.Name == "Fishing";
+
+        double? nextFishTime;
+        public bool IsFishOnLine { get; private set; }
+        bool hasShownExclamation = false;
+
+        public double LastTimeFishingStarted { get; set; }
+
+        public List<object> ObjectsBlockingInput { get; private set; } = new List<object>();
+
+        public event Action FishLost;
+
+        public string CurrentBait { get; private set; }
+
         #endregion
 
         #region Initialize
@@ -67,6 +81,47 @@ namespace FishStory.Entities
         {
             UpdateActivityCollisionPosition();
 
+            InputEnabled = ObjectsBlockingInput.Count == 0;
+
+            if(IsFishing)
+            {
+                DoFishingActivity();
+            }
+
+        }
+
+        private void DoFishingActivity()
+        {
+            if(TimeManager.CurrentScreenTime > nextFishTime && hasShownExclamation == false)
+            {
+                PerformFishIsAvailableLogic();
+            }
+        }
+
+        private void PerformFishIsAvailableLogic()
+        {
+            hasShownExclamation = true;
+            ExclamationIconInstance.Visible = true;
+            ExclamationIconInstance.BeginAnimations();
+
+            IsFishOnLine = true;
+            this.Call(StopFishAvailable)
+                .After(TimeFishExclamationShows);
+        }
+
+        private void StopFishAvailable()
+        {
+            if(IsFishOnLine)
+            {
+                ExclamationIconInstance.Visible = false;
+                IsFishOnLine = false;
+
+                hasShownExclamation = false;
+                StopFishing();
+                FishLost?.Invoke();
+
+            }
+
         }
 
         private void UpdateActivityCollisionPosition()
@@ -91,6 +146,33 @@ namespace FishStory.Entities
             }
         }
 
+        public void StartFishing(string baitType)
+        {
+            this.CurrentBait = baitType;
+            this.CurrentMovement = TopDownValues["Fishing"];
+            LastTimeFishingStarted = TimeManager.CurrentScreenTime;
+            SetNextFishTime();
+        }
+
+        private void SetNextFishTime()
+        {
+            const float minTimeForFish = 2f;
+            const float maxTimeForFish = 12;
+
+            var randomTime = FlatRedBallServices.Random.Between(minTimeForFish, maxTimeForFish);
+
+            nextFishTime = TimeManager.CurrentScreenTime + randomTime;
+            hasShownExclamation = false;
+            ExclamationIconInstance.Visible = false;
+        }
+
+        public void StopFishing()
+        {
+            this.CurrentMovement = TopDownValues["Default"];
+            nextFishTime = null;
+            IsFishOnLine = false;
+            ExclamationIconInstance.Visible = false;
+        }
         #endregion
 
         private void CustomDestroy()
@@ -104,5 +186,6 @@ namespace FishStory.Entities
 
 
         }
+
     }
 }

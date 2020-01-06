@@ -1,3 +1,3 @@
-"Item (string, required)"
-Low Quality Bait
-Medium Quality Bait
+"Item (string, required)",Stock (int)
+Minnow,10
+Earthworm,5

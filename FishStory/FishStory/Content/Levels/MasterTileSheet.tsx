@@ -415,6 +415,22 @@
    <frame tileid="7366" duration="100"/>
   </animation>
  </tile>
+ <tile id="7402">
+  <animation>
+   <frame tileid="7402" duration="100"/>
+   <frame tileid="7403" duration="100"/>
+   <frame tileid="7404" duration="100"/>
+   <frame tileid="7403" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="7414">
+  <animation>
+   <frame tileid="7414" duration="100"/>
+   <frame tileid="7415" duration="100"/>
+   <frame tileid="7416" duration="100"/>
+   <frame tileid="7415" duration="100"/>
+  </animation>
+ </tile>
  <tile id="7489">
   <animation>
    <frame tileid="7489" duration="100"/>
@@ -423,6 +439,14 @@
    <frame tileid="7492" duration="100"/>
    <frame tileid="7493" duration="100"/>
    <frame tileid="7494" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="7530">
+  <animation>
+   <frame tileid="7530" duration="100"/>
+   <frame tileid="7531" duration="100"/>
+   <frame tileid="7532" duration="100"/>
+   <frame tileid="7531" duration="100"/>
   </animation>
  </tile>
  <tile id="7592">
@@ -438,6 +462,30 @@
    <frame tileid="7620" duration="100"/>
    <frame tileid="7621" duration="100"/>
    <frame tileid="7622" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="7658">
+  <animation>
+   <frame tileid="7658" duration="100"/>
+   <frame tileid="7659" duration="100"/>
+   <frame tileid="7660" duration="100"/>
+   <frame tileid="7659" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="7670">
+  <animation>
+   <frame tileid="7670" duration="100"/>
+   <frame tileid="7671" duration="100"/>
+   <frame tileid="7672" duration="100"/>
+   <frame tileid="7671" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="7786">
+  <animation>
+   <frame tileid="7786" duration="100"/>
+   <frame tileid="7787" duration="100"/>
+   <frame tileid="7788" duration="100"/>
+   <frame tileid="7787" duration="100"/>
   </animation>
  </tile>
  <tile id="7848">
@@ -463,6 +511,23 @@
    <property name="WaterCollision" value=""/>
   </properties>
  </tile>
+ <tile id="7914">
+  <animation>
+   <frame tileid="7914" duration="100"/>
+   <frame tileid="7915" duration="100"/>
+   <frame tileid="7916" duration="100"/>
+   <frame tileid="7915" duration="100"/>
+   <frame tileid="7914" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="7926">
+  <animation>
+   <frame tileid="7926" duration="100"/>
+   <frame tileid="7927" duration="100"/>
+   <frame tileid="7928" duration="100"/>
+   <frame tileid="7927" duration="100"/>
+  </animation>
+ </tile>
  <tile id="7994">
   <properties>
    <property name="WaterCollision" value=""/>
@@ -481,9 +546,41 @@
    <property name="WaterCollision" value=""/>
   </properties>
  </tile>
+ <tile id="8042">
+  <animation>
+   <frame tileid="8042" duration="100"/>
+   <frame tileid="8043" duration="100"/>
+   <frame tileid="8044" duration="100"/>
+   <frame tileid="8043" duration="100"/>
+  </animation>
+ </tile>
  <tile id="8104">
   <properties>
    <property name="WaterCollision" value=""/>
   </properties>
+ </tile>
+ <tile id="8170">
+  <animation>
+   <frame tileid="8170" duration="100"/>
+   <frame tileid="8171" duration="100"/>
+   <frame tileid="8172" duration="100"/>
+   <frame tileid="8171" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="8182">
+  <animation>
+   <frame tileid="8182" duration="100"/>
+   <frame tileid="8183" duration="100"/>
+   <frame tileid="8184" duration="100"/>
+   <frame tileid="8183" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="8298">
+  <animation>
+   <frame tileid="8298" duration="100"/>
+   <frame tileid="8299" duration="100"/>
+   <frame tileid="8300" duration="100"/>
+   <frame tileid="8299" duration="100"/>
+  </animation>
  </tile>
 </tileset>
