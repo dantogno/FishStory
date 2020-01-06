@@ -19,7 +19,7 @@ namespace FishStory.GumRuntimes
             listBox = 
                 this.ListBoxInstance.FormsControl;
 
-            listBox.ListBoxItemGumType = typeof(GumRuntimes.DefaultForms.StoreListItemRuntime);
+            listBox.ListBoxItemGumType = typeof(GumRuntimes.DefaultForms.InventoryListItemRuntime);
             listBox.ListBoxItemFormsType = typeof(Forms.StoreListBoxItem);
             listBox.SelectionChanged += HandleListBoxSelectionChanged;
 
@@ -42,9 +42,9 @@ namespace FishStory.GumRuntimes
             }
         }
 
-        internal void PopulateFromStoreName(string storeName)
+        internal void PopulateFromStoreName(string storeName, Dictionary<string, List<string>> itemsBought)
         {
-            var shop = GlobalContent.Shop1;
+            var shop = GlobalContent.GetFile(storeName) as Dictionary<string, ShopItem>;
 
             listBox.Items.Clear();
 

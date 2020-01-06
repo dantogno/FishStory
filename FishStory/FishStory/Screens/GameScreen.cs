@@ -26,11 +26,24 @@ namespace FishStory.Screens
 {
     public partial class GameScreen
     {
+        struct FishWeight
+        {
+            public string Fish;
+            public float Weight;
+
+            public override string ToString()
+            {
+                return $"{Fish} {Weight}";
+            }
+        }
+
         #region Fields/Properties
 
         protected ScreenScript<GameScreen> script;
 
         List<string> dialogTagsThisFrame = new List<string>();
+
+        Dictionary<string, List<string>> ItemsBought = new Dictionary<string, List<string>>();
 
         #endregion
 
@@ -260,17 +273,6 @@ namespace FishStory.Screens
             }
         }
 
-        struct FishWeight
-        {
-            public string Fish;
-            public float Weight;
-
-            public override string ToString()
-            {
-                return $"{Fish} {Weight}";
-            }
-        }
-
         private string GetFishCaught(string baitType)
         {
             var lootTable = GlobalContent.DefaultLootTable;
@@ -321,8 +323,6 @@ namespace FishStory.Screens
             }
 
             return fishWeights.Last().Fish;
-
-            return ItemDefinition.Regular_Fish; 
         }
 
         private void HandleFishingLinkSelected(DialogTreeRaw.Link selectedLink)
@@ -427,7 +427,7 @@ namespace FishStory.Screens
             store.Visible = true;
             store.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
 
-            store.PopulateFromStoreName(storeName);
+            store.PopulateFromStoreName(storeName, ItemsBought);
         }
 
         private void HandleSellingShouldShow()

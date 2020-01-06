@@ -19,10 +19,12 @@ namespace FishStory.Forms
         {
             var shop = shopAsObject as ShopItem;
             var item = GlobalContent.ItemDefinition[shop.Item];
-            var storeListItem = Visual as GumRuntimes.DefaultForms.StoreListItemRuntime;
+            var storeListItem = Visual as GumRuntimes.DefaultForms.InventoryListItemRuntime;
 
-            storeListItem.PriceText = item.PlayerBuyingCost.ToString() ;
+            storeListItem.Price = "$" + item.PlayerBuyingCost.ToString() ;
+            storeListItem.Stock = shop.Stock.ToString();
             storeListItem.ItemName = item.Name;
+            storeListItem.CurrentViewOrSellState = GumRuntimes.DefaultForms.InventoryListItemRuntime.ViewOrSell.Sell;
         }
     }
 }

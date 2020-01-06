@@ -10,6 +10,6 @@ Squid,,,,30,Squid Fish Description
 Shark,,,,50,Shark Fish Description
 Clam,,,,45,Clam Fish Description
 Trash,,,,35,Trash Description
-Earthworm,,true,,0,Wormy worm
-Lure,,true,,0,Lure description
-Minnow,,true,,0,Minnow
+Earthworm,,true,10,0,Wormy worm
+Lure,,true,8,0,Lure description
+Minnow,,true,6,0,Minnow
