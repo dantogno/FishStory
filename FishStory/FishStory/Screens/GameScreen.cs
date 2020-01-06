@@ -19,6 +19,7 @@ using FishStory.Managers;
 using FlatRedBall.Gui;
 using FishStory.DataTypes;
 using FishStory.GumRuntimes;
+using static DialogTreePlugin.SaveClasses.DialogTreeRaw;
 
 namespace FishStory.Screens
 {
@@ -51,7 +52,33 @@ namespace FishStory.Screens
             InitializeUi();
 
             InitializeRestartVariables();
+
+#if DEBUG
+            DebugInitialize();
+#endif
         }
+
+#if DEBUG
+        private void DebugInitialize()
+        {
+            if(DebuggingVariables.AwardTonsOfBait)
+            {
+                void Award(string item) => PlayerDataManager.PlayerData.AwardItem(item);
+                Award(DataTypes.ItemDefinition.Minnow);
+                Award(DataTypes.ItemDefinition.Minnow);
+                Award(DataTypes.ItemDefinition.Minnow);
+
+                Award(DataTypes.ItemDefinition.Lure);
+                Award(DataTypes.ItemDefinition.Lure);
+                Award(DataTypes.ItemDefinition.Lure);
+
+                Award(DataTypes.ItemDefinition.Earthworm);
+                Award(DataTypes.ItemDefinition.Earthworm);
+                Award(DataTypes.ItemDefinition.Earthworm);
+
+            }
+        }
+#endif
 
         private void InitializeEntitiesFromMap()
         {
@@ -147,7 +174,7 @@ namespace FishStory.Screens
             
             UiActivity();
 
-            CollisionActivity();
+            PlayerCollisionActivity();
 
             DebuggingActivity();
 
@@ -172,7 +199,7 @@ namespace FishStory.Screens
 
         }
 
-        private void CollisionActivity()
+        private void PlayerCollisionActivity()
         {
             if(PlayerCharacterInstance.TalkInput.WasJustPressed && DialogBox.Visible == false)
             {
@@ -191,7 +218,18 @@ namespace FishStory.Screens
 
             if(PlayerCharacterInstance.IsFishing == false && PlayerCharacterInstance.TalkInput.WasJustPressed && PlayerCharacterInstanceFishingCollisionVsWaterCollision.DoCollisions())
             {
-                PlayerCharacterInstance.StartFishing();
+                var baitSelection = GetBaitRootObject();
+
+                if(baitSelection == null)
+                {
+                    AddNotification("Can't fish - no bait");
+                }
+                else
+                {
+                    GameScreenGum.DialogBoxInstance.TryShow(baitSelection);
+
+                    PlayerCharacterInstance.StartFishing();
+                }
             }
             else if(PlayerCharacterInstance.IsFishing && PlayerCharacterInstance.TalkInput.WasJustPressed)
             {
@@ -202,6 +240,55 @@ namespace FishStory.Screens
                     AddNotification($"Caught {fishCaught}");
                 }
                 PlayerCharacterInstance.StopFishing();
+            }
+        }
+
+        private RootObject GetBaitRootObject()
+        {
+            var rootObject = new RootObject();
+            rootObject.startnode = "start";
+
+            List<Passage> passages = new List<Passage>();
+
+            var mainPassage = new Passage();
+            mainPassage.name = "start";
+            mainPassage.pid = "start";
+            mainPassage.text = "Select Bait";
+
+            var inventory = PlayerDataManager.PlayerData.ItemInventory;
+
+            var itemsToLookAt = inventory
+                .Where(item => item.Value > 0)
+                .Where(item => GlobalContent.ItemDefinition[item.Key].IsBait)
+                .ToList();
+
+            if(itemsToLookAt.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                var links = new List<DialogTreePlugin.SaveClasses.DialogTreeRaw.Link>();
+
+                foreach(var item in itemsToLookAt)
+                {
+                    var link = new DialogTreePlugin.SaveClasses.DialogTreeRaw.Link();
+                    link.name = item.Key;
+                    links.Add(link);
+                }
+
+                links.Add(new DialogTreePlugin.SaveClasses.DialogTreeRaw.Link
+                {
+                    name = "Cancel"
+                });
+
+                mainPassage.links = links.ToArray();
+
+                passages.Add(mainPassage);
+
+                rootObject.passages = passages.ToArray();
+
+                return rootObject;
             }
         }
 

@@ -126,7 +126,14 @@ namespace FishStory.GumRuntimes
 
         public bool TryShow(string dialogName)
         {
-            dialogTree = GlobalContent.GetFile(dialogName) as RootObject;
+            RootObject rootObject =
+                GlobalContent.GetFile(dialogName) as RootObject;
+            return TryShow(rootObject);
+        }
+
+        public bool TryShow(RootObject rootObject)
+        {
+            dialogTree = rootObject;
             currentNodeId = dialogTree.startnode;
 
             UpdateToCurrentTreeAndNode();

@@ -384,9 +384,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>WelcomeDialog</Name>
     </None>
-    <None Include="content\globalcontent\fishingloottables\spreadsheetfile.csv">
+    <None Include="content\globalcontent\fishingloottables\defaultloottable.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>SpreadsheetFile</Name>
+      <Name>DefaultLootTable</Name>
     </None>
     <None Include="content\globalcontent\itemdefinition.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -668,7 +668,9 @@
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\globalcontent\fishingloottables\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
