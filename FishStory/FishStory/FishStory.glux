@@ -28,7 +28,7 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>X</Member>
-            <ValueAsFloat>1102</ValueAsFloat>
+            <ValueAsFloat>1160</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
@@ -178,6 +178,7 @@
           <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
           <SourceName>DialogBoxInstance (FishStory.GumRuntimes.DialogBoxRuntime)</SourceName>
           <InstanceName>DialogBox</InstanceName>
+          <ExposedInDerived>true</ExposedInDerived>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -555,6 +556,24 @@
           <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
           <SourceClassGenericType>Entities\NPC</SourceClassGenericType>
           <InstanceName>NPCList</InstanceName>
+          <ExposedInDerived>true</ExposedInDerived>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <DefinedByBase>true</DefinedByBase>
+          <InstantiatedByBase>true</InstantiatedByBase>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">File</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
+          <SourceName>DialogBoxInstance (FishStory.GumRuntimes.DialogBoxRuntime)</SourceName>
+          <InstanceName>DialogBox</InstanceName>
           <ExposedInDerived>true</ExposedInDerived>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
