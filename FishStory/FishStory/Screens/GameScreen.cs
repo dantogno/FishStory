@@ -26,6 +26,8 @@ namespace FishStory.Screens
 {
     public partial class GameScreen
     {
+        #region Structs
+
         struct FishWeight
         {
             public string Fish;
@@ -36,6 +38,8 @@ namespace FishStory.Screens
                 return $"{Fish} {Weight}";
             }
         }
+
+        #endregion
 
         #region Fields/Properties
 
@@ -210,6 +214,11 @@ namespace FishStory.Screens
             if(DebuggingVariables.AwardMoneyByPressingM && keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.M))
             {
                 AwardMoney(50);
+            }
+            if(DebuggingVariables.SkipDayWithCtrlD && keyboard.IsCtrlDown && 
+                keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.D))
+            {
+                GoToNewDay();
             }
         }
 
@@ -398,6 +407,30 @@ namespace FishStory.Screens
         private void HandleFishLost()
         {
             AddNotification("Fish got away with bait");
+        }
+
+        public void GoToNewDay()
+        {
+            // stop player from moving
+            PlayerCharacterInstance.ObjectsBlockingInput.Add(GameScreenGum.OverlayInstance);
+
+            // fade UI out
+            GameScreenGum.ToBlackAnimation.Play();
+
+            // reset purchases
+            this.ItemsBought.Clear();
+
+            // fade UI in
+            GameScreenGum.ToTransparentAnimation.PlayAfter(GameScreenGum.ToBlackAnimation.Length);
+
+            // allow player movement
+            this.Call(() =>
+            {
+                PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.OverlayInstance);
+
+                AddNotification("It's a new day");
+
+            }).After(GameScreenGum.ToBlackAnimation.Length + GameScreenGum.ToTransparentAnimation.Length);
         }
 
         #region UI Activity
