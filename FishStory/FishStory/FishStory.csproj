@@ -117,6 +117,8 @@
     <Compile Include="GameScriptingCore\ScriptEngine.cs" />
     <Compile Include="GlobalContent.Generated.cs" />
     <Compile Include="GlueControl\GlueControlManager.Generated.cs" />
+    <Compile Include="GumRuntimes\ActionIndicatorRuntime.cs" />
+    <Compile Include="GumRuntimes\ActionIndicatorRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\IButtonBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\ICheckBoxBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\IComboBoxBehavior.Generated.cs" />
@@ -409,6 +411,10 @@
     <None Include="content\globalcontent\shops\shop1.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Shop1</Name>
+    </None>
+    <None Include="content\gumproject\components\actionindicator.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>actionindicator</Name>
     </None>
     <None Include="content\gumproject\components\defaultforms\button.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -831,6 +831,12 @@
     <State>
       <Name>View</Name>
       <Variable>
+        <Type>float</Type>
+        <Name>ColoredFrameInstance.Width</Name>
+        <Value xsi:type="xsd:float">75</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
         <Type>bool</Type>
         <Name>ColoredFrameInstance2.Visible</Name>
         <Value xsi:type="xsd:boolean">true</Value>
@@ -846,12 +852,6 @@
         <Type>bool</Type>
         <Name>SellButton.Visible</Name>
         <Value xsi:type="xsd:boolean">false</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>ColoredFrameInstance.Width</Name>
-        <Value xsi:type="xsd:float">75</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

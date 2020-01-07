@@ -13,6 +13,7 @@ namespace FishStory.GumRuntimes
         #region Fields/Properties
 
         double lastTimeHiddenOrShown;
+        double secondsBeforePromptingAction = 5;
 
         RootObject dialogTree;
         string currentNodeId;
@@ -143,6 +144,7 @@ namespace FishStory.GumRuntimes
 
             if (lastTimeHiddenOrShown != TimeManager.CurrentTime)
             {
+                ActionIndicatorInstance.FlashActionAnimation.Stop();
                 Visible = true;
                 lastTimeHiddenOrShown = TimeManager.CurrentTime;
                 return true;
@@ -260,8 +262,21 @@ namespace FishStory.GumRuntimes
                 {
                     HandleSelect();
                 }
+                else
+                {
+                    HandleIndicator();
+                }
+            }
+        }
 
-
+        private void HandleIndicator()
+        {
+            if (secondsBeforePromptingAction <= TimeManager.CurrentTime - lastTimeHiddenOrShown)
+            {
+                if (!ActionIndicatorInstance.FlashActionAnimation.IsPlaying())
+                {
+                    ActionIndicatorInstance.FlashActionAnimation.Play();
+                }
             }
         }
 

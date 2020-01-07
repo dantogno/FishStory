@@ -13,6 +13,10 @@
     <ElementType>Screen</ElementType>
   </ScreenReference>
   <ComponentReference>
+    <Name>ActionIndicator</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>DefaultForms/Button</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

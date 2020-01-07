@@ -6,6 +6,36 @@
     <Name>Default</Name>
     <Variable>
       <Type>string</Type>
+      <Name>BuyButton.Text</Name>
+      <Value xsi:type="xsd:string">Buy</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BuyButton.X</Name>
+      <Value xsi:type="xsd:float">32</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>BuyButton.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BuyButton.Y</Name>
+      <Value xsi:type="xsd:float">142</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>BuyButton.Y Units</Name>
+      <Value xsi:type="xsd:int">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
       <Name>CloseButton.Text</Name>
       <Value xsi:type="xsd:string">X</Value>
       <SetsValue>true</SetsValue>
@@ -49,36 +79,6 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>CloseButton.Y Units</Name>
-      <Value xsi:type="xsd:int">7</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>BuyButton.Text</Name>
-      <Value xsi:type="xsd:string">Buy</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>BuyButton.X</Name>
-      <Value xsi:type="xsd:float">32</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>BuyButton.X Units</Name>
-      <Value xsi:type="xsd:int">6</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>BuyButton.Y</Name>
-      <Value xsi:type="xsd:float">142</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>BuyButton.Y Units</Name>
       <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
