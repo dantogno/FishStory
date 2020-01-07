@@ -82,8 +82,13 @@
     <Compile Include="Entities\PlayerCharacter.Generated.cs">
       <DependentUpon>PlayerCharacter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\PlayerHouseDoor.cs" />
+    <Compile Include="Entities\PlayerHouseDoor.Generated.cs">
+      <DependentUpon>PlayerHouseDoor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\NPCFactory.Generated.cs" />
+    <Compile Include="Factories\PlayerHouseDoorFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
     <Compile Include="Forms\InventoryListBoxItem.cs" />
     <Compile Include="Forms\StoreListBoxItem.cs" />

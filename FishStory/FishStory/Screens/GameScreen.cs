@@ -231,7 +231,7 @@ namespace FishStory.Screens
 
         private void PlayerCollisionActivity()
         {
-            if (PlayerCharacterInstance.TalkInput.WasJustPressed && DialogBox.Visible == false)
+            if (PlayerCharacterInstance.TalkInput.WasJustPressed && PlayerCharacterInstance.InputEnabled)
             {
                 PlayerCharacterInstance.NpcForAction = null;
 
@@ -244,9 +244,36 @@ namespace FishStory.Screens
                         PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                     }
                 }
+
+                if(PlayerCharacterInstance.NpcForAction == null &&
+                    PlayerCharacterInstanceActivityCollisionVsPlayerHouseDoorList.DoCollisions())
+                {
+                    string text = "Call it a day?";
+                    List<string> options = new List<string>()
+                    {
+                        "Yes",
+                        "No"
+                    };
+
+                    var rootObject = GetRootObject(text, options);
+                    DialogBox.TryShow(rootObject, HandleDoorOptionSelected);
+                    PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                }
             }
 
+
             DoFishingActivity();
+        }
+
+        private void HandleDoorOptionSelected(DialogTreeRaw.Link selectedLink)
+        {
+            DialogBox.TryHide();
+            PlayerCharacterInstance.ObjectsBlockingInput.Remove(DialogBox);
+            if(selectedLink.name == "Yes")
+            {
+                GoToNewDay();
+            }
+
         }
 
         private void DoFishingActivity()
@@ -357,6 +384,35 @@ namespace FishStory.Screens
 
         private RootObject GetBaitRootObject()
         {
+            var inventory = PlayerDataManager.PlayerData.ItemInventory;
+
+            if(inventory.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                var itemsToLookAt = inventory
+                    .Where(item => item.Value > 0)
+                    .Where(item => GlobalContent.ItemDefinition[item.Key].IsBait)
+                    .ToList();
+
+                string text = "Select Bait";
+                List<string> options = new List<string>();
+
+                foreach (var item in itemsToLookAt)
+                {
+                    options.Add($"{item.Key} ({item.Value})");
+                }
+                options.Add("Cancel");
+
+                return GetRootObject(text, options);
+            }
+        }
+
+        private RootObject GetRootObject(string text, List<string> options)
+        {
+
             var rootObject = new RootObject();
             rootObject.startnode = "start";
 
@@ -365,43 +421,25 @@ namespace FishStory.Screens
             var mainPassage = new Passage();
             mainPassage.name = "start";
             mainPassage.pid = "start";
-            mainPassage.text = "Select Bait";
+            mainPassage.text = text;
 
-            var inventory = PlayerDataManager.PlayerData.ItemInventory;
 
-            var itemsToLookAt = inventory
-                .Where(item => item.Value > 0)
-                .Where(item => GlobalContent.ItemDefinition[item.Key].IsBait)
-                .ToList();
+            var links = new List<DialogTreePlugin.SaveClasses.DialogTreeRaw.Link>();
 
-            if(itemsToLookAt.Count == 0)
+            foreach (var option in options)
             {
-                return null;
+                var link = new DialogTreePlugin.SaveClasses.DialogTreeRaw.Link();
+                link.name = option;
+                links.Add(link);
             }
-            else
-            {
-                var links = new List<DialogTreePlugin.SaveClasses.DialogTreeRaw.Link>();
 
-                foreach(var item in itemsToLookAt)
-                {
-                    var link = new DialogTreePlugin.SaveClasses.DialogTreeRaw.Link();
-                    link.name = $"{item.Key} ({item.Value})";
-                    links.Add(link);
-                }
+            mainPassage.links = links.ToArray();
 
-                links.Add(new DialogTreePlugin.SaveClasses.DialogTreeRaw.Link
-                {
-                    name = "Cancel"
-                });
+            passages.Add(mainPassage);
 
-                mainPassage.links = links.ToArray();
+            rootObject.passages = passages.ToArray();
 
-                passages.Add(mainPassage);
-
-                rootObject.passages = passages.ToArray();
-
-                return rootObject;
-            }
+            return rootObject;
         }
 
         private void HandleFishLost()
