@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnimationChainArraySave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileRelativeTextures>true</FileRelativeTextures>
+  <TimeMeasurementUnit>Undefined</TimeMeasurementUnit>
+  <CoordinateType>Pixel</CoordinateType>
+  <AnimationChain>
+    <Name>Idle</Name>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>1712</LeftCoordinate>
+      <RightCoordinate>1727</RightCoordinate>
+      <TopCoordinate>1011</TopCoordinate>
+      <BottomCoordinate>1035</BottomCoordinate>
+      <RelativeY>11</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>1712</LeftCoordinate>
+      <RightCoordinate>1727</RightCoordinate>
+      <TopCoordinate>979</TopCoordinate>
+      <BottomCoordinate>1003</BottomCoordinate>
+      <RelativeY>11</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>1712</LeftCoordinate>
+      <RightCoordinate>1727</RightCoordinate>
+      <TopCoordinate>947</TopCoordinate>
+      <BottomCoordinate>971</BottomCoordinate>
+      <RelativeY>11</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>1712</LeftCoordinate>
+      <RightCoordinate>1727</RightCoordinate>
+      <TopCoordinate>915</TopCoordinate>
+      <BottomCoordinate>939</BottomCoordinate>
+      <RelativeY>11</RelativeY>
+    </Frame>
+  </AnimationChain>
+</AnimationChainArraySave>

@@ -86,9 +86,14 @@
     <Compile Include="Entities\PlayerHouseDoor.Generated.cs">
       <DependentUpon>PlayerHouseDoor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\PropObject.cs" />
+    <Compile Include="Entities\PropObject.Generated.cs">
+      <DependentUpon>PropObject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\NPCFactory.Generated.cs" />
     <Compile Include="Factories\PlayerHouseDoorFactory.Generated.cs" />
+    <Compile Include="Factories\PropObjectFactory.Generated.cs" />
     <Compile Include="FileAliases.Generated.cs" />
     <Compile Include="Forms\InventoryListBoxItem.cs" />
     <Compile Include="Forms\StoreListBoxItem.cs" />
@@ -368,6 +373,10 @@
     <None Include="content\entities\playercharacter\topdownvalues.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TopDownValues</Name>
+    </None>
+    <None Include="content\entities\propobject\blueflag.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BlueFlag</Name>
     </None>
     <None Include="content\globalcontent\dialog\boy1dialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
