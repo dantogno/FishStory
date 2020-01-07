@@ -343,58 +343,6 @@
               <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
             </PropertySave>
             <PropertySave>
-              <Name>FirstCollisionMass</Name>
-              <ValueAsFloat>0</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionMass</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>CollisionElasticity</Name>
-              <ValueAsFloat>1</ValueAsFloat>
-            </PropertySave>
-            <PropertySave>
-              <Name>IsCollisionActive</Name>
-              <ValueAsBool>true</ValueAsBool>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstCollisionName</Name>
-              <ValueAsString>PlayerCharacterInstance</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondCollisionName</Name>
-              <ValueAsString>PropObjectList</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>FirstSubCollisionSelectedItem</Name>
-              <ValueAsString>BodyCollision</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>SecondSubCollisionSelectedItem</Name>
-              <ValueAsString>&lt;Entire Object&gt;</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>CollisionType</Name>
-              <ValueAsInt>1</ValueAsInt>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceFile />
-          <SourceName />
-          <SourceClassType>FlatRedBall.Math.Collision.PositionedObjectVsListRelationship&lt;FishStory.Entities.PlayerCharacter, Entities.PropObject&gt;</SourceClassType>
-          <InstanceName>PlayerCharacterInstanceBodyCollisionVsPropObjectCollision</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>true</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <Properties>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-            <PropertySave>
               <Name>IsAutoNameEnabled</Name>
               <ValueAsBool>true</ValueAsBool>
             </PropertySave>
@@ -1884,7 +1832,12 @@
       <CustomNamespace />
     </CustomClassSave>
   </CustomClasses>
-  <TranslatedFiles />
+  <TranslatedFiles>
+    <TranslatedFileSave>
+      <FileName>Entities/NPC.cs</FileName>
+      <TranslationStyle>PerformTranslate</TranslationStyle>
+    </TranslatedFileSave>
+  </TranslatedFiles>
   <ApplyToFixedResolutionPlatforms>true</ApplyToFixedResolutionPlatforms>
   <ExternallyBuiltFileDirectory>../../</ExternallyBuiltFileDirectory>
   <FileVersion>2</FileVersion>
