@@ -15,3 +15,4 @@ FishStory/FishStory/obj/*
 FishStory/FishStory/FishStory.csproj.user
 *.csvSettings
 FishStory/FishStory/GlueSettings/CompilerSettings.json
+*.csvSettings
