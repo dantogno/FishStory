@@ -32,6 +32,14 @@ namespace FishStory.Screens
             var If = script;
             var Do = script;
             PlayerCharacterInstance.DirectionFacing = TopDownDirection.Left;
+            If.Check(() => !HasTag("HasSeenWelcomeDialog") && PlayerCharacterInstance.X < 1070 );
+            Do.Call(() =>
+            {
+                if (DialogBox.TryShow("WelcomeDialog"))
+                {
+                    PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                }
+            });
             If.Check(() => HasTag("HasSeenWelcomeDialog"));
             Do.Call(() =>
             {
@@ -81,8 +89,7 @@ namespace FishStory.Screens
 
         void CustomActivity(bool firstTimeCalled)
         {
-
-
+            FlatRedBall.Debugging.Debugger.Write($"Player X: {PlayerCharacterInstance.X}");
         }
 
         void CustomDestroy()
