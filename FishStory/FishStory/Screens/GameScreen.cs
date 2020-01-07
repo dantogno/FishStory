@@ -468,7 +468,7 @@ namespace FishStory.Screens
 
                 PlayerDataManager.PlayerData.CurrentDay++;
 
-                AddNotification("It's a new day");
+                AddNotification($"Fishing Festival: Day {PlayerDataManager.PlayerData.CurrentDay}");
 
             }).After(GameScreenGum.ToBlackAnimation.Length + GameScreenGum.ToTransparentAnimation.Length);
         }
