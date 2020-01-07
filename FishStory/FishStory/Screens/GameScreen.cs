@@ -483,15 +483,19 @@ namespace FishStory.Screens
 
         private void HandleBuyClicked(IWindow window)
         {
-
-            if(GameScreenGum.StoreInstance.SelectedShopItem == null)
+            var store = GameScreenGum.StoreInstance;
+            if (store.SelectedShopItem == null)
             {
                 AddNotification("Select item first, then click buy");
+            }
+            else if(store.SelectedShopItem.Stock == 0)
+            {
+                AddNotification("This item is sold out");
             }
             else
             {
                 var itemToBuy = 
-                    GlobalContent.ItemDefinition[GameScreenGum.StoreInstance.SelectedShopItem.Item];
+                    GlobalContent.ItemDefinition[store.SelectedShopItem.Item];
 
                 if(itemToBuy.PlayerBuyingCost > PlayerDataManager.PlayerData.Money)
                 {
@@ -499,6 +503,10 @@ namespace FishStory.Screens
                 }
                 else
                 {
+                    store.ItemsBoughtFromThisStore.Add(itemToBuy.Name);
+
+                    store.RefreshStoreItems();
+
                     BuyItem(itemToBuy);
                 }
             }
