@@ -14,3 +14,4 @@ FishStory/FishStory/obj/*
 *.Generated.*
 FishStory/FishStory/FishStory.csproj.user
 *.csvSettings
+FishStory/FishStory/GlueSettings/CompilerSettings.json
