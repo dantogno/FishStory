@@ -428,6 +428,8 @@ namespace FishStory.Screens
             {
                 PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.OverlayInstance);
 
+                PlayerDataManager.PlayerData.CurrentDay++;
+
                 AddNotification("It's a new day");
 
             }).After(GameScreenGum.ToBlackAnimation.Length + GameScreenGum.ToTransparentAnimation.Length);

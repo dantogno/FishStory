@@ -16,6 +16,8 @@ namespace FishStory.DataTypes
         public Dictionary<string, NpcRelationship> NpcRelationships { get; set; } =
             new Dictionary<string, NpcRelationship>();
 
+        public int CurrentDay { get; set; }
+
         public void AwardItem(string itemKey)
         {
             if(ItemInventory.ContainsKey(itemKey) == false)
