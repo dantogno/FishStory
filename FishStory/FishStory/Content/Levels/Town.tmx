@@ -44,10 +44,10 @@
     <property name="TwineDialogId" value="WelcomeDialog"/>
    </properties>
   </object>
-  <object id="5" name="BaitMerchant" gid="7" x="527.205" y="762.773" width="16" height="16">
+  <object id="5" name="FarmerSonBaitShop" gid="7" x="527.205" y="762.773" width="16" height="16">
    <properties>
     <property name="Animation" value="Boy2"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="FarmerSonBaitShopDialog"/>
    </properties>
   </object>
   <object id="6" name="Identifier" gid="7" x="589.833" y="616.583" width="16" height="16">
@@ -81,10 +81,10 @@
    </properties>
   </object>
   <object id="18" name="PlayerHouseDoor" gid="4373" x="430" y="1106.67" width="16" height="16"/>
-  <object id="19" name="FancyBaitMerchant" gid="7" x="852.667" y="685.333" width="16" height="16">
+  <object id="19" name="FancyBaitShop" gid="7" x="852.667" y="685.333" width="16" height="16">
    <properties>
     <property name="Animation" value="BlondeBoyRedTunic"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="FancyBaitShopDialog"/>
    </properties>
   </object>
   <object id="20" gid="7403" x="680.667" y="611.667" width="16" height="16"/>

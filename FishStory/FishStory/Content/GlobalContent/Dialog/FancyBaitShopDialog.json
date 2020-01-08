@@ -1,0 +1,48 @@
+{
+  "passages": [
+    {
+      "text": "Welcome to Petterson's Bait Emporium! [[Buy]] [[Leave]]",
+      "links": [
+        {
+          "name": "Buy",
+          "link": "Buy",
+          "pid": "2"
+        },
+        {
+          "name": "Leave",
+          "link": "Leave",
+          "pid": "3"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "406",
+        "y": "182"
+      }
+    },
+    {
+      "text": "Store=FancyBaitShop",
+      "name": "Buy",
+      "pid": "2",
+      "position": {
+        "x": "313",
+        "y": "328"
+      }
+    },
+    {
+      "text": "Thank you, come again!",
+      "name": "Leave",
+      "pid": "3",
+      "position": {
+        "x": "481",
+        "y": "332"
+      }
+    }
+  ],
+  "name": "FancyBaitShopDialog",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "8141181B-5AA2-4B89-BBCA-A1DEDA429E1F"
+}

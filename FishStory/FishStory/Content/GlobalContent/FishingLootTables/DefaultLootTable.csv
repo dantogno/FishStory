@@ -1,6 +1,6 @@
 "FishName (string, required)",Earthworm (int),Lure (int),Minnow (int)
-Bass,10,1,1
-Squid,0,1,0
+Cobia,10,1,1
+Goatfish,0,1,0
 Shark,0,3,3
-Clam,1,2,2
+Shrimp,1,2,2
 Trash,1,4,5

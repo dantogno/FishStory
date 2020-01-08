@@ -118,7 +118,9 @@
     <Compile Include="GlobalContent.Generated.cs" />
     <Compile Include="GlueControl\GlueControlManager.Generated.cs" />
     <Compile Include="GumRuntimes\ActionIndicatorRuntime.cs" />
-    <Compile Include="GumRuntimes\ActionIndicatorRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\ActionIndicatorRuntime.Generated.cs">
+      <DependentUpon>ActionIndicatorRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\Behaviors\IButtonBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\ICheckBoxBehavior.Generated.cs" />
     <Compile Include="GumRuntimes\Behaviors\IComboBoxBehavior.Generated.cs" />
@@ -388,6 +390,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Dialog1</Name>
     </None>
+    <None Include="content\globalcontent\dialog\fancybaitshopdialog.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FancyBaitShopDialog</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\farmersonbaitshopdialog.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FarmerSonBaitShopDialog</Name>
+    </None>
     <None Include="content\globalcontent\dialog\mayorafterwelcome.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>MayorAfterWelcome</Name>
@@ -407,6 +417,14 @@
     <None Include="content\globalcontent\itemdefinition.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ItemDefinition</Name>
+    </None>
+    <None Include="content\globalcontent\shops\fancybaitshop.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FancyBaitShop</Name>
+    </None>
+    <None Include="content\globalcontent\shops\farmersonbaitshop.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FarmerSonBaitShop</Name>
     </None>
     <None Include="content\globalcontent\shops\shop1.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

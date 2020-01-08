@@ -89,18 +89,18 @@ namespace FishStory.Screens
             if(DebuggingVariables.AwardTonsOfBait)
             {
                 void Award(string item) => PlayerDataManager.PlayerData.AwardItem(item);
-                Award(DataTypes.ItemDefinition.Minnow);
-                Award(DataTypes.ItemDefinition.Minnow);
-                Award(DataTypes.ItemDefinition.Minnow);
+                Award(DataTypes.ItemDefinition.Sardine);
+                Award(DataTypes.ItemDefinition.Sardine);
+                Award(DataTypes.ItemDefinition.Sardine);
 
-                Award(DataTypes.ItemDefinition.Lure);
-                Award(DataTypes.ItemDefinition.Lure);
-                Award(DataTypes.ItemDefinition.Lure);
+                Award(DataTypes.ItemDefinition.Blood_Worm);
+                Award(DataTypes.ItemDefinition.Blood_Worm);
+                Award(DataTypes.ItemDefinition.Blood_Worm);
 
-                Award(DataTypes.ItemDefinition.Earthworm);
-                Award(DataTypes.ItemDefinition.Earthworm);
-                Award(DataTypes.ItemDefinition.Earthworm);
-
+                Award(DataTypes.ItemDefinition.Squid);
+                Award(DataTypes.ItemDefinition.Squid);
+                Award(DataTypes.ItemDefinition.Little_Bonito);
+                Award(DataTypes.ItemDefinition.Little_Bonito);
             }
         }
 #endif
