@@ -102,6 +102,25 @@ namespace FishStory.Screens
                 Award(DataTypes.ItemDefinition.Little_Bonito);
                 Award(DataTypes.ItemDefinition.Little_Bonito);
             }
+
+            var testBlackMarketDialog = GetRootObject("Sell At Black Market Dialog",
+                new List<string>
+                {
+                    "Sell",
+                    "Cancel"
+                });
+
+
+
+            var testFishMonger = GetRootObject("Fishmonger dialog",
+                new List<string>
+                {
+                    "sell=fish",
+                    "Cancel"
+                });
+
+            var testStoreNpc = NPCList.First(item => item.Name == "TestStore");
+            testStoreNpc.DirectlySetDialog = testBlackMarketDialog;
         }
 #endif
 
@@ -239,9 +258,21 @@ namespace FishStory.Screens
 
                 if (PlayerCharacterInstance.NpcForAction != null)
                 {
-                    if (DialogBox.TryShow(PlayerCharacterInstance.NpcForAction.TwineDialogId))
+                    var npc = PlayerCharacterInstance.NpcForAction;
+                    if(npc.DirectlySetDialog != null)
                     {
-                        PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                        if (DialogBox.TryShow(npc.DirectlySetDialog))
+                        {
+                            PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                        }
+
+                    }
+                    else
+                    {
+                        if (DialogBox.TryShow(npc.TwineDialogId))
+                        {
+                            PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                        }
                     }
                 }
 
@@ -503,9 +534,21 @@ namespace FishStory.Screens
             store.PopulateFromStoreName(storeName, ItemsBought);
         }
 
-        private void HandleSellingShouldShow()
+        private void HandleSellingShouldShow(string sellerName)
         {
-            ShowInventory(InventoryRuntime.ViewOrSell.Sell);
+            sellerName = sellerName?.ToLowerInvariant();
+            var isBlackMarket = sellerName == "blackmarket";
+            var isFishStore = sellerName == "fish";
+
+            var sellPriceMultiplier = isBlackMarket ? 
+                NPC.BlackMarketSellPriceMultiplier : 1.0f;
+            var inventoryRestrictions = isFishStore ?
+                InventoryRestrictions.IdentifiedFishOnly :
+                InventoryRestrictions.NoRestrictions;
+
+
+            ShowInventory(InventoryRuntime.ViewOrSell.Sell, 
+                sellPriceMultiplier, inventoryRestrictions);
         }
 
         private void HandleSellClicked()
@@ -527,10 +570,16 @@ namespace FishStory.Screens
                     PlayerDataManager.PlayerData.RemoveItem(selectedItemName);
 
                     // award money
-                    PlayerDataManager.PlayerData.Money += item.PlayerSellingCost;
+                    PlayerDataManager.PlayerData.Money += 
+                        (int)(item.PlayerSellingCost * inventory.LastSellPriceMultiplier);
 
                     // refresh the UI
-                    inventory.FillWithInventory(PlayerDataManager.PlayerData.ItemInventory);
+                    inventory.FillWithInventory(
+                        PlayerDataManager.PlayerData.ItemInventory,
+                        inventory.LastSellPriceMultiplier,
+                        inventory.InventoryRestrictions
+
+                        );
                     inventory.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
 
                     inventory.SelectedItemName = selectedItemName;
@@ -604,17 +653,19 @@ namespace FishStory.Screens
             }
             else if (inventory.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed)
             {
-                ShowInventory(InventoryRuntime.ViewOrSell.View);
+                ShowInventory(InventoryRuntime.ViewOrSell.View, 1.0f, InventoryRestrictions.NoRestrictions);
             }
         }
 
-        private static void ShowInventory(InventoryRuntime.ViewOrSell state)
+        private static void ShowInventory(InventoryRuntime.ViewOrSell state, 
+            float sellPriceMultiplier, InventoryRestrictions inventoryRestrictions)
         {
             var inventory = GameScreenGum.InventoryInstance;
 
             inventory.Visible = true;
             inventory.CurrentViewOrSellState = state;
-            inventory.FillWithInventory(PlayerDataManager.PlayerData.ItemInventory);
+            inventory.FillWithInventory(PlayerDataManager.PlayerData.ItemInventory, 
+                sellPriceMultiplier, inventoryRestrictions);
             inventory.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
         }
 

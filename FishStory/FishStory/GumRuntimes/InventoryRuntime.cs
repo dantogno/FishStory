@@ -7,6 +7,12 @@ using System.Linq;
 
 namespace FishStory.GumRuntimes
 {
+    public enum InventoryRestrictions
+    {
+        NoRestrictions,
+        IdentifiedFishOnly
+    }
+
     public partial class InventoryRuntime
     {
         #region Fields/Properties
@@ -18,7 +24,8 @@ namespace FishStory.GumRuntimes
         public IPressableInput CancelInput { get; internal set; }
         public IPressableInput InventoryInput { get; internal set; }
 
-
+        public float LastSellPriceMultiplier { get; private set; }
+        public InventoryRestrictions InventoryRestrictions { get; private set; }
         public string SelectedItemName
         {
             get => (listBox.SelectedObject as ItemWithCount)?.ItemName;
@@ -83,8 +90,11 @@ namespace FishStory.GumRuntimes
             this.CurrentDescription = item?.Description;
         }
 
-        internal void FillWithInventory(Dictionary<string, int> itemDictionary)
+        internal void FillWithInventory(Dictionary<string, int> itemDictionary, 
+            float sellPriceMultiplier, InventoryRestrictions inventoryRestrictions)
         {
+            LastSellPriceMultiplier = sellPriceMultiplier;
+            InventoryRestrictions = inventoryRestrictions;
             listBox.Items.Clear();
             foreach(var kvp in itemDictionary)
             {
@@ -92,8 +102,30 @@ namespace FishStory.GumRuntimes
                 {
                     var item = GlobalContent.ItemDefinition[kvp.Key];
 
-                    var shouldShow = item.PlayerSellingCost > 0 ||
-                        CurrentViewOrSellState == ViewOrSell.View;
+
+                    bool shouldShow = false;
+                    if(CurrentViewOrSellState == ViewOrSell.View)
+                    {
+                        shouldShow = true;
+                    }
+                    else
+                    {
+                        if(item.PlayerSellingCost > 0)
+                        {
+                            switch(inventoryRestrictions)
+                            {
+                                case InventoryRestrictions.NoRestrictions:
+                                    shouldShow = true;
+                                    break;
+                                case InventoryRestrictions.IdentifiedFishOnly:
+                                    shouldShow = item.IsFish;
+                                    // todo - need to see if identified
+                                    break;
+                            }
+                        }
+                    }
+
+
 
                     if(shouldShow)
                     {
@@ -101,7 +133,7 @@ namespace FishStory.GumRuntimes
                         {
                             ItemName = kvp.Key,
                             Count = kvp.Value,
-                            SellPrice = item.PlayerSellingCost,
+                            SellPrice = (int)(item.PlayerSellingCost * sellPriceMultiplier),
                             ViewOrSell = this.CurrentViewOrSellState == ViewOrSell.View 
                                 ? DefaultForms.InventoryListItemRuntime.ViewOrSell.View 
                                 : DefaultForms.InventoryListItemRuntime.ViewOrSell.Sell
