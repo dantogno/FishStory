@@ -3,31 +3,31 @@ Fishing Rod,,,,,250,0,This might work for hitting fish in the face,
 Festival Badge,,,,,,0,"""The bearer of this badge may officially participate in the 203rd Ensomme Fishing Festival.""",
 Festival Pamphlet,,,,,,0,"""Need a place to stay? Swing by Festival HQ just west of the docks. Ensomme has plenty of accomodations for visitors during the Fishing Festival.""",
 // Unidentified objects,,,,,,,,
-Small Fish,Ladyfish,,,,,,,
-Wriggling Creature,Giant Octopus,,,,,,,
-Small Wriggling Creature,Seahorse,,,,,,,
-Huge Shiny Fish,King Mackerel,,,,,,,
-Ugly Fish,Monkfish,,,,,,,
-Long Fish,Trumpefish,,,,,,,
-Large Ugly Fish,Rougheye Rockfish,,,,,,,
-Small Brown Fish,Brown Rockfish,,,,,,,
-Huge Dark Fish,Cobia,,,,,,,
-Large Mean Fish,Shark,,,,,,,
-Small Odd Fish,Goatfish,,,,,,,
-Small Shelled Creature,Shrimp,,,,,,,
+Small Fish,Ladyfish,,,,,4,,
+Wriggling Creature,Giant Octopus,,,,,5,,
+Small Wriggling Creature,Seahorse,,,,,6,,
+Huge Shiny Fish,King Mackerel,,,,,7,,
+Ugly Fish,Monkfish,,,,,8,,
+Long Fish,Trumpefish,,,,,9,,
+Large Ugly Fish,Rougheye Rockfish,,,,,10,,
+Small Brown Fish,Brown Rockfish,,,,,11,,
+Huge Dark Fish,Cobia,,,,,12,,
+Large Mean Fish,Shark,,,,,13,,
+Small Odd Fish,Goatfish,,,,,14,,
+Small Shelled Creature,Shrimp,,,,,15,,
 // Fish,,,,,,,,
 Ladyfish,,,,true,0,20,Ladies. Eats sardine. Not that big.,Unidentified
-Giant Octopus,,,,true,,,"Mother. hatches a ""super brood"" of 100,000 eggs that the mother guards for six months. shrimp, crabs, scallop, abalone, cockles, snails, clams, lobsters, fish, and other octopuses. Lays ",Unidentified
-Seahorse,,,,true,,,father. eat worm,Unidentified
-King Mackerel,,,,true,,,"Men. Big fish, sardine, bonito",Unidentified
-Monkfish,,,,true,,,bald. eats everything,Unidentified
-Trumpefish,,,,true,,,golden / yellow. reefs. eats small fish and squid,Unidentified
+Giant Octopus,,,,true,,1,"Mother. hatches a ""super brood"" of 100,000 eggs that the mother guards for six months. shrimp, crabs, scallop, abalone, cockles, snails, clams, lobsters, fish, and other octopuses. Lays ",Unidentified
+Seahorse,,,,true,,2,father. eat worm,Unidentified
+King Mackerel,,,,true,,3,"Men. Big fish, sardine, bonito",Unidentified
+Monkfish,,,,true,,4,bald. eats everything,Unidentified
+Trumpefish,,,,true,,5,golden / yellow. reefs. eats small fish and squid,Unidentified
 Rougheye Rockfish,,,,true,,30,Old This fish can live for over 200 years!,Unidentified
-Brown Rockfish,,,,true,,,Brown. near dock / pier. worms and squid,Unidentified
-Cobia,,,,true,,,"Black. Large. Eats squid, bonito. Wrecks, harbours, buoys, reefs.",Unidentified
+Brown Rockfish,,,,true,,6,Brown. near dock / pier. worms and squid,Unidentified
+Cobia,,,,true,,7,"Black. Large. Eats squid, bonito. Wrecks, harbours, buoys, reefs.",Unidentified
 Shark,,,,true,,50,represents? eats bonito,Unidentified
 Goatfish,,,,true,,45,"Facial hair. Reefs, shallow, worm and small fish. Use goatee-like barbel  to search for food",Unidentified
-Shrimp,Small Shell Creature,,,true,,,kids. eats blood worm,Unidentified
+Shrimp,,,,true,,8,kids. eats blood worm,Unidentified
 Trash,,,,true,,35,Trash Description,Unidentified
 // Bait,,,,,,,,
 Blood Worm,,,true,,5,0,,

@@ -591,7 +591,7 @@ namespace FishStory.Screens
         {
             sellerName = sellerName?.ToLowerInvariant();
             var isBlackMarket = sellerName == "blackmarket";
-            var isFishStore = sellerName == "fish";
+            var isFishStore = sellerName == "fishmonger";
 
             var sellPriceMultiplier = isBlackMarket ? 
                 NPC.BlackMarketSellPriceMultiplier : 1.0f;
@@ -602,6 +602,46 @@ namespace FishStory.Screens
 
             ShowInventory(InventoryRuntime.ViewOrSell.Sell, 
                 sellPriceMultiplier, inventoryRestrictions);
+        }
+
+        private void HandleIdentify()
+        {
+            var itemDefinitions = GlobalContent.ItemDefinition;
+
+            bool IsUnidentified(string itemName)
+            {
+                return !string.IsNullOrEmpty(itemDefinitions[itemName].AssociatedItem);
+            }
+
+            var toConvert = PlayerDataManager.PlayerData.ItemInventory
+                .Where(item => IsUnidentified(item.Key))
+                .ToArray();
+
+            Dictionary<string, int> newItemCounts = new Dictionary<string, int>();
+
+            foreach(var item in toConvert)
+            {
+                var itemName = item.Key;
+
+                var itemDefinition = GlobalContent.ItemDefinition[itemName];
+
+                var newItemName = itemDefinition.AssociatedItem;
+
+                for(int i = 0; i < item.Value; i++)
+                {
+                    PlayerDataManager.PlayerData.AwardItem(newItemName);
+                    PlayerDataManager.PlayerData.RemoveItem(itemName);
+                }
+
+                newItemCounts[newItemName] = item.Value;
+            }
+
+
+            foreach(var newItemKvp in newItemCounts)
+            {
+                AddNotification($"Identified {newItemKvp.Key} ({newItemKvp.Value})");
+            }
+
         }
 
         private void HandleSellClicked()
