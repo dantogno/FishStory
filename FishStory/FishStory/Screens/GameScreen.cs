@@ -86,9 +86,9 @@ namespace FishStory.Screens
 #if DEBUG
         private void DebugInitialize()
         {
-            if(DebuggingVariables.AwardTonsOfBait)
+            void Award(string item) => PlayerDataManager.PlayerData.AwardItem(item);
+            if (DebuggingVariables.AwardTonsOfBait)
             {
-                void Award(string item) => PlayerDataManager.PlayerData.AwardItem(item);
                 Award(DataTypes.ItemDefinition.Sardine);
                 Award(DataTypes.ItemDefinition.Sardine);
                 Award(DataTypes.ItemDefinition.Sardine);
@@ -103,6 +103,22 @@ namespace FishStory.Screens
                 Award(DataTypes.ItemDefinition.Little_Bonito);
             }
 
+            if(DebuggingVariables.AwardUnidentifiedFish)
+            {
+                foreach(var item in GlobalContent.ItemDefinition.Where(item => !string.IsNullOrEmpty(item.Value.AssociatedItem)))
+                {
+                    Award(item.Key);
+                }
+            }
+
+            if (DebuggingVariables.AwardIdentifiedFish)
+            {
+                foreach (var item in GlobalContent.ItemDefinition.Where(item => item.Value.IsFish))
+                {
+                    Award(item.Key);
+                }
+            }
+
             var testBlackMarketDialog = GetRootObject("Sell At Black Market Dialog",
                 new List<string>
                 {
@@ -110,17 +126,51 @@ namespace FishStory.Screens
                     "Cancel"
                 });
 
+            testBlackMarketDialog.passages.Add(new Passage
+            {
+                pid = "1",
+                text = "sell=blackmarket"
+            });
+
 
 
             var testFishMonger = GetRootObject("Fishmonger dialog",
                 new List<string>
                 {
-                    "sell=fish",
+                    "Sell",
                     "Cancel"
                 });
 
-            var testStoreNpc = NPCList.First(item => item.Name == "TestStore");
+            testFishMonger.passages.Add(new Passage
+            {
+                pid = "1",
+                text = "sell=fishmonger"
+            });
+
+            var testIdentifier = GetRootObject("Identifier dialog",
+                new List<string>
+                {
+                    "Identify",
+                    "Cancel"
+                });
+
+            testIdentifier.passages.Add(new Passage
+            {
+                pid = "1",
+                text = "id="
+            });
+
+
+            var testStoreNpc = NPCList.First(item => item.Name == "TestBlackMarket");
             testStoreNpc.DirectlySetDialog = testBlackMarketDialog;
+
+
+            var testFishmongerNpc = NPCList.First(item => item.Name == "TestFishmonger");
+            testFishmongerNpc.DirectlySetDialog = testFishMonger;
+
+
+            var testIdentifierNpc = NPCList.First(item => item.Name == "TestIdentifier");
+            testIdentifierNpc.DirectlySetDialog = testIdentifier;
         }
 #endif
 
@@ -457,18 +507,21 @@ namespace FishStory.Screens
 
             var links = new List<DialogTreePlugin.SaveClasses.DialogTreeRaw.Link>();
 
+            int id = 1;
             foreach (var option in options)
             {
                 var link = new DialogTreePlugin.SaveClasses.DialogTreeRaw.Link();
                 link.name = option;
+                link.pid = id.ToString();
                 links.Add(link);
+                id++;
             }
 
             mainPassage.links = links.ToArray();
 
             passages.Add(mainPassage);
 
-            rootObject.passages = passages.ToArray();
+            rootObject.passages = passages;
 
             return rootObject;
         }
