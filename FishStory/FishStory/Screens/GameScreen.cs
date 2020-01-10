@@ -218,6 +218,7 @@ namespace FishStory.Screens
             DialogBox.AfterHide += HandleDialogBoxHide;
             DialogBox.StoreShouldShow += HandleStoreShouldShow;
             DialogBox.SellingShouldShow += HandleSellingShouldShow;
+            DialogBox.IdentifyPerformed += HandleIdentify;
             DialogBox.DialogTagShown += HandleDialogTagShown;
 
             #endregion
@@ -603,7 +604,7 @@ namespace FishStory.Screens
             ShowInventory(InventoryRuntime.ViewOrSell.Sell, 
                 sellPriceMultiplier, inventoryRestrictions);
         }
-
+        //todo - need to actually call this if text is "id="
         private void HandleIdentify()
         {
             var itemDefinitions = GlobalContent.ItemDefinition;
