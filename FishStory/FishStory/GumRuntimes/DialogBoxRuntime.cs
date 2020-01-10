@@ -100,6 +100,7 @@ namespace FishStory.GumRuntimes
         public event Action<string> DialogTagShown;
         public event Action<string> StoreShouldShow;
         public event Action<string> SellingShouldShow;
+        public event Action IdentifyPerformed;
 
         #endregion
 
@@ -162,6 +163,8 @@ namespace FishStory.GumRuntimes
             {
                 const string storePrefix = "store=";
                 const string sellPrefix = "sell=";
+                const string idPrefix = "id=";
+
                 if (passage.StrippedText.ToLowerInvariant().StartsWith(storePrefix))
                 {
                     var storeName = passage.StrippedText.Substring(storePrefix.Length);
@@ -175,6 +178,14 @@ namespace FishStory.GumRuntimes
                 {
                     var sellerName = passage.StrippedText.Substring(sellPrefix.Length);
                     SellingShouldShow(sellerName);
+                    if (TryHide())
+                    {
+                        AfterHide();
+                    }
+                }
+                else if(passage.StrippedText.ToLowerInvariant().StartsWith(idPrefix))
+                {
+                    IdentifyPerformed();
                     if (TryHide())
                     {
                         AfterHide();

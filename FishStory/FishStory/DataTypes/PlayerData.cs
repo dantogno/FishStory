@@ -11,6 +11,11 @@ namespace FishStory.DataTypes
         public Dictionary<string, int> ItemInventory { get; set; } =
             new Dictionary<string, int>();
 
+        public Dictionary<string, int> TimesFishIdentified
+        {
+            get; set;
+        } = new Dictionary<string, int>();
+
         public int Money { get; set; } = 25;
 
         public Dictionary<string, NpcRelationship> NpcRelationships { get; set; } =
@@ -20,14 +25,7 @@ namespace FishStory.DataTypes
 
         public void AwardItem(string itemKey)
         {
-            if(ItemInventory.ContainsKey(itemKey) == false)
-            {
-                ItemInventory[itemKey] = 1;
-            }
-            else
-            {
-                ItemInventory[itemKey]++;
-            }
+            ItemInventory.Increment(itemKey);
         }
 
         public void RemoveItem(string itemKey)
@@ -37,17 +35,52 @@ namespace FishStory.DataTypes
 
         public bool Has(string itemKey, int desiredCount = 1)
         {
-            var inventoryCount = 0;
-
-            if(ItemInventory.ContainsKey(itemKey))
-            {
-                inventoryCount = ItemInventory[itemKey];
-            }
-
-            return inventoryCount >= desiredCount;
+            return ItemInventory.Get(itemKey) >= desiredCount;
         }
-        
-
-
     }
+
+    public static class DictionaryExtensions
+    {
+        public static void Set(this Dictionary<string, int> dictionary, string key, int value)
+        {
+            dictionary[key] = value;
+        }
+
+        public static int Get(this Dictionary<string, int> dictionary, string key)
+        {
+            if (dictionary.ContainsKey(key) == false)
+            {
+                return 0;
+            }
+            else
+            {
+                return dictionary[key];
+            }
+        }
+
+        public static void Increment(this Dictionary<string, int> dictionary, string key)
+        {
+            if (dictionary.ContainsKey(key) == false)
+            {
+                dictionary[key] = 1;
+            }
+            else
+            {
+                dictionary[key]++;
+            }
+        }
+
+        public static void IncrementBy(this Dictionary<string, int> dictionary, string key, int value)
+        {
+            if (dictionary.ContainsKey(key) == false)
+            {
+                dictionary[key] = value;
+            }
+            else
+            {
+                dictionary[key] += value;
+            }
+        }
+    }
+        
 }
