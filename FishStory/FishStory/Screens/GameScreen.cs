@@ -635,6 +635,8 @@ namespace FishStory.Screens
                 }
 
                 newItemCounts[newItemName] = item.Value;
+
+                PlayerDataManager.PlayerData.TimesFishIdentified.IncrementBy(newItemName, item.Value);
             }
 
 
