@@ -217,7 +217,8 @@ namespace FishStory.GumRuntimes
 
         private void ShowLinks(Passage passage)
         {
-            if(passage.links != null && passage.links.Count() > 1)
+            // This used to be > 1 but we want to show them
+            if(passage.links != null && passage.links.Count() > 0)
             {
                 foreach (var link in passage.links)
                 {
