@@ -360,6 +360,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FarmerGuy</Name>
     </None>
+    <None Include="content\entities\npc\fishermanbald.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishermanBald</Name>
+    </None>
+    <None Include="content\entities\npc\fishermanbluepants.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishermanBluePants</Name>
+    </None>
+    <None Include="content\entities\npc\fishermanhair.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishermanHair</Name>
+    </None>
     <None Include="content\entities\npc\greenoutfitwithhat.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GreenOutfitWithHat</Name>
