@@ -1,0 +1,64 @@
+{
+  "passages": [
+    {
+      "text": "Ah, an outsider. Are you here to take part in the festival?\n[[How'd you know I'm an ousider?->Outsider]]\n[[I'm just here to fish->Here to fish]]",
+      "links": [
+        {
+          "name": "How'd you know I'm an outsider?",
+          "link": "Outsider",
+          "pid": "2"
+        },
+        {
+          "name": "I'm just here to fish",
+          "link": "Here to fish",
+          "pid": "3"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "508.5",
+        "y": "240.5"
+      }
+    },
+    {
+      "text": "Double-click this passage to edit it.",
+      "name": "Outsider",
+      "pid": "2",
+      "position": {
+        "x": "433.5",
+        "y": "390.5"
+      }
+    },
+    {
+      "text": "Ah, but even so, you are participating. Ensomme is one with the land and entangled with the sea. Just by walking across our sacred beaches and staring into the bewitching depths of our ocean, you are taking part in our traditions. Iâ€™m sure that you will make efforts to do so in a respectful manner, yes?\n[[I won't get in the way->No trouble]]\n[[",
+      "links": [
+        {
+          "name": "I won't get in the way",
+          "link": "No trouble",
+          "pid": "4"
+        }
+      ],
+      "name": "Here to fish",
+      "pid": "3",
+      "position": {
+        "x": "583.5",
+        "y": "390.5"
+      }
+    },
+    {
+      "text": "Double-click this passage to edit it.",
+      "name": "No trouble",
+      "pid": "4",
+      "position": {
+        "x": "583.5",
+        "y": "540.5"
+      }
+    }
+  ],
+  "name": "PriestessDay1",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "6604821E-2FF3-4C0F-9912-CCE4E7C45764"
+}

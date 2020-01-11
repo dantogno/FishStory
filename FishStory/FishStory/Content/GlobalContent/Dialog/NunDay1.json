@@ -1,0 +1,221 @@
+{
+  "passages": [
+    {
+      "text": "Welcome to Ensomme! What brings you to our island community?\n[[I'm retired.]] \n[[I'm on vacation!]]\n[[I'm just passing through.]]",
+      "links": [
+        {
+          "name": "I'm retired.",
+          "link": "I'm retired.",
+          "pid": "2"
+        },
+        {
+          "name": "I'm on vacation!",
+          "link": "I'm on vacation!",
+          "pid": "3"
+        },
+        {
+          "name": "I'm just passing through.",
+          "link": "I'm just passing through.",
+          "pid": "4"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "252",
+        "y": "105"
+      }
+    },
+    {
+      "text": "Excellent! We have many activities to keep you busy during retirement. [[Fishing festival]] ",
+      "links": [
+        {
+          "name": "Fishing festival",
+          "link": "Fishing festival",
+          "pid": "5"
+        }
+      ],
+      "name": "I'm retired.",
+      "pid": "2",
+      "position": {
+        "x": "70",
+        "y": "255"
+      }
+    },
+    {
+      "text": "Excellent! This is a great spot to spend a holiday. [[Fishing festival]] ",
+      "links": [
+        {
+          "name": "Fishing festival",
+          "link": "Fishing festival",
+          "pid": "5"
+        }
+      ],
+      "name": "I'm on vacation!",
+      "pid": "3",
+      "position": {
+        "x": "280",
+        "y": "251"
+      }
+    },
+    {
+      "text": "I see. A wanderer of sorts? [[Fishing festival]] ",
+      "links": [
+        {
+          "name": "Fishing festival",
+          "link": "Fishing festival",
+          "pid": "5"
+        }
+      ],
+      "name": "I'm just passing through.",
+      "pid": "4",
+      "position": {
+        "x": "440",
+        "y": "255"
+      }
+    },
+    {
+      "text": "Allow me to introduce myself. I'm Mayor Thompson. You've come at a good time! Today marks the start of our annual fishing festival. \n[[I'm here to fish!|Here to fish]]\n[[Fishing festival?|Festival?]]\n[[...|Festival 2]]",
+      "links": [
+        {
+          "name": "I'm here to fish!|Here to fish",
+          "link": "I'm here to fish!|Here to fish"
+        },
+        {
+          "name": "Fishing festival?|Festival?",
+          "link": "Fishing festival?|Festival?"
+        },
+        {
+          "name": "...|Festival 2",
+          "link": "...|Festival 2"
+        }
+      ],
+      "name": "Fishing festival",
+      "pid": "5",
+      "position": {
+        "x": "194",
+        "y": "421"
+      }
+    },
+    {
+      "text": "In fact, the ferry you took here will be the last ship coming to port for the next five days!\n[[You guys are serious about fishing!|Festival 3]]\n[[Do you have enough supplies on the island?|Festival 3]]\n[[So you're telling me I'm stuck here for five days?|Festival 3]]",
+      "links": [
+        {
+          "name": "You guys are serious about fishing!|Festival 3",
+          "link": "You guys are serious about fishing!|Festival 3"
+        },
+        {
+          "name": "Do you have enough supplies on the island?|Festival 3",
+          "link": "Do you have enough supplies on the island?|Festival 3"
+        },
+        {
+          "name": "So you're telling me I'm stuck here for five days?|Festival 3",
+          "link": "So you're telling me I'm stuck here for five days?|Festival 3"
+        }
+      ],
+      "name": "Festival 2",
+      "pid": "6",
+      "position": {
+        "x": "194",
+        "y": "571"
+      }
+    },
+    {
+      "text": "Boats disrupt the fish, so we lock down the port during the festival. But don't worry, we have comfortable living arrangements for visitors and we'll have enough fish to satisfy a giant's appetite! [[Festival 4]]",
+      "links": [
+        {
+          "name": "Festival 4",
+          "link": "Festival 4",
+          "pid": "8"
+        }
+      ],
+      "name": "Festival 3",
+      "pid": "7",
+      "position": {
+        "x": "194",
+        "y": "721"
+      }
+    },
+    {
+      "text": "There's no pressure to participate, but here's a festival badge and a pamphlet about the rules, just in case. I'll just collect the entrance fee now. [[Festival 4.1]]",
+      "links": [
+        {
+          "name": "Festival 4.1",
+          "link": "Festival 4.1",
+          "pid": "10"
+        }
+      ],
+      "name": "Festival 4",
+      "pid": "8",
+      "position": {
+        "x": "194",
+        "y": "871"
+      }
+    },
+    {
+      "text": "[Mayor Thompson took $5. She wouldn't take no for an answer.]\n",
+      "name": "Festival 5",
+      "pid": "9",
+      "position": {
+        "x": "240",
+        "y": "1041"
+      },
+      "tags": [
+        "HasSeenWelcomeDialog"
+      ]
+    },
+    {
+      "text": "When you're ready to call it a night, talk to Anthony by the blue flags in the town square. He'll get you setup with proper accomodations for the duration of the festival. Ready, set, FISH! [[Festival 5]] ",
+      "links": [
+        {
+          "name": "Festival 5",
+          "link": "Festival 5",
+          "pid": "9"
+        }
+      ],
+      "name": "Festival 4.1",
+      "pid": "10",
+      "position": {
+        "x": "438",
+        "y": "873"
+      }
+    },
+    {
+      "text": "Then you've come to the right place... and at the right time! [[Festival 2]] ",
+      "links": [
+        {
+          "name": "Festival 2",
+          "link": "Festival 2",
+          "pid": "6"
+        }
+      ],
+      "name": "Here to fish",
+      "pid": "11",
+      "position": {
+        "x": "42",
+        "y": "545"
+      }
+    },
+    {
+      "text": "That's right, the fishing festival is Ensomme's biggest event of the year. [[Festival 2]] ",
+      "links": [
+        {
+          "name": "Festival 2",
+          "link": "Festival 2",
+          "pid": "6"
+        }
+      ],
+      "name": "Festival?",
+      "pid": "12",
+      "position": {
+        "x": "418",
+        "y": "499"
+      }
+    }
+  ],
+  "name": "WelcomeDialog",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "AEC83C83-5F86-41F7-BD5A-88B2BB1EBD39"
+}

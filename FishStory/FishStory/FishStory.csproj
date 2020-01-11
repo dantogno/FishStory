@@ -424,25 +424,61 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Boy1Dialog</Name>
     </None>
+    <None Include="content\globalcontent\dialog\conservationistday1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ConservationistDay1</Name>
+    </None>
     <None Include="content\globalcontent\dialog\dialog1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Dialog1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\elderlymotherday1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ElderlyMotherDay1</Name>
     </None>
     <None Include="content\globalcontent\dialog\fancybaitshopdialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FancyBaitShopDialog</Name>
     </None>
+    <None Include="content\globalcontent\dialog\farmerday1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FarmerDay1</Name>
+    </None>
     <None Include="content\globalcontent\dialog\farmersonbaitshopdialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FarmerSonBaitShopDialog</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\fishermanbaldday1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishermanBaldDay1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\fishermanhairday1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishermanHairDay1</Name>
     </None>
     <None Include="content\globalcontent\dialog\mayorafterwelcome.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>MayorAfterWelcome</Name>
     </None>
+    <None Include="content\globalcontent\dialog\nunday1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>NunDay1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\priestessday1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PriestessDay1</Name>
+    </None>
     <None Include="content\globalcontent\dialog\shopdialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ShopDialog</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\tycoondaughterday1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TycoonDaughterDay1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\tycoonday1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TycoonDay1</Name>
     </None>
     <None Include="content\globalcontent\dialog\welcomedialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
