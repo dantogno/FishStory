@@ -396,6 +396,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TurbanAndBlueShirt</Name>
     </None>
+    <None Include="content\entities\npc\tycoon.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Tycoon</Name>
+    </None>
     <None Include="content\entities\npc\tycoondaughter.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TycoonDaughter</Name>
