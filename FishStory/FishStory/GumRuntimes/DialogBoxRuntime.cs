@@ -145,7 +145,7 @@ namespace FishStory.GumRuntimes
 
             if (lastTimeHiddenOrShown != TimeManager.CurrentTime)
             {
-                ActionIndicatorInstance.FlashActionAnimation.Stop();
+                ActionIndicatorInstance.FlashActionAnimation.Play();
                 Visible = true;
                 lastTimeHiddenOrShown = TimeManager.CurrentTime;
                 return true;
