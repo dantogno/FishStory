@@ -341,6 +341,28 @@ namespace FishStory.Screens
                     DialogBox.TryShow(rootObject, HandleDoorOptionSelected);
                     PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                 }
+
+                if(PlayerCharacterInstanceActivityCollisionVsFishIdentifiedSignList.DoCollisions())
+                {
+                    string text;
+                    var identifiedDictionary = PlayerDataManager.PlayerData.TimesFishIdentified;
+                    var hasIdentifiedAny = identifiedDictionary.Values.Any(item => item > 0);
+                    if(!hasIdentifiedAny)
+                    {
+                        text = "No fish identified";
+                    }
+                    else
+                    {
+                        text = "Identified fish:";
+                        foreach(var kvp in identifiedDictionary)
+                        {
+                            text += $"\n{kvp.Key} {kvp.Value}";
+                        }
+                    }
+                    var rootObject = GetRootObject(text, new List<string>());
+                    DialogBox.TryShow(rootObject);
+                    PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                }
             }
 
 

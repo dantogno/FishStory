@@ -74,6 +74,10 @@
     <Compile Include="Entities\Exit.Generated.cs">
       <DependentUpon>Exit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\FishIdentifiedSign.cs" />
+    <Compile Include="Entities\FishIdentifiedSign.Generated.cs">
+      <DependentUpon>FishIdentifiedSign.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\NPC.cs" />
     <Compile Include="Entities\NPC.Generated.cs">
       <DependentUpon>NPC.cs</DependentUpon>
@@ -91,6 +95,7 @@
       <DependentUpon>PropObject.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
+    <Compile Include="Factories\FishIdentifiedSignFactory.Generated.cs" />
     <Compile Include="Factories\NPCFactory.Generated.cs" />
     <Compile Include="Factories\PlayerHouseDoorFactory.Generated.cs" />
     <Compile Include="Factories\PropObjectFactory.Generated.cs" />
