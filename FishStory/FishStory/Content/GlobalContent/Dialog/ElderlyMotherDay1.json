@@ -1,0 +1,122 @@
+{
+  "passages": [
+    {
+      "text": "Hmmm... I'm so sorry dear, but I can't seem to remember your name. Donâ€™t take it personally, I'm afraid thatâ€™s been happening quite often these past few years.\n[[We've never met.]]\n[[I'll let it slide this time.]]",
+      "links": [
+        {
+          "name": "We've never met.",
+          "link": "We've never met.",
+          "pid": "2"
+        },
+        {
+          "name": "I'll let it slide this time.",
+          "link": "I'll let it slide this time.",
+          "pid": "3"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "508.5",
+        "y": "240.5"
+      }
+    },
+    {
+      "text": "Is that so? I swore you looked very familiar... Well, nice to meet you then. I'm Nora, William's mother. Have you met William?\n[[Yes.->Met William]]\n[[Not yet.->Have Not Met William]]",
+      "links": [
+        {
+          "name": "Yes.",
+          "link": "Met William",
+          "pid": "4"
+        },
+        {
+          "name": "Not yet.",
+          "link": "Have Not Met William",
+          "pid": "5"
+        }
+      ],
+      "name": "We've never met.",
+      "pid": "2",
+      "position": {
+        "x": "269.5",
+        "y": "379.5"
+      }
+    },
+    {
+      "text": "Oh, well, that's very kind of you. Tell me, are you looking forward to the festival?\n[[Of course! It sounds exciting.->Looking forward to festival]]\n[[I'm not sure.->Iffy about festival]]\n[[No, not really.->Not looking forward to festival]]",
+      "links": [
+        {
+          "name": "Of course! It sounds exciting.",
+          "link": "Looking forward to festival",
+          "pid": "6"
+        },
+        {
+          "name": "I'm not sure.",
+          "link": "Iffy about festival",
+          "pid": "7"
+        },
+        {
+          "name": "No, not really.",
+          "link": "Not looking forward to festival",
+          "pid": "8"
+        }
+      ],
+      "name": "I'll let it slide this time.",
+      "pid": "3",
+      "position": {
+        "x": "772.5",
+        "y": "369.5"
+      }
+    },
+    {
+      "text": "He's quite the young man, isn't he? We're all rather proud of him. He took that old shop â€” the old bookstore, or whatever it used to be â€” and transformed it into quite the practical establishment. He fixed it up with his own two hands... and a bit of financial assistance from Mr. Petterson. Now, let me get back to resting. I didn't get much sleep last night...",
+      "name": "Met William",
+      "pid": "4",
+      "position": {
+        "x": "206.5",
+        "y": "544.5"
+      }
+    },
+    {
+      "text": "Oh, well, you should certainly fix that as soon as you can! He runs the bait shop. The classy bait shop, not that old shack by the waterfront. William fixed the old building up with his own two hands... and a bit of financial assistance from Mr. Petterson. We're all rather proud of him. Now, let me get back to resting. I didn't get much sleep last night...",
+      "name": "Have Not Met William",
+      "pid": "5",
+      "position": {
+        "x": "340.5",
+        "y": "544.5"
+      }
+    },
+    {
+      "text": "Oh, I'm glad! It warms my heart to see young people as excited for the festival as I am. Someone's going to have to keep our traditions alive after I'm gone, or else everything falls apart. William has never been one for tradition, so the duty may just fall on your shoulders. Well, yours and the church's, of course. Now, let me get back to resting. I didn't get much sleep last night...",
+      "name": "Looking forward to festival",
+      "pid": "6",
+      "position": {
+        "x": "622.5",
+        "y": "520.5"
+      }
+    },
+    {
+      "text": "Oh dear, why is that? Did you not enjoy last year's festival? It was quite grand, what with the feast, the dancing, and of course, the Act... I do so enjoy the theatrics of it all. But maybe I'm just old fashioned. Well, it was nice speaking with you. Now, let me get back to resting. I didn't get much sleep last night...",
+      "name": "Iffy about festival",
+      "pid": "7",
+      "position": {
+        "x": "772.5",
+        "y": "519.5"
+      }
+    },
+    {
+      "text": "Good heavens, why not? It's the only exciting thing that happens in this town, anymore. Or are you one of those, oh what are they called... modernists? The new girl who moved her a few months ago seems to be one of those as well... But between you and me, I can't imagine her lasting long here. People like her never do. Now, let me get back to resting. I didn't get much sleep last night...",
+      "name": "Not looking forward to festival",
+      "pid": "8",
+      "position": {
+        "x": "922.5",
+        "y": "519.5"
+      }
+    }
+  ],
+  "name": "ElderlyMotherDay1",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "339AB05A-DEFF-4E9C-85FF-BBA62C7CAF73"
+}
