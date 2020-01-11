@@ -112,10 +112,10 @@
     <property name="TwineDialogId" value="WelcomeDialog"/>
    </properties>
   </object>
-  <object id="25" name="Tycoon" gid="7" x="1504.25" y="579.75" width="16" height="16">
+  <object id="25" name="Tycoon" gid="7" x="1030.33" y="868.417" width="16" height="16">
    <properties>
     <property name="Animation" value="BlondeBlueNun"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="TycoonDay1"/>
    </properties>
   </object>
   <object id="26" name="Farmer" gid="7" x="542.25" y="603.25" width="16" height="16">
