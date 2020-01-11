@@ -86,6 +86,15 @@ namespace FishStory.Screens
 #if DEBUG
         private void DebugInitialize()
         {
+            if (DebuggingVariables.ShowFishLootZones)
+            {
+                foreach(var zone in this.FishingZoneList)
+                {
+                    zone.Collision.Visible = true;
+                }
+            }
+
+
             void Award(string item) => PlayerDataManager.PlayerData.AwardItem(item);
             if (DebuggingVariables.AwardTonsOfBait)
             {
@@ -417,6 +426,22 @@ namespace FishStory.Screens
         {
             var lootTable = GlobalContent.DefaultLootTable;
 
+            // see if the player is colliding with any fishing zones
+            var collidedFishingZone = this.FishingZoneList.First(item => item.CollideAgainst(PlayerCharacterInstance.BodyCollision));
+            if(collidedFishingZone != null)
+            {
+                if(string.IsNullOrEmpty(collidedFishingZone.LootTable))
+                {
+                    throw new Exception("The current zone does not have a specified LootTable, it should");
+                }
+                lootTable = (Dictionary<string, FishingLootTable>)GlobalContent.GetFile(collidedFishingZone.LootTable);
+
+                if(lootTable == null)
+                {
+                    throw new Exception($"The loot table {collidedFishingZone.LootTable} either doesn't exist or it doesn't use FishingLootTable created class");
+                }
+            }
+
             var field = typeof(FishingLootTable).GetField(baitType);
 
             if(field == null)
@@ -490,21 +515,20 @@ namespace FishStory.Screens
         {
             var inventory = PlayerDataManager.PlayerData.ItemInventory;
 
-            if(inventory.Count == 0)
+            var baitItems = inventory
+                .Where(item => item.Value > 0)
+                .Where(item => GlobalContent.ItemDefinition[item.Key].IsBait)
+                .ToList();
+            if(baitItems.Count == 0)
             {
                 return null;
             }
             else
             {
-                var itemsToLookAt = inventory
-                    .Where(item => item.Value > 0)
-                    .Where(item => GlobalContent.ItemDefinition[item.Key].IsBait)
-                    .ToList();
-
                 string text = "Select Bait";
                 List<string> options = new List<string>();
 
-                foreach (var item in itemsToLookAt)
+                foreach (var item in baitItems)
                 {
                     options.Add($"{item.Key} ({item.Value})");
                 }

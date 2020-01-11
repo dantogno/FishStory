@@ -78,6 +78,10 @@
     <Compile Include="Entities\FishIdentifiedSign.Generated.cs">
       <DependentUpon>FishIdentifiedSign.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\FishingZone.cs" />
+    <Compile Include="Entities\FishingZone.Generated.cs">
+      <DependentUpon>FishingZone.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\NPC.cs" />
     <Compile Include="Entities\NPC.Generated.cs">
       <DependentUpon>NPC.cs</DependentUpon>
@@ -96,6 +100,7 @@
     </Compile>
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\FishIdentifiedSignFactory.Generated.cs" />
+    <Compile Include="Factories\FishingZoneFactory.Generated.cs" />
     <Compile Include="Factories\NPCFactory.Generated.cs" />
     <Compile Include="Factories\PlayerHouseDoorFactory.Generated.cs" />
     <Compile Include="Factories\PropObjectFactory.Generated.cs" />
@@ -418,6 +423,10 @@
     <None Include="content\globalcontent\fishingloottables\defaultloottable.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>DefaultLootTable</Name>
+    </None>
+    <None Include="content\globalcontent\fishingloottables\loottable1.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>LootTable1</Name>
     </None>
     <None Include="content\globalcontent\itemdefinition.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
