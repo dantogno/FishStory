@@ -1202,11 +1202,6 @@
       <NamedObjects>
         <NamedObjectSave>
           <CustomProperty>
-            <Type>float</Type>
-            <Member>TextureScale</Member>
-            <ValueAsFloat>1</ValueAsFloat>
-          </CustomProperty>
-          <CustomProperty>
             <Type>Microsoft.Xna.Framework.Graphics.Texture2D</Type>
             <Member>Texture</Member>
             <ValueAsString>MasterTileSheet</ValueAsString>
@@ -1230,6 +1225,11 @@
             <Type>float</Type>
             <Member>BottomTexturePixel</Member>
             <ValueAsFloat>304</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>TextureScale</Member>
+            <ValueAsFloat>1</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>
@@ -1602,6 +1602,12 @@
         </ReferencedFileSave>
         <ReferencedFileSave>
           <Name>Entities/NPC/BraidedHairWoman.achx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Entities/NPC/ElderlyWoman.achx</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
           <ProjectsToExcludeFrom />

@@ -163,10 +163,37 @@
     <Name>Idle</Name>
     <Frame>
       <TextureName>children_1.png</TextureName>
-      <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>30</LeftCoordinate>
-      <RightCoordinate>47</RightCoordinate>
-      <TopCoordinate>12</TopCoordinate>
+      <FrameLength>0.125</FrameLength>
+      <LeftCoordinate>0</LeftCoordinate>
+      <RightCoordinate>26</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
+      <BottomCoordinate>36</BottomCoordinate>
+      <RelativeY>14</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>children_1.png</TextureName>
+      <FrameLength>0.125</FrameLength>
+      <LeftCoordinate>26</LeftCoordinate>
+      <RightCoordinate>52</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
+      <BottomCoordinate>36</BottomCoordinate>
+      <RelativeY>14</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>children_1.png</TextureName>
+      <FrameLength>0.125</FrameLength>
+      <LeftCoordinate>52</LeftCoordinate>
+      <RightCoordinate>78</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
+      <BottomCoordinate>36</BottomCoordinate>
+      <RelativeY>14</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>children_1.png</TextureName>
+      <FrameLength>0.125</FrameLength>
+      <LeftCoordinate>26</LeftCoordinate>
+      <RightCoordinate>52</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
       <BottomCoordinate>36</BottomCoordinate>
       <RelativeY>14</RelativeY>
     </Frame>

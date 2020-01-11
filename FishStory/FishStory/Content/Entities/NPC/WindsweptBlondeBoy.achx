@@ -4,18 +4,6 @@
   <TimeMeasurementUnit>Undefined</TimeMeasurementUnit>
   <CoordinateType>Pixel</CoordinateType>
   <AnimationChain>
-    <Name>Idle</Name>
-    <Frame>
-      <TextureName>../../levels/mastertilesheet.png</TextureName>
-      <FrameLength>0.1</FrameLength>
-      <LeftCoordinate>185</LeftCoordinate>
-      <RightCoordinate>202</RightCoordinate>
-      <TopCoordinate>1910</TopCoordinate>
-      <BottomCoordinate>1940</BottomCoordinate>
-      <RelativeY>11</RelativeY>
-    </Frame>
-  </AnimationChain>
-  <AnimationChain>
     <Name>WalkDown</Name>
     <Frame>
       <TextureName>../../levels/mastertilesheet.png</TextureName>
@@ -164,6 +152,45 @@
     <Frame>
       <TextureName>../../levels/mastertilesheet.png</TextureName>
       <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>185</LeftCoordinate>
+      <RightCoordinate>202</RightCoordinate>
+      <TopCoordinate>1910</TopCoordinate>
+      <BottomCoordinate>1940</BottomCoordinate>
+      <RelativeY>11</RelativeY>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Idle</Name>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1625</FrameLength>
+      <LeftCoordinate>160</LeftCoordinate>
+      <RightCoordinate>175</RightCoordinate>
+      <TopCoordinate>1911</TopCoordinate>
+      <BottomCoordinate>1940</BottomCoordinate>
+      <RelativeY>11</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1625</FrameLength>
+      <LeftCoordinate>185</LeftCoordinate>
+      <RightCoordinate>202</RightCoordinate>
+      <TopCoordinate>1910</TopCoordinate>
+      <BottomCoordinate>1940</BottomCoordinate>
+      <RelativeY>11</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1625</FrameLength>
+      <LeftCoordinate>212</LeftCoordinate>
+      <RightCoordinate>227</RightCoordinate>
+      <TopCoordinate>1911</TopCoordinate>
+      <BottomCoordinate>1940</BottomCoordinate>
+      <RelativeY>11</RelativeY>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1625</FrameLength>
       <LeftCoordinate>185</LeftCoordinate>
       <RightCoordinate>202</RightCoordinate>
       <TopCoordinate>1910</TopCoordinate>
