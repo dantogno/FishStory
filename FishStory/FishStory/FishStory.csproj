@@ -348,6 +348,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Detective</Name>
     </None>
+    <None Include="content\entities\npc\elderlywoman.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ElderlyWoman</Name>
+    </None>
     <None Include="content\entities\npc\farmerguy.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FarmerGuy</Name>
