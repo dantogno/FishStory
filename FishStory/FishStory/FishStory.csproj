@@ -308,6 +308,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BaldManBlackJersey</Name>
     </None>
+    <None Include="content\entities\npc\baldmanredbeard.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BaldManRedBeard</Name>
+    </None>
     <None Include="content\entities\npc\blondebluenun.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlondeBlueNun</Name>
@@ -360,6 +364,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GreenOutfitWithHat</Name>
     </None>
+    <None Include="content\entities\npc\greentravelmerchant.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>GreenTravelMerchant</Name>
+    </None>
     <None Include="content\entities\npc\ladyinbluegold.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>LadyInBlueGold</Name>
@@ -371,6 +379,14 @@
     <None Include="content\entities\npc\travelmerchant.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TravelMerchant</Name>
+    </None>
+    <None Include="content\entities\npc\turbanandblueshirt.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TurbanAndBlueShirt</Name>
+    </None>
+    <None Include="content\entities\npc\whitehairedmustacheman.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>WhiteHairedMustacheMan</Name>
     </None>
     <None Include="content\entities\npc\windsweptblondeboy.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
