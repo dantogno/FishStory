@@ -4,7 +4,7 @@
       "text": "Ah, an outsider. Are you here to take part in the festival?\n[[How'd you know I'm an ousider?->Outsider]]\n[[I'm just here to fish->Here to fish]]",
       "links": [
         {
-          "name": "How'd you know I'm an ousider?",
+          "name": "How'd you know I'm an outsider?",
           "link": "Outsider",
           "pid": "2"
         },
@@ -70,7 +70,7 @@
       "name": "No trouble",
       "pid": "4",
       "position": {
-        "x": "583.5",
+        "x": "629.5",
         "y": "540.5"
       }
     },
@@ -86,8 +86,8 @@
       "name": "Dont believe",
       "pid": "5",
       "position": {
-        "x": "703.5",
-        "y": "540.5"
+        "x": "496.5",
+        "y": "536.5"
       }
     },
     {
@@ -95,15 +95,15 @@
       "name": "Bye",
       "pid": "6",
       "position": {
-        "x": "646.5",
-        "y": "691.5"
+        "x": "485.5",
+        "y": "726.5"
       }
     },
     {
-      "text": "I am the servant of this land, and the keeper of our traditions. I am the bridge between the sea and the people. I am the messenger that the land has chosen to deliver its sacred messages of purpose.\n[[I meant what's your name?->Name]]\n[[I don't believe in any of that.->Dont believe]]\n",
+      "text": "I am the servant of this land, and the keeper of our traditions. I am the bridge between the sea and the people. I am the messenger that the land has chosen to deliver its sacred messages of purpose.\n[[Okay, but what's your name?->Name]]\n[[I don't believe in any of that.->Dont believe]]\n",
       "links": [
         {
-          "name": "I meant what's your name?",
+          "name": "Okay, but what's your name?",
           "link": "Name",
           "pid": "8"
         },
@@ -116,8 +116,8 @@
       "name": "Who",
       "pid": "7",
       "position": {
-        "x": "433.5",
-        "y": "536.5"
+        "x": "254.5",
+        "y": "452.5"
       }
     },
     {
@@ -132,8 +132,8 @@
       "name": "Name",
       "pid": "8",
       "position": {
-        "x": "433.5",
-        "y": "690.5"
+        "x": "258.5",
+        "y": "589.5"
       }
     }
   ],

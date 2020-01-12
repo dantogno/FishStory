@@ -1,17 +1,12 @@
 {
   "passages": [
     {
-      "text": "Ah, an outsider. Are you here to take part in the festival?\n[[How'd you know I'm an ousider?->Outsider]]\n[[I'm just here to fish->Here to fish]]",
+      "text": "You here for work?\n[[I'm here to fish.]]",
       "links": [
         {
-          "name": "How'd you know I'm an outsider?",
-          "link": "Outsider",
+          "name": "I'm here to fish.",
+          "link": "I'm here to fish.",
           "pid": "2"
-        },
-        {
-          "name": "I'm just here to fish",
-          "link": "Here to fish",
-          "pid": "3"
         }
       ],
       "name": "Start",
@@ -22,43 +17,129 @@
       }
     },
     {
-      "text": "Double-click this passage to edit it.",
-      "name": "Outsider",
-      "pid": "2",
-      "position": {
-        "x": "433.5",
-        "y": "390.5"
-      }
-    },
-    {
-      "text": "Ah, but even so, you are participating. Ensomme is one with the land and entangled with the sea. Just by walking across our sacred beaches and staring into the bewitching depths of our ocean, you are taking part in our traditions. Iâ€™m sure that you will make efforts to do so in a respectful manner, yes?\n[[I won't get in the way->No trouble]]\n[[",
+      "text": "Bah. You and every other stranger who bothers to make the journey to this barren island. The last time I had another pair of hands to help me with the harvest, I was young and dumb enough to believe I would someday get out of this place. Oh well... You look a little too scrawny to help me, anyway.\n[[I can help you if you want.->Help]]\n[[Maybe people would help you if you weren't so rude->Rude]]",
       "links": [
         {
-          "name": "I won't get in the way",
-          "link": "No trouble",
+          "name": "I can help you if you want.",
+          "link": "Help",
+          "pid": "3"
+        },
+        {
+          "name": "Maybe people would help you if you weren't so rude",
+          "link": "Rude",
           "pid": "4"
         }
       ],
-      "name": "Here to fish",
-      "pid": "3",
+      "name": "I'm here to fish.",
+      "pid": "2",
       "position": {
-        "x": "583.5",
+        "x": "508.5",
         "y": "390.5"
       }
     },
     {
-      "text": "Double-click this passage to edit it.",
-      "name": "No trouble",
+      "text": "No, I'm fine. I've gotten through every other festival season without help, and I can do it again. If Anthony wants lefse for the feast, who am I to say no? Do you have any idea how many potatoes it takes to make enough lefse for the entire town? Of course not! And neither does Anthony, apparently, because he expects me to have everything harvested and cleaned with a day to spare!\n[[Are you sure you don't want help?->Sure help]]\n[[Well, good luck with that!->Good luck]]",
+      "links": [
+        {
+          "name": "Are you sure you don't want help?",
+          "link": "Sure help",
+          "pid": "5"
+        },
+        {
+          "name": "Well, good luck with that!",
+          "link": "Good luck",
+          "pid": "6"
+        }
+      ],
+      "name": "Help",
+      "pid": "3",
+      "position": {
+        "x": "352.5",
+        "y": "537.5"
+      }
+    },
+    {
+      "text": "You're just like my son. All fire but no heat. Where is he, anyway? What's he got to do that's better than picking potatoes? By the way, do you have any idea how many potatoes it takes to make enough lefse for the entire town? Of course not! And neither does my son, apparently, because instead of helping me harvest and clean everything, he's down by that rickety shack of his hawking bait!\n[[Well, good luck with that!->Good luck]]\n[[You think he would give me a discount on bait?->Discount]]\n",
+      "links": [
+        {
+          "name": "Well, good luck with that!",
+          "link": "Good luck",
+          "pid": "6"
+        },
+        {
+          "name": "You think he would give me a discount on bait?",
+          "link": "Discount",
+          "pid": "8"
+        }
+      ],
+      "name": "Rude",
       "pid": "4",
       "position": {
-        "x": "583.5",
+        "x": "674.5",
         "y": "540.5"
+      }
+    },
+    {
+      "text": "Bah... I'm sure. I got a son, don't I? If I need help, I'll get it from him before I bother anyone else. Ain't that the whole point of having a son in the first place?\n[[Bye.]]",
+      "links": [
+        {
+          "name": "Bye.",
+          "link": "Bye.",
+          "pid": "7"
+        }
+      ],
+      "name": "Sure help",
+      "pid": "5",
+      "position": {
+        "x": "277.5",
+        "y": "687.5"
+      }
+    },
+    {
+      "text": "I don't need luck. I got a son, don't I? He'll be helping me whether he likes it or not. Ain't that the whole point of having a son in the first place?\n[[Bye.]]",
+      "links": [
+        {
+          "name": "Bye.",
+          "link": "Bye.",
+          "pid": "7"
+        }
+      ],
+      "name": "Good luck",
+      "pid": "6",
+      "position": {
+        "x": "427.5",
+        "y": "687.5"
+      }
+    },
+    {
+      "text": "Don't trip on my crops on the way out!",
+      "name": "Bye.",
+      "pid": "7",
+      "position": {
+        "x": "522.5",
+        "y": "917.5"
+      }
+    },
+    {
+      "text": "Ha! What a hilarious joke. Do we look like the kind of people who give discounts to strangers? Nice try.\n[[Bye.]]",
+      "links": [
+        {
+          "name": "Bye.",
+          "link": "Bye.",
+          "pid": "7"
+        }
+      ],
+      "name": "Discount",
+      "pid": "8",
+      "position": {
+        "x": "749.5",
+        "y": "690.5"
       }
     }
   ],
-  "name": "PriestessDay1",
+  "name": "FarmerDay1",
   "startnode": "1",
   "creator": "Twine",
   "creator-version": "2.3.5",
-  "ifid": "6604821E-2FF3-4C0F-9912-CCE4E7C45764"
+  "ifid": "1F83A30F-7267-41BF-9B08-E6BF256D80EA"
 }

@@ -100,10 +100,10 @@
     <property name="TwineDialogId" value="ShopDialog"/>
    </properties>
   </object>
-  <object id="23" name="Priestess" gid="7" x="1599" y="606" width="16" height="16">
+  <object id="23" name="Priestess" gid="7" x="1120" y="1095.67" width="16" height="16">
    <properties>
     <property name="Animation" value="LadyInBlueGold"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="PriestessDay1"/>
    </properties>
   </object>
   <object id="24" name="ElderlyMother" gid="7" x="1644" y="606" width="16" height="16">
@@ -112,16 +112,16 @@
     <property name="TwineDialogId" value="WelcomeDialog"/>
    </properties>
   </object>
-  <object id="25" name="Tycoon" gid="7" x="1504.25" y="579.75" width="16" height="16">
+  <object id="25" name="Tycoon" gid="7" x="1030.33" y="868.417" width="16" height="16">
    <properties>
     <property name="Animation" value="BlondeBlueNun"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="TycoonDay1"/>
    </properties>
   </object>
-  <object id="26" name="Farmer" gid="7" x="1540.25" y="609.25" width="16" height="16">
+  <object id="26" name="Farmer" gid="7" x="542.25" y="603.25" width="16" height="16">
    <properties>
     <property name="Animation" value="FarmerGuy"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="FarmerDay1"/>
    </properties>
   </object>
   <object id="27" name="Nun" gid="7" x="1554.75" y="578.75" width="16" height="16">
