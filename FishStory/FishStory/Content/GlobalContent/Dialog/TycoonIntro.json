@@ -19,7 +19,10 @@
       "position": {
         "x": "508.5",
         "y": "240.5"
-      }
+      },
+      "tags": [
+        "HasTalkedToTycoonDay1"
+      ]
     },
     {
       "text": "Ah, yes! Fishing is wonderful, isn't it? One of my top ten favorite leisure activities! And, as luck may have it, one of our premiere vacation experiences! I can offer you some top-of-the-line, beginner-friendly fishing classes, perfect for your holiday! How does that sound?\n[[Sorry, I'm not here for vacation.->No vacation]]",
