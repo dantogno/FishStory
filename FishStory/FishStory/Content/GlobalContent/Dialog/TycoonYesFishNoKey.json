@@ -1,0 +1,34 @@
+{
+  "passages": [
+    {
+      "text": "Did you sell the fish?\n[[Yes!->Yes]]",
+      "links": [
+        {
+          "name": "Yes!",
+          "link": "Yes",
+          "pid": "2"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "587",
+        "y": "334.5"
+      }
+    },
+    {
+      "text": "Pfft. You sure took your sweet time, didn't you? Well, no matter. Here's the key. Don't trash the place.",
+      "name": "Yes",
+      "pid": "2",
+      "position": {
+        "x": "587",
+        "y": "484.5"
+      }
+    }
+  ],
+  "name": "TycoonYesFishNoKey",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "E5D893BE-31E6-4211-8E14-5ABF95E8AD61"
+}

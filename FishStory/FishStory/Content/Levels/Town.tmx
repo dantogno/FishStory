@@ -115,7 +115,7 @@
   <object id="25" name="Tycoon" gid="7" x="1042" y="618.417" width="16" height="16">
    <properties>
     <property name="Animation" value="Tycoon"/>
-    <property name="TwineDialogId" value="TycoonDay1"/>
+    <property name="TwineDialogId" value="TycoonIntro"/>
    </properties>
   </object>
   <object id="26" name="Farmer" gid="7" x="483.917" y="667.917" width="16" height="16">

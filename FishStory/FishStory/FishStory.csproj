@@ -149,7 +149,9 @@
     <Compile Include="GumRuntimes\ColoredRectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ContainerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\CustomNiceSliceRuntime.cs" />
-    <Compile Include="GumRuntimes\CustomNiceSliceRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CustomNiceSliceRuntime.Generated.cs">
+      <DependentUpon>CustomNiceSliceRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ButtonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\CheckBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ColoredFrameRuntime.Generated.cs" />
@@ -489,6 +491,10 @@
     <None Include="content\globalcontent\dialog\tycoonday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TycoonDay1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\tycoonintro.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TycoonIntro</Name>
     </None>
     <None Include="content\globalcontent\dialog\welcomedialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
