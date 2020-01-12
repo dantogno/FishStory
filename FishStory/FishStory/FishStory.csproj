@@ -148,6 +148,8 @@
     <Compile Include="GumRuntimes\CircleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ColoredRectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ContainerRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CustomNiceSliceRuntime.cs" />
+    <Compile Include="GumRuntimes\CustomNiceSliceRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ButtonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\CheckBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ColoredFrameRuntime.Generated.cs" />
@@ -520,6 +522,46 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>actionindicator</Name>
     </None>
+    <None Include="content\gumproject\components\customniceslice.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>customniceslice</Name>
+    </None>
+    <None Include="content\gumproject\components\customnineslice\fishui_bottomcenter.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>fishui_bottomcenter</Name>
+    </None>
+    <None Include="content\gumproject\components\customnineslice\fishui_bottomleft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>fishui_bottomleft</Name>
+    </None>
+    <None Include="content\gumproject\components\customnineslice\fishui_bottomright.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>fishui_bottomright</Name>
+    </None>
+    <None Include="content\gumproject\components\customnineslice\fishui_center.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>fishui_center</Name>
+    </None>
+    <None Include="content\gumproject\components\customnineslice\fishui_left.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>fishui_left</Name>
+    </None>
+    <None Include="content\gumproject\components\customnineslice\fishui_right.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>fishui_right</Name>
+    </None>
+    <None Include="content\gumproject\components\customnineslice\fishui_topcenter.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>fishui_topcenter</Name>
+    </None>
+    <None Include="content\gumproject\components\customnineslice\fishui_topleft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>fishui_topleft</Name>
+    </None>
+    <None Include="content\gumproject\components\customnineslice\fishui_topright.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>fishui_topright</Name>
+    </None>
     <None Include="content\gumproject\components\defaultforms\button.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>button</Name>
@@ -624,6 +666,22 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>store</Name>
     </None>
+    <None Include="content\gumproject\fontcache\font16casual_encounter.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font16casual_encounter</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font16casual_encounter_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font16Casual_Encounter_0</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font16casual_encounter_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font16casual_encounter_o1</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font16casual_encounter_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font16Casual_Encounter_o1_0</Name>
+    </None>
     <None Include="content\gumproject\fontcache\font18arial.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>font18arial</Name>
@@ -631,6 +689,14 @@
     <None Include="content\gumproject\fontcache\font18arial_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18Arial_0</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font18casual_encounter_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font18casual_encounter_o1</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font18casual_encounter_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font18Casual_Encounter_o1_0</Name>
     </None>
     <None Include="content\gumproject\gumproject.gumx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

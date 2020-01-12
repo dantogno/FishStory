@@ -29,6 +29,42 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>CustomNiceSliceInstance.Height</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>CustomNiceSliceInstance.Height Units</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>CustomNiceSliceInstance.Width</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>CustomNiceSliceInstance.Width Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>CustomNiceSliceInstance.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>CustomNiceSliceInstance.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ChildrenLayout</Type>
       <Name>DialogAndOptions.Children Layout</Name>
       <Value xsi:type="xsd:int">1</Value>
@@ -49,7 +85,7 @@
     <Variable>
       <Type>string</Type>
       <Name>DialogAndOptions.Parent</Name>
-      <Value xsi:type="xsd:string">NineSliceInstance</Value>
+      <Value xsi:type="xsd:string">CustomNiceSliceInstance</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -190,6 +226,18 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>TextInstance.Font</Name>
+      <Value xsi:type="xsd:string">Casual Encounter</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.FontSize</Name>
+      <Value xsi:type="xsd:int">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>TextInstance.Height</Name>
       <Value xsi:type="xsd:float">0</Value>
@@ -202,6 +250,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.OutlineThickness</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>TextInstance.Parent</Name>
       <Value xsi:type="xsd:string">DialogAndOptions</Value>
@@ -211,6 +265,12 @@
       <Type>string</Type>
       <Name>TextInstance.Text</Name>
       <Value xsi:type="xsd:string">Hello1 Hello2 Hello3 Hello4 Hello5 Hello6 Hello7 Hello1 Hello2 Hello3 Hello4 Hello5 Hello6 Hello7 Hello1 Hello2 Hello3 Hello4 Hello5 Hello6 Hello7 Hello1 Hello2 Hello3 Hello4 Hello5 Hello6 Hello7 Hello1 Hello2 Hello3 Hello4 Hello5 Hello6 Hello7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>TextInstance.UseFontSmoothing</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -280,6 +340,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
   </State>
+  <Instance>
+    <Name>CustomNiceSliceInstance</Name>
+    <BaseType>CustomNiceSlice</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
   <Instance>
     <Name>NineSliceInstance</Name>
     <BaseType>NineSlice</BaseType>
