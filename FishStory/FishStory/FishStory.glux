@@ -1425,6 +1425,19 @@
           <DefaultValue xsi:type="xsd:float">0.5</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>string</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>CurrentChainName</Name>
+          <Type>string</Type>
+          <DefaultValue xsi:type="xsd:string">Idle</DefaultValue>
+          <SourceObject>SpriteInstance</SourceObject>
+          <SourceObjectProperty>CurrentChainName</SourceObjectProperty>
+        </CustomVariable>
       </CustomVariables>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <Name>Entities\NPC</Name>
@@ -1443,7 +1456,7 @@
           <CustomProperty>
             <Type>string</Type>
             <Member>CurrentChainName</Member>
-            <ValueAsString>WalkDown</ValueAsString>
+            <ValueAsString>Idle</ValueAsString>
           </CustomProperty>
           <Properties>
             <PropertySave>
