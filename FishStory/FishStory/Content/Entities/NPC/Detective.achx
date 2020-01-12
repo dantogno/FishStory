@@ -4,6 +4,41 @@
   <TimeMeasurementUnit>Undefined</TimeMeasurementUnit>
   <CoordinateType>Pixel</CoordinateType>
   <AnimationChain>
+    <Name>Idle</Name>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.2</FrameLength>
+      <LeftCoordinate>479</LeftCoordinate>
+      <RightCoordinate>496</RightCoordinate>
+      <TopCoordinate>1912</TopCoordinate>
+      <BottomCoordinate>1940</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.2</FrameLength>
+      <LeftCoordinate>505</LeftCoordinate>
+      <RightCoordinate>522</RightCoordinate>
+      <TopCoordinate>1911</TopCoordinate>
+      <BottomCoordinate>1940</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.2</FrameLength>
+      <LeftCoordinate>531</LeftCoordinate>
+      <RightCoordinate>548</RightCoordinate>
+      <TopCoordinate>1912</TopCoordinate>
+      <BottomCoordinate>1940</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.2</FrameLength>
+      <LeftCoordinate>505</LeftCoordinate>
+      <RightCoordinate>522</RightCoordinate>
+      <TopCoordinate>1911</TopCoordinate>
+      <BottomCoordinate>1940</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
     <Name>WalkDown</Name>
     <Frame>
       <TextureName>../../levels/mastertilesheet.png</TextureName>
@@ -141,41 +176,6 @@
       <RightCoordinate>522</RightCoordinate>
       <TopCoordinate>2019</TopCoordinate>
       <BottomCoordinate>2048</BottomCoordinate>
-    </Frame>
-  </AnimationChain>
-  <AnimationChain>
-    <Name>Idle</Name>
-    <Frame>
-      <TextureName>../../levels/mastertilesheet.png</TextureName>
-      <FrameLength>0.2</FrameLength>
-      <LeftCoordinate>479</LeftCoordinate>
-      <RightCoordinate>496</RightCoordinate>
-      <TopCoordinate>1912</TopCoordinate>
-      <BottomCoordinate>1940</BottomCoordinate>
-    </Frame>
-    <Frame>
-      <TextureName>../../levels/mastertilesheet.png</TextureName>
-      <FrameLength>0.2</FrameLength>
-      <LeftCoordinate>505</LeftCoordinate>
-      <RightCoordinate>522</RightCoordinate>
-      <TopCoordinate>1911</TopCoordinate>
-      <BottomCoordinate>1940</BottomCoordinate>
-    </Frame>
-    <Frame>
-      <TextureName>../../levels/mastertilesheet.png</TextureName>
-      <FrameLength>0.2</FrameLength>
-      <LeftCoordinate>531</LeftCoordinate>
-      <RightCoordinate>548</RightCoordinate>
-      <TopCoordinate>1912</TopCoordinate>
-      <BottomCoordinate>1940</BottomCoordinate>
-    </Frame>
-    <Frame>
-      <TextureName>../../levels/mastertilesheet.png</TextureName>
-      <FrameLength>0.2</FrameLength>
-      <LeftCoordinate>505</LeftCoordinate>
-      <RightCoordinate>522</RightCoordinate>
-      <TopCoordinate>1911</TopCoordinate>
-      <BottomCoordinate>1940</BottomCoordinate>
     </Frame>
   </AnimationChain>
 </AnimationChainArraySave>
