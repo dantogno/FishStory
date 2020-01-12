@@ -20,7 +20,21 @@ namespace FishStory.Screens
 {
     public partial class MainLevel
     {
+        private string[] FishNames => GlobalContent.ItemDefinition
+            .Where(item => item.Value.IsFish).Select(item => item.Value.Name).ToArray();
 
+        private int TotalFishIdentified
+        {
+            get
+            {
+                int total = 0;
+                foreach (var item in FishNames)
+                {
+                    total += PlayerDataManager.PlayerData.TimesFishIdentified[item];
+                }
+                return total;
+            }
+        }
         void CustomInitialize()
         {
             InitializeScript();
@@ -31,7 +45,20 @@ namespace FishStory.Screens
         {
             var If = script;
             var Do = script;
+                
+
             PlayerCharacterInstance.DirectionFacing = TopDownDirection.Left;
+
+            
+
+            //Tycoon intro
+            // Tycoon no key, no fish
+            // tycoon no key, yes fish
+            // tycoon yes key
+
+            // PlayerDataManager.PlayerData.TimesFishIdentified.cou
+            // PlayerDataManager.PlayerData.Has(DataTypes.ItemDefinition.)
+            //PlayerDataManager.PlayerData.Money
             //If.Check(() => !HasTag("HasSeenWelcomeDialog") && PlayerCharacterInstance.X < 1070 );
             //Do.Call(() =>
             //{
@@ -53,7 +80,7 @@ namespace FishStory.Screens
             //    AddNotification("Recieved: Festival Badge");
             //    AddNotification("Recieved: Festival Pamphlet");
             //});
-            
+
             //If.Check(() => true);
             //Do.Call(() => PlayerDataManager.PlayerData.AwardItem("NameOfItem"));
             //If.Check(() => PlayerCharacterInstance.Y < -100);
