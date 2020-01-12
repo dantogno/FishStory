@@ -666,6 +666,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>store</Name>
     </None>
+    <None Include="content\gumproject\fontcache\font10casual_encounter_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font10casual_encounter_o1</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font10casual_encounter_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font10Casual_Encounter_o1_0</Name>
+    </None>
     <None Include="content\gumproject\fontcache\font16casual_encounter.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>font16casual_encounter</Name>
