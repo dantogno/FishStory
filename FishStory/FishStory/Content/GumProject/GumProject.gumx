@@ -17,6 +17,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>CustomNiceSlice</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>DefaultForms/Button</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

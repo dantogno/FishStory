@@ -245,6 +245,18 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>DescriptionText.Font</Name>
+      <Value xsi:type="xsd:string">Casual Encounter</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>DescriptionText.FontSize</Name>
+      <Value xsi:type="xsd:int">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>DescriptionText.Height</Name>
       <Value xsi:type="xsd:float">-10</Value>
@@ -259,6 +271,12 @@
     <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>DescriptionText.HorizontalAlignment</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>DescriptionText.OutlineThickness</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -430,8 +448,26 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>TextInstance.Font</Name>
+      <Value xsi:type="xsd:string">Casual Encounter</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.FontSize</Name>
+      <Value xsi:type="xsd:int">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>TextInstance.HorizontalAlignment</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.OutlineThickness</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -485,8 +521,26 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>TextInstance1.Font</Name>
+      <Value xsi:type="xsd:string">Casual Encounter</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance1.FontSize</Name>
+      <Value xsi:type="xsd:int">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>TextInstance1.HorizontalAlignment</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance1.OutlineThickness</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -542,6 +596,18 @@
       <Type>ColorCategory</Type>
       <Name>TextInstance2.ColorCategoryState</Name>
       <Value xsi:type="xsd:string">Black</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TextInstance2.Font</Name>
+      <Value xsi:type="xsd:string">Casual Encounter</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance2.FontSize</Name>
+      <Value xsi:type="xsd:int">16</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -623,6 +689,18 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>TextInstance3.Font</Name>
+      <Value xsi:type="xsd:string">Casual Encounter</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance3.FontSize</Name>
+      <Value xsi:type="xsd:int">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>TextInstance3.Height</Name>
       <Value xsi:type="xsd:float">0</Value>
@@ -698,6 +776,18 @@
       <Type>ColorCategory</Type>
       <Name>TextInstance4.ColorCategoryState</Name>
       <Value xsi:type="xsd:string">Black</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TextInstance4.Font</Name>
+      <Value xsi:type="xsd:string">Casual Encounter</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance4.FontSize</Name>
+      <Value xsi:type="xsd:int">16</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
