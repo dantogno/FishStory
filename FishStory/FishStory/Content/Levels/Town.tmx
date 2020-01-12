@@ -31,7 +31,7 @@
    H4sIAAAAAAAECu3QMQEAAADCoPVPbQ0PiEBhwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDDwNDB9VAwoIMsAAA==
   </data>
  </layer>
- <objectgroup id="6" name="Entities">
+ <objectgroup id="6" name="Entities" visible="0">
   <object id="2" gid="15361" x="1256.25" y="940.5" width="16" height="16">
    <properties>
     <property name="Animation" value="Boy1"/>
