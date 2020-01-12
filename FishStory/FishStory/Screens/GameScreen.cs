@@ -283,6 +283,7 @@ namespace FishStory.Screens
 
             // do script *after* the UI
             script.Activity();
+            Map?.AnimateSelf();
         }
 
         private void DebuggingActivity()

@@ -1431,14 +1431,6 @@
               <Name>Type</Name>
               <ValueAsString>string</ValueAsString>
             </PropertySave>
-            <PropertySave>
-              <Name>OverridingPropertyType</Name>
-              <ValueAsString>string</ValueAsString>
-            </PropertySave>
-            <PropertySave>
-              <Name>TypeConverter</Name>
-              <ValueAsString>&lt;default&gt;</ValueAsString>
-            </PropertySave>
           </Properties>
           <Name>CurrentChainName</Name>
           <Type>string</Type>
@@ -1464,6 +1456,7 @@
           <CustomProperty>
             <Type>string</Type>
             <Member>CurrentChainName</Member>
+            <ValueAsString>Idle</ValueAsString>
           </CustomProperty>
           <Properties>
             <PropertySave>
