@@ -242,6 +242,8 @@ namespace FishStory.Screens
             var inventory = GameScreenGum.InventoryInstance;
             inventory.Visible = false;
             inventory.SellClicked += HandleSellClicked;
+            inventory.Closed += () =>
+                PlayerCharacterInstance.ObjectsBlockingInput.Remove(inventory);
             inventory.CancelInput = PlayerCharacterInstance.CancelInput;
             inventory.InventoryInput = PlayerCharacterInstance.InventoryInput;
             #endregion
@@ -801,7 +803,7 @@ namespace FishStory.Screens
             }
         }
 
-        private static void ShowInventory(InventoryRuntime.ViewOrSell state, 
+        private void ShowInventory(InventoryRuntime.ViewOrSell state, 
             float sellPriceMultiplier, InventoryRestrictions inventoryRestrictions)
         {
             var inventory = GameScreenGum.InventoryInstance;
@@ -811,6 +813,8 @@ namespace FishStory.Screens
             inventory.FillWithInventory(PlayerDataManager.PlayerData.ItemInventory, 
                 sellPriceMultiplier, inventoryRestrictions);
             inventory.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
+
+            PlayerCharacterInstance.ObjectsBlockingInput.Add(inventory);
         }
 
         #endregion

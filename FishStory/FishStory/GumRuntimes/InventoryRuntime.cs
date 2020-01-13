@@ -7,11 +7,15 @@ using System.Linq;
 
 namespace FishStory.GumRuntimes
 {
+    #region Enums
+
     public enum InventoryRestrictions
     {
         NoRestrictions,
         IdentifiedFishOnly
     }
+
+    #endregion
 
     public partial class InventoryRuntime
     {
@@ -37,6 +41,12 @@ namespace FishStory.GumRuntimes
         }
         #endregion
 
+        #region Events
+
+        public event Action Closed;
+
+        #endregion
+
         #region Initialize
 
         partial void CustomInitialize () 
@@ -47,7 +57,7 @@ namespace FishStory.GumRuntimes
             listBox.ListBoxItemFormsType = typeof(Forms.InventoryListBoxItem);
             listBox.SelectionChanged += HandleListBoxSelectionChanged;
 
-            this.CloseButton.FormsControl.Click += (not, used) => this.Visible = false;
+            this.CloseButton.FormsControl.Click += (not, used) => Close();
 
             this.SellButton.FormsControl.Click += (not, used) => SellClicked();
         }
@@ -62,13 +72,19 @@ namespace FishStory.GumRuntimes
             {
                 if (CancelInput.WasJustPressed)
                 {
-                    Visible = false;
+                    Close();
                 }
-                if(CurrentViewOrSellState == ViewOrSell.View && InventoryInput.WasJustPressed)
+                if (CurrentViewOrSellState == ViewOrSell.View && InventoryInput.WasJustPressed)
                 {
-                    Visible = false;
+                    Close();
                 }
             }
+        }
+
+        private void Close()
+        {
+            Visible = false;
+            Closed?.Invoke();
         }
 
         private void HandleListBoxSelectionChanged(object sender, SelectionChangedEventArgs args)
