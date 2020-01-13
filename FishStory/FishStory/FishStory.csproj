@@ -696,6 +696,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>store</Name>
     </None>
+    <None Include="content\gumproject\fontcache\font10casual_encounter.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font10casual_encounter</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font10casual_encounter_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font10Casual_Encounter_0</Name>
+    </None>
     <None Include="content\gumproject\fontcache\font10casual_encounter_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>font10casual_encounter_o1</Name>
@@ -727,14 +735,6 @@
     <None Include="content\gumproject\fontcache\font18arial_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18Arial_0</Name>
-    </None>
-    <None Include="content\gumproject\fontcache\font18casual_encounter_o1.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>font18casual_encounter_o1</Name>
-    </None>
-    <None Include="content\gumproject\fontcache\font18casual_encounter_o1_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font18Casual_Encounter_o1_0</Name>
     </None>
     <None Include="content\gumproject\gumproject.gumx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

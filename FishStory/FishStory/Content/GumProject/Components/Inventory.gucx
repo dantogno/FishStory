@@ -253,7 +253,7 @@
     <Variable>
       <Type>int</Type>
       <Name>DescriptionText.FontSize</Name>
-      <Value xsi:type="xsd:int">16</Value>
+      <Value xsi:type="xsd:int">10</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

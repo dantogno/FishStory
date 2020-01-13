@@ -167,9 +167,9 @@
     <State>
       <Name>Normal</Name>
       <Variable>
-        <Type>DimensionUnitType</Type>
-        <Name>SpriteInstance.Width Units</Name>
-        <Value xsi:type="xsd:int">3</Value>
+        <Type>float</Type>
+        <Name>SpriteInstance.Height</Name>
+        <Value xsi:type="xsd:float">100</Value>
         <Category>Dimensions</Category>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -181,9 +181,9 @@
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
-        <Type>float</Type>
-        <Name>SpriteInstance.Height</Name>
-        <Value xsi:type="xsd:float">100</Value>
+        <Type>DimensionUnitType</Type>
+        <Name>SpriteInstance.Width Units</Name>
+        <Value xsi:type="xsd:int">3</Value>
         <Category>Dimensions</Category>
         <SetsValue>true</SetsValue>
       </Variable>
