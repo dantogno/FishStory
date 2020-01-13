@@ -1,0 +1,81 @@
+{
+  "passages": [
+    {
+      "text": "Greetings, traveler. My name's Jakob, and I work for the church that you see before you. I see you have a Festival Badge. [[Identify Service]]",
+      "links": [
+        {
+          "name": "Identify Service",
+          "link": "Identify Service",
+          "pid": "2"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "539.5",
+        "y": "572.5"
+      },
+      "tags": [
+        "HasSeenIdentifierDay1"
+      ]
+    },
+    {
+      "text": "In Ensomme, all fish must be officially recorded by the Church before they can be brought to market. I provide this service. Just bring me your catch, and I'll tag your fish so the fishmonger knows they've been recorded. [[Identify 2]]",
+      "links": [
+        {
+          "name": "Identify 2",
+          "link": "Identify 2",
+          "pid": "3"
+        }
+      ],
+      "name": "Identify Service",
+      "pid": "2",
+      "position": {
+        "x": "539.5",
+        "y": "724.5"
+      }
+    },
+    {
+      "text": "I'll even tell you more about the bounty you have pulled from the sea. Free of charge, of course. [[Identify and record fish|Identify]] [[Leave|Leave]]",
+      "links": [
+        {
+          "name": "Identify and record fish|Identify",
+          "link": "Identify and record fish|Identify"
+        },
+        {
+          "name": "Leave|Leave",
+          "link": "Leave|Leave"
+        }
+      ],
+      "name": "Identify 2",
+      "pid": "3",
+      "position": {
+        "x": "539.5",
+        "y": "874.5"
+      }
+    },
+    {
+      "text": "Sell=id",
+      "name": "Identify",
+      "pid": "4",
+      "position": {
+        "x": "539.5",
+        "y": "1024.5"
+      }
+    },
+    {
+      "text": "Good day.",
+      "name": "Leave",
+      "pid": "5",
+      "position": {
+        "x": "321.5",
+        "y": "982.5"
+      }
+    }
+  ],
+  "name": "IdentifierDay1",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "17031D9D-EC28-47A1-BFCE-BFBD3E52C4BC"
+}

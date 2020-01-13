@@ -468,6 +468,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishermanHairDay1</Name>
     </None>
+    <None Include="content\globalcontent\dialog\identifierday1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>IdentifierDay1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\identifierday1brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>IdentifierDay1Brief</Name>
+    </None>
     <None Include="content\globalcontent\dialog\mayorafterwelcome.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>MayorAfterWelcome</Name>
@@ -499,6 +507,18 @@
     <None Include="content\globalcontent\dialog\tycoonintro.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TycoonIntro</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\tycoonnofishnokey.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TycoonNoFishNoKey</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\tycoonyesfishnokey.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TycoonYesFishNoKey</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\tycoonyeskey.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TycoonYesKey</Name>
     </None>
     <None Include="content\globalcontent\dialog\welcomedialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

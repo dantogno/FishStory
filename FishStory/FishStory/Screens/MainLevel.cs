@@ -49,8 +49,35 @@ namespace FishStory.Screens
 
             PlayerCharacterInstance.DirectionFacing = TopDownDirection.Left;
 
-            
+            PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
+            PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
+            PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
 
+            #region Day 1
+            //Identifier
+            If.Check(() => HasTag("HasSeenIdentifierDay1"));
+            Do.Call(() =>
+            {
+                NPCList.FindByName("Identifier").TwineDialogId = "IdentifierDay1Brief";
+            });
+            // Tycoon
+            int numFishRequiredForKey = 3;
+            If.Check(() => HasTag("HasTalkedToTycoonDay1"));
+            Do.Call(() =>
+            {
+                NPCList.FindByName("Tycoon").TwineDialogId = "TycoonNoFishNoKey";
+            });
+            If.Check(() => HasTag("TycoonDay1") && TotalFishIdentified >= numFishRequiredForKey);
+            Do.Call(() =>
+            {
+                NPCList.FindByName("Tycoon").TwineDialogId = "TycoonYesFishNoKey";
+            });
+            If.Check(() => PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key));
+            Do.Call(() =>
+            {
+                NPCList.FindByName("Tycoon").TwineDialogId = "TycoonYesKey";
+            });
+            // TycoonIntro, TycoonNoFishNoKey, TycoonYesFishNoKey, and TycoonYesKey
             //Tycoon intro
             // Tycoon no key, no fish
             // tycoon no key, yes fish
@@ -59,6 +86,8 @@ namespace FishStory.Screens
             // PlayerDataManager.PlayerData.TimesFishIdentified.cou
             // PlayerDataManager.PlayerData.Has(DataTypes.ItemDefinition.)
             //PlayerDataManager.PlayerData.Money
+
+            // Mayor
             //If.Check(() => !HasTag("HasSeenWelcomeDialog") && PlayerCharacterInstance.X < 1070 );
             //Do.Call(() =>
             //{
@@ -112,6 +141,7 @@ namespace FishStory.Screens
             //    return PlayerDataManager.PlayerData.NpcRelationships["Dave"].EventsTriggered
             //        .Contains(5);
             //});
+            #endregion
         }
 
         void CustomActivity(bool firstTimeCalled)

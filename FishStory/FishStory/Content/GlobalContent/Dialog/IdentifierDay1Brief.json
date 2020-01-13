@@ -1,0 +1,46 @@
+{
+  "passages": [
+    {
+      "text": "Stay a while and listen.\n[[Identify and record fish|Identify]] [[Leave|Leave]]",
+      "links": [
+        {
+          "name": "Identify and record fish|Identify",
+          "link": "Identify and record fish|Identify"
+        },
+        {
+          "name": "Leave|Leave",
+          "link": "Leave|Leave"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "539.5",
+        "y": "572.5"
+      }
+    },
+    {
+      "text": "sell=id",
+      "name": "Identify",
+      "pid": "2",
+      "position": {
+        "x": "539.5",
+        "y": "722.5"
+      }
+    },
+    {
+      "text": "Good day.",
+      "name": "Leave",
+      "pid": "3",
+      "position": {
+        "x": "427.5",
+        "y": "722.5"
+      }
+    }
+  ],
+  "name": "IdentifierDay1Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "F5503A4A-8F18-420F-9CB9-E3E849AE2D21"
+}
