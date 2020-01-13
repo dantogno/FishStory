@@ -1,221 +1,161 @@
 {
   "passages": [
     {
-      "text": "Welcome to Ensomme! What brings you to our island community?\n[[I'm retired.]] \n[[I'm on vacation!]]\n[[I'm just passing through.]]",
+      "text": "Hello there. Can I help you with something?\n[[Who are you?->Who]]",
       "links": [
         {
-          "name": "I'm retired.",
-          "link": "I'm retired.",
+          "name": "Who are you?",
+          "link": "Who",
           "pid": "2"
-        },
-        {
-          "name": "I'm on vacation!",
-          "link": "I'm on vacation!",
-          "pid": "3"
-        },
-        {
-          "name": "I'm just passing through.",
-          "link": "I'm just passing through.",
-          "pid": "4"
         }
       ],
       "name": "Start",
       "pid": "1",
       "position": {
-        "x": "252",
-        "y": "105"
+        "x": "578.5",
+        "y": "236.5"
       }
     },
     {
-      "text": "Excellent! We have many activities to keep you busy during retirement. [[Fishing festival]] ",
+      "text": "My, that's a bit forward of you. Well, if you couldn't tell by my clothes, I'm a nun bound in eternal service to the church. And to the priestess, I guess. She's the one who tells me what to do.\n[[Do you like being a nun?->Like being nun]]\n[[Do you believe everything the priestess says?->Believe priestess]]",
       "links": [
         {
-          "name": "Fishing festival",
-          "link": "Fishing festival",
-          "pid": "5"
+          "name": "Do you like being a nun?",
+          "link": "Like being nun",
+          "pid": "3"
+        },
+        {
+          "name": "Do you believe everything the priestess says?",
+          "link": "Believe priestess",
+          "pid": "4"
         }
       ],
-      "name": "I'm retired.",
+      "name": "Who",
       "pid": "2",
       "position": {
-        "x": "70",
-        "y": "255"
+        "x": "583.5",
+        "y": "390.5"
       }
     },
     {
-      "text": "Excellent! This is a great spot to spend a holiday. [[Fishing festival]] ",
+      "text": "Well, I don't really enjoy fishing, so I guess I like it better than the alternative. And I've grown quite fond of my duties in the church. Scrubbing floors may seem boring at first, but once you've done it a thousand times you realize there's actually quite an art to it.\n[[That sounds nice.->Nice]]\n[[That sounds sad.->Sad]]",
       "links": [
         {
-          "name": "Fishing festival",
-          "link": "Fishing festival",
+          "name": "That sounds nice.",
+          "link": "Nice",
           "pid": "5"
+        },
+        {
+          "name": "That sounds sad.",
+          "link": "Sad",
+          "pid": "6"
         }
       ],
-      "name": "I'm on vacation!",
+      "name": "Like being nun",
       "pid": "3",
       "position": {
-        "x": "280",
-        "y": "251"
+        "x": "508.5",
+        "y": "540.5"
       }
     },
     {
-      "text": "I see. A wanderer of sorts? [[Fishing festival]] ",
+      "text": "Why wouldn't I? The town is still here after all these years of unfavorable winters and short summers. We must be doing something right. Besides, the whole idea of the church is rather beautiful, don't you think?\n[[Yes.->Yes]]\n[[No.->No]]",
       "links": [
         {
-          "name": "Fishing festival",
-          "link": "Fishing festival",
-          "pid": "5"
-        }
-      ],
-      "name": "I'm just passing through.",
-      "pid": "4",
-      "position": {
-        "x": "440",
-        "y": "255"
-      }
-    },
-    {
-      "text": "Allow me to introduce myself. I'm Mayor Thompson. You've come at a good time! Today marks the start of our annual fishing festival. \n[[I'm here to fish!|Here to fish]]\n[[Fishing festival?|Festival?]]\n[[...|Festival 2]]",
-      "links": [
-        {
-          "name": "I'm here to fish!|Here to fish",
-          "link": "I'm here to fish!|Here to fish"
+          "name": "Yes.",
+          "link": "Yes",
+          "pid": "7"
         },
         {
-          "name": "Fishing festival?|Festival?",
-          "link": "Fishing festival?|Festival?"
-        },
-        {
-          "name": "...|Festival 2",
-          "link": "...|Festival 2"
-        }
-      ],
-      "name": "Fishing festival",
-      "pid": "5",
-      "position": {
-        "x": "194",
-        "y": "421"
-      }
-    },
-    {
-      "text": "In fact, the ferry you took here will be the last ship coming to port for the next five days!\n[[You guys are serious about fishing!|Festival 3]]\n[[Do you have enough supplies on the island?|Festival 3]]\n[[So you're telling me I'm stuck here for five days?|Festival 3]]",
-      "links": [
-        {
-          "name": "You guys are serious about fishing!|Festival 3",
-          "link": "You guys are serious about fishing!|Festival 3"
-        },
-        {
-          "name": "Do you have enough supplies on the island?|Festival 3",
-          "link": "Do you have enough supplies on the island?|Festival 3"
-        },
-        {
-          "name": "So you're telling me I'm stuck here for five days?|Festival 3",
-          "link": "So you're telling me I'm stuck here for five days?|Festival 3"
-        }
-      ],
-      "name": "Festival 2",
-      "pid": "6",
-      "position": {
-        "x": "194",
-        "y": "571"
-      }
-    },
-    {
-      "text": "Boats disrupt the fish, so we lock down the port during the festival. But don't worry, we have comfortable living arrangements for visitors and we'll have enough fish to satisfy a giant's appetite! [[Festival 4]]",
-      "links": [
-        {
-          "name": "Festival 4",
-          "link": "Festival 4",
+          "name": "No.",
+          "link": "No",
           "pid": "8"
         }
       ],
-      "name": "Festival 3",
-      "pid": "7",
+      "name": "Believe priestess",
+      "pid": "4",
       "position": {
-        "x": "194",
-        "y": "721"
+        "x": "658.5",
+        "y": "540.5"
       }
     },
     {
-      "text": "There's no pressure to participate, but here's a festival badge and a pamphlet about the rules, just in case. I'll just collect the entrance fee now. [[Festival 4.1]]",
+      "text": "Nice? Oh, sure. It certainly does keep me busy.\n[[Continue]] ",
       "links": [
         {
-          "name": "Festival 4.1",
-          "link": "Festival 4.1",
-          "pid": "10"
-        }
-      ],
-      "name": "Festival 4",
-      "pid": "8",
-      "position": {
-        "x": "194",
-        "y": "871"
-      }
-    },
-    {
-      "text": "[Mayor Thompson took $5. She wouldn't take no for an answer.]\n",
-      "name": "Festival 5",
-      "pid": "9",
-      "position": {
-        "x": "240",
-        "y": "1041"
-      },
-      "tags": [
-        "HasSeenWelcomeDialog"
-      ]
-    },
-    {
-      "text": "When you're ready to call it a night, talk to Anthony by the blue flags in the town square. He'll get you setup with proper accomodations for the duration of the festival. Ready, set, FISH! [[Festival 5]] ",
-      "links": [
-        {
-          "name": "Festival 5",
-          "link": "Festival 5",
+          "name": "Continue",
+          "link": "Continue",
           "pid": "9"
         }
       ],
-      "name": "Festival 4.1",
-      "pid": "10",
+      "name": "Nice",
+      "pid": "5",
       "position": {
-        "x": "438",
-        "y": "873"
+        "x": "348.5",
+        "y": "687.5"
       }
     },
     {
-      "text": "Then you've come to the right place... and at the right time! [[Festival 2]] ",
+      "text": "Oh, does it? I guess it may seem that way to you. I prefer to view it as stable. Balanced.\n[[Continue]] ",
       "links": [
         {
-          "name": "Festival 2",
-          "link": "Festival 2",
-          "pid": "6"
+          "name": "Continue",
+          "link": "Continue",
+          "pid": "9"
         }
       ],
-      "name": "Here to fish",
-      "pid": "11",
+      "name": "Sad",
+      "pid": "6",
       "position": {
-        "x": "42",
-        "y": "545"
+        "x": "498.5",
+        "y": "687.5"
       }
     },
     {
-      "text": "That's right, the fishing festival is Ensomme's biggest event of the year. [[Festival 2]] ",
+      "text": "It's just so wonderful to think that everything we do matters, isn't it? Nothing that happens in this town is happening in a void. Every breath we take tips the scale one way or another.\n[[Continue]]",
       "links": [
         {
-          "name": "Festival 2",
-          "link": "Festival 2",
-          "pid": "6"
+          "name": "Continue",
+          "link": "Continue",
+          "pid": "9"
         }
       ],
-      "name": "Festival?",
-      "pid": "12",
+      "name": "Yes",
+      "pid": "7",
       "position": {
-        "x": "418",
-        "y": "499"
+        "x": "660.5",
+        "y": "690.5"
+      }
+    },
+    {
+      "text": "No? Well, the festival may change your mind. It truly is a beautiful spectacle.\n[[Continue]]",
+      "links": [
+        {
+          "name": "Continue",
+          "link": "Continue",
+          "pid": "9"
+        }
+      ],
+      "name": "No",
+      "pid": "8",
+      "position": {
+        "x": "775.5",
+        "y": "690.5"
+      }
+    },
+    {
+      "text": "Well, I must return to my duties. May the tides be in your favor!",
+      "name": "Continue",
+      "pid": "9",
+      "position": {
+        "x": "593.5",
+        "y": "843.5"
       }
     }
   ],
-  "name": "WelcomeDialog",
+  "name": "NunDay1",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.2.1",
-  "ifid": "AEC83C83-5F86-41F7-BD5A-88B2BB1EBD39"
+  "creator-version": "2.3.5",
+  "ifid": "F77B0434-D703-4BB0-93DA-AD5ED5DFC372"
 }

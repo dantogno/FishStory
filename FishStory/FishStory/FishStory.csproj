@@ -480,6 +480,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>PriestessDay1</Name>
     </None>
+    <None Include="content\globalcontent\dialog\priestessday2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PriestessDay2</Name>
+    </None>
     <None Include="content\globalcontent\dialog\shopdialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ShopDialog</Name>
