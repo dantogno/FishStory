@@ -131,7 +131,7 @@ namespace FishStory.Screens
             var testBlackMarketDialog = GetRootObject("Sell At Black Market Dialog",
                 new List<string>
                 {
-                    "Sell"
+                    "KabukiQuantum|Sell"
                 });
 
             testBlackMarketDialog.passages.Add(new Passage
