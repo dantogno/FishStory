@@ -336,7 +336,8 @@ namespace FishStory.Screens
                     }
                 }
 
-                if(PlayerCharacterInstance.NpcForAction == null &&
+                if(PlayerCharacterInstance.ObjectsBlockingInput.Count == 0 &&
+                    PlayerCharacterInstance.NpcForAction == null &&
                     PlayerCharacterInstanceActivityCollisionVsPlayerHouseDoorList.DoCollisions())
                 {
                     string text = "Call it a day?";
@@ -351,7 +352,8 @@ namespace FishStory.Screens
                     PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                 }
 
-                if(PlayerCharacterInstanceActivityCollisionVsFishIdentifiedSignList.DoCollisions())
+                if(PlayerCharacterInstance.ObjectsBlockingInput.Count == 0 && 
+                    PlayerCharacterInstanceActivityCollisionVsFishIdentifiedSignList.DoCollisions())
                 {
                     string text;
                     var identifiedDictionary = PlayerDataManager.PlayerData.TimesFishIdentified;
