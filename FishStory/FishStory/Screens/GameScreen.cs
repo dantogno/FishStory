@@ -270,7 +270,8 @@ namespace FishStory.Screens
 
         void CustomActivity(bool firstTimeCalled)
         {
-            dialogTagsThisFrame.Clear();
+            // No longer clearing because we need to know if tags have ever been seen
+            // dialogTagsThisFrame.Clear();
             if(InputManager.Mouse.ButtonPushed(Mouse.MouseButtons.RightButton))
             {
                 RestartScreen(true);

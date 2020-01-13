@@ -30,7 +30,7 @@ namespace FishStory.Screens
                 int total = 0;
                 foreach (var item in FishNames)
                 {
-                    total += PlayerDataManager.PlayerData.TimesFishIdentified[item];
+                    total += PlayerDataManager.PlayerData.TimesFishIdentified.Get(item);
                 }
                 return total;
             }
@@ -67,10 +67,16 @@ namespace FishStory.Screens
             {
                 NPCList.FindByName("Tycoon").TwineDialogId = "TycoonNoFishNoKey";
             });
-            If.Check(() => HasTag("TycoonDay1") && TotalFishIdentified >= numFishRequiredForKey);
+            If.Check(() => HasTag("HasTalkedToTycoonDay1") && TotalFishIdentified >= numFishRequiredForKey);
             Do.Call(() =>
             {
                 NPCList.FindByName("Tycoon").TwineDialogId = "TycoonYesFishNoKey";
+            });
+            If.Check(() => HasTag("GiveTrailerKey"));
+            Do.Call(() =>
+            {
+                PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Trailer_Key);
+                AddNotification("Recieved: Trailer Key");
             });
             If.Check(() => PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key));
             Do.Call(() =>
@@ -147,6 +153,7 @@ namespace FishStory.Screens
         void CustomActivity(bool firstTimeCalled)
         {
             FlatRedBall.Debugging.Debugger.Write($"Player X: {PlayerCharacterInstance.X}");
+            FlatRedBall.Debugging.Debugger.Write($"Fish identified: {TotalFishIdentified}");
         }
 
         void CustomDestroy()
