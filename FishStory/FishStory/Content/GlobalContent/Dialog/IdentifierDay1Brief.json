@@ -15,17 +15,17 @@
       "name": "Start",
       "pid": "1",
       "position": {
-        "x": "539.5",
-        "y": "572.5"
+        "x": "539",
+        "y": "572"
       }
     },
     {
-      "text": "sell=id",
+      "text": "id=",
       "name": "Identify",
       "pid": "2",
       "position": {
-        "x": "539.5",
-        "y": "722.5"
+        "x": "539",
+        "y": "722"
       }
     },
     {
@@ -33,14 +33,14 @@
       "name": "Leave",
       "pid": "3",
       "position": {
-        "x": "427.5",
-        "y": "722.5"
+        "x": "427",
+        "y": "722"
       }
     }
   ],
   "name": "IdentifierDay1Brief",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.2.1",
+  "creator-version": "2.3.5",
   "ifid": "F5503A4A-8F18-420F-9CB9-E3E849AE2D21"
 }
