@@ -13,7 +13,7 @@
       "pid": "1",
       "position": {
         "x": "587",
-        "y": "334.5"
+        "y": "334"
       }
     },
     {
@@ -22,8 +22,11 @@
       "pid": "2",
       "position": {
         "x": "587",
-        "y": "484.5"
-      }
+        "y": "484"
+      },
+      "tags": [
+        "GiveTrailerKey"
+      ]
     }
   ],
   "name": "TycoonYesFishNoKey",

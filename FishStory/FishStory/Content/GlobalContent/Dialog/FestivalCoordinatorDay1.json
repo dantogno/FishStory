@@ -1,0 +1,87 @@
+{
+  "passages": [
+    {
+      "text": "Welcome to Festival HQ! I'm Anthony, the Festival Coordinator.[[2]]",
+      "links": [
+        {
+          "name": "2",
+          "link": "2",
+          "pid": "2"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "412",
+        "y": "187.5"
+      }
+    },
+    {
+      "text": "I see you have a Festival Badge! We can loan you a fishing rod for the duration of the festival. Now don't go dropping it in the ocean![[Thanks...|3]]",
+      "links": [
+        {
+          "name": "Thanks...|3",
+          "link": "Thanks...|3"
+        }
+      ],
+      "name": "2",
+      "pid": "2",
+      "position": {
+        "x": "412",
+        "y": "337.5"
+      }
+    },
+    {
+      "text": "Now let me explain a bit of the rules. Each day you can pick up one free piece of bait here at Festival HQ. But after that, it's up to you to buy your own bait from one of our premier vendors. Might I suggest Petterson's Bait Emporium?[[4]]",
+      "links": [
+        {
+          "name": "4",
+          "link": "4",
+          "pid": "4"
+        }
+      ],
+      "name": "3",
+      "pid": "3",
+      "position": {
+        "x": "412",
+        "y": "487.5"
+      },
+      "tags": [
+        "AwardFishingRod"
+      ]
+    },
+    {
+      "text": "After you catch a fish, take it to the white tent behind me to have it recorded!  Only officially recorded fish can be sold to our fishmonger here on the town square.[[5]]",
+      "links": [
+        {
+          "name": "5",
+          "link": "5",
+          "pid": "5"
+        }
+      ],
+      "name": "4",
+      "pid": "4",
+      "position": {
+        "x": "412",
+        "y": "637.5"
+      }
+    },
+    {
+      "text": "Well, that about sums it up. Here, let me give you your first bait!",
+      "name": "5",
+      "pid": "5",
+      "position": {
+        "x": "412",
+        "y": "787.5"
+      },
+      "tags": [
+        "AwardDay1Bait"
+      ]
+    }
+  ],
+  "name": "FestivalCoordinatorDay1",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "069B8462-291D-4DCD-8CF4-FAD6271BBCFF"
+}

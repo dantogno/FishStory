@@ -311,7 +311,8 @@ namespace FishStory.Screens
 
         void CustomActivity(bool firstTimeCalled)
         {
-            dialogTagsThisFrame.Clear();
+            // No longer clearing because we need to know if tags have ever been seen
+            // dialogTagsThisFrame.Clear();
             if(InputManager.Mouse.ButtonPushed(Mouse.MouseButtons.RightButton))
             {
                 RestartScreen(true);
@@ -391,12 +392,19 @@ namespace FishStory.Screens
                     PlayerCharacterInstance.NpcForAction == null &&
                     PlayerCharacterInstanceActivityCollisionVsPlayerHouseDoorList.DoCollisions())
                 {
-                    string text = "Call it a day?";
-                    List<string> options = new List<string>()
+                    string text;
+                    List<string> options = new List<string>();
+                    if (PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key))
                     {
-                        "Yes",
-                        "No"
-                    };
+                        
+                        text = "Call it a day?";
+                        options.Add("Yes");
+                        options.Add("No");
+                    }
+                    else
+                    {
+                        text = "Locked.";                        
+                    }
 
                     var rootObject = GetRootObject(text, options);
                     DialogBox.TryShow(rootObject, HandleDoorOptionSelected);
@@ -469,35 +477,38 @@ namespace FishStory.Screens
 
         private void DoFishingActivity()
         {
-            if (PlayerCharacterInstance.IsFishing == false && PlayerCharacterInstance.TalkInput.WasJustPressed &&
-                PlayerCharacterInstanceFishingCollisionVsWaterCollision.DoCollisions())
+            if (PlayerDataManager.PlayerData.Has(ItemDefinition.Fishing_Rod))
             {
-                var baitSelection = GetBaitRootObject();
+                if (PlayerCharacterInstance.IsFishing == false && PlayerCharacterInstance.TalkInput.WasJustPressed &&
+               PlayerCharacterInstanceFishingCollisionVsWaterCollision.DoCollisions())
+                {
+                    var baitSelection = GetBaitRootObject();
 
-                if (baitSelection == null)
-                {
-                    AddNotification("Can't fish - no bait");
-                }
-                else
-                {
-                    if (DialogBox.TryShow(baitSelection, HandleFishingLinkSelected))
+                    if (baitSelection == null)
                     {
-                        PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                        AddNotification("Can't fish - no bait");
+                    }
+                    else
+                    {
+                        if (DialogBox.TryShow(baitSelection, HandleFishingLinkSelected))
+                        {
+                            PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                        }
                     }
                 }
-            }
-            else if (PlayerCharacterInstance.IsFishing &&
-                PlayerCharacterInstance.TalkInput.WasJustPressed &&
-                PlayerCharacterInstance.LastTimeFishingStarted != TimeManager.CurrentScreenTime)
-            {
-                if (PlayerCharacterInstance.IsFishOnLine)
+                else if (PlayerCharacterInstance.IsFishing &&
+                    PlayerCharacterInstance.TalkInput.WasJustPressed &&
+                    PlayerCharacterInstance.LastTimeFishingStarted != TimeManager.CurrentScreenTime)
                 {
-                    string fishCaught = GetFishCaught(PlayerCharacterInstance.CurrentBait);
-                    PlayerDataManager.PlayerData.AwardItem(fishCaught);
-                    AddNotification($"Caught {fishCaught}");
+                    if (PlayerCharacterInstance.IsFishOnLine)
+                    {
+                        string fishCaught = GetFishCaught(PlayerCharacterInstance.CurrentBait);
+                        PlayerDataManager.PlayerData.AwardItem(fishCaught);
+                        AddNotification($"Caught {fishCaught}");
+                    }
+                    PlayerCharacterInstance.StopFishing();
                 }
-                PlayerCharacterInstance.StopFishing();
-            }
+            }           
         }
 
         private string GetFishCaught(string baitType)

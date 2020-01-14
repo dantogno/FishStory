@@ -12,8 +12,8 @@
       "name": "Start",
       "pid": "1",
       "position": {
-        "x": "539.5",
-        "y": "572.5"
+        "x": "539",
+        "y": "572"
       },
       "tags": [
         "HasSeenIdentifierDay1"
@@ -31,8 +31,8 @@
       "name": "Identify Service",
       "pid": "2",
       "position": {
-        "x": "539.5",
-        "y": "724.5"
+        "x": "539",
+        "y": "724"
       }
     },
     {
@@ -50,17 +50,17 @@
       "name": "Identify 2",
       "pid": "3",
       "position": {
-        "x": "539.5",
-        "y": "874.5"
+        "x": "539",
+        "y": "874"
       }
     },
     {
-      "text": "Sell=id",
+      "text": "id=",
       "name": "Identify",
       "pid": "4",
       "position": {
-        "x": "539.5",
-        "y": "1024.5"
+        "x": "539",
+        "y": "1024"
       }
     },
     {
@@ -68,14 +68,14 @@
       "name": "Leave",
       "pid": "5",
       "position": {
-        "x": "321.5",
-        "y": "982.5"
+        "x": "321",
+        "y": "982"
       }
     }
   ],
   "name": "IdentifierDay1",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.2.1",
+  "creator-version": "2.1.3",
   "ifid": "17031D9D-EC28-47A1-BFCE-BFBD3E52C4BC"
 }
