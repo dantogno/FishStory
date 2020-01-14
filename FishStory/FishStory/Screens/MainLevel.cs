@@ -21,8 +21,11 @@ namespace FishStory.Screens
     public partial class MainLevel
     {
         private string[] FishNames => GlobalContent.ItemDefinition
-            .Where(item => item.Value.IsFish).Select(item => item.Value.Name).ToArray();
-
+            .Where(item => item.Value.IsFish)
+            .Select(item => item.Value.Name).ToArray();
+        private string[] BaitNames => GlobalContent.ItemDefinition
+            .Where(item => item.Value.IsBait)
+            .Select(item => item.Value.Name).ToArray();
         private int TotalFishIdentified
         {
             get
@@ -109,12 +112,34 @@ namespace FishStory.Screens
                 AddNotification("Recieved: Festival Pamphlet");
             });
 
+            // FestivalCoordinator
+            If.Check(() => HasTag("AwardFishingRod"));
+            Do.Call(() =>
+            {
+                PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Fishing_Rod);
+                AddNotification("Received: Fishing Rod");
+            });
+            // Festival Coordinator gives player random bait each day.
+            If.Check(() => HasTag("AwardDay1Bait"));
+            Do.Call(() =>
+            {
+                var npc = NPCList.FindByName("FestivalCoordinator");
+                npc.TwineDialogId = nameof(GlobalContent.FestivalCoordinatorDay1Brief);
+                AwardRandomBait();
+            });
             //If.Check(() =>
             //{
             //    return PlayerDataManager.PlayerData.NpcRelationships["Dave"].EventsTriggered
             //        .Contains(5);
             //});
             #endregion
+        }
+
+        private void AwardRandomBait()
+        {
+            int index = FlatRedBallServices.Random.Next(0, BaitNames.Length - 1);
+            PlayerDataManager.PlayerData.AwardItem(BaitNames[index]);
+            AddNotification($"Recieved: {BaitNames[index]}");
         }
 
         void CustomActivity(bool firstTimeCalled)

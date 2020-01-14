@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Come back tomorrow for your next free bait! Don't you just love the Fishing Festival?",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "412",
+        "y": "491.5"
+      }
+    }
+  ],
+  "name": "FestivalCoordinatorDay1Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "4131230A-F6EC-4903-81F3-A8C0E02AABC5"
+}
