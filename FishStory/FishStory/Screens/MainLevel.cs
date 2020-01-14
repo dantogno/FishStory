@@ -61,6 +61,7 @@ namespace FishStory.Screens
                 NPCList.FindByName("Identifier").TwineDialogId = "IdentifierDay1Brief";
             });
             // Tycoon
+            // He gives you the key if you have identified 3 fish
             int numFishRequiredForKey = 3;
             If.Check(() => HasTag("HasTalkedToTycoonDay1"));
             Do.Call(() =>
@@ -83,17 +84,9 @@ namespace FishStory.Screens
             {
                 NPCList.FindByName("Tycoon").TwineDialogId = "TycoonYesKey";
             });
-            // TycoonIntro, TycoonNoFishNoKey, TycoonYesFishNoKey, and TycoonYesKey
-            //Tycoon intro
-            // Tycoon no key, no fish
-            // tycoon no key, yes fish
-            // tycoon yes key
-
-            // PlayerDataManager.PlayerData.TimesFishIdentified.cou
-            // PlayerDataManager.PlayerData.Has(DataTypes.ItemDefinition.)
-            //PlayerDataManager.PlayerData.Money
 
             // Mayor
+            // TODO: This is annoying during testing, but turn it back on eventually!
             //If.Check(() => !HasTag("HasSeenWelcomeDialog") && PlayerCharacterInstance.X < 1070 );
             //Do.Call(() =>
             //{
@@ -102,45 +95,19 @@ namespace FishStory.Screens
             //        PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
             //    }
             //});
-            //If.Check(() => HasTag("HasSeenWelcomeDialog"));
-            //Do.Call(() =>
-            //{
-            //    var npc = this.NPCList.FindByName("Mayor");
-            //    npc.TwineDialogId = nameof(GlobalContent.MayorAfterWelcome);
-            //    PlayerDataManager.PlayerData.AwardItem("Festival Badge");
-            //    PlayerDataManager.PlayerData.AwardItem("Festival Pamphlet");
-            //    // Magic numbers to save time here... this is referenced in dialog as well.
-            //    PlayerDataManager.PlayerData.Money -= 5;
-            //    AddNotification("-$5.");
-            //    AddNotification("Recieved: Festival Badge");
-            //    AddNotification("Recieved: Festival Pamphlet");
-            //});
-
-            //If.Check(() => true);
-            //Do.Call(() => PlayerDataManager.PlayerData.AwardItem("NameOfItem"));
-            //If.Check(() => PlayerCharacterInstance.Y < -100);
-            //Do.Call(() =>
-            //{
-            //    var npc = NPCFactory.CreateNew(20, -150);
-            //    npc.Name = "WhateverName";
-            //    npc.TwineDialogId = nameof(GlobalContent.Dialog1);
-            //    npc.Animation = NPC.Boy1;
-            //});
-
-            //If.Check(() =>
-            //{
-            //    return PlayerDataManager.PlayerData.Has(ItemDefinition.Fishing_Rod) &&
-            //        PlayerCharacterInstance.X < -100;
-            //});
-
-            //Do.Call(() =>
-            //{
-            //    PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Low_Quality_Bait);
-            //    FlatRedBall.Debugging.Debugger.CommandLineWrite("You got that worm!");
-
-            //});
-
-
+            If.Check(() => HasTag("HasSeenWelcomeDialog"));
+            Do.Call(() =>
+            {
+                var npc = this.NPCList.FindByName("Mayor");
+                npc.TwineDialogId = nameof(GlobalContent.MayorAfterWelcome);
+                PlayerDataManager.PlayerData.AwardItem("Festival Badge");
+                PlayerDataManager.PlayerData.AwardItem("Festival Pamphlet");
+                // Magic numbers to save time here... this is referenced in dialog as well.
+                PlayerDataManager.PlayerData.Money -= 5;
+                AddNotification("-$5.");
+                AddNotification("Recieved: Festival Badge");
+                AddNotification("Recieved: Festival Pamphlet");
+            });
 
             //If.Check(() =>
             //{
@@ -152,8 +119,8 @@ namespace FishStory.Screens
 
         void CustomActivity(bool firstTimeCalled)
         {
-            FlatRedBall.Debugging.Debugger.Write($"Player X: {PlayerCharacterInstance.X}");
-            FlatRedBall.Debugging.Debugger.Write($"Fish identified: {TotalFishIdentified}");
+            FlatRedBall.Debugging.Debugger.Write($"Player X: {PlayerCharacterInstance.X}, Player Y: {PlayerCharacterInstance.Y}");
+            //FlatRedBall.Debugging.Debugger.Write($"Fish identified: {TotalFishIdentified}");
         }
 
         void CustomDestroy()
