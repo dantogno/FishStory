@@ -89,6 +89,8 @@ namespace FishStory.GumRuntimes
 
         public int OptionCount => DialogOptions.Children.Count();
 
+        float lettersToShow = 0;
+
         private Passage CurrentPassage => 
             dialogTree.passages.FirstOrDefault(item => item.pid == currentNodeId);
 
@@ -137,6 +139,8 @@ namespace FishStory.GumRuntimes
 
         public bool TryShow(RootObject rootObject, Action<Link> linkSelected = null)
         {
+
+
             this.linkSelected = linkSelected;
             dialogTree = rootObject;
             currentNodeId = dialogTree.startnode;
@@ -210,6 +214,19 @@ namespace FishStory.GumRuntimes
                             DialogTagShown(tag);
                         }
                     }
+
+                    lettersToShow = 0;
+                    this.TextInstance.MaxLettersToShow = (int)lettersToShow;
+
+                    // we want to force the size of the frame, so we'll do the following:
+                    // make everything visible
+                    DialogOptions.Visible = true;
+                    CustomNiceSliceInstance.HeightUnits = Gum.DataTypes.DimensionUnitType.RelativeToChildren;
+                    CustomNiceSliceInstance.Height = 0;
+                    var height = CustomNiceSliceInstance.GetAbsoluteHeight();
+                    DialogOptions.Visible = false;
+                    CustomNiceSliceInstance.HeightUnits = Gum.DataTypes.DimensionUnitType.Absolute;
+                    CustomNiceSliceInstance.Height = height;
                 }
             }
         }
@@ -248,9 +265,18 @@ namespace FishStory.GumRuntimes
 
         public void CustomActivity()
         {
-            if(this.Visible)
+            int LettersPerSecond = 26;
+            if (this.Visible)
             {
-                if (DialogOptions.Children.Any())
+                lettersToShow += TimeManager.SecondDifference * LettersPerSecond;
+
+                this.TextInstance.MaxLettersToShow = (int)lettersToShow;
+
+                var isPrintingDone = this.TextInstance.MaxLettersToShow > this.TextInstance.Text.Length;
+                DialogOptions.Visible = isPrintingDone;
+                ActionIndicatorInstance.Visible = isPrintingDone && DialogOptions.Children.Count() == 0;
+
+                if (DialogOptions.Children.Any() && isPrintingDone)
                 {
                     if(UpInput.WasJustPressed)
                     {
@@ -282,7 +308,14 @@ namespace FishStory.GumRuntimes
 
                 if (SelectInput.WasJustPressed)
                 {
-                    HandleSelect();
+                    if(!isPrintingDone)
+                    {
+                        lettersToShow += this.TextInstance.Text.Length;
+                    }
+                    else
+                    {
+                        HandleSelect();
+                    }
                 }
                 else
                 {
