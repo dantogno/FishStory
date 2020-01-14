@@ -21,6 +21,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>DayAndTimeDisplay</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>DefaultForms/Button</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

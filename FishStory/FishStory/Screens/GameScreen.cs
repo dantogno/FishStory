@@ -329,7 +329,7 @@ namespace FishStory.Screens
             script.Activity();
             Map?.AnimateSelf();
             SunlightManager.Activity(firstTimeCalled);
-
+            DayAndTimeDisplayInstance.UpdateTime(SunlightManager.OurInGameDay);
             UpdatePropObjects();
 
             if (SunlightManager.TimeOfDay.Hours == HourOfClockPlayerForcedSleepIn24H)

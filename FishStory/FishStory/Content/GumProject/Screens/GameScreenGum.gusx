@@ -4,6 +4,30 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>DayAndTimeDisplayInstance.X Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>DayAndTimeDisplayInstance.X Units</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>DayAndTimeDisplayInstance.Y Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>DayAndTimeDisplayInstance.Y Units</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>OverlayAnimationState</Type>
       <Name>OverlayAnimationState</Name>
       <SetsValue>false</SetsValue>
@@ -140,5 +164,10 @@
     <BaseType>ColoredRectangle</BaseType>
     <DefinedByBase>false</DefinedByBase>
     <Locked>true</Locked>
+  </Instance>
+  <Instance>
+    <Name>DayAndTimeDisplayInstance</Name>
+    <BaseType>DayAndTimeDisplay</BaseType>
+    <DefinedByBase>false</DefinedByBase>
   </Instance>
 </ScreenSave>

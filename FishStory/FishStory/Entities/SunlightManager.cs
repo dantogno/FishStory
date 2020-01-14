@@ -27,18 +27,33 @@ namespace FishStory.Entities
         public static void Activity(bool firstCall)
         {
             if (firstCall)
-                ResetDay();
+            {
+                InitializeDay();
+            }
 
             var timeToAdd = FlatRedBall.TimeManager.SecondDifference * minutesElapsedPerSecond;
             OurInGameDay = OurInGameDay.AddMinutes(timeToAdd);
         }
 
-        public static void ResetDay()
+        private static void InitializeDay()
         {
             dayStartGameTime = FlatRedBall.TimeManager.CurrentTime;
-            minutesElapsedPerSecond = (1440 / GameScreen.RealMinutesPerDay)/60;
+            minutesElapsedPerSecond = (1440 / GameScreen.RealMinutesPerDay) / 60;
 
             OurInGameDay = new DateTime(2020, 1, 5);
+            OurInGameDay = OurInGameDay.AddHours(GameScreen.HourOnClockPlayerWakesIn24H);
+        }
+
+        public static void ResetDay()
+        {
+            if (TimeOfDay.TotalHours < GameScreen.HourOfClockPlayerForcedSleepIn24H)
+            {
+                OurInGameDay = new DateTime(OurInGameDay.Year, OurInGameDay.Month, OurInGameDay.Day);
+            }
+            else
+            {
+                OurInGameDay = new DateTime(OurInGameDay.Year, OurInGameDay.Month, OurInGameDay.Day+1);
+            }
             OurInGameDay = OurInGameDay.AddHours(GameScreen.HourOnClockPlayerWakesIn24H);
         }
 

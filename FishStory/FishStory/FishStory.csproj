@@ -157,6 +157,10 @@
     <Compile Include="GumRuntimes\CustomNiceSliceRuntime.Generated.cs">
       <DependentUpon>CustomNiceSliceRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\DayAndTimeDisplayRuntime.cs" />
+    <Compile Include="GumRuntimes\DayAndTimeDisplayRuntime.Generated.cs">
+      <DependentUpon>DayAndTimeDisplayRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ButtonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\CheckBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ColoredFrameRuntime.Generated.cs" />
@@ -608,6 +612,10 @@
     <None Include="content\gumproject\components\customnineslice\fishui_topright.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>fishui_topright</Name>
+    </None>
+    <None Include="content\gumproject\components\dayandtimedisplay.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>dayandtimedisplay</Name>
     </None>
     <None Include="content\gumproject\components\defaultforms\button.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
