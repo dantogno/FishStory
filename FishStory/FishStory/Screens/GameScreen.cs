@@ -196,6 +196,8 @@ namespace FishStory.Screens
         {
             Camera.Main.X = PlayerCharacterInstance.X;
             Camera.Main.Y = PlayerCharacterInstance.Y;
+
+            Camera.Main.SetBordersAtZ(Map.X, Map.Y - Map.Height, Map.X + Map.Width, Map.Y, 0);
         }
 
         private void InitializeCollision()
