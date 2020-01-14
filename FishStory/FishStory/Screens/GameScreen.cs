@@ -343,12 +343,19 @@ namespace FishStory.Screens
                     PlayerCharacterInstance.NpcForAction == null &&
                     PlayerCharacterInstanceActivityCollisionVsPlayerHouseDoorList.DoCollisions())
                 {
-                    string text = "Call it a day?";
-                    List<string> options = new List<string>()
+                    string text;
+                    List<string> options = new List<string>();
+                    if (PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key))
                     {
-                        "Yes",
-                        "No"
-                    };
+                        
+                        text = "Call it a day?";
+                        options.Add("Yes");
+                        options.Add("No");
+                    }
+                    else
+                    {
+                        text = "Locked.";                        
+                    }
 
                     var rootObject = GetRootObject(text, options);
                     DialogBox.TryShow(rootObject, HandleDoorOptionSelected);
