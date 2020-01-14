@@ -1,75 +1,71 @@
 {
   "passages": [
     {
-      "text": "Ah, a tourist! Welcome, welcome to my wonderful town! Are you from the city?\n[[I'm just here to fish.->Fish]]\n[[Which city?->City]]",
+      "text": "Ah, a tourist! Welcome, welcome to my wonderful town! Are you from the city?\n[[I'm just here to fish.|Fish]]\n[[Which city?|City]]",
       "links": [
         {
-          "name": "I'm just here to fish.",
-          "link": "Fish",
-          "pid": "2"
+          "name": "I'm just here to fish.|Fish",
+          "link": "I'm just here to fish.|Fish"
         },
         {
-          "name": "Which city?",
-          "link": "City",
-          "pid": "3"
+          "name": "Which city?|City",
+          "link": "Which city?|City"
         }
       ],
       "name": "Start",
       "pid": "1",
       "position": {
-        "x": "508.5",
-        "y": "240.5"
+        "x": "508",
+        "y": "240"
       },
       "tags": [
         "HasTalkedToTycoonDay1"
       ]
     },
     {
-      "text": "Ah, yes! Fishing is wonderful, isn't it? One of my top ten favorite leisure activities! And, as luck may have it, one of our premiere vacation experiences! I can offer you some top-of-the-line, beginner-friendly fishing classes, perfect for your holiday! How does that sound?\n[[Sorry, I'm not here for vacation.->No vacation]]",
+      "text": "Ah, yes! Fishing is wonderful, isn't it? One of my top ten favorite leisure activities! And, as luck may have it, one of our premiere vacation experiences! I can offer you some top-of-the-line, beginner-friendly fishing classes, perfect for your holiday! How does that sound?\n[[Sorry, I'm not here for vacation.|No vacation]]",
       "links": [
         {
-          "name": "Sorry, I'm not here for vacation.",
-          "link": "No vacation",
-          "pid": "4"
+          "name": "Sorry, I'm not here for vacation.|No vacation",
+          "link": "Sorry, I'm not here for vacation.|No vacation"
         }
       ],
       "name": "Fish",
       "pid": "2",
       "position": {
-        "x": "433.5",
-        "y": "390.5"
+        "x": "433",
+        "y": "390"
       }
     },
     {
-      "text": "Any city! Preferably one with lots of overworked and overpaid urbanites who you can tell about the beautiful, tranquil, and rejuvenating town you visited on your vacation!\n[[Sorry, I'm just here to work.->No vacation]]",
+      "text": "Any city! Preferably one with lots of overworked and overpaid urbanites who you can tell about the beautiful, tranquil, and rejuvenating town you visited on your vacation!\n[[Sorry, I'm just here to work.|No vacation]]",
       "links": [
         {
-          "name": "Sorry, I'm just here to work.",
-          "link": "No vacation",
-          "pid": "4"
+          "name": "Sorry, I'm just here to work.|No vacation",
+          "link": "Sorry, I'm just here to work.|No vacation"
         }
       ],
       "name": "City",
       "pid": "3",
       "position": {
-        "x": "583.5",
-        "y": "390.5"
+        "x": "583",
+        "y": "390"
       }
     },
     {
-      "text": "Bah! You're just as frustrating as the rest of this town! Why is everyone so afraid of progress? Can't they see the oppertunities provided by a naturally beautiful town like this? I'm talking development! Jobs! Income! But most of these simpletons would rather leave their futures up to fate than take it into their own hands!\n[[I'm going to get back to fishing now...->Back to it]]",
+      "text": "Bah! You're just as frustrating as the rest of this town! Why is everyone so afraid of progress? Can't they see the oppertunities provided by a naturally beautiful town like this? I'm talking development! Jobs! Income!\n[[Continue]]",
       "links": [
         {
-          "name": "I'm going to get back to fishing now...",
-          "link": "Back to it",
-          "pid": "5"
+          "name": "Continue",
+          "link": "Continue",
+          "pid": "7"
         }
       ],
       "name": "No vacation",
       "pid": "4",
       "position": {
-        "x": "509.5",
-        "y": "543.5"
+        "x": "509",
+        "y": "543"
       }
     },
     {
@@ -84,8 +80,8 @@
       "name": "Back to it",
       "pid": "5",
       "position": {
-        "x": "509.5",
-        "y": "693.5"
+        "x": "513",
+        "y": "791"
       }
     },
     {
@@ -93,8 +89,23 @@
       "name": "BackToItCONTD",
       "pid": "6",
       "position": {
-        "x": "509.5",
-        "y": "843.5"
+        "x": "513",
+        "y": "941"
+      }
+    },
+    {
+      "text": "But most of these simpletons would rather leave their futures up to fate than take it into their own hands!\n[[I'm going to get back to fishing now...|Back to it]]",
+      "links": [
+        {
+          "name": "I'm going to get back to fishing now...|Back to it",
+          "link": "I'm going to get back to fishing now...|Back to it"
+        }
+      ],
+      "name": "Continue",
+      "pid": "7",
+      "position": {
+        "x": "510",
+        "y": "665"
       }
     }
   ],

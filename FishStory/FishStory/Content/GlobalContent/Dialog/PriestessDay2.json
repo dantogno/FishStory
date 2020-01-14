@@ -1,54 +1,49 @@
 {
   "passages": [
     {
-      "text": "Ah, hello again, stranger. You stayed the night in one of Mr. Petterson's trailers, yes? You should know, he may not be the type of person you want to associate with. A man like him makes it difficult for nature to maintain balance.\n[[I'm not planning on associating with him.->No associate]]\n[[It's none of your business who I talk to.->No business]]",
+      "text": "Ah, hello again, stranger. You stayed the night in one of Mr. Petterson's trailers, yes? You should know, he may not be the type of person you want to associate with. A man like him makes it difficult for nature to maintain balance.\n[[I'm not planning on associating with him.|No associate]]\n[[It's none of your business who I talk to.|No business]]",
       "links": [
         {
-          "name": "I'm not planning on associating with him.",
-          "link": "No associate",
-          "pid": "2"
+          "name": "I'm not planning on associating with him.|No associate",
+          "link": "I'm not planning on associating with him.|No associate"
         },
         {
-          "name": "It's none of your business who I talk to.",
-          "link": "No business",
-          "pid": "3"
+          "name": "It's none of your business who I talk to.|No business",
+          "link": "It's none of your business who I talk to.|No business"
         }
       ],
       "name": "Start",
       "pid": "1",
       "position": {
         "x": "587",
-        "y": "376.5"
+        "y": "376"
       }
     },
     {
-      "text": "That is wise. But on to brighter things: how are you enjoying our land so far?\n[[I like it here.->Like it]]\n[[It seems like any other town I've passed through.->Any other town]]\n[[I'm trying to leave as soon as possible.->Leave]]",
+      "text": "That is wise. But on to brighter things: how are you enjoying our land so far?\n[[I like it here.|Like it]]\n[[It seems like any other town I've passed through.|Any other town]]\n[[I'm trying to leave as soon as possible.|Leave]]",
       "links": [
         {
-          "name": "I like it here.",
-          "link": "Like it",
-          "pid": "4"
+          "name": "I like it here.|Like it",
+          "link": "I like it here.|Like it"
         },
         {
-          "name": "It seems like any other town I've passed through.",
-          "link": "Any other town",
-          "pid": "5"
+          "name": "It seems like any other town I've passed through.|Any other town",
+          "link": "It seems like any other town I've passed through.|Any other town"
         },
         {
-          "name": "I'm trying to leave as soon as possible.",
-          "link": "Leave",
-          "pid": "6"
+          "name": "I'm trying to leave as soon as possible.|Leave",
+          "link": "I'm trying to leave as soon as possible.|Leave"
         }
       ],
       "name": "No associate",
       "pid": "2",
       "position": {
         "x": "512",
-        "y": "526.5"
+        "y": "526"
       }
     },
     {
-      "text": "Ah, but of course I do. It is my duty to understand everything that goes on here, and I am afraid that I do not yet understand you. I do hope that I was not wrong to invite you so warmly into my town.\n[[Continue]] ",
+      "text": "Ah, but of course I do. It is my duty to understand everything that goes on here, and I am afraid that I do not yet understand you. I do hope that I was not wrong to invite you into my town with such warmth.\n[[Continue]] ",
       "links": [
         {
           "name": "Continue",
@@ -60,7 +55,7 @@
       "pid": "3",
       "position": {
         "x": "694",
-        "y": "761.5"
+        "y": "761"
       }
     },
     {
@@ -76,11 +71,11 @@
       "pid": "4",
       "position": {
         "x": "216",
-        "y": "676.5"
+        "y": "676"
       }
     },
     {
-      "text": "Yes, I suppose that to a cow, no field is preferable to another, so long as they both have grass. Even so, I trust you will grow founder of it over time.\n[[Continue]]",
+      "text": "Yes, I suppose that to a cow, no field is preferable to another... so long as they both have grass. Even so, I trust you will grow founder of it over time.\n[[Continue]]",
       "links": [
         {
           "name": "Continue",
@@ -92,7 +87,7 @@
       "pid": "5",
       "position": {
         "x": "366",
-        "y": "676.5"
+        "y": "676"
       }
     },
     {
@@ -108,16 +103,16 @@
       "pid": "6",
       "position": {
         "x": "516",
-        "y": "676.5"
+        "y": "676"
       }
     },
     {
-      "text": "May the tides flow in your favor, stranger.",
+      "text": "May the tide flow in your favor, stranger.",
       "name": "Continue",
       "pid": "7",
       "position": {
         "x": "366",
-        "y": "826.5"
+        "y": "826"
       }
     }
   ],
