@@ -28,12 +28,12 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>X</Member>
-            <ValueAsFloat>1160</ValueAsFloat>
+            <ValueAsFloat>1674</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
             <Member>Y</Member>
-            <ValueAsFloat>-722</ValueAsFloat>
+            <ValueAsFloat>-576</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>
