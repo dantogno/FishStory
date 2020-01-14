@@ -21,6 +21,7 @@ using FishStory.DataTypes;
 using FishStory.GumRuntimes;
 using static DialogTreePlugin.SaveClasses.DialogTreeRaw;
 using DialogTreePlugin.SaveClasses;
+using static FishStory.Entities.PropObject;
 
 namespace FishStory.Screens
 {
@@ -58,6 +59,7 @@ namespace FishStory.Screens
             script = new ScreenScript<GameScreen>(this);
 
             InitializeEntitiesFromMap();
+            Map.AddToManagers(WorldLayer);
 
             DialogBox.Visible = false;
 
@@ -71,7 +73,10 @@ namespace FishStory.Screens
 
             InitializeUi();
 
+            InitializeShaders();
+
             InitializeRestartVariables();
+
 
 #if DEBUG
             DebugInitialize();
@@ -81,6 +86,36 @@ namespace FishStory.Screens
         private void InitializePlayer()
         {
             PlayerCharacterInstance.FishLost += HandleFishLost;
+        }
+        private void InitializeShaders()
+        {
+            AdjustLayerOrthoValues();
+
+            WorldLayer.RenderTarget = WorldRenderTarget;
+            LightEffectsLayer.RenderTarget = NightDarknessRenderTarget;
+            //BackgroundLayer.RenderTarget = BackgroundRenderTarget;
+
+            ShaderRendererInstance.WorldTexture = WorldRenderTarget;
+            ShaderRendererInstance.LightSourcesTexture = NightDarknessRenderTarget;
+            //ShaderRendererInstance.BackgroundTexture = BackgroundRenderTarget;
+            ShaderRendererInstance.Viewer = Camera.Main;
+
+            ShaderRendererInstance.InitializeRenderVariables();
+        }
+
+        private void AdjustLayerOrthoValues()
+        {
+            WorldLayer.LayerCameraSettings.OrthogonalWidth = Camera.Main.OrthogonalWidth;
+            WorldLayer.LayerCameraSettings.OrthogonalHeight = Camera.Main.OrthogonalHeight;
+
+            //LightLayer.LayerCameraSettings.OrthogonalWidth = Camera.Main.OrthogonalWidth;
+            //LightLayer.LayerCameraSettings.OrthogonalHeight = Camera.Main.OrthogonalHeight;
+
+            ShaderOutputLayer.LayerCameraSettings.OrthogonalWidth = Camera.Main.OrthogonalWidth;
+            ShaderOutputLayer.LayerCameraSettings.OrthogonalHeight = Camera.Main.OrthogonalHeight;
+
+            //InfoLayer.LayerCameraSettings.OrthogonalWidth = Camera.Main.OrthogonalWidth;
+            //InfoLayer.LayerCameraSettings.OrthogonalHeight = Camera.Main.OrthogonalHeight;
         }
 
 #if DEBUG
@@ -189,6 +224,12 @@ namespace FishStory.Screens
             foreach(var npc in NPCList)
             {
                 npc.Z = 0; // same as player so they sort
+                npc.MoveToLayer(WorldLayer);
+            }
+            foreach(var propObject in PropObjectList)
+            {
+                propObject.Z = 0; // same as player so they sort
+                propObject.SetLayers(WorldLayer, LightEffectsLayer);
             }
         }
 
@@ -286,6 +327,14 @@ namespace FishStory.Screens
             // do script *after* the UI
             script.Activity();
             Map?.AnimateSelf();
+            SunlightManager.Activity(firstTimeCalled);
+
+            UpdatePropObjects();
+
+            if (SunlightManager.TimeOfDay.Hours == HourOfClockPlayerForcedSleepIn24H)
+            {
+                ForcePlayerToSleep();
+            }
         }
 
         private void DebuggingActivity()
@@ -382,6 +431,25 @@ namespace FishStory.Screens
             DoFishingActivity();
         }
 
+        private void UpdatePropObjects()
+        {
+            var lightShouldBeOn = SunlightManager.TimeOfDay.TotalHours >= HourOnClockLightPostsTurnOnIn24 ||
+                                SunlightManager.TimeOfDay.TotalHours < HourOnClockLightPostsTurnOffIn24;
+            var lights = PropObjectList.Where(po => po.CurrentPropNameState == PropName.StreetLight);
+            foreach (var lightSource in lights)
+            {
+                if (lightSource.CurrentChainName != "On" && lightShouldBeOn)
+                {
+                    lightSource.ShowLight();
+                    
+                }
+                else if (lightSource.CurrentChainName != "Off" && !lightShouldBeOn)
+                {
+                    lightSource.HideLight();
+                }
+            }
+        }
+
         private void HandleDoorOptionSelected(DialogTreeRaw.Link selectedLink)
         {
             DialogBox.TryHide();
@@ -391,6 +459,12 @@ namespace FishStory.Screens
                 GoToNewDay();
             }
 
+        }
+
+        private void ForcePlayerToSleep()
+        {
+            AddNotification("Go to sleep!");
+            GoToNewDay();
         }
 
         private void DoFishingActivity()
@@ -592,6 +666,9 @@ namespace FishStory.Screens
 
             // reset purchases
             this.ItemsBought.Clear();
+
+            // research tracked day
+            SunlightManager.ResetDay();
 
             // fade UI in
             GameScreenGum.ToTransparentAnimation.PlayAfter(GameScreenGum.ToBlackAnimation.Length);

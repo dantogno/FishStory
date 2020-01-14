@@ -372,6 +372,11 @@
    <property name="WaterCollision" value=""/>
   </properties>
  </tile>
+ <tile id="7125" type="PropObject">
+  <properties>
+   <property name="CurrentPropNameState" value="StreetLight"/>
+  </properties>
+ </tile>
  <tile id="7218">
   <animation>
    <frame tileid="7218" duration="100"/>
@@ -418,7 +423,7 @@
  </tile>
  <tile id="7402" type="PropObject">
   <properties>
-   <property name="Animation" value="BlueFlag"/>
+   <property name="CurrentPropNameState" value="BlueFlag"/>
   </properties>
   <animation>
    <frame tileid="7402" duration="100"/>

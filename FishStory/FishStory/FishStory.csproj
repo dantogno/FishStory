@@ -97,6 +97,11 @@
     <Compile Include="Entities\PropObject.Generated.cs">
       <DependentUpon>PropObject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\ShaderRenderer.cs" />
+    <Compile Include="Entities\ShaderRenderer.Generated.cs">
+      <DependentUpon>ShaderRenderer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SunlightManager.cs" />
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\FishIdentifiedSignFactory.Generated.cs" />
     <Compile Include="Factories\FishingZoneFactory.Generated.cs" />
@@ -431,6 +436,10 @@
     <None Include="content\entities\propobject\blueflag.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlueFlag</Name>
+    </None>
+    <None Include="content\entities\propobject\streetlight.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>StreetLight</Name>
     </None>
     <None Include="content\globalcontent\dialog\boy1dialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -38,7 +38,6 @@ namespace FishStory.Screens
         void CustomInitialize()
         {
             InitializeScript();
-
         }
 
         private void InitializeScript()
