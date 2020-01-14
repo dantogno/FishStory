@@ -41,7 +41,6 @@ namespace FishStory.Screens
         void CustomInitialize()
         {
             InitializeScript();
-
         }
 
         private void InitializeScript()
@@ -124,7 +123,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = NPCList.FindByName("FestivalCoordinator");
-                npc.TwineDialogId = nameof(GlobalContent.FestivalCoordinatorDay1Brief);
+                //npc.TwineDialogId = nameof(GlobalContent.FestivalCoordinatorDay1Brief);
                 AwardRandomBait();
             });
             //If.Check(() =>
