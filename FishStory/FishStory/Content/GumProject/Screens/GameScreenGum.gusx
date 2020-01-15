@@ -4,6 +4,42 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>DayAndTimeDisplayInstance.X Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>DayAndTimeDisplayInstance.X Units</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>DayAndTimeDisplayInstance.Y Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>DayAndTimeDisplayInstance.Y Units</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>InputInstructionsInstance.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>InputInstructionsInstance.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>OverlayAnimationState</Type>
       <Name>OverlayAnimationState</Name>
       <SetsValue>false</SetsValue>
@@ -92,6 +128,30 @@
       <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>InputInstructionsInstance.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>InputInstructionsInstance.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>InputInstructionsInstance.Y Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>InputInstructionsInstance.Y Units</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
   </State>
   <Category>
     <Name>OverlayAnimation</Name>
@@ -140,5 +200,15 @@
     <BaseType>ColoredRectangle</BaseType>
     <DefinedByBase>false</DefinedByBase>
     <Locked>true</Locked>
+  </Instance>
+  <Instance>
+    <Name>DayAndTimeDisplayInstance</Name>
+    <BaseType>DayAndTimeDisplay</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>InputInstructionsInstance</Name>
+    <BaseType>InputInstructions</BaseType>
+    <DefinedByBase>false</DefinedByBase>
   </Instance>
 </ScreenSave>

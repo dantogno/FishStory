@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.3.1" name="MasterTileSheet" tilewidth="16" tileheight="16" tilecount="16384" columns="128">
+<tileset version="1.2" tiledversion="1.2.4" name="MasterTileSheet" tilewidth="16" tileheight="16" tilecount="16384" columns="128">
  <image source="MasterTileSheet.png" width="2048" height="2048"/>
  <tile id="0">
   <properties>
@@ -139,6 +139,8 @@
    <frame tileid="6581" duration="100"/>
    <frame tileid="6582" duration="100"/>
    <frame tileid="6583" duration="100"/>
+   <frame tileid="6581" duration="100"/>
+   <frame tileid="6580" duration="100"/>
   </animation>
  </tile>
  <tile id="6579">
@@ -372,6 +374,11 @@
    <property name="WaterCollision" value=""/>
   </properties>
  </tile>
+ <tile id="7125" type="PropObject">
+  <properties>
+   <property name="CurrentPropNameState" value="StreetLight"/>
+  </properties>
+ </tile>
  <tile id="7218">
   <animation>
    <frame tileid="7218" duration="100"/>
@@ -418,7 +425,7 @@
  </tile>
  <tile id="7402" type="PropObject">
   <properties>
-   <property name="Animation" value="BlueFlag"/>
+   <property name="CurrentPropNameState" value="BlueFlag"/>
   </properties>
   <animation>
    <frame tileid="7402" duration="100"/>

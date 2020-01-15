@@ -133,7 +133,7 @@
     <Variable>
       <Type>float</Type>
       <Name>DialogOptions.Width</Name>
-      <Value xsi:type="xsd:float">-40</Value>
+      <Value xsi:type="xsd:float">-61</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -145,7 +145,13 @@
     <Variable>
       <Type>float</Type>
       <Name>DialogOptions.X</Name>
-      <Value xsi:type="xsd:float">20</Value>
+      <Value xsi:type="xsd:float">41</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>DialogOptions.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -339,6 +345,13 @@
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
+    <VariableList xsi:type="VariableListSaveOfString">
+      <Type>string</Type>
+      <Name>AnimationFrames</Name>
+      <IsFile>false</IsFile>
+      <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
+      <Value />
+    </VariableList>
   </State>
   <Instance>
     <Name>CustomNiceSliceInstance</Name>

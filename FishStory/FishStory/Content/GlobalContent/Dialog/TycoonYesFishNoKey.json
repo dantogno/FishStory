@@ -1,12 +1,11 @@
 {
   "passages": [
     {
-      "text": "Did you sell the fish?\n[[Yes!->Yes]]",
+      "text": "Did you sell the fish?\n[[Yes!|Yes]]",
       "links": [
         {
-          "name": "Yes!",
-          "link": "Yes",
-          "pid": "2"
+          "name": "Yes!|Yes",
+          "link": "Yes!|Yes"
         }
       ],
       "name": "Start",

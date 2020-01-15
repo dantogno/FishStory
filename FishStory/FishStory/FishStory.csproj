@@ -97,6 +97,11 @@
     <Compile Include="Entities\PropObject.Generated.cs">
       <DependentUpon>PropObject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\ShaderRenderer.cs" />
+    <Compile Include="Entities\ShaderRenderer.Generated.cs">
+      <DependentUpon>ShaderRenderer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\InGameDateTimeManager.cs" />
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\FishIdentifiedSignFactory.Generated.cs" />
     <Compile Include="Factories\FishingZoneFactory.Generated.cs" />
@@ -152,6 +157,10 @@
     <Compile Include="GumRuntimes\CustomNiceSliceRuntime.Generated.cs">
       <DependentUpon>CustomNiceSliceRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\DayAndTimeDisplayRuntime.cs" />
+    <Compile Include="GumRuntimes\DayAndTimeDisplayRuntime.Generated.cs">
+      <DependentUpon>DayAndTimeDisplayRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ButtonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\CheckBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ColoredFrameRuntime.Generated.cs" />
@@ -184,9 +193,17 @@
       <DependentUpon>GameScreenGumRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
+    <Compile Include="GumRuntimes\InputInstructionsRuntime.cs" />
+    <Compile Include="GumRuntimes\InputInstructionsRuntime.Generated.cs">
+      <DependentUpon>InputInstructionsRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\InventoryRuntime.cs" />
     <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs">
       <DependentUpon>InventoryRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GumRuntimes\KeyDisplayRuntime.cs" />
+    <Compile Include="GumRuntimes\KeyDisplayRuntime.Generated.cs">
+      <DependentUpon>KeyDisplayRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\NotificationBoxRuntime.cs" />
@@ -196,6 +213,10 @@
     <Compile Include="GumRuntimes\NotificationRuntime.cs" />
     <Compile Include="GumRuntimes\NotificationRuntime.Generated.cs">
       <DependentUpon>NotificationRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GumRuntimes\OptionsMarkerRuntime.cs" />
+    <Compile Include="GumRuntimes\OptionsMarkerRuntime.Generated.cs">
+      <DependentUpon>OptionsMarkerRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\PolygonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\RectangleRuntime.Generated.cs" />
@@ -356,6 +377,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Detective</Name>
     </None>
+    <None Include="content\entities\npc\dockssign.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>DocksSign</Name>
+    </None>
+    <None Include="content\entities\npc\dumpsign.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>DumpSign</Name>
+    </None>
     <None Include="content\entities\npc\elderlywoman.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ElderlyWoman</Name>
@@ -363,6 +392,10 @@
     <None Include="content\entities\npc\farmerguy.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FarmerGuy</Name>
+    </None>
+    <None Include="content\entities\npc\farmersign.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FarmerSign</Name>
     </None>
     <None Include="content\entities\npc\fishermanbald.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -408,6 +441,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TycoonDaughter</Name>
     </None>
+    <None Include="content\entities\npc\tycoonfencesign.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TycoonFenceSign</Name>
+    </None>
     <None Include="content\entities\npc\whitehairedmustacheman.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>WhiteHairedMustacheMan</Name>
@@ -431,6 +468,10 @@
     <None Include="content\entities\propobject\blueflag.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlueFlag</Name>
+    </None>
+    <None Include="content\entities\propobject\streetlight.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>StreetLight</Name>
     </None>
     <None Include="content\globalcontent\dialog\boy1dialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -459,6 +500,14 @@
     <None Include="content\globalcontent\dialog\farmersonbaitshopdialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FarmerSonBaitShopDialog</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\festivalcoordinatorday1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FestivalCoordinatorDay1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\festivalcoordinatorday1brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FestivalCoordinatorDay1Brief</Name>
     </None>
     <None Include="content\globalcontent\dialog\fishermanbaldday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -592,6 +641,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>fishui_topright</Name>
     </None>
+    <None Include="content\gumproject\components\dayandtimedisplay.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>dayandtimedisplay</Name>
+    </None>
     <None Include="content\gumproject\components\defaultforms\button.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>button</Name>
@@ -676,9 +729,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>dialogbox</Name>
     </None>
+    <None Include="content\gumproject\components\inputinstructions.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>inputinstructions</Name>
+    </None>
     <None Include="content\gumproject\components\inventory.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>inventory</Name>
+    </None>
+    <None Include="content\gumproject\components\keydisplay.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>keydisplay</Name>
     </None>
     <None Include="content\gumproject\components\notification.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -687,6 +748,10 @@
     <None Include="content\gumproject\components\notificationbox.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>notificationbox</Name>
+    </None>
+    <None Include="content\gumproject\components\optionsmarker.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>optionsmarker</Name>
     </None>
     <None Include="content\gumproject\components\selectableoption.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -739,6 +804,10 @@
     <None Include="content\gumproject\gumproject.gumx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GumProject</Name>
+    </None>
+    <None Include="content\gumproject\keys.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>keys</Name>
     </None>
     <None Include="content\gumproject\screens\gamescreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -847,6 +916,7 @@
     <Content Include="libSDL2-2.0.0.dylib">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Snippets\ifdo.snippet" />
     <None Include="x64\SDL2.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

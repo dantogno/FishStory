@@ -1,7 +1,7 @@
 "Name (string, required)",AssociatedItem (string),Icon (string),IsBait (bool),IsFish (bool),PlayerBuyingCost (int),PlayerSellingCost (int),Description (string),UnidentifiedDescription (string)
-Fishing Rod,,,,,250,0,This might work for hitting fish in the face...,
+Fishing Rod,,,,,250,0,Press the interact button near the water to cast. Press it again when you get a bite!,
 Festival Badge,,,,,,0,"""The bearer of this badge may officially participate in the 203rd Ensomme Fishing Festival.""",
-Festival Pamphlet,,,,,,0,"""Need bait? Stock up in the town square. Don't worry, our vendors replenish their inventory every day with the highest quality bait. Caught a big one? Take it to the white tent in front of the church to have it officially recorded! To preserve Ensomme's fish ecology, only officially recorded fish can be sold to the fishmonger.""",
+Festival Pamphlet,,,,,,0,"""Need bait? Stock up in the town square. Our vendors replenish their inventory daily. Caught a big one? Take it to the white tent in front of the church to have it officially recorded! To preserve our ecology and qualitya a, only officially recorded fish can be sold to the fishmonger.""",
 Trailer Key,,,,,,0,Mr. Petterson has loaned you the red trailer south of town square for the duration of the festival.,
 // Unidentified objects,,,,,,,,
 Small Fish,Ladyfish,,,,,4,,

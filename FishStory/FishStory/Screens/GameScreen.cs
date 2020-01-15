@@ -21,6 +21,7 @@ using FishStory.DataTypes;
 using FishStory.GumRuntimes;
 using static DialogTreePlugin.SaveClasses.DialogTreeRaw;
 using DialogTreePlugin.SaveClasses;
+using static FishStory.Entities.PropObject;
 
 namespace FishStory.Screens
 {
@@ -58,6 +59,7 @@ namespace FishStory.Screens
             script = new ScreenScript<GameScreen>(this);
 
             InitializeEntitiesFromMap();
+            Map.AddToManagers(WorldLayer);
 
             DialogBox.Visible = false;
 
@@ -71,7 +73,10 @@ namespace FishStory.Screens
 
             InitializeUi();
 
+            InitializeShaders();
+
             InitializeRestartVariables();
+
 
 #if DEBUG
             DebugInitialize();
@@ -81,6 +86,36 @@ namespace FishStory.Screens
         private void InitializePlayer()
         {
             PlayerCharacterInstance.FishLost += HandleFishLost;
+        }
+        private void InitializeShaders()
+        {
+            AdjustLayerOrthoValues();
+
+            WorldLayer.RenderTarget = WorldRenderTarget;
+            LightEffectsLayer.RenderTarget = NightDarknessRenderTarget;
+            //BackgroundLayer.RenderTarget = BackgroundRenderTarget;
+
+            ShaderRendererInstance.WorldTexture = WorldRenderTarget;
+            ShaderRendererInstance.LightSourcesTexture = NightDarknessRenderTarget;
+            //ShaderRendererInstance.BackgroundTexture = BackgroundRenderTarget;
+            ShaderRendererInstance.Viewer = Camera.Main;
+
+            ShaderRendererInstance.InitializeRenderVariables();
+        }
+
+        private void AdjustLayerOrthoValues()
+        {
+            WorldLayer.LayerCameraSettings.OrthogonalWidth = Camera.Main.OrthogonalWidth;
+            WorldLayer.LayerCameraSettings.OrthogonalHeight = Camera.Main.OrthogonalHeight;
+
+            //LightLayer.LayerCameraSettings.OrthogonalWidth = Camera.Main.OrthogonalWidth;
+            //LightLayer.LayerCameraSettings.OrthogonalHeight = Camera.Main.OrthogonalHeight;
+
+            ShaderOutputLayer.LayerCameraSettings.OrthogonalWidth = Camera.Main.OrthogonalWidth;
+            ShaderOutputLayer.LayerCameraSettings.OrthogonalHeight = Camera.Main.OrthogonalHeight;
+
+            //InfoLayer.LayerCameraSettings.OrthogonalWidth = Camera.Main.OrthogonalWidth;
+            //InfoLayer.LayerCameraSettings.OrthogonalHeight = Camera.Main.OrthogonalHeight;
         }
 
 #if DEBUG
@@ -189,6 +224,12 @@ namespace FishStory.Screens
             foreach(var npc in NPCList)
             {
                 npc.Z = 0; // same as player so they sort
+                npc.MoveToLayer(WorldLayer);
+            }
+            foreach(var propObject in PropObjectList)
+            {
+                propObject.Z = 0; // same as player so they sort
+                propObject.SetLayers(WorldLayer, LightEffectsLayer);
             }
         }
 
@@ -196,6 +237,8 @@ namespace FishStory.Screens
         {
             Camera.Main.X = PlayerCharacterInstance.X;
             Camera.Main.Y = PlayerCharacterInstance.Y;
+
+            Camera.Main.SetBordersAtZ(Map.X, Map.Y - Map.Height, Map.X + Map.Width, Map.Y, 0);
         }
 
         private void InitializeCollision()
@@ -287,6 +330,14 @@ namespace FishStory.Screens
             // do script *after* the UI
             script.Activity();
             Map?.AnimateSelf();
+            InGameDateTimeManager.Activity(firstTimeCalled);
+            DayAndTimeDisplayInstance.UpdateTime(InGameDateTimeManager.OurInGameDay);
+            UpdatePropObjects();
+
+            if (InGameDateTimeManager.TimeOfDay.Hours == HourOfClockPlayerForcedSleepIn24H)
+            {
+                ForcePlayerToSleep();
+            }
         }
 
         private void DebuggingActivity()
@@ -343,12 +394,19 @@ namespace FishStory.Screens
                     PlayerCharacterInstance.NpcForAction == null &&
                     PlayerCharacterInstanceActivityCollisionVsPlayerHouseDoorList.DoCollisions())
                 {
-                    string text = "Call it a day?";
-                    List<string> options = new List<string>()
+                    string text;
+                    List<string> options = new List<string>();
+                    if (PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key))
                     {
-                        "Yes",
-                        "No"
-                    };
+                        
+                        text = "Call it a day?";
+                        options.Add("Yes");
+                        options.Add("No");
+                    }
+                    else
+                    {
+                        text = "Locked.";                        
+                    }
 
                     var rootObject = GetRootObject(text, options);
                     DialogBox.TryShow(rootObject, HandleDoorOptionSelected);
@@ -383,6 +441,25 @@ namespace FishStory.Screens
             DoFishingActivity();
         }
 
+        private void UpdatePropObjects()
+        {
+            var lightShouldBeOn = InGameDateTimeManager.TimeOfDay.TotalHours >= HourOnClockLightPostsTurnOnIn24H ||
+                                InGameDateTimeManager.TimeOfDay.TotalHours < HourOnClockLightPostsTurnOffIn24H;
+            var lights = PropObjectList.Where(po => po.CurrentPropNameState == PropName.StreetLight);
+            foreach (var lightSource in lights)
+            {
+                if (lightSource.CurrentChainName != "On" && lightShouldBeOn)
+                {
+                    lightSource.ShowLight();
+                    
+                }
+                else if (lightSource.CurrentChainName != "Off" && !lightShouldBeOn)
+                {
+                    lightSource.HideLight();
+                }
+            }
+        }
+
         private void HandleDoorOptionSelected(DialogTreeRaw.Link selectedLink)
         {
             DialogBox.TryHide();
@@ -394,37 +471,46 @@ namespace FishStory.Screens
 
         }
 
+        private void ForcePlayerToSleep()
+        {
+            AddNotification("Go to sleep!");
+            GoToNewDay();
+        }
+
         private void DoFishingActivity()
         {
-            if (PlayerCharacterInstance.IsFishing == false && PlayerCharacterInstance.TalkInput.WasJustPressed &&
-                PlayerCharacterInstanceFishingCollisionVsWaterCollision.DoCollisions())
+            if (PlayerDataManager.PlayerData.Has(ItemDefinition.Fishing_Rod))
             {
-                var baitSelection = GetBaitRootObject();
+                if (PlayerCharacterInstance.IsFishing == false && PlayerCharacterInstance.TalkInput.WasJustPressed &&
+               PlayerCharacterInstanceFishingCollisionVsWaterCollision.DoCollisions())
+                {
+                    var baitSelection = GetBaitRootObject();
 
-                if (baitSelection == null)
-                {
-                    AddNotification("Can't fish - no bait");
-                }
-                else
-                {
-                    if (DialogBox.TryShow(baitSelection, HandleFishingLinkSelected))
+                    if (baitSelection == null)
                     {
-                        PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                        AddNotification("Can't fish - no bait");
+                    }
+                    else
+                    {
+                        if (DialogBox.TryShow(baitSelection, HandleFishingLinkSelected))
+                        {
+                            PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                        }
                     }
                 }
-            }
-            else if (PlayerCharacterInstance.IsFishing &&
-                PlayerCharacterInstance.TalkInput.WasJustPressed &&
-                PlayerCharacterInstance.LastTimeFishingStarted != TimeManager.CurrentScreenTime)
-            {
-                if (PlayerCharacterInstance.IsFishOnLine)
+                else if (PlayerCharacterInstance.IsFishing &&
+                    PlayerCharacterInstance.TalkInput.WasJustPressed &&
+                    PlayerCharacterInstance.LastTimeFishingStarted != TimeManager.CurrentScreenTime)
                 {
-                    string fishCaught = GetFishCaught(PlayerCharacterInstance.CurrentBait);
-                    PlayerDataManager.PlayerData.AwardItem(fishCaught);
-                    AddNotification($"Caught {fishCaught}");
+                    if (PlayerCharacterInstance.IsFishOnLine)
+                    {
+                        string fishCaught = GetFishCaught(PlayerCharacterInstance.CurrentBait);
+                        PlayerDataManager.PlayerData.AwardItem(fishCaught);
+                        AddNotification($"Caught {fishCaught}");
+                    }
+                    PlayerCharacterInstance.StopFishing();
                 }
-                PlayerCharacterInstance.StopFishing();
-            }
+            }           
         }
 
         private string GetFishCaught(string baitType)
@@ -593,6 +679,9 @@ namespace FishStory.Screens
 
             // reset purchases
             this.ItemsBought.Clear();
+
+            // research tracked day
+            InGameDateTimeManager.ResetDay();
 
             // fade UI in
             GameScreenGum.ToTransparentAnimation.PlayAfter(GameScreenGum.ToBlackAnimation.Length);

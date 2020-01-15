@@ -8,73 +8,19 @@
         <AnimatedStateSave>
           <StateName>Location/Top</StateName>
           <Time>0</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Size/Normal</StateName>
-          <Time>0</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Location/Middle</StateName>
-          <Time>0.25</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
+          <InterpolationType>Quadratic</InterpolationType>
+          <Easing>InOut</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Location/Bottom</StateName>
-          <Time>0.5</Time>
-          <InterpolationType>Quadratic</InterpolationType>
-          <Easing>In</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Location/Middle</StateName>
           <Time>1</Time>
           <InterpolationType>Quadratic</InterpolationType>
-          <Easing>Out</Easing>
+          <Easing>InOut</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Location/Top</StateName>
           <Time>2</Time>
           <InterpolationType>Exponential</InterpolationType>
-          <Easing>InOut</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Location/Middle</StateName>
-          <Time>2.25</Time>
-          <InterpolationType>Exponential</InterpolationType>
-          <Easing>In</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Location/Bottom</StateName>
-          <Time>2.5</Time>
-          <InterpolationType>Exponential</InterpolationType>
-          <Easing>In</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Size/Large</StateName>
-          <Time>2.5</Time>
-          <InterpolationType>Bounce</InterpolationType>
-          <Easing>InOut</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Location/Middle</StateName>
-          <Time>2.75</Time>
-          <InterpolationType>Elastic</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Location/Top</StateName>
-          <Time>3</Time>
-          <InterpolationType>Cubic</InterpolationType>
-          <Easing>In</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Size/Normal</StateName>
-          <Time>3</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
           <Easing>InOut</Easing>
         </AnimatedStateSave>
       </States>

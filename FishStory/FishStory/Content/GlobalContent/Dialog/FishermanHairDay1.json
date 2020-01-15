@@ -1,35 +1,33 @@
 {
   "passages": [
     {
-      "text": "Shh! You'll scare away the fishes!\n[[Sorry!->Sorry]]",
+      "text": "Shh! You'll scare away the fishes!\n[[Sorry!|Sorry]]",
       "links": [
         {
-          "name": "Sorry!",
-          "link": "Sorry",
-          "pid": "2"
+          "name": "Sorry!|Sorry",
+          "link": "Sorry!|Sorry"
         }
       ],
       "name": "Start",
       "pid": "1",
       "position": {
-        "x": "508.5",
-        "y": "240.5"
+        "x": "508",
+        "y": "240"
       }
     },
     {
-      "text": "Too loud, much too loud! They can hear us breathe! They can smell our fear! What with all your stomping around and screaming at me, the fish must be be halfway down Mariana Trench by now!\n[[I'll just leave->Leave]]",
+      "text": "Too loud, much too loud! They can hear us breathe! They can smell our fear! What with all your stomping around and screaming at me, the fish must be be halfway down Mariana Trench by now!\n[[I'll just leave.|Leave]]",
       "links": [
         {
-          "name": "I'll just leave",
-          "link": "Leave",
-          "pid": "3"
+          "name": "I'll just leave.|Leave",
+          "link": "I'll just leave.|Leave"
         }
       ],
       "name": "Sorry",
       "pid": "2",
       "position": {
-        "x": "508.5",
-        "y": "390.5"
+        "x": "508",
+        "y": "390"
       }
     },
     {
@@ -37,8 +35,8 @@
       "name": "Leave",
       "pid": "3",
       "position": {
-        "x": "508.5",
-        "y": "540.5"
+        "x": "508",
+        "y": "540"
       }
     }
   ],
