@@ -154,6 +154,147 @@ namespace FishStory.Screens
             //});
         }
 
+        private void DoDay2Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
+        {
+            #region Mayor
+            #endregion
+            #region FestivalCoordinator
+            #endregion
+            #region Identifier
+            #endregion
+            #region Fishmonger
+            #endregion
+            #region FarmerSonBaitShop
+            #endregion
+            #region YoungManBaitShop
+            #region BlackMarketShop
+            #endregion
+            #endregion
+            #region #ElderlyMother
+            #endregion
+            #region Priestess
+            #endregion
+            #region Nun
+            #endregion
+            #region Farmer
+            #endregion
+            #region Tycoon
+            #endregion
+            #region TycoonDaughter
+            #endregion
+            #region Conservationist
+            #endregion
+            #region FishermanBald
+            #endregion
+            #region FishermanHair
+            #endregion
+        }
+        private void DoDay3Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
+        {
+            #region Mayor
+            #endregion
+            #region FestivalCoordinator
+            #endregion
+            #region Identifier
+            #endregion
+            #region Fishmonger
+            #endregion
+            #region FarmerSonBaitShop
+            #endregion
+            #region YoungManBaitShop
+            #region BlackMarketShop
+            #endregion
+            #endregion
+            #region #ElderlyMother
+            #endregion
+            #region Priestess
+            #endregion
+            #region Nun
+            #endregion
+            #region Farmer
+            #endregion
+            #region Tycoon
+            #endregion
+            #region TycoonDaughter
+            #endregion
+            #region Conservationist
+            #endregion
+            #region FishermanBald
+            #endregion
+            #region FishermanHair
+            #endregion
+        }
+        private void DoDay4Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
+        {
+            #region Mayor
+            #endregion
+            #region FestivalCoordinator
+            #endregion
+            #region Identifier
+            #endregion
+            #region Fishmonger
+            #endregion
+            #region FarmerSonBaitShop
+            #endregion
+            #region YoungManBaitShop
+            #region BlackMarketShop
+            #endregion
+            #endregion
+            #region #ElderlyMother
+            #endregion
+            #region Priestess
+            #endregion
+            #region Nun
+            #endregion
+            #region Farmer
+            #endregion
+            #region Tycoon
+            #endregion
+            #region TycoonDaughter
+            #endregion
+            #region Conservationist
+            #endregion
+            #region FishermanBald
+            #endregion
+            #region FishermanHair
+            #endregion
+        }
+        private void DoDay5Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
+        {
+            #region Mayor
+            #endregion
+            #region FestivalCoordinator
+            #endregion
+            #region Identifier
+            #endregion
+            #region Fishmonger
+            #endregion
+            #region FarmerSonBaitShop
+            #endregion
+            #region YoungManBaitShop
+            #region BlackMarketShop
+            #endregion
+            #endregion
+            #region #ElderlyMother
+            #endregion
+            #region Priestess
+            #endregion
+            #region Nun
+            #endregion
+            #region Farmer
+            #endregion
+            #region Tycoon
+            #endregion
+            #region TycoonDaughter
+            #endregion
+            #region Conservationist
+            #endregion
+            #region FishermanBald
+            #endregion
+            #region FishermanHair
+            #endregion
+        }
+
         private void AwardRandomBait()
         {
             int index = FlatRedBallServices.Random.Next(0, BaitNames.Length - 1);
