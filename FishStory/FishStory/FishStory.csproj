@@ -194,13 +194,17 @@
     </Compile>
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
     <Compile Include="GumRuntimes\InputInstructionsRuntime.cs" />
-    <Compile Include="GumRuntimes\InputInstructionsRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\InputInstructionsRuntime.Generated.cs">
+      <DependentUpon>InputInstructionsRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\InventoryRuntime.cs" />
     <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs">
       <DependentUpon>InventoryRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\KeyDisplayRuntime.cs" />
-    <Compile Include="GumRuntimes\KeyDisplayRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\KeyDisplayRuntime.Generated.cs">
+      <DependentUpon>KeyDisplayRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\NotificationBoxRuntime.cs" />
     <Compile Include="GumRuntimes\NotificationBoxRuntime.Generated.cs">
@@ -211,7 +215,9 @@
       <DependentUpon>NotificationRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\OptionsMarkerRuntime.cs" />
-    <Compile Include="GumRuntimes\OptionsMarkerRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\OptionsMarkerRuntime.Generated.cs">
+      <DependentUpon>OptionsMarkerRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\PolygonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\RectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\SelectableOptionRuntime.cs" />
@@ -371,6 +377,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Detective</Name>
     </None>
+    <None Include="content\entities\npc\dockssign.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>DocksSign</Name>
+    </None>
+    <None Include="content\entities\npc\dumpsign.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>DumpSign</Name>
+    </None>
     <None Include="content\entities\npc\elderlywoman.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ElderlyWoman</Name>
@@ -378,6 +392,10 @@
     <None Include="content\entities\npc\farmerguy.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FarmerGuy</Name>
+    </None>
+    <None Include="content\entities\npc\farmersign.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FarmerSign</Name>
     </None>
     <None Include="content\entities\npc\fishermanbald.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -422,6 +440,10 @@
     <None Include="content\entities\npc\tycoondaughter.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TycoonDaughter</Name>
+    </None>
+    <None Include="content\entities\npc\tycoonfencesign.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TycoonFenceSign</Name>
     </None>
     <None Include="content\entities\npc\whitehairedmustacheman.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
