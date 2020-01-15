@@ -1,82 +1,75 @@
 {
   "passages": [
     {
-      "text": "Hello there. Can I help you with something?\n[[Who are you?->Who]]",
+      "text": "Hello there. Can I help you with something?\n[[Who are you?|Who]]",
       "links": [
         {
-          "name": "Who are you?",
-          "link": "Who",
-          "pid": "2"
+          "name": "Who are you?|Who",
+          "link": "Who are you?|Who"
         }
       ],
       "name": "Start",
       "pid": "1",
       "position": {
-        "x": "578.5",
-        "y": "236.5"
+        "x": "578",
+        "y": "236"
       }
     },
     {
-      "text": "My, that's a bit forward of you. Well, if you couldn't tell by my clothes, I'm a nun bound in eternal service to the church. And to the priestess, I guess. She's the one who tells me what to do.\n[[Do you like being a nun?->Like being nun]]\n[[Do you believe everything the priestess says?->Believe priestess]]",
+      "text": "My, that's a bit forward of you. Well, if you couldn't tell by my clothes, I'm a nun bound in eternal service to the church. And to the priestess, I guess. She's the one who tells me what to do.\n[[Do you like being a nun?|Like being nun]]\n[[Do you believe everything the priestess says?|Believe priestess]]",
       "links": [
         {
-          "name": "Do you like being a nun?",
-          "link": "Like being nun",
-          "pid": "3"
+          "name": "Do you like being a nun?|Like being nun",
+          "link": "Do you like being a nun?|Like being nun"
         },
         {
-          "name": "Do you believe everything the priestess says?",
-          "link": "Believe priestess",
-          "pid": "4"
+          "name": "Do you believe everything the priestess says?|Believe priestess",
+          "link": "Do you believe everything the priestess says?|Believe priestess"
         }
       ],
       "name": "Who",
       "pid": "2",
       "position": {
-        "x": "583.5",
-        "y": "390.5"
+        "x": "583",
+        "y": "390"
       }
     },
     {
-      "text": "Well, I don't really enjoy fishing, so I guess I like it better than the alternative. And I've grown quite fond of my duties in the church. Scrubbing floors may seem boring at first, but once you've done it a thousand times you realize there's actually quite an art to it.\n[[That sounds nice.->Nice]]\n[[That sounds sad.->Sad]]",
+      "text": "Well, I don't really enjoy fishing, so I guess I like it better than the alternative. And I've grown quite fond of my duties in the church. Scrubbing floors may seem boring at first, but once you've done it a thousand times you realize there's actually quite an art to it.\n[[That sounds nice.|Nice]]\n[[That sounds sad.|Sad]]",
       "links": [
         {
-          "name": "That sounds nice.",
-          "link": "Nice",
-          "pid": "5"
+          "name": "That sounds nice.|Nice",
+          "link": "That sounds nice.|Nice"
         },
         {
-          "name": "That sounds sad.",
-          "link": "Sad",
-          "pid": "6"
+          "name": "That sounds sad.|Sad",
+          "link": "That sounds sad.|Sad"
         }
       ],
       "name": "Like being nun",
       "pid": "3",
       "position": {
-        "x": "508.5",
-        "y": "540.5"
+        "x": "508",
+        "y": "540"
       }
     },
     {
-      "text": "Why wouldn't I? The town is still here after all these years of unfavorable winters and short summers. We must be doing something right. Besides, the whole idea of the church is rather beautiful, don't you think?\n[[Yes.->Yes]]\n[[No.->No]]",
+      "text": "Why wouldn't I? The town is still here after all these years of unfavorable winters and short summers. We must be doing something right. Besides, the whole idea of the church is rather beautiful, don't you think?\n[[Yes.|Yes]]\n[[No.|No]]",
       "links": [
         {
-          "name": "Yes.",
-          "link": "Yes",
-          "pid": "7"
+          "name": "Yes.|Yes",
+          "link": "Yes.|Yes"
         },
         {
-          "name": "No.",
-          "link": "No",
-          "pid": "8"
+          "name": "No.|No",
+          "link": "No.|No"
         }
       ],
       "name": "Believe priestess",
       "pid": "4",
       "position": {
-        "x": "658.5",
-        "y": "540.5"
+        "x": "658",
+        "y": "540"
       }
     },
     {
@@ -91,8 +84,8 @@
       "name": "Nice",
       "pid": "5",
       "position": {
-        "x": "348.5",
-        "y": "687.5"
+        "x": "348",
+        "y": "687"
       }
     },
     {
@@ -107,8 +100,8 @@
       "name": "Sad",
       "pid": "6",
       "position": {
-        "x": "498.5",
-        "y": "687.5"
+        "x": "498",
+        "y": "687"
       }
     },
     {
@@ -123,8 +116,8 @@
       "name": "Yes",
       "pid": "7",
       "position": {
-        "x": "660.5",
-        "y": "690.5"
+        "x": "660",
+        "y": "690"
       }
     },
     {
@@ -139,17 +132,17 @@
       "name": "No",
       "pid": "8",
       "position": {
-        "x": "775.5",
-        "y": "690.5"
+        "x": "775",
+        "y": "690"
       }
     },
     {
-      "text": "Well, I must return to my duties. May the tides be in your favor!",
+      "text": "Well, I must return to my duties. May the tides flow in your favor!",
       "name": "Continue",
       "pid": "9",
       "position": {
-        "x": "593.5",
-        "y": "843.5"
+        "x": "593",
+        "y": "843"
       }
     }
   ],

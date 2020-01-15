@@ -109,7 +109,15 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>InputInstructions</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>Inventory</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>KeyDisplay</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
@@ -118,6 +126,10 @@
   </ComponentReference>
   <ComponentReference>
     <Name>NotificationBox</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>OptionsMarker</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>

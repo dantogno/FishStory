@@ -55,7 +55,24 @@ namespace FishStory.Screens
             PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
             PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
 
+
+
+
+
             #region Day 1
+
+
+            If.Check(() =>
+            {
+                return PlayerDataManager.PlayerData.CurrentDay == 1;
+            });
+            Do.Call(() =>
+            {
+                GameScreenGum.InputInstructionsInstance.Visible = true;
+
+                this.Call(() => GameScreenGum.InputInstructionsInstance.Visible = false).After(7);
+            });
+
             //Identifier
             If.Check(() => HasTag("HasSeenIdentifierDay1"));
             Do.Call(() =>

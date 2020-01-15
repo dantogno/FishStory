@@ -8,6 +8,8 @@ namespace FishStory.GumRuntimes
     {
         partial void CustomInitialize () 
         {
+            FlashActionAnimation.Play();
+
         }
     }
 }

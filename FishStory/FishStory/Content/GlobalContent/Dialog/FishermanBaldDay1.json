@@ -1,35 +1,33 @@
 {
   "passages": [
     {
-      "text": "Eh? Whatdoyawant?\n\n[[What...?->What]]",
+      "text": "Eh? Whatdoyawant?\n\n[[What...?|What]]",
       "links": [
         {
-          "name": "What...?",
-          "link": "What",
-          "pid": "2"
+          "name": "What...?|What",
+          "link": "What...?|What"
         }
       ],
       "name": "Start",
       "pid": "1",
       "position": {
-        "x": "508.5",
-        "y": "240.5"
+        "x": "508",
+        "y": "240"
       }
     },
     {
-      "text": "Isaid, whatdoyawant! Don'tyaseeIbefishin'here?\n\n[[Sorry, I didn't mean to bother you->Sorry]]",
+      "text": "Isaid, whatdoyawant! Don'tyaseeIbefishin'here?\n\n[[Sorry, I didn't mean to bother you.|Sorry]]",
       "links": [
         {
-          "name": "Sorry, I didn't mean to bother you",
-          "link": "Sorry",
-          "pid": "3"
+          "name": "Sorry, I didn't mean to bother you.|Sorry",
+          "link": "Sorry, I didn't mean to bother you.|Sorry"
         }
       ],
       "name": "What",
       "pid": "2",
       "position": {
-        "x": "508.5",
-        "y": "390.5"
+        "x": "508",
+        "y": "390"
       }
     },
     {
@@ -37,8 +35,8 @@
       "name": "Sorry",
       "pid": "3",
       "position": {
-        "x": "508.5",
-        "y": "540.5"
+        "x": "508",
+        "y": "540"
       }
     }
   ],

@@ -13,16 +13,16 @@
       "pid": "1",
       "position": {
         "x": "587",
-        "y": "334.5"
+        "y": "334"
       }
     },
     {
-      "text": "If you're looking for your trailer, it's to the south west, near all the other trailers. And the dump.",
+      "text": "If you're looking for your trailer, it's to the south west, near all the other trailers... and the dump.",
       "name": "Continue",
       "pid": "2",
       "position": {
         "x": "587",
-        "y": "484.5"
+        "y": "484"
       }
     }
   ],
