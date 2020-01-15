@@ -8,15 +8,14 @@ using System.Threading.Tasks;
 
 namespace FishStory.Entities
 {
-    public static class SunlightManager
+    public static class InGameDateTimeManager
     {
         public static TimeSpan TimeOfDay => OurInGameDay.TimeOfDay;
         public static DateTime OurInGameDay = new DateTime();
-        public static bool SunIsUp = OurInGameDay.Hour > 6 && OurInGameDay.Hour < 19;
+        public static bool SunIsUp = OurInGameDay.Hour > GameScreen.HourOnClockSunRisesIn24H && OurInGameDay.Hour < GameScreen.HourOnClockSunSetsIn24H;
         public static bool MoonIsUp = OurInGameDay.Hour > 22 || OurInGameDay.Hour < 3;
-        public static float SunlightEffectiveness =>MathHelper.Clamp(DistanceToNoon(), 0f,1.0f);
+        public static float SunlightEffectiveness =>MathHelper.Clamp(GetSunlightCoefficient(DistanceToNoon()), 0f,1.0f);
 
-        private static double dayStartGameTime = 0;
         private static double minutesElapsedPerSecond = 6;
 
         private const float minutesAtNoon = 720;
@@ -37,7 +36,6 @@ namespace FishStory.Entities
 
         private static void InitializeDay()
         {
-            dayStartGameTime = FlatRedBall.TimeManager.CurrentTime;
             minutesElapsedPerSecond = (1440 / GameScreen.RealMinutesPerDay) / 60;
 
             OurInGameDay = new DateTime(2020, 1, 5);
@@ -78,6 +76,11 @@ namespace FishStory.Entities
                 return 1f - (minutesPastNoon / (minutesAtSundown - minutesAtNoon));
             }
             else return 0f;
+        }
+
+        private static float GetSunlightCoefficient(float coefficient)
+        {
+            return -1f * (float)Math.Pow((coefficient - 1), 2.0) + 1f;
         }
     }
 }

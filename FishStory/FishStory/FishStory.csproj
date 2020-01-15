@@ -101,7 +101,7 @@
     <Compile Include="Entities\ShaderRenderer.Generated.cs">
       <DependentUpon>ShaderRenderer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entities\SunlightManager.cs" />
+    <Compile Include="Entities\InGameDateTimeManager.cs" />
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\FishIdentifiedSignFactory.Generated.cs" />
     <Compile Include="Factories\FishingZoneFactory.Generated.cs" />

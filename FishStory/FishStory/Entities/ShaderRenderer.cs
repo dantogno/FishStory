@@ -20,15 +20,19 @@ namespace FishStory.Entities
         public Texture2D BackgroundTexture { get; set; }
 
         public float DarknessAlpha { get; set; }
-        private const float MaximumDarknessAlpha = 0.7f;
+        private const float MaximumDarknessAlpha = 0.75f;
+        private const float secondsToTransitionColor = 5f;
 
+        private Color _currentTargetColor = Color.White;
+        private Color _previousTargetColor = Color.White;
 
         private Color _worldColor = Color.White;
         private Color _dayColor = Color.LightGoldenrodYellow;
         private Color _nightColor = Color.MidnightBlue;
+        private Color _moonLitNightColor = Color.MidnightBlue;
 
-        private Vector3 _dayColorAsVector;
-        private Vector3 _nightColorAsVector;
+        private Vector3 _currentTargetColorAsVector;
+        private Vector3 _previousTargetColorAsVector;
 
         private Tweener _lastColorTween;
 
@@ -43,8 +47,6 @@ namespace FishStory.Entities
         private void CustomInitialize()
         {
             _spriteBatch = new SpriteBatch(FlatRedBallServices.GraphicsDevice);
-            _dayColorAsVector = _dayColor.ToVector3();
-            _nightColorAsVector = _nightColor.ToVector3();
         }
 
         #endregion
@@ -85,52 +87,55 @@ namespace FishStory.Entities
 
         private void UpdateWorldColor()
         {
-            const float secondsToTransitionColor = 5f;
             if (_lastColorTween != null && _lastColorTween.Running) return;
 
-            if (_worldColor == _dayColor && !SunlightManager.SunIsUp && SunlightManager.MoonIsUp)
+            if (_worldColor != _nightColor && !InGameDateTimeManager.SunIsUp && InGameDateTimeManager.MoonIsUp)
             {
-                _lastColorTween =
-                    new Tweener(1, 0, secondsToTransitionColor, InterpolationType.Linear, Easing.InOut)
-                    {
-                        PositionChanged = HandleColorPositionChanged
-                    };
+                ChangeTargetWorldColor(_nightColor);
+            }
+            else if (_worldColor != _moonLitNightColor && !InGameDateTimeManager.SunIsUp && !InGameDateTimeManager.MoonIsUp)
+            {
+                ChangeTargetWorldColor(_moonLitNightColor);
+            }
+            else if (_worldColor != _dayColor && InGameDateTimeManager.SunIsUp)
+            {
+                ChangeTargetWorldColor(_dayColor);
+            }
+        }
 
-                _lastColorTween.Ended += () =>
+        private void ChangeTargetWorldColor(Color newTargetColor)
+        {
+            _previousTargetColor = _currentTargetColor;
+            _currentTargetColor = newTargetColor;
+            _previousTargetColorAsVector = _previousTargetColor.ToVector3();
+            _currentTargetColorAsVector = _currentTargetColor.ToVector3();
+            _lastColorTween = GetTweener();
+        }
+
+        private Tweener GetTweener()
+        {
+            var newTweener =
+                new Tweener(1, 0, secondsToTransitionColor, InterpolationType.Linear, Easing.InOut)
                 {
-                    _worldColor = _nightColor;
-                    _lastColorTween.Stop();
+                    PositionChanged = HandleColorPositionChanged
                 };
 
-                _lastColorTween.Owner = this;
-
-                TweenerManager.Self.Add(_lastColorTween);
-                _lastColorTween.Start();
-            }
-            else if (_worldColor == _nightColor && SunlightManager.SunIsUp)
+            newTweener.Ended += () =>
             {
-                _lastColorTween =
-                    new Tweener(0, 1, secondsToTransitionColor, InterpolationType.Linear, Easing.InOut)
-                    {
-                        PositionChanged = HandleColorPositionChanged
-                    };
+                _worldColor = _currentTargetColor;
+                _lastColorTween.Stop();
+            };
 
-                _lastColorTween.Ended += () =>
-                {
-                    _worldColor = _dayColor;
-                    _lastColorTween.Stop();
-                };
+            newTweener.Owner = this;
 
-                _lastColorTween.Owner = this;
+            TweenerManager.Self.Add(newTweener);
 
-                TweenerManager.Self.Add(_lastColorTween);
-                _lastColorTween.Start();
-            }
+            return newTweener;
         }
 
         private void HandleColorPositionChanged(float newposition)
         {
-            _worldColor = new Color(_dayColorAsVector * newposition + _nightColorAsVector * (1 - newposition));
+            _worldColor = new Color(_currentTargetColorAsVector * newposition + _previousTargetColorAsVector * (1 - newposition));
         }
 
         private void DrawToScreen(Camera camera)
@@ -152,7 +157,7 @@ namespace FishStory.Entities
 
         private void DrawDarknessToRenderTarget(Camera camera)
         {
-            DarknessAlpha = MaximumDarknessAlpha * (1 - SunlightManager.SunlightEffectiveness);
+            DarknessAlpha = MaximumDarknessAlpha * (1 - InGameDateTimeManager.SunlightEffectiveness);
 
             var destinationRectangle = camera.DestinationRectangle;
 

@@ -328,11 +328,11 @@ namespace FishStory.Screens
             // do script *after* the UI
             script.Activity();
             Map?.AnimateSelf();
-            SunlightManager.Activity(firstTimeCalled);
-            DayAndTimeDisplayInstance.UpdateTime(SunlightManager.OurInGameDay);
+            InGameDateTimeManager.Activity(firstTimeCalled);
+            DayAndTimeDisplayInstance.UpdateTime(InGameDateTimeManager.OurInGameDay);
             UpdatePropObjects();
 
-            if (SunlightManager.TimeOfDay.Hours == HourOfClockPlayerForcedSleepIn24H)
+            if (InGameDateTimeManager.TimeOfDay.Hours == HourOfClockPlayerForcedSleepIn24H)
             {
                 ForcePlayerToSleep();
             }
@@ -441,8 +441,8 @@ namespace FishStory.Screens
 
         private void UpdatePropObjects()
         {
-            var lightShouldBeOn = SunlightManager.TimeOfDay.TotalHours >= HourOnClockLightPostsTurnOnIn24 ||
-                                SunlightManager.TimeOfDay.TotalHours < HourOnClockLightPostsTurnOffIn24;
+            var lightShouldBeOn = InGameDateTimeManager.TimeOfDay.TotalHours >= HourOnClockLightPostsTurnOnIn24H ||
+                                InGameDateTimeManager.TimeOfDay.TotalHours < HourOnClockLightPostsTurnOffIn24H;
             var lights = PropObjectList.Where(po => po.CurrentPropNameState == PropName.StreetLight);
             foreach (var lightSource in lights)
             {
@@ -679,7 +679,7 @@ namespace FishStory.Screens
             this.ItemsBought.Clear();
 
             // research tracked day
-            SunlightManager.ResetDay();
+            InGameDateTimeManager.ResetDay();
 
             // fade UI in
             GameScreenGum.ToTransparentAnimation.PlayAfter(GameScreenGum.ToBlackAnimation.Length);

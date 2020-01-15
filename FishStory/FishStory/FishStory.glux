@@ -24,7 +24,7 @@
           </Properties>
           <Name>RealMinutesPerDay</Name>
           <Type>double</Type>
-          <DefaultValue xsi:type="xsd:double">3</DefaultValue>
+          <DefaultValue xsi:type="xsd:double">3.5</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
         <CustomVariable>
@@ -36,7 +36,7 @@
           </Properties>
           <Name>HourOnClockPlayerWakesIn24H</Name>
           <Type>double</Type>
-          <DefaultValue xsi:type="xsd:double">6</DefaultValue>
+          <DefaultValue xsi:type="xsd:double">8</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
         <CustomVariable>
@@ -58,7 +58,7 @@
               <ValueAsString>int</ValueAsString>
             </PropertySave>
           </Properties>
-          <Name>HourOnClockLightPostsTurnOnIn24</Name>
+          <Name>HourOnClockLightPostsTurnOnIn24H</Name>
           <Type>int</Type>
           <DefaultValue xsi:type="xsd:int">19</DefaultValue>
           <IsShared>true</IsShared>
@@ -70,10 +70,44 @@
               <ValueAsString>int</ValueAsString>
             </PropertySave>
           </Properties>
-          <Name>HourOnClockLightPostsTurnOffIn24</Name>
+          <Name>HourOnClockLightPostsTurnOffIn24H</Name>
           <Type>int</Type>
           <DefaultValue xsi:type="xsd:int">7</DefaultValue>
           <IsShared>true</IsShared>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>double</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>HourOnClockSunSetsIn24H</Name>
+          <Type>double</Type>
+          <DefaultValue xsi:type="xsd:double">19.5</DefaultValue>
+          <IsShared>true</IsShared>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>double</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>HourOnClockSunRisesIn24H</Name>
+          <Type>double</Type>
+          <DefaultValue xsi:type="xsd:double">7</DefaultValue>
+          <IsShared>true</IsShared>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>double</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>HourOnClockMoonRisesIn24H</Name>
+          <Type>double</Type>
         </CustomVariable>
       </CustomVariables>
       <Name>Screens\GameScreen</Name>

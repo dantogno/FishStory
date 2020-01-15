@@ -107,6 +107,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>TimeText.Blue</Name>
+      <ExposedAsName>TimeBlue</ExposedAsName>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>TimeText.Font</Name>
       <Value xsi:type="xsd:string">Casual Encounter</Value>
@@ -117,6 +123,12 @@
       <Name>TimeText.FontSize</Name>
       <Value xsi:type="xsd:int">10</Value>
       <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TimeText.Green</Name>
+      <ExposedAsName>TimeGreen</ExposedAsName>
+      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
@@ -135,6 +147,12 @@
       <Name>TimeText.OutlineThickness</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TimeText.Red</Name>
+      <ExposedAsName>TimeRed</ExposedAsName>
+      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
