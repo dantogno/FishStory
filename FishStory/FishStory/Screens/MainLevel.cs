@@ -15,6 +15,7 @@ using FishStory.Managers;
 using FishStory.DataTypes;
 using FishStory.Factories;
 using FishStory.Entities;
+using FlatRedBall.Scripting;
 
 namespace FishStory.Screens
 {
@@ -47,7 +48,7 @@ namespace FishStory.Screens
         {
             var If = script;
             var Do = script;
-                
+
 
             PlayerCharacterInstance.DirectionFacing = TopDownDirection.Left;
 
@@ -55,13 +56,11 @@ namespace FishStory.Screens
             PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
             PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
 
+            DoDay1Script(If, Do);
+        }
 
-
-
-
-            #region Day 1
-
-
+        private void DoDay1Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
+        {
             If.Check(() =>
             {
                 return PlayerDataManager.PlayerData.CurrentDay == 1;
@@ -73,13 +72,14 @@ namespace FishStory.Screens
                 this.Call(() => GameScreenGum.InputInstructionsInstance.Visible = false).After(7);
             });
 
-            //Identifier
+            #region Identifier
             If.Check(() => HasTag("HasSeenIdentifierDay1"));
             Do.Call(() =>
             {
                 NPCList.FindByName("Identifier").TwineDialogId = "IdentifierDay1Brief";
             });
-            // Tycoon
+            #endregion
+            #region Tycoon
             // He gives you the key if you have identified 3 fish
             int numFishRequiredForKey = 3;
             If.Check(() => HasTag("HasTalkedToTycoonDay1"));
@@ -103,7 +103,8 @@ namespace FishStory.Screens
             {
                 NPCList.FindByName("Tycoon").TwineDialogId = "TycoonYesKey";
             });
-
+            #endregion
+            #region Mayor
             // Mayor
             // TODO: This is annoying during testing, but turn it back on eventually!
             //If.Check(() => !HasTag("HasSeenWelcomeDialog") && PlayerCharacterInstance.X < 1070 );
@@ -127,7 +128,8 @@ namespace FishStory.Screens
                 AddNotification("Recieved: Festival Badge");
                 AddNotification("Recieved: Festival Pamphlet");
             });
-
+            #endregion
+            #region FestivalCoordinator
             // FestivalCoordinator
             If.Check(() => HasTag("AwardFishingRod"));
             Do.Call(() =>
@@ -140,15 +142,16 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = NPCList.FindByName("FestivalCoordinator");
-                //npc.TwineDialogId = nameof(GlobalContent.FestivalCoordinatorDay1Brief);
+                npc.TwineDialogId = nameof(GlobalContent.FestivalCoordinatorDay1Brief);
                 AwardRandomBait();
             });
+            #endregion
+            //TODO: What are NPCRelationships??
             //If.Check(() =>
             //{
             //    return PlayerDataManager.PlayerData.NpcRelationships["Dave"].EventsTriggered
             //        .Contains(5);
             //});
-            #endregion
         }
 
         private void AwardRandomBait()
@@ -160,6 +163,7 @@ namespace FishStory.Screens
 
         void CustomActivity(bool firstTimeCalled)
         {
+            // TODO: we could make debug variables for these in glue
             FlatRedBall.Debugging.Debugger.Write($"Player X: {PlayerCharacterInstance.X}, Player Y: {PlayerCharacterInstance.Y}");
             //FlatRedBall.Debugging.Debugger.Write($"Fish identified: {TotalFishIdentified}");
         }
