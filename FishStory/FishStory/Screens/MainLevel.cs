@@ -55,6 +55,8 @@ namespace FishStory.Screens
             PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
             PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
 
+
+
             #region Day 1
             //Identifier
             If.Check(() => HasTag("HasSeenIdentifierDay1"));
