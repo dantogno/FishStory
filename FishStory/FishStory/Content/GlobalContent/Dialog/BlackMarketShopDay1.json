@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "text": "Hmm. I see ya Guppy, but I don't trust ya yet. Find me tomorrow and perhaps we can make a deal.",
+      "name": "1",
+      "pid": "1",
+      "position": {
+        "x": "405",
+        "y": "442.8333435058594"
+      },
+      "tags": [
+        "HasSeenBlackMarketShopDay1"
+      ]
+    }
+  ],
+  "name": "BlackMarketShopDay1",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "F8494253-86F3-4D11-9A08-ADC622B1A382"
+}

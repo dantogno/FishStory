@@ -65,13 +65,13 @@
   <object id="8" name="Fishmonger" gid="7" x="1174.42" y="696.864" width="16" height="16">
    <properties>
     <property name="Animation" value="BaldLabCoat"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="FishmongerDay1"/>
    </properties>
   </object>
   <object id="9" name="BlackMarketShop" gid="7" x="338.584" y="831.5" width="16" height="16">
    <properties>
     <property name="Animation" value="TravelMerchant"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="BlackMarketShopDay1"/>
    </properties>
   </object>
   <object id="17" name="TestBlackMarket" gid="7" x="1339" y="833.5" width="16" height="16">

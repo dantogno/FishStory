@@ -1,0 +1,88 @@
+{
+    "passages": [
+      {
+        "text": "How can I help you? Here in Ensomme we offer the finest delicacies of the sea! Might I recommend this monkfish, just pulled out of the water not 10 minutes ago. [[2]]",
+        "links": [
+          {
+            "name": "2",
+            "link": "2",
+            "pid": "2"
+          }
+        ],
+        "name": "1",
+        "pid": "1",
+        "position": {
+          "x": "405",
+          "y": "171.5"
+        },
+        "tags": [
+          "HasTalkedToFishMongerDay1"
+        ]
+      },
+      {
+        "text": "Oh, a Festival Badge. In that case, I take it you're here to sell. Well then, so long as it's been tagged by the Church, I'm happy to buy your fresh catch. \n[[Tagged by the Church?|Tag Explanation]]\n[[Sell|Sell]]\n[[Leave|Leave]]",
+        "links": [
+          {
+            "name": "Tagged by the Church?|Tag Explanation",
+            "link": "Tagged by the Church?|Tag Explanation"
+          },
+          {
+            "name": "Sell|Sell",
+            "link": "Sell|Sell"
+          },
+          {
+            "name": "Leave|Leave",
+            "link": "Leave|Leave"
+          }
+        ],
+        "name": "2",
+        "pid": "2",
+        "position": {
+          "x": "405",
+          "y": "321.5"
+        }
+      },
+      {
+        "text": "Plucking these riches from the sea takes a toll. By having the Church identify and catalog catches, we can repay the debt and ensure we don't take too greedily.[[Sell|Sell]] [[Leave|Leave]]",
+        "links": [
+          {
+            "name": "Sell|Sell",
+            "link": "Sell|Sell"
+          },
+          {
+            "name": "Leave|Leave",
+            "link": "Leave|Leave"
+          }
+        ],
+        "name": "Tag Explanation",
+        "pid": "3",
+        "position": {
+          "x": "250",
+          "y": "445.5"
+        }
+      },
+      {
+        "text": "sell=fishmonger",
+        "name": "Sell",
+        "pid": "4",
+        "position": {
+          "x": "480",
+          "y": "471.5"
+        }
+      },
+      {
+        "text": "I look forward to your next catch!",
+        "name": "Leave",
+        "pid": "5",
+        "position": {
+          "x": "330",
+          "y": "621.5"
+        }
+      }
+    ],
+    "name": "FishmongerDay1",
+    "startnode": "1",
+    "creator": "Twine",
+    "creator-version": "2.3.5",
+    "ifid": "178B91FB-32B7-4335-903E-0CF672A473BF"
+  }

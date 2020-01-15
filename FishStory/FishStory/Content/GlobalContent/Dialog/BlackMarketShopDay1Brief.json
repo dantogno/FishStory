@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Ya heard me, Guppy. Find me tomorrow and perhaps we barter. Now be gone with ya!",
+      "name": "1",
+      "pid": "1",
+      "position": {
+        "x": "405",
+        "y": "442.8333435058594"
+      }
+    }
+  ],
+  "name": "BlackMarketShopDay1Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "D1E8AC9A-7D83-4DFD-843A-3C485730D9FB"
+}

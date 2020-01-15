@@ -473,6 +473,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>StreetLight</Name>
     </None>
+    <None Include="content\globalcontent\dialog\blackmarketshopday1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BlackMarketShopDay1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\blackmarketshopday1brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BlackMarketShopDay1Brief</Name>
+    </None>
     <None Include="content\globalcontent\dialog\boy1dialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Boy1Dialog</Name>
@@ -516,6 +524,10 @@
     <None Include="content\globalcontent\dialog\fishermanhairday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishermanHairDay1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\fishmongerday1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishmongerDay1</Name>
     </None>
     <None Include="content\globalcontent\dialog\identifierday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

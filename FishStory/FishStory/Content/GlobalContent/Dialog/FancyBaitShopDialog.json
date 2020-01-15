@@ -1,8 +1,12 @@
 {
   "passages": [
     {
-      "text": "Welcome to Petterson's Bait Emporium! [[Buy]] [[Leave]]",
+      "text": "Welcome to Petterson's Bait Emporium! [[Are you Petterson?|Petterson]][[Buy]] [[Leave]] ",
       "links": [
+        {
+          "name": "Are you Petterson?|Petterson",
+          "link": "Are you Petterson?|Petterson"
+        },
         {
           "name": "Buy",
           "link": "Buy",
@@ -26,8 +30,8 @@
       "name": "Buy",
       "pid": "2",
       "position": {
-        "x": "313",
-        "y": "328"
+        "x": "241",
+        "y": "349"
       }
     },
     {
@@ -35,14 +39,35 @@
       "name": "Leave",
       "pid": "3",
       "position": {
-        "x": "481",
-        "y": "332"
+        "x": "447",
+        "y": "369"
+      }
+    },
+    {
+      "text": "Oh, no, I'm William. Mr. Petterson is my boss. He owns all kinds of stuff in this town. But he said if I can sell enough bait I might get a promotion! [[Buy]][[Leave]]",
+      "links": [
+        {
+          "name": "Buy",
+          "link": "Buy",
+          "pid": "2"
+        },
+        {
+          "name": "Leave",
+          "link": "Leave",
+          "pid": "3"
+        }
+      ],
+      "name": "Petterson",
+      "pid": "4",
+      "position": {
+        "x": "150",
+        "y": "127"
       }
     }
   ],
   "name": "FancyBaitShopDialog",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.2.1",
+  "creator-version": "2.3.5",
   "ifid": "8141181B-5AA2-4B89-BBCA-A1DEDA429E1F"
 }
