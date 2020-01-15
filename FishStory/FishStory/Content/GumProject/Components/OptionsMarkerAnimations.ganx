@@ -3,25 +3,25 @@
   <Animations>
     <AnimationSave>
       <Loops>true</Loops>
-      <Name>FlashAction</Name>
+      <Name>SpriteMove</Name>
       <States>
         <AnimatedStateSave>
-          <StateName>Location/Top</StateName>
+          <StateName>SpirteLocation/Right</StateName>
           <Time>0</Time>
           <InterpolationType>Quadratic</InterpolationType>
           <Easing>InOut</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
-          <StateName>Location/Bottom</StateName>
+          <StateName>SpirteLocation/Left</StateName>
           <Time>1</Time>
           <InterpolationType>Quadratic</InterpolationType>
           <Easing>InOut</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
-          <StateName>Location/Top</StateName>
+          <StateName>SpirteLocation/Right</StateName>
           <Time>2</Time>
-          <InterpolationType>Exponential</InterpolationType>
-          <Easing>InOut</Easing>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
         </AnimatedStateSave>
       </States>
       <Animations />

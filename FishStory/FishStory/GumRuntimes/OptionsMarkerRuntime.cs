@@ -4,12 +4,11 @@ using System.Linq;
 
 namespace FishStory.GumRuntimes
 {
-    public partial class ActionIndicatorRuntime
+    public partial class OptionsMarkerRuntime
     {
         partial void CustomInitialize () 
         {
-            FlashActionAnimation.Play();
-
+            this.SpriteMoveAnimation.Play();
         }
     }
 }

@@ -149,7 +149,6 @@ namespace FishStory.GumRuntimes
 
             if (lastTimeHiddenOrShown != TimeManager.CurrentTime)
             {
-                ActionIndicatorInstance.FlashActionAnimation.Play();
                 Visible = true;
                 lastTimeHiddenOrShown = TimeManager.CurrentTime;
                 return true;
@@ -169,6 +168,12 @@ namespace FishStory.GumRuntimes
                 const string sellPrefix = "sell=";
                 const string idPrefix = "id=";
 
+                // clear out the dialog options
+                while (this.DialogOptions.Children.Count() > 0)
+                {
+                    var option = this.DialogOptions.Children.Last();
+                    option.Destroy();
+                }
                 if (passage.StrippedText.ToLowerInvariant().StartsWith(storePrefix))
                 {
                     var storeName = passage.StrippedText.Substring(storePrefix.Length);
@@ -199,11 +204,6 @@ namespace FishStory.GumRuntimes
                 {
                     this.TextInstance.Text = passage.StrippedText;
 
-                    // clear out the dialog options
-                    while (this.DialogOptions.Children.Count() > 0)
-                    {
-                        this.DialogOptions.Children.Last().Parent = null;
-                    }
 
                     ShowLinks(passage);
 
@@ -326,13 +326,7 @@ namespace FishStory.GumRuntimes
 
         private void HandleIndicator()
         {
-            if (secondsBeforePromptingAction <= TimeManager.CurrentTime - lastTimeHiddenOrShown)
-            {
-                if (!ActionIndicatorInstance.FlashActionAnimation.IsPlaying())
-                {
-                    ActionIndicatorInstance.FlashActionAnimation.Play();
-                }
-            }
+
         }
 
         private void HandleSelect()

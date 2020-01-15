@@ -17,62 +17,26 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>RectangleInstance.Height</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>RectangleInstance.Height Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>RectangleInstance.Width</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>RectangleInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>RectangleInstance.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>HorizontalAlignment</Type>
-      <Name>RectangleInstance.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Name>OptionsMarkerInstance.X Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>RectangleInstance.X Units</Name>
-      <Value xsi:type="xsd:int">6</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>RectangleInstance.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Name>OptionsMarkerInstance.X Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>RectangleInstance.Y Origin</Name>
+      <Name>OptionsMarkerInstance.Y Origin</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>RectangleInstance.Y Units</Name>
+      <Name>OptionsMarkerInstance.Y Units</Name>
       <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -136,6 +100,12 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>TextInstance.Y</Name>
+      <Value xsi:type="xsd:float">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>Width</Name>
       <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
@@ -153,7 +123,7 @@
       <Name>Selected</Name>
       <Variable>
         <Type>bool</Type>
-        <Name>RectangleInstance.Visible</Name>
+        <Name>OptionsMarkerInstance.Visible</Name>
         <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -162,7 +132,7 @@
       <Name>Deselected</Name>
       <Variable>
         <Type>bool</Type>
-        <Name>RectangleInstance.Visible</Name>
+        <Name>OptionsMarkerInstance.Visible</Name>
         <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -174,8 +144,8 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>RectangleInstance</Name>
-    <BaseType>Rectangle</BaseType>
+    <Name>OptionsMarkerInstance</Name>
+    <BaseType>OptionsMarker</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

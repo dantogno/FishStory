@@ -210,6 +210,8 @@
     <Compile Include="GumRuntimes\NotificationRuntime.Generated.cs">
       <DependentUpon>NotificationRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\OptionsMarkerRuntime.cs" />
+    <Compile Include="GumRuntimes\OptionsMarkerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\PolygonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\RectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\SelectableOptionRuntime.cs" />
@@ -724,6 +726,10 @@
     <None Include="content\gumproject\components\notificationbox.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>notificationbox</Name>
+    </None>
+    <None Include="content\gumproject\components\optionsmarker.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>optionsmarker</Name>
     </None>
     <None Include="content\gumproject\components\selectableoption.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

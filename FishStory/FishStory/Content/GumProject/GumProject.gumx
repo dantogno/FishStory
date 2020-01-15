@@ -129,6 +129,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>OptionsMarker</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>SelectableOption</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
