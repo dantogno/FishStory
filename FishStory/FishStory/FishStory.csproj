@@ -193,10 +193,14 @@
       <DependentUpon>GameScreenGumRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
+    <Compile Include="GumRuntimes\InputInstructionsRuntime.cs" />
+    <Compile Include="GumRuntimes\InputInstructionsRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\InventoryRuntime.cs" />
     <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs">
       <DependentUpon>InventoryRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\KeyDisplayRuntime.cs" />
+    <Compile Include="GumRuntimes\KeyDisplayRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\NotificationBoxRuntime.cs" />
     <Compile Include="GumRuntimes\NotificationBoxRuntime.Generated.cs">
@@ -701,9 +705,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>dialogbox</Name>
     </None>
+    <None Include="content\gumproject\components\inputinstructions.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>inputinstructions</Name>
+    </None>
     <None Include="content\gumproject\components\inventory.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>inventory</Name>
+    </None>
+    <None Include="content\gumproject\components\keydisplay.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>keydisplay</Name>
     </None>
     <None Include="content\gumproject\components\notification.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -764,6 +776,10 @@
     <None Include="content\gumproject\gumproject.gumx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GumProject</Name>
+    </None>
+    <None Include="content\gumproject\keys.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>keys</Name>
     </None>
     <None Include="content\gumproject\screens\gamescreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
