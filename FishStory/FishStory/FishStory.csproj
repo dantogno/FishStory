@@ -202,7 +202,9 @@
       <DependentUpon>InputInstructionsRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\InventoryRuntime.cs" />
-    <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs">
+      <DependentUpon>InventoryRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\KeyDisplayRuntime.cs" />
     <Compile Include="GumRuntimes\KeyDisplayRuntime.Generated.cs">
       <DependentUpon>KeyDisplayRuntime.cs</DependentUpon>
