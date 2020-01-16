@@ -10,6 +10,8 @@ namespace FishStory.Entities
 {
     public static class InGameDateTimeManager
     {
+        private const float minutesPerHour = 60f;
+        private const float minutesPerDay = 60f * 24f;
         public static TimeSpan TimeOfDay => OurInGameDay.TimeOfDay;
         public static DateTime OurInGameDay = new DateTime();
         public static bool SunIsUp = OurInGameDay.Hour > GameScreen.HourOnClockSunRisesIn24H && OurInGameDay.Hour < GameScreen.HourOnClockSunSetsIn24H;
@@ -18,10 +20,10 @@ namespace FishStory.Entities
 
         private static double minutesElapsedPerSecond = 6;
 
-        private const float minutesAtNoon = 720;
-        private const float minutesAtSundown = 1140;
-        private static float minutesWhenPlayerWakes = (float)GameScreen.HourOnClockPlayerWakesIn24H * 60f;
-        private static float minutesWhenPlayerIsForcedAsleep = (float)GameScreen.HourOfClockPlayerForcedSleepIn24H * 60f;
+        private const float minutesAtNoon = minutesPerDay/2;
+        private static float minutesAtSundown = (float)GameScreen.HourOnClockSunSetsIn24H * minutesPerHour;
+        private static float minutesWhenPlayerWakes = (float)GameScreen.HourOnClockPlayerWakesIn24H * minutesPerHour;
+        private static float minutesWhenPlayerIsForcedAsleep = (float)GameScreen.HourOfClockPlayerForcedSleepIn24H * minutesPerHour;
 
         public static void Activity(bool firstCall)
         {
@@ -36,7 +38,7 @@ namespace FishStory.Entities
 
         private static void InitializeDay()
         {
-            minutesElapsedPerSecond = (1440 / GameScreen.RealMinutesPerDay) / 60;
+            minutesElapsedPerSecond = (minutesPerDay / GameScreen.RealMinutesPerDay) / minutesPerHour;
 
             OurInGameDay = new DateTime(2020, 1, 5);
             OurInGameDay = OurInGameDay.AddHours(GameScreen.HourOnClockPlayerWakesIn24H);
