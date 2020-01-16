@@ -21,10 +21,6 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
-    <Name>StoreCloseButton</Name>
-    <ElementType>Component</ElementType>
-  </ComponentReference>
-  <ComponentReference>
     <Name>CustomNiceSlice</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
@@ -150,6 +146,10 @@
   </ComponentReference>
   <ComponentReference>
     <Name>StoreBuyButton</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>StoreCloseButton</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <StandardElementReference>

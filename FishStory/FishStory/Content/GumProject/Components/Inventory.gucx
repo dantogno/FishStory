@@ -6,26 +6,26 @@
     <Name>Default</Name>
     <Variable>
       <Type>string</Type>
-      <Name>CloseButton.Text</Name>
+      <Name>CloseButton.ButtonText</Name>
       <Value xsi:type="xsd:string">X</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>CloseButton.Height</Name>
+      <Value xsi:type="xsd:float">48</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>CloseButton.Width</Name>
-      <Value xsi:type="xsd:float">47</Value>
+      <Value xsi:type="xsd:float">48</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>CloseButton.X</Name>
-      <Value xsi:type="xsd:float">264</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>CloseButton.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:float">257</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -37,13 +37,7 @@
     <Variable>
       <Type>float</Type>
       <Name>CloseButton.Y</Name>
-      <Value xsi:type="xsd:float">-191</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>CloseButton.Y Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:float">-183</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -402,20 +396,38 @@
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>SellButton.Text</Name>
+      <Name>SellButton.ButtonText</Name>
       <Value xsi:type="xsd:string">Sell</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>SellButton.X</Name>
-      <Value xsi:type="xsd:float">160</Value>
+      <Name>SellButton.Height</Name>
+      <Value xsi:type="xsd:float">78</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>SellButton.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Type>DimensionUnitType</Type>
+      <Name>SellButton.Height Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>SellButton.Width</Name>
+      <Value xsi:type="xsd:float">117</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>SellButton.Width Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>SellButton.X</Name>
+      <Value xsi:type="xsd:float">252</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -427,13 +439,7 @@
     <Variable>
       <Type>float</Type>
       <Name>SellButton.Y</Name>
-      <Value xsi:type="xsd:float">163</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>SellButton.Y Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:float">130</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -593,6 +599,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>TextInstance2.Blue</Name>
+      <Value xsi:type="xsd:int">212</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ColorCategory</Type>
       <Name>TextInstance2.ColorCategoryState</Name>
       <Value xsi:type="xsd:string">Black</Value>
@@ -608,6 +620,12 @@
       <Type>int</Type>
       <Name>TextInstance2.FontSize</Name>
       <Value xsi:type="xsd:int">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance2.Green</Name>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -629,9 +647,21 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>TextInstance2.OutlineThickness</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>TextInstance2.Parent</Name>
       <Value xsi:type="xsd:string">ColoredFrameInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance2.Red</Name>
+      <Value xsi:type="xsd:int">127</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -683,6 +713,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>TextInstance3.Blue</Name>
+      <Value xsi:type="xsd:int">212</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ColorCategory</Type>
       <Name>TextInstance3.ColorCategoryState</Name>
       <Value xsi:type="xsd:string">Black</Value>
@@ -698,6 +734,12 @@
       <Type>int</Type>
       <Name>TextInstance3.FontSize</Name>
       <Value xsi:type="xsd:int">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance3.Green</Name>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -719,9 +761,21 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>TextInstance3.OutlineThickness</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>TextInstance3.Parent</Name>
       <Value xsi:type="xsd:string">ColoredFrameInstance1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance3.Red</Name>
+      <Value xsi:type="xsd:int">127</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -806,6 +860,12 @@
       <Type>HorizontalAlignment</Type>
       <Name>TextInstance4.HorizontalAlignment</Name>
       <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance4.OutlineThickness</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -915,6 +975,24 @@
       <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance4.Red</Name>
+      <Value xsi:type="xsd:int">127</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance4.Green</Name>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance4.Blue</Name>
+      <Value xsi:type="xsd:int">212</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
   </State>
   <Category>
     <Name>ViewOrSell</Name>
@@ -935,12 +1013,6 @@
       <Variable>
         <Type>bool</Type>
         <Name>ColoredFrameInstance3.Visible</Name>
-        <Value xsi:type="xsd:boolean">false</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>bool</Type>
-        <Name>SellButton.Visible</Name>
         <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -965,12 +1037,6 @@
         <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
-      <Variable>
-        <Type>bool</Type>
-        <Name>SellButton.Visible</Name>
-        <Value xsi:type="xsd:boolean">true</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
     </State>
   </Category>
   <Instance>
@@ -986,11 +1052,6 @@
   <Instance>
     <Name>TextInstance1</Name>
     <BaseType>Text</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>CloseButton</Name>
-    <BaseType>DefaultForms/Button</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
@@ -1024,11 +1085,6 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>SellButton</Name>
-    <BaseType>DefaultForms/Button</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
     <Name>ColoredFrameInstance3</Name>
     <BaseType>DefaultForms/ColoredFrame</BaseType>
     <DefinedByBase>false</DefinedByBase>
@@ -1036,6 +1092,16 @@
   <Instance>
     <Name>TextInstance4</Name>
     <BaseType>Text</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>CloseButton</Name>
+    <BaseType>StoreCloseButton</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>SellButton</Name>
+    <BaseType>StoreBuyButton</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

@@ -202,9 +202,7 @@
       <DependentUpon>InputInstructionsRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\InventoryRuntime.cs" />
-    <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs">
-      <DependentUpon>InventoryRuntime.cs</DependentUpon>
-    </Compile>
+    <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\KeyDisplayRuntime.cs" />
     <Compile Include="GumRuntimes\KeyDisplayRuntime.Generated.cs">
       <DependentUpon>KeyDisplayRuntime.cs</DependentUpon>
@@ -816,14 +814,6 @@
     <None Include="content\gumproject\fontcache\font10casual_encounter_o1_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font10Casual_Encounter_o1_0</Name>
-    </None>
-    <None Include="content\gumproject\fontcache\font16casual_encounter.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>font16casual_encounter</Name>
-    </None>
-    <None Include="content\gumproject\fontcache\font16casual_encounter_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font16Casual_Encounter_0</Name>
     </None>
     <None Include="content\gumproject\fontcache\font16casual_encounter_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
