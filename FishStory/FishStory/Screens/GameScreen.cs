@@ -163,6 +163,11 @@ namespace FishStory.Screens
                 }
             }
 
+            if(DebuggingVariables.AwardFishingPole)
+            {
+                Award(ItemDefinition.Fishing_Rod);
+            }
+
             var testBlackMarketDialog = GetRootObject("Sell At Black Market Dialog",
                 new List<string>
                 {
@@ -518,7 +523,7 @@ namespace FishStory.Screens
             var lootTable = GlobalContent.DefaultLootTable;
 
             // see if the player is colliding with any fishing zones
-            var collidedFishingZone = this.FishingZoneList.First(item => item.CollideAgainst(PlayerCharacterInstance.BodyCollision));
+            var collidedFishingZone = this.FishingZoneList.FirstOrDefault(item => item.CollideAgainst(PlayerCharacterInstance.BodyCollision));
             if(collidedFishingZone != null)
             {
                 if(string.IsNullOrEmpty(collidedFishingZone.LootTable))
