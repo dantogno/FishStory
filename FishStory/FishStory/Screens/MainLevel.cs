@@ -68,8 +68,20 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 GameScreenGum.InputInstructionsInstance.Visible = true;
+                var secondsToShowInputCallout = 7;
+                this
+                    .Call(() => GameScreenGum.InputInstructionsInstance.Visible = false)
+                    .After(secondsToShowInputCallout);
+            });
 
-                this.Call(() => GameScreenGum.InputInstructionsInstance.Visible = false).After(7);
+
+            If.Check(() =>
+            {
+                return true;
+            });
+            Do.Call(() =>
+            {
+                InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(12));
             });
 
             #region Identifier
