@@ -77,7 +77,7 @@ namespace FishStory.Screens
 
             If.Check(() =>
             {
-                return true;
+                return PlayerDataManager.PlayerData.CurrentDay == 1;
             });
             Do.Call(() =>
             {
