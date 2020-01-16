@@ -153,6 +153,10 @@
     <Compile Include="GumRuntimes\CircleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ColoredRectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ContainerRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CustomButtonRuntime.cs" />
+    <Compile Include="GumRuntimes\CustomButtonRuntime.Generated.cs">
+      <DependentUpon>CustomButtonRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\CustomNiceSliceRuntime.cs" />
     <Compile Include="GumRuntimes\CustomNiceSliceRuntime.Generated.cs">
       <DependentUpon>CustomNiceSliceRuntime.cs</DependentUpon>
@@ -225,6 +229,10 @@
       <DependentUpon>SelectableOptionRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\StoreBuyButtonRuntime.cs" />
+    <Compile Include="GumRuntimes\StoreBuyButtonRuntime.Generated.cs">
+      <DependentUpon>StoreBuyButtonRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\StoreRuntime.cs" />
     <Compile Include="GumRuntimes\StoreRuntime.Generated.cs">
       <DependentUpon>StoreRuntime.cs</DependentUpon>
@@ -613,6 +621,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>actionindicator</Name>
     </None>
+    <None Include="content\gumproject\components\custombutton.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>custombutton</Name>
+    </None>
     <None Include="content\gumproject\components\customniceslice.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>customniceslice</Name>
@@ -772,6 +784,10 @@
     <None Include="content\gumproject\components\store.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>store</Name>
+    </None>
+    <None Include="content\gumproject\components\storebuybutton.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>storebuybutton</Name>
     </None>
     <None Include="content\gumproject\fontcache\font10casual_encounter.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
