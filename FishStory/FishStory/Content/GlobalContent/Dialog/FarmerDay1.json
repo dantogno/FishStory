@@ -32,15 +32,12 @@
       }
     },
     {
-      "text": "No, I'm fine. I've gotten through every other festival season without help, and I can do it again. If Anthony wants lefse for the feast, who am I to say no? Do you have any idea how many potatoes it takes to make enough lefse for the entire town? Of course not! And neither does Anthony, apparently, because he expects me to have everything harvested and cleaned with a day to spare!\n[[Are you sure you don't want help?|Sure help]]\n[[Well, good luck with that!|Good luck]]",
+      "text": "No, I'm fine. I've gotten through every other festival season without help, and I can do it again. If Anthony wants lefse for the feast, who am I to say no? Do you have any idea how many potatoes it takes to make enough lefse for the entire town? Of course not!\n[[Help continue]]",
       "links": [
         {
-          "name": "Are you sure you don't want help?|Sure help",
-          "link": "Are you sure you don't want help?|Sure help"
-        },
-        {
-          "name": "Well, good luck with that!|Good luck",
-          "link": "Well, good luck with that!|Good luck"
+          "name": "Help continue",
+          "link": "Help continue",
+          "pid": "11"
         }
       ],
       "name": "Help",
@@ -77,8 +74,8 @@
       "name": "Sure help",
       "pid": "5",
       "position": {
-        "x": "277",
-        "y": "687"
+        "x": "270",
+        "y": "729"
       }
     },
     {
@@ -92,8 +89,8 @@
       "name": "Good luck",
       "pid": "6",
       "position": {
-        "x": "427",
-        "y": "687"
+        "x": "420",
+        "y": "729"
       }
     },
     {
@@ -156,6 +153,25 @@
       "position": {
         "x": "601",
         "y": "683"
+      }
+    },
+    {
+      "text": "And neither does Anthony, apparently, because he expects me to have everything harvested and cleaned with a day to spare!\n[[Are you sure you don't want help?|Sure help]]\n[[Well, good luck with that!|Good luck]]",
+      "links": [
+        {
+          "name": "Are you sure you don't want help?|Sure help",
+          "link": "Are you sure you don't want help?|Sure help"
+        },
+        {
+          "name": "Well, good luck with that!|Good luck",
+          "link": "Well, good luck with that!|Good luck"
+        }
+      ],
+      "name": "Help continue",
+      "pid": "11",
+      "position": {
+        "x": "208",
+        "y": "540"
       }
     }
   ],
