@@ -41,6 +41,8 @@ namespace FishStory.Entities
 
         public string CurrentBait { get; private set; }
 
+        public PropObject Lantern => PropObjectLanternInstance;
+
         #endregion
 
         #region Initialize
@@ -56,6 +58,8 @@ namespace FishStory.Entities
             this.PossibleDirections = PossibleDirections.EightWay;
 
             this.AnimationControllerInstance.Layers.Add(mTopDownAnimationLayer);
+
+            this.PropObjectLanternInstance.CurrentPropNameState = PropObject.PropName.Lantern;
         }
 
         partial void CustomInitializeTopDownInput()

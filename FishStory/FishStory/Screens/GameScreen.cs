@@ -86,6 +86,8 @@ namespace FishStory.Screens
         private void InitializePlayer()
         {
             PlayerCharacterInstance.FishLost += HandleFishLost;
+            PlayerCharacterInstance.Lantern.Z = 1; // above the player, so always on top
+            PlayerCharacterInstance.Lantern.SetLayers(WorldLayer, LightEffectsLayer);
         }
         private void InitializeShaders()
         {
@@ -236,6 +238,8 @@ namespace FishStory.Screens
                 propObject.Z = 0; // same as player so they sort
                 propObject.SetLayers(WorldLayer, LightEffectsLayer);
             }
+
+
         }
 
         private void InitializeCamera()
@@ -463,6 +467,8 @@ namespace FishStory.Screens
                     lightSource.HideLight();
                 }
             }
+            PlayerCharacterInstance.Lantern.SpriteInstanceVisible = lightShouldBeOn;
+            PlayerCharacterInstance.Lantern.LightSpriteInstanceVisible = lightShouldBeOn;
         }
 
         private void HandleDoorOptionSelected(DialogTreeRaw.Link selectedLink)

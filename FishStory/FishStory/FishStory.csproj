@@ -233,6 +233,10 @@
     <Compile Include="GumRuntimes\StoreBuyButtonRuntime.Generated.cs">
       <DependentUpon>StoreBuyButtonRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\StoreCloseButtonRuntime.cs" />
+    <Compile Include="GumRuntimes\StoreCloseButtonRuntime.Generated.cs">
+      <DependentUpon>StoreCloseButtonRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\StoreRuntime.cs" />
     <Compile Include="GumRuntimes\StoreRuntime.Generated.cs">
       <DependentUpon>StoreRuntime.cs</DependentUpon>
@@ -476,6 +480,10 @@
     <None Include="content\entities\propobject\blueflag.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlueFlag</Name>
+    </None>
+    <None Include="content\entities\propobject\lantern.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Lantern</Name>
     </None>
     <None Include="content\entities\propobject\streetlight.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -788,6 +796,10 @@
     <None Include="content\gumproject\components\storebuybutton.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>storebuybutton</Name>
+    </None>
+    <None Include="content\gumproject\components\storeclosebutton.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>storeclosebutton</Name>
     </None>
     <None Include="content\gumproject\fontcache\font10casual_encounter.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
