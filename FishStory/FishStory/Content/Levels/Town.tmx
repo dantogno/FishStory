@@ -109,7 +109,7 @@
   <object id="24" name="ElderlyMother" gid="7" x="1540" y="576" width="16" height="16">
    <properties>
     <property name="Animation" value="ElderlyWoman"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="ElderlyMotherDay1"/>
    </properties>
   </object>
   <object id="25" name="Tycoon" gid="7" x="1042" y="618.417" width="16" height="16">
@@ -127,32 +127,32 @@
   <object id="27" name="Nun" gid="7" x="1138.78" y="542.811" width="16" height="16">
    <properties>
     <property name="Animation" value="BlondeBlueNun"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="NunDay1"/>
    </properties>
   </object>
-  <object id="28" name="TycoonDaughter" gid="7" x="1012.64" y="619.008" width="16" height="16">
+  <object id="28" name="TycoonDaughter" gid="7" x="961.64" y="423.008" width="16" height="16">
    <properties>
     <property name="Animation" value="TycoonDaughter"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="TycoonDaughterDay1"/>
    </properties>
   </object>
   <object id="29" name="Conservationist" gid="7" x="671.583" y="934.917" width="16" height="16">
    <properties>
     <property name="Animation" value="BraidedHairWoman"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="ConservationistDay1"/>
    </properties>
   </object>
   <object id="31" name="FishermanBald" gid="7" x="747.25" y="1068.33" width="16" height="16">
    <properties>
     <property name="Animation" value="FishermanBald"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="FishermanBaldDay1"/>
    </properties>
   </object>
   <object id="33" type="FishIdentifiedSign" gid="2393" x="1120.3" y="599.242" width="16" height="16"/>
   <object id="51" name="FishermanHair" gid="7" x="776.337" y="1036.67" width="16" height="16">
    <properties>
     <property name="Animation" value="FishermanHair"/>
-    <property name="TwineDialogId" value="WelcomeDialog"/>
+    <property name="TwineDialogId" value="FishermanHairDay1"/>
    </properties>
   </object>
   <object id="58" gid="3350" x="279.75" y="961.364" width="16" height="16"/>
