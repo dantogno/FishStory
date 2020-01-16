@@ -249,6 +249,12 @@
       <Name>W</Name>
       <Variable>
         <Type>int</Type>
+        <Name>Texture Height</Name>
+        <Value xsi:type="xsd:int">32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
         <Name>Texture Left</Name>
         <Value xsi:type="xsd:int">96</Value>
         <SetsValue>true</SetsValue>
@@ -265,15 +271,16 @@
         <Value xsi:type="xsd:int">32</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+    </State>
+    <State>
+      <Name>A</Name>
       <Variable>
         <Type>int</Type>
         <Name>Texture Height</Name>
         <Value xsi:type="xsd:int">32</Value>
+        <Category>Source</Category>
         <SetsValue>true</SetsValue>
       </Variable>
-    </State>
-    <State>
-      <Name>A</Name>
       <Variable>
         <Type>int</Type>
         <Name>Texture Left</Name>
@@ -295,6 +302,9 @@
         <Category>Source</Category>
         <SetsValue>true</SetsValue>
       </Variable>
+    </State>
+    <State>
+      <Name>S</Name>
       <Variable>
         <Type>int</Type>
         <Name>Texture Height</Name>
@@ -302,9 +312,6 @@
         <Category>Source</Category>
         <SetsValue>true</SetsValue>
       </Variable>
-    </State>
-    <State>
-      <Name>S</Name>
       <Variable>
         <Type>int</Type>
         <Name>Texture Left</Name>
@@ -326,6 +333,9 @@
         <Category>Source</Category>
         <SetsValue>true</SetsValue>
       </Variable>
+    </State>
+    <State>
+      <Name>D</Name>
       <Variable>
         <Type>int</Type>
         <Name>Texture Height</Name>
@@ -333,9 +343,6 @@
         <Category>Source</Category>
         <SetsValue>true</SetsValue>
       </Variable>
-    </State>
-    <State>
-      <Name>D</Name>
       <Variable>
         <Type>int</Type>
         <Name>Texture Left</Name>
@@ -357,6 +364,9 @@
         <Category>Source</Category>
         <SetsValue>true</SetsValue>
       </Variable>
+    </State>
+    <State>
+      <Name>I</Name>
       <Variable>
         <Type>int</Type>
         <Name>Texture Height</Name>
@@ -364,9 +374,6 @@
         <Category>Source</Category>
         <SetsValue>true</SetsValue>
       </Variable>
-    </State>
-    <State>
-      <Name>I</Name>
       <Variable>
         <Type>int</Type>
         <Name>Texture Left</Name>
@@ -384,13 +391,6 @@
       <Variable>
         <Type>int</Type>
         <Name>Texture Width</Name>
-        <Value xsi:type="xsd:int">32</Value>
-        <Category>Source</Category>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>Texture Height</Name>
         <Value xsi:type="xsd:int">32</Value>
         <Category>Source</Category>
         <SetsValue>true</SetsValue>

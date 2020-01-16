@@ -6,14 +6,26 @@
     <Name>Default</Name>
     <Variable>
       <Type>string</Type>
-      <Name>BuyButton.Text</Name>
+      <Name>BuyButton.ButtonText</Name>
       <Value xsi:type="xsd:string">Buy</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>BuyButton.Height</Name>
+      <Value xsi:type="xsd:float">57</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BuyButton.Width</Name>
+      <Value xsi:type="xsd:float">250</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>BuyButton.X</Name>
-      <Value xsi:type="xsd:float">32</Value>
+      <Value xsi:type="xsd:float">40</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -25,7 +37,7 @@
     <Variable>
       <Type>float</Type>
       <Name>BuyButton.Y</Name>
-      <Value xsi:type="xsd:float">142</Value>
+      <Value xsi:type="xsd:float">139</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -36,26 +48,26 @@
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>CloseButton.Text</Name>
+      <Name>CloseButton.ButtonText</Name>
       <Value xsi:type="xsd:string">X</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>CloseButton.Height</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>CloseButton.Width</Name>
-      <Value xsi:type="xsd:float">47</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>CloseButton.X</Name>
-      <Value xsi:type="xsd:float">264</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>CloseButton.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:float">240</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -67,13 +79,7 @@
     <Variable>
       <Type>float</Type>
       <Name>CloseButton.Y</Name>
-      <Value xsi:type="xsd:float">-159</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>CloseButton.Y Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:float">-186</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -269,18 +275,18 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>BuyButton</Name>
-    <BaseType>DefaultForms/Button</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
     <Name>TextInstance</Name>
     <BaseType>Text</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
     <Name>CloseButton</Name>
-    <BaseType>DefaultForms/Button</BaseType>
+    <BaseType>CustomButton</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>BuyButton</Name>
+    <BaseType>StoreBuyButton</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />
