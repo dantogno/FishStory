@@ -55,8 +55,15 @@ namespace FishStory.Screens
             PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
             PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
             PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
+            
+            // TODO: remove this. Can use this to debug different days.
+            // PlayerDataManager.PlayerData.CurrentDay = 2;
 
-            DoDay1Script(If, Do);
+            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 1);
+            Do.Call(() => DoDay1Script(If, Do));
+
+            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 2);
+            Do.Call(() => DoDay2Script(If, Do));
         }
 
         private void DoDay1Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
@@ -185,6 +192,8 @@ namespace FishStory.Screens
             #region #ElderlyMother
             #endregion
             #region Priestess
+            var npc = this.NPCList.FindByName("Priestess");
+            npc.TwineDialogId = nameof(GlobalContent.PriestessDay2);
             #endregion
             #region Nun
             #endregion
