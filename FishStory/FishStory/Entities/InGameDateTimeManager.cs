@@ -55,6 +55,12 @@ namespace FishStory.Entities
             OurInGameDay = OurInGameDay.AddHours(GameScreen.HourOnClockPlayerWakesIn24H);
         }
 
+        public static void SetTimeOfDay(TimeSpan time)
+        {
+            OurInGameDay = new DateTime(OurInGameDay.Year, OurInGameDay.Month, OurInGameDay.Day);
+            OurInGameDay = OurInGameDay.Add(time);
+        }
+
         private static float DistanceToNoon()
         {
             var minutesElapsed = (float)OurInGameDay.TimeOfDay.TotalMinutes;

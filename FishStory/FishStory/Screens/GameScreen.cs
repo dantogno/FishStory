@@ -330,6 +330,8 @@ namespace FishStory.Screens
             }
             CameraActivity();
             
+            InGameDateTimeManager.Activity(firstTimeCalled);
+
             UiActivity();
 
             PlayerCollisionActivity();
@@ -337,11 +339,10 @@ namespace FishStory.Screens
             DebuggingActivity();
 
             // do script *after* the UI
-            script.Activity();
             Map?.AnimateSelf();
-            InGameDateTimeManager.Activity(firstTimeCalled);
-            DayAndTimeDisplayInstance.UpdateTime(InGameDateTimeManager.OurInGameDay);
             UpdatePropObjects();
+
+            script.Activity();
 
             if (InGameDateTimeManager.TimeOfDay.Hours == HourOfClockPlayerForcedSleepIn24H)
             {
@@ -723,6 +724,8 @@ namespace FishStory.Screens
             GameScreenGum.StoreInstance.CustomActivity();
 
             GameScreenGum.NotificationBoxInstance.CustomActivity();
+
+            DayAndTimeDisplayInstance.UpdateTime(InGameDateTimeManager.OurInGameDay);
 
             InventoryUiActivity();
         }
