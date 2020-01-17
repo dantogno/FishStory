@@ -686,8 +686,7 @@ namespace FishStory.Screens
             // stop player from moving
             PlayerCharacterInstance.ObjectsBlockingInput.Add(GameScreenGum.OverlayInstance);
 
-            // fade UI out
-            GameScreenGum.ToBlackAnimation.Play();
+            FadeToBlack();
 
             // reset purchases
             this.ItemsBought.Clear();
@@ -695,9 +694,8 @@ namespace FishStory.Screens
             // research tracked day
             InGameDateTimeManager.ResetDay();
 
-            // fade UI in
-            GameScreenGum.ToTransparentAnimation.PlayAfter(GameScreenGum.ToBlackAnimation.Length);
-
+            this.Call(FadeIn).After(GameScreenGum.ToBlackAnimation.Length);
+            
             // allow player movement
             this.Call(() =>
             {
@@ -709,6 +707,7 @@ namespace FishStory.Screens
 
             }).After(GameScreenGum.ToBlackAnimation.Length + GameScreenGum.ToTransparentAnimation.Length);
         }
+
 
         #region UI Activity
 
@@ -935,6 +934,28 @@ namespace FishStory.Screens
             GameScreenGum.NotificationBoxInstance.AddNotification($"Earned ${amountOfMoney}");
 
             PlayerDataManager.PlayerData.Money += amountOfMoney;
+        }
+
+        protected void FadeIn()
+        {
+            // fade UI in
+            GameScreenGum.ToTransparentAnimation.Play();
+        }
+
+        protected static void FadeToBlack()
+        {
+            GameScreenGum.ToBlackAnimation.Play();
+        }
+
+        protected bool IsNpcOnScreen(string npcName)
+        {
+            var npc = NPCList.FirstOrDefault(item => item.Name == npcName);
+
+            {
+                throw new Exception($"Could not find NPC with name {npcName}");
+            }
+
+            return npc.IsOnScreen();
         }
 
         #endregion

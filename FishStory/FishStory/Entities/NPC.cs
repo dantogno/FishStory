@@ -43,5 +43,15 @@ namespace FishStory.Entities
 
 
         }
+
+        public bool IsOnScreen()
+        {
+            var camera = Camera.Main;
+            var isOffScreen = SpriteInstance.X > camera.X + camera.OrthogonalWidth / 2 + SpriteInstance.Width / 2 ||
+                SpriteInstance.X < camera.X - camera.OrthogonalWidth / 2 - SpriteInstance.Width / 2 ||
+                SpriteInstance.Y > camera.Y + camera.OrthogonalHeight / 2 + SpriteInstance.Height / 2 ||
+                SpriteInstance.Y < camera.Y - camera.OrthogonalHeight / 2 - SpriteInstance.Height / 2;
+            return !isOffScreen;
+        }
     }
 }
