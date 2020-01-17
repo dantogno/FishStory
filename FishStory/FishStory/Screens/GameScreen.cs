@@ -363,6 +363,9 @@ namespace FishStory.Screens
             {
                 GoToNewDay();
             }
+
+            var isTycoonOnScreen = IsNpcOnScreen("Tycoon");
+            System.Diagnostics.Debug.WriteLine(isTycoonOnScreen);
         }
 
         void CameraActivity()
