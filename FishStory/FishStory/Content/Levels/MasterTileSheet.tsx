@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.2.4" name="MasterTileSheet" tilewidth="16" tileheight="16" tilecount="16384" columns="128">
+<tileset version="1.2" tiledversion="1.3.1" name="MasterTileSheet" tilewidth="16" tileheight="16" tilecount="16384" columns="128">
  <image source="MasterTileSheet.png" width="2048" height="2048"/>
  <tile id="0">
   <properties>
@@ -260,6 +260,21 @@
  <tile id="6729">
   <properties>
    <property name="WaterCollision" value=""/>
+  </properties>
+ </tile>
+ <tile id="6730">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
+ </tile>
+ <tile id="6731">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
+ </tile>
+ <tile id="6732">
+  <properties>
+   <property name="SolidCollision" value=""/>
   </properties>
  </tile>
  <tile id="6834">
