@@ -68,28 +68,13 @@ namespace FishStory.Screens
 
         private void DoDay1Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
-            If.Check(() =>
-            {
-                return PlayerDataManager.PlayerData.CurrentDay == 1;
-            });
-            Do.Call(() =>
-            {
-                GameScreenGum.InputInstructionsInstance.Visible = true;
-                var secondsToShowInputCallout = 7;
-                this
-                    .Call(() => GameScreenGum.InputInstructionsInstance.Visible = false)
-                    .After(secondsToShowInputCallout);
-            });
+            GameScreenGum.InputInstructionsInstance.Visible = true;
+            var secondsToShowInputCallout = 7;
+            this
+                .Call(() => GameScreenGum.InputInstructionsInstance.Visible = false)
+                .After(secondsToShowInputCallout);
 
-
-            If.Check(() =>
-            {
-                return PlayerDataManager.PlayerData.CurrentDay == 1;
-            });
-            Do.Call(() =>
-            {
-                InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(12));
-            });
+            InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(12));
 
             #region Identifier
             If.Check(() => HasTag("HasSeenIdentifierDay1"));
