@@ -954,6 +954,7 @@ namespace FishStory.Screens
         {
             var npc = NPCList.FirstOrDefault(item => item.Name == npcName);
 
+            if(npc == null)
             {
                 throw new Exception($"Could not find NPC with name {npcName}");
             }
