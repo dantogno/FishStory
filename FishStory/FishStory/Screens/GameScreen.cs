@@ -314,6 +314,9 @@ namespace FishStory.Screens
                 $"this.{nameof(PlayerCharacterInstance)}.{nameof(PlayerCharacterInstance.X)}");
             RestartVariables.Add(
                 $"this.{nameof(PlayerCharacterInstance)}.{nameof(PlayerCharacterInstance.Y)}");
+
+            RestartVariables.Add($"Camera.Main.X");
+            RestartVariables.Add($"Camera.Main.Y");
         }
 
         #endregion
@@ -363,7 +366,11 @@ namespace FishStory.Screens
             {
                 GoToNewDay();
             }
-
+            if (DebuggingVariables.SkipDayWithCtrlD && keyboard.IsCtrlDown &&
+                keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.R))
+            {
+                RestartScreen(false);
+            }
         }
 
         void CameraActivity()
