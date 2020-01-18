@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="130" height="100" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="63">
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="130" height="100" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="63">
  <tileset firstgid="1" source="MasterTileSheet.tsx"/>
  <layer id="1" name="Tile Layer 1" width="130" height="100">
   <data encoding="base64" compression="gzip">
@@ -29,6 +29,11 @@
  <layer id="7" name="Tile Layer 6" width="130" height="100" opacity="0.79">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAECu3QMQEAAADCoPVPbQ0PiEBhwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDDwNDB9VAwoIMsAAA==
+  </data>
+ </layer>
+ <layer id="10" name="InvisibleCollisionLayer" width="130" height="100" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAECu2WC44jIQwF5wZ7/9vuotWTLE+DSQw0TRfSyBjjX5kk8/PDggAEIAABCEAAAhCAAAQgAAEIQAACEIAABCAAAQhAAAIQgAAEIAABCEAAAs8h8OdfqZ/+Pac7Ku0l8OkbKPdZZxCws+QdnDHTb7qY+Q5s7G9qw2cdgdaser4fWpW2Yrf8sK0nMHNWM2OvJ3V2xpmzmhn77Kms727mrGbGXk/q7IwzZ5WJXXyzf2dPbmx3mVlFlWRiZ99AJnfU14n2EbwVw/K5OrP2aC//jIxyYN+fQGb+8t2/SyqMCGiWGRnlwL4/gcz85bt/l1QYEdAsMzLKgX1/Apn5y3f/LqkwIqBZZmTJ0fKPasA+hkBrBt52lbHnzpWfPfMxrF7uWV17688+T0Bce+RVNu93dSc68zGsXnytrr1iSrdSNmQ/Acsv2vdHrd+0OXTLnvl9uePPiq5lbTo7Wdp+/f6uvu08bA2+PnvP24qfP7N6ZLexbQ2n7i0bv9+xZ1tjVJ+96/fF159ZPYp9mt327ven9Uo/EIDA8wiU76Xe5b/DpEf+tRzyr9mjuNjvIWDnpn2mEsW4kpm4T/YtLO5cdha1Ouwd7Wt3OX8mAc21SNYzCdgZ+v23Hfn34PVaXJ//Sq/5cp4jcMVaZ7nIn3srb0t+HhWPHgI7MW/VIltPT9yBAAT2IVA+u3Z53drYQwAC/wnoN8/KkWxsXD6TI8mOjeXnNHpWs+PXaPg+vF7z43weAf8W5mUi8u4E9BZ2r5P6IAABCLydgL6vJS0PnRU5e9lcK/LN7udp8S1zPwvZJGf1Vss7Kx9xfxNozVg2yd/e7RM/39rt3ns1f87XEBj1Dlpx9BbWdESWbwi05hfF03wlo/uj7L5mr4/K86Y4WYar38CbZnNSr9l3dhILeoHAGwjot2HVZ9/n8fobmO/Y4+p3sCMDaoIABCAAgfsI+P8HvH5fZWSGAAQgAAEIQAACEIAABCAAAQhAAAIQgAAEIAABCEAAAhCAAAQgAAEIQAACEIAABCAAAQhAAAIQgAAEIAABCEAAAhCAAAQgAAEIQAACEIAABCAAAQicS+AvGXpviyDLAAA=
   </data>
  </layer>
  <objectgroup id="6" name="Entities" visible="0">

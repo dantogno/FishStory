@@ -37,6 +37,11 @@
    <property name="WaterCollision" value=""/>
   </properties>
  </tile>
+ <tile id="14">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
+ </tile>
  <tile id="384">
   <properties>
    <property name="WaterCollision" value=""/>

@@ -1736,7 +1736,7 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>Radius</Member>
-            <ValueAsFloat>10</ValueAsFloat>
+            <ValueAsFloat>8</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>Microsoft.Xna.Framework.Color</Type>
@@ -2062,7 +2062,7 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>Radius</Member>
-            <ValueAsFloat>10</ValueAsFloat>
+            <ValueAsFloat>8</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>
