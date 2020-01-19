@@ -530,6 +530,7 @@ namespace FishStory.Screens
                         string fishCaught = GetFishCaught(PlayerCharacterInstance.CurrentBait);
                         PlayerDataManager.PlayerData.AwardItem(fishCaught);
                         AddNotification($"Caught {fishCaught}");
+                        SoundManager.Play(GlobalContent.FishCatchSound);
                     }
                     PlayerCharacterInstance.StopFishing();
                 }
@@ -622,6 +623,7 @@ namespace FishStory.Screens
                 AddNotification($"Used {baitType}");
 
                 PlayerCharacterInstance.StartFishing(baitType);
+                SoundManager.Play(GlobalContent.FishingCastSound);
             }
         }
 
@@ -808,7 +810,7 @@ namespace FishStory.Screens
             {
                 AddNotification($"Identified {newItemKvp.Key} ({newItemKvp.Value})");
             }
-
+            SoundManager.Play(GlobalContent.FishIdentificationSound);
         }
 
         private void HandleSellClicked()
@@ -848,6 +850,7 @@ namespace FishStory.Screens
                     AddNotification($"Sold {selectedItemName}");
                 }
             }
+            SoundManager.Play(GlobalContent.StoreBuySound);
         }
 
         private void HandleDialogBoxHide()
@@ -902,6 +905,7 @@ namespace FishStory.Screens
             PlayerDataManager.PlayerData.AwardItem(itemToBuy.Name);
 
             GameScreenGum.StoreInstance.PlayerMoneyText = $"${PlayerDataManager.PlayerData.Money}";
+            SoundManager.Play(GlobalContent.StoreBuySound);
         }
 
         private void InventoryUiActivity()

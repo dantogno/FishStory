@@ -1,3 +1,4 @@
+using FishStory.Managers;
 using FlatRedBall;
 using FlatRedBall.Input;
 using Gum.Wireframe;
@@ -276,7 +277,11 @@ namespace FishStory.GumRuntimes
                 DialogOptions.Visible = isPrintingDone;
                 ActionIndicatorInstance.Visible = isPrintingDone && DialogOptions.Children.Count() == 0;
 
-                if (DialogOptions.Children.Any() && isPrintingDone)
+                if (!isPrintingDone)
+                {
+                    SoundManager.PlayIfNotPlaying(GlobalContent.TypewriterKeySound);
+                }
+                else if (DialogOptions.Children.Any() && isPrintingDone)
                 {
                     if(UpInput.WasJustPressed)
                     {
@@ -290,6 +295,7 @@ namespace FishStory.GumRuntimes
                         {
                             SelectedIndex--;
                         }
+                        SoundManager.Play(GlobalContent.MenuMoveSound);
                     }
                     if(DownInput.WasJustPressed)
                     {
@@ -303,6 +309,7 @@ namespace FishStory.GumRuntimes
                         {
                             SelectedIndex++;
                         }
+                        SoundManager.Play(GlobalContent.MenuMoveSound);
                     }
                 }
 
@@ -351,6 +358,7 @@ namespace FishStory.GumRuntimes
 
 
                 UpdateToCurrentTreeAndNode();
+                SoundManager.Play(GlobalContent.DialogueAdvanceSound);
             }
             else
             {

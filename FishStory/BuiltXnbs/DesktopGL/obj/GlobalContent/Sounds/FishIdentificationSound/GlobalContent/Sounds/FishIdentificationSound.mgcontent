@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/FRB/Source/FishStory/FishStory/FishStory/Content/GlobalContent/Sounds/FishIdentificationSound.wav</SourceFile>
+  <SourceTime>2020-01-18T22:34:04.2870531-08:00</SourceTime>
+  <DestFile>C:/FRB/Source/FishStory/FishStory/BuiltXnbs/DesktopGL/GlobalContent/Sounds/FishIdentificationSound.xnb</DestFile>
+  <DestTime>2020-01-18T22:34:38.612022-08:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2018-09-23T00:28:20-07:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2018-09-23T00:28:20-07:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

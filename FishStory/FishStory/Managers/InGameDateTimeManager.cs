@@ -1,12 +1,8 @@
 ﻿using FishStory.Screens;
 using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace FishStory.Entities
+namespace FishStory.Managers
 {
     public static class InGameDateTimeManager
     {

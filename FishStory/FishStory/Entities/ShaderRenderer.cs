@@ -1,3 +1,4 @@
+using FishStory.Managers;
 using FlatRedBall;
 using FlatRedBall.Glue.StateInterpolation;
 using Microsoft.Xna.Framework;
