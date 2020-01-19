@@ -21,6 +21,7 @@ namespace FishStory.Entities
         private static double minutesElapsedPerSecond = 6;
 
         private const float minutesAtNoon = minutesPerDay/2;
+        private static float minutesWhenItStartsGettingDark = 15 * minutesPerHour;
         private static float minutesAtSundown = (float)GameScreen.HourOnClockSunSetsIn24H * minutesPerHour;
         private static float minutesWhenPlayerWakes = (float)GameScreen.HourOnClockPlayerWakesIn24H * minutesPerHour;
         private static float minutesWhenPlayerIsForcedAsleep = (float)GameScreen.HourOfClockPlayerForcedSleepIn24H * minutesPerHour;
@@ -70,18 +71,18 @@ namespace FishStory.Entities
             {
                 return 0f;
             }
+            else if (minutesElapsed >= minutesAtNoon && minutesElapsed <= minutesWhenItStartsGettingDark)
+            {
+                return 1f;
+            }
             else if (minutesElapsed > minutesWhenPlayerWakes && minutesElapsed < minutesAtNoon)
             {
                 return ((minutesElapsed - minutesWhenPlayerWakes) / (minutesAtNoon - minutesWhenPlayerWakes));
             }
-            else if (minutesElapsed == minutesAtNoon)
-            {
-                return 1f;
-            }
             else if (minutesElapsed < minutesAtSundown)
             {
-                var minutesPastNoon = minutesElapsed - minutesAtNoon;
-                return 1f - (minutesPastNoon / (minutesAtSundown - minutesAtNoon));
+                var minutesPastWhenItGetsDark = minutesElapsed - minutesWhenItStartsGettingDark;
+                return 1f - (minutesPastWhenItGetsDark / (minutesAtSundown - minutesWhenItStartsGettingDark));
             }
             else return 0f;
         }

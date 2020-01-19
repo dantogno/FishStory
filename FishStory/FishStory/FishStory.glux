@@ -2355,6 +2355,11 @@
                   <Member>CreatesLight</Member>
                   <ValueAsBool>true</ValueAsBool>
                 </InstructionSave>
+                <InstructionSave>
+                  <Type>Single</Type>
+                  <Member>LightBrightness</Member>
+                  <ValueAsFloat>0.35</ValueAsFloat>
+                </InstructionSave>
               </InstructionSaves>
               <Name>StreetLight</Name>
             </StateSave>
@@ -2378,7 +2383,7 @@
                 <InstructionSave>
                   <Type>Single</Type>
                   <Member>LightBrightness</Member>
-                  <ValueAsFloat>0.6</ValueAsFloat>
+                  <ValueAsFloat>0.25</ValueAsFloat>
                 </InstructionSave>
               </InstructionSaves>
               <Name>Lantern</Name>
