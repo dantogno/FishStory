@@ -343,7 +343,7 @@ namespace FishStory.Screens
 
             // do script *after* the UI
             Map?.AnimateSelf();
-            UpdatePropObjects();
+            UpdatePropObjectsLights();
 
             script.Activity();
 
@@ -459,25 +459,28 @@ namespace FishStory.Screens
             DoFishingActivity();
         }
 
-        private void UpdatePropObjects()
+        private void UpdatePropObjectsLights()
         {
             var lightShouldBeOn = InGameDateTimeManager.TimeOfDay.TotalHours >= HourOnClockLightPostsTurnOnIn24H ||
                                 InGameDateTimeManager.TimeOfDay.TotalHours < HourOnClockLightPostsTurnOffIn24H;
             var lights = PropObjectList.Where(po => po.CurrentPropNameState == PropName.StreetLight);
             foreach (var lightSource in lights)
             {
-                if (lightSource.CurrentChainName != "On" && lightShouldBeOn)
+                if (lightShouldBeOn && lightSource.CurrentChainName != "On")
                 {
                     lightSource.ShowLight();
                     
                 }
-                else if (lightSource.CurrentChainName != "Off" && !lightShouldBeOn)
+                else if (!lightShouldBeOn && lightSource.CurrentChainName != "Off")
                 {
                     lightSource.HideLight();
                 }
             }
-            PlayerCharacterInstance.Lantern.SpriteInstanceVisible = lightShouldBeOn;
-            PlayerCharacterInstance.Lantern.LightSpriteInstanceVisible = lightShouldBeOn;
+            if (PlayerCharacterInstance.Lantern.SpriteInstanceVisible != lightShouldBeOn)
+            {
+                PlayerCharacterInstance.Lantern.SpriteInstanceVisible = lightShouldBeOn;
+                PlayerCharacterInstance.Lantern.LightSpriteInstanceVisible = lightShouldBeOn;
+            }
         }
 
         private void HandleDoorOptionSelected(DialogTreeRaw.Link selectedLink)
