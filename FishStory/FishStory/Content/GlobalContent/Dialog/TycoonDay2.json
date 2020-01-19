@@ -1,0 +1,190 @@
+{
+  "passages": [
+    {
+      "text": "Ah, you again! So, how are you enjoying your lodgings?\n[[The trailer is a bit drafty.|Drafty]]\n[[It's perfect, thank you!|Perfect]]",
+      "links": [
+        {
+          "name": "The trailer is a bit drafty.|Drafty",
+          "link": "The trailer is a bit drafty.|Drafty"
+        },
+        {
+          "name": "It's perfect, thank you!|Perfect",
+          "link": "It's perfect, thank you!|Perfect"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "495",
+        "y": "559.5"
+      }
+    },
+    {
+      "text": "Well of course it is! How else would you fully take in the fresh sea air that you traveled so far to enjoy?\n[[I told you, I'm not here for vacation.|No vacation]]\n[[I guess you're right.|Youre right]]",
+      "links": [
+        {
+          "name": "I told you, I'm not here for vacation.|No vacation",
+          "link": "I told you, I'm not here for vacation.|No vacation"
+        },
+        {
+          "name": "I guess you're right.|Youre right",
+          "link": "I guess you're right.|Youre right"
+        }
+      ],
+      "name": "Drafty",
+      "pid": "2",
+      "position": {
+        "x": "420",
+        "y": "709.5"
+      }
+    },
+    {
+      "text": "See, I knew the moment I saw you that you were the type that understands quality when you see it! You have the critical eye of an artist! And I'm sure an artist such as yourself would be simply ecstatic at the opportunity to take in everything this wonderful location has to offer.\n[[Continue2]]",
+      "links": [
+        {
+          "name": "Continue2",
+          "link": "Continue2",
+          "pid": "11"
+        }
+      ],
+      "name": "Perfect",
+      "pid": "3",
+      "position": {
+        "x": "570",
+        "y": "709.5"
+      }
+    },
+    {
+      "text": "Hmm, is that so? Well, regardless, you don't have to be on vacation to enjoy everything this wonderful location has to offer! Can I interest you in a scenic boat ride? For a small fee, of course.\n[[Could the boat take me back to the mainland?|Mainland]]\n[[No thanks. I have to get back to fishing.|Fishing to do]]",
+      "links": [
+        {
+          "name": "Could the boat take me back to the mainland?|Mainland",
+          "link": "Could the boat take me back to the mainland?|Mainland"
+        },
+        {
+          "name": "No thanks. I have to get back to fishing.|Fishing to do",
+          "link": "No thanks. I have to get back to fishing.|Fishing to do"
+        }
+      ],
+      "name": "No vacation",
+      "pid": "4",
+      "position": {
+        "x": "405",
+        "y": "862.5"
+      }
+    },
+    {
+      "text": "Yes, yes. See, for a moment there, it almost seemed like you weren't grateful for the generosity I've bestowed upon you. Almost as if I hadn't provided you with a sturdy roof over your head when I was under no obligation to do so.\n[[Continue]]",
+      "links": [
+        {
+          "name": "Continue",
+          "link": "Continue",
+          "pid": "8"
+        }
+      ],
+      "name": "Youre right",
+      "pid": "5",
+      "position": {
+        "x": "229",
+        "y": "863.5"
+      }
+    },
+    {
+      "text": "Oh no, of course not. This is a strictly leisure-oriented activity. Besides, the only boat capable of making a journey through waters that rough won't be leaving until after the festival.\n[[I have fishing to do.|Fishing to do]]",
+      "links": [
+        {
+          "name": "I have fishing to do.|Fishing to do",
+          "link": "I have fishing to do.|Fishing to do"
+        }
+      ],
+      "name": "Mainland",
+      "pid": "6",
+      "position": {
+        "x": "572",
+        "y": "1015.5"
+      }
+    },
+    {
+      "text": "Harrumph. Well, don't let me keep you from such an \"important\" task..",
+      "name": "Fishing to do",
+      "pid": "7",
+      "position": {
+        "x": "463",
+        "y": "1291.5"
+      }
+    },
+    {
+      "text": "But that would be quite silly, wouldn't it?\n[[Yes it would.|Yes silly]]\n[[Actually...|No silly]]",
+      "links": [
+        {
+          "name": "Yes it would.|Yes silly",
+          "link": "Yes it would.|Yes silly"
+        },
+        {
+          "name": "Actually...|No silly",
+          "link": "Actually...|No silly"
+        }
+      ],
+      "name": "Continue",
+      "pid": "8",
+      "position": {
+        "x": "230",
+        "y": "975.5"
+      }
+    },
+    {
+      "text": "I thought so. Now, let's take a moment to talk about the many amazing amenities available to you (for a small fee) at this delightful location.\n[[I have fishing to do.|Fishing to do]]",
+      "links": [
+        {
+          "name": "I have fishing to do.|Fishing to do",
+          "link": "I have fishing to do.|Fishing to do"
+        }
+      ],
+      "name": "Yes silly",
+      "pid": "9",
+      "position": {
+        "x": "167",
+        "y": "1104.5"
+      }
+    },
+    {
+      "text": "Let me stop you right there. I have better things to do that listen to a stranger - a beggarly stranger, no less - lecture me about the integrity of my facilities. And I trust that you do as well. Or do you spend the majority of your time accosting innocent small business owners?\n[[I have fishing to do.|Fishing to do]]",
+      "links": [
+        {
+          "name": "I have fishing to do.|Fishing to do",
+          "link": "I have fishing to do.|Fishing to do"
+        }
+      ],
+      "name": "No silly",
+      "pid": "10",
+      "position": {
+        "x": "279",
+        "y": "1101.5"
+      }
+    },
+    {
+      "text": "Mayhaps I can interest you in a scenic boat ride? For a small fee, of course.\n[[Could the boat take me back to the mainland?|Mainland]]\n[[No thanks. I have to get back to fishing.|Fishing to do]]",
+      "links": [
+        {
+          "name": "Could the boat take me back to the mainland?|Mainland",
+          "link": "Could the boat take me back to the mainland?|Mainland"
+        },
+        {
+          "name": "No thanks. I have to get back to fishing.|Fishing to do",
+          "link": "No thanks. I have to get back to fishing.|Fishing to do"
+        }
+      ],
+      "name": "Continue2",
+      "pid": "11",
+      "position": {
+        "x": "578",
+        "y": "865.5"
+      }
+    }
+  ],
+  "name": "TycoonDay2",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "F554F3ED-CFA3-4816-9714-83F9D05738C0"
+}
