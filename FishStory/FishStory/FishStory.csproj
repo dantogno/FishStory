@@ -102,7 +102,9 @@
       <DependentUpon>ShaderRenderer.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\DialoguePortraitRuntime.cs" />
-    <Compile Include="GumRuntimes\DialoguePortraitRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DialoguePortraitRuntime.Generated.cs">
+      <DependentUpon>DialoguePortraitRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Managers\InGameDateTimeManager.cs" />
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\FishIdentifiedSignFactory.Generated.cs" />

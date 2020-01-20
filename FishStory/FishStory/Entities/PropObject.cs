@@ -31,19 +31,8 @@ namespace FishStory.Entities
 
         }
 
-        public void SetLayers(Layer worldLayer, Layer lightEffectLayer)
+        public void SetLayers(Layer lightEffectLayer)
         {
-            try
-            {
-                worldLayer.Remove(SpriteInstance);
-            }
-            catch { }
-            try
-            {
-                worldLayer.Remove(LightSpriteInstance);
-            }
-            catch { }
-            SpriteManager.AddToLayer(SpriteInstance, worldLayer);
             if (CreatesLight)
             {
                 SpriteManager.AddToLayer(LightSpriteInstance, lightEffectLayer);

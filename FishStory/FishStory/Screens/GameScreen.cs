@@ -59,7 +59,7 @@ namespace FishStory.Screens
             script = new ScreenScript<GameScreen>(this);
 
             InitializeEntitiesFromMap();
-            Map.AddToManagers(WorldLayer);
+            //Map.AddToManagers(WorldLayer);
 
             DialogBox.Visible = false;
             DialoguePortrait.Visible = false;
@@ -74,7 +74,7 @@ namespace FishStory.Screens
 
             InitializeUi();
 
-            InitializeShaders();
+            InitializeDarnkess();
 
             InitializeRestartVariables();
 
@@ -88,37 +88,18 @@ namespace FishStory.Screens
         {
             PlayerCharacterInstance.FishLost += HandleFishLost;
             PlayerCharacterInstance.Lantern.Z = 1; // above the player, so always on top
-            PlayerCharacterInstance.Lantern.SetLayers(WorldLayer, LightEffectsLayer);
+            PlayerCharacterInstance.Lantern.SetLayers(LightEffectsLayer);
         }
-        private void InitializeShaders()
+        private void InitializeDarnkess()
         {
-            AdjustLayerOrthoValues();
+            BaseNightTimeColor.ColorOperation = FlatRedBall.Graphics.ColorOperation.Color;
 
-            WorldLayer.RenderTarget = WorldRenderTarget;
+            //WorldLayer.RenderTarget = WorldRenderTarget;
             LightEffectsLayer.RenderTarget = NightDarknessRenderTarget;
             //BackgroundLayer.RenderTarget = BackgroundRenderTarget;
+            DarknessOverlaySprite.Texture = NightDarknessRenderTarget;
 
-            ShaderRendererInstance.WorldTexture = WorldRenderTarget;
-            ShaderRendererInstance.LightSourcesTexture = NightDarknessRenderTarget;
-            //ShaderRendererInstance.BackgroundTexture = BackgroundRenderTarget;
-            ShaderRendererInstance.Viewer = Camera.Main;
-
-            ShaderRendererInstance.InitializeRenderVariables();
-        }
-
-        private void AdjustLayerOrthoValues()
-        {
-            WorldLayer.LayerCameraSettings.OrthogonalWidth = Camera.Main.OrthogonalWidth;
-            WorldLayer.LayerCameraSettings.OrthogonalHeight = Camera.Main.OrthogonalHeight;
-
-            //LightLayer.LayerCameraSettings.OrthogonalWidth = Camera.Main.OrthogonalWidth;
-            //LightLayer.LayerCameraSettings.OrthogonalHeight = Camera.Main.OrthogonalHeight;
-
-            ShaderOutputLayer.LayerCameraSettings.OrthogonalWidth = Camera.Main.OrthogonalWidth;
-            ShaderOutputLayer.LayerCameraSettings.OrthogonalHeight = Camera.Main.OrthogonalHeight;
-
-            //InfoLayer.LayerCameraSettings.OrthogonalWidth = Camera.Main.OrthogonalWidth;
-            //InfoLayer.LayerCameraSettings.OrthogonalHeight = Camera.Main.OrthogonalHeight;
+            DarknessOverlaySprite.BlendOperation = FlatRedBall.Graphics.BlendOperation.Modulate;
         }
 
 #if DEBUG
@@ -231,13 +212,13 @@ namespace FishStory.Screens
 
             foreach(var npc in NPCList)
             {
-                npc.Z = 0; // same as player so they sort
-                npc.MoveToLayer(WorldLayer);
+                npc.Z = PlayerCharacterInstance.Z; // same as player so they sort
+                //npc.MoveToLayer(WorldLayer);
             }
             foreach(var propObject in PropObjectList)
             {
-                propObject.Z = 0; // same as player so they sort
-                propObject.SetLayers(WorldLayer, LightEffectsLayer);
+                propObject.Z = PlayerCharacterInstance.Z; // same as player so they sort
+                propObject.SetLayers(LightEffectsLayer);
             }
 
 
@@ -302,6 +283,8 @@ namespace FishStory.Screens
             #endregion
 
             GameScreenGum.NotificationBoxInstance.UpdateVisibility();
+
+            GameScreenGum.MoveToFrbLayer(UILayer, UILayerGum);
         }
 
         private void HandlePlayerVsNpcActivityCollision(PlayerCharacter player, NPC npc)
@@ -335,6 +318,8 @@ namespace FishStory.Screens
             CameraActivity();
             
             InGameDateTimeManager.Activity(firstTimeCalled);
+            DarknessOverlaySprite.Alpha = 1-InGameDateTimeManager.SunlightEffectiveness;
+            UpdatePropObjectsLights();
 
             UiActivity();
 
@@ -344,7 +329,6 @@ namespace FishStory.Screens
 
             // do script *after* the UI
             Map?.AnimateSelf();
-            UpdatePropObjectsLights();
 
             script.Activity();
             DialoguePortrait.Visible = DialogBox.Visible;
@@ -371,6 +355,20 @@ namespace FishStory.Screens
                 keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.R))
             {
                 RestartScreen(false);
+            }
+
+            if(DebuggingVariables.PlusMinusControlsHour)
+            {
+                if(keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.OemPlus))
+                {
+                    InGameDateTimeManager.SetTimeOfDay(InGameDateTimeManager.TimeOfDay + TimeSpan.FromHours(1));
+                }
+                if (keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.OemMinus))
+                {
+                    InGameDateTimeManager.SetTimeOfDay(InGameDateTimeManager.TimeOfDay - TimeSpan.FromHours(1));
+
+                }
+
             }
         }
 
@@ -463,30 +461,6 @@ namespace FishStory.Screens
             DoFishingActivity();
         }
 
-        private void UpdatePropObjectsLights()
-        {
-            var lightShouldBeOn = InGameDateTimeManager.TimeOfDay.TotalHours >= HourOnClockLightPostsTurnOnIn24H ||
-                                InGameDateTimeManager.TimeOfDay.TotalHours < HourOnClockLightPostsTurnOffIn24H;
-            var lights = PropObjectList.Where(po => po.CurrentPropNameState == PropName.StreetLight);
-            foreach (var lightSource in lights)
-            {
-                if (lightShouldBeOn && lightSource.CurrentChainName != "On")
-                {
-                    lightSource.ShowLight();
-                    
-                }
-                else if (!lightShouldBeOn && lightSource.CurrentChainName != "Off")
-                {
-                    lightSource.HideLight();
-                }
-            }
-            if (PlayerCharacterInstance.Lantern.SpriteInstanceVisible != lightShouldBeOn)
-            {
-                PlayerCharacterInstance.Lantern.SpriteInstanceVisible = lightShouldBeOn;
-                PlayerCharacterInstance.Lantern.LightSpriteInstanceVisible = lightShouldBeOn;
-            }
-        }
-
         private void HandleDoorOptionSelected(DialogTreeRaw.Link selectedLink)
         {
             DialogBox.TryHide();
@@ -539,6 +513,30 @@ namespace FishStory.Screens
                     PlayerCharacterInstance.StopFishing();
                 }
             }           
+        }
+
+        private void UpdatePropObjectsLights()
+        {
+            var lightShouldBeOn = InGameDateTimeManager.TimeOfDay.TotalHours >= HourOnClockLightPostsTurnOnIn24H ||
+                                InGameDateTimeManager.TimeOfDay.TotalHours < HourOnClockLightPostsTurnOffIn24H;
+            var lights = PropObjectList.Where(po => po.CurrentPropNameState == PropName.StreetLight);
+            foreach (var lightSource in lights)
+            {
+                if (lightShouldBeOn && lightSource.CurrentChainName != "On")
+                {
+                    lightSource.ShowLight();
+
+                }
+                else if (!lightShouldBeOn && lightSource.CurrentChainName != "Off")
+                {
+                    lightSource.HideLight();
+                }
+            }
+            if (PlayerCharacterInstance.Lantern.SpriteInstanceVisible != lightShouldBeOn)
+            {
+                PlayerCharacterInstance.Lantern.SpriteInstanceVisible = lightShouldBeOn;
+                PlayerCharacterInstance.Lantern.LightSpriteInstanceVisible = lightShouldBeOn;
+            }
         }
 
         private string GetFishCaught(string baitType)
