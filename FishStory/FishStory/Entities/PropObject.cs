@@ -39,6 +39,24 @@ namespace FishStory.Entities
             }
         }
 
+        public void ShowLight()
+        {
+            if (CreatesLight)
+            {
+                LightSpriteInstance.Visible = true;
+                SpriteInstance.CurrentChainName = "On";
+            }
+        }
+
+        public void HideLight()
+        {
+            if (CreatesLight)
+            {
+                LightSpriteInstance.Visible = false;
+                SpriteInstance.CurrentChainName = "Off";
+            }
+        }
+
         private void CustomDestroy()
         {
 

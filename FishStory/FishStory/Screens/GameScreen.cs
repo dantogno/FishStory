@@ -91,7 +91,7 @@ namespace FishStory.Screens
         }
         private void InitializeDarnkess()
         {
-            AllBlackForDarknessSprite.ColorOperation = FlatRedBall.Graphics.ColorOperation.Color;
+            BaseNightTimeColor.ColorOperation = FlatRedBall.Graphics.ColorOperation.Color;
 
             //WorldLayer.RenderTarget = WorldRenderTarget;
             LightEffectsLayer.RenderTarget = NightDarknessRenderTarget;
@@ -316,6 +316,7 @@ namespace FishStory.Screens
             
             InGameDateTimeManager.Activity(firstTimeCalled);
             DarknessOverlaySprite.Alpha = 1-InGameDateTimeManager.SunlightEffectiveness;
+            UpdatePropObjectsLights();
 
             UiActivity();
 
@@ -506,6 +507,30 @@ namespace FishStory.Screens
                     PlayerCharacterInstance.StopFishing();
                 }
             }           
+        }
+
+        private void UpdatePropObjectsLights()
+        {
+            var lightShouldBeOn = InGameDateTimeManager.TimeOfDay.TotalHours >= HourOnClockLightPostsTurnOnIn24H ||
+                                InGameDateTimeManager.TimeOfDay.TotalHours < HourOnClockLightPostsTurnOffIn24H;
+            var lights = PropObjectList.Where(po => po.CurrentPropNameState == PropName.StreetLight);
+            foreach (var lightSource in lights)
+            {
+                if (lightShouldBeOn && lightSource.CurrentChainName != "On")
+                {
+                    lightSource.ShowLight();
+
+                }
+                else if (!lightShouldBeOn && lightSource.CurrentChainName != "Off")
+                {
+                    lightSource.HideLight();
+                }
+            }
+            if (PlayerCharacterInstance.Lantern.SpriteInstanceVisible != lightShouldBeOn)
+            {
+                PlayerCharacterInstance.Lantern.SpriteInstanceVisible = lightShouldBeOn;
+                PlayerCharacterInstance.Lantern.LightSpriteInstanceVisible = lightShouldBeOn;
+            }
         }
 
         private string GetFishCaught(string baitType)
