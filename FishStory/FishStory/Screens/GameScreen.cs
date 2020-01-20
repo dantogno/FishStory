@@ -22,6 +22,7 @@ using FishStory.GumRuntimes;
 using static DialogTreePlugin.SaveClasses.DialogTreeRaw;
 using DialogTreePlugin.SaveClasses;
 using static FishStory.Entities.PropObject;
+using Microsoft.Xna.Framework.Media;
 
 namespace FishStory.Screens
 {
@@ -331,21 +332,35 @@ namespace FishStory.Screens
             Map?.AnimateSelf();
 
             script.Activity();
-            DialoguePortrait.Visible = DialogBox.Visible;
+            
             if (InGameDateTimeManager.TimeOfDay.Hours == HourOfClockPlayerForcedSleepIn24H)
             {
                 ForcePlayerToSleep();
             }
 
-            PlayMusicForDay();
+            PlaySongForDay();
         }
 
-        private void PlayMusicForDay()
+        private void PlaySongForDay()
         {
-            var songToPlayForDay = GlobalContent.music_calm_tree_of_life;
-            if (InGameDateTimeManager.OurInGameDay.Day == 2)
-                songToPlayForDay = GlobalContent.music_calm_green_lake_serenade;
-            if (MusicManager.CurrentSong != songToPlayForDay)
+            Song songToPlayForDay;
+            switch (InGameDateTimeManager.OurInGameDay.Day)
+            {
+                case 1:
+                    songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
+                //case 2:
+                    //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
+                //case 3:
+                    //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
+                //case 4:
+                    //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
+                //case 5:
+                    //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
+                default:
+                    songToPlayForDay = GlobalContent.music_calm_green_lake_serenade; break;
+            }
+
+            if (MusicManager.IsSongPlaying == false || MusicManager.CurrentSong != songToPlayForDay)
             {
                 MusicManager.PlaySong(songToPlayForDay);
             }
@@ -409,6 +424,7 @@ namespace FishStory.Screens
                         if (DialogBox.TryShow(npc.DirectlySetDialog))
                         {
                             DialoguePortrait.SetTextureCoordinates(npcTextureRectangle);
+                            DialoguePortrait.Visible = true;
                             PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                         }
 
@@ -418,6 +434,7 @@ namespace FishStory.Screens
                         if (DialogBox.TryShow(npc.TwineDialogId))
                         {
                             DialoguePortrait.SetTextureCoordinates(npcTextureRectangle);
+                            DialoguePortrait.Visible = true;
                             PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                         }
                     }
@@ -874,6 +891,7 @@ namespace FishStory.Screens
             {
                 PlayerCharacterInstance.ObjectsBlockingInput.Remove(DialogBox);
             }
+            DialoguePortrait.Visible = false;
         }
 
         private void HandleDialogTagShown(string tag)
