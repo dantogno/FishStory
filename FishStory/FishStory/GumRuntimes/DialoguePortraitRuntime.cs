@@ -14,9 +14,10 @@ namespace FishStory.GumRuntimes
 
         public void SetTextureCoordinates(Rectangle rect)
         {
-            //I don't know why I have to reverse these - bug in Gum maybe?
-            SpriteInstance.TextureTop = rect.Left;
-            SpriteInstance.TextureLeft = rect.Top;
+            SpriteInstance.TextureTop = rect.Top;
+            SpriteInstance.TextureLeft = rect.Left;
+            SpriteInstance.TextureWidth = rect.Width;
+            SpriteInstance.TextureHeight = rect.Height;
         }
     }
 }

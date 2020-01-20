@@ -47,14 +47,14 @@ namespace FishStory.Entities
 
         public Rectangle GetTextureRectangle()
         {
-            
             var idleFrame = SpriteInstance.AnimationChains[SpriteInstance.CurrentChainIndex][0];
             var textureHeight = idleFrame.Texture.Bounds.Height;
             var textureWidth = idleFrame.Texture.Bounds.Width;
-            var rect = new Rectangle((int)(textureHeight * idleFrame.TopCoordinate),
-                (int)(textureWidth * idleFrame.LeftCoordinate),
-                16,
-                16
+            var rect = new Rectangle(
+                x:(int)(textureWidth * idleFrame.LeftCoordinate),
+                y:(int)(textureHeight * idleFrame.TopCoordinate),
+                width:16,
+                height:16
                 );
             return rect;
         }
