@@ -282,6 +282,8 @@ namespace FishStory.Screens
             #endregion
 
             GameScreenGum.NotificationBoxInstance.UpdateVisibility();
+
+            GameScreenGum.MoveToFrbLayer(UILayer, UILayerGum);
         }
 
         private void HandlePlayerVsNpcActivityCollision(PlayerCharacter player, NPC npc)
