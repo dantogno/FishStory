@@ -365,10 +365,30 @@
       <Name>StoreBuySound</Name>
       <Link>content\globalcontent\sounds\storebuysound.xnb</Link>
     </None>
-    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\typewriterkeysound.xnb">
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\typewriterkey1sound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>TypewriterKeySound</Name>
-      <Link>content\globalcontent\sounds\typewriterkeysound.xnb</Link>
+      <Name>TypewriterKey1Sound</Name>
+      <Link>content\globalcontent\sounds\typewriterkey1sound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\typewriterkey2sound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TypewriterKey2Sound</Name>
+      <Link>content\globalcontent\sounds\typewriterkey2sound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\typewriterkey3sound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TypewriterKey3Sound</Name>
+      <Link>content\globalcontent\sounds\typewriterkey3sound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\typewriterkey4sound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TypewriterKey4Sound</Name>
+      <Link>content\globalcontent\sounds\typewriterkey4sound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\typewriterkey5sound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TypewriterKey5Sound</Name>
+      <Link>content\globalcontent\sounds\typewriterkey5sound.xnb</Link>
     </None>
     <None Include="content\entities\exclamationicon\animationchainlistfile.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

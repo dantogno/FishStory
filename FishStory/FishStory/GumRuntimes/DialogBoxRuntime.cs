@@ -2,6 +2,7 @@ using FishStory.Managers;
 using FlatRedBall;
 using FlatRedBall.Input;
 using Gum.Wireframe;
+using Microsoft.Xna.Framework.Audio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -279,7 +280,7 @@ namespace FishStory.GumRuntimes
 
                 if (!isPrintingDone)
                 {
-                    SoundManager.PlayIfNotPlaying(GlobalContent.TypewriterKeySound);
+                    PlayTypingSoundEffect();
                 }
                 else if (DialogOptions.Children.Any() && isPrintingDone)
                 {
@@ -324,16 +325,23 @@ namespace FishStory.GumRuntimes
                         HandleSelect();
                     }
                 }
-                else
-                {
-                    HandleIndicator();
-                }
             }
         }
 
-        private void HandleIndicator()
+        int lastPlayedEffectNumber = 1;
+        bool lastPlayAttemptWasSuccess = true;
+        private void PlayTypingSoundEffect()
         {
-
+            if (lastPlayAttemptWasSuccess)
+            {
+                lastPlayedEffectNumber = FlatRedBallServices.Random.Next(1, 6);
+            }
+            var stringName = $"TypewriterKey{lastPlayedEffectNumber}Sound";
+            var soundEffectAsObject = GlobalContent.GetFile(stringName);
+            if (soundEffectAsObject is SoundEffect soundEffect)
+            {
+                lastPlayAttemptWasSuccess = SoundManager.PlayIfNotPlaying(soundEffect);
+            }
         }
 
         private void HandleSelect()
