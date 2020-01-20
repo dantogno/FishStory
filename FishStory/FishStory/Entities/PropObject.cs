@@ -31,40 +31,11 @@ namespace FishStory.Entities
 
         }
 
-        public void SetLayers(Layer worldLayer, Layer lightEffectLayer)
+        public void SetLayers(Layer lightEffectLayer)
         {
-            try
-            {
-                worldLayer.Remove(SpriteInstance);
-            }
-            catch { }
-            try
-            {
-                worldLayer.Remove(LightSpriteInstance);
-            }
-            catch { }
-            SpriteManager.AddToLayer(SpriteInstance, worldLayer);
             if (CreatesLight)
             {
                 SpriteManager.AddToLayer(LightSpriteInstance, lightEffectLayer);
-            }
-        }
-
-        public void ShowLight()
-        {
-            if (CreatesLight)
-            {
-                LightSpriteInstance.Visible = true;
-                SpriteInstance.CurrentChainName = "On";
-            }
-        }
-
-        public void HideLight()
-        {
-            if (CreatesLight)
-            {
-                LightSpriteInstance.Visible = false;
-                SpriteInstance.CurrentChainName = "Off";
             }
         }
 
