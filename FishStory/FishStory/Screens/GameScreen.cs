@@ -336,6 +336,19 @@ namespace FishStory.Screens
             {
                 ForcePlayerToSleep();
             }
+
+            PlayMusicForDay();
+        }
+
+        private void PlayMusicForDay()
+        {
+            var songToPlayForDay = GlobalContent.music_calm_tree_of_life;
+            if (InGameDateTimeManager.OurInGameDay.Day == 2)
+                songToPlayForDay = GlobalContent.music_calm_green_lake_serenade;
+            if (MusicManager.CurrentSong != songToPlayForDay)
+            {
+                MusicManager.PlaySong(songToPlayForDay);
+            }
         }
 
         private void DebuggingActivity()

@@ -246,6 +246,7 @@
       <DependentUpon>StoreRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
+    <Compile Include="Managers\MusicManager.cs" />
     <Compile Include="Managers\PlayerDataManager.cs" />
     <Compile Include="Managers\SoundManager.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />
@@ -334,6 +335,26 @@
     <Content Include="Content\shader.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\music\music_calm_green_lake_serenade.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>music_calm_green_lake_serenade</Name>
+      <Link>content\globalcontent\music\music_calm_green_lake_serenade.ogg</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\music\music_calm_green_lake_serenade.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>music_calm_green_lake_serenade</Name>
+      <Link>content\globalcontent\music\music_calm_green_lake_serenade.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\music\music_calm_tree_of_life.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>music_calm_tree_of_life</Name>
+      <Link>content\globalcontent\music\music_calm_tree_of_life.ogg</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\music\music_calm_tree_of_life.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>music_calm_tree_of_life</Name>
+      <Link>content\globalcontent\music\music_calm_tree_of_life.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\dialogueadvancesound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>DialogueAdvanceSound</Name>
