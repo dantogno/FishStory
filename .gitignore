@@ -16,3 +16,4 @@ FishStory/FishStory/FishStory.csproj.user
 *.csvSettings
 FishStory/FishStory/GlueSettings/CompilerSettings.json
 *.csvSettings
+FishStory/BuiltXnbs/DesktopGL/obj/*
