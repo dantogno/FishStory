@@ -12,7 +12,7 @@ namespace FishStory.Managers
         public static DateTime OurInGameDay = new DateTime();
         public static bool SunIsUp = OurInGameDay.Hour > GameScreen.HourOnClockSunRisesIn24H && OurInGameDay.Hour < GameScreen.HourOnClockSunSetsIn24H;
         public static bool MoonIsUp = OurInGameDay.Hour > 22 || OurInGameDay.Hour < 3;
-        public static float SunlightEffectiveness =>MathHelper.Clamp(GetSunlightCoefficient(DistanceToNoon()), 0f,1.0f);
+        public static float SunlightEffectiveness =>MathHelper.Clamp(GetSunlightCoefficient(DistanceToNoon()), 0.35f,1.0f);
 
         private static double minutesElapsedPerSecond = 6;
 
