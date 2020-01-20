@@ -113,6 +113,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>DialoguePortrait</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>InputInstructions</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

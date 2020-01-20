@@ -29,6 +29,12 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>DialogBoxInstance.X</Name>
+      <Value xsi:type="xsd:float">24</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>InputInstructionsInstance.X</Name>
       <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
@@ -209,6 +215,11 @@
   <Instance>
     <Name>InputInstructionsInstance</Name>
     <BaseType>InputInstructions</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>DialoguePortraitInstance</Name>
+    <BaseType>DialoguePortrait</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
 </ScreenSave>

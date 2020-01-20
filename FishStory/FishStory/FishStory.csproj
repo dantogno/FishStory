@@ -101,6 +101,8 @@
     <Compile Include="Entities\ShaderRenderer.Generated.cs">
       <DependentUpon>ShaderRenderer.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\DialoguePortraitRuntime.cs" />
+    <Compile Include="GumRuntimes\DialoguePortraitRuntime.Generated.cs" />
     <Compile Include="Managers\InGameDateTimeManager.cs" />
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\FishIdentifiedSignFactory.Generated.cs" />
@@ -825,6 +827,10 @@
     <None Include="content\gumproject\components\dialogbox.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>dialogbox</Name>
+    </None>
+    <None Include="content\gumproject\components\dialogueportrait.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>dialogueportrait</Name>
     </None>
     <None Include="content\gumproject\components\inputinstructions.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

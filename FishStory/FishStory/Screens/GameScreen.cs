@@ -62,6 +62,7 @@ namespace FishStory.Screens
             Map.AddToManagers(WorldLayer);
 
             DialogBox.Visible = false;
+            DialoguePortrait.Visible = false;
 
             InitializePlayer();
 
@@ -346,7 +347,7 @@ namespace FishStory.Screens
             UpdatePropObjectsLights();
 
             script.Activity();
-
+            DialoguePortrait.Visible = DialogBox.Visible;
             if (InGameDateTimeManager.TimeOfDay.Hours == HourOfClockPlayerForcedSleepIn24H)
             {
                 ForcePlayerToSleep();
@@ -391,10 +392,12 @@ namespace FishStory.Screens
                 if (PlayerCharacterInstance.NpcForAction != null)
                 {
                     var npc = PlayerCharacterInstance.NpcForAction;
+                    var npcTextureRectangle = npc.GetTextureRectangle();
                     if(npc.DirectlySetDialog != null)
                     {
                         if (DialogBox.TryShow(npc.DirectlySetDialog))
                         {
+                            DialoguePortrait.SetTextureCoordinates(npcTextureRectangle);
                             PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                         }
 
@@ -403,6 +406,7 @@ namespace FishStory.Screens
                     {
                         if (DialogBox.TryShow(npc.TwineDialogId))
                         {
+                            DialoguePortrait.SetTextureCoordinates(npcTextureRectangle);
                             PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                         }
                     }

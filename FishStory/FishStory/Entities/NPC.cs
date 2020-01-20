@@ -9,6 +9,7 @@ using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using static DialogTreePlugin.SaveClasses.DialogTreeRaw;
+using Microsoft.Xna.Framework;
 
 namespace FishStory.Entities
 {
@@ -42,6 +43,20 @@ namespace FishStory.Entities
         {
 
 
+        }
+
+        public Rectangle GetTextureRectangle()
+        {
+            
+            var idleFrame = SpriteInstance.AnimationChains[SpriteInstance.CurrentChainIndex][0];
+            var textureHeight = idleFrame.Texture.Bounds.Height;
+            var textureWidth = idleFrame.Texture.Bounds.Width;
+            var rect = new Rectangle((int)(textureHeight * idleFrame.TopCoordinate),
+                (int)(textureWidth * idleFrame.LeftCoordinate),
+                16,
+                16
+                );
+            return rect;
         }
 
         public bool IsOnScreen()
