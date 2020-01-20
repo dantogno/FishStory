@@ -859,7 +859,7 @@
           <SourceFile />
           <SourceName />
           <SourceClassType>Sprite</SourceClassType>
-          <InstanceName>AllBlackForDarknessSprite</InstanceName>
+          <InstanceName>BaseNightTimeColor</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <AttachToCamera>true</AttachToCamera>
           <GenerateTimedEmit>true</GenerateTimedEmit>
@@ -913,13 +913,13 @@
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
-            <Member>Alpha</Member>
-            <ValueAsFloat>0.8</ValueAsFloat>
+            <Member>TextureScale</Member>
+            <ValueAsFloat>0.5</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
-            <Member>TextureScale</Member>
-            <ValueAsFloat>0.5</ValueAsFloat>
+            <Member>Alpha</Member>
+            <ValueAsFloat>0.8</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>
