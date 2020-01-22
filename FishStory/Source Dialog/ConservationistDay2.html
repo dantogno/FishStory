@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>ConservationistDay2</title>
+		<script type="text/javascript">
+/**
+ * Twison - Twine 2 JSON Export Story Format
+ * 
+ * Copyright (c) 2015 Mike Walker
+ * https://lazerwalker.com
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+ * associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial
+ * portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ * LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+var Twison={extractLinksFromText:function(t){var n=t.match(/\[\[.+?\]\]/g);return n?n.map(function(t){var n=t.match(/\[\[(.*?)\-\&gt;(.*?)\]\]/);return n?{name:n[1],link:n[2]}:(t=t.substring(2,t.length-2),{name:t,link:t})}):void 0},convertPassage:function(t){var n={text:t.innerHTML},a=Twison.extractLinksFromText(n.text);if(a&&(n.links=a),["name","pid","position","tags"].forEach(function(a){var e=t.attributes[a].value;e&&(n[a]=e)}),n.position){var e=n.position.split(",");n.position={x:e[0],y:e[1]}}return n.tags&&(n.tags=n.tags.split(" ")),n},convertStory:function(t){var n=t.getElementsByTagName("tw-passagedata"),a=Array.prototype.slice.call(n).map(Twison.convertPassage),e={passages:a};["name","startnode","creator","creator-version","ifid"].forEach(function(n){var a=t.attributes[n].value;a&&(e[n]=a)});var i={};return e.passages.forEach(function(t){i[t.name]=t.pid}),e.passages.forEach(function(t){t.links&&t.links.forEach(function(t){t.pid=i[t.link]})}),e},convert:function(){var t=document.getElementsByTagName("tw-storydata")[0],n=JSON.stringify(Twison.convertStory(t),null,2);document.getElementById("output").innerHTML=n}};window.Twison=Twison;		
+		</script>
+	</head>
+	<body>
+		<pre id="output">
+		
+		</pre>
+		<div id="storyData" style="display: none;">
+			<tw-storydata name="ConservationistDay2" startnode="1" creator="Twine" creator-version="2.3.5" ifid="31BA1DE7-18F7-4334-954F-5FD767F832EC" zoom="1" format="Twison" format-version="0.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="442,235" size="100,100">Ah, you again! I have great news! I&#39;ve made progress since I last saw you. Well, a small amount of progress, but progress nonetheless.
+[[Continue]]</tw-passagedata><tw-passagedata pid="2" name="Continue" tags="" position="442,385" size="100,100">The priestess has agreed to allow me to witness The Choosing! And on top of that, I&#39;ve been given permission to TAKE NOTES! How exciting is that?
+[[What&#39;s &quot;The Choosing?&quot;|What choosing]]</tw-passagedata><tw-passagedata pid="3" name="What choosing" tags="" position="442,535" size="100,100">I have no idea! But yesterday, I didn&#39;t even know there WAS a Choosing, so this is quite an exciting development.
+[[Continue2]]</tw-passagedata><tw-passagedata pid="4" name="Continue2" tags="" position="442,685" size="100,100">Now, I&#39;ve noticed you talking to a lot of the townspeople. Have you gotten any hints about what this ritual might entail? Do you have any theories?
+[[Maybe it&#39;s a courting ritual.|Courting]]
+[[It could be some type of competition.|Competition]]
+[[I have no idea.|No idea]]</tw-passagedata><tw-passagedata pid="5" name="Courting" tags="" position="292,835" size="100,100">That&#39;s certainly an interesting thought... This is a rather small community, so they likely have some traditions that insure their family trees don&#39;t get their roots tangled... But of course, this is just speculation. The Choosing could be anything!
+[[Bye]] </tw-passagedata><tw-passagedata pid="6" name="Competition" tags="" position="442,835" size="100,100">Hmm, that&#39;s certainly a possibility... Maybe it&#39;s similar to the Highland Games of Scotland? But of course, this is just speculation. It could be anything!
+[[Bye]] </tw-passagedata><tw-passagedata pid="7" name="No idea" tags="" position="592,835" size="100,100">Hmm... Well, personally, I think it could be some sort of crowning ceremony, like the Summer Queen traditions of medieval England. But of course, this is just speculation. It could be anything!
+[[Bye]]</tw-passagedata><tw-passagedata pid="8" name="Bye" tags="" position="442,1002" size="100,100">Well, let me know if you come across any more information. I certainly appreciate your help.</tw-passagedata></tw-storydata>
+		</div>
+		<script>
+			Twison.convert()
+		</script>
+	</body>
+</html>

@@ -16,7 +16,7 @@
       }
     },
     {
-      "text": "No, we're strangers. But that's exactly why I'm so excited to see you! I came here about a month ago in order to conduct research for a book about harvest celebrations, but I can't get anyone in this entire town to talk to me for more than thirty seconds.\n[[Continue]]",
+      "text": "Nope! But that's exactly why I'm so excited to see you. I came here about a month ago in order to conduct research for a book about harvest celebrations, but I can't get anyone in this entire town to talk to me for more than thirty seconds.\n[[Continue]]",
       "links": [
         {
           "name": "Continue",
@@ -32,7 +32,7 @@
       }
     },
     {
-      "text": "I feel like I'm getting cabin fever. All anyone wants to talk about on this tiny island is their precious festival, but I can never get anyone to give me any details on any of their customs or rituals. Do you think you could help me out a bit?\n[[Sure!|sure]]\n[[No thanks, I don't want to get involved.|No involved]]",
+      "text": "I feel like I'm getting cabin fever. All anyone wants to talk about on this tiny island is their precious festival, but I can never get anyone to give me any details on any of the customs or rituals. Do you think you could help me out a bit?\n[[Sure!|sure]]\n[[No thanks, I don't want to get involved.|No involved]]",
       "links": [
         {
           "name": "Sure!|sure",
@@ -66,7 +66,7 @@
       }
     },
     {
-      "text": "No? Well, it's up to you, but if you want my opinion, it seems near impossible to stay uninvolved in this town. For what little information these people offer up about themselves, they've sure seemed interested in me since I arrived...\n[[Cointinue2]]",
+      "text": "No? Well, it's up to you, but if you want my opinion, it seems near impossible to stay uninvolved in this town. For what little information these people offer up about themselves, they sure have seemed interested in me since I arrived...\n[[Cointinue2]]",
       "links": [
         {
           "name": "Cointinue2",
