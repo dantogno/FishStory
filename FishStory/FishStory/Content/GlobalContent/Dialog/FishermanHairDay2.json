@@ -1,0 +1,139 @@
+{
+  "passages": [
+    {
+      "text": "Eh?! You again. Can't you leave me in peace?\n[[Sorry, I'll go.|Go]]\n[[Nope.|nope]]",
+      "links": [
+        {
+          "name": "Sorry, I'll go.|Go",
+          "link": "Sorry, I'll go.|Go"
+        },
+        {
+          "name": "Nope.|nope",
+          "link": "Nope.|nope"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "460",
+        "y": "557"
+      }
+    },
+    {
+      "text": "Too late! You've scared them off again! Do you know how hard it is to catch a fish with someone like you around?! Fish are sensitive, perceptive creatures!\n[[Continue]]",
+      "links": [
+        {
+          "name": "Continue",
+          "link": "Continue",
+          "pid": "4"
+        }
+      ],
+      "name": "Go",
+      "pid": "2",
+      "position": {
+        "x": "385",
+        "y": "707"
+      }
+    },
+    {
+      "text": "Bah! What did I do to deserve this! All I want to do is catch one measly fish, and yet here I am, being bombarded with nonsense from every direction by you and everyone else like you. How do you even hear yourself think over all that noise?!\n[[I'm not being that loud.|Not loud]]\n[[What do you mean, \"everyone else like me?\"|Your kind]]",
+      "links": [
+        {
+          "name": "I'm not being that loud.|Not loud",
+          "link": "I'm not being that loud.|Not loud"
+        },
+        {
+          "name": "What do you mean, \"everyone else like me?\"|Your kind",
+          "link": "What do you mean, \"everyone else like me?\"|Your kind"
+        }
+      ],
+      "name": "nope",
+      "pid": "3",
+      "position": {
+        "x": "535",
+        "y": "707"
+      }
+    },
+    {
+      "text": "They need peace and quiet, or else they'll get overloaded and leave, never to return! I thought I was getting away from this kind of nonsense by coming here, but I guess your kind are everywhere, aren't they?!\n[[I guess so.|Guess so]]\n[[What do you mean, \"your kind?\"|Your kind]]",
+      "links": [
+        {
+          "name": "I guess so.|Guess so",
+          "link": "I guess so.|Guess so"
+        },
+        {
+          "name": "What do you mean, \"your kind?\"|Your kind",
+          "link": "What do you mean, \"your kind?\"|Your kind"
+        }
+      ],
+      "name": "Continue",
+      "pid": "4",
+      "position": {
+        "x": "385",
+        "y": "857"
+      }
+    },
+    {
+      "text": "Bah. All that self awareness, and yet you have no desire to change.\n[[Bye]]",
+      "links": [
+        {
+          "name": "Bye",
+          "link": "Bye",
+          "pid": "7"
+        }
+      ],
+      "name": "Guess so",
+      "pid": "5",
+      "position": {
+        "x": "313",
+        "y": "1010"
+      }
+    },
+    {
+      "text": "Screamers! Yappers! Gossipers, children, dogs, lawnmowers, or anyone else that disturbs the peace of nature with their unchecked decibels!\n[[Bye]] ",
+      "links": [
+        {
+          "name": "Bye",
+          "link": "Bye",
+          "pid": "7"
+        }
+      ],
+      "name": "Your kind",
+      "pid": "6",
+      "position": {
+        "x": "445",
+        "y": "1014"
+      }
+    },
+    {
+      "text": "Now leave me be before I blow a gasket!",
+      "name": "Bye",
+      "pid": "7",
+      "position": {
+        "x": "460",
+        "y": "1164"
+      }
+    },
+    {
+      "text": "Of course you don't! You must be half deaf after half a lifetime of screaming like that! I'm surprised you can even understand a single word I'm saying!\n[[Bye]]",
+      "links": [
+        {
+          "name": "Bye",
+          "link": "Bye",
+          "pid": "7"
+        }
+      ],
+      "name": "Not loud",
+      "pid": "8",
+      "position": {
+        "x": "626",
+        "y": "941"
+      }
+    }
+  ],
+  "name": "FishermanHairDay2",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "05FFBF3F-62FE-40FA-880C-A14E25267D41"
+}

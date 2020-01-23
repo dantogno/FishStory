@@ -57,6 +57,11 @@ namespace FishStory.Entities
             }
         }
 
+        public void SetLightBrightness(float requestedBrightness)
+        {
+            this.LightBrightness = requestedBrightness;
+        }
+
         private void CustomDestroy()
         {
 

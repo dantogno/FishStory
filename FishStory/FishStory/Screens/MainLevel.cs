@@ -61,9 +61,14 @@ namespace FishStory.Screens
 
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 1);
             Do.Call(() => DoDay1Script(If, Do));
-
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 2);
             Do.Call(() => DoDay2Script(If, Do));
+            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 3);
+            Do.Call(() => DoDay3Script(If, Do));
+            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 4);
+            Do.Call(() => DoDay4Script(If, Do));
+            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 5);
+            Do.Call(() => DoDay5Script(If, Do));
         }
 
         private void DoDay1Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
@@ -76,12 +81,14 @@ namespace FishStory.Screens
 
             InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(12));
 
+            #region Farmer
+            //var farmer = NPCList.FindByName("Farmer");
+            //farmer.CurrentChainName = "FishRight";
+            //farmer.Position = new Microsoft.Xna.Framework.Vector3(PlayerCharacterInstance.Position.X, PlayerCharacterInstance.Position.Y, PlayerCharacterInstance.Position.Z);
+
+            #endregion
             #region Identifier
             If.Check(() => HasTag("HasSeenIdentifierDay1"));
-            Do.Call(() =>
-            {
-                NPCList.FindByName("Identifier").TwineDialogId = "IdentifierDay1Brief";
-            });
             #endregion
             #region Tycoon
             // He gives you the key if you have identified 3 fish
@@ -183,6 +190,10 @@ namespace FishStory.Screens
             #region Nun
             #endregion
             #region Farmer
+            var farmer = NPCList.FindByName("Farmer");
+            farmer.CurrentChainName = "FishLeft";
+            farmer.Position = new Microsoft.Xna.Framework.Vector3(315, -595, PlayerCharacterInstance.Position.Z);
+
             #endregion
             #region Tycoon
             #endregion
@@ -218,6 +229,10 @@ namespace FishStory.Screens
             #region Nun
             #endregion
             #region Farmer
+            var farmer = NPCList.FindByName("Farmer");
+            farmer.CurrentChainName = "FishRight";
+            farmer.Position = new Microsoft.Xna.Framework.Vector3(1885, -665, PlayerCharacterInstance.Position.Z);
+
             #endregion
             #region Tycoon
             #endregion
@@ -253,6 +268,10 @@ namespace FishStory.Screens
             #region Nun
             #endregion
             #region Farmer
+            var farmer = NPCList.FindByName("Farmer");
+            farmer.CurrentChainName = "OccasionallyLookUpAndWipeSweat";
+            farmer.Position = new Microsoft.Xna.Framework.Vector3(1885, -665, PlayerCharacterInstance.Position.Z);
+
             #endregion
             #region Tycoon
             #endregion
@@ -288,6 +307,10 @@ namespace FishStory.Screens
             #region Nun
             #endregion
             #region Farmer
+            var farmer = NPCList.FindByName("Farmer");
+            farmer.CurrentChainName = "LookGuilty";
+            farmer.Position = new Microsoft.Xna.Framework.Vector3(955, -574, PlayerCharacterInstance.Position.Z);
+
             #endregion
             #region Tycoon
             #endregion

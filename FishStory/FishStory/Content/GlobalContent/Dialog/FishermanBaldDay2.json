@@ -1,0 +1,74 @@
+{
+  "passages": [
+    {
+      "text": "Bah, youagain, eh? Whatdoyawantthistime?\n[[Nothing, just passing through.|Passing through]]\n[[Are you okay?|Okay]]",
+      "links": [
+        {
+          "name": "Nothing, just passing through.|Passing through",
+          "link": "Nothing, just passing through.|Passing through"
+        },
+        {
+          "name": "Are you okay?|Okay",
+          "link": "Are you okay?|Okay"
+        }
+      ],
+      "name": "Untitled Passage",
+      "pid": "1",
+      "position": {
+        "x": "494.5",
+        "y": "435"
+      }
+    },
+    {
+      "text": "Pfft. Youbetterbe. Idon'tneednotroublefromyouoranyoneelse. AllIneedisfreshairandanicefishingspot. Andsomepeaceandquiet!",
+      "name": "Passing through",
+      "pid": "2",
+      "position": {
+        "x": "419.5",
+        "y": "585"
+      }
+    },
+    {
+      "text": "Eh?! Whatareyoutalkingabout, youfool! I'mbetterthanever! I'mfitterthanaflounder!\n[[Alright then...|Alright]]\n[[Are you having a stroke?|Stroke]]",
+      "links": [
+        {
+          "name": "Alright then...|Alright",
+          "link": "Alright then...|Alright"
+        },
+        {
+          "name": "Are you having a stroke?|Stroke",
+          "link": "Are you having a stroke?|Stroke"
+        }
+      ],
+      "name": "Okay",
+      "pid": "3",
+      "position": {
+        "x": "569.5",
+        "y": "585"
+      }
+    },
+    {
+      "text": "Youbetyourbuttitsalright. Pfft. ThisguppyisaskingmeifI'malright? Ridiculous.",
+      "name": "Alright",
+      "pid": "4",
+      "position": {
+        "x": "570.5",
+        "y": "728"
+      }
+    },
+    {
+      "text": "You'rejustlikethemcitydoctors! Everythingis\"braindamage\"this, or\"stroke\"that. AllIneedisfreshairandanicefishingspot, notnodanghospital!",
+      "name": "Stroke",
+      "pid": "5",
+      "position": {
+        "x": "720.5",
+        "y": "728"
+      }
+    }
+  ],
+  "name": "FishermanBaldDay2",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "27D17CD7-176F-42F7-91F7-158D1F85BF13"
+}

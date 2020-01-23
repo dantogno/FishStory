@@ -75,7 +75,7 @@ namespace FishStory.Screens
 
             InitializeUi();
 
-            InitializeDarnkess();
+            InitializeDarkness();
 
             InitializeRestartVariables();
 
@@ -91,7 +91,7 @@ namespace FishStory.Screens
             PlayerCharacterInstance.Lantern.Z = 1; // above the player, so always on top
             PlayerCharacterInstance.Lantern.SetLayers(LightEffectsLayer);
         }
-        private void InitializeDarnkess()
+        private void InitializeDarkness()
         {
             BaseNightTimeColor.ColorOperation = FlatRedBall.Graphics.ColorOperation.Color;
 
