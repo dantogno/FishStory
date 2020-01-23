@@ -745,9 +745,20 @@ namespace FishStory.Screens
             // research tracked day
             InGameDateTimeManager.ResetDay();
 
-            this.Call(FadeIn).After(GameScreenGum.ToBlackAnimation.Length);
-            
-            // allow player movement
+
+            // Move player to their trailer
+            this.Call(() =>
+            {
+                PlayerCharacterInstance.X = 695;
+                PlayerCharacterInstance.Y = -855;
+                PlayerCharacterInstance.DirectionFacing = TopDownDirection.Right;
+            }).After(GameScreenGum.ToBlackAnimation.Length);
+
+            float delayBetweenFadeOutAndFadeIn = 1f;
+            this.Call(FadeIn).After(GameScreenGum.ToBlackAnimation.Length + delayBetweenFadeOutAndFadeIn);
+
+            // allow player movement, display notification
+            float delayBeforeShowingNotifications = 0.5f;
             this.Call(() =>
             {
                 PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.OverlayInstance);
@@ -762,7 +773,7 @@ namespace FishStory.Screens
 
                 AddNotification($"Fishing Festival: Day {PlayerDataManager.PlayerData.CurrentDay}");
 
-            }).After(GameScreenGum.ToBlackAnimation.Length + GameScreenGum.ToTransparentAnimation.Length);
+            }).After(GameScreenGum.ToBlackAnimation.Length + GameScreenGum.ToTransparentAnimation.Length + delayBeforeShowingNotifications);
         }
 
 
