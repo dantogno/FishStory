@@ -21,18 +21,13 @@ namespace FishStory.Screens
 {
     public partial class MainLevel
     {
-        private string[] FishNames => GlobalContent.ItemDefinition
-            .Where(item => item.Value.IsFish)
-            .Select(item => item.Value.Name).ToArray();
-        private string[] BaitNames => GlobalContent.ItemDefinition
-            .Where(item => item.Value.IsBait)
-            .Select(item => item.Value.Name).ToArray();
+ 
         private int TotalFishIdentified
         {
             get
             {
                 int total = 0;
-                foreach (var item in FishNames)
+                foreach (var item in ItemDefinition.FishNames)
                 {
                     total += PlayerDataManager.PlayerData.TimesFishIdentified.Get(item);
                 }
@@ -326,9 +321,9 @@ namespace FishStory.Screens
 
         private void AwardRandomBait()
         {
-            int index = FlatRedBallServices.Random.Next(0, BaitNames.Length - 1);
-            PlayerDataManager.PlayerData.AwardItem(BaitNames[index]);
-            AddNotification($"Recieved: {BaitNames[index]}");
+            int index = FlatRedBallServices.Random.Next(0, ItemDefinition.BaitNames.Length - 1);
+            PlayerDataManager.PlayerData.AwardItem(ItemDefinition.BaitNames[index]);
+            AddNotification($"Recieved: {ItemDefinition.BaitNames[index]}");
         }
 
         void CustomActivity(bool firstTimeCalled)

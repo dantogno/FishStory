@@ -52,7 +52,8 @@ namespace FishStory.DataTypes
             for (int i = numberKeys - 1; i >= 0; i--)
             {
                 var keyToCheckForFish = itemKeys[i];
-                if (keyToCheckForFish.ToLowerInvariant().Contains("fish") && !keyToCheckForFish.ToLowerInvariant().Contains("fishing"))
+                bool isFish = GlobalContent.ItemDefinition[keyToCheckForFish].IsFish;
+                if (isFish)
                 {
                     numberSpoiledItems += ItemInventory[keyToCheckForFish];
                     ItemInventory.RemoveAll(keyToCheckForFish);

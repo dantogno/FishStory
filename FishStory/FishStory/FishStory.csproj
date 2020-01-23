@@ -50,7 +50,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DataTypes\FishingLootTable.Generated.cs" />
-    <Compile Include="DataTypes\ItemDefinition.Generated.cs" />
+    <Compile Include="DataTypes\ItemDefinition.cs" />
+    <Compile Include="DataTypes\ItemDefinition.Generated.cs">
+      <DependentUpon>ItemDefinition.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataTypes\NpcRelationship.cs" />
     <Compile Include="DataTypes\PlayerData.cs" />
     <Compile Include="DataTypes\ShopItem.Generated.cs" />
