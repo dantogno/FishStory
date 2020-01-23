@@ -71,6 +71,18 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>CustomNiceSliceInstance.Parent</Name>
+      <Value xsi:type="xsd:string">UpButtonInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>CustomNiceSliceInstance1.Parent</Name>
+      <Value xsi:type="xsd:string">DownButtonInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>DownButtonInstance.Height</Name>
       <Value xsi:type="xsd:float">28</Value>
@@ -524,18 +536,6 @@
       <Type>float</Type>
       <Name>Y</Name>
       <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>CustomNiceSliceInstance.Parent</Name>
-      <Value xsi:type="xsd:string">UpButtonInstance</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>CustomNiceSliceInstance1.Parent</Name>
-      <Value xsi:type="xsd:string">DownButtonInstance</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <VariableList xsi:type="VariableListSaveOfString">

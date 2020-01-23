@@ -43,8 +43,7 @@ namespace FishStory.Entities
         {
             if (CreatesLight)
             {
-                LightSpriteInstance.Visible = true;
-                SpriteInstance.CurrentChainName = "On";
+                CurrentLightStatusState = LightStatus.LightOn;
             }
         }
 
@@ -52,8 +51,7 @@ namespace FishStory.Entities
         {
             if (CreatesLight)
             {
-                LightSpriteInstance.Visible = false;
-                SpriteInstance.CurrentChainName = "Off";
+                CurrentLightStatusState = LightStatus.LightOff;
             }
         }
 

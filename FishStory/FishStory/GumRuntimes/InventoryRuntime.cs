@@ -78,6 +78,11 @@ namespace FishStory.GumRuntimes
                 {
                     Close();
                 }
+                if (SellButton.Visible != (CurrentViewOrSellState == ViewOrSell.Sell))
+                {
+                    SellButton.Visible = (CurrentViewOrSellState == ViewOrSell.Sell);
+                }
+
             }
         }
 

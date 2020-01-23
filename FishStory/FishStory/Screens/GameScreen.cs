@@ -339,7 +339,7 @@ namespace FishStory.Screens
 
             script.Activity();
             
-            if (InGameDateTimeManager.TimeOfDay.Hours == HourOfClockPlayerForcedSleepIn24H)
+            if (InGameDateTimeManager.TimeOfDay.Hours == (int)HourOnClockPlayerForcedSleepIn24H)
             {
                 ForcePlayerToSleep();
             }

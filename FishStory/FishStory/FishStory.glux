@@ -43,36 +43,36 @@
           <Properties>
             <PropertySave>
               <Name>Type</Name>
-              <ValueAsString>int</ValueAsString>
+              <ValueAsString>double</ValueAsString>
             </PropertySave>
           </Properties>
-          <Name>HourOfClockPlayerForcedSleepIn24H</Name>
-          <Type>int</Type>
-          <DefaultValue xsi:type="xsd:int">1</DefaultValue>
+          <Name>HourOnClockPlayerForcedSleepIn24H</Name>
+          <Type>double</Type>
+          <DefaultValue xsi:type="xsd:double">1</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
         <CustomVariable>
           <Properties>
             <PropertySave>
               <Name>Type</Name>
-              <ValueAsString>int</ValueAsString>
+              <ValueAsString>double</ValueAsString>
             </PropertySave>
           </Properties>
           <Name>HourOnClockLightPostsTurnOnIn24H</Name>
-          <Type>int</Type>
-          <DefaultValue xsi:type="xsd:int">17</DefaultValue>
+          <Type>double</Type>
+          <DefaultValue xsi:type="xsd:double">13</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
         <CustomVariable>
           <Properties>
             <PropertySave>
               <Name>Type</Name>
-              <ValueAsString>int</ValueAsString>
+              <ValueAsString>double</ValueAsString>
             </PropertySave>
           </Properties>
           <Name>HourOnClockLightPostsTurnOffIn24H</Name>
-          <Type>int</Type>
-          <DefaultValue xsi:type="xsd:int">7</DefaultValue>
+          <Type>double</Type>
+          <DefaultValue xsi:type="xsd:double">7</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
         <CustomVariable>
@@ -2392,6 +2392,11 @@
                   <Member>CreatesLight</Member>
                   <ValueAsBool>false</ValueAsBool>
                 </InstructionSave>
+                <InstructionSave>
+                  <Type>Boolean</Type>
+                  <Member>SpriteInstanceVisible</Member>
+                  <ValueAsBool>true</ValueAsBool>
+                </InstructionSave>
               </InstructionSaves>
               <Name>BlueFlag</Name>
             </StateSave>
@@ -2417,6 +2422,11 @@
                   <Member>LightBrightness</Member>
                   <ValueAsFloat>0.8</ValueAsFloat>
                 </InstructionSave>
+                <InstructionSave>
+                  <Type>Boolean</Type>
+                  <Member>SpriteInstanceVisible</Member>
+                  <ValueAsBool>true</ValueAsBool>
+                </InstructionSave>
               </InstructionSaves>
               <Name>StreetLight</Name>
             </StateSave>
@@ -2430,7 +2440,7 @@
                 <InstructionSave>
                   <Type>String</Type>
                   <Member>CurrentChainName</Member>
-                  <ValueAsString>Off</ValueAsString>
+                  <ValueAsString>Idle</ValueAsString>
                 </InstructionSave>
                 <InstructionSave>
                   <Type>Boolean</Type>
@@ -2442,12 +2452,58 @@
                   <Member>LightBrightness</Member>
                   <ValueAsFloat>1</ValueAsFloat>
                 </InstructionSave>
+                <InstructionSave>
+                  <Type>Boolean</Type>
+                  <Member>SpriteInstanceVisible</Member>
+                  <ValueAsBool>true</ValueAsBool>
+                </InstructionSave>
               </InstructionSaves>
               <Name>Lantern</Name>
+            </StateSave>
+            <StateSave>
+              <InstructionSaves />
+              <Name>TriStreetLight</Name>
             </StateSave>
           </States>
           <ExcludedVariables />
           <Name>PropName</Name>
+          <SharesVariablesWithOtherCategories>false</SharesVariablesWithOtherCategories>
+        </StateSaveCategory>
+        <StateSaveCategory>
+          <States>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>CurrentChainName</Member>
+                  <ValueAsString>Off</ValueAsString>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>Boolean</Type>
+                  <Member>LightSpriteInstanceVisible</Member>
+                  <ValueAsBool>false</ValueAsBool>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>LightOff</Name>
+            </StateSave>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>CurrentChainName</Member>
+                  <ValueAsString>On</ValueAsString>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>Boolean</Type>
+                  <Member>LightSpriteInstanceVisible</Member>
+                  <ValueAsBool>true</ValueAsBool>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>LightOn</Name>
+            </StateSave>
+          </States>
+          <ExcludedVariables />
+          <Name>LightStatus</Name>
           <SharesVariablesWithOtherCategories>false</SharesVariablesWithOtherCategories>
         </StateSaveCategory>
       </StateCategoryList>
@@ -2481,6 +2537,7 @@
           </Properties>
           <Name>Z</Name>
           <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">5</DefaultValue>
         </CustomVariable>
         <CustomVariable>
           <Properties>

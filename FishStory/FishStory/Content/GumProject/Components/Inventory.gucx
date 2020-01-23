@@ -827,6 +827,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>TextInstance4.Blue</Name>
+      <Value xsi:type="xsd:int">212</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ColorCategory</Type>
       <Name>TextInstance4.ColorCategoryState</Name>
       <Value xsi:type="xsd:string">Black</Value>
@@ -842,6 +848,12 @@
       <Type>int</Type>
       <Name>TextInstance4.FontSize</Name>
       <Value xsi:type="xsd:int">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance4.Green</Name>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -872,6 +884,12 @@
       <Type>string</Type>
       <Name>TextInstance4.Parent</Name>
       <Value xsi:type="xsd:string">ColoredFrameInstance3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance4.Red</Name>
+      <Value xsi:type="xsd:int">127</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -975,24 +993,6 @@
       <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>TextInstance4.Red</Name>
-      <Value xsi:type="xsd:int">127</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>TextInstance4.Green</Name>
-      <Value xsi:type="xsd:int">255</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>TextInstance4.Blue</Name>
-      <Value xsi:type="xsd:int">212</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
   </State>
   <Category>
     <Name>ViewOrSell</Name>
@@ -1016,6 +1016,12 @@
         <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>SellButton.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>Sell</Name>
@@ -1034,6 +1040,12 @@
       <Variable>
         <Type>bool</Type>
         <Name>ColoredFrameInstance3.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>SellButton.Visible</Name>
         <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>

@@ -20,7 +20,7 @@ namespace FishStory.Managers
         private static float minutesWhenItStartsGettingDark = 15 * minutesPerHour;
         private static float minutesAtSundown = (float)GameScreen.HourOnClockSunSetsIn24H * minutesPerHour;
         private static float minutesWhenPlayerWakes = (float)GameScreen.HourOnClockPlayerWakesIn24H * minutesPerHour;
-        private static float minutesWhenPlayerIsForcedAsleep = (float)GameScreen.HourOfClockPlayerForcedSleepIn24H * minutesPerHour;
+        private static float minutesWhenPlayerIsForcedAsleep = (float)GameScreen.HourOnClockPlayerForcedSleepIn24H * minutesPerHour;
 
         public static void Activity(bool firstCall)
         {
@@ -43,7 +43,7 @@ namespace FishStory.Managers
 
         public static void ResetDay()
         {
-            if (TimeOfDay.TotalHours < GameScreen.HourOfClockPlayerForcedSleepIn24H)
+            if (TimeOfDay.TotalHours < GameScreen.HourOnClockPlayerForcedSleepIn24H)
             {
                 OurInGameDay = new DateTime(OurInGameDay.Year, OurInGameDay.Month, OurInGameDay.Day);
             }
