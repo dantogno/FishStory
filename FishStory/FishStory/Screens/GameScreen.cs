@@ -48,6 +48,7 @@ namespace FishStory.Screens
         protected ScreenScript<GameScreen> script;
 
         List<string> dialogTagsThisFrame = new List<string>();
+        private bool isBeingForcedToSleep;
 
         Dictionary<string, List<string>> ItemsBought = new Dictionary<string, List<string>>();
 
@@ -339,7 +340,7 @@ namespace FishStory.Screens
 
             script.Activity();
             
-            if (InGameDateTimeManager.TimeOfDay.Hours == (int)HourOnClockPlayerForcedSleepIn24H)
+            if (InGameDateTimeManager.TimeOfDay.Hours == (int)HourOnClockPlayerForcedSleepIn24H && !isBeingForcedToSleep)
             {
                 ForcePlayerToSleep();
             }
@@ -510,8 +511,10 @@ namespace FishStory.Screens
 
         private void ForcePlayerToSleep()
         {
-            AddNotification("Go to sleep!");
-            GoToNewDay();
+            isBeingForcedToSleep = true;
+            AddNotification("It's getting late. You can't keep your eyes open much aalonger...");
+            float delayBeforeStartingNewDaySequence = 5;
+            this.Call(() => GoToNewDay()).After(delayBeforeStartingNewDaySequence);
         }
 
         private void DoFishingActivity()
@@ -744,7 +747,7 @@ namespace FishStory.Screens
 
             // research tracked day
             InGameDateTimeManager.ResetDay();
-
+            isBeingForcedToSleep = false;
 
             // Move player to their trailer
             this.Call(() =>
@@ -754,7 +757,7 @@ namespace FishStory.Screens
                 PlayerCharacterInstance.DirectionFacing = TopDownDirection.Right;
             }).After(GameScreenGum.ToBlackAnimation.Length);
 
-            float delayBetweenFadeOutAndFadeIn = 1f;
+            float delayBetweenFadeOutAndFadeIn = 2f;
             this.Call(FadeIn).After(GameScreenGum.ToBlackAnimation.Length + delayBetweenFadeOutAndFadeIn);
 
             // allow player movement, display notification
