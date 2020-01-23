@@ -36,7 +36,7 @@
           </Properties>
           <Name>HourOnClockPlayerWakesIn24H</Name>
           <Type>double</Type>
-          <DefaultValue xsi:type="xsd:double">8</DefaultValue>
+          <DefaultValue xsi:type="xsd:double">9</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
         <CustomVariable>
@@ -60,7 +60,7 @@
           </Properties>
           <Name>HourOnClockLightPostsTurnOnIn24H</Name>
           <Type>double</Type>
-          <DefaultValue xsi:type="xsd:double">13</DefaultValue>
+          <DefaultValue xsi:type="xsd:double">17</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
         <CustomVariable>
@@ -96,7 +96,7 @@
           </Properties>
           <Name>HourOnClockSunRisesIn24H</Name>
           <Type>double</Type>
-          <DefaultValue xsi:type="xsd:double">7</DefaultValue>
+          <DefaultValue xsi:type="xsd:double">5</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
         <CustomVariable>
