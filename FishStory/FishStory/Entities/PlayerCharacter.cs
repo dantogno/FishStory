@@ -8,6 +8,7 @@ using FlatRedBall.AI.Pathfinding;
 using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
+using FishStory.Managers;
 
 namespace FishStory.Entities
 {
@@ -73,7 +74,8 @@ namespace FishStory.Entities
             else if(InputDevice is Xbox360GamePad gamepad)
             {
                 TalkInput = gamepad.GetButton(Xbox360GamePad.Button.A);
-                throw new NotImplementedException();
+                CancelInput = gamepad.GetButton(Xbox360GamePad.Button.B);
+                InventoryInput = gamepad.GetButton(Xbox360GamePad.Button.X);
             }
         }
 
@@ -190,6 +192,5 @@ namespace FishStory.Entities
 
 
         }
-
     }
 }

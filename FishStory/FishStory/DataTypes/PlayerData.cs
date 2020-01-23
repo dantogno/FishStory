@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FishStory.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,29 @@ namespace FishStory.DataTypes
         {
             return ItemInventory.Get(itemKey) >= desiredCount;
         }
+        public int SpoilItemsAndReturnCount()
+        {
+            if (DebuggingVariables.FishDoNotGoBadAtEndOfTheDay)
+            {
+                return 0;
+            }
+
+            var itemKeys = ItemInventory.Keys.ToArray();
+            var numberKeys = itemKeys.Count();
+            var numberSpoiledItems = 0;
+
+            for (int i = numberKeys - 1; i >= 0; i--)
+            {
+                var keyToCheckForFish = itemKeys[i];
+                if (keyToCheckForFish.ToLowerInvariant().Contains("fish") && !keyToCheckForFish.ToLowerInvariant().Contains("fishing"))
+                {
+                    numberSpoiledItems += ItemInventory[keyToCheckForFish];
+                    ItemInventory.RemoveAll(keyToCheckForFish);
+                }
+            }
+
+            return numberSpoiledItems;
+        }
     }
 
     public static class DictionaryExtensions
@@ -44,6 +68,14 @@ namespace FishStory.DataTypes
         public static void Set(this Dictionary<string, int> dictionary, string key, int value)
         {
             dictionary[key] = value;
+        }
+
+        public static void RemoveAll(this Dictionary<string, int> dictionary, string key)
+        {
+            if (dictionary.ContainsKey(key))
+            {
+                dictionary.Remove(key);
+            }
         }
 
         public static int Get(this Dictionary<string, int> dictionary, string key)

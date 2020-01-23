@@ -251,8 +251,14 @@ namespace FishStory.Screens
                 DialogBox.DownInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Down)
                     .Or(keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.S));
             }
-            else
+            else if (PlayerCharacterInstance.InputDevice is Xbox360GamePad gamepad)
             {
+                DialogBox.UpInput = gamepad.GetButton(Xbox360GamePad.Button.DPadUp)
+                    .Or(gamepad.LeftStick.UpAsButton);
+                DialogBox.DownInput = gamepad.GetButton(Xbox360GamePad.Button.DPadDown)
+                    .Or(gamepad.LeftStick.DownAsButton);
+                //This should work, but not officially.
+                //You can comment out the below and try gamepad support
                 throw new NotImplementedException();
             }
 
@@ -747,6 +753,12 @@ namespace FishStory.Screens
                 PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.OverlayInstance);
 
                 PlayerDataManager.PlayerData.CurrentDay++;
+                
+                var numberOfFishSpoiled = PlayerDataManager.PlayerData.SpoilItemsAndReturnCount();
+                if (numberOfFishSpoiled > 0)
+                {
+                    AddNotification($"The {numberOfFishSpoiled} fish you caught yesterday went bad.");
+                }
 
                 AddNotification($"Fishing Festival: Day {PlayerDataManager.PlayerData.CurrentDay}");
 
