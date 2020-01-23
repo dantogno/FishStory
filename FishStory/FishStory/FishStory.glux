@@ -2450,7 +2450,7 @@
                 <InstructionSave>
                   <Type>Single</Type>
                   <Member>LightBrightness</Member>
-                  <ValueAsFloat>1</ValueAsFloat>
+                  <ValueAsFloat>0.5</ValueAsFloat>
                 </InstructionSave>
                 <InstructionSave>
                   <Type>Boolean</Type>

@@ -46,10 +46,6 @@ namespace FishStory.Screens
 
 
             PlayerCharacterInstance.DirectionFacing = TopDownDirection.Left;
-
-            PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
-            PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
-            PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Small_Brown_Fish);
             
             // TODO: remove this. Can use this to debug different days.
             // PlayerDataManager.PlayerData.CurrentDay = 2;
