@@ -19,9 +19,23 @@ Small Shelled Creature,Shrimp,,,,,15,,,
 // Fish,,,,,,,,,
 Ladyfish,,,,true,0,20,Ladies. Eats sardine. Not that big.,Unidentified,PlayerCharacter
 ,,,,,,,,,Priestess
+,,,,,,,,,Mayor
+,,,,,,,,,ElderlyMother
+,,,,,,,,,Nun
+,,,,,,,,,TycoonDaughter
+,,,,,,,,,Conservationist
 Giant Octopus,,,,true,,1,"Mother. hatches a ""super brood"" of 100,000 eggs that the mother guards for six months. shrimp, crabs, scallop, abalone, cockles, snails, clams, lobsters, fish, and other octopuses. Lays ",Unidentified,
 Seahorse,,,,true,,2,father. eat worm,Unidentified,
-King Mackerel,,,,true,,3,"Men. Big fish, sardine, bonito",Unidentified,
+King Mackerel,,,,true,,3,"Men. Big fish, sardine, bonito",Unidentified,FestivalCoordinator
+,,,,,,,,,BlackMarketShop
+,,,,,,,,,Identifier
+,,,,,,,,,Fishmonger
+,,,,,,,,,FarmerSonBaitShop
+,,,,,,,,,YoungManBaitShop
+,,,,,,,,,Farmer
+,,,,,,,,,Tycoon
+,,,,,,,,,FishermanBald
+,,,,,,,,,FishermanHair
 Monkfish,,,,true,,4,bald. eats everything,Unidentified,
 Trumpefish,,,,true,,5,golden / yellow. reefs. eats small fish and squid,Unidentified,
 Rougheye Rockfish,,,,true,,30,Old This fish can live for over 200 years!,Unidentified,

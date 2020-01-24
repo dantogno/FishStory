@@ -38,6 +38,41 @@ namespace FishStory.Screens
         {
             InitializeScript();
         }
+        /// <summary>
+        /// Calculate how many identified fish are associated with each character.
+        /// </summary>
+        /// <returns>Dictionary with character names as keys and number of fish as values.</returns>
+        private Dictionary<string, int> GetNumberOfFishAssociatedWithCharacters()
+        {
+            Dictionary<string, int> numberOfFishAssociatedWithCharacters
+                = new Dictionary<string, int>();
+
+            foreach (var fishName in ItemDefinition.FishNames)
+            {
+                for (int i = 0; i < PlayerDataManager.PlayerData.TimesFishIdentified.Get(fishName); i++)
+                {
+                    foreach (var characterName in GlobalContent.ItemDefinition[fishName].AssociatedCharacters)
+                    {
+                        if (numberOfFishAssociatedWithCharacters.ContainsKey(characterName))
+                        {
+                            numberOfFishAssociatedWithCharacters[characterName]++;
+                        }
+                        else
+                        {
+                            numberOfFishAssociatedWithCharacters.Add(characterName, 0);
+                        }
+                    }
+                }
+            }
+            return numberOfFishAssociatedWithCharacters;
+        }
+        /// <summary>
+        /// Take a dictionary of string keys and int values and return the key with the highest value.
+        /// </summary>
+        private string GetKeyWithHighestValue(Dictionary<string, int> dictionary)
+        {
+            return dictionary.Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
+        }
 
         private void InitializeScript()
         {
@@ -46,7 +81,7 @@ namespace FishStory.Screens
 
 
             PlayerCharacterInstance.DirectionFacing = TopDownDirection.Left;
-            
+
             // TODO: remove this. Can use this to debug different days.
             // PlayerDataManager.PlayerData.CurrentDay = 2;
 
