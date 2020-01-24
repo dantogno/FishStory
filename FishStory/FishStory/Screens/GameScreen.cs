@@ -512,7 +512,7 @@ namespace FishStory.Screens
         private void ForcePlayerToSleep()
         {
             isBeingForcedToSleep = true;
-            AddNotification("It's getting late. You can't keep your eyes open much aalonger...");
+            AddNotification("It's getting late. You can't keep your eyes open much longer...");
             float delayBeforeStartingNewDaySequence = 5;
             this.Call(() => GoToNewDay()).After(delayBeforeStartingNewDaySequence);
         }
