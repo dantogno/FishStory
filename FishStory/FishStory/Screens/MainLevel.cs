@@ -99,6 +99,7 @@ namespace FishStory.Screens
 
         private void DoDay1Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
+
             GameScreenGum.InputInstructionsInstance.Visible = true;
             var secondsToShowInputCallout = 7;
             this

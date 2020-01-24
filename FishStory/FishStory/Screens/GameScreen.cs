@@ -251,16 +251,18 @@ namespace FishStory.Screens
 
                 DialogBox.DownInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Down)
                     .Or(keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.S));
+
+                GameScreenGum.InputInstructionsInstance.CurrentInputTypeState = InputInstructionsRuntime.InputType.Keyboard;
             }
             else if (PlayerCharacterInstance.InputDevice is Xbox360GamePad gamepad)
             {
                 DialogBox.UpInput = gamepad.GetButton(Xbox360GamePad.Button.DPadUp)
                     .Or(gamepad.LeftStick.UpAsButton);
+
                 DialogBox.DownInput = gamepad.GetButton(Xbox360GamePad.Button.DPadDown)
                     .Or(gamepad.LeftStick.DownAsButton);
-                //This should work, but not officially.
-                //You can comment out the below and try gamepad support
-                throw new NotImplementedException();
+
+                GameScreenGum.InputInstructionsInstance.CurrentInputTypeState = InputInstructionsRuntime.InputType.XboxController;
             }
 
             DialogBox.SelectInput = PlayerCharacterInstance.TalkInput;
@@ -332,8 +334,9 @@ namespace FishStory.Screens
             UiActivity();
 
             PlayerCollisionActivity();
-
+#if DEBUG
             DebuggingActivity();
+#endif
 
             // do script *after* the UI
             Map?.AnimateSelf();
@@ -373,6 +376,7 @@ namespace FishStory.Screens
             }
         }
 
+#if DEBUG
         private void DebuggingActivity()
         {
             var keyboard = InputManager.Keyboard;
@@ -406,6 +410,7 @@ namespace FishStory.Screens
 
             }
         }
+#endif
 
         void CameraActivity()
         {

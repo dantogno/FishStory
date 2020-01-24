@@ -71,6 +71,24 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>KeyCategoryState</Type>
+      <Name>EscapeKey.KeyCategoryState</Name>
+      <Value xsi:type="xsd:string">Escape</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>EscapeKey.X</Name>
+      <Value xsi:type="xsd:float">227</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>EscapeKey.Y</Name>
+      <Value xsi:type="xsd:float">58</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>Height</Name>
       <Value xsi:type="xsd:float">109</Value>
@@ -93,6 +111,11 @@
       <Name>IKey.Y</Name>
       <Value xsi:type="xsd:float">57</Value>
       <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>InputTypeState</Type>
+      <Name>InputTypeState</Name>
+      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>KeyCategoryState</Type>
@@ -412,6 +435,156 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>TextInstance3.Font</Name>
+      <Value xsi:type="xsd:string">Casual Encounter</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance3.FontSize</Name>
+      <Value xsi:type="xsd:int">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance3.OutlineThickness</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TextInstance3.Parent</Name>
+      <Value xsi:type="xsd:string">WKey</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TextInstance3.Text</Name>
+      <Value xsi:type="xsd:string">Or</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>TextInstance3.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance3.X</Name>
+      <Value xsi:type="xsd:float">-8</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TextInstance3.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance3.Y</Name>
+      <Value xsi:type="xsd:float">8</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TextInstance3.Y Units</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TextInstance4.Font</Name>
+      <Value xsi:type="xsd:string">Casual Encounter</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance4.FontSize</Name>
+      <Value xsi:type="xsd:int">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance4.Height</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TextInstance4.Height Units</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance4.OutlineThickness</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TextInstance4.Parent</Name>
+      <Value xsi:type="xsd:string">EscapeKey</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TextInstance4.Text</Name>
+      <Value xsi:type="xsd:string">Back/Cancel</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>TextInstance4.UseFontSmoothing</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance4.Width</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TextInstance4.Width Units</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance4.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>TextInstance4.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TextInstance4.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance4.Y</Name>
+      <Value xsi:type="xsd:float">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TextInstance4.Y Units</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>Width</Name>
       <Value xsi:type="xsd:float">233</Value>
@@ -442,6 +615,300 @@
       <SetsValue>true</SetsValue>
     </Variable>
   </State>
+  <Category>
+    <Name>InputType</Name>
+    <State>
+      <Name>Keyboard</Name>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>AKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">A</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <IsFont>true</IsFont>
+        <Type>string</Type>
+        <Name>TextInstance3.Font</Name>
+        <Value xsi:type="xsd:string">Arial</Value>
+        <Category>Font</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance3.FontSize</Name>
+        <Value xsi:type="xsd:int">18</Value>
+        <Category>Font</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance3.OutlineThickness</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <Category>Font</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>TextInstance3.Parent</Name>
+        <Value xsi:type="xsd:string">WKey</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>PositionUnitType</Type>
+        <Name>TextInstance3.X Units</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <Category>Position</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>PositionUnitType</Type>
+        <Name>TextInstance3.Y Units</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <Category>Position</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TextInstance3.Y</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <Category>Position</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>TextInstance3.Text</Name>
+        <Value xsi:type="xsd:string">Hello</Value>
+        <Category>Text</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>HorizontalAlignment</Type>
+        <Name>TextInstance3.X Origin</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <Category>Position</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TextInstance3.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>DKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">D</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>WKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">W</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>SKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">S</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>SpaceKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">Space</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SpaceKey.X</Name>
+        <Value xsi:type="xsd:float">116</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>IKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">I</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>EscapeKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">Escape</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>EscapeKey.X</Name>
+        <Value xsi:type="xsd:float">227</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>EscapeKey.Y</Name>
+        <Value xsi:type="xsd:float">58</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>IKey.X</Name>
+        <Value xsi:type="xsd:float">131</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>IKey.Y</Name>
+        <Value xsi:type="xsd:float">57</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SpaceKey.Y</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>XboxController</Name>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>AKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">AnalogPad</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>DKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">LeftStick</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>EscapeKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">XboxB</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>EscapeKey.X</Name>
+        <Value xsi:type="xsd:float">219</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>EscapeKey.Y</Name>
+        <Value xsi:type="xsd:float">53</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>IKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">XboxX</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>IKey.X</Name>
+        <Value xsi:type="xsd:float">132</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>IKey.Y</Name>
+        <Value xsi:type="xsd:float">-10</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>SKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">None</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>SpaceKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">XboxA</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SpaceKey.X</Name>
+        <Value xsi:type="xsd:float">130</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SpaceKey.Y</Name>
+        <Value xsi:type="xsd:float">53</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>TextInstance3.Font</Name>
+        <Value xsi:type="xsd:string">Casual Encounter</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance3.FontSize</Name>
+        <Value xsi:type="xsd:int">10</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance3.OutlineThickness</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>TextInstance3.Parent</Name>
+        <Value xsi:type="xsd:string">WKey</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>TextInstance3.Text</Name>
+        <Value xsi:type="xsd:string">Or</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TextInstance3.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>RenderingLibrary.Graphics.HorizontalAlignment</Type>
+        <Name>TextInstance3.X Origin</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>Gum.Managers.PositionUnitType</Type>
+        <Name>TextInstance3.X Units</Name>
+        <Value xsi:type="xsd:int">6</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TextInstance3.Y</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>Gum.Managers.PositionUnitType</Type>
+        <Name>TextInstance3.Y Units</Name>
+        <Value xsi:type="xsd:int">5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>KeyCategoryState</Type>
+        <Name>WKey.KeyCategoryState</Name>
+        <Value xsi:type="xsd:string">None</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>WKey</Name>
     <BaseType>KeyDisplay</BaseType>
@@ -490,6 +957,21 @@
   <Instance>
     <Name>ColoredRectangleInstance</Name>
     <BaseType>Container</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>TextInstance3</Name>
+    <BaseType>Text</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>EscapeKey</Name>
+    <BaseType>KeyDisplay</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>TextInstance4</Name>
+    <BaseType>Text</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />
