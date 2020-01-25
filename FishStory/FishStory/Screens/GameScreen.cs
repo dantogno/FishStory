@@ -372,7 +372,7 @@ namespace FishStory.Screens
 
             if (MusicManager.IsSongPlaying == false || MusicManager.CurrentSong != songToPlayForDay)
             {
-                MusicManager.PlaySong(songToPlayForDay);
+                MusicManager.PlaySong(songToPlayForDay, forceRestart: true, shouldLoop: true);
             }
         }
 
@@ -543,20 +543,27 @@ namespace FishStory.Screens
                         }
                     }
                 }
-                else if (PlayerCharacterInstance.IsFishing &&
-                    PlayerCharacterInstance.TalkInput.WasJustPressed &&
-                    PlayerCharacterInstance.LastTimeFishingStarted != TimeManager.CurrentScreenTime)
+                else if (PlayerCharacterInstance.IsFishing && PlayerCharacterInstance.LastTimeFishingStarted != TimeManager.CurrentScreenTime)
                 {
-                    if (PlayerCharacterInstance.IsFishOnLine)
+                    if (PlayerCharacterInstance.TalkInput.WasJustPressed && PlayerCharacterInstance.IsFishOnLine)
                     {
-                        string fishCaught = GetFishCaught(PlayerCharacterInstance.CurrentBait);
-                        PlayerDataManager.PlayerData.AwardItem(fishCaught);
-                        AddNotification($"Caught {fishCaught}");
-                        SoundManager.Play(GlobalContent.FishCatchSound);
+                        HandleFishCaught();
+                        PlayerCharacterInstance.StopFishing();
+                    } 
+                    else if (PlayerCharacterInstance.TalkInput.WasJustPressed || PlayerCharacterInstance.CancelInput.WasJustPressed)
+                    { 
+                        PlayerCharacterInstance.StopFishing();
                     }
-                    PlayerCharacterInstance.StopFishing();
                 }
             }           
+        }
+
+        private void HandleFishCaught()
+        {
+            string fishCaught = GetFishCaught(PlayerCharacterInstance.CurrentBait);
+            PlayerDataManager.PlayerData.AwardItem(fishCaught);
+            AddNotification($"Caught {fishCaught}");
+            SoundManager.Play(GlobalContent.FishCatchSound);
         }
 
         private void UpdatePropObjectsLights()
@@ -979,7 +986,7 @@ namespace FishStory.Screens
             {
                 inventory.CustomActivity();
             }
-            else if (inventory.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed)
+            else if (inventory.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed && PlayerCharacterInstance.ObjectsBlockingInput.Any() == false)
             {
                 ShowInventory(InventoryRuntime.ViewOrSell.View, 1.0f, InventoryRestrictions.NoRestrictions);
             }
