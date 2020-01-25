@@ -74,17 +74,55 @@ namespace FishStory.Screens
             return dictionary.Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
         }
 
+        /// <summary>
+        /// Returns a list of string keys with the top int values in a Dictionary.
+        /// For use when determining the characters to use alternative dialog in day 2.
+        /// </summary>
+        /// <param name="numberOfKeysToReturn">How many keys (characters to use alt dialog) in the list returned.</param>
+        private List<string> GetKeysWithTopValues(Dictionary<string, int> dictionary, int numberOfKeysToReturn)
+        {
+            var list = dictionary.ToList();
+            list.Sort((pair1, pair2) => pair1.Value.CompareTo(pair2.Value));
+            var keys = list.Select((kvp) => kvp.Key);
+            return keys.Take(numberOfKeysToReturn).ToList();
+        }
+
+        /// <summary>
+        /// These characters represen specific traits / classes. 
+        /// On day 2, if this class is threatened based on the number and type
+        /// of fish caught, these characters will have alternative dialog.
+        /// </summary>
+        private Dictionary<string, string> classRepresentatives = new Dictionary<string, string>()
+        {
+            // male
+            {ItemDefinition.King_Mackerel, "Fishmonger"},
+            // female
+            {ItemDefinition.Ladyfish, "Mayor" },
+            // old
+            { ItemDefinition.Rougheye_Rockfish, "ElderlyMother" },
+            // young
+            { ItemDefinition.Shrimp, "Farmer" },
+            // bald
+            { ItemDefinition.Monkfish, "Identifier" },
+            // facial hair
+            { ItemDefinition.Goatfish, "Tycoon" },
+            // mother
+            { ItemDefinition.Giant_Octopus, "Nun" },
+            // father
+            { ItemDefinition.Seahorse, "TycoonDaughter" },
+            // blonde hair
+            {ItemDefinition.Trumpetfish, "YoungManBaitShop"  },
+            // dark hair
+            {ItemDefinition.Cobia, "FestivalCoordinator" },
+            // brown hair
+            {ItemDefinition.Brown_Rockfish, "BlackMarketShop" }
+        };
+
         private void InitializeScript()
         {
             var If = script;
             var Do = script;
-
-
-            PlayerCharacterInstance.DirectionFacing = TopDownDirection.Left;
-
-            // TODO: remove this. Can use this to debug different days.
-            // PlayerDataManager.PlayerData.CurrentDay = 2;
-
+            
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 1);
             Do.Call(() => DoDay1Script(If, Do));
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 2);
@@ -97,9 +135,24 @@ namespace FishStory.Screens
             Do.Call(() => DoDay5Script(If, Do));
         }
 
+        private void HandleDay2TraitAlternateDialogForClassRepresentatives(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
+        {
+            int numberOfClassRepresentativesToUseAltDay2Dialog = 4;
+            var mostIdentifiedFish = GetKeysWithTopValues(PlayerDataManager.PlayerData.TimesFishIdentified, numberOfClassRepresentativesToUseAltDay2Dialog);
+
+            If.Check(()=> { return true; });
+            foreach (var item in mostIdentifiedFish)
+            {
+                Do.Call(() =>
+                {
+                    NPCList.FindByName(classRepresentatives[item]).TwineDialogId = classRepresentatives[item] + "Day2AltTrait";
+                });
+            }
+        }
+
         private void DoDay1Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
-
+            PlayerCharacterInstance.DirectionFacing = TopDownDirection.Left;
             GameScreenGum.InputInstructionsInstance.Visible = true;
             var secondsToShowInputCallout = 7;
             this
@@ -232,6 +285,7 @@ namespace FishStory.Screens
             #endregion
             #region FishermanHair
             #endregion
+            HandleDay2TraitAlternateDialogForClassRepresentatives(If, Do);
         }
         private void DoDay3Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
