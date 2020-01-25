@@ -1,0 +1,135 @@
+{
+  "passages": [
+    {
+      "text": "Ingrid? Is that you? My dear, it has been so long! How have you been?\n[[I'm not Ingrid.|Not ingrid]]\n[[I've been well, how are you?|How are you]]",
+      "links": [
+        {
+          "name": "I'm not Ingrid.|Not ingrid",
+          "link": "I'm not Ingrid.|Not ingrid"
+        },
+        {
+          "name": "I've been well, how are you?|How are you",
+          "link": "I've been well, how are you?|How are you"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "554",
+        "y": "298.5"
+      }
+    },
+    {
+      "text": "Oh... No? Are you sure? But... you look just like her. You have her eyes... I miss those eyes. I haven't seen them since... Since...\n[[Continue]]\n",
+      "links": [
+        {
+          "name": "Continue",
+          "link": "Continue",
+          "pid": "4"
+        }
+      ],
+      "name": "Not ingrid",
+      "pid": "2",
+      "position": {
+        "x": "479",
+        "y": "448.5"
+      }
+    },
+    {
+      "text": "Oh, well, not as good as I once was. But you look wonderful! Just as young and bright as the last time I saw you. Oh, Ingrid, I was so terribly sad to hear about what happened to you.\n[[Continue2]]",
+      "links": [
+        {
+          "name": "Continue2",
+          "link": "Continue2",
+          "pid": "6"
+        }
+      ],
+      "name": "How are you",
+      "pid": "3",
+      "position": {
+        "x": "629",
+        "y": "448.5"
+      }
+    },
+    {
+      "text": "...\n[[Are you okay?|Start]]\n[[Bye.|bye]]",
+      "links": [
+        {
+          "name": "Are you okay?|Start",
+          "link": "Are you okay?|Start"
+        },
+        {
+          "name": "Bye.|bye",
+          "link": "Bye.|bye"
+        }
+      ],
+      "name": "Continue",
+      "pid": "4",
+      "position": {
+        "x": "299",
+        "y": "339.5"
+      }
+    },
+    {
+      "text": "Good day, dear. My the tides refrain from sweeping you away...",
+      "name": "bye",
+      "pid": "5",
+      "position": {
+        "x": "282",
+        "y": "849.5"
+      }
+    },
+    {
+      "text": "I have always thought that it shouldn't have been you. You had so much to look forward to here! That farmer boy, what was his name... Harald! He liked you ever so much. I do believe that you would have had such a bountiful future with him. But, such is the way of things...\n[[What happened to me?|What happened]]",
+      "links": [
+        {
+          "name": "What happened to me?|What happened",
+          "link": "What happened to me?|What happened"
+        }
+      ],
+      "name": "Continue2",
+      "pid": "6",
+      "position": {
+        "x": "629",
+        "y": "598.5"
+      }
+    },
+    {
+      "text": "Oh, dear, there's no need to be coy. I do believe it would be quite difficult to forget such a thing... Even for me!\n[[Continue3]]",
+      "links": [
+        {
+          "name": "Continue3",
+          "link": "Continue3",
+          "pid": "8"
+        }
+      ],
+      "name": "What happened",
+      "pid": "7",
+      "position": {
+        "x": "629",
+        "y": "748.5"
+      }
+    },
+    {
+      "text": "Well, it's been so wonderful to see you again, Ingrid. Do tell my mother that I miss her when you return.\n[[bye]] ",
+      "links": [
+        {
+          "name": "bye",
+          "link": "bye",
+          "pid": "5"
+        }
+      ],
+      "name": "Continue3",
+      "pid": "8",
+      "position": {
+        "x": "450",
+        "y": "754.5"
+      }
+    }
+  ],
+  "name": "ElderlyMotherDay2",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "7F186EDE-8D79-4200-ADC4-CE48D8A2D597"
+}
