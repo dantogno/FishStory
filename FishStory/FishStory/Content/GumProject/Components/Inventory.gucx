@@ -427,7 +427,7 @@
     <Variable>
       <Type>float</Type>
       <Name>SellButton.X</Name>
-      <Value xsi:type="xsd:float">252</Value>
+      <Value xsi:type="xsd:float">135</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -439,7 +439,7 @@
     <Variable>
       <Type>float</Type>
       <Name>SellButton.Y</Name>
-      <Value xsi:type="xsd:float">130</Value>
+      <Value xsi:type="xsd:float">129</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1022,6 +1022,24 @@
         <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.X</Name>
+        <Value xsi:type="xsd:float">135</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.Y</Name>
+        <Value xsi:type="xsd:float">129</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.Height</Name>
+        <Value xsi:type="xsd:float">78</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>Sell</Name>
@@ -1044,9 +1062,27 @@
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
+        <Type>float</Type>
+        <Name>SellButton.Height</Name>
+        <Value xsi:type="xsd:float">45</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
         <Type>bool</Type>
         <Name>SellButton.Visible</Name>
         <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.X</Name>
+        <Value xsi:type="xsd:float">134.5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.Y</Name>
+        <Value xsi:type="xsd:float">138</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
