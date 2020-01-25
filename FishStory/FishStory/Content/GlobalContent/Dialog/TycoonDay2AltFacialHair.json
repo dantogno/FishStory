@@ -1,0 +1,250 @@
+{
+  "passages": [
+    {
+      "text": "Ah, you again! So, how are you enjoying your lodgings?\n[[The trailer is a bit drafty.|Drafty]]\n[[It's perfect, thank you!|Perfect]]",
+      "links": [
+        {
+          "name": "The trailer is a bit drafty.|Drafty",
+          "link": "The trailer is a bit drafty.|Drafty"
+        },
+        {
+          "name": "It's perfect, thank you!|Perfect",
+          "link": "It's perfect, thank you!|Perfect"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "495",
+        "y": "559"
+      }
+    },
+    {
+      "text": "Well of course it is! How else would you fully take in the fresh sea air that you traveled so far to enjoy?\n[[I told you, I'm not here for vacation.|No vacation]]\n[[I guess you're right.|Youre right]]",
+      "links": [
+        {
+          "name": "I told you, I'm not here for vacation.|No vacation",
+          "link": "I told you, I'm not here for vacation.|No vacation"
+        },
+        {
+          "name": "I guess you're right.|Youre right",
+          "link": "I guess you're right.|Youre right"
+        }
+      ],
+      "name": "Drafty",
+      "pid": "2",
+      "position": {
+        "x": "420",
+        "y": "709"
+      }
+    },
+    {
+      "text": "See, I knew the moment I saw you that you were the type that understands quality when you see it! You have the critical eye of an artist! And I'm sure an artist such as yourself would be simply ecstatic at the opportunity to take in everything this wonderful location has to offer.\n[[Continue2]]",
+      "links": [
+        {
+          "name": "Continue2",
+          "link": "Continue2",
+          "pid": "10"
+        }
+      ],
+      "name": "Perfect",
+      "pid": "3",
+      "position": {
+        "x": "570",
+        "y": "709"
+      }
+    },
+    {
+      "text": "Hmm, is that so? Well, regardless, you don't have to be on vacation to enjoy everything this wonderful location has to offer! Can I interest you in a scenic boat ride? For a small fee, of course.\n[[Could the boat take me back to the mainland?|Mainland]]\n[[No thanks. I have to get back to fishing.|Fishing to do]]",
+      "links": [
+        {
+          "name": "Could the boat take me back to the mainland?|Mainland",
+          "link": "Could the boat take me back to the mainland?|Mainland"
+        },
+        {
+          "name": "No thanks. I have to get back to fishing.|Fishing to do",
+          "link": "No thanks. I have to get back to fishing.|Fishing to do"
+        }
+      ],
+      "name": "No vacation",
+      "pid": "4",
+      "position": {
+        "x": "405",
+        "y": "862"
+      }
+    },
+    {
+      "text": "Yes, yes. See, for a moment there, it almost seemed like you weren't grateful for the generosity I've bestowed upon you. Almost as if I hadn't provided you with a sturdy roof over your head when I was under no obligation to do so.\n[[Continue]]",
+      "links": [
+        {
+          "name": "Continue",
+          "link": "Continue",
+          "pid": "7"
+        }
+      ],
+      "name": "Youre right",
+      "pid": "5",
+      "position": {
+        "x": "229",
+        "y": "863"
+      }
+    },
+    {
+      "text": "Oh no, of course not. This is a strictly leisure-oriented activity. Besides, the only boat capable of making a journey through waters that rough won't be leaving until after the festival.\n[[I have fishing to do.|Fishing to do]]",
+      "links": [
+        {
+          "name": "I have fishing to do.|Fishing to do",
+          "link": "I have fishing to do.|Fishing to do"
+        }
+      ],
+      "name": "Mainland",
+      "pid": "6",
+      "position": {
+        "x": "572",
+        "y": "1015"
+      }
+    },
+    {
+      "text": "But that would be quite silly, wouldn't it?\n[[Yes it would.|Yes silly]]\n[[Actually...|No silly]]",
+      "links": [
+        {
+          "name": "Yes it would.|Yes silly",
+          "link": "Yes it would.|Yes silly"
+        },
+        {
+          "name": "Actually...|No silly",
+          "link": "Actually...|No silly"
+        }
+      ],
+      "name": "Continue",
+      "pid": "7",
+      "position": {
+        "x": "230",
+        "y": "975"
+      }
+    },
+    {
+      "text": "I thought so. Now, let's take a moment to talk about the many amazing amenities available to you (for a small fee) at this delightful location.\n[[I have fishing to do.|Fishing to do]]",
+      "links": [
+        {
+          "name": "I have fishing to do.|Fishing to do",
+          "link": "I have fishing to do.|Fishing to do"
+        }
+      ],
+      "name": "Yes silly",
+      "pid": "8",
+      "position": {
+        "x": "167",
+        "y": "1104"
+      }
+    },
+    {
+      "text": "Let me stop you right there. I have better things to do that listen to a stranger - a beggarly stranger, no less - lecture me about the integrity of my facilities. And I trust that you do as well. Or do you spend the majority of your time accosting innocent small business owners?\n[[I have fishing to do.|Fishing to do]]",
+      "links": [
+        {
+          "name": "I have fishing to do.|Fishing to do",
+          "link": "I have fishing to do.|Fishing to do"
+        }
+      ],
+      "name": "No silly",
+      "pid": "9",
+      "position": {
+        "x": "279",
+        "y": "1101"
+      }
+    },
+    {
+      "text": "Mayhaps I can interest you in a scenic boat ride? For a small fee, of course.\n[[Could the boat take me back to the mainland?|Mainland]]\n[[No thanks. I have to get back to fishing.|Fishing to do]]",
+      "links": [
+        {
+          "name": "Could the boat take me back to the mainland?|Mainland",
+          "link": "Could the boat take me back to the mainland?|Mainland"
+        },
+        {
+          "name": "No thanks. I have to get back to fishing.|Fishing to do",
+          "link": "No thanks. I have to get back to fishing.|Fishing to do"
+        }
+      ],
+      "name": "Continue2",
+      "pid": "10",
+      "position": {
+        "x": "578",
+        "y": "865"
+      }
+    },
+    {
+      "text": "Now, you hold on for just one moment!\n[[AltFacialHair]]",
+      "links": [
+        {
+          "name": "AltFacialHair",
+          "link": "AltFacialHair",
+          "pid": "12"
+        }
+      ],
+      "name": "Fishing to do",
+      "pid": "11",
+      "position": {
+        "x": "453",
+        "y": "1190"
+      }
+    },
+    {
+      "text": "Now, as you certainly already know, a man of my stature holds a certain... seat of importance within the community. And, if that type of man feels that his situation is being threatened, he may take certain measures to protect himself, even if those measures are frowned upon by the community.\n[[continuealt]]",
+      "links": [
+        {
+          "name": "continuealt",
+          "link": "continuealt",
+          "pid": "13"
+        }
+      ],
+      "name": "AltFacialHair",
+      "pid": "12",
+      "position": {
+        "x": "456",
+        "y": "1323"
+      }
+    },
+    {
+      "text": "For you see, the continued success of the community of is intrinsically initerwoven with the continued success of this man, and so it is in the best interest of the community that this man protect himself. Do you understand what I am saying?\n[[Yes.|yes understand]]\n[[Not at all.|No understand]]",
+      "links": [
+        {
+          "name": "Yes.|yes understand",
+          "link": "Yes.|yes understand"
+        },
+        {
+          "name": "Not at all.|No understand",
+          "link": "Not at all.|No understand"
+        }
+      ],
+      "name": "continuealt",
+      "pid": "13",
+      "position": {
+        "x": "456",
+        "y": "1473"
+      }
+    },
+    {
+      "text": "Wonderful. So I do hope, for everyone's sake - including yours - that the next time a goatfish finds its way onto your hook, you will simply forget you saw its wonderfully ziffed visage.",
+      "name": "yes understand",
+      "pid": "14",
+      "position": {
+        "x": "381",
+        "y": "1623"
+      }
+    },
+    {
+      "text": "The goatfish, you imbecile! Stop catching them at once. Or... at the very least, when one of their delightfully ziffed faces finds its way onto your hook, sell it to that scruffy man who lingers by the dump. You must do this, or I will insure that you regret it.",
+      "name": "No understand",
+      "pid": "15",
+      "position": {
+        "x": "531",
+        "y": "1623"
+      }
+    }
+  ],
+  "name": "TycoonDay2AltFacialHair",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "5F869360-714D-496A-B309-8464B7B6961D"
+}
