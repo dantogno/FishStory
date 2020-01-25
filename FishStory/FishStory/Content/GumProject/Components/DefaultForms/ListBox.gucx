@@ -71,6 +71,24 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>CustomNiceSliceInstance.BackgroundBlue</Name>
+      <Value xsi:type="xsd:int">175</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CustomNiceSliceInstance.BackgroundGreen</Name>
+      <Value xsi:type="xsd:int">75</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CustomNiceSliceInstance.BackgroundRed</Name>
+      <Value xsi:type="xsd:int">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>CustomNiceSliceInstance.Width</Name>
       <Value xsi:type="xsd:float">-36</Value>

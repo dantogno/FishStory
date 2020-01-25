@@ -10,6 +10,24 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>CustomNiceSliceInstance.BackgroundBlue</Name>
+      <Value xsi:type="xsd:int">40</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CustomNiceSliceInstance.BackgroundGreen</Name>
+      <Value xsi:type="xsd:int">125</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CustomNiceSliceInstance.BackgroundRed</Name>
+      <Value xsi:type="xsd:int">220</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>bool</Type>
       <Name>ExposeChildrenEvents</Name>
       <Value xsi:type="xsd:boolean">false</Value>
@@ -65,8 +83,9 @@
     <Variable>
       <Type>string</Type>
       <Name>TextInstance.Text</Name>
+      <Value xsi:type="xsd:string">X</Value>
       <ExposedAsName>ButtonText</ExposedAsName>
-      <SetsValue>false</SetsValue>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
@@ -130,7 +149,7 @@
       <Variable>
         <Type>int</Type>
         <Name>CustomNiceSliceInstance.BackgroundBlue</Name>
-        <Value xsi:type="xsd:int">255</Value>
+        <Value xsi:type="xsd:int">40</Value>
         <ExposedAsName>BackgroundBlue</ExposedAsName>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -144,8 +163,29 @@
       <Variable>
         <Type>int</Type>
         <Name>CustomNiceSliceInstance.BackgroundRed</Name>
-        <Value xsi:type="xsd:int">100</Value>
+        <Value xsi:type="xsd:int">220</Value>
         <ExposedAsName>BackgroundRed</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <Category>Rendering</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Green</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <Category>Rendering</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <Category>Rendering</Category>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -154,21 +194,39 @@
       <Variable>
         <Type>int</Type>
         <Name>CustomNiceSliceInstance.BackgroundBlue</Name>
-        <Value xsi:type="xsd:int">50</Value>
+        <Value xsi:type="xsd:int">10</Value>
         <ExposedAsName>BackgroundBlue</ExposedAsName>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
         <Name>CustomNiceSliceInstance.BackgroundGreen</Name>
-        <Value xsi:type="xsd:int">50</Value>
+        <Value xsi:type="xsd:int">25</Value>
         <ExposedAsName>BackgroundGreen</ExposedAsName>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
         <Name>CustomNiceSliceInstance.BackgroundRed</Name>
-        <Value xsi:type="xsd:int">50</Value>
+        <Value xsi:type="xsd:int">90</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Red</Name>
+        <Value xsi:type="xsd:int">128</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Green</Name>
+        <Value xsi:type="xsd:int">128</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">128</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -177,21 +235,42 @@
       <Variable>
         <Type>int</Type>
         <Name>CustomNiceSliceInstance.BackgroundBlue</Name>
-        <Value xsi:type="xsd:int">255</Value>
+        <Value xsi:type="xsd:int">25</Value>
         <ExposedAsName>BackgroundBlue</ExposedAsName>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
         <Name>CustomNiceSliceInstance.BackgroundGreen</Name>
-        <Value xsi:type="xsd:int">220</Value>
+        <Value xsi:type="xsd:int">160</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
         <Name>CustomNiceSliceInstance.BackgroundRed</Name>
-        <Value xsi:type="xsd:int">100</Value>
+        <Value xsi:type="xsd:int">220</Value>
         <ExposedAsName>BackgroundRed</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">128</Value>
+        <Category>Rendering</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Green</Name>
+        <Value xsi:type="xsd:int">128</Value>
+        <Category>Rendering</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Red</Name>
+        <Value xsi:type="xsd:int">128</Value>
+        <Category>Rendering</Category>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -200,13 +279,13 @@
       <Variable>
         <Type>int</Type>
         <Name>CustomNiceSliceInstance.BackgroundBlue</Name>
-        <Value xsi:type="xsd:int">200</Value>
+        <Value xsi:type="xsd:int">50</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
         <Name>CustomNiceSliceInstance.BackgroundGreen</Name>
-        <Value xsi:type="xsd:int">125</Value>
+        <Value xsi:type="xsd:int">60</Value>
         <ExposedAsName>BackgroundGreen</ExposedAsName>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -215,6 +294,27 @@
         <Name>CustomNiceSliceInstance.BackgroundRed</Name>
         <Value xsi:type="xsd:int">100</Value>
         <ExposedAsName>BackgroundRed</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">30</Value>
+        <Category>Rendering</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Green</Name>
+        <Value xsi:type="xsd:int">10</Value>
+        <Category>Rendering</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Red</Name>
+        <Value xsi:type="xsd:int">110</Value>
+        <Category>Rendering</Category>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
