@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "I'm the only one around here who does any dang work... Fishing isn't work, it's just sitting with more accessories!",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "584",
+        "y": "672"
+      }
+    }
+  ],
+  "name": "FarmerDay1Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "75E7984C-BA57-4E14-AD8F-C22D95CE5E9D"
+}

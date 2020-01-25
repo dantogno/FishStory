@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>MayorDay2AltFemale</title>
+		<script type="text/javascript">
+/**
+ * Twison - Twine 2 JSON Export Story Format
+ * 
+ * Copyright (c) 2015 Mike Walker
+ * https://lazerwalker.com
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+ * associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial
+ * portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ * LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+var Twison={extractLinksFromText:function(t){var n=t.match(/\[\[.+?\]\]/g);return n?n.map(function(t){var n=t.match(/\[\[(.*?)\-\&gt;(.*?)\]\]/);return n?{name:n[1],link:n[2]}:(t=t.substring(2,t.length-2),{name:t,link:t})}):void 0},convertPassage:function(t){var n={text:t.innerHTML},a=Twison.extractLinksFromText(n.text);if(a&&(n.links=a),["name","pid","position","tags"].forEach(function(a){var e=t.attributes[a].value;e&&(n[a]=e)}),n.position){var e=n.position.split(",");n.position={x:e[0],y:e[1]}}return n.tags&&(n.tags=n.tags.split(" ")),n},convertStory:function(t){var n=t.getElementsByTagName("tw-passagedata"),a=Array.prototype.slice.call(n).map(Twison.convertPassage),e={passages:a};["name","startnode","creator","creator-version","ifid"].forEach(function(n){var a=t.attributes[n].value;a&&(e[n]=a)});var i={};return e.passages.forEach(function(t){i[t.name]=t.pid}),e.passages.forEach(function(t){t.links&&t.links.forEach(function(t){t.pid=i[t.link]})}),e},convert:function(){var t=document.getElementsByTagName("tw-storydata")[0],n=JSON.stringify(Twison.convertStory(t),null,2);document.getElementById("output").innerHTML=n}};window.Twison=Twison;		
+		</script>
+	</head>
+	<body>
+		<pre id="output">
+		
+		</pre>
+		<div id="storyData" style="display: none;">
+			<tw-storydata name="MayorDay2AltFemale" startnode="1" creator="Twine" creator-version="2.3.5" ifid="32ECAC34-FB8A-4769-A2C4-9509B9D81625" zoom="1" format="Twison" format-version="0.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="584,672" size="100,100">Ah, hello again. How are you finding my town so far?
+[[It&#39;s nice.|like it]]
+[[I&#39;m just here to make some money.|Make money]]</tw-passagedata><tw-passagedata pid="2" name="like it" tags="" position="460,811" size="100,100">Ah, I&#39;m glad you think so. We don&#39;t get many visitors here... And those that do visit often don&#39;t stay for long. Life out here isn&#39;t easy, so we&#39;ve remained rather isolated from the rest of the world... But I don&#39;t believe there are many here who would complain about that. Do you feel similarly?
+[[I like being on my own.|like isolation]]
+[[I tend to perfer larger towns.|pefer larger]]</tw-passagedata><tw-passagedata pid="3" name="Make money" tags="" position="732,818" size="100,100">Yes, yes. But even someone with dollar signs in their eyes can&#39;t help but see the natural beauty we have all around us. Surely there must be something you&#39;ve enjoyed here. How has the fishing been?
+[[It&#39;s good.|good fishing]]
+[[It&#39;s slow going.|slow going]]</tw-passagedata><tw-passagedata pid="4" name="like isolation" tags="" position="385,961" size="100,100">Ah, that is good to hear! The outside world -- or at least, what little I&#39;ve seen of it -- can be rather overwhelming at times. Here, things are simple.
+[[continue]]</tw-passagedata><tw-passagedata pid="5" name="pefer larger" tags="" position="535,961" size="100,100">Oh, I am sorry to hear that. But I&#39;m sure there are other things that drew you to this place... The sea is generous, is it not? That&#39;s why we make an effort to return the favor once a year. It gives us everything we have, so it&#39;s only fair that we give something back. Even if it&#39;s something we don&#39;t want to lose.
+[[I&#39;m going to get back to fishing.|bye]]</tw-passagedata><tw-passagedata pid="6" name="good fishing" tags="" position="669,961" size="100,100">I&#39;m glad to hear it. The sea is generous, isn&#39;t it? That&#39;s why we make an effort to return the favor once a year. It gives us everything we have, so it&#39;s only fair that we give something back. Even if it&#39;s something we don&#39;t want to lose.
+[[I&#39;m going to get back to fishing.|bye]]</tw-passagedata><tw-passagedata pid="7" name="slow going" tags="" position="800,957" size="100,100">Oh, I&#39;m sorry to hear that... and a bit shocked, frankly. Keep at it! The sea is normally so generous... It gives us everything we have, so it&#39;s only fair that we give something back at least once a year. Even if it&#39;s something we don&#39;t want to lose.
+[[I&#39;m going to get back to fishing.|bye]]</tw-passagedata><tw-passagedata pid="8" name="bye" tags="" position="627,1205" size="100,100">Ah, one more thing before you go... I&#39;ve noticed there&#39;s been an increase in Ladyfish caughting since you arrived. Of course, this is the will of the sea and is out of our control...
+[[continuealt]]</tw-passagedata><tw-passagedata pid="9" name="continue" tags="" position="385,1087" size="100,100">We coexist with the sea, living off of its generosity. Then when it is time, we return the favor, and give something back. It is an important gesture... even if what we give ends up being something we don&#39;t want to lose.
+[[I&#39;m going to get back to fishing.|bye]]</tw-passagedata><tw-passagedata pid="10" name="continuealt" tags="" position="627,1355" size="100,100">But maybe the will of the sea is not set in stone, hmm? Trust me, it is in both of our best interests if it can be encouraged in the other direction... Towards the King Mackerel, perhaps.
+[[byealt]]</tw-passagedata><tw-passagedata pid="11" name="byealt" tags="" position="627,1505" size="100,100">Just a thought. Carry on with your day, and may the tide flow in your favor!</tw-passagedata></tw-storydata>
+		</div>
+		<script>
+			Twison.convert()
+		</script>
+	</body>
+</html>

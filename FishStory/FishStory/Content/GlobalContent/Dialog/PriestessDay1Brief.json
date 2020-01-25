@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Please excuse me, I am conveining with the land...",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "584",
+        "y": "526"
+      }
+    }
+  ],
+  "name": "PriestessDay1Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "F838690F-E2D1-4AB0-8A51-38C29E1FCE0A"
+}
