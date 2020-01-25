@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "I'll told you, I'm busy! Leave me alone!",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "584",
+        "y": "636"
+      }
+    }
+  ],
+  "name": "TycoonDaughterDay1Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "C4C6C7EE-9DEA-4833-BB30-F8D14F1E1FDB"
+}

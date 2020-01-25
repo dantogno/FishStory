@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Oh my, I seem to have lost track of time... Now how will I get everything done before worship?",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "584",
+        "y": "672"
+      }
+    }
+  ],
+  "name": "NunDay1Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "85D4FC6C-9356-464F-BE4B-FF17A653D7C7"
+}

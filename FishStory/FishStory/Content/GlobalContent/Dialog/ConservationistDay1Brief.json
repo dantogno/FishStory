@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "What interesting architecture... I just hope someone lets me see the inside of one of these buildings at some point.",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "584",
+        "y": "672"
+      }
+    }
+  ],
+  "name": "ConservationistDay1Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "90C2077F-709A-4672-8D37-2006E7C8F331"
+}

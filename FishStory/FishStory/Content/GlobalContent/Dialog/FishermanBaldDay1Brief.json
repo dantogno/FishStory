@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Igotfishtocatch! Leavemebe!",
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "584",
+        "y": "672"
+      }
+    }
+  ],
+  "name": "FishermanBaldDay1Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "899D7B1A-92C3-4954-83C8-879785A18A4F"
+}
