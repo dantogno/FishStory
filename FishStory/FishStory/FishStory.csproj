@@ -470,6 +470,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>children_1</Name>
     </None>
+    <None Include="content\entities\npc\cloakedguy.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>CloakedGuy</Name>
+    </None>
     <None Include="content\entities\npc\deckardcainwithcane.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>DeckardCainWithCane</Name>
