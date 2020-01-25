@@ -13,6 +13,7 @@ namespace FishStory.Entities
 {
     public partial class FishingZone
     {
+        public bool IsActive { get; set; } = true;
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not
