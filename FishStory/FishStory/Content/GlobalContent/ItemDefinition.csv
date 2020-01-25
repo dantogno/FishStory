@@ -1,7 +1,7 @@
 "Name (string, required)",AssociatedItem (string),Icon (string),IsBait (bool),IsFish (bool),PlayerBuyingCost (int),PlayerSellingCost (int),Description (string),UnidentifiedDescription (string),AssociatedCharacters (List<string>)
 Fishing Rod,,,,,250,0,Press the interact button near the water to cast. Press it again when you get a bite!,,
 Festival Badge,,,,,,0,"""The bearer of this badge may officially participate in the 203rd Ensomme Fishing Festival.""",,
-Festival Pamphlet,,,,,,0,"""Need bait? Stock up in the town square. Our vendors replenish their inventory daily. Caught a big one? Take it to the white tent in front of the church to have it officially recorded! To preserve our ecology and qualitya a, only officially recorded fish can be sold to the fishmonger.""",,
+Festival Pamphlet,,,,,,0,"""Need bait? Stock up in the town square. Our vendors replenish their inventory daily. Caught a big one? Take it to the white tent in front of the church to have it officially recorded! To preserve our ecology and quality, only officially recorded fish can be sold to the fishmonger.""",,
 Trailer Key,,,,,,0,Mr. Petterson has loaned you the red trailer south of town square for the duration of the festival.,,
 // Unidentified objects,,,,,,,,,
 Small Fish,Ladyfish,,,,,4,,,
@@ -9,7 +9,7 @@ Wriggling Creature,Giant Octopus,,,,,5,,,
 Small Wriggling Creature,Seahorse,,,,,6,,,
 Huge Shiny Fish,King Mackerel,,,,,7,,,
 Ugly Fish,Monkfish,,,,,8,,,
-Long Fish,Trumpefish,,,,,9,,,
+Long Fish,Trumpetfish,,,,,9,,,
 Large Ugly Fish,Rougheye Rockfish,,,,,10,,,
 Small Brown Fish,Brown Rockfish,,,,,11,,,
 Huge Dark Fish,Cobia,,,,,12,,,
@@ -37,7 +37,7 @@ King Mackerel,,,,true,,3,"Men. Big fish, sardine, bonito",Unidentified,FestivalC
 ,,,,,,,,,FishermanBald
 ,,,,,,,,,FishermanHair
 Monkfish,,,,true,,4,bald. eats everything,Unidentified,
-Trumpefish,,,,true,,5,golden / yellow. reefs. eats small fish and squid,Unidentified,
+Trumpetfish,,,,true,,5,golden / yellow. reefs. eats small fish and squid,Unidentified,
 Rougheye Rockfish,,,,true,,30,Old This fish can live for over 200 years!,Unidentified,
 Brown Rockfish,,,,true,,6,Brown. near dock / pier. worms and squid,Unidentified,
 Cobia,,,,true,,7,"Black. Large. Eats squid, bonito. Wrecks, harbours, buoys, reefs.",Unidentified,
