@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>FarmerDay2AltYoung</title>
+		<script type="text/javascript">
+/**
+ * Twison - Twine 2 JSON Export Story Format
+ * 
+ * Copyright (c) 2015 Mike Walker
+ * https://lazerwalker.com
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+ * associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial
+ * portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ * LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+var Twison={extractLinksFromText:function(t){var n=t.match(/\[\[.+?\]\]/g);return n?n.map(function(t){var n=t.match(/\[\[(.*?)\-\&gt;(.*?)\]\]/);return n?{name:n[1],link:n[2]}:(t=t.substring(2,t.length-2),{name:t,link:t})}):void 0},convertPassage:function(t){var n={text:t.innerHTML},a=Twison.extractLinksFromText(n.text);if(a&&(n.links=a),["name","pid","position","tags"].forEach(function(a){var e=t.attributes[a].value;e&&(n[a]=e)}),n.position){var e=n.position.split(",");n.position={x:e[0],y:e[1]}}return n.tags&&(n.tags=n.tags.split(" ")),n},convertStory:function(t){var n=t.getElementsByTagName("tw-passagedata"),a=Array.prototype.slice.call(n).map(Twison.convertPassage),e={passages:a};["name","startnode","creator","creator-version","ifid"].forEach(function(n){var a=t.attributes[n].value;a&&(e[n]=a)});var i={};return e.passages.forEach(function(t){i[t.name]=t.pid}),e.passages.forEach(function(t){t.links&&t.links.forEach(function(t){t.pid=i[t.link]})}),e},convert:function(){var t=document.getElementsByTagName("tw-storydata")[0],n=JSON.stringify(Twison.convertStory(t),null,2);document.getElementById("output").innerHTML=n}};window.Twison=Twison;		
+		</script>
+	</head>
+	<body>
+		<pre id="output">
+		
+		</pre>
+		<div id="storyData" style="display: none;">
+			<tw-storydata name="FarmerDay2AltYoung" startnode="1" creator="Twine" creator-version="2.3.5" ifid="D206E07F-DAF0-45D3-B7FB-B863D68B56CD" zoom="1" format="Twison" format-version="0.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="403,427" size="100,100">Are you here to return my shovel?
+[[What?|what]]</tw-passagedata><tw-passagedata pid="2" name="what" tags="" position="404,591" size="100,100">My shovel! It&#39;s gone, I need it, and you were the last person here before it went missing! Well, you and my son. Where is it?
+[[I didn&#39;t take it, but I might know who did.|Know who]]
+[[Are you sure your son didn&#39;t take it?|Son take it]]</tw-passagedata><tw-passagedata pid="3" name="Son take it" tags="" position="479,741" size="100,100">You&#39;re dumber than a fish on a hook. Why would he do that?! He&#39;s got his own dang shovel, and besides, that boy hasn&#39;t willingly done any manual labor since he the day he was born. He&#39;d rather eat worms than help me dig &#39;em up. What would he need my shovel for?
+[[Maybe he was burying something.|Son burying]]
+[[Maybe he was searching for something buried underground.|Digging]]</tw-passagedata><tw-passagedata pid="4" name="Digging" tags="" position="418,897" size="100,100">Are you deaf? I just told you, he ain&#39;t got no reason to do such a thing! There&#39;s nothing under this soil worth looking for anyway, just worms and decay.
+[[I&#39;ll be going now.|Bye]]</tw-passagedata><tw-passagedata pid="5" name="Bye" tags="" position="376,1194" size="100,100">Wait! Uh, before you go...
+[[Alt for young fish]] </tw-passagedata><tw-passagedata pid="6" name="continue" tags="" position="117,1049" size="100,100">...
+[[continue2]]</tw-passagedata><tw-passagedata pid="7" name="continue2" tags="" position="250,1050" size="100,100">Whatever you think you may have seen don&#39;t mean nothin&#39;, ya hear? You don&#39;t understand our ways. You don&#39;t know what it takes to live out in a place like this. So don&#39;t go sticking your nose where it doesn&#39;t belong.
+[[I&#39;ll be going now.|Bye]] </tw-passagedata><tw-passagedata pid="8" name="Son burying" tags="" position="542,898" size="100,100">Now, I know he ain&#39;t doin&#39; that. That job ain&#39;t for him.
+[[continue3]]</tw-passagedata><tw-passagedata pid="9" name="continue3" tags="" position="504,1041" size="100,100">...
+[[I&#39;ll be going now.|Bye]]</tw-passagedata><tw-passagedata pid="10" name="Know who" tags="" position="317,741" size="100,100">Yeah? And who would that be?
+[[I think the other stranger took it.|New girl]]
+[[I saw a girl digging behind the church.|Church]]</tw-passagedata><tw-passagedata pid="11" name="New girl" tags="" position="257,887" size="100,100">The writer? Dagnabbit, I knew from the moment she stepped foot here that she would be trouble. I bet she took it so she could snoop around and stick her nose further into our business... Someone needs to make her understand the importance of boundaries. This town don&#39;t take kindly to thieves... or busybodies.
+[[I&#39;ll be going now.|Bye]]</tw-passagedata><tw-passagedata pid="12" name="Church" tags="" position="118,888" size="100,100">I&#39;m sure you have no idea what you&#39;re talking about.
+[[continue]] </tw-passagedata><tw-passagedata pid="13" name="Alt for young fish" tags="" position="375,1308" size="100,100">I hear you been selling a lot of them shrimp to the identifier... Look, I know you&#39;re new here, but I don’t think you realize the position that puts me in.
+[[continuealt]]</tw-passagedata><tw-passagedata pid="14" name="continuealt" tags="" position="375,1428" size="100,100">I know my boy might be a bit... precocious -- and maybe he&#39;s not the best help around the farm -- but he&#39;s my boy. I ain&#39;t supposed to be doin&#39; this, but please, consider finding an alternative method for gettin&#39; rid of those shrimp.
+[[continuealt2]]</tw-passagedata><tw-passagedata pid="15" name="continuealt2" tags="" position="379,1548" size="100,100">My boy&#39;s got a whole life ahead of him. He don&#39;t need that kind of weight put on his shoulders, and neither do I.</tw-passagedata></tw-storydata>
+		</div>
+		<script>
+			Twison.convert()
+		</script>
+	</body>
+</html>
