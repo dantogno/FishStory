@@ -1,0 +1,87 @@
+{
+  "passages": [
+    {
+      "text": "Ah, a tourist! Welcome, welcome to my wonderful town! Are you from the city?\n[[I'm just here to fish.->Fish]]\n[[Which city?->City]]",
+      "links": [
+        {
+          "name": "I'm just here to fish.",
+          "link": "Fish",
+          "pid": "2"
+        },
+        {
+          "name": "Which city?",
+          "link": "City",
+          "pid": "3"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "508.5",
+        "y": "240.5"
+      }
+    },
+    {
+      "text": "Ah, yes! Fishing is wonderful, isn't it? One of my top ten favorite leisure activities! And, as luck may have it, one of our premiere vacation experiences! I can offer you some top-of-the-line, beginner-friendly fishing classes, perfect for your holiday! How does that sound?\n[[Sorry, I'm not here for vacation.->No vacation]]",
+      "links": [
+        {
+          "name": "Sorry, I'm not here for vacation.",
+          "link": "No vacation",
+          "pid": "4"
+        }
+      ],
+      "name": "Fish",
+      "pid": "2",
+      "position": {
+        "x": "433.5",
+        "y": "390.5"
+      }
+    },
+    {
+      "text": "Any city! Preferably one with lots of overworked and overpaid urbanites who you can tell about the beautiful, tranquil, and rejuvenating town you visited on your vacation!\n[[Sorry, I'm just here to work.->No vacation]]",
+      "links": [
+        {
+          "name": "Sorry, I'm just here to work.",
+          "link": "No vacation",
+          "pid": "4"
+        }
+      ],
+      "name": "City",
+      "pid": "3",
+      "position": {
+        "x": "583.5",
+        "y": "390.5"
+      }
+    },
+    {
+      "text": "Bah! You're just as frustrating as the rest of this town! Why is everyone so afraid of progress? Can't they see the oppertunities provided by a naturally beautiful town like this? I'm talking development! Jobs! Income! But most of these simpletons would rather leave their futures up to fate than take it into their own hands!\n[[I'm going to get back to fishing now...->Back to it]]",
+      "links": [
+        {
+          "name": "I'm going to get back to fishing now...",
+          "link": "Back to it",
+          "pid": "5"
+        }
+      ],
+      "name": "No vacation",
+      "pid": "4",
+      "position": {
+        "x": "509.5",
+        "y": "543.5"
+      }
+    },
+    {
+      "text": "Come back when you're ready for the future!",
+      "name": "Back to it",
+      "pid": "5",
+      "position": {
+        "x": "509.5",
+        "y": "693.5"
+      }
+    }
+  ],
+  "name": "TycoonDay1",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "C011F024-23A2-4953-9F49-28C974AA3EFD"
+}

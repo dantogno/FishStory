@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Shh!!!",
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "584",
+        "y": "672"
+      }
+    }
+  ],
+  "name": "FishermanHairDay1Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "A9C72026-F69F-4008-A600-9F75596B2CDE"
+}

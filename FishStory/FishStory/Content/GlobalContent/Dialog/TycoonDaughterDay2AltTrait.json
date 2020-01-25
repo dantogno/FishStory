@@ -1,0 +1,292 @@
+{
+  "passages": [
+    {
+      "text": "Yeah? What do you want?\n[[Nice house.|Nice house]]",
+      "links": [
+        {
+          "name": "Nice house.|Nice house",
+          "link": "Nice house.|Nice house"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "404",
+        "y": "441"
+      }
+    },
+    {
+      "text": "Yeah I guess, if you're into that sort of thing. I think it's hideous. But there aren't many places to move to on this dumb island... or at least none that my dad doesn't own. And I'm not going to move out of his house to have him micromanaging me somewhere else.\n[[Who's your dad?|Who dad]]\n[[Do you not like it here?|Not like]]",
+      "links": [
+        {
+          "name": "Who's your dad?|Who dad",
+          "link": "Who's your dad?|Who dad"
+        },
+        {
+          "name": "Do you not like it here?|Not like",
+          "link": "Do you not like it here?|Not like"
+        }
+      ],
+      "name": "Nice house",
+      "pid": "2",
+      "position": {
+        "x": "404",
+        "y": "591"
+      }
+    },
+    {
+      "text": "The wrinkly guy with the big dumb hat? You know, the hat that screams \"overcompensation\"? You can't miss him. He bothers every single person he comes across.\n[[Continue]]",
+      "links": [
+        {
+          "name": "Continue",
+          "link": "Continue",
+          "pid": "5"
+        }
+      ],
+      "name": "Who dad",
+      "pid": "3",
+      "position": {
+        "x": "329",
+        "y": "741"
+      }
+    },
+    {
+      "text": "What? No, I love this place. It's the people I can't stand. Or some of them, at least. There isn't a single person on this island who doesn't just think of me as \"Mr. Petterson's daughter.\"\n[[Continue2]]",
+      "links": [
+        {
+          "name": "Continue2",
+          "link": "Continue2",
+          "pid": "8"
+        }
+      ],
+      "name": "Not like",
+      "pid": "4",
+      "position": {
+        "x": "479",
+        "y": "741"
+      }
+    },
+    {
+      "text": "And you're not savvy to his schemes yet, so I'd bet that all he sees when he looks at you is a walking dollar sign.\n[[He seemed nice when I talked to him.|Seemed nice]]\n[[Thanks for the warning.|warning]]",
+      "links": [
+        {
+          "name": "He seemed nice when I talked to him.|Seemed nice",
+          "link": "He seemed nice when I talked to him.|Seemed nice"
+        },
+        {
+          "name": "Thanks for the warning.|warning",
+          "link": "Thanks for the warning.|warning"
+        }
+      ],
+      "name": "Continue",
+      "pid": "5",
+      "position": {
+        "x": "329",
+        "y": "891"
+      }
+    },
+    {
+      "text": "No offence, but you seem a little naive. Just... try not to make anyone mad, okay? Small towners usually have a bit of a mob mentality, and you don't want that mob to have its sights set on you.\n[[I have to go.|Bad bye]]",
+      "links": [
+        {
+          "name": "I have to go.|Bad bye",
+          "link": "I have to go.|Bad bye"
+        }
+      ],
+      "name": "Seemed nice",
+      "pid": "6",
+      "position": {
+        "x": "177",
+        "y": "1041"
+      }
+    },
+    {
+      "text": "No problem. And if you want a little more advice, try to avoid making anyone mad. Including my dad, if you can stand it. Small towners usually have a bit of a mob mentality, and you don't want that mob to have its sights set on you.\n[[I have to go.|Good Bye]]",
+      "links": [
+        {
+          "name": "I have to go.|Good Bye",
+          "link": "I have to go.|Good Bye"
+        }
+      ],
+      "name": "warning",
+      "pid": "7",
+      "position": {
+        "x": "327",
+        "y": "1041"
+      }
+    },
+    {
+      "text": "Well, except for the priestess. And that other stranger who arrived last month... I hope these other idiots don't scare her away before I can make a good impression.\n[[Why would they sacare her away?|Scare her away]]\n[[Why do you care about making a good impression?|Impression]]",
+      "links": [
+        {
+          "name": "Why would they sacare her away?|Scare her away",
+          "link": "Why would they sacare her away?|Scare her away"
+        },
+        {
+          "name": "Why do you care about making a good impression?|Impression",
+          "link": "Why do you care about making a good impression?|Impression"
+        }
+      ],
+      "name": "Continue2",
+      "pid": "8",
+      "position": {
+        "x": "479",
+        "y": "891"
+      }
+    },
+    {
+      "text": "You know, normal small town stuff. They make you feel welcomed at first, but if they get a single whiff of you not being just like them, they freeze you out. But I'm sure you've dealt with that already.\n[[Yeah, I've noticed that.|Noticed]]\n[[Actually, everyone has been pretty nice to me so far!|Nice]]",
+      "links": [
+        {
+          "name": "Yeah, I've noticed that.|Noticed",
+          "link": "Yeah, I've noticed that.|Noticed"
+        },
+        {
+          "name": "Actually, everyone has been pretty nice to me so far!|Nice",
+          "link": "Actually, everyone has been pretty nice to me so far!|Nice"
+        }
+      ],
+      "name": "Scare her away",
+      "pid": "9",
+      "position": {
+        "x": "481",
+        "y": "1041"
+      }
+    },
+    {
+      "text": "Look, there aren't many oppertunities to meet new people here. Not many people bother to come out this far, and those that do are usually kinda...\n[[Continue3]]",
+      "links": [
+        {
+          "name": "Continue3",
+          "link": "Continue3",
+          "pid": "13"
+        }
+      ],
+      "name": "Impression",
+      "pid": "10",
+      "position": {
+        "x": "724",
+        "y": "1041"
+      }
+    },
+    {
+      "text": "It would be hard not to. Just try not to make anyone mad. Small towners usually have a bit of a mob mentality, and you don't want that mob to have its sights set on you.\n[[I have to go.|Good Bye]]",
+      "links": [
+        {
+          "name": "I have to go.|Good Bye",
+          "link": "I have to go.|Good Bye"
+        }
+      ],
+      "name": "Noticed",
+      "pid": "11",
+      "position": {
+        "x": "544",
+        "y": "1190"
+      }
+    },
+    {
+      "text": "Huh. Well, then you're doing better than me already.\n[[I have to go.|Bad bye]]",
+      "links": [
+        {
+          "name": "I have to go.|Bad bye",
+          "link": "I have to go.|Bad bye"
+        }
+      ],
+      "name": "Nice",
+      "pid": "12",
+      "position": {
+        "x": "374",
+        "y": "1188"
+      }
+    },
+    {
+      "text": "Well, just not the type of people I want to be around. So it gets pretty lonely here. I've only talked to Sofia a few times, but she seems different. She's smart. And cultured. We don't have much of either of those things here.\n[[I have to go.|Good Bye]]",
+      "links": [
+        {
+          "name": "I have to go.|Good Bye",
+          "link": "I have to go.|Good Bye"
+        }
+      ],
+      "name": "Continue3",
+      "pid": "13",
+      "position": {
+        "x": "724",
+        "y": "1191"
+      }
+    },
+    {
+      "text": "Wait!\n[[AltForFathers]] ",
+      "links": [
+        {
+          "name": "AltForFathers",
+          "link": "AltForFathers",
+          "pid": "16"
+        }
+      ],
+      "name": "Good Bye",
+      "pid": "14",
+      "position": {
+        "x": "598",
+        "y": "1328"
+      }
+    },
+    {
+      "text": "Wait!\n[[AltForFathers]] ",
+      "links": [
+        {
+          "name": "AltForFathers",
+          "link": "AltForFathers",
+          "pid": "16"
+        }
+      ],
+      "name": "Bad bye",
+      "pid": "15",
+      "position": {
+        "x": "294",
+        "y": "1369"
+      }
+    },
+    {
+      "text": "Actually, if you wanted to help me out... You know those little seahorses you've been catching? Well, they're actually really interesting. They're the only species in the world whose males give birth to their young. Some might say that they're the ultimate fathers of the animal kingdom. Cool, right?\n[[Uh... yeah, sure|Sure]]\n[[Very cool!|cool]]",
+      "links": [
+        {
+          "name": "Uh... yeah, sure|Sure",
+          "link": "Uh... yeah, sure|Sure"
+        },
+        {
+          "name": "Very cool!|cool",
+          "link": "Very cool!|cool"
+        }
+      ],
+      "name": "AltForFathers",
+      "pid": "16",
+      "position": {
+        "x": "533",
+        "y": "1463"
+      }
+    },
+    {
+      "text": "Well, if you want to help me solve my issue with my dad... Just keep hauling those little guys in, alright? And maybe a few goatfish, while you're at it. Bring them to the identifier so everyone knows what you've caught. That'll make an impression for sure.",
+      "name": "Sure",
+      "pid": "17",
+      "position": {
+        "x": "458",
+        "y": "1613"
+      }
+    },
+    {
+      "text": "See, you get it! Well, if you want to help me solve my issue with my dad... Just keep hauling those little guys in, alright? And maybe a few goatfish, while you're at it. Bring them to the identifier so everyone knows what you've caught. That'll make an impression for sure.",
+      "name": "cool",
+      "pid": "18",
+      "position": {
+        "x": "608",
+        "y": "1613"
+      }
+    }
+  ],
+  "name": "TycoonsDaughterDay2AltFather",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "C3D4E4F7-8458-4799-B1BF-1DD53F50BC6A"
+}

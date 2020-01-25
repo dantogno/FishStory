@@ -1,4 +1,37 @@
-<tw-storydata name="WelcomeDialog" startnode="1" creator="Twine" creator-version="2.1.3" ifid="AEC83C83-5F86-41F7-BD5A-88B2BB1EBD39" format="Twison" format-version="0.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+<html>
+	<head>
+		<title>WelcomeDialog</title>
+		<script type="text/javascript">
+/**
+ * Twison - Twine 2 JSON Export Story Format
+ * 
+ * Copyright (c) 2015 Mike Walker
+ * https://lazerwalker.com
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+ * associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial
+ * portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ * LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+var Twison={extractLinksFromText:function(t){var n=t.match(/\[\[.+?\]\]/g);return n?n.map(function(t){var n=t.match(/\[\[(.*?)\-\&gt;(.*?)\]\]/);return n?{name:n[1],link:n[2]}:(t=t.substring(2,t.length-2),{name:t,link:t})}):void 0},convertPassage:function(t){var n={text:t.innerHTML},a=Twison.extractLinksFromText(n.text);if(a&&(n.links=a),["name","pid","position","tags"].forEach(function(a){var e=t.attributes[a].value;e&&(n[a]=e)}),n.position){var e=n.position.split(",");n.position={x:e[0],y:e[1]}}return n.tags&&(n.tags=n.tags.split(" ")),n},convertStory:function(t){var n=t.getElementsByTagName("tw-passagedata"),a=Array.prototype.slice.call(n).map(Twison.convertPassage),e={passages:a};["name","startnode","creator","creator-version","ifid"].forEach(function(n){var a=t.attributes[n].value;a&&(e[n]=a)});var i={};return e.passages.forEach(function(t){i[t.name]=t.pid}),e.passages.forEach(function(t){t.links&&t.links.forEach(function(t){t.pid=i[t.link]})}),e},convert:function(){var t=document.getElementsByTagName("tw-storydata")[0],n=JSON.stringify(Twison.convertStory(t),null,2);document.getElementById("output").innerHTML=n}};window.Twison=Twison;		
+		</script>
+	</head>
+	<body>
+		<pre id="output">
+		
+		</pre>
+		<div id="storyData" style="display: none;">
+			<tw-storydata name="WelcomeDialog" startnode="1" creator="Twine" creator-version="2.3.5" ifid="AEC83C83-5F86-41F7-BD5A-88B2BB1EBD39" zoom="1" format="Twison" format-version="0.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 
 
 
@@ -8,14 +41,17 @@
 
 
 
-</script><tw-passagedata pid="1" name="Start" tags="" position="252,105" size="100,100">Welcome to Ensomme! What brings you to our island community?
-[[I&#39;m retired.]] 
-[[I&#39;m on vacation!]]
-[[I&#39;m just passing through.]]</tw-passagedata><tw-passagedata pid="2" name="I&#39;m retired." tags="" position="70,255" size="100,100">Excellent! We have many activities to keep you busy during retirement. [[Fishing festival]] </tw-passagedata><tw-passagedata pid="3" name="I&#39;m on vacation!" tags="" position="280,251" size="100,100">Excellent! This is a great spot to spend a holiday. [[Fishing festival]] </tw-passagedata><tw-passagedata pid="4" name="I&#39;m just passing through." tags="" position="440,255" size="100,100">I see. A wanderer of sorts? [[Fishing festival]] </tw-passagedata><tw-passagedata pid="5" name="Fishing festival" tags="" position="194,421" size="100,100">Allow me to introduce myself. I&#39;m Mayor Thompson. You&#39;ve come at a good time! Today marks the start of our annual fishing festival. 
-[[I&#39;m here to fish!|Here to fish]]
-[[Fishing festival?|Festival?]]
-[[...|Festival 2]]</tw-passagedata><tw-passagedata pid="6" name="Festival 2" tags="" position="194,571">In fact, the ferry you took here will be the last ship coming to port for the next five days!
-[[You guys are serious about fishing!|Festival 3]]
-[[Do you have enough supplies on the island?|Festival 3]]
-[[So you&#39;re telling me I&#39;m stuck here for five days?|Festival 3]]</tw-passagedata><tw-passagedata pid="7" name="Festival 3" tags="" position="194,721" size="100,100">Boats disrupt the fish, so we lock down the port during the festival. But don&#39;t worry, we have comfortable living arrangements for visitors and we&#39;ll have enough fish to satisfy a giant&#39;s appetite! [[Festival 4]]</tw-passagedata><tw-passagedata pid="8" name="Festival 4" tags="" position="194,871" size="100,100">There&#39;s no pressure to participate, but here&#39;s a festival badge and a pamphlet about the rules, just in case. I&#39;ll just collect the entrance fee now. [[Festival 4.1]]</tw-passagedata><tw-passagedata pid="9" name="Festival 5" tags="HasSeenWelcomeDialog" position="240,1041" size="100,100">[Mayor Thompson took $5. She wouldn&#39;t take no for an answer.]
-</tw-passagedata><tw-passagedata pid="10" name="Festival 4.1" tags="" position="438,873" size="100,100">Take this badge to Anthony by the blue flag in the town square. He&#39;ll get you set up with some basic fishing gear. Ready, set, FISH! [[Festival 5]] </tw-passagedata><tw-passagedata pid="11" name="Here to fish" tags="" position="42,545" size="100,100">Then you&#39;ve come to the right place... and at the right time! [[Festival 2]] </tw-passagedata><tw-passagedata pid="12" name="Festival?" tags="" position="418,499" size="100,100">That&#39;s right, the fishing festival is Ensomme&#39;s biggest event of the year. [[Festival 2]] </tw-passagedata></tw-storydata>
+</script><tw-passagedata pid="1" name="Start" tags="" position="252,105" size="100,100">Welcome to Ensomme! What brings you to our island?
+[[I&#39;m looking for work.|Work]] </tw-passagedata><tw-passagedata pid="2" name="Festival 4" tags="" position="258,692" size="100,100">Ah, but before you go, you&#39;ll need some things in order to provide fish for the festival. Here&#39;s a festival badge and a pamphlet about the rules, just in case. I&#39;ll just collect the fishing permit fee now. [[Festival 4.1]]</tw-passagedata><tw-passagedata pid="3" name="Festival 5" tags="HasSeenWelcomeDialog" position="258,982" size="100,100">[Mayor Thompson took $5]
+</tw-passagedata><tw-passagedata pid="4" name="Festival 4.1" tags="" position="260,834" size="100,100">Take the badge to Anthony by the blue flag in the town square. He&#39;ll get you set up with some basic fishing gear. May the tides flow in your favor!
+[[Festival 5]] </tw-passagedata><tw-passagedata pid="5" name="Work" tags="" position="254,224" size="100,100">Ah... Well, I hope you are not disappointed to discover that any work you might find here will not be flashy. This is a fishing community, and most of our livelihood comes from the sea. I hope this will suit you.
+[[That&#39;s fine, I just need to make some money.|Make some money]]</tw-passagedata><tw-passagedata pid="6" name="Make some money" tags="" position="258,339" size="100,100">Well, you are in luck: we will be celebrating the sea&#39;s bountiful gifts in a few day&#39;s time with a festival and a feast. The town will be in need of as many fish as the sea can give us. And in return, we will offer our thanks and our devotion. It&#39;s quite a treat to behold.
+[[I&#39;ll probably be gone by then.|Gone by then]]</tw-passagedata><tw-passagedata pid="7" name="Gone by then" tags="" position="258,461" size="100,100">Oh, I&#39;m terribly sorry, but I&#39;m afraid that won&#39;t be possible. You see, the boat&#39;s engines disrupt our wildlife, and so transportation to and from the island is forbidden in the final days leading up to the festival.
+[[I see...|I see]]</tw-passagedata><tw-passagedata pid="8" name="I see" tags="" position="257,574" size="100,100">Don&#39;t worry, you will be perfectly comfortable here for the next few days. If you need anything, I&#39;m Mayor Olsen. Find me and I will offer you guidance and assistance if I&#39;m able.
+[[Festival 4]] </tw-passagedata></tw-storydata>
+		</div>
+		<script>
+			Twison.convert()
+		</script>
+	</body>
+</html>

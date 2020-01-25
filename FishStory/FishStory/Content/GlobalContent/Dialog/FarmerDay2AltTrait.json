@@ -1,0 +1,246 @@
+{
+  "passages": [
+    {
+      "text": "Are you here to return my shovel?\n[[What?|what]]",
+      "links": [
+        {
+          "name": "What?|what",
+          "link": "What?|what"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "403",
+        "y": "427"
+      }
+    },
+    {
+      "text": "My shovel! It's gone, I need it, and you were the last person here before it went missing! Well, you and my son. Where is it?\n[[I didn't take it, but I might know who did.|Know who]]\n[[Are you sure your son didn't take it?|Son take it]]",
+      "links": [
+        {
+          "name": "I didn't take it, but I might know who did.|Know who",
+          "link": "I didn't take it, but I might know who did.|Know who"
+        },
+        {
+          "name": "Are you sure your son didn't take it?|Son take it",
+          "link": "Are you sure your son didn't take it?|Son take it"
+        }
+      ],
+      "name": "what",
+      "pid": "2",
+      "position": {
+        "x": "404",
+        "y": "591"
+      }
+    },
+    {
+      "text": "You're dumber than a fish on a hook. Why would he do that?! He's got his own dang shovel, and besides, that boy hasn't willingly done any manual labor since he the day he was born. He'd rather eat worms than help me dig 'em up. What would he need my shovel for?\n[[Maybe he was burying something.|Son burying]]\n[[Maybe he was searching for something buried underground.|Digging]]",
+      "links": [
+        {
+          "name": "Maybe he was burying something.|Son burying",
+          "link": "Maybe he was burying something.|Son burying"
+        },
+        {
+          "name": "Maybe he was searching for something buried underground.|Digging",
+          "link": "Maybe he was searching for something buried underground.|Digging"
+        }
+      ],
+      "name": "Son take it",
+      "pid": "3",
+      "position": {
+        "x": "479",
+        "y": "741"
+      }
+    },
+    {
+      "text": "Are you deaf? I just told you, he ain't got no reason to do such a thing! There's nothing under this soil worth looking for anyway, just worms and decay.\n[[I'll be going now.|Bye]]",
+      "links": [
+        {
+          "name": "I'll be going now.|Bye",
+          "link": "I'll be going now.|Bye"
+        }
+      ],
+      "name": "Digging",
+      "pid": "4",
+      "position": {
+        "x": "418",
+        "y": "897"
+      }
+    },
+    {
+      "text": "Wait! Uh, before you go...\n[[Alt for young fish]] ",
+      "links": [
+        {
+          "name": "Alt for young fish",
+          "link": "Alt for young fish",
+          "pid": "13"
+        }
+      ],
+      "name": "Bye",
+      "pid": "5",
+      "position": {
+        "x": "376",
+        "y": "1194"
+      }
+    },
+    {
+      "text": "...\n[[continue2]]",
+      "links": [
+        {
+          "name": "continue2",
+          "link": "continue2",
+          "pid": "7"
+        }
+      ],
+      "name": "continue",
+      "pid": "6",
+      "position": {
+        "x": "117",
+        "y": "1049"
+      }
+    },
+    {
+      "text": "Whatever you think you may have seen don't mean nothin', ya hear? You don't understand our ways. You don't know what it takes to live out in a place like this. So don't go sticking your nose where it doesn't belong.\n[[I'll be going now.|Bye]] ",
+      "links": [
+        {
+          "name": "I'll be going now.|Bye",
+          "link": "I'll be going now.|Bye"
+        }
+      ],
+      "name": "continue2",
+      "pid": "7",
+      "position": {
+        "x": "250",
+        "y": "1050"
+      }
+    },
+    {
+      "text": "Now, I know he ain't doin' that. That job ain't for him.\n[[continue3]]",
+      "links": [
+        {
+          "name": "continue3",
+          "link": "continue3",
+          "pid": "9"
+        }
+      ],
+      "name": "Son burying",
+      "pid": "8",
+      "position": {
+        "x": "542",
+        "y": "898"
+      }
+    },
+    {
+      "text": "...\n[[I'll be going now.|Bye]]",
+      "links": [
+        {
+          "name": "I'll be going now.|Bye",
+          "link": "I'll be going now.|Bye"
+        }
+      ],
+      "name": "continue3",
+      "pid": "9",
+      "position": {
+        "x": "504",
+        "y": "1041"
+      }
+    },
+    {
+      "text": "Yeah? And who would that be?\n[[I think the other stranger took it.|New girl]]\n[[I saw a girl digging behind the church.|Church]]",
+      "links": [
+        {
+          "name": "I think the other stranger took it.|New girl",
+          "link": "I think the other stranger took it.|New girl"
+        },
+        {
+          "name": "I saw a girl digging behind the church.|Church",
+          "link": "I saw a girl digging behind the church.|Church"
+        }
+      ],
+      "name": "Know who",
+      "pid": "10",
+      "position": {
+        "x": "317",
+        "y": "741"
+      }
+    },
+    {
+      "text": "The writer? Dagnabbit, I knew from the moment she stepped foot here that she would be trouble. I bet she took it so she could snoop around and stick her nose further into our business... Someone needs to make her understand the importance of boundaries. This town don't take kindly to thieves... or busybodies.\n[[I'll be going now.|Bye]]",
+      "links": [
+        {
+          "name": "I'll be going now.|Bye",
+          "link": "I'll be going now.|Bye"
+        }
+      ],
+      "name": "New girl",
+      "pid": "11",
+      "position": {
+        "x": "257",
+        "y": "887"
+      }
+    },
+    {
+      "text": "I'm sure you have no idea what you're talking about.\n[[continue]] ",
+      "links": [
+        {
+          "name": "continue",
+          "link": "continue",
+          "pid": "6"
+        }
+      ],
+      "name": "Church",
+      "pid": "12",
+      "position": {
+        "x": "118",
+        "y": "888"
+      }
+    },
+    {
+      "text": "I hear you been selling a lot of them shrimp to the identifier... Look, I know you're new here, but I donâ€™t think you realize the position that puts me in.\n[[continuealt]]",
+      "links": [
+        {
+          "name": "continuealt",
+          "link": "continuealt",
+          "pid": "14"
+        }
+      ],
+      "name": "Alt for young fish",
+      "pid": "13",
+      "position": {
+        "x": "375",
+        "y": "1308"
+      }
+    },
+    {
+      "text": "I know my boy might be a bit... precocious -- and maybe he's not the best help around the farm -- but he's my boy. I ain't supposed to be doin' this, but please, consider finding an alternative method for gettin' rid of those shrimp.\n[[continuealt2]]",
+      "links": [
+        {
+          "name": "continuealt2",
+          "link": "continuealt2",
+          "pid": "15"
+        }
+      ],
+      "name": "continuealt",
+      "pid": "14",
+      "position": {
+        "x": "375",
+        "y": "1428"
+      }
+    },
+    {
+      "text": "My boy's got a whole life ahead of him. He don't need that kind of weight put on his shoulders, and neither do I.",
+      "name": "continuealt2",
+      "pid": "15",
+      "position": {
+        "x": "379",
+        "y": "1548"
+      }
+    }
+  ],
+  "name": "FarmerDay2AltYoung",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "D206E07F-DAF0-45D3-B7FB-B863D68B56CD"
+}

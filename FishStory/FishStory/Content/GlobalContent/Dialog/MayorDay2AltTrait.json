@@ -1,0 +1,183 @@
+{
+  "passages": [
+    {
+      "text": "Ah, hello again. How are you finding my town so far?\n[[It's nice.|like it]]\n[[I'm just here to make some money.|Make money]]",
+      "links": [
+        {
+          "name": "It's nice.|like it",
+          "link": "It's nice.|like it"
+        },
+        {
+          "name": "I'm just here to make some money.|Make money",
+          "link": "I'm just here to make some money.|Make money"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "584",
+        "y": "672"
+      }
+    },
+    {
+      "text": "Ah, I'm glad you think so. We don't get many visitors here... And those that do visit often don't stay for long. Life out here isn't easy, so we've remained rather isolated from the rest of the world... But I don't believe there are many here who would complain about that. Do you feel similarly?\n[[I like being on my own.|like isolation]]\n[[I tend to perfer larger towns.|pefer larger]]",
+      "links": [
+        {
+          "name": "I like being on my own.|like isolation",
+          "link": "I like being on my own.|like isolation"
+        },
+        {
+          "name": "I tend to perfer larger towns.|pefer larger",
+          "link": "I tend to perfer larger towns.|pefer larger"
+        }
+      ],
+      "name": "like it",
+      "pid": "2",
+      "position": {
+        "x": "460",
+        "y": "811"
+      }
+    },
+    {
+      "text": "Yes, yes. But even someone with dollar signs in their eyes can't help but see the natural beauty we have all around us. Surely there must be something you've enjoyed here. How has the fishing been?\n[[It's good.|good fishing]]\n[[It's slow going.|slow going]]",
+      "links": [
+        {
+          "name": "It's good.|good fishing",
+          "link": "It's good.|good fishing"
+        },
+        {
+          "name": "It's slow going.|slow going",
+          "link": "It's slow going.|slow going"
+        }
+      ],
+      "name": "Make money",
+      "pid": "3",
+      "position": {
+        "x": "732",
+        "y": "818"
+      }
+    },
+    {
+      "text": "Ah, that is good to hear! The outside world -- or at least, what little I've seen of it -- can be rather overwhelming at times. Here, things are simple.\n[[continue]]",
+      "links": [
+        {
+          "name": "continue",
+          "link": "continue",
+          "pid": "9"
+        }
+      ],
+      "name": "like isolation",
+      "pid": "4",
+      "position": {
+        "x": "385",
+        "y": "961"
+      }
+    },
+    {
+      "text": "Oh, I am sorry to hear that. But I'm sure there are other things that drew you to this place... The sea is generous, is it not? That's why we make an effort to return the favor once a year. It gives us everything we have, so it's only fair that we give something back. Even if it's something we don't want to lose.\n[[I'm going to get back to fishing.|bye]]",
+      "links": [
+        {
+          "name": "I'm going to get back to fishing.|bye",
+          "link": "I'm going to get back to fishing.|bye"
+        }
+      ],
+      "name": "pefer larger",
+      "pid": "5",
+      "position": {
+        "x": "535",
+        "y": "961"
+      }
+    },
+    {
+      "text": "I'm glad to hear it. The sea is generous, isn't it? That's why we make an effort to return the favor once a year. It gives us everything we have, so it's only fair that we give something back. Even if it's something we don't want to lose.\n[[I'm going to get back to fishing.|bye]]",
+      "links": [
+        {
+          "name": "I'm going to get back to fishing.|bye",
+          "link": "I'm going to get back to fishing.|bye"
+        }
+      ],
+      "name": "good fishing",
+      "pid": "6",
+      "position": {
+        "x": "669",
+        "y": "961"
+      }
+    },
+    {
+      "text": "Oh, I'm sorry to hear that... and a bit shocked, frankly. Keep at it! The sea is normally so generous... It gives us everything we have, so it's only fair that we give something back at least once a year. Even if it's something we don't want to lose.\n[[I'm going to get back to fishing.|bye]]",
+      "links": [
+        {
+          "name": "I'm going to get back to fishing.|bye",
+          "link": "I'm going to get back to fishing.|bye"
+        }
+      ],
+      "name": "slow going",
+      "pid": "7",
+      "position": {
+        "x": "800",
+        "y": "957"
+      }
+    },
+    {
+      "text": "Ah, one more thing before you go... I've noticed there's been an increase in Ladyfish caughting since you arrived. Of course, this is the will of the sea and is out of our control...\n[[continuealt]]",
+      "links": [
+        {
+          "name": "continuealt",
+          "link": "continuealt",
+          "pid": "10"
+        }
+      ],
+      "name": "bye",
+      "pid": "8",
+      "position": {
+        "x": "627",
+        "y": "1205"
+      }
+    },
+    {
+      "text": "We coexist with the sea, living off of its generosity. Then when it is time, we return the favor, and give something back. It is an important gesture... even if what we give ends up being something we don't want to lose.\n[[I'm going to get back to fishing.|bye]]",
+      "links": [
+        {
+          "name": "I'm going to get back to fishing.|bye",
+          "link": "I'm going to get back to fishing.|bye"
+        }
+      ],
+      "name": "continue",
+      "pid": "9",
+      "position": {
+        "x": "385",
+        "y": "1087"
+      }
+    },
+    {
+      "text": "But maybe the will of the sea is not set in stone, hmm? Trust me, it is in both of our best interests if it can be encouraged in the other direction... Towards the King Mackerel, perhaps.\n[[byealt]]",
+      "links": [
+        {
+          "name": "byealt",
+          "link": "byealt",
+          "pid": "11"
+        }
+      ],
+      "name": "continuealt",
+      "pid": "10",
+      "position": {
+        "x": "627",
+        "y": "1355"
+      }
+    },
+    {
+      "text": "Just a thought. Carry on with your day, and may the tide flow in your favor!",
+      "name": "byealt",
+      "pid": "11",
+      "position": {
+        "x": "627",
+        "y": "1505"
+      }
+    }
+  ],
+  "name": "MayorDay2AltFemale",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "32ECAC34-FB8A-4769-A2C4-9509B9D81625"
+}
