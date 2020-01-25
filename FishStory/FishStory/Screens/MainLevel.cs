@@ -261,7 +261,7 @@ namespace FishStory.Screens
             #region BlackMarketShop
             #endregion
             #endregion
-            #region #ElderlyMother
+            #region ElderlyMother
             #endregion
             #region Priestess
             var npc = this.NPCList.FindByName("Priestess");
@@ -303,7 +303,7 @@ namespace FishStory.Screens
             #region BlackMarketShop
             #endregion
             #endregion
-            #region #ElderlyMother
+            #region ElderlyMother
             #endregion
             #region Priestess
             #endregion
