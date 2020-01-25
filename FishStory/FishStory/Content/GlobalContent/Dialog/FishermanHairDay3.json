@@ -1,0 +1,113 @@
+{
+  "passages": [
+    {
+      "text": "Uhg... you again. Have you come to scare away all of today's fish as well?\n[[No.|no]]\n[[...|Silent]]",
+      "links": [
+        {
+          "name": "No.|no",
+          "link": "No.|no"
+        },
+        {
+          "name": "...|Silent",
+          "link": "...|Silent"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "442",
+        "y": "570"
+      }
+    },
+    {
+      "text": "There you go again! You're a maniac! A monster! What is it, did your mother not love you enough? Did your father not give you enough attention? Why do you insist on torturing me with your incessant screaming?!\n[[I'm just talking! I'm not trying to scream!|Not trying]]\n[[You're insane.|Insane]]",
+      "links": [
+        {
+          "name": "I'm just talking! I'm not trying to scream!|Not trying",
+          "link": "I'm just talking! I'm not trying to scream!|Not trying"
+        },
+        {
+          "name": "You're insane.|Insane",
+          "link": "You're insane.|Insane"
+        }
+      ],
+      "name": "no",
+      "pid": "2",
+      "position": {
+        "x": "367",
+        "y": "720"
+      }
+    },
+    {
+      "text": "Ah... so you've finally come to your senses. Took you long enough. Now I can finally catch my first fish in peace!\n[[Good bye]]",
+      "links": [
+        {
+          "name": "Good bye",
+          "link": "Good bye",
+          "pid": "7"
+        }
+      ],
+      "name": "Silent",
+      "pid": "3",
+      "position": {
+        "x": "517",
+        "y": "720"
+      }
+    },
+    {
+      "text": "Well you sure aren't trying NOT to! You can't just stomp around with your inhumanly loud feet while still expecting everyone around you to somehow think straight enough to engage you in a screaming match!\n[[Bad bye]]",
+      "links": [
+        {
+          "name": "Bad bye",
+          "link": "Bad bye",
+          "pid": "6"
+        }
+      ],
+      "name": "Not trying",
+      "pid": "4",
+      "position": {
+        "x": "219",
+        "y": "870"
+      }
+    },
+    {
+      "text": "INSANE?! What's more insane, trying to be one with the peace and calm of nature as you fish in peace, or stomping around with your inhumanly loud feet while still expecting everyone around you to somehow think straight enough to engage you in a screaming match?!\n[[Bad bye]]",
+      "links": [
+        {
+          "name": "Bad bye",
+          "link": "Bad bye",
+          "pid": "6"
+        }
+      ],
+      "name": "Insane",
+      "pid": "5",
+      "position": {
+        "x": "369",
+        "y": "870"
+      }
+    },
+    {
+      "text": "Get away from me, you graceless monster!",
+      "name": "Bad bye",
+      "pid": "6",
+      "position": {
+        "x": "369",
+        "y": "1020"
+      }
+    },
+    {
+      "text": " Now scram, before your mouth-breathing scares away today's catch.",
+      "name": "Good bye",
+      "pid": "7",
+      "position": {
+        "x": "517",
+        "y": "870"
+      }
+    }
+  ],
+  "name": "FishermanHairDay3",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "BBC222DF-E949-4E58-B3BA-D1CFEA58D671"
+}

@@ -1,0 +1,93 @@
+{
+  "passages": [
+    {
+      "text": "Bah, it'syouagain. Areyouheretoyellmorenonsenseatme?\n[[No, I'm not.|No]]\n[[How'sthefishingtoday?|howsthefishing]]",
+      "links": [
+        {
+          "name": "No, I'm not.|No",
+          "link": "No, I'm not.|No"
+        },
+        {
+          "name": "How'sthefishingtoday?|howsthefishing",
+          "link": "How'sthefishingtoday?|howsthefishing"
+        }
+      ],
+      "name": "Untitled Passage",
+      "pid": "1",
+      "position": {
+        "x": "554",
+        "y": "690"
+      }
+    },
+    {
+      "text": "Bah! Thereyougoagain! You'rejustliketherestofthem. Noonehasanyommunicationskillsanymore. Itsuremakesforalonelylifewithnoonetotalkto...\n[[badbye]]",
+      "links": [
+        {
+          "name": "badbye",
+          "link": "badbye",
+          "pid": "4"
+        }
+      ],
+      "name": "No",
+      "pid": "2",
+      "position": {
+        "x": "479",
+        "y": "836"
+      }
+    },
+    {
+      "text": "Ah, finally! Someonewhospeakswithdignityandgrace! Thefishingisfine, thanksforaskin'.\n[[continue]]",
+      "links": [
+        {
+          "name": "continue",
+          "link": "continue",
+          "pid": "5"
+        }
+      ],
+      "name": "howsthefishing",
+      "pid": "3",
+      "position": {
+        "x": "629",
+        "y": "840"
+      }
+    },
+    {
+      "text": "Getouttamyface! Ihavefishtocatch!",
+      "name": "badbye",
+      "pid": "4",
+      "position": {
+        "x": "479",
+        "y": "986"
+      }
+    },
+    {
+      "text": "Itsureisnicetospeaktosomeonewhounderstandsme. Thiswholetownisfilledwithmarblemouths, andIcanneverunderstandasinglethinganyoneissaying, yaknow?\n[[Suredo.|suredo]]",
+      "links": [
+        {
+          "name": "Suredo.|suredo",
+          "link": "Suredo.|suredo"
+        }
+      ],
+      "name": "continue",
+      "pid": "5",
+      "position": {
+        "x": "629",
+        "y": "990"
+      }
+    },
+    {
+      "text": "Ibet. Well, Ibestbegettin'backtoit. Haveaniceday, friend.",
+      "name": "suredo",
+      "pid": "6",
+      "position": {
+        "x": "629",
+        "y": "1140"
+      }
+    }
+  ],
+  "name": "FishermanBaldDay3",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "3CEA9AF4-59DC-49F9-A2FC-7DEB5EBC497C"
+}
