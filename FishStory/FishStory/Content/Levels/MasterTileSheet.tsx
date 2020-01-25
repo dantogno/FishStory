@@ -585,11 +585,6 @@
    <frame tileid="8043" duration="100"/>
   </animation>
  </tile>
- <tile id="8104">
-  <properties>
-   <property name="WaterCollision" value=""/>
-  </properties>
- </tile>
  <tile id="8170">
   <animation>
    <frame tileid="8170" duration="100"/>
