@@ -1,0 +1,182 @@
+{
+  "passages": [
+    {
+      "text": "Ingrid? Is that you? My dear, it has been so long! How have you been?\n[[I'm not Ingrid.|Not ingrid]]\n[[I've been well, how are you?|How are you]]",
+      "links": [
+        {
+          "name": "I'm not Ingrid.|Not ingrid",
+          "link": "I'm not Ingrid.|Not ingrid"
+        },
+        {
+          "name": "I've been well, how are you?|How are you",
+          "link": "I've been well, how are you?|How are you"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "554",
+        "y": "298.5"
+      }
+    },
+    {
+      "text": "Oh... No? Are you sure? But... you look just like her. You have her eyes... I miss those eyes. I haven't seen them since... Since...\n[[Continue]]\n",
+      "links": [
+        {
+          "name": "Continue",
+          "link": "Continue",
+          "pid": "4"
+        }
+      ],
+      "name": "Not ingrid",
+      "pid": "2",
+      "position": {
+        "x": "479",
+        "y": "448.5"
+      }
+    },
+    {
+      "text": "Oh, well, not as good as I once was. But you look wonderful! Just as young and bright as the last time I saw you. Oh, Ingrid, I was so terribly sad to hear about what happened to you.\n[[Continue2]]",
+      "links": [
+        {
+          "name": "Continue2",
+          "link": "Continue2",
+          "pid": "6"
+        }
+      ],
+      "name": "How are you",
+      "pid": "3",
+      "position": {
+        "x": "629",
+        "y": "448.5"
+      }
+    },
+    {
+      "text": "...\n[[Are you okay?|Start]]\n[[Bye.|bye]]",
+      "links": [
+        {
+          "name": "Are you okay?|Start",
+          "link": "Are you okay?|Start"
+        },
+        {
+          "name": "Bye.|bye",
+          "link": "Bye.|bye"
+        }
+      ],
+      "name": "Continue",
+      "pid": "4",
+      "position": {
+        "x": "299",
+        "y": "339.5"
+      }
+    },
+    {
+      "text": "Oh, Ingrid, before you go... Lately I've been thinking of that long ago day when you left us for your journey. I remember vowing to never enjoy the taste of shrimp again, for it made me think only of losing you...\n[[continuealt]]",
+      "links": [
+        {
+          "name": "continuealt",
+          "link": "continuealt",
+          "pid": "9"
+        }
+      ],
+      "name": "bye",
+      "pid": "5",
+      "position": {
+        "x": "282",
+        "y": "849.5"
+      }
+    },
+    {
+      "text": "I have always thought that it shouldn't have been you. You had so much to look forward to here! That farmer boy, what was his name... Harald! He liked you ever so much. I do believe that you would have had such a bountiful future with him. But, such is the way of things...\n[[What happened to me?|What happened]]",
+      "links": [
+        {
+          "name": "What happened to me?|What happened",
+          "link": "What happened to me?|What happened"
+        }
+      ],
+      "name": "Continue2",
+      "pid": "6",
+      "position": {
+        "x": "629",
+        "y": "598.5"
+      }
+    },
+    {
+      "text": "Oh, dear, there's no need to be coy. I do believe it would be quite difficult to forget such a thing... Even for me!\n[[Continue3]]",
+      "links": [
+        {
+          "name": "Continue3",
+          "link": "Continue3",
+          "pid": "8"
+        }
+      ],
+      "name": "What happened",
+      "pid": "7",
+      "position": {
+        "x": "629",
+        "y": "748.5"
+      }
+    },
+    {
+      "text": "Well, it's been so wonderful to see you again, Ingrid. Do tell my mother that I miss her when you return.\n[[I have to go now.|bye]]",
+      "links": [
+        {
+          "name": "I have to go now.|bye",
+          "link": "I have to go now.|bye"
+        }
+      ],
+      "name": "Continue3",
+      "pid": "8",
+      "position": {
+        "x": "450",
+        "y": "754.5"
+      }
+    },
+    {
+      "text": "But I must admit, as time went on and I began to heal, the aroma of the fish cooking over my mother's stove began to smell sweet again. It seems that no one can stay angry at the sea for long. Even though it may cast us away, it always pulls us back to it, like pebbles caught in the paths of breaking waves. And in doing so, it wears down our rough edges, making us all the more beautiful through its power.\n[[continuealt2]]",
+      "links": [
+        {
+          "name": "continuealt2",
+          "link": "continuealt2",
+          "pid": "10"
+        }
+      ],
+      "name": "continuealt",
+      "pid": "9",
+      "position": {
+        "x": "286",
+        "y": "999.5"
+      }
+    },
+    {
+      "text": "There have been an awful lot of Rougheyes caught lately, and I suppose at my age, I should begin to worry about such things. But I will not. If the sea chooses me, I will be glad. I see it as the greatest honor, as I'm sure you did when you were chosen.\n[[continuealt3]]",
+      "links": [
+        {
+          "name": "continuealt3",
+          "link": "continuealt3",
+          "pid": "11"
+        }
+      ],
+      "name": "continuealt2",
+      "pid": "10",
+      "position": {
+        "x": "286",
+        "y": "1149.5"
+      }
+    },
+    {
+      "text": "Good day, Ingrid. Perhaps I will see you again soon.",
+      "name": "continuealt3",
+      "pid": "11",
+      "position": {
+        "x": "286",
+        "y": "1299.5"
+      }
+    }
+  ],
+  "name": "ElderlyMotherDay2AltOld",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "0DF2263C-5269-4BC0-9B17-79062EB5E274"
+}
