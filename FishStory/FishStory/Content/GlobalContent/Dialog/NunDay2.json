@@ -1,0 +1,201 @@
+{
+  "passages": [
+    {
+      "text": "Oh, hello again. Can I help you with something?\n[[Nope.|nope]]\n[[Tell me about the festival.|Festival]]",
+      "links": [
+        {
+          "name": "Nope.|nope",
+          "link": "Nope.|nope"
+        },
+        {
+          "name": "Tell me about the festival.|Festival",
+          "link": "Tell me about the festival.|Festival"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "495",
+        "y": "559"
+      }
+    },
+    {
+      "text": "Oh, well, that's fine. It's a little odd that you came to talk to me even though you don't have anything to say... But, no matter. Do let me know if I can help you with something.\n[[Bye]]",
+      "links": [
+        {
+          "name": "Bye",
+          "link": "Bye",
+          "pid": "4"
+        }
+      ],
+      "name": "nope",
+      "pid": "2",
+      "position": {
+        "x": "296",
+        "y": "818"
+      }
+    },
+    {
+      "text": "Ah, well, it's a bit sacred, you see, and by extension, it's a bit of a secret. Our traditions have been passed down for so long that no one knows where they came from. But they maintain our community and our collective spirit.\n[[continue]]",
+      "links": [
+        {
+          "name": "continue",
+          "link": "continue",
+          "pid": "5"
+        }
+      ],
+      "name": "Festival",
+      "pid": "3",
+      "position": {
+        "x": "603",
+        "y": "713"
+      }
+    },
+    {
+      "text": "May the tides flow in your favor.",
+      "name": "Bye",
+      "pid": "4",
+      "position": {
+        "x": "421",
+        "y": "1401"
+      }
+    },
+    {
+      "text": "So, you'll have to forgive me if I can't share much of our ways with an outsider.\n[[That's alright.|Alright]]\n[[Tell me anyway.|Tell me]]",
+      "links": [
+        {
+          "name": "That's alright.|Alright",
+          "link": "That's alright.|Alright"
+        },
+        {
+          "name": "Tell me anyway.|Tell me",
+          "link": "Tell me anyway.|Tell me"
+        }
+      ],
+      "name": "continue",
+      "pid": "5",
+      "position": {
+        "x": "601",
+        "y": "834"
+      }
+    },
+    {
+      "text": "Ah, it is quite refreshing to meet a stranger who knows their place. I was a bit worried that you would end up like that other woman. She was rather nosey, wasn't she?\n[[Did she leave the island?|Leave]]",
+      "links": [
+        {
+          "name": "Did she leave the island?|Leave",
+          "link": "Did she leave the island?|Leave"
+        }
+      ],
+      "name": "Alright",
+      "pid": "6",
+      "position": {
+        "x": "521",
+        "y": "956"
+      }
+    },
+    {
+      "text": "Hmm. You know, I do believe I've been rather kind to you, even though you are an uninvited stranger. So I find it quite odd that you insist on being consistently pushy and presumptuous.\n[[continue2]]",
+      "links": [
+        {
+          "name": "continue2",
+          "link": "continue2",
+          "pid": "8"
+        }
+      ],
+      "name": "Tell me",
+      "pid": "7",
+      "position": {
+        "x": "675",
+        "y": "956"
+      }
+    },
+    {
+      "text": "Certainly, if I were a stranger in an unknown land with unfamiliar customs, I would make an effort to not make myself known for unfavorable traits, wouldn't you?\n[[Sorry...|Sorry]]\n[[I'm not scared.|Not scared]]",
+      "links": [
+        {
+          "name": "Sorry...|Sorry",
+          "link": "Sorry...|Sorry"
+        },
+        {
+          "name": "I'm not scared.|Not scared",
+          "link": "I'm not scared.|Not scared"
+        }
+      ],
+      "name": "continue2",
+      "pid": "8",
+      "position": {
+        "x": "742",
+        "y": "1106"
+      }
+    },
+    {
+      "text": "There is no need to apologize to me. After all, I am not the one you run the risk of offending.\n[[Bye]] ",
+      "links": [
+        {
+          "name": "Bye",
+          "link": "Bye",
+          "pid": "4"
+        }
+      ],
+      "name": "Sorry",
+      "pid": "9",
+      "position": {
+        "x": "705",
+        "y": "1263"
+      }
+    },
+    {
+      "text": "Scared? Whatever made you think you should be scared? Presently, you will find nothing to fear upon this island. I assure you.\n[[Bye]] ",
+      "links": [
+        {
+          "name": "Bye",
+          "link": "Bye",
+          "pid": "4"
+        }
+      ],
+      "name": "Not scared",
+      "pid": "10",
+      "position": {
+        "x": "828",
+        "y": "1354"
+      }
+    },
+    {
+      "text": "Oh, no, not yet. But I do believe she has made plans to leave by tomorrow morning. After all, she must know by now that we have no more information we're willing to part with. I'm afraid her book will have to go on without us, as it were.\n[[But I thought no one could leave until after the festival?|Leave until after]]",
+      "links": [
+        {
+          "name": "But I thought no one could leave until after the festival?|Leave until after",
+          "link": "But I thought no one could leave until after the festival?|Leave until after"
+        }
+      ],
+      "name": "Leave",
+      "pid": "11",
+      "position": {
+        "x": "521",
+        "y": "1073"
+      }
+    },
+    {
+      "text": "Yes, yes, this is true. But she seems to have made special arrangements. It cost her a great sum of money as well. It must be nice to be so metropolitan and have no many resources at your fingertips... I'm sure neither of us can relate to such frivolous behavior.\n[[Bye]] ",
+      "links": [
+        {
+          "name": "Bye",
+          "link": "Bye",
+          "pid": "4"
+        }
+      ],
+      "name": "Leave until after",
+      "pid": "12",
+      "position": {
+        "x": "514",
+        "y": "1206"
+      }
+    }
+  ],
+  "name": "NunDay2",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "F8D4FE3B-4146-4113-8B3E-700100A83BF0"
+}
