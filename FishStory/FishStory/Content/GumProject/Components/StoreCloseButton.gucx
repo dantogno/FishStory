@@ -213,7 +213,7 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>TextInstance.Red</Name>
+        <Name>TextInstance.Blue</Name>
         <Value xsi:type="xsd:int">128</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -225,7 +225,7 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>TextInstance.Blue</Name>
+        <Name>TextInstance.Red</Name>
         <Value xsi:type="xsd:int">128</Value>
         <SetsValue>true</SetsValue>
       </Variable>
