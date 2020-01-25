@@ -108,7 +108,9 @@
     <Compile Include="GumRuntimes\DialoguePortraitRuntime.Generated.cs">
       <DependentUpon>DialoguePortraitRuntime.cs</DependentUpon>
     </Compile>
-    <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs">
+      <DependentUpon>InventoryRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Managers\InGameDateTimeManager.cs" />
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\FishIdentifiedSignFactory.Generated.cs" />
