@@ -5,6 +5,12 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>ButtonCategory</Type>
+      <Name>BuyButton.ButtonCategoryState</Name>
+      <Value xsi:type="xsd:string">Enabled</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>BuyButton.ButtonText</Name>
       <Value xsi:type="xsd:string">Buy</Value>
@@ -47,6 +53,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ButtonCategory</Type>
+      <Name>CloseButton.ButtonCategoryState</Name>
+      <Value xsi:type="xsd:string">Enabled</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>CloseButton.ButtonText</Name>
       <Value xsi:type="xsd:string">X</Value>
@@ -55,19 +67,19 @@
     <Variable>
       <Type>float</Type>
       <Name>CloseButton.Height</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">48</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>CloseButton.Width</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">48</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>CloseButton.X</Name>
-      <Value xsi:type="xsd:float">240</Value>
+      <Value xsi:type="xsd:float">257</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -79,7 +91,7 @@
     <Variable>
       <Type>float</Type>
       <Name>CloseButton.Y</Name>
-      <Value xsi:type="xsd:float">-186</Value>
+      <Value xsi:type="xsd:float">-183</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -298,13 +310,13 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>CloseButton</Name>
-    <BaseType>CustomButton</BaseType>
+    <Name>BuyButton</Name>
+    <BaseType>StoreBuyButton</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>BuyButton</Name>
-    <BaseType>StoreBuyButton</BaseType>
+    <Name>CloseButton</Name>
+    <BaseType>StoreCloseButton</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />
