@@ -187,6 +187,10 @@ namespace FishStory.Screens
             #endregion
             #region Identifier
             If.Check(() => HasTag("HasSeenIdentifierDay1"));
+            Do.Call(() =>
+            {
+                NPCList.FindByName(CharacterNames.Identifier).TwineDialogId = nameof(GlobalContent.IdentifierDay1Brief);
+            });
             #endregion
             #region Tycoon
             // He gives you the key if you have identified 3 fish
