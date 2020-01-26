@@ -782,6 +782,30 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>DocksLootTable</Name>
     </None>
+    <None Include="content\globalcontent\fishingloottables\dumploottable.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>DumpLootTable</Name>
+    </None>
+    <None Include="content\globalcontent\fishingloottables\eastloottable.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>EastLootTable</Name>
+    </None>
+    <None Include="content\globalcontent\fishingloottables\northloottable.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>NorthLootTable</Name>
+    </None>
+    <None Include="content\globalcontent\fishingloottables\sacrificecliffsloottable.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>SacrificeCliffsLootTable</Name>
+    </None>
+    <None Include="content\globalcontent\fishingloottables\southloottable.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>SouthLootTable</Name>
+    </None>
+    <None Include="content\globalcontent\fishingloottables\westloottable.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>WestLootTable</Name>
+    </None>
     <None Include="content\globalcontent\itemdefinition.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ItemDefinition</Name>
