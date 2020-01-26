@@ -399,6 +399,11 @@
    <property name="CurrentPropNameState" value="StreetLight"/>
   </properties>
  </tile>
+ <tile id="7133" type="PropObject">
+  <properties>
+   <property name="CurrentPropNameState" value="TriStreetLight"/>
+  </properties>
+ </tile>
  <tile id="7218">
   <animation>
    <frame tileid="7218" duration="100"/>

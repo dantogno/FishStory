@@ -22,7 +22,6 @@ namespace FishStory.Entities
         private void CustomInitialize()
         {
 
-
         }
 
         private void CustomActivity()
@@ -33,9 +32,35 @@ namespace FishStory.Entities
 
         public void SetLayers(Layer lightEffectLayer)
         {
-            if (CreatesLight)
+            if (CreatesLight && LightSpriteList.Count == 0)
             {
                 SpriteManager.AddToLayer(LightSpriteInstance, lightEffectLayer);
+                LightSpriteList.Add(LightSpriteInstance);
+
+                if (CurrentPropNameState == PropName.TriStreetLight)
+                {
+                    this.Z = 7;
+                    //The tiled map instantiator doesn't instantiate them in quite the right place
+                    //this.Y -= 2;
+                    //this.X -= 1;
+
+                    var newLight1 = LightSpriteInstance.Clone();
+                    var newLight2 = newLight1.Clone();
+
+                    SpriteManager.AddToLayer(newLight1, lightEffectLayer);
+                    SpriteManager.AddToLayer(newLight2, lightEffectLayer);
+
+                    //Left of middle, slightly higher
+                    newLight1.RelativeX = -10;
+                    newLight1.RelativeY = 10;
+
+                    //Right of middle, slightly higher
+                    newLight2.RelativeX = 10;
+                    newLight2.RelativeY = 10;
+
+                    LightSpriteList.Add(newLight1);
+                    LightSpriteList.Add(newLight2);
+                }
             }
         }
 

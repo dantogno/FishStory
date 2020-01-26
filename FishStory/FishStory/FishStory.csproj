@@ -582,6 +582,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>StreetLight</Name>
     </None>
+    <None Include="content\entities\propobject\tristreetlight.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TriStreetLight</Name>
+    </None>
     <None Include="content\globalcontent\dialog\blackmarketshopday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlackMarketShopDay1</Name>
