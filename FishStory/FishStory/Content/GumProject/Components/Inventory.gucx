@@ -1157,7 +1157,7 @@
       </Variable>
     </State>
     <State>
-      <Name>Sell</Name>
+      <Name>SellToStore</Name>
       <Variable>
         <Type>bool</Type>
         <Name>DescriptionNineSlice.Visible</Name>
@@ -1192,6 +1192,45 @@
         <Type>float</Type>
         <Name>SellButton.Y</Name>
         <Value xsi:type="xsd:float">138</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>SellToBlackMarket</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>DescriptionNineSlice.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>ItemNineSlice.Parent</Name>
+        <Value xsi:type="xsd:string">ListBoxInstance</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.Height</Name>
+        <Value xsi:type="xsd:float">78</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>SellButton.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.X</Name>
+        <Value xsi:type="xsd:float">135</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.Y</Name>
+        <Value xsi:type="xsd:float">129</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

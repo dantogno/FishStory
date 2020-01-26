@@ -78,9 +78,9 @@ namespace FishStory.GumRuntimes
                 {
                     Close();
                 }
-                if (SellButton.Visible != (CurrentViewOrSellState == ViewOrSell.Sell))
+                if (SellButton.Visible != (CurrentViewOrSellState == ViewOrSell.SellToBlackMarket || CurrentViewOrSellState == ViewOrSell.SellToStore))
                 {
-                    SellButton.Visible = (CurrentViewOrSellState == ViewOrSell.Sell);
+                    SellButton.Visible = (CurrentViewOrSellState == ViewOrSell.SellToBlackMarket || CurrentViewOrSellState == ViewOrSell.SellToStore);
                 }
 
             }
@@ -89,6 +89,7 @@ namespace FishStory.GumRuntimes
         private void Close()
         {
             Visible = false;
+            
             Closed?.Invoke();
         }
 

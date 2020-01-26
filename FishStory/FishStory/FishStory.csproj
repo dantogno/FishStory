@@ -358,6 +358,11 @@
       <Name>music_calm_tree_of_life</Name>
       <Link>content\globalcontent\music\music_calm_tree_of_life.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\blackmarketstoreopensound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BlackMarketStoreOpenSound</Name>
+      <Link>content\globalcontent\sounds\blackmarketstoreopensound.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\dialogueadvancesound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>DialogueAdvanceSound</Name>
@@ -378,6 +383,26 @@
       <Name>FishingCastSound</Name>
       <Link>content\globalcontent\sounds\fishingcastsound.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\fishspoiledsound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishSpoiledSound</Name>
+      <Link>content\globalcontent\sounds\fishspoiledsound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\gettinglatesound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>GettingLateSound</Name>
+      <Link>content\globalcontent\sounds\gettinglatesound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\inventoryclosesound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>InventoryCloseSound</Name>
+      <Link>content\globalcontent\sounds\inventoryclosesound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\inventoryopensound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>InventoryOpenSound</Name>
+      <Link>content\globalcontent\sounds\inventoryopensound.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\menumovesound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>MenuMoveSound</Name>
@@ -392,6 +417,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>StoreBuySound</Name>
       <Link>content\globalcontent\sounds\storebuysound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\storeopensound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>StoreOpenSound</Name>
+      <Link>content\globalcontent\sounds\storeopensound.xnb</Link>
     </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\typewriterkey1sound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -286,8 +286,7 @@ namespace FishStory.Screens
             var inventory = GameScreenGum.InventoryInstance;
             inventory.Visible = false;
             inventory.SellClicked += HandleSellClicked;
-            inventory.Closed += () =>
-                PlayerCharacterInstance.ObjectsBlockingInput.Remove(inventory);
+            inventory.Closed += HandleInventoryClosed;
             inventory.CancelInput = PlayerCharacterInstance.CancelInput;
             inventory.InventoryInput = PlayerCharacterInstance.InventoryInput;
             #endregion
@@ -781,10 +780,12 @@ namespace FishStory.Screens
                 PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.OverlayInstance);
 
                 PlayerDataManager.PlayerData.CurrentDay++;
-                
+                isBeingForcedToSleep = false;
+
                 var numberOfFishSpoiled = PlayerDataManager.PlayerData.SpoilItemsAndReturnCount();
                 if (numberOfFishSpoiled > 0)
                 {
+                    SoundManager.Play(GlobalContent.FishSpoiledSound);
                     AddNotification($"The {numberOfFishSpoiled} fish you caught yesterday went bad.");
                 }
 
@@ -838,9 +839,20 @@ namespace FishStory.Screens
                 InventoryRestrictions.IdentifiedFishOnly :
                 InventoryRestrictions.NoRestrictions;
 
+            InventoryRuntime.ViewOrSell sellType;
 
-            ShowInventory(InventoryRuntime.ViewOrSell.Sell, 
-                sellPriceMultiplier, inventoryRestrictions);
+            if (isBlackMarket)
+            {
+                SoundManager.Play(GlobalContent.BlackMarketStoreOpenSound);
+                sellType = InventoryRuntime.ViewOrSell.SellToBlackMarket;
+            }
+            else
+            {
+                SoundManager.Play(GlobalContent.StoreOpenSound);
+                sellType = InventoryRuntime.ViewOrSell.SellToStore;
+            }
+
+            ShowInventory(sellType, sellPriceMultiplier, inventoryRestrictions);
         }
         //todo - need to actually call this if text is "id="
         private void HandleIdentify()
@@ -925,6 +937,19 @@ namespace FishStory.Screens
             SoundManager.Play(GlobalContent.StoreBuySound);
         }
 
+        private void HandleInventoryClosed()
+        {
+            PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.InventoryInstance);
+            if (GameScreenGum.InventoryInstance.CurrentViewOrSellState == InventoryRuntime.ViewOrSell.View)
+            {
+                SoundManager.Play(GlobalContent.InventoryCloseSound);
+            }
+            else
+            {
+
+            }
+        }
+
         private void HandleDialogBoxHide()
         {
             if(PlayerCharacterInstance.ObjectsBlockingInput.Contains(DialogBox))
@@ -990,6 +1015,7 @@ namespace FishStory.Screens
             }
             else if (inventory.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed && PlayerCharacterInstance.ObjectsBlockingInput.Any() == false)
             {
+                SoundManager.Play(GlobalContent.InventoryOpenSound);
                 ShowInventory(InventoryRuntime.ViewOrSell.View, 1.0f, InventoryRestrictions.NoRestrictions);
             }
         }
