@@ -143,7 +143,10 @@
       "position": {
         "x": "593",
         "y": "843"
-      }
+      },
+      "tags": [
+        "HasSeenNunDay1"
+      ]
     }
   ],
   "name": "NunDay1",

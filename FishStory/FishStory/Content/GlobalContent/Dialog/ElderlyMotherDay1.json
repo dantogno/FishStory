@@ -148,7 +148,10 @@
       "position": {
         "x": "523",
         "y": "720"
-      }
+      },
+      "tags": [
+        "HasSeenElderlyMotherDay1"
+      ]
     }
   ],
   "name": "ElderlyMotherDay1",

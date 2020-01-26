@@ -32,15 +32,12 @@
       }
     },
     {
-      "text": "I feel like I'm getting cabin fever. All anyone wants to talk about on this tiny island is their precious festival, but I can never get anyone to give me any details on any of the customs or rituals. Do you think you could help me out a bit?\n[[Sure!|sure]]\n[[No thanks, I don't want to get involved.|No involved]]",
+      "text": "I feel like I'm getting cabin fever. All anyone wants to talk about on this tiny island is their precious festival, but I can never get anyone to give me any details on any of the customs or rituals.\n[[continue3]]",
       "links": [
         {
-          "name": "Sure!|sure",
-          "link": "Sure!|sure"
-        },
-        {
-          "name": "No thanks, I don't want to get involved.|No involved",
-          "link": "No thanks, I don't want to get involved.|No involved"
+          "name": "continue3",
+          "link": "continue3",
+          "pid": "8"
         }
       ],
       "name": "Continue",
@@ -61,8 +58,8 @@
       "name": "sure",
       "pid": "4",
       "position": {
-        "x": "433",
-        "y": "690"
+        "x": "419",
+        "y": "798"
       }
     },
     {
@@ -77,8 +74,8 @@
       "name": "No involved",
       "pid": "5",
       "position": {
-        "x": "583",
-        "y": "690"
+        "x": "569",
+        "y": "798"
       }
     },
     {
@@ -86,9 +83,12 @@
       "name": "Bye",
       "pid": "6",
       "position": {
-        "x": "433",
-        "y": "840"
-      }
+        "x": "419",
+        "y": "948"
+      },
+      "tags": [
+        "HasSeenConservationistDay1"
+      ]
     },
     {
       "text": "Let me know if you change your mind. I'm sure there's at least one interesting thing to learn from these people. Otherwise I'll have made this trip for nothing...\n[[I'll see you around.|Bye]]",
@@ -101,8 +101,27 @@
       "name": "Cointinue2",
       "pid": "7",
       "position": {
-        "x": "583",
-        "y": "840"
+        "x": "569",
+        "y": "948"
+      }
+    },
+    {
+      "text": "They keep telling me to participate, but I don't know how to fish... Do you think you could help me out a bit?\n[[Sure!|sure]]\n[[No thanks, I don't want to get involved.|No involved]]",
+      "links": [
+        {
+          "name": "Sure!|sure",
+          "link": "Sure!|sure"
+        },
+        {
+          "name": "No thanks, I don't want to get involved.|No involved",
+          "link": "No thanks, I don't want to get involved.|No involved"
+        }
+      ],
+      "name": "continue3",
+      "pid": "8",
+      "position": {
+        "x": "501",
+        "y": "666"
       }
     }
   ],
