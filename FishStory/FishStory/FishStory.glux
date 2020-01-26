@@ -3624,6 +3624,54 @@
       <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/FishingLootTables/DumpLootTable.csv</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <CreatesDictionary>true</CreatesDictionary>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/FishingLootTables/EastLootTable.csv</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <CreatesDictionary>true</CreatesDictionary>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/FishingLootTables/NorthLootTable.csv</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <CreatesDictionary>true</CreatesDictionary>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/FishingLootTables/SacrificeCliffsLootTable.csv</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <CreatesDictionary>true</CreatesDictionary>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/FishingLootTables/SouthLootTable.csv</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <CreatesDictionary>true</CreatesDictionary>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/FishingLootTables/WestLootTable.csv</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <CreatesDictionary>true</CreatesDictionary>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
   </GlobalFiles>
   <GlobalContentSettingsSave>
     <LoadAsynchronously>false</LoadAsynchronously>
@@ -3684,6 +3732,12 @@
       <CsvFilesUsingThis>
         <string>GlobalContent/FishingLootTables/DefaultLootTable.csv</string>
         <string>GlobalContent/FishingLootTables/DocksLootTable.csv</string>
+        <string>GlobalContent/FishingLootTables/DumpLootTable.csv</string>
+        <string>GlobalContent/FishingLootTables/EastLootTable.csv</string>
+        <string>GlobalContent/FishingLootTables/NorthLootTable.csv</string>
+        <string>GlobalContent/FishingLootTables/SacrificeCliffsLootTable.csv</string>
+        <string>GlobalContent/FishingLootTables/SouthLootTable.csv</string>
+        <string>GlobalContent/FishingLootTables/WestLootTable.csv</string>
       </CsvFilesUsingThis>
       <RequiredProperties />
       <Name>FishingLootTable</Name>
