@@ -1,0 +1,136 @@
+{
+  "passages": [
+    {
+      "text": "Stranger! Can you feel it? The air is practically buzzing with the sea's energy! Tomorrow, the choice will be made, and the land will be honored!\n[[I can feel it.|can feel it]]\n[[I don't feel anything.|dont feel]]",
+      "links": [
+        {
+          "name": "I can feel it.|can feel it",
+          "link": "I can feel it.|can feel it"
+        },
+        {
+          "name": "I don't feel anything.|dont feel",
+          "link": "I don't feel anything.|dont feel"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "690"
+      }
+    },
+    {
+      "text": "Of course you can! It is in the grit of the sand, the spray of the breaking waves, the bite of the salt-tinted winds! It is all around us! It is so palpable that I can hardly think. But today I have no need for thoughts, as I trust the land to guide me in this sacred rite!\n[[continue]]",
+      "links": [
+        {
+          "name": "continue",
+          "link": "continue",
+          "pid": "4"
+        }
+      ],
+      "name": "can feel it",
+      "pid": "2",
+      "position": {
+        "x": "458.5",
+        "y": "840"
+      }
+    },
+    {
+      "text": "You must! Everything around us results from the will of the divine ocean! It is in the grit of the sand, the spray of the breaking waves, the bite of the salt-tinted winds! It is all around us! It is so palpable that I can hardly think. But today I have no need for thoughts, as I trust the land to guide me in this sacred rite!\n[[continue]]",
+      "links": [
+        {
+          "name": "continue",
+          "link": "continue",
+          "pid": "4"
+        }
+      ],
+      "name": "dont feel",
+      "pid": "3",
+      "position": {
+        "x": "608.5",
+        "y": "840"
+      }
+    },
+    {
+      "text": "Tomorrow, someone will take on the honor of being chosen. They will embody all our boundless gratitude and humility! I cannot imagine a greater joy. There is nothing on this earth more nobel, don't you agree?\n[[Do you want to be choosen?|do you want]]\n[[I don't want to be choosen.|don't want]]",
+      "links": [
+        {
+          "name": "Do you want to be choosen?|do you want",
+          "link": "Do you want to be choosen?|do you want"
+        },
+        {
+          "name": "I don't want to be choosen.|don't want",
+          "link": "I don't want to be choosen.|don't want"
+        }
+      ],
+      "name": "continue",
+      "pid": "4",
+      "position": {
+        "x": "531.5",
+        "y": "997"
+      }
+    },
+    {
+      "text": "Of course! We all do. Even those who seem to be too lazy to take on the burden end up taking to the role quite well when called upon. In fact, those who protest at first usually end up performing their duties better than most.\n[[What are the duties?|what duties]]",
+      "links": [
+        {
+          "name": "What are the duties?|what duties",
+          "link": "What are the duties?|what duties"
+        }
+      ],
+      "name": "do you want",
+      "pid": "5",
+      "position": {
+        "x": "460.5",
+        "y": "1147"
+      }
+    },
+    {
+      "text": "Of course you do! We all do, through some of us may take longer to realize this than others. Even those who seem to be too lazy to take on the burden end up taking to the role quite well when called upon. In fact, those who protest at first usually end up performing their duties better than most.\n[[What are the duties?|what duties]]",
+      "links": [
+        {
+          "name": "What are the duties?|what duties",
+          "link": "What are the duties?|what duties"
+        }
+      ],
+      "name": "don't want",
+      "pid": "6",
+      "position": {
+        "x": "606.5",
+        "y": "1147"
+      }
+    },
+    {
+      "text": "Making the Great Journey, of course! I am sorry that I cannot give you more details, but you must understand, I cannot divulge our secrets to an outsider. It is forbidden. But once the festival has taken place and you have observed our customs, you will be an outsider no longer.\n[[I'm going to go fish...|bye]]\n",
+      "links": [
+        {
+          "name": "I'm going to go fish...|bye",
+          "link": "I'm going to go fish...|bye"
+        }
+      ],
+      "name": "what duties",
+      "pid": "7",
+      "position": {
+        "x": "532.5",
+        "y": "1304"
+      }
+    },
+    {
+      "text": "Of course. May the tides flow in our favor!",
+      "name": "bye",
+      "pid": "8",
+      "position": {
+        "x": "532.5",
+        "y": "1454"
+      },
+      "tags": [
+        "HasSeenPriestessDay3"
+      ]
+    }
+  ],
+  "name": "PriestessDay3",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "E36001BE-26A3-473F-9373-ED8909668A8C"
+}

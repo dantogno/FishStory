@@ -1,0 +1,126 @@
+{
+  "passages": [
+    {
+      "text": "The festival is tomorrow! It's quite exciting, isn't it? Are you prepared?\n[[What do you mean?|What mean]]\n[[I don't think I want to participate.|no participate]]",
+      "links": [
+        {
+          "name": "What do you mean?|What mean",
+          "link": "What do you mean?|What mean"
+        },
+        {
+          "name": "I don't think I want to participate.|no participate",
+          "link": "I don't think I want to participate.|no participate"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "502.5",
+        "y": "303"
+      }
+    },
+    {
+      "text": "Well, I would think you'd want to catch more fish in order to help us better understand the sea's divine intentions! After all, you are participating! And - might I add - you are participating quite well!\n[[What do you mean by \"intentions?\"|what intentions]]\n[[You can't make me take part in the festival.|cant make me]]",
+      "links": [
+        {
+          "name": "What do you mean by \"intentions?\"|what intentions",
+          "link": "What do you mean by \"intentions?\"|what intentions"
+        },
+        {
+          "name": "You can't make me take part in the festival.|cant make me",
+          "link": "You can't make me take part in the festival.|cant make me"
+        }
+      ],
+      "name": "What mean",
+      "pid": "2",
+      "position": {
+        "x": "419.5",
+        "y": "444"
+      }
+    },
+    {
+      "text": "What do you mean, my dear? You already have! All the fish you've caught have aided us in determining the sea's divine intentions! But don't worry, nothing bad is going to happen. The sea always serves the greater good.\n[[What do you mean by \"intentions?\"|what intentions]]\n[[You can't make me take part in the festival.|cant make me]]",
+      "links": [
+        {
+          "name": "What do you mean by \"intentions?\"|what intentions",
+          "link": "What do you mean by \"intentions?\"|what intentions"
+        },
+        {
+          "name": "You can't make me take part in the festival.|cant make me",
+          "link": "You can't make me take part in the festival.|cant make me"
+        }
+      ],
+      "name": "no participate",
+      "pid": "3",
+      "position": {
+        "x": "584.5",
+        "y": "445"
+      }
+    },
+    {
+      "text": "Well, someone must make the journey to appease the sea, and the sea is always the one to choose who is worthy. It shows us through the gifts it provides us. It is an honor. But trust me, the sea always chooses correctly. Our community has continued to thrive because of it.\n[[Continue]] ",
+      "links": [
+        {
+          "name": "Continue",
+          "link": "Continue",
+          "pid": "6"
+        }
+      ],
+      "name": "what intentions",
+      "pid": "4",
+      "position": {
+        "x": "439.5",
+        "y": "609"
+      }
+    },
+    {
+      "text": "You seem to misunderstand: we have not, and will not, make you do anything. You are the one who chose to come here, yes? And you are the one who chose to benefit from the sea's gifts? So are you not the one who has chosen your fate?\n[[Continue]]",
+      "links": [
+        {
+          "name": "Continue",
+          "link": "Continue",
+          "pid": "6"
+        }
+      ],
+      "name": "cant make me",
+      "pid": "5",
+      "position": {
+        "x": "589.5",
+        "y": "608"
+      }
+    },
+    {
+      "text": "If you are still worried, I suggest you take this final day to further our understanding of the sea's divine will. Maybe it has fluctuated overnight... But we will only know once more fish are caught.\n[[bye]]",
+      "links": [
+        {
+          "name": "bye",
+          "link": "bye",
+          "pid": "7"
+        }
+      ],
+      "name": "Continue",
+      "pid": "6",
+      "position": {
+        "x": "517.5",
+        "y": "766"
+      }
+    },
+    {
+      "text": "Good day, and I look forward to seeing you at the festival!",
+      "name": "bye",
+      "pid": "7",
+      "position": {
+        "x": "519.5",
+        "y": "899"
+      },
+      "tags": [
+        "HasSeenMayorDay3"
+      ]
+    }
+  ],
+  "name": "MayorDay3",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "B0BF312F-C43E-4E7D-82AB-55F7B773636F"
+}

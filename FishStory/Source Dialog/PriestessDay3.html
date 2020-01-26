@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>PriestessDay3</title>
+		<script type="text/javascript">
+/**
+ * Twison - Twine 2 JSON Export Story Format
+ * 
+ * Copyright (c) 2015 Mike Walker
+ * https://lazerwalker.com
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+ * associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial
+ * portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ * LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+var Twison={extractLinksFromText:function(t){var n=t.match(/\[\[.+?\]\]/g);return n?n.map(function(t){var n=t.match(/\[\[(.*?)\-\&gt;(.*?)\]\]/);return n?{name:n[1],link:n[2]}:(t=t.substring(2,t.length-2),{name:t,link:t})}):void 0},convertPassage:function(t){var n={text:t.innerHTML},a=Twison.extractLinksFromText(n.text);if(a&&(n.links=a),["name","pid","position","tags"].forEach(function(a){var e=t.attributes[a].value;e&&(n[a]=e)}),n.position){var e=n.position.split(",");n.position={x:e[0],y:e[1]}}return n.tags&&(n.tags=n.tags.split(" ")),n},convertStory:function(t){var n=t.getElementsByTagName("tw-passagedata"),a=Array.prototype.slice.call(n).map(Twison.convertPassage),e={passages:a};["name","startnode","creator","creator-version","ifid"].forEach(function(n){var a=t.attributes[n].value;a&&(e[n]=a)});var i={};return e.passages.forEach(function(t){i[t.name]=t.pid}),e.passages.forEach(function(t){t.links&&t.links.forEach(function(t){t.pid=i[t.link]})}),e},convert:function(){var t=document.getElementsByTagName("tw-storydata")[0],n=JSON.stringify(Twison.convertStory(t),null,2);document.getElementById("output").innerHTML=n}};window.Twison=Twison;		
+		</script>
+	</head>
+	<body>
+		<pre id="output">
+		
+		</pre>
+		<div id="storyData" style="display: none;">
+			<tw-storydata name="PriestessDay3" startnode="1" creator="Twine" creator-version="2.3.5" ifid="E36001BE-26A3-473F-9373-ED8909668A8C" zoom="1" format="Twison" format-version="0.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="533.5,690" size="100,100">Stranger! Can you feel it? The air is practically buzzing with the sea&#39;s energy! Tomorrow, the choice will be made, and the land will be honored!
+[[I can feel it.|can feel it]]
+[[I don&#39;t feel anything.|dont feel]]</tw-passagedata><tw-passagedata pid="2" name="can feel it" tags="" position="458.5,840" size="100,100">Of course you can! It is in the grit of the sand, the spray of the breaking waves, the bite of the salt-tinted winds! It is all around us! It is so palpable that I can hardly think. But today I have no need for thoughts, as I trust the land to guide me in this sacred rite!
+[[continue]]</tw-passagedata><tw-passagedata pid="3" name="dont feel" tags="" position="608.5,840" size="100,100">You must! Everything around us results from the will of the divine ocean! It is in the grit of the sand, the spray of the breaking waves, the bite of the salt-tinted winds! It is all around us! It is so palpable that I can hardly think. But today I have no need for thoughts, as I trust the land to guide me in this sacred rite!
+[[continue]]</tw-passagedata><tw-passagedata pid="4" name="continue" tags="" position="531.5,997" size="100,100">Tomorrow, someone will take on the honor of being chosen. They will embody all our boundless gratitude and humility! I cannot imagine a greater joy. There is nothing on this earth more nobel, don&#39;t you agree?
+[[Do you want to be choosen?|do you want]]
+[[I don&#39;t want to be choosen.|don&#39;t want]]</tw-passagedata><tw-passagedata pid="5" name="do you want" tags="" position="460.5,1147" size="100,100">Of course! We all do. Even those who seem to be too lazy to take on the burden end up taking to the role quite well when called upon. In fact, those who protest at first usually end up performing their duties better than most.
+[[What are the duties?|what duties]]</tw-passagedata><tw-passagedata pid="6" name="don&#39;t want" tags="" position="606.5,1147" size="100,100">Of course you do! We all do, through some of us may take longer to realize this than others. Even those who seem to be too lazy to take on the burden end up taking to the role quite well when called upon. In fact, those who protest at first usually end up performing their duties better than most.
+[[What are the duties?|what duties]]</tw-passagedata><tw-passagedata pid="7" name="what duties" tags="" position="532.5,1304" size="100,100">Making the Great Journey, of course! I am sorry that I cannot give you more details, but you must understand, I cannot divulge our secrets to an outsider. It is forbidden. But once the festival has taken place and you have observed our customs, you will be an outsider no longer.
+[[I&#39;m going to go fish...|bye]]
+</tw-passagedata><tw-passagedata pid="8" name="bye" tags="HasSeenPriestessDay3" position="532.5,1454" size="100,100">Of course. May the tides flow in our favor!</tw-passagedata></tw-storydata>
+		</div>
+		<script>
+			Twison.convert()
+		</script>
+	</body>
+</html>

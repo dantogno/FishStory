@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Get out there and catch some fish!",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "595"
+      }
+    }
+  ],
+  "name": "MayorDay3Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "16D0178F-FD87-40A4-9D95-39C6E2F1452A"
+}

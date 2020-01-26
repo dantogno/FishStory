@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "The power of the sea... It pulls me towards enlightenment...",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "690"
+      }
+    }
+  ],
+  "name": "PriestessDay3Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "C1FEC5D2-FE26-48BC-BAC0-47B861693BD7"
+}
