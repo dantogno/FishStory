@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Don't you have fish to catch?",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "690"
+      }
+    }
+  ],
+  "name": "FarmerDay3Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "A9895E3A-7423-4BC6-8D5B-7C8B4B309AAB"
+}

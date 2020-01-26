@@ -1,0 +1,119 @@
+{
+  "passages": [
+    {
+      "text": "Please... Let me rest... I was woken up last night to a terrible clatter. It sounded like a large animal. But it made these awful sounds, almost like a scared dog... Someone must have been hunting for the festival...\n[[When did you hear these sounds?|When sounds]]\n[[I'll let you rest.|Let you rest]]",
+      "links": [
+        {
+          "name": "When did you hear these sounds?|When sounds",
+          "link": "When did you hear these sounds?|When sounds"
+        },
+        {
+          "name": "I'll let you rest.|Let you rest",
+          "link": "I'll let you rest.|Let you rest"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "595"
+      }
+    },
+    {
+      "text": "Oh, I'm sure I don't know... It was dark, but William was not home yet. So it couldn't have been that late... Or perhaps William stayed out longer than usual?\n[[continue]]",
+      "links": [
+        {
+          "name": "continue",
+          "link": "continue",
+          "pid": "5"
+        }
+      ],
+      "name": "When sounds",
+      "pid": "2",
+      "position": {
+        "x": "458.5",
+        "y": "745"
+      }
+    },
+    {
+      "text": "Oh, thank you, dear. I do wonder what it could have been, but at my age, I've learned to keep to my own business and not bother others for theirs. It's the wise thing to do...\n[[Bye]]",
+      "links": [
+        {
+          "name": "Bye",
+          "link": "Bye",
+          "pid": "4"
+        }
+      ],
+      "name": "Let you rest",
+      "pid": "3",
+      "position": {
+        "x": "608.5",
+        "y": "745"
+      }
+    },
+    {
+      "text": "But, that's a thought for another time. For now, I think I'll just rest my eyes for a moment...",
+      "name": "Bye",
+      "pid": "4",
+      "position": {
+        "x": "756.5",
+        "y": "1006"
+      },
+      "tags": [
+        "HasSeenElderlyMotherDay3"
+      ]
+    },
+    {
+      "text": "But it matters not... At my age, I've learned to keep to my own business and not bother others for theirs. It's the wise thing to do...\n[[Where were the sounds coming from?|Where sounds]]",
+      "links": [
+        {
+          "name": "Where were the sounds coming from?|Where sounds",
+          "link": "Where were the sounds coming from?|Where sounds"
+        }
+      ],
+      "name": "continue",
+      "pid": "5",
+      "position": {
+        "x": "405.5",
+        "y": "881"
+      }
+    },
+    {
+      "text": "My dear, you ask too many questions... I do believe it was simply someone preparing for the festival. Perhaps the farmer was slaughtering a hog he bought from a passing merchant's boat?\n[[continue2]]",
+      "links": [
+        {
+          "name": "continue2",
+          "link": "continue2",
+          "pid": "7"
+        }
+      ],
+      "name": "Where sounds",
+      "pid": "6",
+      "position": {
+        "x": "408.5",
+        "y": "1015"
+      }
+    },
+    {
+      "text": "He did seem awfully tired this morning when he delivered my produce... That kind of work really takes the breeze out of your sails.\n[[Bye]] ",
+      "links": [
+        {
+          "name": "Bye",
+          "link": "Bye",
+          "pid": "4"
+        }
+      ],
+      "name": "continue2",
+      "pid": "7",
+      "position": {
+        "x": "552.5",
+        "y": "1017"
+      }
+    }
+  ],
+  "name": "ElderlyMotherDay3",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "9006A9DD-078B-4980-98D9-60692334A418"
+}

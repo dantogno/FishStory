@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "What a beautiful day... and no undesirables are here to spoil it!",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "690"
+      }
+    }
+  ],
+  "name": "NunDay3Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "AAE97C7C-51EB-41A8-9EAD-A5C342885DCE"
+}

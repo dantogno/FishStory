@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Please... Let me rest...",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "690"
+      }
+    }
+  ],
+  "name": "ElderlyMotherDay3Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "84698E41-3BC2-477F-98CA-D0B88CF6BA4D"
+}

@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>TycoonDaughterDay3</title>
+		<script type="text/javascript">
+/**
+ * Twison - Twine 2 JSON Export Story Format
+ * 
+ * Copyright (c) 2015 Mike Walker
+ * https://lazerwalker.com
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+ * associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial
+ * portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ * LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+var Twison={extractLinksFromText:function(t){var n=t.match(/\[\[.+?\]\]/g);return n?n.map(function(t){var n=t.match(/\[\[(.*?)\-\&gt;(.*?)\]\]/);return n?{name:n[1],link:n[2]}:(t=t.substring(2,t.length-2),{name:t,link:t})}):void 0},convertPassage:function(t){var n={text:t.innerHTML},a=Twison.extractLinksFromText(n.text);if(a&&(n.links=a),["name","pid","position","tags"].forEach(function(a){var e=t.attributes[a].value;e&&(n[a]=e)}),n.position){var e=n.position.split(",");n.position={x:e[0],y:e[1]}}return n.tags&&(n.tags=n.tags.split(" ")),n},convertStory:function(t){var n=t.getElementsByTagName("tw-passagedata"),a=Array.prototype.slice.call(n).map(Twison.convertPassage),e={passages:a};["name","startnode","creator","creator-version","ifid"].forEach(function(n){var a=t.attributes[n].value;a&&(e[n]=a)});var i={};return e.passages.forEach(function(t){i[t.name]=t.pid}),e.passages.forEach(function(t){t.links&&t.links.forEach(function(t){t.pid=i[t.link]})}),e},convert:function(){var t=document.getElementsByTagName("tw-storydata")[0],n=JSON.stringify(Twison.convertStory(t),null,2);document.getElementById("output").innerHTML=n}};window.Twison=Twison;		
+		</script>
+	</head>
+	<body>
+		<pre id="output">
+		
+		</pre>
+		<div id="storyData" style="display: none;">
+			<tw-storydata name="TycoonDaughterDay3" startnode="1" creator="Twine" creator-version="2.3.5" ifid="10D8B33A-3EEA-41CF-AEC0-779A4F6D94A3" zoom="1" format="Twison" format-version="0.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="533.5,690" size="100,100">Huh? Oh... it&#39;s you. What do you want?
+[[Are you okay?|okay]]</tw-passagedata><tw-passagedata pid="2" name="okay" tags="" position="533.5,840" size="100,100">Yeah... Yeah, well no, actually, I&#39;m not. I don&#39;t think I&#39;m ever going to get out of here. I had a chance and I blew it.
+[[What chance?|chance]]</tw-passagedata><tw-passagedata pid="3" name="chance" tags="" position="533.5,990" size="100,100">Sofia was telling me all about her life in the city, all the people, the culture, the food, everything... And I asked her if I could come visit her sometime, maybe even check out some of the schools in the area.
+[[continue]]</tw-passagedata><tw-passagedata pid="4" name="continue" tags="" position="533.5,1140" size="100,100">Then, out of the blue, she invited me to come back with her after the festival was over to see the city and go to an open house at the college she went to! How amazing is that?
+[[That is amazing!|amazing]]
+[[What went wrong?|went wrong]]</tw-passagedata><tw-passagedata pid="5" name="amazing" tags="" position="458.5,1290" size="100,100">Right? But then I went looking for her this morning, and all of her stuff was gone... I asked around to try and find her, and the mayor told me that she had left in the middle of the night, just like that.
+[[continue2]]</tw-passagedata><tw-passagedata pid="6" name="went wrong" tags="" position="608.5,1290" size="100,100">Well, I went looking for her this morning, but all of her stuff was gone... I asked around to try and find her, and the mayor told me that she had left in the middle of the night, just like that.
+[[continue2]]</tw-passagedata><tw-passagedata pid="7" name="continue2" tags="" position="535.5,1436" size="100,100">I mean, I knew people were giving her the cold shoulder since she was an outsider and she wasn&#39;t participating in the festival, but I thought that maybe she&#39;d stick it out for me... I guess not though.
+[[I&#39;m sorry.|sorry]]
+[[I don&#39;t think she left by choice.|no choice]]</tw-passagedata><tw-passagedata pid="8" name="sorry" tags="" position="456.5,1582" size="100,100">It&#39;s fine, I guess... I was foolish to think that she&#39;d stick around for me, anyway.
+[[bye]]</tw-passagedata><tw-passagedata pid="9" name="no choice" tags="" position="606.5,1582" size="100,100">I... I don&#39;t want to think about that. And I wouldn&#39;t say that type of thing, if I were you.
+[[bye]] </tw-passagedata><tw-passagedata pid="10" name="bye" tags="HasSeenTycoonDaughterDay3" position="533.5,1743" size="100,100">I can&#39;t talk to you anymore... I have a lot of things to get done before the festival.</tw-passagedata></tw-storydata>
+		</div>
+		<script>
+			Twison.convert()
+		</script>
+	</body>
+</html>

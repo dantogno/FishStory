@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Hmm, so much to do, so little time... Now, where is that daughter of mine? She has chores to do...",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "690"
+      }
+    }
+  ],
+  "name": "TycoonDay3Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "D2544CBA-1957-45D5-9199-8EC4EE9B58DE"
+}

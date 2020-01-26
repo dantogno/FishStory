@@ -1,0 +1,117 @@
+{
+  "passages": [
+    {
+      "text": "Ah, there you are! The festival is tomorrow, and I'm so excited that you've decided to participate so enthusiastically! You've caught so many fish! It's simply inspiring.\n[[continue]]",
+      "links": [
+        {
+          "name": "continue",
+          "link": "continue",
+          "pid": "2"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "690"
+      }
+    },
+    {
+      "text": "We've had poor luck with other visitors refusing to participate but still expecting to witness the festival... They don't seem to understand how insulting that is to our way of life! Our practices are not some circus to be observed with a desire to be entertained.\n[[Do you mean Sofia?|mean sofia]]",
+      "links": [
+        {
+          "name": "Do you mean Sofia?|mean sofia",
+          "link": "Do you mean Sofia?|mean sofia"
+        }
+      ],
+      "name": "continue",
+      "pid": "2",
+      "position": {
+        "x": "533.5",
+        "y": "840"
+      }
+    },
+    {
+      "text": "Who? Oh, that author woman who left last night? Well, her presence certainly wasn't ideal, but she was only the tip of the iceberg. Year after year, there's always one or two people who hear about our community one way or another and decides to try and violate our sacred rite.\n[[continue2]]",
+      "links": [
+        {
+          "name": "continue2",
+          "link": "continue2",
+          "pid": "4"
+        }
+      ],
+      "name": "mean sofia",
+      "pid": "3",
+      "position": {
+        "x": "533.5",
+        "y": "990"
+      }
+    },
+    {
+      "text": "They're usually seeking spiritual enlightenment or some such thing, but they never want to do the hard work required to get there. But I'm proud to say that we've yet to have a non-participant witness the festival!\n[[What happens to them?|what happens]]\n[[That must take a lot of work.|work]]",
+      "links": [
+        {
+          "name": "What happens to them?|what happens",
+          "link": "What happens to them?|what happens"
+        },
+        {
+          "name": "That must take a lot of work.|work",
+          "link": "That must take a lot of work.|work"
+        }
+      ],
+      "name": "continue2",
+      "pid": "4",
+      "position": {
+        "x": "533.5",
+        "y": "1140"
+      }
+    },
+    {
+      "text": "â€œHappensâ€? What are you implying? They leave, of course! Now, I will admit that some are more difficult to convince than others, but we have our ways... The sanctity of the festival must be protected at all costs.\n[[I'm going to get back to fishing...|bye]]",
+      "links": [
+        {
+          "name": "I'm going to get back to fishing...|bye",
+          "link": "I'm going to get back to fishing...|bye"
+        }
+      ],
+      "name": "what happens",
+      "pid": "5",
+      "position": {
+        "x": "458.5",
+        "y": "1290"
+      }
+    },
+    {
+      "text": "Oh, it is. I will admit that some outsiders are more difficult to convince than others, but we have our ways... The sanctity of the festival must be protected at all costs.\n[[I'm going to get back to fishing...|bye]]",
+      "links": [
+        {
+          "name": "I'm going to get back to fishing...|bye",
+          "link": "I'm going to get back to fishing...|bye"
+        }
+      ],
+      "name": "work",
+      "pid": "6",
+      "position": {
+        "x": "608.5",
+        "y": "1290"
+      }
+    },
+    {
+      "text": "As well you should! May the tides flow in our favor!",
+      "name": "bye",
+      "pid": "7",
+      "position": {
+        "x": "524.5",
+        "y": "1447"
+      },
+      "tags": [
+        "HasSeenNunDay3"
+      ]
+    }
+  ],
+  "name": "NunDay3",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "44624AF8-3F45-4FF9-8C9F-30408CCCC418"
+}

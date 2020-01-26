@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>TycoonDay3</title>
+		<script type="text/javascript">
+/**
+ * Twison - Twine 2 JSON Export Story Format
+ * 
+ * Copyright (c) 2015 Mike Walker
+ * https://lazerwalker.com
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+ * associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial
+ * portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+ * LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+var Twison={extractLinksFromText:function(t){var n=t.match(/\[\[.+?\]\]/g);return n?n.map(function(t){var n=t.match(/\[\[(.*?)\-\&gt;(.*?)\]\]/);return n?{name:n[1],link:n[2]}:(t=t.substring(2,t.length-2),{name:t,link:t})}):void 0},convertPassage:function(t){var n={text:t.innerHTML},a=Twison.extractLinksFromText(n.text);if(a&&(n.links=a),["name","pid","position","tags"].forEach(function(a){var e=t.attributes[a].value;e&&(n[a]=e)}),n.position){var e=n.position.split(",");n.position={x:e[0],y:e[1]}}return n.tags&&(n.tags=n.tags.split(" ")),n},convertStory:function(t){var n=t.getElementsByTagName("tw-passagedata"),a=Array.prototype.slice.call(n).map(Twison.convertPassage),e={passages:a};["name","startnode","creator","creator-version","ifid"].forEach(function(n){var a=t.attributes[n].value;a&&(e[n]=a)});var i={};return e.passages.forEach(function(t){i[t.name]=t.pid}),e.passages.forEach(function(t){t.links&&t.links.forEach(function(t){t.pid=i[t.link]})}),e},convert:function(){var t=document.getElementsByTagName("tw-storydata")[0],n=JSON.stringify(Twison.convertStory(t),null,2);document.getElementById("output").innerHTML=n}};window.Twison=Twison;		
+		</script>
+	</head>
+	<body>
+		<pre id="output">
+		
+		</pre>
+		<div id="storyData" style="display: none;">
+			<tw-storydata name="TycoonDay3" startnode="1" creator="Twine" creator-version="2.3.5" ifid="DD4DEFC4-98CD-499E-A2E7-FD1FD2A5AC7B" zoom="1" format="Twison" format-version="0.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="533.5,690" size="100,100">Ah, you again! Well, the festival is tomorrow. Now, I am a faithful man, so on the day of the festival, I don&#39;t like to partake in business affairs.
+[[continue]]</tw-passagedata><tw-passagedata pid="2" name="continue" tags="" position="533.5,840" size="100,100">But sometime during the next day, I would like to discuss the many options I have available for a more permanent housing solution for you. Come to my house and we can have a little chat, alright?
+[[Alright...|alright]]
+[[I&#39;m not staying here.|not staying]]</tw-passagedata><tw-passagedata pid="3" name="alright" tags="" position="458.5,990" size="100,100">Ah, see, I knew you would stay! They always do. And if you&#39;re already feeling this way, I can&#39;t even imagine how excited you&#39;ll be to join our community after you see what the festival has in store for you!
+[[Bye]] </tw-passagedata><tw-passagedata pid="4" name="not staying" tags="" position="608.5,990" size="100,100">No...? My, that is rather odd... and rather unexpected. Are you sure?
+[[Yes.|yes sure]]
+[[Why would I be staying?|why stay]]</tw-passagedata><tw-passagedata pid="5" name="yes sure" tags="" position="617.5,1134" size="100,100">Hmm... Well, do let me know if you change your mind. I have a feeling you will after you see what the festival has in store for you. They always do...
+[[Bye]] </tw-passagedata><tw-passagedata pid="6" name="why stay" tags="" position="767.5,1134" size="100,100">Why, everyone stays! Especially after the festival. I don&#39;t see why you wouldn&#39;t!
+[[Bye]]</tw-passagedata><tw-passagedata pid="7" name="Bye" tags="HasSeenTycoonDay3" position="524.5,1335" size="100,100">I&#39;ll be on my way now, lots to do. Find me after the festival and we&#39;ll talk!</tw-passagedata></tw-storydata>
+		</div>
+		<script>
+			Twison.convert()
+		</script>
+	</body>
+</html>

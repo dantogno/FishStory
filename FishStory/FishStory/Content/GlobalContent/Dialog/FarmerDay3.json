@@ -1,0 +1,135 @@
+{
+  "passages": [
+    {
+      "text": "Oh look, it's the stranger again! Did ya come here to nose around again just like your little friend?\n[[Have you seen Sofia anywhere?|Have you seen her]]",
+      "links": [
+        {
+          "name": "Have you seen Sofia anywhere?|Have you seen her",
+          "link": "Have you seen Sofia anywhere?|Have you seen her"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "595"
+      }
+    },
+    {
+      "text": "I'm assuming that's the name of that so-called \"author\" girl who was hanging around here for a few weeks? Then no, I haven't seen her today. I don't care to.\n[[continue]]",
+      "links": [
+        {
+          "name": "continue",
+          "link": "continue",
+          "pid": "3"
+        }
+      ],
+      "name": "Have you seen her",
+      "pid": "2",
+      "position": {
+        "x": "533.5",
+        "y": "745"
+      }
+    },
+    {
+      "text": "She was trying to get all into everyone's business, which I did not appreciate. You can't just come into a town and act like you're owed answers for something you know nothin' about! I'm glad she left.\n[[How did she leave?|How leave]]",
+      "links": [
+        {
+          "name": "How did she leave?|How leave",
+          "link": "How did she leave?|How leave"
+        }
+      ],
+      "name": "continue",
+      "pid": "3",
+      "position": {
+        "x": "533.5",
+        "y": "895"
+      }
+    },
+    {
+      "text": "She coulda swam away, for all I care. All that matters is she's gone, and now the festival can go on in peace.\n[[You seem to really hate her...|Hate her]]\n[[I'm going to get back to fishing.|bye]]",
+      "links": [
+        {
+          "name": "You seem to really hate her...|Hate her",
+          "link": "You seem to really hate her...|Hate her"
+        },
+        {
+          "name": "I'm going to get back to fishing.|bye",
+          "link": "I'm going to get back to fishing.|bye"
+        }
+      ],
+      "name": "How leave",
+      "pid": "4",
+      "position": {
+        "x": "533.5",
+        "y": "1045"
+      }
+    },
+    {
+      "text": "What are you insinuating? She left of her own accord. She hired a private boat to take her off the island. Said she was too used to fancy city life to withstand our more \"unrefined\" ways...\n[[That doesn't sound like her.|Doesnt sound]]\n[[I thought boats were forbidden before the festival?|forbidden boats]]",
+      "links": [
+        {
+          "name": "That doesn't sound like her.|Doesnt sound",
+          "link": "That doesn't sound like her.|Doesnt sound"
+        },
+        {
+          "name": "I thought boats were forbidden before the festival?|forbidden boats",
+          "link": "I thought boats were forbidden before the festival?|forbidden boats"
+        }
+      ],
+      "name": "Hate her",
+      "pid": "5",
+      "position": {
+        "x": "474.5",
+        "y": "1188"
+      }
+    },
+    {
+      "text": "Yeah, well, don't let me stop you...",
+      "name": "bye",
+      "pid": "6",
+      "position": {
+        "x": "642.5",
+        "y": "1562"
+      },
+      "tags": [
+        "HasSeenFarmerDay3"
+      ]
+    },
+    {
+      "text": "How long did you know her for? Two days? What do you know? She was a stranger, and she had no business being here during the festival without participating. It's no wonder she couldn't hack it.\n[[I'm going to get back to fishing.|bye]]",
+      "links": [
+        {
+          "name": "I'm going to get back to fishing.|bye",
+          "link": "I'm going to get back to fishing.|bye"
+        }
+      ],
+      "name": "Doesnt sound",
+      "pid": "7",
+      "position": {
+        "x": "399.5",
+        "y": "1334"
+      }
+    },
+    {
+      "text": "Well... They are. But she hired a sailboat, so no engine to disturb the wildlife. Besides, we all wanted her gone so bad, none of us were going to object.\n[[I'm going to get back to fishing.|bye]]",
+      "links": [
+        {
+          "name": "I'm going to get back to fishing.|bye",
+          "link": "I'm going to get back to fishing.|bye"
+        }
+      ],
+      "name": "forbidden boats",
+      "pid": "8",
+      "position": {
+        "x": "549.5",
+        "y": "1338"
+      }
+    }
+  ],
+  "name": "FarmerDay3",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "7872861F-6ACC-439E-8CA5-BE39733C9A6E"
+}

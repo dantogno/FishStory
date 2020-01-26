@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Leave me alone, I have a lot on my mind...",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "690"
+      }
+    }
+  ],
+  "name": "TycoonDaughterDay3Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "EB196D64-DF49-4DF3-8447-765DDE2AAF29"
+}

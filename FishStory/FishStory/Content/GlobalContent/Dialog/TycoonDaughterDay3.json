@@ -1,0 +1,169 @@
+{
+  "passages": [
+    {
+      "text": "Huh? Oh... it's you. What do you want?\n[[Are you okay?|okay]]",
+      "links": [
+        {
+          "name": "Are you okay?|okay",
+          "link": "Are you okay?|okay"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "690"
+      }
+    },
+    {
+      "text": "Yeah... Yeah, well no, actually, I'm not. I don't think I'm ever going to get out of here. I had a chance and I blew it.\n[[What chance?|chance]]",
+      "links": [
+        {
+          "name": "What chance?|chance",
+          "link": "What chance?|chance"
+        }
+      ],
+      "name": "okay",
+      "pid": "2",
+      "position": {
+        "x": "533.5",
+        "y": "840"
+      }
+    },
+    {
+      "text": "Sofia was telling me all about her life in the city, all the people, the culture, the food, everything... And I asked her if I could come visit her sometime, maybe even check out some of the schools in the area.\n[[continue]]",
+      "links": [
+        {
+          "name": "continue",
+          "link": "continue",
+          "pid": "4"
+        }
+      ],
+      "name": "chance",
+      "pid": "3",
+      "position": {
+        "x": "533.5",
+        "y": "990"
+      }
+    },
+    {
+      "text": "Then, out of the blue, she invited me to come back with her after the festival was over to see the city and go to an open house at the college she went to! How amazing is that?\n[[That is amazing!|amazing]]\n[[What went wrong?|went wrong]]",
+      "links": [
+        {
+          "name": "That is amazing!|amazing",
+          "link": "That is amazing!|amazing"
+        },
+        {
+          "name": "What went wrong?|went wrong",
+          "link": "What went wrong?|went wrong"
+        }
+      ],
+      "name": "continue",
+      "pid": "4",
+      "position": {
+        "x": "533.5",
+        "y": "1140"
+      }
+    },
+    {
+      "text": "Right? But then I went looking for her this morning, and all of her stuff was gone... I asked around to try and find her, and the mayor told me that she had left in the middle of the night, just like that.\n[[continue2]]",
+      "links": [
+        {
+          "name": "continue2",
+          "link": "continue2",
+          "pid": "7"
+        }
+      ],
+      "name": "amazing",
+      "pid": "5",
+      "position": {
+        "x": "458.5",
+        "y": "1290"
+      }
+    },
+    {
+      "text": "Well, I went looking for her this morning, but all of her stuff was gone... I asked around to try and find her, and the mayor told me that she had left in the middle of the night, just like that.\n[[continue2]]",
+      "links": [
+        {
+          "name": "continue2",
+          "link": "continue2",
+          "pid": "7"
+        }
+      ],
+      "name": "went wrong",
+      "pid": "6",
+      "position": {
+        "x": "608.5",
+        "y": "1290"
+      }
+    },
+    {
+      "text": "I mean, I knew people were giving her the cold shoulder since she was an outsider and she wasn't participating in the festival, but I thought that maybe she'd stick it out for me... I guess not though.\n[[I'm sorry.|sorry]]\n[[I don't think she left by choice.|no choice]]",
+      "links": [
+        {
+          "name": "I'm sorry.|sorry",
+          "link": "I'm sorry.|sorry"
+        },
+        {
+          "name": "I don't think she left by choice.|no choice",
+          "link": "I don't think she left by choice.|no choice"
+        }
+      ],
+      "name": "continue2",
+      "pid": "7",
+      "position": {
+        "x": "535.5",
+        "y": "1436"
+      }
+    },
+    {
+      "text": "It's fine, I guess... I was foolish to think that she'd stick around for me, anyway.\n[[bye]]",
+      "links": [
+        {
+          "name": "bye",
+          "link": "bye",
+          "pid": "10"
+        }
+      ],
+      "name": "sorry",
+      "pid": "8",
+      "position": {
+        "x": "456.5",
+        "y": "1582"
+      }
+    },
+    {
+      "text": "I... I don't want to think about that. And I wouldn't say that type of thing, if I were you.\n[[bye]] ",
+      "links": [
+        {
+          "name": "bye",
+          "link": "bye",
+          "pid": "10"
+        }
+      ],
+      "name": "no choice",
+      "pid": "9",
+      "position": {
+        "x": "606.5",
+        "y": "1582"
+      }
+    },
+    {
+      "text": "I can't talk to you anymore... I have a lot of things to get done before the festival.",
+      "name": "bye",
+      "pid": "10",
+      "position": {
+        "x": "533.5",
+        "y": "1743"
+      },
+      "tags": [
+        "HasSeenTycoonDaughterDay3"
+      ]
+    }
+  ],
+  "name": "TycoonDaughterDay3",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "10D8B33A-3EEA-41CF-AEC0-779A4F6D94A3"
+}
