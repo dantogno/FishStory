@@ -3088,14 +3088,6 @@
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
     <ReferencedFileSave>
-      <Name>GlobalContent/FishingLootTables/LootTable1.csv</Name>
-      <IsSharedStatic>true</IsSharedStatic>
-      <DestroyOnUnload>false</DestroyOnUnload>
-      <HasPublicProperty>true</HasPublicProperty>
-      <CreatesDictionary>true</CreatesDictionary>
-      <ProjectsToExcludeFrom />
-    </ReferencedFileSave>
-    <ReferencedFileSave>
       <Name>GlobalContent/Dialog/PriestessDay1.json</Name>
       <IsSharedStatic>true</IsSharedStatic>
       <DestroyOnUnload>false</DestroyOnUnload>
@@ -3603,6 +3595,14 @@
       <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/FishingLootTables/DocksLootTable.csv</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <CreatesDictionary>true</CreatesDictionary>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
   </GlobalFiles>
   <GlobalContentSettingsSave>
     <LoadAsynchronously>false</LoadAsynchronously>
@@ -3662,7 +3662,7 @@
     <CustomClassSave>
       <CsvFilesUsingThis>
         <string>GlobalContent/FishingLootTables/DefaultLootTable.csv</string>
-        <string>GlobalContent/FishingLootTables/LootTable1.csv</string>
+        <string>GlobalContent/FishingLootTables/DocksLootTable.csv</string>
       </CsvFilesUsingThis>
       <RequiredProperties />
       <Name>FishingLootTable</Name>

@@ -770,9 +770,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>DefaultLootTable</Name>
     </None>
-    <None Include="content\globalcontent\fishingloottables\loottable1.csv">
+    <None Include="content\globalcontent\fishingloottables\docksloottable.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>LootTable1</Name>
+      <Name>DocksLootTable</Name>
     </None>
     <None Include="content\globalcontent\itemdefinition.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
