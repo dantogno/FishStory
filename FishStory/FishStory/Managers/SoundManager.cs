@@ -12,24 +12,40 @@ namespace FishStory.Managers
         #region Fields & Properties
         public static float CurrentVolume = 0.1f;
 
-        private static SoundEffectInstance currentSoundEffectInstance = null;
-        private static SoundEffect lastSoundEffectPlayed = null;
+        private static Dictionary<string, SoundEffectInstance> SoundEffectDictionary = new Dictionary<string, SoundEffectInstance>();
+        private static Dictionary<SoundEffect, SoundEffectInstance> SoundEffectInstances = new Dictionary<SoundEffect, SoundEffectInstance>();
+
         #endregion
 
         #region Public methods
-        public static void Play(SoundEffect instanceToPlay)
+        public static void Play(SoundEffect instanceToPlay, bool shouldLoop = false)
         {
-            TryPlay(instanceToPlay);
+            TryPlay(instanceToPlay, shouldLoop);
         }
 
-        public static bool PlayIfNotPlaying(SoundEffect soundEffect)
+        public static bool IsPlaying(SoundEffect instanceToPlay)
         {
-            if (currentSoundEffectInstance != null)
+            SoundEffectInstance currentSoundEffectInstance;
+            if (SoundEffectInstances.TryGetValue(instanceToPlay, out currentSoundEffectInstance))
+            {
+                return currentSoundEffectInstance.IsDisposed == false && 
+                        currentSoundEffectInstance.State == SoundState.Playing;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool PlayIfNotPlaying(SoundEffect soundEffect, string soundTypeName)
+        {
+            SoundEffectInstance currentSoundEffectInstance;
+
+            if (SoundEffectDictionary.TryGetValue(soundTypeName, out currentSoundEffectInstance))
             {
                 if (currentSoundEffectInstance.State != SoundState.Playing)
                 {
                     currentSoundEffectInstance.Dispose();
-                    lastSoundEffectPlayed = soundEffect;
                     currentSoundEffectInstance = soundEffect.GetCustomInstance();
                     Internal_Play(currentSoundEffectInstance);
                     return true;
@@ -38,19 +54,29 @@ namespace FishStory.Managers
             }
             else
             {
-                lastSoundEffectPlayed = soundEffect;
                 currentSoundEffectInstance = soundEffect.CreateInstance();
+                SoundEffectDictionary.Add(soundTypeName, currentSoundEffectInstance);
                 Internal_Play(currentSoundEffectInstance);
                 return true;
+            }
+        }
+
+        public static void Stop(SoundEffect soundEffect)
+        {
+            SoundEffectInstance currentSoundEffectInstance;
+
+            if (SoundEffectInstances.TryGetValue(soundEffect, out currentSoundEffectInstance))
+            {
+                currentSoundEffectInstance.Stop();
             }
         }
         #endregion
 
         #region Private methods
-        private static void TryPlay(SoundEffect soundEffect)
+        private static void TryPlay(SoundEffect soundEffect, bool shouldLoop = false)
         {
             var instanceToPlay = soundEffect.GetCustomInstance();
-
+            instanceToPlay.IsLooped = shouldLoop;
             if (instanceToPlay.State != SoundState.Playing && !instanceToPlay.IsDisposed)
                 Internal_Play(instanceToPlay);
         }
@@ -61,7 +87,7 @@ namespace FishStory.Managers
             instanceToPlay.Play();
         }
 
-        private static Dictionary<SoundEffect, SoundEffectInstance> SoundEffectInstances = new Dictionary<SoundEffect, SoundEffectInstance>();
+        
         private static SoundEffectInstance GetCustomInstance(this SoundEffect soundEffect)
         {
             SoundEffectInstance instanceToPlay;

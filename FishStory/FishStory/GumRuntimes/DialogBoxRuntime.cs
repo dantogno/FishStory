@@ -328,19 +328,20 @@ namespace FishStory.GumRuntimes
             }
         }
 
-        int lastPlayedEffectNumber = 1;
-        bool lastPlayAttemptWasSuccess = true;
+        int lastTypeSoundEffectNumber = 1;
+        bool lastTypePlayAttemptSuccessful = true;
         private void PlayTypingSoundEffect()
         {
-            if (lastPlayAttemptWasSuccess)
+            if (lastTypePlayAttemptSuccessful)
             {
-                lastPlayedEffectNumber = FlatRedBallServices.Random.Next(1, 6);
+                lastTypeSoundEffectNumber = FlatRedBallServices.Random.Next(1, 6);
             }
-            var stringName = $"TypewriterKey{lastPlayedEffectNumber}Sound";
+            var soundType = "TypewriterKey";
+            var stringName = $"{soundType}{lastTypeSoundEffectNumber}Sound";
             var soundEffectAsObject = GlobalContent.GetFile(stringName);
             if (soundEffectAsObject is SoundEffect soundEffect)
             {
-                lastPlayAttemptWasSuccess = SoundManager.PlayIfNotPlaying(soundEffect);
+                lastTypePlayAttemptSuccessful = SoundManager.PlayIfNotPlaying(soundEffect, soundType);
             }
         }
 

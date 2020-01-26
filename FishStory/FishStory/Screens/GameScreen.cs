@@ -23,6 +23,7 @@ using static DialogTreePlugin.SaveClasses.DialogTreeRaw;
 using DialogTreePlugin.SaveClasses;
 using static FishStory.Entities.PropObject;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 
 namespace FishStory.Screens
 {
@@ -359,13 +360,68 @@ namespace FishStory.Screens
             Map?.AnimateSelf();
 
             script.Activity();
-            
+
+            PlayTimeBasedSounds();
+
+            PlaySongForDay();
+
             if (InGameDateTimeManager.TimeOfDay.Hours == (int)HourOnClockPlayerForcedSleepIn24H && !isBeingForcedToSleep)
             {
                 ForcePlayerToSleep();
             }
+        }
 
-            PlaySongForDay();
+        private void PlayTimeBasedSounds()
+        {
+            if ((InGameDateTimeManager.TimeOfDay.Hours > HourOnClockSunRisesIn24H && InGameDateTimeManager.TimeOfDay.Hours < HourOnClockSunRisesIn24H + 3) ||
+                (InGameDateTimeManager.TimeOfDay.Hours > HourOnClockSunSetsIn24H - 3 && InGameDateTimeManager.TimeOfDay.Hours < HourOnClockSunSetsIn24H))
+            {
+                PlayBirdSong();
+            }
+
+            var isNightTimeAmbiencePlaying = SoundManager.IsPlaying(GlobalContent.NightTimeLoopSound);
+            if ((InGameDateTimeManager.TimeOfDay.Hours > HourOnClockSunSetsIn24H || InGameDateTimeManager.TimeOfDay.Hours < HourOnClockPlayerForcedSleepIn24H))
+            {
+                if (isNightTimeAmbiencePlaying == false)
+                {
+                    SoundManager.Play(GlobalContent.NightTimeLoopSound, shouldLoop: true);
+                }
+            }
+            else if (isNightTimeAmbiencePlaying)
+            {
+                SoundManager.Stop(GlobalContent.NightTimeLoopSound);
+            }
+
+        }
+
+        double secondsUntilNextEffect = 5.0;
+        int lastPlayedEffectNumber = 1;
+        bool lastPlayAttemptWasSuccess = true;
+        private void PlayBirdSong()
+        {
+
+            if (secondsUntilNextEffect > 0)
+            {
+                if (IsPaused == false)
+                {
+                    secondsUntilNextEffect -= TimeManager.SecondDifference;
+                }
+            }
+            else
+            {
+                if (lastPlayAttemptWasSuccess)
+                {
+                    lastPlayedEffectNumber = FlatRedBallServices.Random.Next(1, 5);
+                }
+                var soundType = "Songbird";
+                var stringName = $"{soundType}{lastPlayedEffectNumber}Sound";
+                var soundEffectAsObject = GlobalContent.GetFile(stringName);
+                if (soundEffectAsObject is SoundEffect soundEffect)
+                {
+                    lastPlayAttemptWasSuccess = SoundManager.PlayIfNotPlaying(soundEffect, soundType);
+                    secondsUntilNextEffect = FlatRedBallServices.Random.Between(2, 10);
+                }
+            } 
         }
 
         private void PlaySongForDay()
@@ -376,13 +432,13 @@ namespace FishStory.Screens
                 case 1:
                     songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
                 //case 2:
-                    //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
+                //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
                 //case 3:
-                    //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
+                //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
                 //case 4:
-                    //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
+                //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
                 //case 5:
-                    //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
+                //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
                 default:
                     songToPlayForDay = GlobalContent.music_calm_green_lake_serenade; break;
             }
@@ -391,6 +447,20 @@ namespace FishStory.Screens
             {
                 MusicManager.PlaySong(songToPlayForDay, forceRestart: true, shouldLoop: true);
             }
+
+            var minutesWhenSongMutes = (HourOnClockSunSetsIn24H * 60);
+            if ((InGameDateTimeManager.TimeOfDay.Hours > HourOnClockSunSetsIn24H - 3 && InGameDateTimeManager.TimeOfDay.Hours < HourOnClockSunSetsIn24H))
+            {
+                
+                MusicManager.MusicVolumeLevel = (minutesWhenSongMutes - (InGameDateTimeManager.TimeOfDay.Hours*60 + InGameDateTimeManager.TimeOfDay.Minutes))/ 180f;
+            }
+            else if (MusicManager.MusicVolumeLevel != MusicManager.DefaultMusicLevel &&
+                    InGameDateTimeManager.TimeOfDay.Hours < HourOnClockSunSetsIn24H && 
+                    InGameDateTimeManager.TimeOfDay.Hours > 3 )
+            {
+                MusicManager.MusicVolumeLevel = MusicManager.DefaultMusicLevel;
+            }
+
         }
 
 #if DEBUG

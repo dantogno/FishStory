@@ -13,7 +13,8 @@ namespace FishStory.Managers
 {
     public static class MusicManager
     {
-        private static double _musicVolumeLevel = 100;
+        public const double DefaultMusicLevel = 100.0;
+        private static double _musicVolumeLevel = DefaultMusicLevel;
         public static double MusicVolumeLevel
         {
             get => _musicVolumeLevel;

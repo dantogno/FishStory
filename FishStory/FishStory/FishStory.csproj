@@ -413,6 +413,36 @@
       <Name>MenuSelectSound</Name>
       <Link>content\globalcontent\sounds\menuselectsound.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\nighttimeloopsound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>NightTimeLoopSound</Name>
+      <Link>content\globalcontent\sounds\nighttimeloopsound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\songbird1sound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Songbird1Sound</Name>
+      <Link>content\globalcontent\sounds\songbird1sound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\songbird2sound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Songbird2Sound</Name>
+      <Link>content\globalcontent\sounds\songbird2sound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\songbird3sound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Songbird3Sound</Name>
+      <Link>content\globalcontent\sounds\songbird3sound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\songbird4sound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Songbird4Sound</Name>
+      <Link>content\globalcontent\sounds\songbird4sound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\songbird5sound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Songbird5Sound</Name>
+      <Link>content\globalcontent\sounds\songbird5sound.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\storebuysound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>StoreBuySound</Name>
