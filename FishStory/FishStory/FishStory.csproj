@@ -654,6 +654,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlackMarketShopDay2</Name>
     </None>
+    <None Include="content\globalcontent\dialog\blackmarketshopday2brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BlackMarketShopDay2Brief</Name>
+    </None>
     <None Include="content\globalcontent\dialog\boy1dialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Boy1Dialog</Name>

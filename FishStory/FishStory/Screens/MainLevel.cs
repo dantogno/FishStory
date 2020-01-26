@@ -255,6 +255,16 @@ namespace FishStory.Screens
                 AwardRandomBait();
             });
             #endregion
+            #region BlackMarketShop
+            If.Check(() =>
+            {
+                return HasTag("HasSeenBlackMarketShopDay1");
+            });
+            Do.Call(() =>
+            {
+                NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay1Brief);
+            });
+            #endregion
             //TODO: What are NPCRelationships??
             //If.Check(() =>
             //{
@@ -279,6 +289,14 @@ namespace FishStory.Screens
             #endregion
             #region BlackMarketShop
             NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay2);
+            If.Check(() =>
+            {
+                return HasTag("HasSeenBlackMarketShopDay2");
+            });
+            Do.Call(() =>
+            {
+                NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay2Brief);
+            });
             #endregion
             #region ElderlyMother
             #endregion
