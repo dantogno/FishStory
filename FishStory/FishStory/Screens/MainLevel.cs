@@ -140,17 +140,13 @@ namespace FishStory.Screens
         {
             var If = script;
             var Do = script;
-            
+                
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 1);
             Do.Call(() => DoDay1Script(If, Do));
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 2);
             Do.Call(() => DoDay2Script(If, Do));
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 3);
             Do.Call(() => DoDay3Script(If, Do));
-            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 4);
-            Do.Call(() => DoDay4Script(If, Do));
-            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 5);
-            Do.Call(() => DoDay5Script(If, Do));
         }
 
         private void HandleDay2TraitAlternateDialogForClassRepresentatives(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
@@ -221,6 +217,13 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 NPCList.FindByName(CharacterNames.Identifier).TwineDialogId = nameof(GlobalContent.IdentifierDay1Brief);
+            });
+            #endregion
+            #region Fishmonger
+            If.Check(() => HasTag("HasTalkedToFishMongerDay1"));
+            Do.Call(() =>
+            {
+                NPCList.FindByName(CharacterNames.Fishmonger).TwineDialogId = nameof(GlobalContent.FishMongerDay1Brief);
             });
             #endregion
             #region Tycoon
@@ -437,6 +440,9 @@ namespace FishStory.Screens
             #region FishermanHair
             #endregion
         }
+        /// <summary>
+        /// Leaving one empty one here as a template if we need it.
+        /// </summary>
         private void DoDay4Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
             #region Mayor
@@ -449,9 +455,10 @@ namespace FishStory.Screens
             #endregion
             #region FarmerSonBaitShop
             #endregion
-            #region YoungManBaitShop
             #region BlackMarketShop
             #endregion
+            #region YoungManBaitShop
+
             #endregion
             #region #ElderlyMother
             #endregion
@@ -475,46 +482,7 @@ namespace FishStory.Screens
             #endregion
             #region FishermanHair
             #endregion
-        }
-        private void DoDay5Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
-        {
-            #region Mayor
-            #endregion
-            #region FestivalCoordinator
-            #endregion
-            #region Identifier
-            #endregion
-            #region Fishmonger
-            #endregion
-            #region FarmerSonBaitShop
-            #endregion
-            #region YoungManBaitShop
-            #region BlackMarketShop
-            #endregion
-            #endregion
-            #region #ElderlyMother
-            #endregion
-            #region Priestess
-            #endregion
-            #region Nun
-            #endregion
-            #region Farmer
-            var farmer = NPCList.FindByName("Farmer");
-            farmer.CurrentChainName = "LookGuilty";
-            farmer.Position = new Microsoft.Xna.Framework.Vector3(955, -574, PlayerCharacterInstance.Position.Z);
-
-            #endregion
-            #region Tycoon
-            #endregion
-            #region TycoonDaughter
-            #endregion
-            #region Conservationist
-            #endregion
-            #region FishermanBald
-            #endregion
-            #region FishermanHair
-            #endregion
-        }
+        }  
 
         private void AwardRandomBait()
         {

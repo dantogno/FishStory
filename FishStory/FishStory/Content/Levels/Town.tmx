@@ -47,12 +47,6 @@
   </data>
  </layer>
  <objectgroup id="6" name="Entities" visible="0">
-  <object id="2" gid="15361" x="1256.25" y="940.5" width="16" height="16">
-   <properties>
-    <property name="Animation" value="Boy1"/>
-    <property name="TwineDialogId" value="ShopDialog"/>
-   </properties>
-  </object>
   <object id="4" name="Mayor" gid="7" x="1516.36" y="617.617" width="16" height="16">
    <properties>
     <property name="Animation" value="WomanBlackDress"/>
@@ -89,12 +83,6 @@
     <property name="TwineDialogId" value="BlackMarketShopDay1"/>
    </properties>
   </object>
-  <object id="17" name="TestBlackMarket" gid="7" x="1339" y="833.5" width="16" height="16">
-   <properties>
-    <property name="Animation" value="BaldLabCoat"/>
-    <property name="TwineDialogId" value="ShopDialog"/>
-   </properties>
-  </object>
   <object id="18" name="PlayerHouseDoor" gid="4373" x="665.333" y="848.337" width="16" height="16"/>
   <object id="19" name="YoungManBaitShop" gid="7" x="1314.67" y="620.666" width="16" height="16">
    <properties>
@@ -103,18 +91,6 @@
    </properties>
   </object>
   <object id="20" gid="7403" x="1183.99" y="583.182" width="16" height="16"/>
-  <object id="21" name="TestIdentifier" gid="7" x="1340" y="872" width="16" height="16">
-   <properties>
-    <property name="Animation" value="BaldLabCoat"/>
-    <property name="TwineDialogId" value="ShopDialog"/>
-   </properties>
-  </object>
-  <object id="22" name="TestFishmonger" gid="7" x="1388" y="834" width="16" height="16">
-   <properties>
-    <property name="Animation" value="BaldLabCoat"/>
-    <property name="TwineDialogId" value="ShopDialog"/>
-   </properties>
-  </object>
   <object id="23" name="Priestess" gid="7" x="1120" y="1095.67" width="16" height="16">
    <properties>
     <property name="Animation" value="LadyInBlueGold"/>
