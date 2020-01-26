@@ -279,6 +279,7 @@ namespace FishStory.Screens
             GameScreenGum.StoreInstance.CancelInput = PlayerCharacterInstance.CancelInput;
             GameScreenGum.StoreInstance.Visible = false;
             GameScreenGum.StoreInstance.BuyButtonClick += HandleBuyClicked;
+            GameScreenGum.StoreInstance.Closed += HandleStoreClosed;
             #endregion
 
             #region Inventory
@@ -294,6 +295,20 @@ namespace FishStory.Screens
             GameScreenGum.NotificationBoxInstance.UpdateVisibility();
 
             GameScreenGum.MoveToFrbLayer(UILayer, UILayerGum);
+        }
+
+        private void HandleStoreClosed()
+        {
+            PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.StoreInstance);
+            if (GameScreenGum.InventoryInstance.CurrentViewOrSellState == InventoryRuntime.ViewOrSell.SellToStore)
+            {
+                //Todo:  Store close sound
+            }
+            else if (GameScreenGum.InventoryInstance.CurrentViewOrSellState == InventoryRuntime.ViewOrSell.SellToBlackMarket)
+            {
+                //Todo:  Black Market close sound
+            }
+            UnpauseThisScreen();
         }
 
         private void HandlePlayerVsNpcActivityCollision(PlayerCharacter player, NPC npc)
@@ -325,8 +340,11 @@ namespace FishStory.Screens
                 RestartScreen(true);
             }
             CameraActivity();
-            
-            InGameDateTimeManager.Activity(firstTimeCalled);
+
+            if (!IsPaused && DialogBox.Visible == false)
+            {
+                InGameDateTimeManager.Activity(firstTimeCalled);
+            }
             DarknessOverlaySprite.Alpha = 1-InGameDateTimeManager.SunlightEffectiveness;
             UpdatePropObjectsLights();
 
@@ -825,6 +843,7 @@ namespace FishStory.Screens
             store.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
 
             store.PopulateFromStoreName(storeName, ItemsBought);
+            PauseThisScreen();
         }
 
         private void HandleSellingShouldShow(string sellerName)
@@ -944,10 +963,7 @@ namespace FishStory.Screens
             {
                 SoundManager.Play(GlobalContent.InventoryCloseSound);
             }
-            else
-            {
-
-            }
+            UnpauseThisScreen();
         }
 
         private void HandleDialogBoxHide()
@@ -1032,6 +1048,7 @@ namespace FishStory.Screens
             inventory.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
 
             PlayerCharacterInstance.ObjectsBlockingInput.Add(inventory);
+            PauseThisScreen();
         }
 
         #endregion

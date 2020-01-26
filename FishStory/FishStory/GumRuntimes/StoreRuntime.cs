@@ -18,6 +18,12 @@ namespace FishStory.GumRuntimes
 
         public ShopItem SelectedShopItem => listBox.SelectedObject as ShopItem;
 
+        #region Events
+
+        public event Action Closed;
+
+        #endregion
+
         partial void CustomInitialize () 
         {
             listBox = 
@@ -27,7 +33,14 @@ namespace FishStory.GumRuntimes
             listBox.ListBoxItemFormsType = typeof(Forms.StoreListBoxItem);
             listBox.SelectionChanged += HandleListBoxSelectionChanged;
 
-            this.CloseButton.FormsControl.Click += (not, used) => this.Visible = false;
+            this.CloseButton.FormsControl.Click += (not, used) => Close();
+        }
+        
+        private void Close()
+        {
+            Visible = false;
+
+            Closed?.Invoke();
         }
 
         private void HandleListBoxSelectionChanged(object sender, SelectionChangedEventArgs args)
