@@ -2455,12 +2455,17 @@
                 <InstructionSave>
                   <Type>Single</Type>
                   <Member>LightBrightness</Member>
-                  <ValueAsFloat>0.8</ValueAsFloat>
+                  <ValueAsFloat>0.6</ValueAsFloat>
                 </InstructionSave>
                 <InstructionSave>
                   <Type>Boolean</Type>
                   <Member>SpriteInstanceVisible</Member>
                   <ValueAsBool>true</ValueAsBool>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>Single</Type>
+                  <Member>NormalizedLightRadius</Member>
+                  <ValueAsFloat>0.7</ValueAsFloat>
                 </InstructionSave>
               </InstructionSaves>
               <Name>StreetLight</Name>
@@ -2492,6 +2497,11 @@
                   <Member>SpriteInstanceVisible</Member>
                   <ValueAsBool>true</ValueAsBool>
                 </InstructionSave>
+                <InstructionSave>
+                  <Type>Single</Type>
+                  <Member>NormalizedLightRadius</Member>
+                  <ValueAsFloat>0.4</ValueAsFloat>
+                </InstructionSave>
               </InstructionSaves>
               <Name>Lantern</Name>
             </StateSave>
@@ -2520,12 +2530,17 @@
                 <InstructionSave>
                   <Type>Single</Type>
                   <Member>LightBrightness</Member>
-                  <ValueAsFloat>0.5</ValueAsFloat>
+                  <ValueAsFloat>0.8</ValueAsFloat>
                 </InstructionSave>
                 <InstructionSave>
                   <Type>Boolean</Type>
                   <Member>SpriteInstanceVisible</Member>
                   <ValueAsBool>true</ValueAsBool>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>Single</Type>
+                  <Member>NormalizedLightRadius</Member>
+                  <ValueAsFloat>1</ValueAsFloat>
                 </InstructionSave>
               </InstructionSaves>
               <Name>TriStreetLight</Name>
@@ -2715,6 +2730,17 @@
           <DefaultValue xsi:type="xsd:boolean">true</DefaultValue>
           <SourceObject>SpriteInstance</SourceObject>
           <SourceObjectProperty>Visible</SourceObjectProperty>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>NormalizedLightRadius</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">1</DefaultValue>
         </CustomVariable>
       </CustomVariables>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>

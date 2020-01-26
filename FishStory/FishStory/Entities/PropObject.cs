@@ -34,29 +34,32 @@ namespace FishStory.Entities
         {
             if (CreatesLight && LightSpriteList.Count == 0)
             {
+                LightSpriteInstance.TextureScale = NormalizedLightRadius;
                 SpriteManager.AddToLayer(LightSpriteInstance, lightEffectLayer);
                 LightSpriteList.Add(LightSpriteInstance);
+                
 
                 if (CurrentPropNameState == PropName.TriStreetLight)
                 {
+                    //Otherwise the player can walk right over the lights
                     this.Z = 7;
-                    //The tiled map instantiator doesn't instantiate them in quite the right place
-                    //this.Y -= 2;
-                    //this.X -= 1;
 
                     var newLight1 = LightSpriteInstance.Clone();
                     var newLight2 = newLight1.Clone();
 
+                    newLight1.AttachTo(this, false);
+                    newLight2.AttachTo(this, false);
+
                     SpriteManager.AddToLayer(newLight1, lightEffectLayer);
                     SpriteManager.AddToLayer(newLight2, lightEffectLayer);
 
-                    //Left of middle, slightly higher
-                    newLight1.RelativeX = -10;
-                    newLight1.RelativeY = 10;
+                    //Left of middle, slightly lower
+                    newLight1.RelativeX += -16;
+                    newLight1.RelativeY -= 16;
 
-                    //Right of middle, slightly higher
-                    newLight2.RelativeX = 10;
-                    newLight2.RelativeY = 10;
+                    //Right of middle, slightly lower
+                    newLight2.RelativeX -= 16;
+                    newLight2.RelativeY -= 16;
 
                     LightSpriteList.Add(newLight1);
                     LightSpriteList.Add(newLight2);
@@ -87,7 +90,6 @@ namespace FishStory.Entities
 
         private void CustomDestroy()
         {
-
 
         }
 

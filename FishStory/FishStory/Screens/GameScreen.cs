@@ -570,7 +570,7 @@ namespace FishStory.Screens
         {
             var lightShouldBeOn = InGameDateTimeManager.TimeOfDay.TotalHours >= HourOnClockLightPostsTurnOnIn24H ||
                                 InGameDateTimeManager.TimeOfDay.TotalHours < HourOnClockLightPostsTurnOffIn24H;
-            var lights = PropObjectList.Where(po => po.CurrentPropNameState == PropName.StreetLight);
+            var lights = PropObjectList.Where(po => po.CurrentPropNameState == PropName.StreetLight || po.CurrentPropNameState == PropName.TriStreetLight);
             foreach (var lightSource in lights)
             {
                 if (lightShouldBeOn && lightSource.CurrentChainName != "On")
