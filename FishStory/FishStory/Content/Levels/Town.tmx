@@ -188,37 +188,37 @@
  <objectgroup id="13" name="Fishing Loot Zones" visible="0">
   <object id="63" name="Sacrifice Cliffs" type="FishingZone" x="1013" y="980.583" width="216.583" height="151.417">
    <properties>
-    <property name="LootTable" value="LootTable1"/>
+    <property name="LootTable" value="SacrificeCliffsLootTable"/>
    </properties>
   </object>
   <object id="65" name="Docks" type="FishingZone" x="1560.54" y="553.291" width="354.917" height="124.417">
    <properties>
-    <property name="LootTable" value="LootTable1"/>
+    <property name="LootTable" value="DocksLootTable"/>
    </properties>
   </object>
   <object id="66" name="North" type="FishingZone" x="422.125" y="125.958" width="1203.67" height="424.667">
    <properties>
-    <property name="LootTable" value="LootTable1"/>
+    <property name="LootTable" value="NorthLootTable"/>
    </properties>
   </object>
   <object id="67" name="West" type="FishingZone" x="189.25" y="199.917" width="232.167" height="632.167">
    <properties>
-    <property name="LootTable" value="LootTable1"/>
+    <property name="LootTable" value="WestLootTable"/>
    </properties>
   </object>
   <object id="68" name="Dump" type="FishingZone" x="192.416" y="832.833" width="256.167" height="196.167">
    <properties>
-    <property name="LootTable" value="LootTable1"/>
+    <property name="LootTable" value="DumpLootTable"/>
    </properties>
   </object>
   <object id="69" name="East" type="FishingZone" x="1231.04" y="681.625" width="517.917" height="429.75">
    <properties>
-    <property name="LootTable" value="LootTable1"/>
+    <property name="LootTable" value="EastLootTable"/>
    </properties>
   </object>
   <object id="70" name="South" type="FishingZone" x="451.708" y="972.291" width="558.917" height="151.417">
    <properties>
-    <property name="LootTable" value="LootTable1"/>
+    <property name="LootTable" value="SouthLootTable"/>
    </properties>
   </object>
  </objectgroup>
