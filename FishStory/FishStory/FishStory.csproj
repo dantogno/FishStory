@@ -108,6 +108,9 @@
     <Compile Include="GumRuntimes\DialoguePortraitRuntime.Generated.cs">
       <DependentUpon>DialoguePortraitRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs">
+      <DependentUpon>InventoryRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Managers\InGameDateTimeManager.cs" />
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\FishIdentifiedSignFactory.Generated.cs" />
@@ -209,9 +212,6 @@
       <DependentUpon>InputInstructionsRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\InventoryRuntime.cs" />
-    <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs">
-      <DependentUpon>InventoryRuntime.cs</DependentUpon>
-    </Compile>
     <Compile Include="GumRuntimes\KeyDisplayRuntime.cs" />
     <Compile Include="GumRuntimes\KeyDisplayRuntime.Generated.cs">
       <DependentUpon>KeyDisplayRuntime.cs</DependentUpon>
@@ -582,6 +582,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>StreetLight</Name>
     </None>
+    <None Include="content\entities\propobject\tristreetlight.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TriStreetLight</Name>
+    </None>
     <None Include="content\globalcontent\dialog\blackmarketshopday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlackMarketShopDay1</Name>
@@ -605,6 +609,10 @@
     <None Include="content\globalcontent\dialog\elderlymotherday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ElderlyMotherDay1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\elderlymotherday2alttrait.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ElderlyMotherDay2AltTrait</Name>
     </None>
     <None Include="content\globalcontent\dialog\fancybaitshopdialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -901,14 +909,6 @@
     <None Include="content\gumproject\components\storeclosebutton.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>storeclosebutton</Name>
-    </None>
-    <None Include="content\gumproject\fontcache\font10casual_encounter.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>font10casual_encounter</Name>
-    </None>
-    <None Include="content\gumproject\fontcache\font10casual_encounter_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font10Casual_Encounter_0</Name>
     </None>
     <None Include="content\gumproject\fontcache\font10casual_encounter_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

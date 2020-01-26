@@ -47,189 +47,159 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>ColoredFrameInstance.Height</Name>
-      <Value xsi:type="xsd:float">36</Value>
+      <Type>int</Type>
+      <Name>CostNineSlice.BackgroundBlue</Name>
+      <Value xsi:type="xsd:int">125</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>string</Type>
-      <Name>ColoredFrameInstance.Parent</Name>
-      <Value xsi:type="xsd:string">ListBoxInstance</Value>
+      <Type>int</Type>
+      <Name>CostNineSlice.BackgroundGreen</Name>
+      <Value xsi:type="xsd:int">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CostNineSlice.BackgroundRed</Name>
+      <Value xsi:type="xsd:int">10</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>ColoredFrameInstance.Width</Name>
-      <Value xsi:type="xsd:float">75</Value>
+      <Name>CostNineSlice.Height</Name>
+      <Value xsi:type="xsd:float">39</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>ColoredFrameInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ColoredFrameInstance.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>ColoredFrameInstance.X Units</Name>
+      <Name>CostNineSlice.Height Units</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>ColoredFrameInstance.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>ColoredFrameInstance.Y Origin</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>ColoredFrameInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ColoredFrameInstance1.Height</Name>
-      <Value xsi:type="xsd:float">36</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>string</Type>
-      <Name>ColoredFrameInstance1.Parent</Name>
+      <Name>CostNineSlice.Parent</Name>
       <Value xsi:type="xsd:string">ListBoxInstance</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>ColoredFrameInstance1.Width</Name>
-      <Value xsi:type="xsd:float">19</Value>
+      <Name>CostNineSlice.Width</Name>
+      <Value xsi:type="xsd:float">-469</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>ColoredFrameInstance1.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ColoredFrameInstance1.X</Name>
-      <Value xsi:type="xsd:float">75</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>ColoredFrameInstance1.X Units</Name>
+      <Name>CostNineSlice.Width Units</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>ColoredFrameInstance1.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>ColoredFrameInstance1.Y Origin</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>ColoredFrameInstance1.Y Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>ColoredFrameInstance2.Parent</Name>
-      <Value xsi:type="xsd:string">ListBoxInstance</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ColoredFrameInstance2.Width</Name>
-      <Value xsi:type="xsd:float">-36</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>ColoredFrameInstance2.Width Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>ColoredFrameInstance2.Y Units</Name>
-      <Value xsi:type="xsd:int">5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ColoredFrameInstance3.Height</Name>
-      <Value xsi:type="xsd:float">36</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>ColoredFrameInstance3.Parent</Name>
-      <Value xsi:type="xsd:string">ListBoxInstance</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ColoredFrameInstance3.Width</Name>
-      <Value xsi:type="xsd:float">19</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>ColoredFrameInstance3.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ColoredFrameInstance3.X</Name>
+      <Name>CostNineSlice.X</Name>
       <Value xsi:type="xsd:float">56</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>ColoredFrameInstance3.X Units</Name>
+      <Name>CostNineSlice.X Units</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>ColoredFrameInstance3.Y</Name>
+      <Name>CostNineSlice.Y</Name>
       <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>ColoredFrameInstance3.Y Origin</Name>
+      <Name>CostNineSlice.Y Origin</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>ColoredFrameInstance3.Y Units</Name>
+      <Name>CostNineSlice.Y Units</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>DescriptionNineSlice.BackgroundBlue</Name>
+      <Value xsi:type="xsd:int">125</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>DescriptionNineSlice.BackgroundGreen</Name>
+      <Value xsi:type="xsd:int">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>DescriptionNineSlice.BackgroundRed</Name>
+      <Value xsi:type="xsd:int">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>DescriptionNineSlice.Height</Name>
+      <Value xsi:type="xsd:float">106</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>DescriptionNineSlice.Height Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>DescriptionNineSlice.Parent</Name>
+      <Value xsi:type="xsd:string">ListBoxInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>DescriptionNineSlice.Width</Name>
+      <Value xsi:type="xsd:float">-36</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>DescriptionNineSlice.Width Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>DescriptionNineSlice.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>DescriptionNineSlice.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>DescriptionNineSlice.Y Origin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>DescriptionNineSlice.Y Units</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>DescriptionText.Blue</Name>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -248,6 +218,12 @@
       <Type>int</Type>
       <Name>DescriptionText.FontSize</Name>
       <Value xsi:type="xsd:int">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>DescriptionText.Green</Name>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -271,20 +247,33 @@
     <Variable>
       <Type>int</Type>
       <Name>DescriptionText.OutlineThickness</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>DescriptionText.Parent</Name>
-      <Value xsi:type="xsd:string">ColoredFrameInstance2</Value>
+      <Value xsi:type="xsd:string">DescriptionNineSlice</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>DescriptionText.Red</Name>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>DescriptionText.Text</Name>
+      <Value xsi:type="xsd:string">These are the descriptive words</Value>
       <ExposedAsName>CurrentDescription</ExposedAsName>
-      <SetsValue>false</SetsValue>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>DescriptionText.UseCustomFont</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
@@ -349,6 +338,60 @@
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Height Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ItemNineSlice.BackgroundBlue</Name>
+      <Value xsi:type="xsd:int">125</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ItemNineSlice.BackgroundGreen</Name>
+      <Value xsi:type="xsd:int">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ItemNineSlice.BackgroundRed</Name>
+      <Value xsi:type="xsd:int">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ItemNineSlice.Height</Name>
+      <Value xsi:type="xsd:float">39</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ItemNineSlice.Height Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>ItemNineSlice.Parent</Name>
+      <Value xsi:type="xsd:string">ListBoxInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ItemNineSlice.Width</Name>
+      <Value xsi:type="xsd:float">56</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ItemNineSlice.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>ItemNineSlice.Y Origin</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -427,7 +470,7 @@
     <Variable>
       <Type>float</Type>
       <Name>SellButton.X</Name>
-      <Value xsi:type="xsd:float">252</Value>
+      <Value xsi:type="xsd:float">135</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -439,7 +482,7 @@
     <Variable>
       <Type>float</Type>
       <Name>SellButton.Y</Name>
-      <Value xsi:type="xsd:float">130</Value>
+      <Value xsi:type="xsd:float">129</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -454,6 +497,78 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>StockNineSlice.BackgroundBlue</Name>
+      <Value xsi:type="xsd:int">125</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>StockNineSlice.BackgroundGreen</Name>
+      <Value xsi:type="xsd:int">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>StockNineSlice.BackgroundRed</Name>
+      <Value xsi:type="xsd:int">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>StockNineSlice.Height</Name>
+      <Value xsi:type="xsd:float">39</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>StockNineSlice.Height Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>StockNineSlice.Parent</Name>
+      <Value xsi:type="xsd:string">ListBoxInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>StockNineSlice.Width</Name>
+      <Value xsi:type="xsd:float">-469</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>StockNineSlice.Width Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>StockNineSlice.X</Name>
+      <Value xsi:type="xsd:float">430</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>StockNineSlice.Y</Name>
+      <Value xsi:type="xsd:float">-299</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>StockNineSlice.Y Origin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>StockNineSlice.Y Units</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>TextInstance.Font</Name>
       <Value xsi:type="xsd:string">Casual Encounter</Value>
@@ -463,6 +578,12 @@
       <Type>int</Type>
       <Name>TextInstance.FontSize</Name>
       <Value xsi:type="xsd:int">16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextInstance.Height</Name>
+      <Value xsi:type="xsd:float">22</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -493,7 +614,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance.X</Name>
-      <Value xsi:type="xsd:float">135</Value>
+      <Value xsi:type="xsd:float">160</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -511,7 +632,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance.Y</Name>
-      <Value xsi:type="xsd:float">-168</Value>
+      <Value xsi:type="xsd:float">-180</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -601,7 +722,7 @@
     <Variable>
       <Type>int</Type>
       <Name>TextInstance2.Blue</Name>
-      <Value xsi:type="xsd:int">212</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -631,13 +752,13 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance2.Height</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">22</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>TextInstance2.Height Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -655,13 +776,13 @@
     <Variable>
       <Type>string</Type>
       <Name>TextInstance2.Parent</Name>
-      <Value xsi:type="xsd:string">ColoredFrameInstance</Value>
+      <Value xsi:type="xsd:string">ItemNineSlice</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TextInstance2.Red</Name>
-      <Value xsi:type="xsd:int">127</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -679,7 +800,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance2.X</Name>
-      <Value xsi:type="xsd:float">10</Value>
+      <Value xsi:type="xsd:float">9</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -697,7 +818,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance2.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -715,7 +836,7 @@
     <Variable>
       <Type>int</Type>
       <Name>TextInstance3.Blue</Name>
-      <Value xsi:type="xsd:int">212</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -745,13 +866,13 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance3.Height</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">22</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>TextInstance3.Height Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -769,13 +890,13 @@
     <Variable>
       <Type>string</Type>
       <Name>TextInstance3.Parent</Name>
-      <Value xsi:type="xsd:string">ColoredFrameInstance1</Value>
+      <Value xsi:type="xsd:string">StockNineSlice</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TextInstance3.Red</Name>
-      <Value xsi:type="xsd:int">127</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -811,7 +932,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance3.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -829,7 +950,7 @@
     <Variable>
       <Type>int</Type>
       <Name>TextInstance4.Blue</Name>
-      <Value xsi:type="xsd:int">212</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -859,13 +980,13 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance4.Height</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">22</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>TextInstance4.Height Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -883,13 +1004,13 @@
     <Variable>
       <Type>string</Type>
       <Name>TextInstance4.Parent</Name>
-      <Value xsi:type="xsd:string">ColoredFrameInstance3</Value>
+      <Value xsi:type="xsd:string">CostNineSlice</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TextInstance4.Red</Name>
-      <Value xsi:type="xsd:int">127</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -907,7 +1028,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance4.X</Name>
-      <Value xsi:type="xsd:float">10</Value>
+      <Value xsi:type="xsd:float">11</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -925,7 +1046,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance4.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -999,54 +1120,78 @@
     <State>
       <Name>View</Name>
       <Variable>
-        <Type>float</Type>
-        <Name>ColoredFrameInstance.Width</Name>
-        <Value xsi:type="xsd:float">75</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
         <Type>bool</Type>
-        <Name>ColoredFrameInstance2.Visible</Name>
+        <Name>DescriptionNineSlice.Visible</Name>
         <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
-        <Type>bool</Type>
-        <Name>ColoredFrameInstance3.Visible</Name>
-        <Value xsi:type="xsd:boolean">false</Value>
+        <Type>string</Type>
+        <Name>ItemNineSlice.Parent</Name>
+        <Value xsi:type="xsd:string">ListBoxInstance</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.Height</Name>
+        <Value xsi:type="xsd:float">78</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>bool</Type>
         <Name>SellButton.Visible</Name>
         <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.X</Name>
+        <Value xsi:type="xsd:float">135</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.Y</Name>
+        <Value xsi:type="xsd:float">129</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
     <State>
       <Name>Sell</Name>
       <Variable>
-        <Type>float</Type>
-        <Name>ColoredFrameInstance.Width</Name>
-        <Value xsi:type="xsd:float">56</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
         <Type>bool</Type>
-        <Name>ColoredFrameInstance2.Visible</Name>
+        <Name>DescriptionNineSlice.Visible</Name>
         <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
-        <Type>bool</Type>
-        <Name>ColoredFrameInstance3.Visible</Name>
-        <Value xsi:type="xsd:boolean">true</Value>
+        <Type>string</Type>
+        <Name>ItemNineSlice.Parent</Name>
+        <Value xsi:type="xsd:string">ListBoxInstance</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.Height</Name>
+        <Value xsi:type="xsd:float">45</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>bool</Type>
         <Name>SellButton.Visible</Name>
         <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.X</Name>
+        <Value xsi:type="xsd:float">134.5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>SellButton.Y</Name>
+        <Value xsi:type="xsd:float">138</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -1067,13 +1212,18 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>ColoredFrameInstance</Name>
-    <BaseType>DefaultForms/ColoredFrame</BaseType>
+    <Name>ItemNineSlice</Name>
+    <BaseType>CustomNiceSlice</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>ColoredFrameInstance1</Name>
-    <BaseType>DefaultForms/ColoredFrame</BaseType>
+    <Name>CostNineSlice</Name>
+    <BaseType>CustomNiceSlice</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>StockNineSlice</Name>
+    <BaseType>CustomNiceSlice</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
@@ -1087,18 +1237,13 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>ColoredFrameInstance2</Name>
-    <BaseType>DefaultForms/ColoredFrame</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
     <Name>DescriptionText</Name>
     <BaseType>Text</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>ColoredFrameInstance3</Name>
-    <BaseType>DefaultForms/ColoredFrame</BaseType>
+    <Name>DescriptionNineSlice</Name>
+    <BaseType>CustomNiceSlice</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>

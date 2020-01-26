@@ -2211,7 +2211,7 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>Width</Member>
-            <ValueAsFloat>25</ValueAsFloat>
+            <ValueAsFloat>50</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
@@ -2496,7 +2496,38 @@
               <Name>Lantern</Name>
             </StateSave>
             <StateSave>
-              <InstructionSaves />
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>Single</Type>
+                  <Member>Z</Member>
+                  <ValueAsFloat>8</ValueAsFloat>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>Animation</Member>
+                  <ValueAsString>TriStreetLight</ValueAsString>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>CurrentChainName</Member>
+                  <ValueAsString>Idle</ValueAsString>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>Boolean</Type>
+                  <Member>CreatesLight</Member>
+                  <ValueAsBool>true</ValueAsBool>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>Single</Type>
+                  <Member>LightBrightness</Member>
+                  <ValueAsFloat>0.5</ValueAsFloat>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>Boolean</Type>
+                  <Member>SpriteInstanceVisible</Member>
+                  <ValueAsBool>true</ValueAsBool>
+                </InstructionSave>
+              </InstructionSaves>
               <Name>TriStreetLight</Name>
             </StateSave>
           </States>
@@ -2779,6 +2810,23 @@
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
+          <SourceClassGenericType>FlatRedBall.Sprite</SourceClassGenericType>
+          <InstanceName>LightSpriteList</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
       </NamedObjects>
       <ReferencedFiles>
         <ReferencedFileSave>
@@ -2801,6 +2849,12 @@
         </ReferencedFileSave>
         <ReferencedFileSave>
           <Name>Entities/PropObject/Lantern.achx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Entities/PropObject/TriStreetLight.achx</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
           <ProjectsToExcludeFrom />
@@ -3355,6 +3409,13 @@
         </PropertySave>
       </Properties>
       <Name>GlobalContent/Music/music_calm_tree_of_life.mp3</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/Dialog/ElderlyMotherDay2AltTrait.json</Name>
       <IsSharedStatic>true</IsSharedStatic>
       <DestroyOnUnload>false</DestroyOnUnload>
       <HasPublicProperty>true</HasPublicProperty>
