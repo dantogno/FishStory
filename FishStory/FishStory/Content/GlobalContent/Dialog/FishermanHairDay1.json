@@ -37,7 +37,10 @@
       "position": {
         "x": "508",
         "y": "540"
-      }
+      },
+      "tags": [
+        "HasSeenFishermanHairDay1"
+      ]
     }
   ],
   "name": "FishermanHairDay1",

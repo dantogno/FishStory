@@ -84,8 +84,11 @@
       "pid": "6",
       "position": {
         "x": "264",
-        "y": "936"
-      }
+        "y": "974"
+      },
+      "tags": [
+        "HasSeenTycoonDaughterDay1"
+      ]
     },
     {
       "text": "Are you trying to tell me my culture is weird just because it's different from yours? Get lost.\n[[Okay, bye.|Bye end]]",

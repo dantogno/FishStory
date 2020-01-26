@@ -93,7 +93,10 @@
       "position": {
         "x": "485",
         "y": "726"
-      }
+      },
+      "tags": [
+        "HasSeenPriestessDay1"
+      ]
     },
     {
       "text": "I am the servant of this land, and the keeper of our traditions. I am the bridge between the sea and the people. I am the messenger that the land has chosen to deliver its sacred messages of purpose.\n[[Okay, but what's your name?|Name]]\n[[I don't believe in any of that.|Dont believe]]\n",

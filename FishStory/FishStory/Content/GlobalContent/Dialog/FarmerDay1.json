@@ -100,7 +100,10 @@
       "position": {
         "x": "522",
         "y": "917"
-      }
+      },
+      "tags": [
+        "HasSeenFarmerDay1"
+      ]
     },
     {
       "text": "Ha! What a hilarious joke. Do we look like the kind of people who give discounts to strangers? Nice try.\n[[I'll going then.|Bye]]",
