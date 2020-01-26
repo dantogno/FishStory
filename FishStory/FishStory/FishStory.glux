@@ -3603,6 +3603,13 @@
       <CreatesDictionary>true</CreatesDictionary>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/Dialog/BlackMarketShopDay2.json</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
   </GlobalFiles>
   <GlobalContentSettingsSave>
     <LoadAsynchronously>false</LoadAsynchronously>

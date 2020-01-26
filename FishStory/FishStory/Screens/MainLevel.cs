@@ -19,9 +19,27 @@ using FlatRedBall.Scripting;
 
 namespace FishStory.Screens
 {
+    public static class CharacterNames
+    {
+        public const string BlackMarketShop = "BlackMarketShop";
+        public const string Mayor = "Mayor";
+        public const string FestivalCoordinator = "FestivalCoordinator";
+        public const string Identifier = "Identifier";
+        public const string Fishmonger = "Fishmonger";
+        public const string FarmerSonBaitShop = "FarmerSonBaitShop";
+        public const string YoungManBaitShop = "YoungManBaitShop";
+        public const string ElderlyMother = "ElderlyMother";
+        public const string Priestess = "Priestess";
+        public const string Nun = "Nun";
+        public const string Farmer = "Farmer";
+        public const string Tycoon = "Tycoon";
+        public const string TycoonDaughter = "TycoonDaughter";
+        public const string Conservationist = "Conservationist";
+        public const string FishermanBald = "FishermanBald";
+        public const string FishermanHair = "FishermanHair";
+    }
     public partial class MainLevel
     {
- 
         private int TotalFishIdentified
         {
             get
@@ -176,12 +194,12 @@ namespace FishStory.Screens
             If.Check(() => HasTag("HasTalkedToTycoonDay1"));
             Do.Call(() =>
             {
-                NPCList.FindByName("Tycoon").TwineDialogId = "TycoonNoFishNoKey";
+                NPCList.FindByName(CharacterNames.Tycoon).TwineDialogId = "TycoonNoFishNoKey";
             });
             If.Check(() => HasTag("HasTalkedToTycoonDay1") && TotalFishIdentified >= numFishRequiredForKey);
             Do.Call(() =>
             {
-                NPCList.FindByName("Tycoon").TwineDialogId = "TycoonYesFishNoKey";
+                NPCList.FindByName(CharacterNames.Tycoon).TwineDialogId = "TycoonYesFishNoKey";
             });
             If.Check(() => HasTag("GiveTrailerKey"));
             Do.Call(() =>
@@ -192,7 +210,7 @@ namespace FishStory.Screens
             If.Check(() => PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key));
             Do.Call(() =>
             {
-                NPCList.FindByName("Tycoon").TwineDialogId = "TycoonYesKey";
+                NPCList.FindByName(CharacterNames.Tycoon).TwineDialogId = "TycoonYesKey";
             });
             #endregion
             #region Mayor
@@ -209,7 +227,7 @@ namespace FishStory.Screens
             If.Check(() => HasTag("HasSeenWelcomeDialog"));
             Do.Call(() =>
             {
-                var npc = this.NPCList.FindByName("Mayor");
+                var npc = this.NPCList.FindByName(CharacterNames.Mayor);
                 npc.TwineDialogId = nameof(GlobalContent.MayorAfterWelcome);
                 PlayerDataManager.PlayerData.AwardItem("Festival Badge");
                 PlayerDataManager.PlayerData.AwardItem("Festival Pamphlet");
@@ -232,7 +250,7 @@ namespace FishStory.Screens
             If.Check(() => HasTag("AwardDay1Bait"));
             Do.Call(() =>
             {
-                var npc = NPCList.FindByName("FestivalCoordinator");
+                var npc = NPCList.FindByName(CharacterNames.FestivalCoordinator);
                 npc.TwineDialogId = nameof(GlobalContent.FestivalCoordinatorDay1Brief);
                 AwardRandomBait();
             });
@@ -257,9 +275,10 @@ namespace FishStory.Screens
             #endregion
             #region FarmerSonBaitShop
             #endregion
-            #region YoungManBaitShop
-            #region BlackMarketShop
+            #region YoungManBaitShop          
             #endregion
+            #region BlackMarketShop
+            NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay2);
             #endregion
             #region ElderlyMother
             #endregion
