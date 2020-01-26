@@ -16,7 +16,7 @@ Huge Dark Fish,Cobia,,,,,12,,,
 Large Mean Fish,Shark,,,,,13,,,
 Small Odd Fish,Goatfish,,,,,14,,,
 Small Shelled Creature,Shrimp,,,,,15,,,
-// Fish,,,,,,,,,
+// Fishable items,,,,,,,,,
 Ladyfish,,,,true,0,20,Ladies. Eats sardine. Not that big.,Unidentified,PlayerCharacter
 ,,,,,,,,,Priestess
 ,,,,,,,,,Mayor
@@ -24,9 +24,9 @@ Ladyfish,,,,true,0,20,Ladies. Eats sardine. Not that big.,Unidentified,PlayerCha
 ,,,,,,,,,Nun
 ,,,,,,,,,TycoonDaughter
 ,,,,,,,,,Conservationist
-Giant Octopus,,,,true,,1,"Mother. hatches a ""super brood"" of 100,000 eggs that the mother guards for six months. shrimp, crabs, scallop, abalone, cockles, snails, clams, lobsters, fish, and other octopuses. Lays ",Unidentified,
-Seahorse,,,,true,,2,father. eat worm,Unidentified,
-King Mackerel,,,,true,,3,"Men. Big fish, sardine, bonito",Unidentified,FestivalCoordinator
+Giant Octopus,,,,true,,30,"Mother. hatches a ""super brood"" of 100,000 eggs that the mother guards for six months. shrimp, crabs, scallop, abalone, cockles, snails, clams, lobsters, fish, and other octopuses. Lays ",Unidentified,
+Seahorse,,,,true,,15,father. eat worm,Unidentified,
+King Mackerel,,,,true,,50,"Men. Big fish, sardine, bonito",Unidentified,FestivalCoordinator
 ,,,,,,,,,BlackMarketShop
 ,,,,,,,,,Identifier
 ,,,,,,,,,Fishmonger
@@ -36,17 +36,19 @@ King Mackerel,,,,true,,3,"Men. Big fish, sardine, bonito",Unidentified,FestivalC
 ,,,,,,,,,Tycoon
 ,,,,,,,,,FishermanBald
 ,,,,,,,,,FishermanHair
-Monkfish,,,,true,,4,bald. eats everything,Unidentified,
-Trumpetfish,,,,true,,5,golden / yellow. reefs. eats small fish and squid,Unidentified,
-Rougheye Rockfish,,,,true,,30,Old This fish can live for over 200 years!,Unidentified,
-Brown Rockfish,,,,true,,6,Brown. near dock / pier. worms and squid,Unidentified,
-Cobia,,,,true,,7,"Black. Large. Eats squid, bonito. Wrecks, harbours, buoys, reefs.",Unidentified,
+Monkfish,,,,true,,25,It's ugly and eats everything that fits in its gaping mouth. But it tastes great!,Unidentified,
+Trumpetfish,,,,true,,25,"This tubular fish has a golden, yellow color. It prefers tiny fish and squid.",Unidentified,
+Rougheye Rockfish,,,,true,,50,This large fish can live for over 200 years! It prefers small fish and squid.,Unidentified,
+Brown Rockfish,,,,true,,15,Brown. near dock / pier. worms and squid,Unidentified,
+Cobia,,,,true,,50,"Black. Large. Eats squid, bonito. Wrecks, harbours, buoys, reefs.",Unidentified,
 Shark,,,,true,,50,represents? eats bonito,Unidentified,
-Goatfish,,,,true,,45,"Facial hair. Reefs, shallow, worm and small fish. Use goatee-like barbel  to search for food",Unidentified,
-Shrimp,,,,true,,8,kids. eats blood worm,Unidentified,
-Trash,,,,true,,35,Trash Description,Unidentified,
+Goatfish,,,,true,,15,"Facial hair. Reefs, shallow, worm and small fish. Use goatee-like barbel  to search for food",Unidentified,
+Shrimp,,,,true,,10,kids. eats blood worm,Unidentified,
+Plastic Trash,,,,,,5,Even in this remote place there's somehow trash in the ocean. What a shame.,Unidentified,
+Bone,,,,,,10,It looks like a bone of some sort. It's fairly large.,,
+Scrap of Cloth,,,,,,5,A piece of some old garment.,,
 // Bait,,,,,,,,,
-Blood Worm,,,true,,5,0,,,
-Sardine,,,true,,10,0,,,
-Squid,,,true,,,,,,
-Little Bonito,,,true,,,,,,
+Blood Worm,,,true,,5,,These worms bleed when you skewer them onto a hook.,,
+Sardine,,,true,,10,,A tiny fish used to catch small and medium sized fish.,,
+Squid,,,true,,15,,Hunks of squid cut into a size that fits well on a fish hook.,,
+Little Bonito,,,true,,20,,A small fish used to catch big fish.,,

@@ -1,4 +1,4 @@
-"FishName (string, required)",Blood Worm (int),Sardine (int),Squid (int),LittleBonito (int)
-Brown Rockfish,10,1,5,1
-Goatfish,10,5,1,1
-Trash,0,0,0,2
+"FishName (string, required)",Blood Worm (int),Sardine (int),Squid (int),Little Bonito (int)
+King Mackerel,1,5,1,10
+Rougheye Rockfish,1,6,5,1
+Plastic Trash,99,99,99,99
