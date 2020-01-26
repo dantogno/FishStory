@@ -1,18 +1,18 @@
 {
   "passages": [
     {
-      "text": "What do you want? More handouts? Leave me be.",
+      "text": "What could The Choosing possibly be...? I can't wait to find out...",
       "name": "Start",
       "pid": "1",
       "position": {
         "x": "584",
-        "y": "672"
+        "y": "669"
       }
     }
   ],
-  "name": "TycoonDay2Brief",
+  "name": "ConservationistDay2Brief",
   "startnode": "1",
   "creator": "Twine",
   "creator-version": "2.3.5",
-  "ifid": "690E348B-7D5B-494A-B321-A42C78E4B130"
+  "ifid": "842A63FF-32D6-4E35-919A-A1AB41A06D83"
 }

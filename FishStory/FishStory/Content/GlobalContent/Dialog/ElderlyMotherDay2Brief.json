@@ -1,7 +1,7 @@
 {
   "passages": [
     {
-      "text": "What do you want? More handouts? Leave me be.",
+      "text": "Ingrid, is that you? Ingrid, I'm so tired, let me rest...",
       "name": "Start",
       "pid": "1",
       "position": {
@@ -10,9 +10,9 @@
       }
     }
   ],
-  "name": "TycoonDay2Brief",
+  "name": "ElderlyMotherDay2Brief",
   "startnode": "1",
   "creator": "Twine",
   "creator-version": "2.3.5",
-  "ifid": "690E348B-7D5B-494A-B321-A42C78E4B130"
+  "ifid": "B201BE2F-7B13-4342-B2E4-294E575C9AAC"
 }

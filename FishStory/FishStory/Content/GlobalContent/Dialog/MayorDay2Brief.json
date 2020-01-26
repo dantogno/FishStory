@@ -1,18 +1,18 @@
 {
   "passages": [
     {
-      "text": "What do you want? More handouts? Leave me be.",
+      "text": "Ah, smell that beautiful sea air...",
       "name": "Start",
       "pid": "1",
       "position": {
         "x": "584",
-        "y": "672"
+        "y": "586"
       }
     }
   ],
-  "name": "TycoonDay2Brief",
+  "name": "MayorDay2Brief",
   "startnode": "1",
   "creator": "Twine",
   "creator-version": "2.3.5",
-  "ifid": "690E348B-7D5B-494A-B321-A42C78E4B130"
+  "ifid": "F8844663-62B7-4B0A-BC48-8D22BF267E62"
 }

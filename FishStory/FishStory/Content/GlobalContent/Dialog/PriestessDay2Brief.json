@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Can you feel the energy radiating out of the land, stanger? It's intoxicating...",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "584",
+        "y": "626"
+      }
+    }
+  ],
+  "name": "PriestessDay2Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "1DDF10E6-4814-4485-BA88-CF3B29442CB8"
+}
