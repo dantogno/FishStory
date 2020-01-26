@@ -666,6 +666,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ConservationistDay1</Name>
     </None>
+    <None Include="content\globalcontent\dialog\conservationistday1brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ConservationistDay1Brief</Name>
+    </None>
     <None Include="content\globalcontent\dialog\dialog1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Dialog1</Name>
@@ -673,6 +677,10 @@
     <None Include="content\globalcontent\dialog\elderlymotherday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ElderlyMotherDay1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\elderlymotherday1brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ElderlyMotherDay1Brief</Name>
     </None>
     <None Include="content\globalcontent\dialog\elderlymotherday2alttrait.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -690,6 +698,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FarmerDay1</Name>
     </None>
+    <None Include="content\globalcontent\dialog\farmerday1brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FarmerDay1Brief</Name>
+    </None>
     <None Include="content\globalcontent\dialog\farmersonbaitshopdialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FarmerSonBaitShopDialog</Name>
@@ -706,9 +718,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishermanBaldDay1</Name>
     </None>
+    <None Include="content\globalcontent\dialog\fishermanbaldday1brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishermanBaldDay1Brief</Name>
+    </None>
     <None Include="content\globalcontent\dialog\fishermanhairday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishermanHairDay1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\fishermanhairday1brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishermanHairDay1Brief</Name>
     </None>
     <None Include="content\globalcontent\dialog\fishmongerday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -734,9 +754,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>NunDay1</Name>
     </None>
+    <None Include="content\globalcontent\dialog\nunday1brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>NunDay1Brief</Name>
+    </None>
     <None Include="content\globalcontent\dialog\priestessday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>PriestessDay1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\priestessday1brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PriestessDay1Brief</Name>
     </None>
     <None Include="content\globalcontent\dialog\priestessday2.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -749,6 +777,10 @@
     <None Include="content\globalcontent\dialog\tycoondaughterday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TycoonDaughterDay1</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\tycoondaughterday1brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TycoonDaughterDay1Brief</Name>
     </None>
     <None Include="content\globalcontent\dialog\tycoonday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
