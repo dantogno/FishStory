@@ -678,6 +678,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ElderlyMotherDay2AltTrait</Name>
     </None>
+    <None Include="content\globalcontent\dialog\fancybaitshopday1brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FancyBaitShopDay1Brief</Name>
+    </None>
     <None Include="content\globalcontent\dialog\fancybaitshopdialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FancyBaitShopDialog</Name>

@@ -21,9 +21,12 @@
       "name": "Start",
       "pid": "1",
       "position": {
-        "x": "406",
-        "y": "182"
-      }
+        "x": "436",
+        "y": "0"
+      },
+      "tags": [
+        "HasSeenFancyBaitShopDialog"
+      ]
     },
     {
       "text": "Store=FancyBaitShop",
@@ -68,6 +71,6 @@
   "name": "FancyBaitShopDialog",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.3.5",
+  "creator-version": "2.2.1",
   "ifid": "8141181B-5AA2-4B89-BBCA-A1DEDA429E1F"
 }

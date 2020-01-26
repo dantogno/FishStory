@@ -269,6 +269,13 @@ namespace FishStory.Screens
                 NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay1Brief);
             });
             #endregion
+            #region YoungManBaitShop  
+            If.Check(() => HasTag("HasSeenFancyBaitShopDialog"));
+            Do.Call(() =>
+            {
+                NPCList.FindByName(CharacterNames.YoungManBaitShop).TwineDialogId = nameof(GlobalContent.FancyBaitShopDay1Brief);
+            });
+            #endregion
             //TODO: What are NPCRelationships??
             //If.Check(() =>
             //{
