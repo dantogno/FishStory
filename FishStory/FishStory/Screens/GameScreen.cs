@@ -194,18 +194,6 @@ namespace FishStory.Screens
                 pid = "1",
                 text = "id="
             });
-
-
-            var testStoreNpc = NPCList.First(item => item.Name == "TestBlackMarket");
-            testStoreNpc.DirectlySetDialog = testBlackMarketDialog;
-
-
-            var testFishmongerNpc = NPCList.First(item => item.Name == "TestFishmonger");
-            testFishmongerNpc.DirectlySetDialog = testFishMonger;
-
-
-            var testIdentifierNpc = NPCList.First(item => item.Name == "TestIdentifier");
-            testIdentifierNpc.DirectlySetDialog = testIdentifier;
         }
 #endif
 
