@@ -492,6 +492,15 @@ namespace FishStory.Screens
         private void DoDay3Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
             #region Mayor
+            var mayor = this.NPCList.FindByName(CharacterNames.Mayor);
+            mayor.TwineDialogId = nameof(GlobalContent.MayorDay3);
+
+            If.Check(() => HasTag("HasSeenMayorDay3"));
+            Do.Call(() =>
+            {
+                var npc = this.NPCList.FindByName(CharacterNames.Mayor);
+                npc.TwineDialogId = nameof(GlobalContent.MayorDay3Brief);
+            });
             #endregion
             #region FestivalCoordinator
             #endregion
@@ -506,26 +515,98 @@ namespace FishStory.Screens
             #endregion
             #endregion
             #region ElderlyMother
+            var elderlyMother = this.NPCList.FindByName(CharacterNames.ElderlyMother);
+            elderlyMother.TwineDialogId = nameof(GlobalContent.ElderlyMotherDay3);
+
+            If.Check(() => HasTag("HasSeenElderlyMotherDay3"));
+            Do.Call(() =>
+            {
+                var npc = this.NPCList.FindByName(CharacterNames.ElderlyMother);
+                npc.TwineDialogId = nameof(GlobalContent.ElderlyMotherDay3Brief);
+            });
             #endregion
             #region Priestess
+            var priestess = this.NPCList.FindByName(CharacterNames.Priestess);
+            priestess.TwineDialogId = nameof(GlobalContent.PriestessDay3);
+
+            If.Check(() => HasTag("HasSeenPriestessDay3"));
+            Do.Call(() =>
+            {
+                var npc = this.NPCList.FindByName(CharacterNames.Priestess);
+                npc.TwineDialogId = nameof(GlobalContent.PriestessDay3Brief);
+            });
             #endregion
             #region Nun
+            var nun = this.NPCList.FindByName(CharacterNames.Nun);
+            nun.TwineDialogId = nameof(GlobalContent.NunDay3);
+
+            If.Check(() => HasTag("HasSeenNunDay3"));
+            Do.Call(() =>
+            {
+                var npc = this.NPCList.FindByName(CharacterNames.Nun);
+                npc.TwineDialogId = nameof(GlobalContent.NunDay3Brief);
+            });
             #endregion
             #region Farmer
-            var farmer = NPCList.FindByName("Farmer");
+            var farmer = NPCList.FindByName(CharacterNames.Farmer);
             farmer.CurrentChainName = "FishRight";
             farmer.Position = new Microsoft.Xna.Framework.Vector3(1885, -665, PlayerCharacterInstance.Position.Z);
+            farmer.TwineDialogId = nameof(GlobalContent.FarmerDay3);
+
+            If.Check(() => HasTag("HasSeenFarmerDay3"));
+            Do.Call(() =>
+            {
+                var npc = this.NPCList.FindByName(CharacterNames.Farmer);
+                npc.TwineDialogId = nameof(GlobalContent.FarmerDay3Brief);
+            });
 
             #endregion
             #region Tycoon
+            var tycoon = this.NPCList.FindByName(CharacterNames.Tycoon);
+            tycoon.TwineDialogId = nameof(GlobalContent.TycoonDay3);
+
+            If.Check(() => HasTag("HasSeenTycoonDay3"));
+            Do.Call(() =>
+            {
+                var npc = this.NPCList.FindByName(CharacterNames.Tycoon);
+                npc.TwineDialogId = nameof(GlobalContent.TycoonDay3Brief);
+            });
             #endregion
             #region TycoonDaughter
+            var tycoonDaughter = this.NPCList.FindByName(CharacterNames.TycoonDaughter);
+            tycoonDaughter.TwineDialogId = nameof(GlobalContent.TycoonDaughterDay3);
+
+            If.Check(() => HasTag("HasSeenTycoonDaughterDay3"));
+            Do.Call(() =>
+            {
+                var npc = this.NPCList.FindByName(CharacterNames.TycoonDaughter);
+                npc.TwineDialogId = nameof(GlobalContent.TycoonDaughterDay3Brief);
+            });
             #endregion
             #region Conservationist
+            //ded
             #endregion
             #region FishermanBald
+            var bald = this.NPCList.FindByName(CharacterNames.FishermanBald);
+            bald.TwineDialogId = nameof(GlobalContent.FishermanBaldDay3);
+
+            If.Check(() => HasTag("HasSeenFishermanBaldDay3"));
+            Do.Call(() =>
+            {
+                var npc = this.NPCList.FindByName(CharacterNames.FishermanBald);
+                npc.TwineDialogId = nameof(GlobalContent.FishermanBaldDay3Brief);
+            });
             #endregion
             #region FishermanHair
+            var hair = this.NPCList.FindByName(CharacterNames.FishermanHair);
+            hair.TwineDialogId = nameof(GlobalContent.FishermanHairDay3);
+
+            If.Check(() => HasTag("HasSeenFishermanHairDay3"));
+            Do.Call(() =>
+            {
+                var npc = this.NPCList.FindByName(CharacterNames.FishermanHair);
+                npc.TwineDialogId = nameof(GlobalContent.FishermanHairDay3Brief);
+            });
             #endregion
         }
         /// <summary>

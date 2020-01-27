@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "Isuredolovethemfishys...",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "690"
+      }
+    }
+  ],
+  "name": "FishermanBaldDay3Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "30BE211C-0B0B-46DD-ABC1-DF7CB27F859A"
+}

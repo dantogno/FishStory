@@ -17,7 +17,10 @@
       "position": {
         "x": "442",
         "y": "570"
-      }
+      },
+      "tags": [
+        "HasSeenFishermanHairDay3"
+      ]
     },
     {
       "text": "There you go again! You're a maniac! A monster! What is it, did your mother not love you enough? Did your father not give you enough attention? Why do you insist on torturing me with your incessant screaming?!\n[[I'm just talking! I'm not trying to scream!|Not trying]]\n[[You're insane.|Insane]]",
@@ -100,8 +103,8 @@
       "name": "Good bye",
       "pid": "7",
       "position": {
-        "x": "517",
-        "y": "870"
+        "x": "541",
+        "y": "936"
       }
     }
   ],

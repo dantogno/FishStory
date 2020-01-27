@@ -12,12 +12,15 @@
           "link": "How'sthefishingtoday?|howsthefishing"
         }
       ],
-      "name": "Untitled Passage",
+      "name": "Start",
       "pid": "1",
       "position": {
         "x": "554",
         "y": "690"
-      }
+      },
+      "tags": [
+        "HasSeenFishermanBaldDay3"
+      ]
     },
     {
       "text": "Bah! Thereyougoagain! You'rejustliketherestofthem. Noonehasanyommunicationskillsanymore. Itsuremakesforalonelylifewithnoonetotalkto...\n[[badbye]]",
