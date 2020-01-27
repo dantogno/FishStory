@@ -415,14 +415,14 @@ namespace FishStory.Screens
         private void PlaySongForDay()
         {
             Song songToPlayForDay;
-            switch (InGameDateTimeManager.OurInGameDay.Day)
+            switch (PlayerDataManager.PlayerData.CurrentDay)
             {
                 case 1:
                     songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
-                //case 2:
-                //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
-                //case 3:
-                //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
+                case 2:
+                    songToPlayForDay = GlobalContent.music_calm_green_lake_serenade; break;
+                case 3:
+                    songToPlayForDay = GlobalContent.music_oriental_sunrise; break;
                 //case 4:
                 //songToPlayForDay = GlobalContent.music_calm_tree_of_life; break;
                 //case 5:

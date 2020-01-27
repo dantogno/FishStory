@@ -354,6 +354,16 @@
       <Name>music_calm_tree_of_life</Name>
       <Link>content\globalcontent\music\music_calm_tree_of_life.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\music\music_oriental_sunrise.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>music_oriental_sunrise</Name>
+      <Link>content\globalcontent\music\music_oriental_sunrise.ogg</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\music\music_oriental_sunrise.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>music_oriental_sunrise</Name>
+      <Link>content\globalcontent\music\music_oriental_sunrise.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\blackmarketstoreopensound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlackMarketStoreOpenSound</Name>
