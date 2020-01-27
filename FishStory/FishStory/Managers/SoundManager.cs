@@ -45,8 +45,10 @@ namespace FishStory.Managers
             {
                 if (currentSoundEffectInstance.State != SoundState.Playing)
                 {
-                    currentSoundEffectInstance.Dispose();
-                    currentSoundEffectInstance = soundEffect.GetCustomInstance();
+                    if (currentSoundEffectInstance.IsDisposed)
+                    {
+                        currentSoundEffectInstance = soundEffect.GetCustomInstance();
+                    }
                     Internal_Play(currentSoundEffectInstance);
                     return true;
                 }

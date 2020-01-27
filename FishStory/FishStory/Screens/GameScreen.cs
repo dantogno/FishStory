@@ -601,7 +601,7 @@ namespace FishStory.Screens
         {
             if (PlayerDataManager.PlayerData.Has(ItemDefinition.Fishing_Rod))
             {
-                if (PlayerCharacterInstance.IsFishing == false && PlayerCharacterInstance.TalkInput.WasJustPressed &&
+                if (PlayerCharacterInstance.IsFishing == false && PlayerCharacterInstance.TalkInput.WasJustPressed && PlayerCharacterInstance.ObjectsBlockingInput.Any() == false &&
                PlayerCharacterInstanceFishingCollisionVsWaterCollision.DoCollisions())
                 {
                     var baitSelection = GetBaitRootObject();
