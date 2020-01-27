@@ -107,10 +107,12 @@ namespace FishStory.Entities
         private void PerformFishIsAvailableLogic()
         {
             hasShownExclamation = true;
+            ExclamationIconInstance.CurrentIconDisplayState = EmotiveIcon.IconDisplay.Exclamation;
             ExclamationIconInstance.Visible = true;
             ExclamationIconInstance.BeginAnimations();
 
             IsFishOnLine = true;
+            SoundManager.Play(GlobalContent.FishOnLineSound);
             this.Call(StopFishAvailable)
                 .After(TimeFishExclamationShows);
         }
@@ -126,6 +128,9 @@ namespace FishStory.Entities
                 StopFishing();
                 FishLost?.Invoke();
 
+                ExclamationIconInstance.CurrentIconDisplayState = EmotiveIcon.IconDisplay.Explitive;
+                ExclamationIconInstance.Visible = true;
+                ExclamationIconInstance.BeginAnimations(shouldHideAfter: true);
             }
 
         }

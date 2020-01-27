@@ -11,7 +11,7 @@ using FlatRedBall.Math.Geometry;
 
 namespace FishStory.Entities
 {
-    public partial class ExclamationIcon
+    public partial class EmotiveIcon
     {
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
@@ -30,15 +30,23 @@ namespace FishStory.Entities
 
         }
 
-        public void BeginAnimations()
+        public void BeginAnimations(bool shouldHideAfter = false)
         {
-            this.SpriteInstance.CurrentChainName = AppearAnimation.Name ;
+            this.SpriteInstance.CurrentChainName = AppearAnimation.Name;
             this.SpriteInstance.CurrentFrameIndex = 0;
 
             this.Call(() =>
             {
                 this.SpriteInstance.CurrentChainName = CycleAnimation.Name;
             }).After(AppearAnimation.TotalLength);
+
+            if (shouldHideAfter)
+            {
+                this.Call(() =>
+                {
+                    Visible = false;
+                }).After(2);
+            }
         }
 
         private void CustomDestroy()

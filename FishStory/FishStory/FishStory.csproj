@@ -68,9 +68,9 @@
     <Compile Include="Entities\Entrance.Generated.cs">
       <DependentUpon>Entrance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entities\ExclamationIcon.cs" />
-    <Compile Include="Entities\ExclamationIcon.Generated.cs">
-      <DependentUpon>ExclamationIcon.cs</DependentUpon>
+    <Compile Include="Entities\EmotiveIcon.cs" />
+    <Compile Include="Entities\EmotiveIcon.Generated.cs">
+      <DependentUpon>emotiveicon.cs</DependentUpon>
     </Compile>
     <Compile Include="Entities\Exit.cs" />
     <Compile Include="Entities\Exit.Generated.cs">
@@ -384,6 +384,11 @@
       <Name>FishCatchSound</Name>
       <Link>content\globalcontent\sounds\fishcatchsound.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\fishgotawaysound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishGotAwaySound</Name>
+      <Link>content\globalcontent\sounds\fishgotawaysound.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\fishidentificationsound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishIdentificationSound</Name>
@@ -393,6 +398,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishingCastSound</Name>
       <Link>content\globalcontent\sounds\fishingcastsound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\fishonlinesound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishOnLineSound</Name>
+      <Link>content\globalcontent\sounds\fishonlinesound.xnb</Link>
     </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\fishspoiledsound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -504,9 +514,25 @@
       <Name>TypewriterKey5Sound</Name>
       <Link>content\globalcontent\sounds\typewriterkey5sound.xnb</Link>
     </None>
-    <None Include="content\entities\exclamationicon\animationchainlistfile.achx">
+    <None Include="content\entities\exclamationicon\exclamationicon.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>AnimationChainListFile</Name>
+      <Name>ExclamationIcon</Name>
+    </None>
+    <None Include="content\entities\exclamationicon\explitiveicon.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ExplitiveIcon</Name>
+    </None>
+    <None Include="content\entities\exclamationicon\ideaicon.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>IdeaIcon</Name>
+    </None>
+    <None Include="content\entities\exclamationicon\thoughticon.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ThoughtIcon</Name>
+    </None>
+    <None Include="content\entities\exclamationicon\tiredicon.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TiredIcon</Name>
     </None>
     <None Include="content\entities\npc\afrobeardjersey.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

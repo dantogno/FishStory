@@ -822,6 +822,7 @@ namespace FishStory.Screens
         private void HandleFishLost()
         {
             AddNotification("Fish got away with bait");
+            SoundManager.Play(GlobalContent.FishGotAwaySound);
         }
 
         public void GoToNewDay()

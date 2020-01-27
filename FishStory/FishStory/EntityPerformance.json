@@ -45,6 +45,34 @@
           "Name": "BodyCollision"
         }
       ]
+    },
+    {
+      "Name": "Entities\\Exit",
+      "SelectedProperties": [],
+      "InstanceManagementValuesList": [
+        {
+          "SelectedProperties": [],
+          "Name": "CircleInstance"
+        }
+      ]
+    },
+    {
+      "Name": "Entities\\EmotiveIcon",
+      "SelectedProperties": [],
+      "InstanceManagementValuesList": [
+        {
+          "SelectedProperties": [],
+          "Name": "SpriteInstance"
+        },
+        {
+          "SelectedProperties": [],
+          "Name": "AppearAnimation"
+        },
+        {
+          "SelectedProperties": [],
+          "Name": "CycleAnimation"
+        }
+      ]
     }
   ]
 }
