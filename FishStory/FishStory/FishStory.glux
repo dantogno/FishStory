@@ -2844,6 +2844,16 @@
             <ValueAsFloat>0.5</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
+            <Type>FlatRedBall.Graphics.Animation.AnimationChainList</Type>
+            <Member>AnimationChains</Member>
+            <ValueAsString>LightSpriteAnimationChains</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>string</Type>
+            <Member>CurrentChainName</Member>
+            <ValueAsString>Star</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
             <Type>bool</Type>
             <Member>Visible</Member>
             <ValueAsBool>false</ValueAsBool>
@@ -2857,16 +2867,6 @@
             <Type>float</Type>
             <Member>Alpha</Member>
             <ValueAsFloat>1</ValueAsFloat>
-          </CustomProperty>
-          <CustomProperty>
-            <Type>FlatRedBall.Graphics.Animation.AnimationChainList</Type>
-            <Member>AnimationChains</Member>
-            <ValueAsString>LightSpriteAnimationChains</ValueAsString>
-          </CustomProperty>
-          <CustomProperty>
-            <Type>string</Type>
-            <Member>CurrentChainName</Member>
-            <ValueAsString>Star</ValueAsString>
           </CustomProperty>
           <Properties>
             <PropertySave>
@@ -4078,6 +4078,58 @@
         </PropertySave>
       </Properties>
       <Name>GlobalContent/Music/music_oriental_sunrise.mp3</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Properties>
+        <PropertySave>
+          <Name>UseContentPipeline</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
+      <Name>GlobalContent/Sounds/BlackMarketCloseSound.wav</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Properties>
+        <PropertySave>
+          <Name>UseContentPipeline</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
+      <Name>GlobalContent/Sounds/ItemDeselectedSound.wav</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Properties>
+        <PropertySave>
+          <Name>UseContentPipeline</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
+      <Name>GlobalContent/Sounds/ItemSelectedSound.wav</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Properties>
+        <PropertySave>
+          <Name>UseContentPipeline</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
+      <Name>GlobalContent/Sounds/StoreCloseSound.wav</Name>
       <IsSharedStatic>true</IsSharedStatic>
       <DestroyOnUnload>false</DestroyOnUnload>
       <HasPublicProperty>true</HasPublicProperty>

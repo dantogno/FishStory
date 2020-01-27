@@ -97,7 +97,13 @@ namespace FishStory.Managers
                 SoundEffectInstances.Add(soundEffect, instanceToPlay);
             }
             if (instanceToPlay.IsDisposed)
+            {
                 instanceToPlay = soundEffect.CreateInstance();
+            }
+            else if (instanceToPlay.State == SoundState.Playing)
+            {
+                return soundEffect.CreateInstance();
+            }
 
             return instanceToPlay;
         }

@@ -13,7 +13,7 @@ namespace FishStory.Managers
 {
     public static class MusicManager
     {
-        public const double DefaultMusicLevel = 100.0;
+        public const double DefaultMusicLevel = 80.0;
         private static double _musicVolumeLevel = DefaultMusicLevel;
         public static double MusicVolumeLevel
         {
@@ -22,9 +22,8 @@ namespace FishStory.Managers
             {
                 _musicVolumeLevel = value;
                 
-                //This is making music too quiet too quickly
-                //effectiveMusicVolumeLevel = getSmoothedVolumeLevel(_musicVolumeLevel);
-                effectiveMusicVolumeLevel = (float)value;
+                effectiveMusicVolumeLevel = getSmoothedVolumeLevel(_musicVolumeLevel);
+                //effectiveMusicVolumeLevel = (float)value;
 
                 MediaPlayer.Volume = effectiveMusicVolumeLevel;
             }

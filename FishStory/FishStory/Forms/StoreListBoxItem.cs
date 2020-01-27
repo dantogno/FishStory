@@ -1,4 +1,5 @@
 ﻿using FishStory.DataTypes;
+using FishStory.Managers;
 using Gum.Wireframe;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,19 @@ namespace FishStory.Forms
     {
         public StoreListBoxItem(GraphicalUiElement visual) : base(visual)
         {
+            Selected += HandleSelected;
+        }
 
+        private void HandleSelected(object sender, EventArgs e)
+        {
+            if (IsSelected)
+            {
+                SoundManager.Play(GlobalContent.ItemSelectedSound);
+            }
+            else
+            {
+                SoundManager.Play(GlobalContent.ItemDeselectedSound);
+            }
         }
 
         public override void UpdateToObject(object shopAsObject)

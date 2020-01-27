@@ -291,11 +291,11 @@ namespace FishStory.Screens
             PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.StoreInstance);
             if (GameScreenGum.InventoryInstance.CurrentViewOrSellState == InventoryRuntime.ViewOrSell.SellToStore)
             {
-                //Todo:  Store close sound
+                SoundManager.Play(GlobalContent.StoreCloseSound);
             }
             else if (GameScreenGum.InventoryInstance.CurrentViewOrSellState == InventoryRuntime.ViewOrSell.SellToBlackMarket)
             {
-                //Todo:  Black Market close sound
+                SoundManager.Play(GlobalContent.BlackMarketCloseSound);
             }
             UnpauseThisScreen();
         }
@@ -440,7 +440,7 @@ namespace FishStory.Screens
             if ((InGameDateTimeManager.TimeOfDay.Hours > HourOnClockSunSetsIn24H - 3 && InGameDateTimeManager.TimeOfDay.Hours < HourOnClockSunSetsIn24H))
             {
                 
-                MusicManager.MusicVolumeLevel = (minutesWhenSongMutes - (InGameDateTimeManager.TimeOfDay.Hours*60 + InGameDateTimeManager.TimeOfDay.Minutes))/ 180f;
+                MusicManager.MusicVolumeLevel = MusicManager.DefaultMusicLevel * (minutesWhenSongMutes - (InGameDateTimeManager.TimeOfDay.Hours*60 + InGameDateTimeManager.TimeOfDay.Minutes))/ 180f;
             }
             else if (MusicManager.MusicVolumeLevel != MusicManager.DefaultMusicLevel &&
                     InGameDateTimeManager.TimeOfDay.Hours < HourOnClockSunSetsIn24H && 

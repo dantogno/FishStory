@@ -364,6 +364,11 @@
       <Name>music_oriental_sunrise</Name>
       <Link>content\globalcontent\music\music_oriental_sunrise.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\blackmarketclosesound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BlackMarketCloseSound</Name>
+      <Link>content\globalcontent\sounds\blackmarketclosesound.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\blackmarketstoreopensound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlackMarketStoreOpenSound</Name>
@@ -409,6 +414,16 @@
       <Name>InventoryOpenSound</Name>
       <Link>content\globalcontent\sounds\inventoryopensound.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\itemdeselectedsound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ItemDeselectedSound</Name>
+      <Link>content\globalcontent\sounds\itemdeselectedsound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\itemselectedsound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ItemSelectedSound</Name>
+      <Link>content\globalcontent\sounds\itemselectedsound.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\menumovesound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>MenuMoveSound</Name>
@@ -453,6 +468,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>StoreBuySound</Name>
       <Link>content\globalcontent\sounds\storebuysound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\storeclosesound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>StoreCloseSound</Name>
+      <Link>content\globalcontent\sounds\storeclosesound.xnb</Link>
     </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\storeopensound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
