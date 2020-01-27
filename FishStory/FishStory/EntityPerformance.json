@@ -73,6 +73,24 @@
           "Name": "CycleAnimation"
         }
       ]
+    },
+    {
+      "Name": "Entities\\IntroFish",
+      "SelectedProperties": [],
+      "InstanceManagementValuesList": [
+        {
+          "SelectedProperties": [],
+          "Name": "FishSpriteInstance"
+        },
+        {
+          "SelectedProperties": [],
+          "Name": "CollisionCircle"
+        },
+        {
+          "SelectedProperties": [],
+          "Name": "ShadowSpriteInstance"
+        }
+      ]
     }
   ]
 }

@@ -1081,6 +1081,40 @@
         </NamedObjectSave>
       </NamedObjects>
     </ScreenSave>
+    <ScreenSave>
+      <Tags>
+        <string>GLUE</string>
+      </Tags>
+      <Source>GLUE</Source>
+      <Name>Screens\TitleScreen</Name>
+      <ReferencedFiles>
+        <ReferencedFileSave>
+          <Name>Levels/Underwater.tmx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.TileGraphics.LayeredTileMap</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+      </ReferencedFiles>
+      <NamedObjects>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
+          <SourceClassGenericType>Entities\IntroFish</SourceClassGenericType>
+          <InstanceName>FishList</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+      </NamedObjects>
+    </ScreenSave>
   </Screens>
   <Entities>
     <EntitySave>
@@ -1758,6 +1792,338 @@
       </CustomVariables>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <Name>Entities\FishingZone</Name>
+      <CreatedByOtherEntities>true</CreatedByOtherEntities>
+      <Is2D>true</Is2D>
+    </EntitySave>
+    <EntitySave>
+      <Tags>
+        <string>GLUE</string>
+      </Tags>
+      <Source>GLUE</Source>
+      <Properties>
+        <PropertySave>
+          <Name>ImplementsICollidable</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
+      <StateCategoryList>
+        <StateSaveCategory>
+          <States>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>FishSpriteInstanceAnimationChains</Member>
+                  <ValueAsString>RedFishAnimationChainList</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>Red</Name>
+            </StateSave>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>FishSpriteInstanceAnimationChains</Member>
+                  <ValueAsString>BlueFishAnimationChainList</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>Blue</Name>
+            </StateSave>
+          </States>
+          <ExcludedVariables />
+          <Name>FishColor</Name>
+          <SharesVariablesWithOtherCategories>false</SharesVariablesWithOtherCategories>
+        </StateSaveCategory>
+        <StateSaveCategory>
+          <States>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>FishSpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>SwimLeft</ValueAsString>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>ShadowSpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>SwimLeft</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>Left</Name>
+            </StateSave>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>FishSpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>SwimRight</ValueAsString>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>ShadowSpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>SwimRight</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>Right</Name>
+            </StateSave>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>FishSpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>SwimUp</ValueAsString>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>ShadowSpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>SwimUp</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>Up</Name>
+            </StateSave>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>FishSpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>SwimDown</ValueAsString>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>ShadowSpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>SwimDown</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>Down</Name>
+            </StateSave>
+          </States>
+          <ExcludedVariables />
+          <Name>SwimDirection</Name>
+          <SharesVariablesWithOtherCategories>false</SharesVariablesWithOtherCategories>
+        </StateSaveCategory>
+      </StateCategoryList>
+      <CustomVariables>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>X</Name>
+          <Type>float</Type>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>Y</Name>
+          <Type>float</Type>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>Z</Name>
+          <Type>float</Type>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>string</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>FishSpriteInstanceCurrentChainName</Name>
+          <Type>string</Type>
+          <DefaultValue xsi:type="xsd:string">SwimRight</DefaultValue>
+          <SourceObject>FishSpriteInstance</SourceObject>
+          <SourceObjectProperty>CurrentChainName</SourceObjectProperty>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>AnimationChainList</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>FishSpriteInstanceAnimationChains</Name>
+          <Type>AnimationChainList</Type>
+          <DefaultValue xsi:type="xsd:string">BlueFishAnimationChainList</DefaultValue>
+          <SourceObject>FishSpriteInstance</SourceObject>
+          <SourceObjectProperty>AnimationChains</SourceObjectProperty>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>string</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>ShadowSpriteInstanceCurrentChainName</Name>
+          <Type>string</Type>
+          <DefaultValue xsi:type="xsd:string">SwimRight</DefaultValue>
+          <SourceObject>ShadowSpriteInstance</SourceObject>
+          <SourceObjectProperty>CurrentChainName</SourceObjectProperty>
+        </CustomVariable>
+      </CustomVariables>
+      <ImplementsIVisible>true</ImplementsIVisible>
+      <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
+      <Name>Entities\IntroFish</Name>
+      <NamedObjects>
+        <NamedObjectSave>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>TextureScale</Member>
+            <ValueAsFloat>1</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>FlatRedBall.Graphics.Animation.AnimationChainList</Type>
+            <Member>AnimationChains</Member>
+            <ValueAsString>BlueFishAnimationChainList</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>string</Type>
+            <Member>CurrentChainName</Member>
+            <ValueAsString>SwimRight</ValueAsString>
+          </CustomProperty>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceClassType>Sprite</SourceClassType>
+          <InstanceName>FishSpriteInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>Radius</Member>
+            <ValueAsFloat>16</ValueAsFloat>
+          </CustomProperty>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceClassType>Circle</SourceClassType>
+          <InstanceName>CollisionCircle</InstanceName>
+          <HasPublicProperty>true</HasPublicProperty>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>TextureScale</Member>
+            <ValueAsFloat>1</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>Microsoft.Xna.Framework.Graphics.Texture2D</Type>
+            <Member>Texture</Member>
+            <ValueAsString>&lt;NONE&gt;</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>FlatRedBall.Graphics.Animation.AnimationChainList</Type>
+            <Member>AnimationChains</Member>
+            <ValueAsString>ShadowAnimationChainList</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>string</Type>
+            <Member>CurrentChainName</Member>
+            <ValueAsString>SwimRight</ValueAsString>
+          </CustomProperty>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>Sprite</SourceClassType>
+          <InstanceName>ShadowSpriteInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>TextureScale</Member>
+            <ValueAsFloat>1</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>Microsoft.Xna.Framework.Graphics.TextureAddressMode</Type>
+            <Member>TextureAddressMode</Member>
+            <ValueAsInt>2</ValueAsInt>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>FlatRedBall.Graphics.Animation.AnimationChainList</Type>
+            <Member>AnimationChains</Member>
+            <ValueAsString>BlueFishAnimationChainList</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>string</Type>
+            <Member>CurrentChainName</Member>
+            <ValueAsString>SwimRight</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>FlatRedBall.Graphics.BlendOperation</Type>
+            <Member>BlendOperation</Member>
+            <ValueAsInt>1</ValueAsInt>
+          </CustomProperty>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>Sprite</SourceClassType>
+          <InstanceName>FishLightSpriteInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+      </NamedObjects>
+      <ReferencedFiles>
+        <ReferencedFileSave>
+          <Name>Entities/IntroFish/ShadowAnimationChainList.achx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Entities/IntroFish/BlueFishAnimationChainList.achx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Entities/IntroFish/RedFishAnimationChainList.achx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+      </ReferencedFiles>
       <CreatedByOtherEntities>true</CreatedByOtherEntities>
       <Is2D>true</Is2D>
     </EntitySave>
@@ -4246,6 +4612,23 @@
         </PropertySave>
       </Properties>
       <Name>GlobalContent/Sounds/FishGotAwaySound.wav</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <DestroyOnUnload>false</DestroyOnUnload>
+      <HasPublicProperty>true</HasPublicProperty>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Properties>
+        <PropertySave>
+          <Name>Volume</Name>
+          <ValueAsInt>100</ValueAsInt>
+        </PropertySave>
+        <PropertySave>
+          <Name>UseContentPipeline</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
+      <Name>GlobalContent/Music/music_misty_woods_calling.mp3</Name>
       <IsSharedStatic>true</IsSharedStatic>
       <DestroyOnUnload>false</DestroyOnUnload>
       <HasPublicProperty>true</HasPublicProperty>

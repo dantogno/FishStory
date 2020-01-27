@@ -84,6 +84,10 @@
     <Compile Include="Entities\FishingZone.Generated.cs">
       <DependentUpon>FishingZone.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\IntroFish.cs" />
+    <Compile Include="Entities\IntroFish.Generated.cs">
+      <DependentUpon>IntroFish.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\NPC.cs" />
     <Compile Include="Entities\NPC.Generated.cs">
       <DependentUpon>NPC.cs</DependentUpon>
@@ -104,6 +108,7 @@
     <Compile Include="Entities\ShaderRenderer.Generated.cs">
       <DependentUpon>ShaderRenderer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Factories\IntroFishFactory.Generated.cs" />
     <Compile Include="GumRuntimes\DialoguePortraitRuntime.cs" />
     <Compile Include="GumRuntimes\DialoguePortraitRuntime.Generated.cs">
       <DependentUpon>DialoguePortraitRuntime.cs</DependentUpon>
@@ -267,6 +272,10 @@
     <Compile Include="Screens\MainLevel.Generated.cs">
       <DependentUpon>MainLevel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\TitleScreen.cs" />
+    <Compile Include="Screens\TitleScreen.Generated.cs">
+      <DependentUpon>TitleScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Setup\CameraSetup.cs" />
     <Compile Include="TileCollisions\CollidableListVsTileShapeCollectionRelationship.cs" />
     <Compile Include="TileCollisions\CollidableVsTileShapeCollectionRelationship.cs" />
@@ -353,6 +362,16 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>music_calm_tree_of_life</Name>
       <Link>content\globalcontent\music\music_calm_tree_of_life.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\music\music_misty_woods_calling.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>music_misty_woods_calling</Name>
+      <Link>content\globalcontent\music\music_misty_woods_calling.ogg</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\music\music_misty_woods_calling.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>music_misty_woods_calling</Name>
+      <Link>content\globalcontent\music\music_misty_woods_calling.xnb</Link>
     </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\music\music_oriental_sunrise.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -533,6 +552,18 @@
     <None Include="content\entities\exclamationicon\tiredicon.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TiredIcon</Name>
+    </None>
+    <None Include="content\entities\introfish\bluefishanimationchainlist.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BlueFishAnimationChainList</Name>
+    </None>
+    <None Include="content\entities\introfish\redfishanimationchainlist.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>RedFishAnimationChainList</Name>
+    </None>
+    <None Include="content\entities\introfish\shadowanimationchainlist.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ShadowAnimationChainList</Name>
     </None>
     <None Include="content\entities\npc\afrobeardjersey.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1361,6 +1392,10 @@
     <None Include="content\levels\town.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Town</Name>
+    </None>
+    <None Include="content\levels\underwater.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Underwater</Name>
     </None>
     <None Include="Libraries\DesktopGl\Debug\FlatRedBall.Forms.dll" />
     <None Include="Libraries\DesktopGl\Debug\GumCoreXnaPc.dll" />

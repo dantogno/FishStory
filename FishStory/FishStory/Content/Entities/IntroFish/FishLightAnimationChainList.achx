@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnimationChainArraySave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileRelativeTextures>true</FileRelativeTextures>
+  <TimeMeasurementUnit>Undefined</TimeMeasurementUnit>
+  <CoordinateType>Pixel</CoordinateType>
+  <AnimationChain>
+    <Name>Nova</Name>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>1355</LeftCoordinate>
+      <RightCoordinate>1483</RightCoordinate>
+      <TopCoordinate>1024</TopCoordinate>
+      <BottomCoordinate>1152</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Star</Name>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>1802</LeftCoordinate>
+      <RightCoordinate>2039</RightCoordinate>
+      <TopCoordinate>1039</TopCoordinate>
+      <BottomCoordinate>1276</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Sun</Name>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>1568</LeftCoordinate>
+      <RightCoordinate>1801</RightCoordinate>
+      <TopCoordinate>1046</TopCoordinate>
+      <BottomCoordinate>1279</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+</AnimationChainArraySave>
