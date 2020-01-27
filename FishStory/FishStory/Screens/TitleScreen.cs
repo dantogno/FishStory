@@ -12,6 +12,7 @@ using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
 using FlatRedBall.TileEntities;
+using FishStory.Managers;
 
 namespace FishStory.Screens
 {
@@ -36,6 +37,8 @@ namespace FishStory.Screens
             DarknessOverlaySprite.Texture = DarknessRenderTarget;
 
             DarknessOverlaySprite.BlendOperation = FlatRedBall.Graphics.BlendOperation.Modulate;
+
+            DarknessOverlaySprite.Alpha = 0.75f;
         }
 
         private void InitializeCamera()
@@ -44,7 +47,7 @@ namespace FishStory.Screens
             //Camera.Main.Y = PlayerCharacterInstance.Y;
 
             Camera.Main.SetBordersAtZ(Map.X, Map.Y - Map.Height, Map.X + Map.Width, Map.Y, 0);
-
+            Map.Z = -3;
             SpriteManager.OrderedSortType = FlatRedBall.Graphics.SortType.ZSecondaryParentY;
         }
 
@@ -65,6 +68,10 @@ namespace FishStory.Screens
         {
             HandleInputActivity();
 
+            if (MusicManager.IsSongPlaying == false)
+            {
+                MusicManager.PlaySong(GlobalContent.music_misty_woods_calling, forceRestart: true, shouldLoop: true);
+            }
         }
 
         private void HandleInputActivity()

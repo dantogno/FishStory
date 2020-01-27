@@ -217,6 +217,16 @@
    <property name="SolidCollision" value=""/>
   </properties>
  </tile>
+ <tile id="6693" type="IntroFish">
+  <properties>
+   <property name="CurrentFishColorState" value="Red"/>
+  </properties>
+ </tile>
+ <tile id="6699" type="IntroFish">
+  <properties>
+   <property name="CurrentFishColorState" value="Blue"/>
+  </properties>
+ </tile>
  <tile id="6706">
   <properties>
    <property name="WaterCollision" value=""/>

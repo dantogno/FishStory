@@ -1142,9 +1142,7 @@
           <SourceName>Entire File (LayeredTileMap)</SourceName>
           <SourceClassType>LayeredTileMap</SourceClassType>
           <InstanceName>Map</InstanceName>
-          <SetByDerived>true</SetByDerived>
           <AttachToContainer>true</AttachToContainer>
-          <AddToManagers>false</AddToManagers>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
@@ -1230,6 +1228,7 @@
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
+          <LayerOn>LightEffectsLayer</LayerOn>
         </NamedObjectSave>
         <NamedObjectSave>
           <Properties>
@@ -2004,6 +2003,11 @@
                   <Member>ShadowSpriteInstanceCurrentChainName</Member>
                   <ValueAsString>SwimLeft</ValueAsString>
                 </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>FishLightSpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>SwimLeft</ValueAsString>
+                </InstructionSave>
               </InstructionSaves>
               <Name>Left</Name>
             </StateSave>
@@ -2017,6 +2021,11 @@
                 <InstructionSave>
                   <Type>String</Type>
                   <Member>ShadowSpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>SwimRight</ValueAsString>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>FishLightSpriteInstanceCurrentChainName</Member>
                   <ValueAsString>SwimRight</ValueAsString>
                 </InstructionSave>
               </InstructionSaves>
@@ -2034,6 +2043,11 @@
                   <Member>ShadowSpriteInstanceCurrentChainName</Member>
                   <ValueAsString>SwimUp</ValueAsString>
                 </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>FishLightSpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>SwimUp</ValueAsString>
+                </InstructionSave>
               </InstructionSaves>
               <Name>Up</Name>
             </StateSave>
@@ -2047,6 +2061,11 @@
                 <InstructionSave>
                   <Type>String</Type>
                   <Member>ShadowSpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>SwimDown</ValueAsString>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>FishLightSpriteInstanceCurrentChainName</Member>
                   <ValueAsString>SwimDown</ValueAsString>
                 </InstructionSave>
               </InstructionSaves>
@@ -2128,6 +2147,19 @@
           <SourceObject>ShadowSpriteInstance</SourceObject>
           <SourceObjectProperty>CurrentChainName</SourceObjectProperty>
         </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>string</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>FishLightSpriteInstanceCurrentChainName</Name>
+          <Type>string</Type>
+          <DefaultValue xsi:type="xsd:string">SwimRight</DefaultValue>
+          <SourceObject>FishLightSpriteInstance</SourceObject>
+          <SourceObjectProperty>CurrentChainName</SourceObjectProperty>
+        </CustomVariable>
       </CustomVariables>
       <ImplementsIVisible>true</ImplementsIVisible>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
@@ -2166,7 +2198,7 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>Radius</Member>
-            <ValueAsFloat>16</ValueAsFloat>
+            <ValueAsFloat>8</ValueAsFloat>
           </CustomProperty>
           <Properties>
             <PropertySave>
@@ -2223,11 +2255,6 @@
             <Type>float</Type>
             <Member>TextureScale</Member>
             <ValueAsFloat>1</ValueAsFloat>
-          </CustomProperty>
-          <CustomProperty>
-            <Type>Microsoft.Xna.Framework.Graphics.TextureAddressMode</Type>
-            <Member>TextureAddressMode</Member>
-            <ValueAsInt>2</ValueAsInt>
           </CustomProperty>
           <CustomProperty>
             <Type>FlatRedBall.Graphics.Animation.AnimationChainList</Type>

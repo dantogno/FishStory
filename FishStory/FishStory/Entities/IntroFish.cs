@@ -27,10 +27,55 @@ namespace FishStory.Entities
             ShadowSpriteInstance.RelativeZ = -1;
         }
 
+        private double lastTimeChangedDirection = 3f;
         private void CustomActivity()
         {
+            if (lastTimeChangedDirection <= 0)
+            {
+                SwimAtRandom();
+                lastTimeChangedDirection = FlatRedBallServices.Random.Next(5, 8);
+            }
+            else
+            {
+                lastTimeChangedDirection -= TimeManager.SecondDifference;
+            }
 
+        }
 
+        private void SwimAtRandom()
+        {
+            var randomDirection = (int)FlatRedBallServices.Random.Next(0, 5);
+            var swimDirection = SwimDirection.Down;
+            switch (randomDirection)
+            {
+                case 0: swimDirection = SwimDirection.Down; break;
+                case 1: swimDirection = SwimDirection.Up; break;
+                case 2: swimDirection = SwimDirection.Left; break;
+                case 3: swimDirection = SwimDirection.Right; break;
+                default: swimDirection = SwimDirection.Down; break;
+            }
+            ChangeSwimDirection(swimDirection);
+        }
+
+        private void ChangeSwimDirection(SwimDirection direction)
+        {
+            CurrentSwimDirectionState = direction;
+            if (CurrentSwimDirectionState == SwimDirection.Down)
+            {
+                this.Velocity = new Microsoft.Xna.Framework.Vector3(0, -10, 0);
+            }
+            else if (CurrentSwimDirectionState == SwimDirection.Up)
+            {
+                this.Velocity = new Microsoft.Xna.Framework.Vector3(0, 10, 0); 
+            }
+            else if (CurrentSwimDirectionState == SwimDirection.Left)
+            {
+                this.Velocity = new Microsoft.Xna.Framework.Vector3(-10, 0, 0);
+            }
+            else if (CurrentSwimDirectionState == SwimDirection.Right)
+            {
+                this.Velocity = new Microsoft.Xna.Framework.Vector3(10, 0, 0); 
+            }        
         }
 
         private void CustomDestroy()
