@@ -174,6 +174,9 @@
   </properties>
  </tile>
  <tile id="6593">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
   <animation>
    <frame tileid="6593" duration="100"/>
    <frame tileid="6594" duration="100"/>
@@ -208,6 +211,11 @@
    <frame tileid="7113" duration="100"/>
    <frame tileid="7241" duration="100"/>
   </animation>
+ </tile>
+ <tile id="6605">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
  </tile>
  <tile id="6706">
   <properties>
@@ -248,6 +256,9 @@
   </properties>
  </tile>
  <tile id="6721">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
   <animation>
    <frame tileid="6721" duration="100"/>
    <frame tileid="6722" duration="100"/>
@@ -278,6 +289,11 @@
   </properties>
  </tile>
  <tile id="6732">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
+ </tile>
+ <tile id="6733">
   <properties>
    <property name="SolidCollision" value=""/>
   </properties>
@@ -321,6 +337,9 @@
   </properties>
  </tile>
  <tile id="6849">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
   <animation>
    <frame tileid="6849" duration="100"/>
    <frame tileid="6850" duration="100"/>
@@ -341,6 +360,9 @@
   </properties>
  </tile>
  <tile id="6977">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
   <animation>
    <frame tileid="6977" duration="100"/>
    <frame tileid="6978" duration="100"/>
@@ -375,6 +397,9 @@
   </animation>
  </tile>
  <tile id="7105">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
   <animation>
    <frame tileid="7105" duration="100"/>
    <frame tileid="7106" duration="100"/>
@@ -419,6 +444,9 @@
   </animation>
  </tile>
  <tile id="7233">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
   <animation>
    <frame tileid="7233" duration="100"/>
    <frame tileid="7234" duration="100"/>
@@ -438,7 +466,25 @@
    <property name="WaterCollision" value=""/>
   </properties>
  </tile>
+ <tile id="7242">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
+ </tile>
+ <tile id="7243">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
+ </tile>
+ <tile id="7244">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
+ </tile>
  <tile id="7361">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
   <animation>
    <frame tileid="7361" duration="100"/>
    <frame tileid="7362" duration="100"/>
@@ -468,6 +514,9 @@
   </animation>
  </tile>
  <tile id="7489">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
   <animation>
    <frame tileid="7489" duration="100"/>
    <frame tileid="7490" duration="100"/>
@@ -491,6 +540,9 @@
   </properties>
  </tile>
  <tile id="7617">
+  <properties>
+   <property name="SolidCollision" value=""/>
+  </properties>
   <animation>
    <frame tileid="7617" duration="100"/>
    <frame tileid="7618" duration="100"/>
