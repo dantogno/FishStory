@@ -1,109 +1,73 @@
 {
   "passages": [
     {
-      "text": "This is the dialog that is going to show\n[[Dialog option 1->Select1]]\n[[Dialog option 2->Select2]]\n[[Dialog option 3->Select3]]\n[[Dialog option 4->Option4]]",
+      "text": "Welcome back. [[Why won't you buy my fish?|Explanation]][[Sell]][[Leave]]",
       "links": [
         {
-          "name": "Dialog option 1",
-          "link": "Select1",
-          "pid": "2"
+          "name": "Why won't you buy my fish?|Explanation",
+          "link": "Why won't you buy my fish?|Explanation"
         },
         {
-          "name": "Dialog option 2",
-          "link": "Select2",
+          "name": "Sell",
+          "link": "Sell",
           "pid": "3"
         },
         {
-          "name": "Dialog option 3",
-          "link": "Select3",
-          "pid": "6"
-        },
-        {
-          "name": "Dialog option 4",
-          "link": "Option4",
-          "pid": "7"
+          "name": "Leave",
+          "link": "Leave",
+          "pid": "4"
         }
       ],
-      "name": "Start",
+      "name": "1",
       "pid": "1",
       "position": {
-        "x": "188",
-        "y": "67"
+        "x": "393",
+        "y": "338"
       }
     },
     {
-      "text": "Okay fine, you selected option 1, but what happens if you select more options?\n\n[[I don't know->OptSub1]]\n[[I know->OptSub2]]",
+      "text": "Plucking these riches from the sea takes a toll. By having the Church identify and catalog catches, we can repay the debt and ensure we don't take too greedily.[[Sell]] [[Leave]]",
       "links": [
         {
-          "name": "I don't know",
-          "link": "OptSub1",
-          "pid": "4"
+          "name": "Sell",
+          "link": "Sell",
+          "pid": "3"
         },
         {
-          "name": "I know",
-          "link": "OptSub2",
-          "pid": "5"
+          "name": "Leave",
+          "link": "Leave",
+          "pid": "4"
         }
       ],
-      "name": "Select1",
+      "name": "Explanation",
       "pid": "2",
       "position": {
-        "x": "42",
-        "y": "274"
+        "x": "243",
+        "y": "488"
       }
     },
     {
-      "text": "So you selected 2",
-      "name": "Select2",
+      "text": "sell=fishmonger",
+      "name": "Sell",
       "pid": "3",
       "position": {
-        "x": "326",
-        "y": "332"
+        "x": "415",
+        "y": "605"
       }
     },
     {
-      "text": "You selected 1, then sub 1",
-      "name": "OptSub1",
+      "text": "I look forward to your next catch.",
+      "name": "Leave",
       "pid": "4",
       "position": {
-        "x": "46",
-        "y": "482"
+        "x": "543",
+        "y": "488"
       }
-    },
-    {
-      "text": "This is the passage that I want to show, if you select 1, then 2",
-      "name": "OptSub2",
-      "pid": "5",
-      "position": {
-        "x": "190",
-        "y": "485"
-      }
-    },
-    {
-      "text": "You selected option 3",
-      "name": "Select3",
-      "pid": "6",
-      "position": {
-        "x": "206",
-        "y": "334"
-      }
-    },
-    {
-      "text": "This is what happens if you select option 4",
-      "name": "Option4",
-      "pid": "7",
-      "position": {
-        "x": "523",
-        "y": "223"
-      },
-      "tags": [
-        "Option4Tag"
-      ]
     }
   ],
-  "name": "MyStory1",
+  "name": "FishmongerDay1Brief",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.3.5",
-  "ifid": "FA970953-A69E-4C3B-A382-22974C50AC9B"
+  "creator-version": "2.2.1",
+  "ifid": "A1A3F8CE-9651-404A-B067-9FDDB9A1690E"
 }
