@@ -12,19 +12,22 @@
           "link": "Are you okay?|Okay"
         }
       ],
-      "name": "Untitled Passage",
+      "name": "Start",
       "pid": "1",
       "position": {
-        "x": "494.5",
+        "x": "494",
         "y": "435"
-      }
+      },
+      "tags": [
+        "HasSeenFishermanBaldDay2"
+      ]
     },
     {
       "text": "Pfft. Youbetterbe. Idon'tneednotroublefromyouoranyoneelse. AllIneedisfreshairandanicefishingspot. Andsomepeaceandquiet!",
       "name": "Passing through",
       "pid": "2",
       "position": {
-        "x": "419.5",
+        "x": "419",
         "y": "585"
       }
     },
@@ -43,7 +46,7 @@
       "name": "Okay",
       "pid": "3",
       "position": {
-        "x": "569.5",
+        "x": "569",
         "y": "585"
       }
     },
@@ -52,7 +55,7 @@
       "name": "Alright",
       "pid": "4",
       "position": {
-        "x": "570.5",
+        "x": "570",
         "y": "728"
       }
     },
@@ -61,7 +64,7 @@
       "name": "Stroke",
       "pid": "5",
       "position": {
-        "x": "720.5",
+        "x": "720",
         "y": "728"
       }
     }

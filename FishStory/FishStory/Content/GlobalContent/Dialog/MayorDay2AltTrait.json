@@ -172,7 +172,10 @@
       "position": {
         "x": "627",
         "y": "1505"
-      }
+      },
+      "tags": [
+        "HasSeenMayorDay2"
+      ]
     }
   ],
   "name": "MayorDay2AltFemale",

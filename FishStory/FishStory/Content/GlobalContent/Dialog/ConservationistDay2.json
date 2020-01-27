@@ -125,7 +125,10 @@
       "position": {
         "x": "442",
         "y": "1002"
-      }
+      },
+      "tags": [
+        "HasSeenConservationistDay2"
+      ]
     }
   ],
   "name": "ConservationistDay2",

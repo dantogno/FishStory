@@ -76,7 +76,10 @@
       "position": {
         "x": "376",
         "y": "1194"
-      }
+      },
+      "tags": [
+        "HasSeenFarmerDay2"
+      ]
     },
     {
       "text": "...\n[[continue2]]",

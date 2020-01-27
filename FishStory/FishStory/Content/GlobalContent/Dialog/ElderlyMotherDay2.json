@@ -16,7 +16,7 @@
       "pid": "1",
       "position": {
         "x": "554",
-        "y": "298.5"
+        "y": "298"
       }
     },
     {
@@ -32,7 +32,7 @@
       "pid": "2",
       "position": {
         "x": "479",
-        "y": "448.5"
+        "y": "448"
       }
     },
     {
@@ -48,7 +48,7 @@
       "pid": "3",
       "position": {
         "x": "629",
-        "y": "448.5"
+        "y": "448"
       }
     },
     {
@@ -67,16 +67,16 @@
       "pid": "4",
       "position": {
         "x": "299",
-        "y": "339.5"
+        "y": "339"
       }
     },
     {
-      "text": "Good day, dear. My the tides refrain from sweeping you away...",
+      "text": "Good day, dear. May the tides refrain from sweeping you away...",
       "name": "bye",
       "pid": "5",
       "position": {
-        "x": "282",
-        "y": "849.5"
+        "x": "205",
+        "y": "817"
       }
     },
     {
@@ -91,7 +91,7 @@
       "pid": "6",
       "position": {
         "x": "629",
-        "y": "598.5"
+        "y": "598"
       }
     },
     {
@@ -107,24 +107,26 @@
       "pid": "7",
       "position": {
         "x": "629",
-        "y": "748.5"
+        "y": "748"
       }
     },
     {
-      "text": "Well, it's been so wonderful to see you again, Ingrid. Do tell my mother that I miss her when you return.\n[[bye]] ",
+      "text": "Well, it's been so wonderful to see you again, Ingrid. Do tell my mother that I miss her when you return.\n[[Goodbye.|bye]] ",
       "links": [
         {
-          "name": "bye",
-          "link": "bye",
-          "pid": "5"
+          "name": "Goodbye.|bye",
+          "link": "Goodbye.|bye"
         }
       ],
       "name": "Continue3",
       "pid": "8",
       "position": {
         "x": "450",
-        "y": "754.5"
-      }
+        "y": "754"
+      },
+      "tags": [
+        "HasSeenElderlyMotherDay2"
+      ]
     }
   ],
   "name": "ElderlyMotherDay2",

@@ -253,7 +253,10 @@
       "position": {
         "x": "421",
         "y": "2001"
-      }
+      },
+      "tags": [
+        "HasSeenNunDay2"
+      ]
     }
   ],
   "name": "NunDay2AltMother",

@@ -43,7 +43,7 @@
       }
     },
     {
-      "text": "Ah, but of course I do. It is my duty to understand everything that goes on here, and I am afraid that I do not yet understand you. I do hope that I was not wrong to invite you into my town with such warmth.\n[[Continue]] ",
+      "text": "Ah, but of course it is. It is my duty to understand everything that goes on here, and I am afraid that I do not yet understand you. I do hope that I was not wrong to invite you into my town with such warmth.\n[[Continue]] ",
       "links": [
         {
           "name": "Continue",
@@ -54,8 +54,8 @@
       "name": "No business",
       "pid": "3",
       "position": {
-        "x": "694",
-        "y": "761"
+        "x": "691",
+        "y": "786"
       }
     },
     {
@@ -111,9 +111,12 @@
       "name": "Continue",
       "pid": "7",
       "position": {
-        "x": "366",
-        "y": "826"
-      }
+        "x": "372",
+        "y": "882"
+      },
+      "tags": [
+        "HasSeenPriestessDay2"
+      ]
     }
   ],
   "name": "PriestessDay2",
