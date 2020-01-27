@@ -4,29 +4,29 @@ Festival Badge,,,,,,0,"""The bearer of this badge may officially participate in 
 Festival Pamphlet,,,,,,0,"""Need bait? Stock up in the town square. Our vendors replenish their inventory daily. Caught a big one? Take it to the white tent in front of the church to have it officially recorded! To preserve our ecology and quality, only officially recorded fish can be sold to the fishmonger.""",,
 Trailer Key,,,,,,0,Mr. Petterson has loaned you the red trailer south of town square for the duration of the festival.,,
 // Unidentified objects,,,,,,,,,
-Small Fish,Ladyfish,,,,,4,,,
-Wriggling Creature,Giant Octopus,,,,,5,,,
-Small Wriggling Creature,Seahorse,,,,,6,,,
-Huge Shiny Fish,King Mackerel,,,,,7,,,
-Ugly Fish,Monkfish,,,,,8,,,
-Long Fish,Trumpetfish,,,,,9,,,
-Large Ugly Fish,Rougheye Rockfish,,,,,10,,,
-Small Brown Fish,Brown Rockfish,,,,,11,,,
-Huge Dark Fish,Cobia,,,,,12,,,
+Small Fish,Ladyfish,,,,,4,A small silvery fish.,,
+Wriggling Creature,Giant Octopus,,,,,5,It's large and has eight suction-cupped tentacles.,,
+Small Wriggling Creature,Seahorse,,,,,6,"It has a strange shape for a fish, with a curly tail and long mouth.",,
+Huge Strong Fish,King Mackerel,,,,,7,This thing takes two hands to carry.,,
+Ugly Fish,Monkfish,,,,,8,It has a big smooth head with a gaping mouth full of pointy teeth. Eeek!,,
+Long Yellow Fish,Trumpetfish,,,,,9,"It's bright yellow, long and tubular.",,
+Large Old Fish,Rougheye Rockfish,,,,,10,It's a large fish that looks pretty old...,,
+Small Brown Fish,Brown Rockfish,,,,,11,It has a distinct brown color.,,
+Huge Dark Fish,Cobia,,,,,12,It has a distinct dark color.,,
 Large Mean Fish,Shark,,,,,13,,,
-Small Odd Fish,Goatfish,,,,,14,,,
-Small Shelled Creature,Shrimp,,,,,15,,,
+Small Goateed Fish,Goatfish,,,,,14,"It has strange whiskers coming off of it's chin, like a goatee. ",,
+Small Shelled Creature,Shrimp,,,,,15,"A cute, small crustacean. ",,
 // Fishable items,,,,,,,,,
-Ladyfish,,,,true,0,20,Ladies. Eats sardine. Not that big.,Unidentified,PlayerCharacter
+Ladyfish,,,,true,0,20,A small silvery fish that women on the island enjoy. It prefers to eat sardines and blood worms.,Unidentified,PlayerCharacter
 ,,,,,,,,,Priestess
 ,,,,,,,,,Mayor
 ,,,,,,,,,ElderlyMother
 ,,,,,,,,,Nun
 ,,,,,,,,,TycoonDaughter
 ,,,,,,,,,Conservationist
-Giant Octopus,,,,true,,30,"Mother. hatches a ""super brood"" of 100,000 eggs that the mother guards for six months. shrimp, crabs, scallop, abalone, cockles, snails, clams, lobsters, fish, and other octopuses. Lays ",Unidentified,
-Seahorse,,,,true,,15,father. eat worm,Unidentified,
-King Mackerel,,,,true,,50,"Men. Big fish, sardine, bonito",Unidentified,FestivalCoordinator
+Giant Octopus,,,,true,,30,"The giant octopus hatches a ""super brood"" of 100,000 eggs that the mother guards for six months. It prefers to eat squid and occasionally sardines.",Unidentified,
+Seahorse,,,,true,,15,Seahorse fathers carry eggs in a pouch on their tale for up to 45 days. It prefers to eat blood worms and squid.,Unidentified,
+King Mackerel,,,,true,,50,A large fish popular for sport fishing. Men on the island love them. It prefers to eat little bonito.,Unidentified,FestivalCoordinator
 ,,,,,,,,,BlackMarketShop
 ,,,,,,,,,Identifier
 ,,,,,,,,,Fishmonger
@@ -37,17 +37,17 @@ King Mackerel,,,,true,,50,"Men. Big fish, sardine, bonito",Unidentified,Festival
 ,,,,,,,,,FishermanBald
 ,,,,,,,,,FishermanHair
 Monkfish,,,,true,,25,It's ugly and eats everything that fits in its gaping mouth. But it tastes great!,Unidentified,
-Trumpetfish,,,,true,,25,"This tubular fish has a golden, yellow color. It prefers tiny fish and squid.",Unidentified,
-Rougheye Rockfish,,,,true,,50,This large fish can live for over 200 years! It prefers small fish and squid.,Unidentified,
-Brown Rockfish,,,,true,,15,Brown. near dock / pier. worms and squid,Unidentified,
-Cobia,,,,true,,50,"Black. Large. Eats squid, bonito. Wrecks, harbours, buoys, reefs.",Unidentified,
+Trumpetfish,,,,true,,25,"This tubular fish has a golden, yellow color. It prefers to eat sardines and squid.",Unidentified,
+Rougheye Rockfish,,,,true,,50,This large fish can live for over 200 years! It prefers to eat little bonito and squid.,Unidentified,
+Brown Rockfish,,,,true,,15,Named for it's brown to auburn color. It prefers to eat worms and squid.,Unidentified,
+Cobia,,,,true,,50,A huge dark fish that prefers to eat little bonitio.,Unidentified,
 Shark,,,,true,,50,represents? eats bonito,Unidentified,
-Goatfish,,,,true,,15,"Facial hair. Reefs, shallow, worm and small fish. Use goatee-like barbel  to search for food",Unidentified,
-Shrimp,,,,true,,10,kids. eats blood worm,Unidentified,
+Goatfish,,,,true,,15,This fish uses its goatee-like barbels to search for food. It prefers to eat blood worms and sardines.,Unidentified,
+Shrimp,,,,true,,10,Small and cute. But also quite tasty! It prefers to eat blood worms and squid.,Unidentified,
 Plastic Trash,,,,,,5,Even in this remote place there's somehow trash in the ocean. What a shame.,Unidentified,
 Bone,,,,,,10,It looks like a bone of some sort. It's fairly large.,,
 Scrap of Cloth,,,,,,5,A piece of some old garment.,,
-Tarnished Pendant,,,,,,25,"It bears an inscription: ""To my love, Ingrid.""",,
+Tarnished Pendant,,,,,,25,"It bears an inscription: ""To my dear Ingrid.""",,
 // Bait,,,,,,,,,
 Blood Worm,,,true,,5,,These worms bleed when you skewer them onto a hook.,,
 Sardine,,,true,,10,,A tiny fish used to catch small and medium sized fish.,,

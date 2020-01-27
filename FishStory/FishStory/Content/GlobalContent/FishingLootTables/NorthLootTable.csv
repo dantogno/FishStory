@@ -1,4 +1,4 @@
 "FishName (string, required)",Blood Worm (int),Sardine (int),Squid (int),Little Bonito (int)
-Giant Octopus,0,2,5,2
-Shrimp,2,0,1,1
-Cobia,0,0,1,4
+Wriggling Creature,0,2,5,2
+Small Shelled Creature,2,0,1,1
+Huge Dark Fish,0,0,1,4

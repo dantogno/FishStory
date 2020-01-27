@@ -1,6 +1,6 @@
 "FishName (string, required)",Blood Worm (int),Sardine (int),Squid (int),Little Bonito (int)
-Seahorse,10,1,10,0
-Shrimp,5,1,5,0
+Small Wriggling Creature,10,1,10,0
+Small Shelled Creature,5,1,5,0
 Bone,0,1,0,1
 Plastic Trash,0,1,0,1
 Scrap of Cloth,0,1,0,1
