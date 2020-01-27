@@ -37,7 +37,11 @@ namespace FishStory.Entities
                 LightSpriteInstance.TextureScale = NormalizedLightRadius;
                 SpriteManager.AddToLayer(LightSpriteInstance, lightEffectLayer);
                 LightSpriteList.Add(LightSpriteInstance);
-                
+
+                if (CurrentPropNameState == PropName.StreetLight)
+                {
+                    LightSpriteInstance.RelativeY -= 16f;
+                }
 
                 if (CurrentPropNameState == PropName.TriStreetLight)
                 {
@@ -50,6 +54,8 @@ namespace FishStory.Entities
                     newLight1.AttachTo(this, false);
                     newLight2.AttachTo(this, false);
 
+                    SpriteManager.AddSprite(newLight1);
+                    SpriteManager.AddSprite(newLight2);
                     SpriteManager.AddToLayer(newLight1, lightEffectLayer);
                     SpriteManager.AddToLayer(newLight2, lightEffectLayer);
 
@@ -81,11 +87,6 @@ namespace FishStory.Entities
             {
                 CurrentLightStatusState = LightStatus.LightOff;
             }
-        }
-
-        public void SetLightBrightness(float requestedBrightness)
-        {
-            this.LightBrightness = requestedBrightness;
         }
 
         private void CustomDestroy()

@@ -634,6 +634,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Lantern</Name>
     </None>
+    <None Include="content\entities\propobject\lightspriteanimationchains.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>LightSpriteAnimationChains</Name>
+    </None>
     <None Include="content\entities\propobject\streetlight.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>StreetLight</Name>

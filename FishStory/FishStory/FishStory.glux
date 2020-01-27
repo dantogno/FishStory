@@ -2453,11 +2453,6 @@
                   <ValueAsBool>true</ValueAsBool>
                 </InstructionSave>
                 <InstructionSave>
-                  <Type>Single</Type>
-                  <Member>LightBrightness</Member>
-                  <ValueAsFloat>0.6</ValueAsFloat>
-                </InstructionSave>
-                <InstructionSave>
                   <Type>Boolean</Type>
                   <Member>SpriteInstanceVisible</Member>
                   <ValueAsBool>true</ValueAsBool>
@@ -2466,6 +2461,11 @@
                   <Type>Single</Type>
                   <Member>NormalizedLightRadius</Member>
                   <ValueAsFloat>0.7</ValueAsFloat>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>LightSpriteIntensity</Member>
+                  <ValueAsString>Star</ValueAsString>
                 </InstructionSave>
               </InstructionSaves>
               <Name>StreetLight</Name>
@@ -2488,11 +2488,6 @@
                   <ValueAsBool>true</ValueAsBool>
                 </InstructionSave>
                 <InstructionSave>
-                  <Type>Single</Type>
-                  <Member>LightBrightness</Member>
-                  <ValueAsFloat>0.5</ValueAsFloat>
-                </InstructionSave>
-                <InstructionSave>
                   <Type>Boolean</Type>
                   <Member>SpriteInstanceVisible</Member>
                   <ValueAsBool>true</ValueAsBool>
@@ -2501,6 +2496,11 @@
                   <Type>Single</Type>
                   <Member>NormalizedLightRadius</Member>
                   <ValueAsFloat>0.4</ValueAsFloat>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>LightSpriteIntensity</Member>
+                  <ValueAsString>Nova</ValueAsString>
                 </InstructionSave>
               </InstructionSaves>
               <Name>Lantern</Name>
@@ -2528,11 +2528,6 @@
                   <ValueAsBool>true</ValueAsBool>
                 </InstructionSave>
                 <InstructionSave>
-                  <Type>Single</Type>
-                  <Member>LightBrightness</Member>
-                  <ValueAsFloat>0.8</ValueAsFloat>
-                </InstructionSave>
-                <InstructionSave>
                   <Type>Boolean</Type>
                   <Member>SpriteInstanceVisible</Member>
                   <ValueAsBool>true</ValueAsBool>
@@ -2541,6 +2536,11 @@
                   <Type>Single</Type>
                   <Member>NormalizedLightRadius</Member>
                   <ValueAsFloat>1</ValueAsFloat>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>LightSpriteIntensity</Member>
+                  <ValueAsString>Sun</ValueAsString>
                 </InstructionSave>
               </InstructionSaves>
               <Name>TriStreetLight</Name>
@@ -2585,6 +2585,43 @@
           </States>
           <ExcludedVariables />
           <Name>LightStatus</Name>
+          <SharesVariablesWithOtherCategories>false</SharesVariablesWithOtherCategories>
+        </StateSaveCategory>
+        <StateSaveCategory>
+          <States>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>LightSpriteIntensity</Member>
+                  <ValueAsString>Nova</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>Nova</Name>
+            </StateSave>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>LightSpriteIntensity</Member>
+                  <ValueAsString>Star</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>Star</Name>
+            </StateSave>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>LightSpriteIntensity</Member>
+                  <ValueAsString>Sun</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>Sun</Name>
+            </StateSave>
+          </States>
+          <ExcludedVariables />
+          <Name>LightIntensity</Name>
           <SharesVariablesWithOtherCategories>false</SharesVariablesWithOtherCategories>
         </StateSaveCategory>
       </StateCategoryList>
@@ -2696,19 +2733,6 @@
           <Properties>
             <PropertySave>
               <Name>Type</Name>
-              <ValueAsString>float</ValueAsString>
-            </PropertySave>
-          </Properties>
-          <Name>LightBrightness</Name>
-          <Type>float</Type>
-          <DefaultValue xsi:type="xsd:float">1</DefaultValue>
-          <SourceObject>LightSpriteInstance</SourceObject>
-          <SourceObjectProperty>Alpha</SourceObjectProperty>
-        </CustomVariable>
-        <CustomVariable>
-          <Properties>
-            <PropertySave>
-              <Name>Type</Name>
               <ValueAsString>bool</ValueAsString>
             </PropertySave>
           </Properties>
@@ -2741,6 +2765,19 @@
           <Name>NormalizedLightRadius</Name>
           <Type>float</Type>
           <DefaultValue xsi:type="xsd:float">1</DefaultValue>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>string</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>LightSpriteIntensity</Name>
+          <Type>string</Type>
+          <DefaultValue xsi:type="xsd:string">Star</DefaultValue>
+          <SourceObject>LightSpriteInstance</SourceObject>
+          <SourceObjectProperty>CurrentChainName</SourceObjectProperty>
         </CustomVariable>
       </CustomVariables>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
@@ -2821,6 +2858,16 @@
             <Member>Alpha</Member>
             <ValueAsFloat>1</ValueAsFloat>
           </CustomProperty>
+          <CustomProperty>
+            <Type>FlatRedBall.Graphics.Animation.AnimationChainList</Type>
+            <Member>AnimationChains</Member>
+            <ValueAsString>LightSpriteAnimationChains</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>string</Type>
+            <Member>CurrentChainName</Member>
+            <ValueAsString>Star</ValueAsString>
+          </CustomProperty>
           <Properties>
             <PropertySave>
               <Name>SourceType</Name>
@@ -2881,6 +2928,12 @@
         </ReferencedFileSave>
         <ReferencedFileSave>
           <Name>Entities/PropObject/TriStreetLight.achx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Entities/PropObject/LightSpriteAnimationChains.achx</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
           <ProjectsToExcludeFrom />

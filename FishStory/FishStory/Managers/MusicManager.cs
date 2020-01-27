@@ -21,7 +21,11 @@ namespace FishStory.Managers
             set
             {
                 _musicVolumeLevel = value;
-                effectiveMusicVolumeLevel = getSmoothedVolumeLevel(_musicVolumeLevel);
+                
+                //This is making music too quiet too quickly
+                //effectiveMusicVolumeLevel = getSmoothedVolumeLevel(_musicVolumeLevel);
+                effectiveMusicVolumeLevel = (float)value;
+
                 MediaPlayer.Volume = effectiveMusicVolumeLevel;
             }
         }
