@@ -558,7 +558,7 @@ namespace FishStory.Screens
                     var hasIdentifiedAny = identifiedDictionary.Values.Any(item => item > 0);
                     if(!hasIdentifiedAny)
                     {
-                        text = "No fish identified";
+                        AddNotification("You have nothing to identify.");
                     }
                     else
                     {
@@ -567,10 +567,10 @@ namespace FishStory.Screens
                         {
                             text += $"\n{kvp.Key} {kvp.Value}";
                         }
+                        var rootObject = GetRootObject(text, new List<string>());
+                        DialogBox.TryShow(rootObject);
+                        PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                     }
-                    var rootObject = GetRootObject(text, new List<string>());
-                    DialogBox.TryShow(rootObject);
-                    PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                 }
             }
 
@@ -970,6 +970,10 @@ namespace FishStory.Screens
             foreach(var newItemKvp in newItemCounts)
             {
                 AddNotification($"Identified {newItemKvp.Key} ({newItemKvp.Value})");
+            }
+            if (newItemCounts.Any() == false)
+            {
+                AddNotification("You have nothing to identify.");
             }
             SoundManager.Play(GlobalContent.FishIdentificationSound);
         }
