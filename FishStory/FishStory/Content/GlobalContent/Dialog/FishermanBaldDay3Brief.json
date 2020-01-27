@@ -1,18 +1,18 @@
 {
   "passages": [
     {
-      "text": "Can't you hear me?! LEAVE ME ALONE!",
+      "text": "Isuredolovethemfishys...",
       "name": "Start",
       "pid": "1",
       "position": {
-        "x": "584",
-        "y": "672"
+        "x": "533.5",
+        "y": "690"
       }
     }
   ],
-  "name": "FishermanHairDay2Brief",
+  "name": "FishermanBaldDay3Brief",
   "startnode": "1",
   "creator": "Twine",
   "creator-version": "2.3.5",
-  "ifid": "95EB23F2-5A7D-442E-B7FE-0F276551829E"
+  "ifid": "30BE211C-0B0B-46DD-ABC1-DF7CB27F859A"
 }

@@ -235,7 +235,10 @@
       "position": {
         "x": "379",
         "y": "1548"
-      }
+      },
+      "tags": [
+        "HasSeenFarmerDay2"
+      ]
     }
   ],
   "name": "FarmerDay2AltYoung",

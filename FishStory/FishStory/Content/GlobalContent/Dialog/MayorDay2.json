@@ -125,7 +125,10 @@
       "position": {
         "x": "627",
         "y": "1205"
-      }
+      },
+      "tags": [
+        "HasSeenMayorDay2"
+      ]
     },
     {
       "text": "We coexist with the sea, living off of its generosity. Then when it is time, we return the favor, and give something back. It is an important gesture... even if what we give ends up being something we don't want to lose.\n[[I'm going to get back to fishing.|bye]]",

@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "All I need is some peace and quiet, and then I'll be the best fisher in the world! I'm sure of it!",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "533.5",
+        "y": "690"
+      }
+    }
+  ],
+  "name": "FishermanHairDay3Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "9C3F930B-78EE-452F-8010-41ACE5327D54"
+}
