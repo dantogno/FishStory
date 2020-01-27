@@ -8,6 +8,7 @@ using FlatRedBall.AI.Pathfinding;
 using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
+using FlatRedBall.Graphics;
 
 namespace FishStory.Entities
 {
@@ -20,8 +21,10 @@ namespace FishStory.Entities
         /// </summary>
         private void CustomInitialize()
         {
-
-
+            this.RelativeZ += 1;
+            
+            ShadowSpriteInstance.RelativeY += 48;
+            ShadowSpriteInstance.RelativeZ = -1;
         }
 
         private void CustomActivity()
@@ -40,6 +43,13 @@ namespace FishStory.Entities
         {
 
 
+        }
+
+        public void SetLayers(Layer lightEffectLayer)
+        {
+            //FishLightSpriteInstance.TextureScale = NormalizedLightRadius;
+
+            SpriteManager.AddToLayer(FishLightSpriteInstance, lightEffectLayer);
         }
     }
 }
