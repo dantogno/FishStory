@@ -686,7 +686,19 @@ namespace FishStory.Screens
                     throw new Exception($"The loot table {collidedFishingZone.LootTable} either doesn't exist or it doesn't use FishingLootTable created class");
                 }
             }
-
+            // David: I'm putting some "temp" (maybe?) code in here to address 
+            // https://github.com/dantogno/FishStory/issues/135
+            switch (baitType)
+            {
+                case ItemDefinition.Blood_Worm:
+                    baitType = "BloodWorm";
+                    break;
+                case ItemDefinition.Little_Bonito:
+                    baitType = "LittleBonito";
+                    break;
+                default:
+                    break;
+            }
             var field = typeof(FishingLootTable).GetField(baitType);
 
             if(field == null)
@@ -1119,7 +1131,10 @@ namespace FishStory.Screens
         #endregion
 
         #region Script-helping methods
-
+        public void RemoveTag(string tag)
+        {
+            dialogTagsThisFrame.Remove(tag);
+        }
         public bool HasTag(string tag) =>
             dialogTagsThisFrame.Contains(tag);
 
