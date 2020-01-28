@@ -116,6 +116,8 @@
     <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs">
       <DependentUpon>InventoryRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\TitleScreenGumRuntime.cs" />
+    <Compile Include="GumRuntimes\TitleScreenGumRuntime.Generated.cs" />
     <Compile Include="Managers\InGameDateTimeManager.cs" />
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\FishIdentifiedSignFactory.Generated.cs" />
@@ -556,6 +558,10 @@
     <None Include="content\entities\introfish\bluefishanimationchainlist.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlueFishAnimationChainList</Name>
+    </None>
+    <None Include="content\entities\introfish\fishlightanimationchinalist.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishLightAnimationChinaList</Name>
     </None>
     <None Include="content\entities\introfish\redfishanimationchainlist.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1273,6 +1279,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>storeclosebutton</Name>
     </None>
+    <None Include="content\gumproject\fontcache\font10casual_encounter.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font10casual_encounter</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font10casual_encounter_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font10Casual_Encounter_0</Name>
+    </None>
     <None Include="content\gumproject\fontcache\font10casual_encounter_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>font10casual_encounter_o1</Name>
@@ -1297,6 +1311,22 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18Arial_0</Name>
     </None>
+    <None Include="content\gumproject\fontcache\font36star_perv.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font36star_perv</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font36star_perv_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Star_Perv_0</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font48wizard's_manse.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font48wizard's_manse</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font48wizard's_manse_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font48Wizard's_Manse_0</Name>
+    </None>
     <None Include="content\gumproject\gumproject.gumx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GumProject</Name>
@@ -1304,6 +1334,10 @@
     <None Include="content\gumproject\screens\gamescreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>gamescreengum</Name>
+    </None>
+    <None Include="content\gumproject\screens\titlescreengum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TitleScreenGum</Name>
     </None>
     <None Include="content\gumproject\standards\circle.gutx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

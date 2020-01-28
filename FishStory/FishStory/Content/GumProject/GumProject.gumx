@@ -12,6 +12,10 @@
     <Name>GameScreenGum</Name>
     <ElementType>Screen</ElementType>
   </ScreenReference>
+  <ScreenReference>
+    <Name>TitleScreenGum</Name>
+    <ElementType>Screen</ElementType>
+  </ScreenReference>
   <ComponentReference>
     <Name>ActionIndicator</Name>
     <ElementType>Component</ElementType>

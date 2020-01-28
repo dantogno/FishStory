@@ -23,10 +23,9 @@ namespace FishStory.Entities
         {
             //this.RelativeZ += 1;
             
-            ShadowSpriteInstance.RelativeY += 48;
+            ShadowSpriteInstance.RelativeY += 72;
             //ShadowSpriteInstance.RelativeZ = -1;
-            FishLightSpriteInstance.Alpha = 0.2f;
-            ShadowSpriteInstance.Alpha = 0.5f;
+
             SwimAtRandom();
         }
 
@@ -36,13 +35,48 @@ namespace FishStory.Entities
             if (lastTimeChangedDirection <= 0)
             {
                 SwimAtRandom();
-                lastTimeChangedDirection = FlatRedBallServices.Random.Next(5, 8);
+                lastTimeChangedDirection = FlatRedBallServices.Random.Next(2, 6);
+            }
+            else if (IsOnScreen() == false)
+            {
+                SwimTowardsScreen();
             }
             else
             {
                 lastTimeChangedDirection -= TimeManager.SecondDifference;
             }
+        }
 
+        public bool IsOnScreen()
+        {
+            var camera = Camera.Main;
+            var isOffScreen = FishSpriteInstance.X > camera.X + camera.OrthogonalWidth / 2 + FishSpriteInstance.Width / 2 ||
+                FishSpriteInstance.X < camera.X - camera.OrthogonalWidth / 2 - FishSpriteInstance.Width / 2 ||
+                FishSpriteInstance.Y > camera.Y + camera.OrthogonalHeight / 2 + FishSpriteInstance.Height / 2 ||
+                FishSpriteInstance.Y < camera.Y - camera.OrthogonalHeight / 2 - FishSpriteInstance.Height / 2;
+            return !isOffScreen;
+        }
+
+        private void SwimTowardsScreen()
+        {
+            var camera = Camera.Main;
+            if (FishSpriteInstance.X > camera.X + camera.OrthogonalWidth / 2 + FishSpriteInstance.Width / 2)
+            {
+                ChangeSwimDirection(SwimDirection.Left);
+            }
+            else if (FishSpriteInstance.X < camera.X - camera.OrthogonalWidth / 2 - FishSpriteInstance.Width / 2)
+            {
+                ChangeSwimDirection(SwimDirection.Right);
+            }
+            else if (FishSpriteInstance.Y > camera.Y + camera.OrthogonalHeight / 2 + FishSpriteInstance.Height / 2)
+            {
+                ChangeSwimDirection(SwimDirection.Down);
+            }
+            else if (FishSpriteInstance.Y < camera.Y - camera.OrthogonalHeight / 2 - FishSpriteInstance.Height / 2)
+            {
+                ChangeSwimDirection(SwimDirection.Up);
+            }
+            lastTimeChangedDirection = FlatRedBallServices.Random.Next(5, 8);
         }
 
         private void SwimAtRandom()
@@ -58,6 +92,7 @@ namespace FishStory.Entities
                 default: swimDirection = SwimDirection.Down; break;
             }
             ChangeSwimDirection(swimDirection);
+            Drag = 0.2f;
         }
 
         private void ChangeSwimDirection(SwimDirection direction)
@@ -65,19 +100,19 @@ namespace FishStory.Entities
             CurrentSwimDirectionState = direction;
             if (CurrentSwimDirectionState == SwimDirection.Down)
             {
-                this.Velocity = new Microsoft.Xna.Framework.Vector3(0, -10, 0);
+                this.Acceleration = new Microsoft.Xna.Framework.Vector3(0, -15, 0);
             }
             else if (CurrentSwimDirectionState == SwimDirection.Up)
             {
-                this.Velocity = new Microsoft.Xna.Framework.Vector3(0, 10, 0); 
+                this.Acceleration = new Microsoft.Xna.Framework.Vector3(0, 15, 0); 
             }
             else if (CurrentSwimDirectionState == SwimDirection.Left)
             {
-                this.Velocity = new Microsoft.Xna.Framework.Vector3(-10, 0, 0);
+                this.Acceleration = new Microsoft.Xna.Framework.Vector3(-15, 0, 0);
             }
             else if (CurrentSwimDirectionState == SwimDirection.Right)
             {
-                this.Velocity = new Microsoft.Xna.Framework.Vector3(10, 0, 0); 
+                this.Acceleration = new Microsoft.Xna.Framework.Vector3(15, 0, 0); 
             }        
         }
 

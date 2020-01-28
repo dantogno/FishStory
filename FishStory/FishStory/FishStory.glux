@@ -1110,6 +1110,12 @@
           <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>GumProject/Screens/TitleScreenGum.gusx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FishStory.GumRuntimes.TitleScreenGumRuntime</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
       </ReferencedFiles>
       <NamedObjects>
         <NamedObjectSave>
@@ -1304,27 +1310,10 @@
         </NamedObjectSave>
         <NamedObjectSave>
           <CustomProperty>
-            <Type>string</Type>
-            <Member>Text</Member>
-            <ValueAsString>Ensomme Fishing Festival</ValueAsString>
+            <Type>float</Type>
+            <Member>TextureScale</Member>
+            <ValueAsFloat>1</ValueAsFloat>
           </CustomProperty>
-          <Properties>
-            <PropertySave>
-              <Name>SourceType</Name>
-              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
-            </PropertySave>
-          </Properties>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceFile />
-          <SourceName />
-          <SourceClassType>TextRuntime</SourceClassType>
-          <InstanceName>TextRuntimeInstance</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>true</IndependentOfCamera>
-          <LayerOn>LightEffectsLayer</LayerOn>
-        </NamedObjectSave>
-        <NamedObjectSave>
           <CustomProperty>
             <Type>FlatRedBall.Graphics.Animation.AnimationChainList</Type>
             <Member>AnimationChains</Member>
@@ -1334,11 +1323,6 @@
             <Type>string</Type>
             <Member>CurrentChainName</Member>
             <ValueAsString>CausticWaves</ValueAsString>
-          </CustomProperty>
-          <CustomProperty>
-            <Type>float</Type>
-            <Member>TextureScale</Member>
-            <ValueAsFloat>1</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>FlatRedBall.Graphics.ColorOperation</Type>
@@ -1361,6 +1345,23 @@
           <SourceName />
           <SourceClassType>Sprite</SourceClassType>
           <InstanceName>WaterEffectSprite</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">FlatRedBallType</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
+          <SourceClassGenericType>FlatRedBall.Sprite</SourceClassGenericType>
+          <InstanceName>WaterCausticSpriteList</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -2068,6 +2069,11 @@
                   <Member>FishSpriteInstanceAnimationChains</Member>
                   <ValueAsString>RedFishAnimationChainList</ValueAsString>
                 </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>FishLightSpriteInstanceAnimationChains</Member>
+                  <ValueAsString>RedFishAnimationChainList</ValueAsString>
+                </InstructionSave>
               </InstructionSaves>
               <Name>Red</Name>
             </StateSave>
@@ -2076,6 +2082,11 @@
                 <InstructionSave>
                   <Type>String</Type>
                   <Member>FishSpriteInstanceAnimationChains</Member>
+                  <ValueAsString>BlueFishAnimationChainList</ValueAsString>
+                </InstructionSave>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>FishLightSpriteInstanceAnimationChains</Member>
                   <ValueAsString>BlueFishAnimationChainList</ValueAsString>
                 </InstructionSave>
               </InstructionSaves>
@@ -2257,6 +2268,18 @@
           <SourceObject>FishLightSpriteInstance</SourceObject>
           <SourceObjectProperty>CurrentChainName</SourceObjectProperty>
         </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>AnimationChainList</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>FishLightSpriteInstanceAnimationChains</Name>
+          <Type>AnimationChainList</Type>
+          <SourceObject>FishLightSpriteInstance</SourceObject>
+          <SourceObjectProperty>AnimationChains</SourceObjectProperty>
+        </CustomVariable>
       </CustomVariables>
       <ImplementsIVisible>true</ImplementsIVisible>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
@@ -2297,6 +2320,11 @@
             <Member>Radius</Member>
             <ValueAsFloat>8</ValueAsFloat>
           </CustomProperty>
+          <CustomProperty>
+            <Type>bool</Type>
+            <Member>Visible</Member>
+            <ValueAsBool>false</ValueAsBool>
+          </CustomProperty>
           <Properties>
             <PropertySave>
               <Name>SourceType</Name>
@@ -2331,6 +2359,11 @@
             <Type>string</Type>
             <Member>CurrentChainName</Member>
             <ValueAsString>SwimRight</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>FlatRedBall.Graphics.BlendOperation</Type>
+            <Member>BlendOperation</Member>
+            <ValueAsInt>2</ValueAsInt>
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
@@ -2369,6 +2402,11 @@
             <ValueAsString>SwimRight</ValueAsString>
           </CustomProperty>
           <CustomProperty>
+            <Type>FlatRedBall.Graphics.ColorOperation</Type>
+            <Member>ColorOperation</Member>
+            <ValueAsInt>1</ValueAsInt>
+          </CustomProperty>
+          <CustomProperty>
             <Type>FlatRedBall.Graphics.BlendOperation</Type>
             <Member>BlendOperation</Member>
             <ValueAsInt>1</ValueAsInt>
@@ -2377,11 +2415,6 @@
             <Type>float</Type>
             <Member>Alpha</Member>
             <ValueAsFloat>0.5</ValueAsFloat>
-          </CustomProperty>
-          <CustomProperty>
-            <Type>FlatRedBall.Graphics.ColorOperation</Type>
-            <Member>ColorOperation</Member>
-            <ValueAsInt>1</ValueAsInt>
           </CustomProperty>
           <Properties>
             <PropertySave>
@@ -2414,6 +2447,12 @@
         </ReferencedFileSave>
         <ReferencedFileSave>
           <Name>Entities/IntroFish/RedFishAnimationChainList.achx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Entities/IntroFish/FishLightAnimationChinaList.achx</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
           <ProjectsToExcludeFrom />
@@ -4962,7 +5001,7 @@
     <RecordLockContention>false</RecordLockContention>
   </GlobalContentSettingsSave>
   <SyncedProjects />
-  <StartUpScreen>Screens\MainLevel</StartUpScreen>
+  <StartUpScreen>Screens\TitleScreen</StartUpScreen>
   <ResolutionPresets />
   <PerformanceSettingsSave>
     <ThrowExceptionOnPostInitializeContentLoad>false</ThrowExceptionOnPostInitializeContentLoad>

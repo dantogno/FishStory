@@ -22,6 +22,7 @@ namespace FishStory.Screens
         void CustomInitialize()
         {
             InitializeEntitiesFromMap();
+            
             InitializeCamera();
 
             //InitializeCollision();
@@ -29,6 +30,8 @@ namespace FishStory.Screens
             InitializeDarkness();
 
             InitializeWaterCaustics();
+
+            TitleScreenGum.IntroAnimationAnimation.Play();
         }
 
         private void InitializeDarkness()
@@ -37,10 +40,12 @@ namespace FishStory.Screens
 
             LightEffectsLayer.RenderTarget = DarknessRenderTarget;
             DarknessOverlaySprite.Texture = DarknessRenderTarget;
-
+            DarknessOverlaySprite.Red = 0f;
+            DarknessOverlaySprite.Green = 0.5f;
+            DarknessOverlaySprite.Blue = 1.0f;
             DarknessOverlaySprite.BlendOperation = FlatRedBall.Graphics.BlendOperation.Modulate;
 
-            DarknessOverlaySprite.Alpha = 0.75f;
+            DarknessOverlaySprite.Alpha = 0.65f;
         }
 
         private void InitializeWaterCaustics()
@@ -61,6 +66,7 @@ namespace FishStory.Screens
 
                     SpriteManager.AddSprite(newWaterSprite);
                     SpriteManager.AddToLayer(newWaterSprite, WaterEffectLayer);
+                    WaterCausticSpriteList.Add(newWaterSprite);
                 }
             }
 
@@ -102,20 +108,36 @@ namespace FishStory.Screens
 
         private void HandleInputActivity()
         {
-            //if (FlatRedBall.Input.InputManager.Xbox360GamePads[0].IsConnected)
-            //{
-            //    FlatRedBall.Input.InputManager.Xbox360GamePads[0];
-            //}
-            //else
-            //{
-            //    FlatRedBall.Input.InputManager.Keyboard;
-            //}
+            if (InputManager.Xbox360GamePads[0].IsConnected && 
+                    (InputManager.Xbox360GamePads[0].ButtonDown(Xbox360GamePad.Button.A) ||
+                    InputManager.Xbox360GamePads[0].ButtonDown(Xbox360GamePad.Button.X) ||
+                    InputManager.Xbox360GamePads[0].ButtonDown(Xbox360GamePad.Button.B) ||
+                     InputManager.Xbox360GamePads[0].ButtonDown(Xbox360GamePad.Button.Start))
+                )
+            {
+                MoveToScreen(nameof(MainLevel));
+            }
+            else if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space) ||
+                    InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Enter) ||
+                    InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Escape) ||
+                    InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.W) ||
+                    InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.A) ||
+                    InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.D) ||
+                    InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.S))
+            {
+                MoveToScreen(nameof(MainLevel));
+            }
         }
 
 
         void CustomDestroy()
         {
-
+            var spriteCount = WaterCausticSpriteList.Count;
+            for (var i = spriteCount - 1; i >= 0; i--)
+            {
+                var spriteToRemove = WaterCausticSpriteList[i];
+                SpriteManager.RemoveSprite(spriteToRemove);
+            }
 
         }
 
