@@ -27,6 +27,8 @@ namespace FishStory.Screens
             //InitializeCollision();
 
             InitializeDarkness();
+
+            InitializeWaterCaustics();
         }
 
         private void InitializeDarkness()
@@ -39,6 +41,30 @@ namespace FishStory.Screens
             DarknessOverlaySprite.BlendOperation = FlatRedBall.Graphics.BlendOperation.Modulate;
 
             DarknessOverlaySprite.Alpha = 0.75f;
+        }
+
+        private void InitializeWaterCaustics()
+        {
+            var waterEffectSpriteWidth = 256;
+            var waterEffectSpriteHeight = 256;
+            var cameraWidth = Camera.Main.OrthogonalWidth;
+            var cameraHeight = Camera.Main.OrthogonalHeight;
+
+            for (var x = 0; x < cameraWidth; x += waterEffectSpriteWidth)
+            {
+                for (var y = 0; y < cameraHeight+waterEffectSpriteHeight; y+= waterEffectSpriteHeight)
+                {
+                    var newWaterSprite = WaterEffectSprite.Clone();
+                    newWaterSprite.X = WaterEffectSprite.X + x;
+                    newWaterSprite.Y = WaterEffectSprite.Y - y;
+                    newWaterSprite.Alpha = 0.35f;
+
+                    SpriteManager.AddSprite(newWaterSprite);
+                    SpriteManager.AddToLayer(newWaterSprite, WaterEffectLayer);
+                }
+            }
+
+            WaterEffectSprite.Visible = false;
         }
 
         private void InitializeCamera()

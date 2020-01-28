@@ -21,10 +21,13 @@ namespace FishStory.Entities
         /// </summary>
         private void CustomInitialize()
         {
-            this.RelativeZ += 1;
+            //this.RelativeZ += 1;
             
             ShadowSpriteInstance.RelativeY += 48;
-            ShadowSpriteInstance.RelativeZ = -1;
+            //ShadowSpriteInstance.RelativeZ = -1;
+            FishLightSpriteInstance.Alpha = 0.2f;
+            ShadowSpriteInstance.Alpha = 0.5f;
+            SwimAtRandom();
         }
 
         private double lastTimeChangedDirection = 3f;
@@ -93,7 +96,7 @@ namespace FishStory.Entities
         public void SetLayers(Layer lightEffectLayer)
         {
             //FishLightSpriteInstance.TextureScale = NormalizedLightRadius;
-
+            
             SpriteManager.AddToLayer(FishLightSpriteInstance, lightEffectLayer);
         }
     }
