@@ -34,9 +34,14 @@ namespace FishStory.DataTypes
             ItemInventory[itemKey]--;
         }
 
-        public bool Has(string itemKey, int desiredCount = 1)
+        public bool Has(string itemKey)
         {
-            return ItemInventory.Get(itemKey) >= desiredCount;
+            return ItemInventory.Get(itemKey) > 0;
+        }
+
+        public bool Has(string itemKey, int desiredAmount)
+        {
+            return ItemInventory.Get(itemKey) >= desiredAmount;
         }
         public int SpoilItemsAndReturnCount()
         {
