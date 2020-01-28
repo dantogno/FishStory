@@ -1385,6 +1385,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>uispritesheet</Name>
     </None>
+    <None Include="content\levels\caustics_atlas.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>caustics_atlas</Name>
+    </None>
     <None Include="content\levels\mastertilesheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>mastertilesheet</Name>
@@ -1400,6 +1404,10 @@
     <None Include="content\levels\underwater.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Underwater</Name>
+    </None>
+    <None Include="content\screens\titlescreen\watercaustics.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>WaterCaustics</Name>
     </None>
     <None Include="Libraries\DesktopGl\Debug\FlatRedBall.Forms.dll" />
     <None Include="Libraries\DesktopGl\Debug\GumCoreXnaPc.dll" />
