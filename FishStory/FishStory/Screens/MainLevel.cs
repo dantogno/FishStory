@@ -44,7 +44,7 @@ namespace FishStory.Screens
         /// Tycoon requires this many fish before giving key.
         /// </summary>
         private int numFishRequiredForKey = 3;
-
+        bool isWaitingToGiveFreeBaitInConversation = false;
         private int TotalFishIdentified
         {
             get
@@ -145,30 +145,22 @@ namespace FishStory.Screens
             PlayerDataManager.PlayerData.Money < GlobalContent.ItemDefinition[ItemDefinition.Blood_Worm].PlayerBuyingCost
                 && !DoesPlayerHaveBait && !DoesPlayerHaveFish;
 
-        private bool DoesPlayerHaveBait
-        {
-            get
-            {
-                var baitItems = PlayerDataManager.PlayerData.ItemInventory
-                    .Where((kvp) => GlobalContent.ItemDefinition[kvp.Key].IsBait);
-
-                return baitItems.Count() > 0; 
-            }
-        }
+        private bool DoesPlayerHaveBait => PlayerDataManager.PlayerData.ItemInventory
+                    .Where((kvp) => GlobalContent.ItemDefinition[kvp.Key].IsBait && kvp.Value > 0).Any();
 
         private bool DoesPlayerHaveFish => PlayerDataManager.PlayerData.ItemInventory
-                    .Where((kvp) => GlobalContent.ItemDefinition[kvp.Key].IsFish).Count() > 0;
+                    .Where((kvp) => GlobalContent.ItemDefinition[kvp.Key].IsFish && kvp.Value > 0).Any();
 
 
         private void EveryFrameScriptLogic()
         {
+            
             switch (PlayerDataManager.PlayerData.CurrentDay)
             {
                 case 1:
-                    bool isWaitingToGiveFreeBaitInConversation = false;
                     bool doesPlayerNeedFreeBait = !PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key)
                         && DoesPlayerHaveNoBaitAndNoMoneyAndNoFish && TotalFishIdentified < numFishRequiredForKey
-                        && HasTag("AwardDay1Bait");
+                        && HasTag("AwardDay1Bait") && !PlayerCharacterInstance.IsFishing;
                     if (doesPlayerNeedFreeBait && !isWaitingToGiveFreeBaitInConversation)
                     {
                         NPCList.FindByName(CharacterNames.FestivalCoordinator).TwineDialogId = nameof(GlobalContent.FestivalCoordinatorNobaitNoMoney);
