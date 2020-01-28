@@ -17,7 +17,7 @@ namespace FishStory.DataTypes
             get; set;
         } = new Dictionary<string, int>();
 
-        public int Money { get; set; } = 25;
+        public int Money { get; set; } = 35;
 
         public Dictionary<string, NpcRelationship> NpcRelationships { get; set; } =
             new Dictionary<string, NpcRelationship>();
