@@ -7,7 +7,7 @@
     <Variable>
       <Type>int</Type>
       <Name>CustomNiceSliceInstance.BackgroundBlue</Name>
-      <Value xsi:type="xsd:int">75</Value>
+      <Value xsi:type="xsd:int">125</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -19,7 +19,7 @@
     <Variable>
       <Type>int</Type>
       <Name>CustomNiceSliceInstance.BackgroundRed</Name>
-      <Value xsi:type="xsd:int">30</Value>
+      <Value xsi:type="xsd:int">10</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
