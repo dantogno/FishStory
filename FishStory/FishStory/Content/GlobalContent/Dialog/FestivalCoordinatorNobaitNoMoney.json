@@ -1,0 +1,53 @@
+{
+    "passages": [
+      {
+        "text": "You're out of bait and you don't have any money?[[2]]",
+        "links": [
+          {
+            "name": "2",
+            "link": "2",
+            "pid": "2"
+          }
+        ],
+        "name": "Untitled Passage",
+        "pid": "1",
+        "position": {
+          "x": "409.5",
+          "y": "185.5"
+        }
+      },
+      {
+        "text": "You're kidding, right??[[3]]",
+        "links": [
+          {
+            "name": "3",
+            "link": "3",
+            "pid": "3"
+          }
+        ],
+        "name": "2",
+        "pid": "2",
+        "position": {
+          "x": "409.5",
+          "y": "335.5"
+        }
+      },
+      {
+        "text": "Well, maybe I can give you an extra bait today... But don't tell the Mayor, OK?",
+        "name": "3",
+        "pid": "3",
+        "position": {
+          "x": "409.5",
+          "y": "485.5"
+        },
+        "tags": [
+          "AwardFreebieBait"
+        ]
+      }
+    ],
+    "name": "FestivalCoordinatorNoBaitNoMoney",
+    "startnode": "1",
+    "creator": "Twine",
+    "creator-version": "2.2.1",
+    "ifid": "B62FCA19-D9A2-4ADD-9AC2-C15155848442"
+  }

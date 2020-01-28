@@ -40,6 +40,11 @@ namespace FishStory.Screens
     }
     public partial class MainLevel
     {
+        /// <summary>
+        /// Tycoon requires this many fish before giving key.
+        /// </summary>
+        private int numFishRequiredForKey = 3;
+        bool isWaitingToGiveFreeBaitInConversation = false;
         private int TotalFishIdentified
         {
             get
@@ -136,6 +141,47 @@ namespace FishStory.Screens
             {ItemDefinition.Brown_Rockfish, "BlackMarketShop" }
         };
 
+        private bool DoesPlayerHaveNoBaitAndNoMoneyAndNoFish =>
+            PlayerDataManager.PlayerData.Money < GlobalContent.ItemDefinition[ItemDefinition.Blood_Worm].PlayerBuyingCost
+                && !DoesPlayerHaveBait && !DoesPlayerHaveFish;
+
+        private bool DoesPlayerHaveBait => PlayerDataManager.PlayerData.ItemInventory
+                    .Where((kvp) => GlobalContent.ItemDefinition[kvp.Key].IsBait && kvp.Value > 0).Any();
+
+        private bool DoesPlayerHaveFish => PlayerDataManager.PlayerData.ItemInventory
+                    .Where((kvp) => GlobalContent.ItemDefinition[kvp.Key].IsFish && kvp.Value > 0).Any();
+
+
+        private void EveryFrameScriptLogic()
+        {
+            
+            switch (PlayerDataManager.PlayerData.CurrentDay)
+            {
+                case 1:
+                    bool doesPlayerNeedFreeBait = !PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key)
+                        && DoesPlayerHaveNoBaitAndNoMoneyAndNoFish && TotalFishIdentified < numFishRequiredForKey
+                        && HasTag("AwardDay1Bait") && !PlayerCharacterInstance.IsFishing;
+                    if (doesPlayerNeedFreeBait && !isWaitingToGiveFreeBaitInConversation)
+                    {
+                        NPCList.FindByName(CharacterNames.FestivalCoordinator).TwineDialogId = nameof(GlobalContent.FestivalCoordinatorNobaitNoMoney);
+                        // the dialog that gives the free bait has this tag.
+                        RemoveTag("AwardFreebieBait");
+                        isWaitingToGiveFreeBaitInConversation = true;
+                    }
+                    if (isWaitingToGiveFreeBaitInConversation)
+                    {
+                        if (HasTag("AwardFreebieBait"))
+                        {
+                            AwardRandomBait();
+                            isWaitingToGiveFreeBaitInConversation = false;
+                            NPCList.FindByName(CharacterNames.FestivalCoordinator).TwineDialogId = nameof(GlobalContent.FestivalCoordinatorDay1Brief);
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
         private void InitializeScript()
         {
             var If = script;
@@ -227,8 +273,6 @@ namespace FishStory.Screens
             });
             #endregion
             #region Tycoon
-            // He gives you the key if you have identified 3 fish
-            int numFishRequiredForKey = 3;
             If.Check(() => HasTag("HasTalkedToTycoonDay1"));
             Do.Call(() =>
             {
@@ -665,6 +709,7 @@ namespace FishStory.Screens
             // TODO: we could make debug variables for these in glue
             FlatRedBall.Debugging.Debugger.Write($"Player X: {PlayerCharacterInstance.X}, Player Y: {PlayerCharacterInstance.Y}");
             //FlatRedBall.Debugging.Debugger.Write($"Fish identified: {TotalFishIdentified}");
+            EveryFrameScriptLogic();
         }
 
         void CustomDestroy()
