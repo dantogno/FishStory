@@ -330,7 +330,7 @@
     <Variable>
       <Type>float</Type>
       <Name>StockNineSlice.Width</Name>
-      <Value xsi:type="xsd:float">-469</Value>
+      <Value xsi:type="xsd:float">-464</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -342,7 +342,7 @@
     <Variable>
       <Type>float</Type>
       <Name>StockNineSlice.X</Name>
-      <Value xsi:type="xsd:float">430</Value>
+      <Value xsi:type="xsd:float">428</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
