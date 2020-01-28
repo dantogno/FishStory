@@ -286,14 +286,14 @@ namespace FishStory.Screens
             #region Mayor
             // Mayor
             // TODO: This is annoying during testing, but turn it back on eventually!
-            //If.Check(() => !HasTag("HasSeenWelcomeDialog") && PlayerCharacterInstance.X < 1070 );
-            //Do.Call(() =>
-            //{
-            //    if (DialogBox.TryShow("WelcomeDialog"))
-            //    {
-            //        PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
-            //    }
-            //});
+            If.Check(() => !HasTag("HasSeenWelcomeDialog") && PlayerCharacterInstance.X < 1525);
+            Do.Call(() =>
+            {
+                if (DialogBox.TryShow("WelcomeDialog"))
+                {
+                    PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                }
+            });
             If.Check(() => HasTag("HasSeenWelcomeDialog"));
             Do.Call(() =>
             {
