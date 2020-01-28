@@ -70,7 +70,7 @@
     </Compile>
     <Compile Include="Entities\EmotiveIcon.cs" />
     <Compile Include="Entities\EmotiveIcon.Generated.cs">
-      <DependentUpon>emotiveicon.cs</DependentUpon>
+      <DependentUpon>EmotiveIcon.cs</DependentUpon>
     </Compile>
     <Compile Include="Entities\Exit.cs" />
     <Compile Include="Entities\Exit.Generated.cs">
