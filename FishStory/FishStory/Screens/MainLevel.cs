@@ -531,7 +531,8 @@ namespace FishStory.Screens
                 npc.TwineDialogId = nameof(GlobalContent.FishermanHairDay2Brief);
             });
             #endregion
-            HandleDay2TraitAlternateDialogForClassRepresentatives(If, Do);
+            // TODO: turn this back on once the alt text exists!
+            // HandleDay2TraitAlternateDialogForClassRepresentatives(If, Do);
         }
         private void DoDay3Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
