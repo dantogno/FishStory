@@ -437,6 +437,11 @@
       <Name>FishSpoiledSound</Name>
       <Link>content\globalcontent\sounds\fishspoiledsound.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\gamestartsound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>GameStartSound</Name>
+      <Link>content\globalcontent\sounds\gamestartsound.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\gettinglatesound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GettingLateSound</Name>

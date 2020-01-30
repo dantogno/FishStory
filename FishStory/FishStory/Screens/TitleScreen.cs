@@ -142,6 +142,7 @@ namespace FishStory.Screens
             if (fadeHasStarted == false)
             {
                 fadeHasStarted = true;
+                SoundManager.Play(GlobalContent.GameStartSound);
             }
 
             if (FadeOutSprite.Alpha < 1)
