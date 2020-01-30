@@ -92,27 +92,28 @@ namespace FishStory.Entities
                 default: swimDirection = SwimDirection.Down; break;
             }
             ChangeSwimDirection(swimDirection);
-            Drag = 0.2f;
+            Drag = 1f;
         }
 
+        private float maxSpeed = 35;
         private void ChangeSwimDirection(SwimDirection direction)
         {
             CurrentSwimDirectionState = direction;
             if (CurrentSwimDirectionState == SwimDirection.Down)
             {
-                this.Acceleration = new Microsoft.Xna.Framework.Vector3(0, -15, 0);
+                this.Acceleration = new Microsoft.Xna.Framework.Vector3(0, -maxSpeed, 0);
             }
             else if (CurrentSwimDirectionState == SwimDirection.Up)
             {
-                this.Acceleration = new Microsoft.Xna.Framework.Vector3(0, 15, 0); 
+                this.Acceleration = new Microsoft.Xna.Framework.Vector3(0, maxSpeed, 0); 
             }
             else if (CurrentSwimDirectionState == SwimDirection.Left)
             {
-                this.Acceleration = new Microsoft.Xna.Framework.Vector3(-15, 0, 0);
+                this.Acceleration = new Microsoft.Xna.Framework.Vector3(-maxSpeed, 0, 0);
             }
             else if (CurrentSwimDirectionState == SwimDirection.Right)
             {
-                this.Acceleration = new Microsoft.Xna.Framework.Vector3(15, 0, 0); 
+                this.Acceleration = new Microsoft.Xna.Framework.Vector3(maxSpeed, 0, 0); 
             }        
         }
 

@@ -9,6 +9,12 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>EnsommeTextInstance.Alpha</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>EnsommeTextInstance.Font</Name>
       <Value xsi:type="xsd:string">Wizard's Manse</Value>
@@ -84,6 +90,12 @@
       <Type>EnsommeTextState</Type>
       <Name>EnsommeTextState</Name>
       <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FishingFestivalTextInstance.Alpha</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
@@ -199,6 +211,12 @@
     </Variable>
     <Variable>
       <Type>int</Type>
+      <Name>PressAnyKeyTextInstance.Alpha</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
       <Name>PressAnyKeyTextInstance.Blue</Name>
       <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
@@ -309,6 +327,12 @@
       <Type>PositionUnitType</Type>
       <Name>PressAnyKeyTextInstance.Y Units</Name>
       <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>PressAnyKeyTextInstance1.Alpha</Name>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -526,12 +550,6 @@
     <State>
       <Name>Revealed</Name>
       <Variable>
-        <Type>float</Type>
-        <Name>PressAnyKeyTextInstance.X</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
         <Type>int</Type>
         <Name>PressAnyKeyTextInstance.Alpha</Name>
         <Value xsi:type="xsd:int">255</Value>
@@ -540,7 +558,7 @@
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>PressAnyKeyTextInstance1.X</Name>
+        <Name>PressAnyKeyTextInstance.X</Name>
         <Value xsi:type="xsd:float">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -551,6 +569,12 @@
         <Category>Rendering</Category>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>PressAnyKeyTextInstance1.X</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
   </Category>
   <Category>
@@ -559,8 +583,8 @@
       <Name>IsBlue</Name>
       <Variable>
         <Type>int</Type>
-        <Name>PressAnyKeyTextInstance.Red</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Name>PressAnyKeyTextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -571,14 +595,14 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>PressAnyKeyTextInstance.Blue</Name>
-        <Value xsi:type="xsd:int">255</Value>
+        <Name>PressAnyKeyTextInstance.Red</Name>
+        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>PressAnyKeyTextInstance1.Red</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Name>PressAnyKeyTextInstance1.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -589,8 +613,8 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>PressAnyKeyTextInstance1.Blue</Name>
-        <Value xsi:type="xsd:int">255</Value>
+        <Name>PressAnyKeyTextInstance1.Red</Name>
+        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -598,8 +622,8 @@
       <Name>IsWhite</Name>
       <Variable>
         <Type>int</Type>
-        <Name>PressAnyKeyTextInstance.Red</Name>
-        <Value xsi:type="xsd:int">224</Value>
+        <Name>PressAnyKeyTextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -610,14 +634,14 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>PressAnyKeyTextInstance.Blue</Name>
-        <Value xsi:type="xsd:int">255</Value>
+        <Name>PressAnyKeyTextInstance.Red</Name>
+        <Value xsi:type="xsd:int">224</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>PressAnyKeyTextInstance1.Red</Name>
-        <Value xsi:type="xsd:int">224</Value>
+        <Name>PressAnyKeyTextInstance1.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -628,8 +652,8 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>PressAnyKeyTextInstance1.Blue</Name>
-        <Value xsi:type="xsd:int">255</Value>
+        <Name>PressAnyKeyTextInstance1.Red</Name>
+        <Value xsi:type="xsd:int">224</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

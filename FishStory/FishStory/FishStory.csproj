@@ -117,7 +117,9 @@
       <DependentUpon>InventoryRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.cs" />
-    <Compile Include="GumRuntimes\TitleScreenGumRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\TitleScreenGumRuntime.Generated.cs">
+      <DependentUpon>TitleScreenGumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Managers\InGameDateTimeManager.cs" />
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\FishIdentifiedSignFactory.Generated.cs" />
@@ -394,6 +396,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlackMarketStoreOpenSound</Name>
       <Link>content\globalcontent\sounds\blackmarketstoreopensound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\boathornsound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BoatHornSound</Name>
+      <Link>content\globalcontent\sounds\boathornsound.xnb</Link>
     </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\dialogueadvancesound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

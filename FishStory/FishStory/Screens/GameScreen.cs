@@ -53,6 +53,8 @@ namespace FishStory.Screens
 
         Dictionary<string, List<string>> ItemsBought = new Dictionary<string, List<string>>();
 
+        private bool FadeInComplete => FadeInSprite.Alpha <= 0f;
+
         #endregion
 
         #region Initialize
@@ -320,42 +322,58 @@ namespace FishStory.Screens
 
         #region Activity
 
+        private SoundEffectInstance boatHornSound = null;
         void CustomActivity(bool firstTimeCalled)
         {
-            // No longer clearing because we need to know if tags have ever been seen
-            // dialogTagsThisFrame.Clear();
-            if(InputManager.Mouse.ButtonPushed(Mouse.MouseButtons.RightButton))
+            if (FadeInComplete == false)
             {
-                RestartScreen(true);
+                if (firstTimeCalled)
+                {
+                    InGameDateTimeManager.Activity(firstTimeCalled);
+                    boatHornSound = SoundManager.Play(GlobalContent.BoatHornSound);
+                }
+                else if (boatHornSound == null || boatHornSound.IsDisposed || boatHornSound.State != SoundState.Playing)
+                {
+                    FadeInSprite.Alpha -= 0.01f;
+                }
             }
-            CameraActivity();
-
-            if (!IsPaused && DialogBox.Visible == false)
+            else
             {
-                InGameDateTimeManager.Activity(firstTimeCalled);
-            }
-            DarknessOverlaySprite.Alpha = 1-InGameDateTimeManager.SunlightEffectiveness;
-            UpdatePropObjectsLights();
+                // No longer clearing because we need to know if tags have ever been seen
+                // dialogTagsThisFrame.Clear();
+                if (InputManager.Mouse.ButtonPushed(Mouse.MouseButtons.RightButton))
+                {
+                    RestartScreen(true);
+                }
+                CameraActivity();
 
-            UiActivity();
+                if (!IsPaused && DialogBox.Visible == false)
+                {
+                    InGameDateTimeManager.Activity(firstTimeCalled);
+                }
+                DarknessOverlaySprite.Alpha = 1 - InGameDateTimeManager.SunlightEffectiveness;
+                UpdatePropObjectsLights();
 
-            PlayerCollisionActivity();
+                UiActivity();
+
+                PlayerCollisionActivity();
 #if DEBUG
-            DebuggingActivity();
+                DebuggingActivity();
 #endif
 
-            // do script *after* the UI
-            Map?.AnimateSelf();
+                // do script *after* the UI
+                Map?.AnimateSelf();
 
-            script.Activity();
+                script.Activity();
 
-            PlayTimeBasedSounds();
+                PlayTimeBasedSounds();
 
-            PlaySongForDay();
+                PlaySongForDay();
 
-            if (InGameDateTimeManager.TimeOfDay.Hours == (int)HourOnClockPlayerForcedSleepIn24H && !isBeingForcedToSleep)
-            {
-                ForcePlayerToSleep();
+                if (InGameDateTimeManager.TimeOfDay.Hours == (int)HourOnClockPlayerForcedSleepIn24H && !isBeingForcedToSleep)
+                {
+                    ForcePlayerToSleep();
+                }
             }
         }
 

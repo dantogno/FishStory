@@ -18,9 +18,9 @@ namespace FishStory.Managers
         #endregion
 
         #region Public methods
-        public static void Play(SoundEffect instanceToPlay, bool shouldLoop = false)
+        public static SoundEffectInstance Play(SoundEffect instanceToPlay, bool shouldLoop = false)
         {
-            TryPlay(instanceToPlay, shouldLoop);
+            return TryPlay(instanceToPlay, shouldLoop);
         }
 
         public static bool IsPlaying(SoundEffect instanceToPlay)
@@ -75,12 +75,14 @@ namespace FishStory.Managers
         #endregion
 
         #region Private methods
-        private static void TryPlay(SoundEffect soundEffect, bool shouldLoop = false)
+        private static SoundEffectInstance TryPlay(SoundEffect soundEffect, bool shouldLoop = false)
         {
             var instanceToPlay = soundEffect.GetCustomInstance();
             instanceToPlay.IsLooped = shouldLoop;
             if (instanceToPlay.State != SoundState.Playing && !instanceToPlay.IsDisposed)
                 Internal_Play(instanceToPlay);
+
+            return instanceToPlay;
         }
 
         private static void Internal_Play(SoundEffectInstance instanceToPlay)
