@@ -316,6 +316,9 @@ namespace FishStory.Screens
 
             RestartVariables.Add($"Camera.Main.X");
             RestartVariables.Add($"Camera.Main.Y");
+
+            RestartVariables.Add(
+                $"{nameof(FadeInSprite)}.{nameof(FadeInSprite.Alpha)}");
         }
 
         #endregion

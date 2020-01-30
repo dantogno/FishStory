@@ -38,7 +38,7 @@ namespace FishStory.Managers
         public static Song CurrentSong;
         public static bool IsSongPlaying => CurrentSong != null &&
                                             CurrentSong.Position >= TimeSpan.Zero &&
-                                            (CurrentSong.Position < CurrentSong.Duration || _shouldLoopOneSong);
+                                            (CurrentSong.Position < CurrentSong.Duration);
 
 
         public static void PlaySong(Song songToPlay, bool forceRestart = true, bool shouldLoop = true)
