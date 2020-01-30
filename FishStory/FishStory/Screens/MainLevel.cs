@@ -333,6 +333,7 @@ namespace FishStory.Screens
             If.Check(() => !HasTag("HasSeenWelcomeDialog") && PlayerCharacterInstance.X < 1525);
             Do.Call(() =>
             {
+                SetDialoguePortraitFor(NPCList.FindByName(CharacterNames.Mayor));
                 if (DialogBox.TryShow("WelcomeDialog"))
                 {
                     PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);

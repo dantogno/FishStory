@@ -291,14 +291,7 @@ namespace FishStory.Screens
         private void HandleStoreClosed()
         {
             PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.StoreInstance);
-            if (GameScreenGum.InventoryInstance.CurrentViewOrSellState == InventoryRuntime.ViewOrSell.SellToStore)
-            {
-                SoundManager.Play(GlobalContent.StoreCloseSound);
-            }
-            else if (GameScreenGum.InventoryInstance.CurrentViewOrSellState == InventoryRuntime.ViewOrSell.SellToBlackMarket)
-            {
-                SoundManager.Play(GlobalContent.BlackMarketCloseSound);
-            }
+            SoundManager.Play(GlobalContent.StoreCloseSound);
             UnpauseThisScreen();
         }
 
@@ -317,8 +310,7 @@ namespace FishStory.Screens
             RestartVariables.Add($"Camera.Main.X");
             RestartVariables.Add($"Camera.Main.Y");
 
-            RestartVariables.Add(
-                $"{nameof(FadeInSprite)}.{nameof(FadeInSprite.Alpha)}");
+            //RestartVariables.Add($"this.{nameof(FadeInSprite)}.{nameof(FadeInSprite.Alpha)}");
         }
 
         #endregion
@@ -328,6 +320,12 @@ namespace FishStory.Screens
         private SoundEffectInstance boatHornSound = null;
         void CustomActivity(bool firstTimeCalled)
         {
+#if DEBUG
+            if (DebuggingVariables.ShouldSkipFadeInWithBoatSound && !FadeInComplete)
+            {
+                FadeInSprite.Alpha = 0f;
+            }
+#endif
             if (FadeInComplete == false)
             {
                 if (firstTimeCalled)
@@ -597,6 +595,13 @@ namespace FishStory.Screens
 
 
             DoFishingActivity();
+        }
+
+        protected void SetDialoguePortraitFor(NPC npc)
+        {
+            var npcTextureRectangle = npc.GetTextureRectangle();
+            DialoguePortrait.SetTextureCoordinates(npcTextureRectangle);
+            DialoguePortrait.Visible = true;
         }
 
         private void HandleDoorOptionSelected(DialogTreeRaw.Link selectedLink)
@@ -905,7 +910,7 @@ namespace FishStory.Screens
         }
 
 
-        #region UI Activity
+#region UI Activity
 
         private void UiActivity()
         {
@@ -1147,11 +1152,11 @@ namespace FishStory.Screens
             PauseThisScreen();
         }
 
-        #endregion
+#endregion
 
-        #endregion
+#endregion
 
-        #region Script-helping methods
+#region Script-helping methods
         public void RemoveTag(string tag)
         {
             dialogTagsThisFrame.Remove(tag);
@@ -1189,9 +1194,9 @@ namespace FishStory.Screens
             return npc.IsOnScreen();
         }
 
-        #endregion
+#endregion
 
-        #region Destroy
+#region Destroy
 
         void CustomDestroy()
         {
@@ -1200,7 +1205,7 @@ namespace FishStory.Screens
 
         }
 
-        #endregion
+#endregion
 
         static void CustomLoadStaticContent(string contentManagerName)
         {
