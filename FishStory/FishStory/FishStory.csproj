@@ -627,10 +627,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BrunetteBoyBlueTunic</Name>
     </None>
-    <None Include="content\entities\npc\children_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>children_1</Name>
-    </None>
     <None Include="content\entities\npc\cloakedguy.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>CloakedGuy</Name>

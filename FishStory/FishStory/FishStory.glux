@@ -2829,12 +2829,6 @@
       </NamedObjects>
       <ReferencedFiles>
         <ReferencedFileSave>
-          <Name>Entities/NPC/children_1.png</Name>
-          <IsSharedStatic>true</IsSharedStatic>
-          <RuntimeType>Microsoft.Xna.Framework.Graphics.Texture2D</RuntimeType>
-          <ProjectsToExcludeFrom />
-        </ReferencedFileSave>
-        <ReferencedFileSave>
           <Name>Entities/NPC/Boy1.achx</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <HasPublicProperty>true</HasPublicProperty>
