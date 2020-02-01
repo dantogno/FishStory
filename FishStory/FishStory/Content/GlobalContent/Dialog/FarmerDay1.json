@@ -121,15 +121,15 @@
       }
     },
     {
-      "text": "Oh well... You look a little too scrawny to help me, anyway.\n[[I can help you if you want.|Help]]\n[[Maybe people would help you if you weren't so rude|Rude]]",
+      "text": "Oh well... You look a little too scrawny to help me, anyway.\n[[I can help you if you want.|Help]]\n[[Maybe people would help you if you weren't so rude.|Rude]]",
       "links": [
         {
           "name": "I can help you if you want.|Help",
           "link": "I can help you if you want.|Help"
         },
         {
-          "name": "Maybe people would help you if you weren't so rude|Rude",
-          "link": "Maybe people would help you if you weren't so rude|Rude"
+          "name": "Maybe people would help you if you weren't so rude.|Rude",
+          "link": "Maybe people would help you if you weren't so rude.|Rude"
         }
       ],
       "name": "Continue",
@@ -181,6 +181,6 @@
   "name": "FarmerDay1",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.3.5",
+  "creator-version": "2.2.1",
   "ifid": "1F83A30F-7267-41BF-9B08-E6BF256D80EA"
 }

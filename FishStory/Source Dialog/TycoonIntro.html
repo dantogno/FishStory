@@ -1,47 +1,10 @@
-<html>
-	<head>
-		<title>TycoonIntro</title>
-		<script type="text/javascript">
-/**
- * Twison - Twine 2 JSON Export Story Format
- * 
- * Copyright (c) 2015 Mike Walker
- * https://lazerwalker.com
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
- * associated documentation files (the "Software"), to deal in the Software without restriction,
- * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
- * subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies or substantial
- * portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
- * LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
- * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
- * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-var Twison={extractLinksFromText:function(t){var n=t.match(/\[\[.+?\]\]/g);return n?n.map(function(t){var n=t.match(/\[\[(.*?)\-\&gt;(.*?)\]\]/);return n?{name:n[1],link:n[2]}:(t=t.substring(2,t.length-2),{name:t,link:t})}):void 0},convertPassage:function(t){var n={text:t.innerHTML},a=Twison.extractLinksFromText(n.text);if(a&&(n.links=a),["name","pid","position","tags"].forEach(function(a){var e=t.attributes[a].value;e&&(n[a]=e)}),n.position){var e=n.position.split(",");n.position={x:e[0],y:e[1]}}return n.tags&&(n.tags=n.tags.split(" ")),n},convertStory:function(t){var n=t.getElementsByTagName("tw-passagedata"),a=Array.prototype.slice.call(n).map(Twison.convertPassage),e={passages:a};["name","startnode","creator","creator-version","ifid"].forEach(function(n){var a=t.attributes[n].value;a&&(e[n]=a)});var i={};return e.passages.forEach(function(t){i[t.name]=t.pid}),e.passages.forEach(function(t){t.links&&t.links.forEach(function(t){t.pid=i[t.link]})}),e},convert:function(){var t=document.getElementsByTagName("tw-storydata")[0],n=JSON.stringify(Twison.convertStory(t),null,2);document.getElementById("output").innerHTML=n}};window.Twison=Twison;		
-		</script>
-	</head>
-	<body>
-		<pre id="output">
-		
-		</pre>
-		<div id="storyData" style="display: none;">
-			<tw-storydata name="TycoonIntro" startnode="1" creator="Twine" creator-version="2.3.5" ifid="C011F024-23A2-4953-9F49-28C974AA3EFD" zoom="1" format="Twison" format-version="0.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="HasTalkedToTycoonDay1" position="508,240" size="100,100">Ah, a tourist! Welcome, welcome to my wonderful town! Are you from the city?
+<tw-storydata name="TycoonIntro" startnode="1" creator="Twine" creator-version="2.2.1" ifid="C011F024-23A2-4953-9F49-28C974AA3EFD" zoom="1" format="Twison" format-version="0.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+</script><tw-passagedata pid="1" name="Start" tags="HasTalkedToTycoonDay1" position="508,240" size="100,100">Ah, a tourist! Welcome, welcome to my wonderful town! Are you from the city?
 [[I&#39;m just here to fish.|Fish]]
 [[Which city?|City]]</tw-passagedata><tw-passagedata pid="2" name="Fish" tags="" position="433,390" size="100,100">Ah, yes! Fishing is wonderful, isn&#39;t it? One of my top ten favorite leisure activities! And, as luck may have it, one of our premiere vacation experiences! I can offer you some top-of-the-line, beginner-friendly fishing classes, perfect for your holiday! How does that sound?
 [[Sorry, I&#39;m not here for vacation.|No vacation]]</tw-passagedata><tw-passagedata pid="3" name="City" tags="" position="583,390" size="100,100">Any city! Preferably one with lots of overworked and overpaid urbanites who you can tell about the beautiful, tranquil, and rejuvenating town you visited on your vacation!
 [[Sorry, I&#39;m just here to work.|No vacation]]</tw-passagedata><tw-passagedata pid="4" name="No vacation" tags="" position="509,543" size="100,100">Bah! You&#39;re just as frustrating as the rest of this town! Why is everyone so afraid of progress? Can&#39;t they see the oppertunities provided by a naturally beautiful town like this? I&#39;m talking development! Jobs! Income!
 [[Continue]]</tw-passagedata><tw-passagedata pid="5" name="Back to it" tags="" position="513,791" size="100,100">Wait! If you&#39;re new here, you&#39;ll be needing a place to stay. Fortunately, I happen to have a vacancy in my luxury mobile home facility. But those lodgings are reserved for the town&#39;s working class, and I don&#39;t give handouts. 
-[[BackToItCONTD]]</tw-passagedata><tw-passagedata pid="6" name="BackToItCONTD" tags="" position="513,941" size="100,100">So if you want to have a place to stay, you&#39;ll have to contribute to the town as a whole. Come back once you&#39;ve caught three fish and had them officially recorded by the identifier at the church. Then I&#39;ll know you&#39;re not a freeloader.</tw-passagedata><tw-passagedata pid="7" name="Continue" tags="" position="510,665" size="100,100">But most of these simpletons would rather leave their futures up to fate than take it into their own hands!
+[[BackToItCONTD]]</tw-passagedata><tw-passagedata pid="6" name="BackToItCONTD" tags="" position="513,941" size="100,100">So if you want to have a place to stay, you&#39;ll have to contribute to the town as a whole. Come back once you&#39;ve caught three fish and had them officially recorded by Jacob, the identifier at the church. Then I&#39;ll know you&#39;re not a freeloader.</tw-passagedata><tw-passagedata pid="7" name="Continue" tags="" position="510,665" size="100,100">But most of these simpletons would rather leave their futures up to fate than take it into their own hands!
 [[I&#39;m going to get back to fishing now...|Back to it]]</tw-passagedata></tw-storydata>
-		</div>
-		<script>
-			Twison.convert()
-		</script>
-	</body>
-</html>
