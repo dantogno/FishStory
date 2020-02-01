@@ -15,6 +15,7 @@ namespace FishStory.Managers
         public static bool MoonIsUp = OurInGameDay.Hour > 22 || OurInGameDay.Hour < 3;
         public static float SunlightEffectiveness =>MathHelper.Clamp(GetSunlightCoefficient(DistanceToNoon()), 0.35f,1.0f);
 
+        public static int HourToFreezeTimeIfPlayerNeedsKeyOnDay1 = 20;
         private static double minutesElapsedPerSecond = 6;
 
         private const float minutesAtNoon = minutesPerDay/2;
@@ -37,11 +38,10 @@ namespace FishStory.Managers
             // gotten the key. 
             // There's probably a more elegant solution, but this works for now.
             // https://github.com/dantogno/FishStory/issues/142
-            int hourToFreezeTimeIfPlayerNeedsKeyOnDay1 = 20;
             bool shouldNotUpdateTimeBecausePlayerNeedsKey =
                 PlayerDataManager.PlayerData.CurrentDay == 1
                 && !PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key)
-                && TimeOfDay.Hours >= hourToFreezeTimeIfPlayerNeedsKeyOnDay1;
+                && TimeOfDay.Hours >= HourToFreezeTimeIfPlayerNeedsKeyOnDay1;
 
             if (!shouldNotUpdateTimeBecausePlayerNeedsKey)
                 OurInGameDay = OurInGameDay.AddMinutes(timeToAdd);

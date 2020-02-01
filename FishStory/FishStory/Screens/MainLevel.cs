@@ -57,6 +57,25 @@ namespace FishStory.Screens
                 return total;
             }
         }
+
+        private Dictionary<string, double> CharacterBedTimes = new Dictionary<string, double>()
+        {
+            {CharacterNames.BlackMarketShop, 24},
+            {CharacterNames.Conservationist, 19 },
+            {CharacterNames.ElderlyMother, 16 },
+            {CharacterNames.Farmer, 18 },
+            {CharacterNames.FarmerSonBaitShop, 18 },
+            {CharacterNames.FestivalCoordinator, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 },
+            {CharacterNames.FishermanBald, 17 },
+            {CharacterNames.FishermanHair, 22 },
+            {CharacterNames.Fishmonger, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 },
+            {CharacterNames.Identifier, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1},
+            {CharacterNames.Mayor, 19 },
+            {CharacterNames.Nun, 17 },
+            {CharacterNames.Priestess, 20 },
+            {CharacterNames.Tycoon, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 },
+            {CharacterNames.YoungManBaitShop, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1}
+        };
         void CustomInitialize()
         {
             InitializeScript();
@@ -118,27 +137,27 @@ namespace FishStory.Screens
         private Dictionary<string, string> classRepresentatives = new Dictionary<string, string>()
         {
             // male
-            {ItemDefinition.King_Mackerel, "Fishmonger"},
+            {ItemDefinition.King_Mackerel, CharacterNames.Fishmonger},
             // female
-            {ItemDefinition.Ladyfish, "Mayor" },
+            {ItemDefinition.Ladyfish, CharacterNames.Mayor },
             // old
-            { ItemDefinition.Rougheye_Rockfish, "ElderlyMother" },
+            { ItemDefinition.Rougheye_Rockfish, CharacterNames.ElderlyMother },
             // young
-            { ItemDefinition.Shrimp, "Farmer" },
+            { ItemDefinition.Shrimp, CharacterNames.Farmer },
             // bald
-            { ItemDefinition.Monkfish, "Identifier" },
+            { ItemDefinition.Monkfish, CharacterNames.Identifier },
             // facial hair
-            { ItemDefinition.Goatfish, "Tycoon" },
+            { ItemDefinition.Goatfish, CharacterNames.Tycoon },
             // mother
-            { ItemDefinition.Giant_Octopus, "Nun" },
+            { ItemDefinition.Giant_Octopus, CharacterNames.Nun },
             // father
-            { ItemDefinition.Seahorse, "TycoonDaughter" },
+            { ItemDefinition.Seahorse, CharacterNames.TycoonDaughter },
             // blonde hair
-            {ItemDefinition.Trumpetfish, "YoungManBaitShop"  },
+            {ItemDefinition.Trumpetfish, CharacterNames.YoungManBaitShop },
             // dark hair
-            {ItemDefinition.Cobia, "FestivalCoordinator" },
+            {ItemDefinition.Cobia, CharacterNames.FestivalCoordinator },
             // brown hair
-            {ItemDefinition.Brown_Rockfish, "BlackMarketShop" }
+            {ItemDefinition.Brown_Rockfish, CharacterNames.BlackMarketShop }
         };
 
         private bool DoesPlayerHaveNoBaitAndNoMoneyAndNoFish =>
