@@ -331,7 +331,7 @@ namespace FishStory.Screens
                 if (firstTimeCalled)
                 {
                     InGameDateTimeManager.Activity(firstTimeCalled);
-                    boatHornSound = SoundManager.Play(GlobalContent.BoatHornSound);
+                    boatHornSound = SoundManager.Play(GlobalContent.BoatHornSound, volume: 0.2f);
                 }
                 else if (boatHornSound == null || boatHornSound.IsDisposed || boatHornSound.State != SoundState.Playing)
                 {
@@ -452,7 +452,7 @@ namespace FishStory.Screens
 
             if (MusicManager.IsSongPlaying == false || MusicManager.CurrentSong != songToPlayForDay)
             {
-                MusicManager.PlaySong(songToPlayForDay, forceRestart: true, shouldLoop: true);
+                MusicManager.PlaySong(songToPlayForDay, forceRestart: true);
             }
 
             var minutesWhenSongMutes = (HourOnClockSunSetsIn24H * 60);
@@ -463,7 +463,7 @@ namespace FishStory.Screens
             }
             else if (MusicManager.MusicVolumeLevel != MusicManager.DefaultMusicLevel &&
                     InGameDateTimeManager.TimeOfDay.Hours < HourOnClockSunSetsIn24H && 
-                    InGameDateTimeManager.TimeOfDay.Hours > 3 )
+                    InGameDateTimeManager.TimeOfDay.Hours > HourOnClockPlayerForcedSleepIn24H)
             {
                 MusicManager.MusicVolumeLevel = MusicManager.DefaultMusicLevel;
             }
