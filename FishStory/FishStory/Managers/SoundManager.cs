@@ -80,7 +80,7 @@ namespace FishStory.Managers
         #endregion
 
         #region Private methods
-        private static SoundEffectInstance TryPlay(SoundEffect soundEffect, bool shouldLoop = false, float volume)
+        private static SoundEffectInstance TryPlay(SoundEffect soundEffect, bool shouldLoop = false, float? volume = null)
         {
             var instanceToPlay = soundEffect.GetCustomInstance();
             instanceToPlay.IsLooped = shouldLoop;
@@ -90,9 +90,9 @@ namespace FishStory.Managers
             return instanceToPlay;
         }
 
-        private static void Internal_Play(SoundEffectInstance instanceToPlay, float volume)
+        private static void Internal_Play(SoundEffectInstance instanceToPlay, float? volume = null)
         {
-            instanceToPlay.Volume = volume;
+            instanceToPlay.Volume = volume ?? DefaultVolume;
             instanceToPlay.Play();
         }
 

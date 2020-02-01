@@ -102,7 +102,7 @@ namespace FishStory.Screens
 
             if (MusicManager.IsSongPlaying == false)
             {
-                MusicManager.PlaySong(GlobalContent.music_misty_woods_calling, forceRestart: true, shouldLoop: true);
+                MusicManager.PlaySong(GlobalContent.music_misty_woods_calling, forceRestart: true);
             }
         }
 
