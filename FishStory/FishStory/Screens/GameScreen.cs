@@ -654,6 +654,7 @@ namespace FishStory.Screens
                     else if (PlayerCharacterInstance.TalkInput.WasJustPressed || PlayerCharacterInstance.CancelInput.WasJustPressed)
                     { 
                         PlayerCharacterInstance.StopFishing();
+                        AddNotification("You cut your bait.");
                     }
                 }
             }           
