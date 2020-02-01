@@ -10,7 +10,8 @@ namespace FishStory.Managers
     public static class SoundManager
     {
         #region Fields & Properties
-        public static float CurrentVolume = 0.1f;
+        public static float DefaultVolume = 0.1f;
+        public static float CurrentVolume = DefaultVolume;
 
         private static Dictionary<string, SoundEffectInstance> SoundEffectDictionary = new Dictionary<string, SoundEffectInstance>();
         private static Dictionary<SoundEffect, SoundEffectInstance> SoundEffectInstances = new Dictionary<SoundEffect, SoundEffectInstance>();
@@ -18,9 +19,13 @@ namespace FishStory.Managers
         #endregion
 
         #region Public methods
-        public static SoundEffectInstance Play(SoundEffect instanceToPlay, bool shouldLoop = false)
+        public static SoundEffectInstance Play(SoundEffect instanceToPlay, bool shouldLoop = false, float? volume = null)
         {
-            return TryPlay(instanceToPlay, shouldLoop);
+            if (volume.HasValue == false)
+            {
+                volume = DefaultVolume;
+            }
+            return TryPlay(instanceToPlay, shouldLoop, volume);
         }
 
         public static bool IsPlaying(SoundEffect instanceToPlay)
@@ -75,19 +80,19 @@ namespace FishStory.Managers
         #endregion
 
         #region Private methods
-        private static SoundEffectInstance TryPlay(SoundEffect soundEffect, bool shouldLoop = false)
+        private static SoundEffectInstance TryPlay(SoundEffect soundEffect, bool shouldLoop = false, float volume)
         {
             var instanceToPlay = soundEffect.GetCustomInstance();
             instanceToPlay.IsLooped = shouldLoop;
             if (instanceToPlay.State != SoundState.Playing && !instanceToPlay.IsDisposed)
-                Internal_Play(instanceToPlay);
+                Internal_Play(instanceToPlay, volume);
 
             return instanceToPlay;
         }
 
-        private static void Internal_Play(SoundEffectInstance instanceToPlay)
+        private static void Internal_Play(SoundEffectInstance instanceToPlay, float volume)
         {
-            instanceToPlay.Volume = CurrentVolume;
+            instanceToPlay.Volume = volume;
             instanceToPlay.Play();
         }
 
