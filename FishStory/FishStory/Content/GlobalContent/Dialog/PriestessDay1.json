@@ -1,15 +1,15 @@
 {
   "passages": [
     {
-      "text": "Ah, an outsider. Are you here to take part in the festival?\n[[How'd you know I'm an outsider?|Outsider]]\n[[I'm just here to fish|Here to fish]]",
+      "text": "Ah, an outsider. Are you here to take part in the festival?\n[[How'd you know I'm an outsider?|Outsider]]\n[[I'm just here to fish.|Here to fish]]",
       "links": [
         {
           "name": "How'd you know I'm an outsider?|Outsider",
           "link": "How'd you know I'm an outsider?|Outsider"
         },
         {
-          "name": "I'm just here to fish|Here to fish",
-          "link": "I'm just here to fish|Here to fish"
+          "name": "I'm just here to fish.|Here to fish",
+          "link": "I'm just here to fish.|Here to fish"
         }
       ],
       "name": "Start",
@@ -36,15 +36,15 @@
       }
     },
     {
-      "text": "Ah, but even so, you are participating. Ensomme is one with the land and entangled with the sea. Just by walking across our sacred beaches and staring into the bewitching depths of our ocean, you are taking part in our traditions. Iâ€™m sure that you will make efforts to do so in a respectful manner, yes?\n[[I won't get in the way|No trouble]]\n[[I don't believe in any of that|Dont believe]]",
+      "text": "Ah, but even so, you are participating. Ensomme is one with the land and entangled with the sea. Just by walking across our sacred beaches and staring into the bewitching depths of our ocean, you are taking part in our traditions. I’m sure that you will make efforts to do so in a respectful manner, yes?\n[[I won't get in the way.|No trouble]]\n[[I don't believe in any of that.|Dont believe]]",
       "links": [
         {
-          "name": "I won't get in the way|No trouble",
-          "link": "I won't get in the way|No trouble"
+          "name": "I won't get in the way.|No trouble",
+          "link": "I won't get in the way.|No trouble"
         },
         {
-          "name": "I don't believe in any of that|Dont believe",
-          "link": "I don't believe in any of that|Dont believe"
+          "name": "I don't believe in any of that.|Dont believe",
+          "link": "I don't believe in any of that.|Dont believe"
         }
       ],
       "name": "Here to fish",
@@ -55,7 +55,7 @@
       }
     },
     {
-      "text": "Trouble does not worry me. Only trouble without balence. This land has a way of rebalancing things when our actions go against the divine plans of nature. One moment, it may direct the seaâ€™s wrath towards Ensomme, sending us storms of bitter winds and brackish water.\n[[calm trouble]]",
+      "text": "Trouble does not worry me; only trouble without balence. This land has a way of rebalancing things when our actions go against the divine plans of nature. One moment, it may direct the sea’s wrath towards Ensomme, sending us storms of bitter winds and brackish water.\n[[calm trouble]]",
       "links": [
         {
           "name": "calm trouble",
@@ -66,12 +66,12 @@
       "name": "No trouble",
       "pid": "4",
       "position": {
-        "x": "721",
-        "y": "457"
+        "x": "723",
+        "y": "459"
       }
     },
     {
-      "text": "This land cares not for belief. It has a way of rebalancing things when our actions go against the divine plans of nature. One moment, it may direct the seaâ€™s wrath towards Ensomme, sending us storms of bitter winds and brackish water.\n[[calm]]",
+      "text": "This land cares not for belief. It has a way of rebalancing things when our actions go against the divine plans of nature. One moment, it may direct the sea’s wrath towards Ensomme, sending us storms of bitter winds and brackish water.\n[[calm]]",
       "links": [
         {
           "name": "calm",
@@ -164,7 +164,7 @@
       }
     },
     {
-      "text": "But soon enough, the land will be calm again, and the seaâ€™s spoils will be replenished. We are rewarded for our suffering with posterity. It is the will of the water.\n[[Alright then...|Bye]]",
+      "text": "But soon enough, the land will be calm again, and the sea’s spoils will be replenished. We are rewarded for our suffering with posterity. It is the will of the water.\n[[Alright then...|Bye]]",
       "links": [
         {
           "name": "Alright then...|Bye",
@@ -179,7 +179,7 @@
       }
     },
     {
-      "text": "But soon enough, the land will be calm again, and the seaâ€™s spoils will be replenished. We are rewarded for our suffering with posterity. It is the will of the water. So I am not concerned with trouble.\n[[Alright then...|Bye]]",
+      "text": "But soon enough, the land will be calm again, and the sea’s spoils will be replenished. We are rewarded for our suffering with posterity. It is the will of the water. So I am not concerned with trouble.\n[[Alright then...|Bye]]",
       "links": [
         {
           "name": "Alright then...|Bye",
@@ -197,6 +197,6 @@
   "name": "PriestessDay1",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.3.5",
+  "creator-version": "2.2.1",
   "ifid": "6604821E-2FF3-4C0F-9912-CCE4E7C45764"
 }

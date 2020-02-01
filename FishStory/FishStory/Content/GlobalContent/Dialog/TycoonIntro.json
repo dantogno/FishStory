@@ -53,7 +53,7 @@
       }
     },
     {
-      "text": "Bah! You're just as frustrating as the rest of this town! Why is everyone so afraid of progress? Can't they see the opportunities provided by a naturally beautiful town like this? I'm talking development! Jobs! Income!\n[[Continue]]",
+      "text": "Bah! You're just as frustrating as the rest of this town! Why is everyone so afraid of progress? Can't they see the oppertunities provided by a naturally beautiful town like this? I'm talking development! Jobs! Income!\n[[Continue]]",
       "links": [
         {
           "name": "Continue",
@@ -85,7 +85,7 @@
       }
     },
     {
-      "text": "So if you want to have a place to stay, you'll have to contribute to the town as a whole. Come back once you've caught three fish and had them officially recorded by the identifier at the church. Then I'll know you're not a freeloader.",
+      "text": "So if you want to have a place to stay, you'll have to contribute to the town as a whole. Come back once you've caught three fish and had them officially recorded by Jacob, the identifier at the church. Then I'll know you're not a freeloader.",
       "name": "BackToItCONTD",
       "pid": "6",
       "position": {
@@ -112,6 +112,6 @@
   "name": "TycoonIntro",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.3.5",
+  "creator-version": "2.2.1",
   "ifid": "C011F024-23A2-4953-9F49-28C974AA3EFD"
 }

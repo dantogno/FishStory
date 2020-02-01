@@ -48,11 +48,11 @@
       }
     },
     {
-      "text": "Ah, wonderful! Thank you! Just let me know if you discover anything noteworthy. I have a feeling that there has to be at least one interesting thing to learn from these people. Otherwise I'll have made this trip for nothing...\n[[I'll let you know if I find anything|Bye]]",
+      "text": "Ah, wonderful! Thank you! Just let me know if you discover anything noteworthy. I have a feeling that there has to be at least one interesting thing to learn from these people. Otherwise I'll have made this trip for nothing...\n[[I'll let you know if I find anything.|Bye]]",
       "links": [
         {
-          "name": "I'll let you know if I find anything|Bye",
-          "link": "I'll let you know if I find anything|Bye"
+          "name": "I'll let you know if I find anything.|Bye",
+          "link": "I'll let you know if I find anything.|Bye"
         }
       ],
       "name": "sure",
@@ -128,6 +128,6 @@
   "name": "ConservationistDay1",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.3.5",
+  "creator-version": "2.2.1",
   "ifid": "E7DE9C1C-1E2D-4EC8-93D2-3C75C2977E9E"
 }
