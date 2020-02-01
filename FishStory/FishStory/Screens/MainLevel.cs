@@ -336,6 +336,7 @@ namespace FishStory.Screens
                 SetDialoguePortraitFor(NPCList.FindByName(CharacterNames.Mayor));
                 if (DialogBox.TryShow("WelcomeDialog"))
                 {
+                    SetDialoguePortraitFor(NPCList.FindByName(CharacterNames.Mayor));
                     PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                 }
             });
