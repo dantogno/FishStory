@@ -1,4 +1,5 @@
-﻿using FishStory.Screens;
+﻿using FishStory.DataTypes;
+using FishStory.Screens;
 using Microsoft.Xna.Framework;
 using System;
 
@@ -30,7 +31,20 @@ namespace FishStory.Managers
             }
 
             var timeToAdd = FlatRedBall.TimeManager.SecondDifference * minutesElapsedPerSecond;
-            OurInGameDay = OurInGameDay.AddMinutes(timeToAdd);
+
+            // David: I'm putting this in as a quick way to prevent the case
+            // where the time runs out on the first day before the player has
+            // gotten the key. 
+            // There's probably a more elegant solution, but this works for now.
+            // https://github.com/dantogno/FishStory/issues/142
+            int hourToFreezeTimeIfPlayerNeedsKeyOnDay1 = 20;
+            bool shouldNotUpdateTimeBecausePlayerNeedsKey =
+                PlayerDataManager.PlayerData.CurrentDay == 1
+                && !PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key)
+                && TimeOfDay.Hours >= hourToFreezeTimeIfPlayerNeedsKeyOnDay1;
+
+            if (!shouldNotUpdateTimeBecausePlayerNeedsKey)
+                OurInGameDay = OurInGameDay.AddMinutes(timeToAdd);
         }
 
         private static void InitializeDay()
