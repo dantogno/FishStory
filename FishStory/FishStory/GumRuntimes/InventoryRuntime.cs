@@ -140,8 +140,7 @@ namespace FishStory.GumRuntimes
                                     shouldShow = true;
                                     break;
                                 case InventoryRestrictions.IdentifiedFishOnly:
-                                    shouldShow = item.IsFish;
-                                    // todo - need to see if identified
+                                    shouldShow = item.IsFish && string.IsNullOrEmpty(item.AssociatedItem);                                     
                                     break;
                             }
                         }
