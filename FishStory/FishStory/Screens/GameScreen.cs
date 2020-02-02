@@ -331,7 +331,7 @@ namespace FishStory.Screens
                 if (firstTimeCalled)
                 {
                     InGameDateTimeManager.Activity(firstTimeCalled);
-                    boatHornSound = SoundManager.Play(GlobalContent.BoatHornSound, volume: 0.2f);
+                    boatHornSound = SoundManager.Play(GlobalContent.BoatHornSound, volume: 1f);
                 }
                 else if (boatHornSound == null || boatHornSound.IsDisposed || boatHornSound.State != SoundState.Playing)
                 {
