@@ -15,6 +15,7 @@ namespace FishStory.Entities
 {
     public partial class NPC
     {
+        public Vector3 InitialPosition { get; set; }
         public RootObject DirectlySetDialog { get; set; }
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).

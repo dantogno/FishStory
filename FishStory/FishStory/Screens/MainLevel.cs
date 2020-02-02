@@ -65,16 +65,17 @@ namespace FishStory.Screens
             {CharacterNames.ElderlyMother, 16 },
             {CharacterNames.Farmer, 18 },
             {CharacterNames.FarmerSonBaitShop, 18 },
-            {CharacterNames.FestivalCoordinator, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 },
+            {CharacterNames.FestivalCoordinator, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1 },
             {CharacterNames.FishermanBald, 17 },
             {CharacterNames.FishermanHair, 22 },
-            {CharacterNames.Fishmonger, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 },
-            {CharacterNames.Identifier, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1},
+            {CharacterNames.Fishmonger, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1 },
+            {CharacterNames.Identifier, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1},
             {CharacterNames.Mayor, 19 },
             {CharacterNames.Nun, 17 },
             {CharacterNames.Priestess, 20 },
-            {CharacterNames.Tycoon, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 },
-            {CharacterNames.YoungManBaitShop, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1}
+            {CharacterNames.Tycoon, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1},
+            {CharacterNames.TycoonDaughter, 22 },
+            {CharacterNames.YoungManBaitShop, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1}
         };
         void CustomInitialize()
         {
@@ -205,7 +206,7 @@ namespace FishStory.Screens
         {
             var If = script;
             var Do = script;
-                
+             
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 1);
             Do.Call(() => DoDay1Script(If, Do));
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 2);
@@ -239,6 +240,24 @@ namespace FishStory.Screens
                 .After(secondsToShowInputCallout);
 
             InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(12));
+
+            int offscreenX = 9000;
+            int offscreenY = 9000;
+            foreach (var kvp in CharacterBedTimes)
+            {
+
+                var npc = NPCList.FindByName(kvp.Key);
+                If.Check(() =>
+                {
+                    return InGameDateTimeManager.OurInGameDay.Hour >= kvp.Value
+                        && !npc.IsOnScreen();
+                });
+                Do.Call(() =>
+                {
+                    npc.X = offscreenX;
+                    npc.Y = offscreenY;
+                });
+            }
 
             #region Priestess
             If.Check(() => HasTag("HasSeenPriestessDay1"));
@@ -417,6 +436,12 @@ namespace FishStory.Screens
 
         private void DoDay2Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
+            foreach (var npc in NPCList)
+            {
+                npc.X = npc.InitialPosition.X;
+                npc.Y = npc.InitialPosition.Y;
+                npc.Z = npc.InitialPosition.Z;
+            }
             #region Mayor
             var mayor = this.NPCList.FindByName(CharacterNames.Mayor);
             mayor.TwineDialogId = nameof(GlobalContent.MayorDay2);

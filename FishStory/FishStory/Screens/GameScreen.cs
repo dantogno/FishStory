@@ -207,6 +207,7 @@ namespace FishStory.Screens
             {
                 npc.Z = PlayerCharacterInstance.Z; // same as player so they sort
                 //npc.MoveToLayer(WorldLayer);
+                npc.InitialPosition = new Vector3(npc.X, npc.Y, npc.Z);
             }
             foreach(var propObject in PropObjectList)
             {

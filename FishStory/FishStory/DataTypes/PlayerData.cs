@@ -22,6 +22,10 @@ namespace FishStory.DataTypes
         public Dictionary<string, NpcRelationship> NpcRelationships { get; set; } =
             new Dictionary<string, NpcRelationship>();
 
+        /// <summary>
+        /// This is only incremented after the go to bed / wake up sequence.
+        /// In other words, if the player stays up to 12AM without going to bed, it's still Day 1.
+        /// </summary>
         public int CurrentDay { get; set; } = 1;
 
         public void AwardItem(string itemKey)
