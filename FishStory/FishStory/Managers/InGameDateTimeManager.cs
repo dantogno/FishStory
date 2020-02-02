@@ -57,13 +57,17 @@ namespace FishStory.Managers
 
         public static void ResetDay()
         {
-            if (TimeOfDay.TotalHours < GameScreen.HourOnClockPlayerForcedSleepIn24H)
+            // If the player goes to bed after the wake up hour, we need to increment the day.
+            // The hour will be less than the wake up time if the player has stayed to midnight.
+            if (TimeOfDay.TotalHours > GameScreen.HourOnClockPlayerWakesIn24H)
             {
-                OurInGameDay = new DateTime(OurInGameDay.Year, OurInGameDay.Month, OurInGameDay.Day);
+                OurInGameDay = new DateTime(OurInGameDay.Year, OurInGameDay.Month, OurInGameDay.Day + 1);
             }
+            // If the player goes to bed past midnight, they stayed up until the next day already
+            // so we don't need to increment. This is the only way to go to bed at an hour less than the wake up hour.
             else
             {
-                OurInGameDay = new DateTime(OurInGameDay.Year, OurInGameDay.Month, OurInGameDay.Day+1);
+                OurInGameDay = new DateTime(OurInGameDay.Year, OurInGameDay.Month, OurInGameDay.Day);
             }
             OurInGameDay = OurInGameDay.AddHours(GameScreen.HourOnClockPlayerWakesIn24H);
         }
