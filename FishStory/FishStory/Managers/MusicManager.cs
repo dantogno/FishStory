@@ -32,9 +32,9 @@ namespace FishStory.Managers
         private static float effectiveMusicVolumeLevel = 0.4f;
 
         public static Song CurrentSong;
-        public static bool IsSongPlaying => CurrentSong != null && 
-                                            CurrentSong.Position >= TimeSpan.Zero &&
-                                            (CurrentSong.Position < CurrentSong.Duration);
+        public static bool IsSongPlaying => AudioManager.CurrentlyPlayingSong != null &&
+                                            AudioManager.CurrentlyPlayingSong.Position >= TimeSpan.Zero &&
+                                            (AudioManager.CurrentlyPlayingSong.Position < AudioManager.CurrentlyPlayingSong.Duration);
 
 
         public static void PlaySong(Song songToPlay, bool forceRestart = true)
