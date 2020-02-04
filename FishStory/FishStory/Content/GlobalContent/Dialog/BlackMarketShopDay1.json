@@ -1,21 +1,70 @@
 {
   "passages": [
     {
-      "text": "Hmm. I see ya Guppy, but I don't trust ya yet. Find me tomorrow and perhaps we can make a deal.",
+      "text": "Hmm. I see ya Guppy. How can I be of service to ya?[[Good question?|services]][[What are you up to over here?|services]]",
+      "links": [
+        {
+          "name": "Good question?|services",
+          "link": "Good question?|services"
+        },
+        {
+          "name": "What are you up to over here?|services",
+          "link": "What are you up to over here?|services"
+        }
+      ],
       "name": "1",
       "pid": "1",
       "position": {
-        "x": "405",
-        "y": "442.8333435058594"
+        "x": "403",
+        "y": "398"
       },
       "tags": [
         "HasSeenBlackMarketShopDay1"
       ]
+    },
+    {
+      "text": "Ya see, sometimes folks drag somethin' out of the sea that the other vendors don't wholly appreciate. And they want to sell it. And sometimes they might not want the Church knowin' it was caught. That's where I come in.\n[[Sell]][[Leave]]",
+      "links": [
+        {
+          "name": "Sell",
+          "link": "Sell",
+          "pid": "3"
+        },
+        {
+          "name": "Leave",
+          "link": "Leave",
+          "pid": "4"
+        }
+      ],
+      "name": "services",
+      "pid": "2",
+      "position": {
+        "x": "403",
+        "y": "592"
+      }
+    },
+    {
+      "text": "sell=blackmarket",
+      "name": "Sell",
+      "pid": "3",
+      "position": {
+        "x": "330",
+        "y": "742"
+      }
+    },
+    {
+      "text": "Aye, return when ya have something worthy of my coin.",
+      "name": "Leave",
+      "pid": "4",
+      "position": {
+        "x": "480",
+        "y": "742"
+      }
     }
   ],
   "name": "BlackMarketShopDay1",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.3.5",
+  "creator-version": "2.2.1",
   "ifid": "F8494253-86F3-4D11-9A08-ADC622B1A382"
 }

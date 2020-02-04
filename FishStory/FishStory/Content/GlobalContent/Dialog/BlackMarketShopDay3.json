@@ -1,0 +1,88 @@
+{
+    "passages": [
+      {
+        "text": "The winds are changing. Do ya feel it, Guppy?\n[[Yep.]]\n[[Stop calling me Guppy!]]\n",
+        "links": [
+          {
+            "name": "Yep.",
+            "link": "Yep.",
+            "pid": "2"
+          },
+          {
+            "name": "Stop calling me Guppy!",
+            "link": "Stop calling me Guppy!",
+            "pid": "3"
+          }
+        ],
+        "name": "Untitled Passage",
+        "pid": "1",
+        "position": {
+          "x": "411.5",
+          "y": "387.5"
+        },
+        "tags": [
+          "HasSeenBlackMarketShopDay3"
+        ]
+      },
+      {
+        "text": "The Choosing's nigh! But what'll the outcome be?\n[[Sell]]\n[[Leave]]",
+        "links": [
+          {
+            "name": "Sell",
+            "link": "Sell",
+            "pid": "4"
+          },
+          {
+            "name": "Leave",
+            "link": "Leave",
+            "pid": "5"
+          }
+        ],
+        "name": "Yep.",
+        "pid": "2",
+        "position": {
+          "x": "336.5",
+          "y": "537.5"
+        }
+      },
+      {
+        "text": "Perhaps you won't be a Guppy after tonight! [[Yep.]]",
+        "links": [
+          {
+            "name": "Yep.",
+            "link": "Yep.",
+            "pid": "2"
+          }
+        ],
+        "name": "Stop calling me Guppy!",
+        "pid": "3",
+        "position": {
+          "x": "486.5",
+          "y": "537.5"
+        }
+      },
+      {
+        "text": "sell=blackmarket",
+        "name": "Sell",
+        "pid": "4",
+        "position": {
+          "x": "261.5",
+          "y": "687.5"
+        }
+      },
+      {
+        "text": "Good tidings, Guppy.",
+        "name": "Leave",
+        "pid": "5",
+        "position": {
+          "x": "411.5",
+          "y": "687.5"
+        }
+      }
+    ],
+    "name": "BlackMarketShopDay3",
+    "startnode": "1",
+    "creator": "Twine",
+    "creator-version": "2.2.1",
+    "ifid": "A95B9EA2-8B83-4886-A45A-89E1A2AE728A"
+  }

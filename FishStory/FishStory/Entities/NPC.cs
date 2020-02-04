@@ -15,7 +15,7 @@ namespace FishStory.Entities
 {
     public partial class NPC
     {
-        public Vector3 InitialPosition { get; set; }
+        public Vector3 SpawnPosition { get; set; }
         public RootObject DirectlySetDialog { get; set; }
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
@@ -59,7 +59,15 @@ namespace FishStory.Entities
                 );
             return rect;
         }
-
+        public bool WillBeOnScreenAtPosition(float x, float y)
+        {
+            var camera = Camera.Main;
+            var isOffScreen = x > camera.X + camera.OrthogonalWidth / 2 + SpriteInstance.Width / 2 ||
+                x < camera.X - camera.OrthogonalWidth / 2 - SpriteInstance.Width / 2 ||
+                y > camera.Y + camera.OrthogonalHeight / 2 + SpriteInstance.Height / 2 ||
+                y < camera.Y - camera.OrthogonalHeight / 2 - SpriteInstance.Height / 2;
+            return !isOffScreen;
+        }
         public bool IsOnScreen()
         {
             var camera = Camera.Main;
