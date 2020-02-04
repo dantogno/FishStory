@@ -5,6 +5,11 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>AvailabilityState</Type>
+      <Name>AvailabilityState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>BackgroundInstance.Height</Name>
       <Value xsi:type="xsd:float">-4</Value>
@@ -336,6 +341,78 @@
         <Type>ColorCategoryState</Type>
         <Name>BackgroundInstance.ColorCategoryState</Name>
         <Value xsi:type="xsd:string">Green</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>Availability</Name>
+    <State>
+      <Name>CantAfford</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>PriceTextInstance.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>PriceTextInstance.Green</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>PriceTextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Available</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>PriceTextInstance.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <Category>Rendering</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>PriceTextInstance.Green</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <Category>Rendering</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>PriceTextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <Category>Rendering</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>SoldOut</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>PriceTextInstance.Red</Name>
+        <Value xsi:type="xsd:int">169</Value>
+        <Category>Rendering</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>PriceTextInstance.Green</Name>
+        <Value xsi:type="xsd:int">169</Value>
+        <Category>Rendering</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>PriceTextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">169</Value>
+        <Category>Rendering</Category>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

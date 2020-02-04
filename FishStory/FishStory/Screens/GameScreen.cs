@@ -1108,9 +1108,9 @@ namespace FishStory.Screens
                 {
                     store.ItemsBoughtFromThisStore.Add(itemToBuy.Name);
 
-                    store.RefreshStoreItems();
-
                     BuyItem(itemToBuy);
+
+                    store.RefreshStoreItems();
                 }
             }
             //if(PlayerDataManager.PlayerData.Money >= itemToBuy.)
