@@ -678,6 +678,14 @@ namespace FishStory.Screens
             #endregion
             #region Conservationist
             //ded
+            If.Check(() =>
+            {
+                return true;
+            });
+            Do.Call(() =>
+            {
+                NPCList.FindByName(CharacterNames.Conservationist).Destroy();
+            });
             #endregion
             #region FishermanBald
             var bald = this.NPCList.FindByName(CharacterNames.FishermanBald);
