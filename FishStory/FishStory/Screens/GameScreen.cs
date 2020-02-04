@@ -578,19 +578,20 @@ namespace FishStory.Screens
                     var hasIdentifiedAny = identifiedDictionary.Values.Any(item => item > 0);
                     if(!hasIdentifiedAny)
                     {
-                        AddNotification("You have nothing to identify.");
+                        text = "\"203rd Ensomme Fishing Festival recorded fish counts will be posted here throughout the day!\"";
                     }
                     else
                     {
-                        text = "Identified fish:";
+                        text = "\"203rd Ensomme Fishing Festival Recorded fish:";
                         foreach(var kvp in identifiedDictionary)
                         {
                             text += $"\n{kvp.Key} {kvp.Value}";
                         }
-                        var rootObject = GetRootObject(text, new List<string>());
-                        DialogBox.TryShow(rootObject);
-                        PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                        text += "\"";                        
                     }
+                    var rootObject = GetRootObject(text, new List<string>());
+                    DialogBox.TryShow(rootObject);
+                    PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                 }
             }
 
