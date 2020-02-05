@@ -94,6 +94,7 @@ namespace FishStory.Screens
             PlayerCharacterInstance.FishLost += HandleFishLost;
             PlayerCharacterInstance.Lantern.Z = 1; // above the player, so always on top
             PlayerCharacterInstance.Lantern.SetLayers(LightEffectsLayer);
+            PlayerCharacterInstance.MoveDisplayElementsToUiLayer(UILayer);
         }
         private void InitializeDarkness()
         {

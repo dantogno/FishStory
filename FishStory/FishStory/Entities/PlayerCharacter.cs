@@ -9,6 +9,7 @@ using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using FishStory.Managers;
+using FlatRedBall.Graphics;
 
 namespace FishStory.Entities
 {
@@ -77,6 +78,11 @@ namespace FishStory.Entities
                 CancelInput = gamepad.GetButton(Xbox360GamePad.Button.B);
                 InventoryInput = gamepad.GetButton(Xbox360GamePad.Button.X);
             }
+        }
+
+        public void MoveDisplayElementsToUiLayer(Layer uiLayer)
+        {
+            ExclamationIconInstance.MoveToLayer(uiLayer);
         }
 
         #endregion
