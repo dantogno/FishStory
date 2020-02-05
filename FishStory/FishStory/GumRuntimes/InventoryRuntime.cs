@@ -96,6 +96,16 @@ namespace FishStory.GumRuntimes
         private void HandleListBoxSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             UpdateCurrentDescription();
+            if (sender is InventoryListBoxItem item)
+            {
+                UpdateSellButtonDisplay(item);
+            }
+            var m = 3;
+        }
+
+        private void UpdateSellButtonDisplay(InventoryListBoxItem highlightedItem)
+        {
+            var m = 3;
         }
 
         private void UpdateCurrentDescription()

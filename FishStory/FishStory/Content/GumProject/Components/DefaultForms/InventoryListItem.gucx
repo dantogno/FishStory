@@ -672,25 +672,7 @@
       <Name>Available</Name>
       <Variable>
         <Type>int</Type>
-        <Name>StockTextInstance.Red</Name>
-        <Value xsi:type="xsd:int">255</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>StockTextInstance.Green</Name>
-        <Value xsi:type="xsd:int">255</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>StockTextInstance.Blue</Name>
-        <Value xsi:type="xsd:int">255</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>PriceTextInstance.Red</Name>
+        <Name>PriceTextInstance.Blue</Name>
         <Value xsi:type="xsd:int">143</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -702,13 +684,31 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>PriceTextInstance.Blue</Name>
+        <Name>PriceTextInstance.Red</Name>
         <Value xsi:type="xsd:int">143</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>TextInstance.Red</Name>
+        <Name>StockTextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StockTextInstance.Green</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StockTextInstance.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Blue</Name>
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -720,7 +720,7 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>TextInstance.Blue</Name>
+        <Name>TextInstance.Red</Name>
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -748,46 +748,7 @@
       <Variable>
         <Type>int</Type>
         <Name>StockTextInstance.Blue</Name>
-        <Value xsi:type="xsd:int">169</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>StockTextInstance.Green</Name>
-        <Value xsi:type="xsd:int">169</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>StockTextInstance.Red</Name>
-        <Value xsi:type="xsd:int">169</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>TextInstance.Red</Name>
-        <Value xsi:type="xsd:int">176</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>TextInstance.Green</Name>
-        <Value xsi:type="xsd:int">196</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>TextInstance.Blue</Name>
-        <Value xsi:type="xsd:int">222</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-    <State>
-      <Name>CantAfford</Name>
-      <Variable>
-        <Type>int</Type>
-        <Name>StockTextInstance.Red</Name>
-        <Value xsi:type="xsd:int">255</Value>
+        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -798,7 +759,40 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>StockTextInstance.Blue</Name>
+        <Name>StockTextInstance.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">222</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Green</Name>
+        <Value xsi:type="xsd:int">196</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Red</Name>
+        <Value xsi:type="xsd:int">176</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>CantAfford</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>PriceTextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>PriceTextInstance.Green</Name>
         <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -810,20 +804,26 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>PriceTextInstance.Green</Name>
-        <Value xsi:type="xsd:int">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>PriceTextInstance.Blue</Name>
-        <Value xsi:type="xsd:int">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>TextInstance.Red</Name>
+        <Name>StockTextInstance.Blue</Name>
         <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StockTextInstance.Green</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StockTextInstance.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -834,8 +834,8 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>TextInstance.Blue</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Name>TextInstance.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

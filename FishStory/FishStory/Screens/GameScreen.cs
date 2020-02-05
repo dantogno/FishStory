@@ -1113,7 +1113,6 @@ namespace FishStory.Screens
                     store.RefreshStoreItems();
                 }
             }
-            //if(PlayerDataManager.PlayerData.Money >= itemToBuy.)
         }
 
         private void BuyItem(ItemDefinition itemToBuy)
