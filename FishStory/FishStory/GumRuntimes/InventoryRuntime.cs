@@ -32,12 +32,17 @@ namespace FishStory.GumRuntimes
         public InventoryRestrictions InventoryRestrictions { get; private set; }
         public string SelectedItemName
         {
-            get => (listBox.SelectedObject as ItemWithCount)?.ItemName;
+            get => CurrentlySelectedItem?.ItemName;
             set
             {
                 listBox.SelectedObject = listBox.Items
                     .FirstOrDefault(item => ((ItemWithCount)item).ItemName == value);
             }
+        }
+
+        public ItemWithCount CurrentlySelectedItem
+        {
+            get => listBox.SelectedObject as ItemWithCount;
         }
         #endregion
 
@@ -82,7 +87,10 @@ namespace FishStory.GumRuntimes
                 {
                     SellButton.Visible = (CurrentViewOrSellState == ViewOrSell.SellToBlackMarket || CurrentViewOrSellState == ViewOrSell.SellToStore);
                 }
-
+                if (CurrentViewOrSellState != ViewOrSell.View)
+                {
+                    UpdateSellButtonDisplay();
+                }
             }
         }
 
@@ -96,16 +104,31 @@ namespace FishStory.GumRuntimes
         private void HandleListBoxSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             UpdateCurrentDescription();
-            if (sender is InventoryListBoxItem item)
-            {
-                UpdateSellButtonDisplay(item);
-            }
-            var m = 3;
+            UpdateSellButtonDisplay();
         }
 
-        private void UpdateSellButtonDisplay(InventoryListBoxItem highlightedItem)
+        private void UpdateSellButtonDisplay()
         {
-            var m = 3;
+            if (CurrentlySelectedItem is null || CurrentlySelectedItem.Count <= 0)
+            {
+                DisableSellButton();
+            }
+            else
+            {
+                EnableSellButton();
+            }
+        }
+
+        private void DisableSellButton()
+        {
+            this.SellButton.CurrentButtonCategoryState = StoreBuyButtonRuntime.ButtonCategory.Disabled;
+            SellButton.Enabled = false;
+        }
+
+        private void EnableSellButton()
+        {
+            this.SellButton.CurrentButtonCategoryState = StoreBuyButtonRuntime.ButtonCategory.Enabled;
+            SellButton.Enabled = true;
         }
 
         private void UpdateCurrentDescription()
