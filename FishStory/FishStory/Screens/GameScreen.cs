@@ -1004,9 +1004,11 @@ namespace FishStory.Screens
                     PlayerDataManager.PlayerData.RemoveItem(itemName);
                 }
 
-                newItemCounts[newItemName] = item.Value;
-
-                PlayerDataManager.PlayerData.TimesFishIdentified.IncrementBy(newItemName, item.Value);
+                if (item.Value > 0)
+                {
+                    newItemCounts[newItemName] = item.Value;
+                    PlayerDataManager.PlayerData.TimesFishIdentified.IncrementBy(newItemName, item.Value);
+                }
             }
 
 
