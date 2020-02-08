@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "\"Petterson's Dump\nNo dumpster diving!\nJust because someone else threw it away,\ndoesn't mean YOU can have it for free!\"",
+      "name": "Sign",
+      "pid": "1",
+      "position": {
+        "x": "404",
+        "y": "170.5"
+      }
+    }
+  ],
+  "name": "DumpSignText",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "8165EC7A-9530-48D6-BBB2-5061F6EA2464"
+}

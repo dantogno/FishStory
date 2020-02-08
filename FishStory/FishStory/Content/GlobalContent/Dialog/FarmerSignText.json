@@ -1,0 +1,18 @@
+{
+  "passages": [
+    {
+      "text": "\"Issac's Bait and Produce. \nYou step on it, you buy it!!!\"",
+      "name": "Sign",
+      "pid": "1",
+      "position": {
+        "x": "404",
+        "y": "166.5"
+      }
+    }
+  ],
+  "name": "FarmerSignText",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "34B453F3-8445-4D5D-A958-9ECDFB6C2709"
+}

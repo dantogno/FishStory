@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="130" height="100" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="71">
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="130" height="100" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="82">
  <tileset firstgid="1" source="MasterTileSheet.tsx"/>
  <layer id="1" name="Tile Layer 1" width="130" height="100">
   <data encoding="base64" compression="gzip">
@@ -147,6 +147,24 @@
    </properties>
   </object>
   <object id="58" gid="3350" x="279.75" y="961.364" width="16" height="16"/>
+  <object id="73" name="FarmerSign" gid="7" x="513.417" y="688.917" width="16" height="16">
+   <properties>
+    <property name="Animation" value=""/>
+    <property name="TwineDialogId" value="FarmerSignText"/>
+   </properties>
+  </object>
+  <object id="80" name="DumpSign" gid="7" x="344.917" y="894.417" width="16" height="16">
+   <properties>
+    <property name="Animation" value=""/>
+    <property name="TwineDialogId" value="DumpSignText"/>
+   </properties>
+  </object>
+  <object id="81" name="NoticeBoard" gid="7" x="1576.92" y="568.417" width="16" height="16">
+   <properties>
+    <property name="Animation" value=""/>
+    <property name="TwineDialogId" value="NoticeBoardText"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="8" name="Labels">
   <object id="42" name="Fishmonger's house" gid="8" x="1399.42" y="722.833" width="16" height="16"/>

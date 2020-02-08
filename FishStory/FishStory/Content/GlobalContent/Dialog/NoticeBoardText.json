@@ -1,0 +1,34 @@
+{
+  "passages": [
+    {
+      "text": "\"NOTICE: All able-bodied townspeople are strongly encouraged to participate in the yearly fishing festival. Do your duty to the sea!\"\n[[continue]]",
+      "links": [
+        {
+          "name": "continue",
+          "link": "continue",
+          "pid": "2"
+        }
+      ],
+      "name": "Sign",
+      "pid": "1",
+      "position": {
+        "x": "404",
+        "y": "170.5"
+      }
+    },
+    {
+      "text": "\"HELP WANTED! The church is looking for volunteers to help with set up for the week leading up to the festival. Town youths preferred! Must be able to lift at least 60 lbs and provide their own shovel. Volunteers will be excused from fishing duties.\"",
+      "name": "continue",
+      "pid": "2",
+      "position": {
+        "x": "404",
+        "y": "320.5"
+      }
+    }
+  ],
+  "name": "NoticeBoardText",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.3.5",
+  "ifid": "DD9FD5FF-3A19-442E-9D08-5C7EBB459DE8"
+}

@@ -795,6 +795,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Dialog1</Name>
     </None>
+    <None Include="content\globalcontent\dialog\dumpsigntext.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>DumpSignText</Name>
+    </None>
     <None Include="content\globalcontent\dialog\elderlymotherday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ElderlyMotherDay1</Name>
@@ -854,6 +858,10 @@
     <None Include="content\globalcontent\dialog\farmerday3brief.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FarmerDay3Brief</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\farmersigntext.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FarmerSignText</Name>
     </None>
     <None Include="content\globalcontent\dialog\farmersonbaitshopdialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -974,6 +982,10 @@
     <None Include="content\globalcontent\dialog\mayorday3brief.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>MayorDay3Brief</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\noticeboardtext.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>NoticeBoardText</Name>
     </None>
     <None Include="content\globalcontent\dialog\nunday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
