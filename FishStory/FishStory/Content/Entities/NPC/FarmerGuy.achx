@@ -552,7 +552,7 @@
       <RightCoordinate>1808</RightCoordinate>
       <TopCoordinate>1956</TopCoordinate>
       <BottomCoordinate>1980</BottomCoordinate>
-      <RelativeX>15</RelativeX>
+      <RelativeX>-15</RelativeX>
       <RelativeY>11</RelativeY>
     </Frame>
     <Frame>
@@ -562,7 +562,7 @@
       <RightCoordinate>1856</RightCoordinate>
       <TopCoordinate>1956</TopCoordinate>
       <BottomCoordinate>1980</BottomCoordinate>
-      <RelativeX>15</RelativeX>
+      <RelativeX>-15</RelativeX>
       <RelativeY>11</RelativeY>
     </Frame>
     <Frame>
@@ -572,7 +572,7 @@
       <RightCoordinate>1904</RightCoordinate>
       <TopCoordinate>1956</TopCoordinate>
       <BottomCoordinate>1980</BottomCoordinate>
-      <RelativeX>15</RelativeX>
+      <RelativeX>-15</RelativeX>
       <RelativeY>11</RelativeY>
     </Frame>
     <Frame>
@@ -582,7 +582,7 @@
       <RightCoordinate>1856</RightCoordinate>
       <TopCoordinate>1956</TopCoordinate>
       <BottomCoordinate>1980</BottomCoordinate>
-      <RelativeX>15</RelativeX>
+      <RelativeX>-15</RelativeX>
       <RelativeY>11</RelativeY>
     </Frame>
   </AnimationChain>

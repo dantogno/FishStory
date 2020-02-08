@@ -44,6 +44,8 @@ namespace FishStory.Screens
         /// Tycoon requires this many fish before giving key.
         /// </summary>
         private int numFishRequiredForKey = 3;
+        private const int outOfWorldX = 9000;
+        private const int outOfWorldY = 9000;
         bool isWaitingToGiveFreeBaitInConversation = false;
         private int TotalFishIdentified
         {
@@ -57,6 +59,45 @@ namespace FishStory.Screens
                 return total;
             }
         }
+
+        private Dictionary<string, double> CharacterBedTimes = new Dictionary<string, double>()
+        {
+            {CharacterNames.BlackMarketShop, 24},
+            {CharacterNames.Conservationist, 19 },
+            {CharacterNames.ElderlyMother, 16 },
+            {CharacterNames.Farmer, 18 },
+            {CharacterNames.FarmerSonBaitShop, 18 },
+            {CharacterNames.FestivalCoordinator, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1 },
+            {CharacterNames.FishermanBald, 17 },
+            {CharacterNames.FishermanHair, 22 },
+            {CharacterNames.Fishmonger, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1 },
+            {CharacterNames.Identifier, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1},
+            {CharacterNames.Mayor, 19 },
+            {CharacterNames.Nun, 17 },
+            {CharacterNames.Priestess, 23 },
+            {CharacterNames.Tycoon, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1},
+            {CharacterNames.TycoonDaughter, 22 },
+            {CharacterNames.YoungManBaitShop, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1}
+        };
+        private Dictionary<string, double> CharacterWakeTimes = new Dictionary<string, double>()
+        {
+            {CharacterNames.BlackMarketShop, 20},
+            {CharacterNames.Conservationist, 9 },
+            {CharacterNames.ElderlyMother, 11 },
+            {CharacterNames.Farmer, 6 },
+            {CharacterNames.FarmerSonBaitShop, 8 },
+            {CharacterNames.FestivalCoordinator, 10 },
+            {CharacterNames.FishermanBald, 11 },
+            {CharacterNames.FishermanHair, 8 },
+            {CharacterNames.Fishmonger, 10 },
+            {CharacterNames.Identifier, 9},
+            {CharacterNames.Mayor, 11 },
+            {CharacterNames.Nun, 9 },
+            {CharacterNames.Priestess, 15 },
+            {CharacterNames.Tycoon, 9},
+            {CharacterNames.TycoonDaughter, 12 },
+            {CharacterNames.YoungManBaitShop, 10}
+        };
         void CustomInitialize()
         {
             InitializeScript();
@@ -118,27 +159,27 @@ namespace FishStory.Screens
         private Dictionary<string, string> classRepresentatives = new Dictionary<string, string>()
         {
             // male
-            {ItemDefinition.King_Mackerel, "Fishmonger"},
+            {ItemDefinition.King_Mackerel, CharacterNames.Fishmonger},
             // female
-            {ItemDefinition.Ladyfish, "Mayor" },
+            {ItemDefinition.Ladyfish, CharacterNames.Mayor },
             // old
-            { ItemDefinition.Rougheye_Rockfish, "ElderlyMother" },
+            { ItemDefinition.Rougheye_Rockfish, CharacterNames.ElderlyMother },
             // young
-            { ItemDefinition.Shrimp, "Farmer" },
+            { ItemDefinition.Shrimp, CharacterNames.Farmer },
             // bald
-            { ItemDefinition.Monkfish, "Identifier" },
+            { ItemDefinition.Monkfish, CharacterNames.Identifier },
             // facial hair
-            { ItemDefinition.Goatfish, "Tycoon" },
+            { ItemDefinition.Goatfish, CharacterNames.Tycoon },
             // mother
-            { ItemDefinition.Giant_Octopus, "Nun" },
+            { ItemDefinition.Giant_Octopus, CharacterNames.Nun },
             // father
-            { ItemDefinition.Seahorse, "TycoonDaughter" },
+            { ItemDefinition.Seahorse, CharacterNames.TycoonDaughter },
             // blonde hair
-            {ItemDefinition.Trumpetfish, "YoungManBaitShop"  },
+            {ItemDefinition.Trumpetfish, CharacterNames.YoungManBaitShop },
             // dark hair
-            {ItemDefinition.Cobia, "FestivalCoordinator" },
+            {ItemDefinition.Cobia, CharacterNames.FestivalCoordinator },
             // brown hair
-            {ItemDefinition.Brown_Rockfish, "BlackMarketShop" }
+            {ItemDefinition.Brown_Rockfish, CharacterNames.BlackMarketShop }
         };
 
         private bool DoesPlayerHaveNoBaitAndNoMoneyAndNoFish =>
@@ -186,7 +227,7 @@ namespace FishStory.Screens
         {
             var If = script;
             var Do = script;
-                
+             
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 1);
             Do.Call(() => DoDay1Script(If, Do));
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 2);
@@ -194,7 +235,45 @@ namespace FishStory.Screens
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 3);
             Do.Call(() => DoDay3Script(If, Do));
         }
+        private void HandleCharacterBedTimes(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
+        {
+            foreach (var kvp in CharacterBedTimes)
+            {
 
+                var npc = NPCList.FindByName(kvp.Key);
+                If.Check(() =>
+                {
+                    return InGameDateTimeManager.OurInGameDay.Hour >= kvp.Value
+                        && !npc.IsOnScreen();
+                });
+                Do.Call(() =>
+                {
+                    npc.X = outOfWorldX;
+                    npc.Y = outOfWorldY;
+                });
+            }
+        }
+        private void HandleCharacterWakeTimes(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
+        {
+            foreach (var kvp in CharacterWakeTimes)
+            {
+
+                var npc = NPCList.FindByName(kvp.Key);
+                npc.X = outOfWorldX;
+                npc.Y = outOfWorldY;
+
+                If.Check(() =>
+                {
+                    return (InGameDateTimeManager.OurInGameDay.Hour >= kvp.Value
+                        && !npc.WillBeOnScreenAtPosition(npc.SpawnPosition.X, npc.SpawnPosition.Y))
+                        || kvp.Value < HourOnClockPlayerWakesIn24H;
+                });
+                Do.Call(() =>
+                {
+                    npc.Position = npc.SpawnPosition;
+                });
+            }
+        }
         private void HandleDay2TraitAlternateDialogForClassRepresentatives(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
             int numberOfClassRepresentativesToUseAltDay2Dialog = 4;
@@ -219,7 +298,7 @@ namespace FishStory.Screens
                 .Call(() => GameScreenGum.InputInstructionsInstance.Visible = false)
                 .After(secondsToShowInputCallout);
 
-            InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(12));
+            InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(12));           
 
             #region Priestess
             If.Check(() => HasTag("HasSeenPriestessDay1"));
@@ -328,16 +407,20 @@ namespace FishStory.Screens
             });
             #endregion
             #region Mayor
-            // Mayor
-            // TODO: This is annoying during testing, but turn it back on eventually!
-            If.Check(() => !HasTag("HasSeenWelcomeDialog") && PlayerCharacterInstance.X < 1525);
-            Do.Call(() =>
+            if (!DebuggingVariables.ShouldSkipDay1MayorIntro)
             {
-                if (DialogBox.TryShow("WelcomeDialog"))
+                If.Check(() => !HasTag("HasSeenWelcomeDialog") && PlayerCharacterInstance.X < 1525);
+                Do.Call(() =>
                 {
-                    PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
-                }
-            });
+                    SetDialoguePortraitFor(NPCList.FindByName(CharacterNames.Mayor));
+                    if (DialogBox.TryShow("WelcomeDialog"))
+                    {
+                        SetDialoguePortraitFor(NPCList.FindByName(CharacterNames.Mayor));
+                        PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                    }
+                });
+            }
+
             If.Check(() => HasTag("HasSeenWelcomeDialog"));
             Do.Call(() =>
             {
@@ -370,13 +453,27 @@ namespace FishStory.Screens
             });
             #endregion
             #region BlackMarketShop
+            var blackMarketShop = NPCList.FindByName(CharacterNames.BlackMarketShop);
+            blackMarketShop.X = outOfWorldX;
+            blackMarketShop.Y = outOfWorldY;
+
+            If.Check(() =>
+            {
+               return InGameDateTimeManager.OurInGameDay.Hour > CharacterWakeTimes[CharacterNames.BlackMarketShop] 
+                && PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key)
+                && !blackMarketShop.WillBeOnScreenAtPosition(blackMarketShop.SpawnPosition.X, blackMarketShop.SpawnPosition.Y);
+            });
+            Do.Call(() =>
+            {
+                blackMarketShop.Position = blackMarketShop.SpawnPosition;
+            });
             If.Check(() =>
             {
                 return HasTag("HasSeenBlackMarketShopDay1");
             });
             Do.Call(() =>
             {
-                NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay1Brief);
+                blackMarketShop.TwineDialogId = nameof(GlobalContent.BlackMarketShopDay1Brief);
             });
             #endregion
             #region YoungManBaitShop  
@@ -386,6 +483,11 @@ namespace FishStory.Screens
                 NPCList.FindByName(CharacterNames.YoungManBaitShop).TwineDialogId = nameof(GlobalContent.FancyBaitShopDay1Brief);
             });
             #endregion
+
+            HandleCharacterBedTimes(If, Do);
+            // Can't do this in Day 1 or important characters may not be there when the game starts!
+            // HandleCharacterWakeTimes(If, Do);
+
             //TODO: What are NPCRelationships??
             //If.Check(() =>
             //{
@@ -394,12 +496,14 @@ namespace FishStory.Screens
             //});
         }
 
+     
+
         private void DoDay2Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
             #region Mayor
             var mayor = this.NPCList.FindByName(CharacterNames.Mayor);
             mayor.TwineDialogId = nameof(GlobalContent.MayorDay2);
-
+            mayor.SpawnPosition = new Microsoft.Xna.Framework.Vector3(967, -593, PlayerCharacterInstance.Z);
             If.Check(() => HasTag("HasSeenMayorDay2"));
             Do.Call(() =>
             {
@@ -431,6 +535,7 @@ namespace FishStory.Screens
             #region ElderlyMother
             var elderlyMother = this.NPCList.FindByName(CharacterNames.ElderlyMother);
             elderlyMother.TwineDialogId = nameof(GlobalContent.ElderlyMotherDay2);
+            elderlyMother.SpawnPosition = new Microsoft.Xna.Framework.Vector3(1548, -568, PlayerCharacterInstance.Z);
 
             If.Check(() => HasTag("HasSeenElderlyMotherDay2"));
             Do.Call(() =>
@@ -464,7 +569,7 @@ namespace FishStory.Screens
             #region Farmer
             var farmer = NPCList.FindByName(CharacterNames.Farmer);
             farmer.CurrentChainName = "FishLeft";
-            farmer.Position = new Microsoft.Xna.Framework.Vector3(315, -595, PlayerCharacterInstance.Position.Z);
+            farmer.SpawnPosition = new Microsoft.Xna.Framework.Vector3(315, -595, PlayerCharacterInstance.Position.Z);
             farmer.TwineDialogId = nameof(GlobalContent.FarmerDay2);
 
             If.Check(() => HasTag("HasSeenFarmerDay2"));
@@ -488,7 +593,7 @@ namespace FishStory.Screens
             #endregion
             #region TycoonDaughter
             var tycoonDaughter = this.NPCList.FindByName(CharacterNames.TycoonDaughter);
-            tycoonDaughter.Position = new Microsoft.Xna.Framework.Vector3(715, -340, PlayerCharacterInstance.Position.Z);
+            tycoonDaughter.SpawnPosition = new Microsoft.Xna.Framework.Vector3(715, -340, PlayerCharacterInstance.Position.Z);
             tycoonDaughter.TwineDialogId = nameof(GlobalContent.TycoonDaughterDay2);
 
             If.Check(() => HasTag("HasSeenTycoonDaughterDay2"));
@@ -501,7 +606,7 @@ namespace FishStory.Screens
             #region Conservationist
             var conservationist = this.NPCList.FindByName(CharacterNames.Conservationist);
             conservationist.TwineDialogId = nameof(GlobalContent.ConservationistDay2);
-
+            conservationist.SpawnPosition = new Microsoft.Xna.Framework.Vector3(745, -880, PlayerCharacterInstance.Z);
             If.Check(() => HasTag("HasSeenConservationistDay2"));
             Do.Call(() =>
             {
@@ -533,12 +638,16 @@ namespace FishStory.Screens
             #endregion
             // TODO: turn this back on once the alt text exists!
             // HandleDay2TraitAlternateDialogForClassRepresentatives(If, Do);
+
+            HandleCharacterBedTimes(If, Do);
+            HandleCharacterWakeTimes(If, Do);
         }
         private void DoDay3Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
             #region Mayor
             var mayor = this.NPCList.FindByName(CharacterNames.Mayor);
             mayor.TwineDialogId = nameof(GlobalContent.MayorDay3);
+            mayor.SpawnPosition = new Microsoft.Xna.Framework.Vector3(1422, -620, PlayerCharacterInstance.Z);
 
             If.Check(() => HasTag("HasSeenMayorDay3"));
             Do.Call(() =>
@@ -556,8 +665,14 @@ namespace FishStory.Screens
             #region FarmerSonBaitShop
             #endregion
             #region YoungManBaitShop
-            #region BlackMarketShop
             #endregion
+            #region BlackMarketShop
+            //NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay3);
+            If.Check(() => HasTag("HasSeenBlackMarketShopDay3"));
+            Do.Call(() =>
+            {
+                //NPCList.FindByName(CharacterNames.FishermanHair).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay3Brief);
+            });
             #endregion
             #region ElderlyMother
             var elderlyMother = this.NPCList.FindByName(CharacterNames.ElderlyMother);
@@ -595,7 +710,7 @@ namespace FishStory.Screens
             #region Farmer
             var farmer = NPCList.FindByName(CharacterNames.Farmer);
             farmer.CurrentChainName = "FishRight";
-            farmer.Position = new Microsoft.Xna.Framework.Vector3(1885, -665, PlayerCharacterInstance.Position.Z);
+            farmer.SpawnPosition = new Microsoft.Xna.Framework.Vector3(1576, -729, PlayerCharacterInstance.Position.Z);
             farmer.TwineDialogId = nameof(GlobalContent.FarmerDay3);
 
             If.Check(() => HasTag("HasSeenFarmerDay3"));
@@ -630,6 +745,14 @@ namespace FishStory.Screens
             #endregion
             #region Conservationist
             //ded
+            If.Check(() =>
+            {
+                return true;
+            });
+            Do.Call(() =>
+            {
+                NPCList.FindByName(CharacterNames.Conservationist).Destroy();
+            });
             #endregion
             #region FishermanBald
             var bald = this.NPCList.FindByName(CharacterNames.FishermanBald);
@@ -653,50 +776,11 @@ namespace FishStory.Screens
                 npc.TwineDialogId = nameof(GlobalContent.FishermanHairDay3Brief);
             });
             #endregion
+
+            HandleCharacterBedTimes(If, Do);
+            HandleCharacterWakeTimes(If, Do);
         }
-        /// <summary>
-        /// Leaving one empty one here as a template if we need it.
-        /// </summary>
-        private void DoDay4Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
-        {
-            #region Mayor
-            #endregion
-            #region FestivalCoordinator
-            #endregion
-            #region Identifier
-            #endregion
-            #region Fishmonger
-            #endregion
-            #region FarmerSonBaitShop
-            #endregion
-            #region BlackMarketShop
-            #endregion
-            #region YoungManBaitShop
-
-            #endregion
-            #region #ElderlyMother
-            #endregion
-            #region Priestess
-            #endregion
-            #region Nun
-            #endregion
-            #region Farmer
-            var farmer = NPCList.FindByName("Farmer");
-            farmer.CurrentChainName = "OccasionallyLookUpAndWipeSweat";
-            farmer.Position = new Microsoft.Xna.Framework.Vector3(1885, -665, PlayerCharacterInstance.Position.Z);
-
-            #endregion
-            #region Tycoon
-            #endregion
-            #region TycoonDaughter
-            #endregion
-            #region Conservationist
-            #endregion
-            #region FishermanBald
-            #endregion
-            #region FishermanHair
-            #endregion
-        }  
+ 
 
         private void AwardRandomBait()
         {

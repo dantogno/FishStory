@@ -32,12 +32,17 @@ namespace FishStory.GumRuntimes
         public InventoryRestrictions InventoryRestrictions { get; private set; }
         public string SelectedItemName
         {
-            get => (listBox.SelectedObject as ItemWithCount)?.ItemName;
+            get => CurrentlySelectedItem?.ItemName;
             set
             {
                 listBox.SelectedObject = listBox.Items
                     .FirstOrDefault(item => ((ItemWithCount)item).ItemName == value);
             }
+        }
+
+        public ItemWithCount CurrentlySelectedItem
+        {
+            get => listBox.SelectedObject as ItemWithCount;
         }
         #endregion
 
@@ -82,7 +87,10 @@ namespace FishStory.GumRuntimes
                 {
                     SellButton.Visible = (CurrentViewOrSellState == ViewOrSell.SellToBlackMarket || CurrentViewOrSellState == ViewOrSell.SellToStore);
                 }
-
+                if (CurrentViewOrSellState != ViewOrSell.View)
+                {
+                    UpdateSellButtonDisplay();
+                }
             }
         }
 
@@ -96,6 +104,31 @@ namespace FishStory.GumRuntimes
         private void HandleListBoxSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             UpdateCurrentDescription();
+            UpdateSellButtonDisplay();
+        }
+
+        private void UpdateSellButtonDisplay()
+        {
+            if (CurrentlySelectedItem is null || CurrentlySelectedItem.Count <= 0)
+            {
+                DisableSellButton();
+            }
+            else
+            {
+                EnableSellButton();
+            }
+        }
+
+        private void DisableSellButton()
+        {
+            this.SellButton.CurrentButtonCategoryState = StoreBuyButtonRuntime.ButtonCategory.Disabled;
+            SellButton.Enabled = false;
+        }
+
+        private void EnableSellButton()
+        {
+            this.SellButton.CurrentButtonCategoryState = StoreBuyButtonRuntime.ButtonCategory.Enabled;
+            SellButton.Enabled = true;
         }
 
         private void UpdateCurrentDescription()
@@ -140,8 +173,7 @@ namespace FishStory.GumRuntimes
                                     shouldShow = true;
                                     break;
                                 case InventoryRestrictions.IdentifiedFishOnly:
-                                    shouldShow = item.IsFish;
-                                    // todo - need to see if identified
+                                    shouldShow = item.IsFish && string.IsNullOrEmpty(item.AssociatedItem);                                     
                                     break;
                             }
                         }

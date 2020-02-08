@@ -53,6 +53,8 @@ namespace FishStory.Screens
 
         Dictionary<string, List<string>> ItemsBought = new Dictionary<string, List<string>>();
 
+        private bool FadeInComplete => FadeInSprite.Alpha <= 0f;
+
         #endregion
 
         #region Initialize
@@ -92,6 +94,7 @@ namespace FishStory.Screens
             PlayerCharacterInstance.FishLost += HandleFishLost;
             PlayerCharacterInstance.Lantern.Z = 1; // above the player, so always on top
             PlayerCharacterInstance.Lantern.SetLayers(LightEffectsLayer);
+            PlayerCharacterInstance.MoveDisplayElementsToUiLayer(UILayer);
         }
         private void InitializeDarkness()
         {
@@ -205,6 +208,7 @@ namespace FishStory.Screens
             {
                 npc.Z = PlayerCharacterInstance.Z; // same as player so they sort
                 //npc.MoveToLayer(WorldLayer);
+                npc.SpawnPosition = new Vector3(npc.X, npc.Y, npc.Z);
             }
             foreach(var propObject in PropObjectList)
             {
@@ -289,14 +293,7 @@ namespace FishStory.Screens
         private void HandleStoreClosed()
         {
             PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.StoreInstance);
-            if (GameScreenGum.InventoryInstance.CurrentViewOrSellState == InventoryRuntime.ViewOrSell.SellToStore)
-            {
-                SoundManager.Play(GlobalContent.StoreCloseSound);
-            }
-            else if (GameScreenGum.InventoryInstance.CurrentViewOrSellState == InventoryRuntime.ViewOrSell.SellToBlackMarket)
-            {
-                SoundManager.Play(GlobalContent.BlackMarketCloseSound);
-            }
+            SoundManager.Play(GlobalContent.StoreCloseSound);
             UnpauseThisScreen();
         }
 
@@ -314,48 +311,72 @@ namespace FishStory.Screens
 
             RestartVariables.Add($"Camera.Main.X");
             RestartVariables.Add($"Camera.Main.Y");
+
+            //RestartVariables.Add($"this.{nameof(FadeInSprite)}.{nameof(FadeInSprite.Alpha)}");
         }
 
         #endregion
 
         #region Activity
 
+        private SoundEffectInstance boatHornSound = null;
         void CustomActivity(bool firstTimeCalled)
         {
-            // No longer clearing because we need to know if tags have ever been seen
-            // dialogTagsThisFrame.Clear();
-            if(InputManager.Mouse.ButtonPushed(Mouse.MouseButtons.RightButton))
-            {
-                RestartScreen(true);
-            }
-            CameraActivity();
-
-            if (!IsPaused && DialogBox.Visible == false)
-            {
-                InGameDateTimeManager.Activity(firstTimeCalled);
-            }
-            DarknessOverlaySprite.Alpha = 1-InGameDateTimeManager.SunlightEffectiveness;
-            UpdatePropObjectsLights();
-
-            UiActivity();
-
-            PlayerCollisionActivity();
 #if DEBUG
-            DebuggingActivity();
+            if (DebuggingVariables.ShouldSkipFadeInWithBoatSound && !FadeInComplete)
+            {
+                FadeInSprite.Alpha = 0f;
+            }
+#endif
+            if (FadeInComplete == false)
+            {
+                if (firstTimeCalled)
+                {
+                    InGameDateTimeManager.Activity(firstTimeCalled);
+                    boatHornSound = SoundManager.Play(GlobalContent.BoatHornSound, volume: 1f);
+                }
+                else if (boatHornSound == null || boatHornSound.IsDisposed || boatHornSound.State != SoundState.Playing)
+                {
+                    FadeInSprite.Alpha -= 0.01f;
+                }
+            }
+            else
+            {
+                // No longer clearing because we need to know if tags have ever been seen
+                // dialogTagsThisFrame.Clear();
+                if (InputManager.Mouse.ButtonPushed(Mouse.MouseButtons.RightButton))
+                {
+                    RestartScreen(true);
+                }
+                CameraActivity();
+
+                if (!IsPaused && DialogBox.Visible == false)
+                {
+                    InGameDateTimeManager.Activity(firstTimeCalled);
+                }
+                DarknessOverlaySprite.Alpha = 1 - InGameDateTimeManager.SunlightEffectiveness;
+                UpdatePropObjectsLights();
+
+                UiActivity();
+
+                PlayerCollisionActivity();
+#if DEBUG
+                DebuggingActivity();
 #endif
 
-            // do script *after* the UI
-            Map?.AnimateSelf();
+                // do script *after* the UI
+                Map?.AnimateSelf();
 
-            script.Activity();
+                script.Activity();
 
-            PlayTimeBasedSounds();
+                PlayTimeBasedSounds();
 
-            PlaySongForDay();
+                PlaySongForDay();
 
-            if (InGameDateTimeManager.TimeOfDay.Hours == (int)HourOnClockPlayerForcedSleepIn24H && !isBeingForcedToSleep)
-            {
-                ForcePlayerToSleep();
+                if (InGameDateTimeManager.TimeOfDay.Hours == (int)HourOnClockPlayerForcedSleepIn24H && !isBeingForcedToSleep)
+                {
+                    ForcePlayerToSleep();
+                }
             }
         }
 
@@ -433,7 +454,7 @@ namespace FishStory.Screens
 
             if (MusicManager.IsSongPlaying == false || MusicManager.CurrentSong != songToPlayForDay)
             {
-                MusicManager.PlaySong(songToPlayForDay, forceRestart: true, shouldLoop: true);
+                MusicManager.PlaySong(songToPlayForDay, forceRestart: true);
             }
 
             var minutesWhenSongMutes = (HourOnClockSunSetsIn24H * 60);
@@ -444,7 +465,7 @@ namespace FishStory.Screens
             }
             else if (MusicManager.MusicVolumeLevel != MusicManager.DefaultMusicLevel &&
                     InGameDateTimeManager.TimeOfDay.Hours < HourOnClockSunSetsIn24H && 
-                    InGameDateTimeManager.TimeOfDay.Hours > 3 )
+                    InGameDateTimeManager.TimeOfDay.Hours > HourOnClockPlayerForcedSleepIn24H)
             {
                 MusicManager.MusicVolumeLevel = MusicManager.DefaultMusicLevel;
             }
@@ -542,7 +563,7 @@ namespace FishStory.Screens
                     }
                     else
                     {
-                        text = "Locked.";                        
+                        text = "\"Petterson Properties: Luxury mobile home for rent.\"";                        
                     }
 
                     var rootObject = GetRootObject(text, options);
@@ -558,24 +579,32 @@ namespace FishStory.Screens
                     var hasIdentifiedAny = identifiedDictionary.Values.Any(item => item > 0);
                     if(!hasIdentifiedAny)
                     {
-                        AddNotification("You have nothing to identify.");
+                        text = "\"203rd Ensomme Fishing Festival recorded fish counts will be posted here throughout the day!\"";
                     }
                     else
                     {
-                        text = "Identified fish:";
+                        text = "\"203rd Ensomme Fishing Festival Recorded fish:";
                         foreach(var kvp in identifiedDictionary)
                         {
                             text += $"\n{kvp.Key} {kvp.Value}";
                         }
-                        var rootObject = GetRootObject(text, new List<string>());
-                        DialogBox.TryShow(rootObject);
-                        PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                        text += "\"";                        
                     }
+                    var rootObject = GetRootObject(text, new List<string>());
+                    DialogBox.TryShow(rootObject);
+                    PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                 }
             }
 
 
             DoFishingActivity();
+        }
+
+        protected void SetDialoguePortraitFor(NPC npc)
+        {
+            var npcTextureRectangle = npc.GetTextureRectangle();
+            DialoguePortrait.SetTextureCoordinates(npcTextureRectangle);
+            DialoguePortrait.Visible = true;
         }
 
         private void HandleDoorOptionSelected(DialogTreeRaw.Link selectedLink)
@@ -628,6 +657,7 @@ namespace FishStory.Screens
                     else if (PlayerCharacterInstance.TalkInput.WasJustPressed || PlayerCharacterInstance.CancelInput.WasJustPressed)
                     { 
                         PlayerCharacterInstance.StopFishing();
+                        AddNotification("You cut your bait.");
                     }
                 }
             }           
@@ -884,7 +914,7 @@ namespace FishStory.Screens
         }
 
 
-        #region UI Activity
+#region UI Activity
 
         private void UiActivity()
         {
@@ -974,9 +1004,11 @@ namespace FishStory.Screens
                     PlayerDataManager.PlayerData.RemoveItem(itemName);
                 }
 
-                newItemCounts[newItemName] = item.Value;
-
-                PlayerDataManager.PlayerData.TimesFishIdentified.IncrementBy(newItemName, item.Value);
+                if (item.Value > 0)
+                {
+                    newItemCounts[newItemName] = item.Value;
+                    PlayerDataManager.PlayerData.TimesFishIdentified.IncrementBy(newItemName, item.Value);
+                }
             }
 
 
@@ -1079,12 +1111,11 @@ namespace FishStory.Screens
                 {
                     store.ItemsBoughtFromThisStore.Add(itemToBuy.Name);
 
-                    store.RefreshStoreItems();
-
                     BuyItem(itemToBuy);
+
+                    store.RefreshStoreItems();
                 }
             }
-            //if(PlayerDataManager.PlayerData.Money >= itemToBuy.)
         }
 
         private void BuyItem(ItemDefinition itemToBuy)
@@ -1126,11 +1157,11 @@ namespace FishStory.Screens
             PauseThisScreen();
         }
 
-        #endregion
+#endregion
 
-        #endregion
+#endregion
 
-        #region Script-helping methods
+#region Script-helping methods
         public void RemoveTag(string tag)
         {
             dialogTagsThisFrame.Remove(tag);
@@ -1168,9 +1199,9 @@ namespace FishStory.Screens
             return npc.IsOnScreen();
         }
 
-        #endregion
+#endregion
 
-        #region Destroy
+#region Destroy
 
         void CustomDestroy()
         {
@@ -1179,7 +1210,7 @@ namespace FishStory.Screens
 
         }
 
-        #endregion
+#endregion
 
         static void CustomLoadStaticContent(string contentManagerName)
         {

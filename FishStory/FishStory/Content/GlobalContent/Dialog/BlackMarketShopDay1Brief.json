@@ -1,18 +1,48 @@
 {
   "passages": [
     {
-      "text": "Ya heard me, Guppy. Find me tomorrow and perhaps we barter. Now be gone with ya!",
-      "name": "1",
+      "text": "What're ya sellin'? [[Sell]][[Leave]]",
+      "links": [
+        {
+          "name": "Sell",
+          "link": "Sell",
+          "pid": "2"
+        },
+        {
+          "name": "Leave",
+          "link": "Leave",
+          "pid": "3"
+        }
+      ],
+      "name": "Untitled Passage",
       "pid": "1",
       "position": {
-        "x": "405",
-        "y": "442.8333435058594"
+        "x": "411.5",
+        "y": "387.5"
+      }
+    },
+    {
+      "text": "sell=blackmarket",
+      "name": "Sell",
+      "pid": "2",
+      "position": {
+        "x": "336.5",
+        "y": "537.5"
+      }
+    },
+    {
+      "text": "Aye, return when ya have something worthy of my coin.",
+      "name": "Leave",
+      "pid": "3",
+      "position": {
+        "x": "486.5",
+        "y": "537.5"
       }
     }
   ],
   "name": "BlackMarketShopDay1Brief",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.3.5",
+  "creator-version": "2.2.1",
   "ifid": "D1E8AC9A-7D83-4DFD-843A-3C485730D9FB"
 }

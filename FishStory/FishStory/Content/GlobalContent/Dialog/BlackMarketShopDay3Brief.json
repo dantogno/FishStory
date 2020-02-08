@@ -1,0 +1,48 @@
+{
+    "passages": [
+      {
+        "text": "The Choosing's nigh! But what'll the outcome be?\n[[Sell]]\n[[Leave]]",
+        "links": [
+          {
+            "name": "Sell",
+            "link": "Sell",
+            "pid": "2"
+          },
+          {
+            "name": "Leave",
+            "link": "Leave",
+            "pid": "3"
+          }
+        ],
+        "name": "Untitled Passage",
+        "pid": "1",
+        "position": {
+          "x": "411.5",
+          "y": "491.5"
+        }
+      },
+      {
+        "text": "sell=blackmarket",
+        "name": "Sell",
+        "pid": "2",
+        "position": {
+          "x": "336.5",
+          "y": "641.5"
+        }
+      },
+      {
+        "text": "Farewell, Guppy.",
+        "name": "Leave",
+        "pid": "3",
+        "position": {
+          "x": "486.5",
+          "y": "641.5"
+        }
+      }
+    ],
+    "name": "BlackMarketShopDay3Brief",
+    "startnode": "1",
+    "creator": "Twine",
+    "creator-version": "2.2.1",
+    "ifid": "60E2A4C7-D5C8-4B1B-B8F0-56043D79DABF"
+  }

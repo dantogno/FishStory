@@ -1,7 +1,7 @@
 {
   "passages": [
     {
-      "text": "Well? Have you sold three fish yet?\n[[No...|No]]",
+      "text": "Well? Have you delivered three fish to Jacob yet?\n[[No...|No]]",
       "links": [
         {
           "name": "No...|No",
@@ -16,7 +16,7 @@
       }
     },
     {
-      "text": "Well, get to it! Plenty of people are clamoring to get a spot in one of my exclusive properties, and I won't hold this spot for you forever!",
+      "text": "Well, get to it! Plenty of people are clamoring to get a spot in one of my exclusive properties, and I won't hold this spot for you forever! You can find Jacob in the white tent behind me.",
       "name": "No",
       "pid": "2",
       "position": {
@@ -28,6 +28,6 @@
   "name": "TycoonNoFishNoKey",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.3.5",
+  "creator-version": "2.2.1",
   "ifid": "E9ACA6F3-41B6-4ABC-93C7-857B8A3B1186"
 }

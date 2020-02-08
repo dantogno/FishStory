@@ -1,4 +1,5 @@
-﻿using FishStory.Screens;
+﻿using FishStory.DataTypes;
+using FishStory.Screens;
 using Microsoft.Xna.Framework;
 using System;
 
@@ -14,6 +15,7 @@ namespace FishStory.Managers
         public static bool MoonIsUp = OurInGameDay.Hour > 22 || OurInGameDay.Hour < 3;
         public static float SunlightEffectiveness =>MathHelper.Clamp(GetSunlightCoefficient(DistanceToNoon()), 0.35f,1.0f);
 
+        public static int HourToFreezeTimeIfPlayerNeedsKeyOnDay1 = 20;
         private static double minutesElapsedPerSecond = 6;
 
         private const float minutesAtNoon = minutesPerDay/2;
@@ -30,7 +32,19 @@ namespace FishStory.Managers
             }
 
             var timeToAdd = FlatRedBall.TimeManager.SecondDifference * minutesElapsedPerSecond;
-            OurInGameDay = OurInGameDay.AddMinutes(timeToAdd);
+
+            // David: I'm putting this in as a quick way to prevent the case
+            // where the time runs out on the first day before the player has
+            // gotten the key. 
+            // There's probably a more elegant solution, but this works for now.
+            // https://github.com/dantogno/FishStory/issues/142
+            bool shouldNotUpdateTimeBecausePlayerNeedsKey =
+                PlayerDataManager.PlayerData.CurrentDay == 1
+                && !PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key)
+                && TimeOfDay.Hours >= HourToFreezeTimeIfPlayerNeedsKeyOnDay1;
+
+            if (!shouldNotUpdateTimeBecausePlayerNeedsKey)
+                OurInGameDay = OurInGameDay.AddMinutes(timeToAdd);
         }
 
         private static void InitializeDay()
@@ -43,13 +57,17 @@ namespace FishStory.Managers
 
         public static void ResetDay()
         {
-            if (TimeOfDay.TotalHours < GameScreen.HourOnClockPlayerForcedSleepIn24H)
+            // If the player goes to bed after the wake up hour, we need to increment the day.
+            // The hour will be less than the wake up time if the player has stayed to midnight.
+            if (TimeOfDay.TotalHours > GameScreen.HourOnClockPlayerWakesIn24H)
             {
-                OurInGameDay = new DateTime(OurInGameDay.Year, OurInGameDay.Month, OurInGameDay.Day);
+                OurInGameDay = new DateTime(OurInGameDay.Year, OurInGameDay.Month, OurInGameDay.Day + 1);
             }
+            // If the player goes to bed past midnight, they stayed up until the next day already
+            // so we don't need to increment. This is the only way to go to bed at an hour less than the wake up hour.
             else
             {
-                OurInGameDay = new DateTime(OurInGameDay.Year, OurInGameDay.Month, OurInGameDay.Day+1);
+                OurInGameDay = new DateTime(OurInGameDay.Year, OurInGameDay.Month, OurInGameDay.Day);
             }
             OurInGameDay = OurInGameDay.AddHours(GameScreen.HourOnClockPlayerWakesIn24H);
         }

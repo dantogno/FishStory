@@ -102,28 +102,55 @@ namespace FishStory.Screens
 
             if (MusicManager.IsSongPlaying == false)
             {
-                MusicManager.PlaySong(GlobalContent.music_misty_woods_calling, forceRestart: true, shouldLoop: true);
+                MusicManager.PlaySong(GlobalContent.music_misty_woods_calling, forceRestart: true);
             }
         }
 
         private void HandleInputActivity()
         {
-            if (InputManager.Xbox360GamePads[0].IsConnected && 
-                    (InputManager.Xbox360GamePads[0].ButtonDown(Xbox360GamePad.Button.A) ||
-                    InputManager.Xbox360GamePads[0].ButtonDown(Xbox360GamePad.Button.X) ||
-                    InputManager.Xbox360GamePads[0].ButtonDown(Xbox360GamePad.Button.B) ||
-                     InputManager.Xbox360GamePads[0].ButtonDown(Xbox360GamePad.Button.Start))
-                )
+            if (fadeHasStarted)
             {
-                MoveToScreen(nameof(MainLevel));
+                HandleFadeOut();
             }
-            else if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space) ||
-                    InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Enter) ||
-                    InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Escape) ||
-                    InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.W) ||
-                    InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.A) ||
-                    InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.D) ||
-                    InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.S))
+            else
+            {
+                if (InputManager.Xbox360GamePads[0].IsConnected &&
+                        (InputManager.Xbox360GamePads[0].ButtonDown(Xbox360GamePad.Button.A) ||
+                        InputManager.Xbox360GamePads[0].ButtonDown(Xbox360GamePad.Button.X) ||
+                        InputManager.Xbox360GamePads[0].ButtonDown(Xbox360GamePad.Button.B) ||
+                         InputManager.Xbox360GamePads[0].ButtonDown(Xbox360GamePad.Button.Start))
+                    )
+                {
+                    HandleFadeOut();
+                }
+                else if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space) ||
+                        InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Enter) ||
+                        InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Escape) ||
+                        InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.W) ||
+                        InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.A) ||
+                        InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.D) ||
+                        InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.S))
+                {
+                    HandleFadeOut();
+                }
+            }
+        }
+
+        private bool fadeHasStarted = false;
+        private void HandleFadeOut()
+        {
+            if (fadeHasStarted == false)
+            {
+                fadeHasStarted = true;
+                SoundManager.Play(GlobalContent.GameStartSound);
+            }
+
+            if (FadeOutSprite.Alpha < 1)
+            {
+                FadeOutSprite.Alpha += 0.01f;
+                MusicManager.MusicVolumeLevel = MusicManager.DefaultMusicLevel - (MusicManager.DefaultMusicLevel * FadeOutSprite.Alpha);
+            }
+            else
             {
                 MoveToScreen(nameof(MainLevel));
             }

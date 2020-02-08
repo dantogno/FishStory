@@ -117,7 +117,9 @@
       <DependentUpon>InventoryRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.cs" />
-    <Compile Include="GumRuntimes\TitleScreenGumRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\TitleScreenGumRuntime.Generated.cs">
+      <DependentUpon>TitleScreenGumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Managers\InGameDateTimeManager.cs" />
     <Compile Include="Extensions\ExtensionMethodsClass.cs" />
     <Compile Include="Factories\FishIdentifiedSignFactory.Generated.cs" />
@@ -395,6 +397,11 @@
       <Name>BlackMarketStoreOpenSound</Name>
       <Link>content\globalcontent\sounds\blackmarketstoreopensound.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\boathornsound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BoatHornSound</Name>
+      <Link>content\globalcontent\sounds\boathornsound.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\dialogueadvancesound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>DialogueAdvanceSound</Name>
@@ -429,6 +436,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishSpoiledSound</Name>
       <Link>content\globalcontent\sounds\fishspoiledsound.xnb</Link>
+    </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\gamestartsound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>GameStartSound</Name>
+      <Link>content\globalcontent\sounds\gamestartsound.xnb</Link>
     </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\gettinglatesound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -615,10 +627,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BrunetteBoyBlueTunic</Name>
     </None>
-    <None Include="content\entities\npc\children_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>children_1</Name>
-    </None>
     <None Include="content\entities\npc\cloakedguy.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>CloakedGuy</Name>
@@ -754,6 +762,14 @@
     <None Include="content\globalcontent\dialog\blackmarketshopday2brief.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlackMarketShopDay2Brief</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\blackmarketshopday3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BlackMarketShopDay3</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\blackmarketshopday3brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BlackMarketShopDay3Brief</Name>
     </None>
     <None Include="content\globalcontent\dialog\boy1dialog.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

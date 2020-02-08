@@ -15,6 +15,7 @@ namespace FishStory.Entities
 {
     public partial class NPC
     {
+        public Vector3 SpawnPosition { get; set; }
         public RootObject DirectlySetDialog { get; set; }
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
@@ -47,7 +48,7 @@ namespace FishStory.Entities
 
         public Rectangle GetTextureRectangle()
         {
-            var idleFrame = SpriteInstance.AnimationChains[SpriteInstance.CurrentChainIndex][0];
+            var idleFrame = SpriteInstance.AnimationChains[SpriteInstance.CurrentChainIndex][1];
             var textureHeight = idleFrame.Texture.Bounds.Height;
             var textureWidth = idleFrame.Texture.Bounds.Width;
             var rect = new Rectangle(
@@ -58,7 +59,15 @@ namespace FishStory.Entities
                 );
             return rect;
         }
-
+        public bool WillBeOnScreenAtPosition(float x, float y)
+        {
+            var camera = Camera.Main;
+            var isOffScreen = x > camera.X + camera.OrthogonalWidth / 2 + SpriteInstance.Width / 2 ||
+                x < camera.X - camera.OrthogonalWidth / 2 - SpriteInstance.Width / 2 ||
+                y > camera.Y + camera.OrthogonalHeight / 2 + SpriteInstance.Height / 2 ||
+                y < camera.Y - camera.OrthogonalHeight / 2 - SpriteInstance.Height / 2;
+            return !isOffScreen;
+        }
         public bool IsOnScreen()
         {
             var camera = Camera.Main;

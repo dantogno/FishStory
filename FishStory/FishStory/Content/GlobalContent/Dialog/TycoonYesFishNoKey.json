@@ -1,7 +1,7 @@
 {
   "passages": [
     {
-      "text": "Did you sell the fish?\n[[Yes!|Yes]]",
+      "text": "Did you have Jacob tag three of your fish?\n[[Yes!|Yes]]",
       "links": [
         {
           "name": "Yes!|Yes",
@@ -31,6 +31,6 @@
   "name": "TycoonYesFishNoKey",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.3.5",
+  "creator-version": "2.2.1",
   "ifid": "E5D893BE-31E6-4211-8E14-5ABF95E8AD61"
 }

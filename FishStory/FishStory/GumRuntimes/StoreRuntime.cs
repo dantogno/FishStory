@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using FishStory.DataTypes;
+using FishStory.GumRuntimes.DefaultForms;
+using FishStory.Managers;
 using FlatRedBall.Forms.Controls;
 using FlatRedBall.Input;
 using FlatRedBall.IO;
@@ -17,6 +19,7 @@ namespace FishStory.GumRuntimes
         public List<string> ItemsBoughtFromThisStore;
 
         public ShopItem SelectedShopItem => listBox.SelectedObject as ShopItem;
+        public ItemDefinition ItemToBuy => GlobalContent.ItemDefinition[SelectedShopItem.Item];
 
         #region Events
 
@@ -26,8 +29,7 @@ namespace FishStory.GumRuntimes
 
         partial void CustomInitialize () 
         {
-            listBox = 
-                this.ListBoxInstance.FormsControl;
+            listBox =  this.ListBoxInstance.FormsControl;
 
             listBox.ListBoxItemGumType = typeof(GumRuntimes.DefaultForms.InventoryListItemRuntime);
             listBox.ListBoxItemFormsType = typeof(Forms.StoreListBoxItem);
@@ -45,7 +47,31 @@ namespace FishStory.GumRuntimes
 
         private void HandleListBoxSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
+            UpdateBuyButtonDisplay();
+        }
 
+        private void UpdateBuyButtonDisplay()
+        {
+            if (SelectedShopItem is null || SelectedShopItem.Stock <= 0 || ItemToBuy.PlayerBuyingCost > PlayerDataManager.PlayerData.Money)
+            {
+                DisableBuyButton();
+            }
+            else
+            {
+                EnableBuyButton();
+            }
+        }
+
+        private void DisableBuyButton()
+        {
+            this.BuyButton.CurrentButtonCategoryState = StoreBuyButtonRuntime.ButtonCategory.Disabled;
+            BuyButton.Enabled = false;
+        }
+
+        private void EnableBuyButton()
+        {
+            this.BuyButton.CurrentButtonCategoryState = StoreBuyButtonRuntime.ButtonCategory.Enabled;
+            BuyButton.Enabled = true;
         }
 
         public void CustomActivity()
@@ -70,6 +96,7 @@ namespace FishStory.GumRuntimes
             this.ItemsBoughtFromThisStore = itemsBoughtToday[storeName];
 
             RefreshStoreItems();
+            UpdateBuyButtonDisplay();
         }
 
         public void RefreshStoreItems()
@@ -88,13 +115,40 @@ namespace FishStory.GumRuntimes
 
                 clone.Stock = clone.Stock - timesThisItemWasBought;
 
-
                 listBox.Items.Add(clone);
             }
             if(selectedItem != null)
             {
                 listBox.SelectedObject = listBox.Items.FirstOrDefault(item =>
                     (item as ShopItem).Item == selectedItem.Item);
+            }
+
+            var anyItemsAvailable = false;
+            foreach (var child in this.ListBoxInstance.FormsControl.InnerPanel.Children)
+            {
+                if (child is InventoryListItemRuntime inventoryItem)
+                {
+                    if (inventoryItem.Stock == "0")
+                    {
+                        inventoryItem.CurrentAvailabilityState = InventoryListItemRuntime.Availability.SoldOut;
+                    }
+                    else if (string.IsNullOrWhiteSpace(inventoryItem.Price) == false && 
+                            int.TryParse(inventoryItem.Price.Replace("$",""), out int price) && 
+                            price > PlayerDataManager.PlayerData.Money)
+                    {
+                        inventoryItem.CurrentAvailabilityState = InventoryListItemRuntime.Availability.CantAfford;
+                    }
+                    else
+                    {
+                        inventoryItem.CurrentAvailabilityState = InventoryListItemRuntime.Availability.Available;
+                        anyItemsAvailable = true;
+                    }
+
+                }
+            }
+            if (anyItemsAvailable == false)
+            {
+                DisableBuyButton();
             }
         }
     }
