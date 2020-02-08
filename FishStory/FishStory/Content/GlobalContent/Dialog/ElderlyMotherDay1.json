@@ -94,12 +94,12 @@
       }
     },
     {
-      "text": "Oh, I'm glad! It warms my heart to see young people as excited for the festival as I am. Someone's going to have to keep our traditions alive after I'm gone, or else everything falls apart. William has never been one for tradition, so the duty may just fall on your shoulders. Well, yours and the church's, of course.\n[[end]] ",
+      "text": "Oh, I'm glad! It warms my heart to see young people as excited for the festival as I am. Someone's going to have to keep our traditions alive after I'm gone, or else everything falls apart.\n[[continue2]]",
       "links": [
         {
-          "name": "end",
-          "link": "end",
-          "pid": "9"
+          "name": "continue2",
+          "link": "continue2",
+          "pid": "11"
         }
       ],
       "name": "Looking forward to festival",
@@ -110,7 +110,7 @@
       }
     },
     {
-      "text": "Oh dear, why is that? Did you not enjoy last year's festival? It was quite grand, what with the feast, the dancing, and of course, the Act... I do so enjoy the theatrics of it all. But maybe I'm just old fashioned. Well, it was nice speaking with you.\n[[end]]",
+      "text": "Oh dear, why is that? Did you not enjoy last year's festival? It was quite grand, what with the feast, the dancing, and of course, The Choosing... I do so enjoy the theatrics of it all. But maybe I'm just old fashioned. Well, it was nice speaking with you.\n[[end]]",
       "links": [
         {
           "name": "end",
@@ -126,12 +126,12 @@
       }
     },
     {
-      "text": "Good heavens, why not? It's the only exciting thing that happens in this town, anymore. Or are you one of those, oh what are they called... modernists? The new girl who moved her a few months ago seems to be one of those as well... But between you and me, I can't imagine her lasting long here. People like her never do.\n[[end]] ",
+      "text": "Good heavens, why not? It's the only exciting thing that happens in this town, anymore. Or are you one of those, oh what are they called... modernists?\n[[Continue]]",
       "links": [
         {
-          "name": "end",
-          "link": "end",
-          "pid": "9"
+          "name": "Continue",
+          "link": "Continue",
+          "pid": "10"
         }
       ],
       "name": "Not looking forward to festival",
@@ -146,12 +146,44 @@
       "name": "end",
       "pid": "9",
       "position": {
-        "x": "523",
-        "y": "720"
+        "x": "501",
+        "y": "857"
       },
       "tags": [
         "HasSeenElderlyMotherDay1"
       ]
+    },
+    {
+      "text": "The new girl who moved her a few months ago seems to be one of those as well... But between you and me, I can't imagine her lasting long here. People like her never do.\n[[end]] ",
+      "links": [
+        {
+          "name": "end",
+          "link": "end",
+          "pid": "9"
+        }
+      ],
+      "name": "Continue",
+      "pid": "10",
+      "position": {
+        "x": "770",
+        "y": "662"
+      }
+    },
+    {
+      "text": "William has never been one for tradition, so the duty may just fall on your shoulders. Well, yours and the church's, of course.\n[[end]] ",
+      "links": [
+        {
+          "name": "end",
+          "link": "end",
+          "pid": "9"
+        }
+      ],
+      "name": "continue2",
+      "pid": "11",
+      "position": {
+        "x": "531",
+        "y": "652"
+      }
     }
   ],
   "name": "ElderlyMotherDay1",
