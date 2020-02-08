@@ -867,6 +867,26 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FestivalCoordinatorDay1Brief</Name>
     </None>
+    <None Include="content\globalcontent\dialog\festivalcoordinatorday2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FestivalCoordinatorDay2</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\festivalcoordinatorday2alttrait.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FestivalCoordinatorDay2AltTrait</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\festivalcoordinatorday2brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FestivalCoordinatorDay2Brief</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\festivalcoordinatorday3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FestivalCoordinatorDay3</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\festivalcoordinatorday3brief.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FestivalCoordinatorDay3Brief</Name>
+    </None>
     <None Include="content\globalcontent\dialog\festivalcoordinatornobaitnomoney.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FestivalCoordinatorNobaitNoMoney</Name>

@@ -1,2 +1,3 @@
-"FishName (string, required)",Blood Worm (int),Sardine (int),Squid (int),Little Bonito (int)
-Plastic Trash,1,4,5,4
+"FishName (string, required)",Blood Worm (int),Sardine (int),Squid (int),Little Bonito (int),StrangeBait (int)
+Plastic Trash,1,4,5,4,
+Tarnished Pendant,,,,,1

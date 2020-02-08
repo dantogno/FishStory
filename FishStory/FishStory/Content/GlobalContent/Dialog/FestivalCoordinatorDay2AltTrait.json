@@ -1,0 +1,79 @@
+{
+    "passages": [
+      {
+        "text": "Ready for Day 2 of the festival? Let me give you today's free bait![[Thanks.|thanks]]",
+        "links": [
+          {
+            "name": "Thanks.|thanks",
+            "link": "Thanks.|thanks"
+          }
+        ],
+        "name": "Day2FreeBait",
+        "pid": "1",
+        "position": {
+          "x": "412",
+          "y": "491.5"
+        }
+      },
+      {
+        "text": "Day 2 is all about what fish you catch. The type of fish you catch have a big impact on the festival. Did you know that you can check the sign in the town square to see which fish have been turned in to Jacob so far? [[yikes]]",
+        "links": [
+          {
+            "name": "yikes",
+            "link": "yikes",
+            "pid": "3"
+          }
+        ],
+        "name": "thanks",
+        "pid": "2",
+        "position": {
+          "x": "412",
+          "y": "641.5"
+        }
+      },
+      {
+        "text": "Yikes! You sure are catching a lot of Cobia! You know, I think the festival might turn out, um, better, if you branched out a little. Cobia tend to live on the north coast of the island. Why don't you fish somewhere else today?[[I'll keep that in mind]][[The fishmonger pays big bucks for Cobia.]]",
+        "links": [
+          {
+            "name": "I'll keep that in mind",
+            "link": "I'll keep that in mind",
+            "pid": "4"
+          },
+          {
+            "name": "The fishmonger pays big bucks for Cobia.",
+            "link": "The fishmonger pays big bucks for Cobia.",
+            "pid": "5"
+          }
+        ],
+        "name": "yikes",
+        "pid": "3",
+        "position": {
+          "x": "412",
+          "y": "791.5"
+        }
+      },
+      {
+        "text": "Cobia are the huge dark fish. If you wind up catching one, you can always sell an untagged one to that creepy vendor with the backpack that comes out at night. Then it won't affect the official fish count on the sign.",
+        "name": "I'll keep that in mind",
+        "pid": "4",
+        "position": {
+          "x": "337",
+          "y": "941.5"
+        }
+      },
+      {
+        "text": "Look, Cobia are the huge dark fish. If you need money that bad, you can always sell an untagged one to that creepy vendor with the backpack that comes out at night. Then it won't affect the official fish count on the sign.",
+        "name": "The fishmonger pays big bucks for Cobia.",
+        "pid": "5",
+        "position": {
+          "x": "487",
+          "y": "941.5"
+        }
+      }
+    ],
+    "name": "FestivalCoordinatorDay2AltTrait",
+    "startnode": "1",
+    "creator": "Twine",
+    "creator-version": "2.2.1",
+    "ifid": "4341B97F-8395-43BF-9B8C-91A669EFFE62"
+  }

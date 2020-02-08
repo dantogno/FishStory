@@ -1,4 +1,5 @@
-"FishName (string, required)",Blood Worm (int),Sardine (int),Squid (int),Little Bonito (int)
-Small Fish,2,5,1,0
-Long Yellow Fish,1,2,5,0
-Bone,1,1,1,1
+"FishName (string, required)",Blood Worm (int),Sardine (int),Squid (int),Little Bonito (int),Strange Bait (int)
+Small Fish,2,5,1,0,
+Long Yellow Fish,1,2,5,0,
+Bone,1,1,1,1,
+Tarnished Pendant,,,,,1

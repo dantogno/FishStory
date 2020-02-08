@@ -1,0 +1,18 @@
+{
+    "passages": [
+      {
+        "text": "Did you try the special bait? Heheh.",
+        "name": "Untitled Passage",
+        "pid": "1",
+        "position": {
+          "x": "412",
+          "y": "491.5"
+        }
+      }
+    ],
+    "name": "FestivalCoordinatorDay3Brief",
+    "startnode": "1",
+    "creator": "Twine",
+    "creator-version": "2.2.1",
+    "ifid": "B1321670-B9F7-42D5-AF94-9BA26209938A"
+  }

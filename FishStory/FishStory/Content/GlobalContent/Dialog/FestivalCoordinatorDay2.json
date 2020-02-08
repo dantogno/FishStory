@@ -1,0 +1,82 @@
+{
+  "passages": [
+    {
+      "text": "Ready for Day 2 of the festival? Let me give you today's free bait![[Thanks.|thanks]]",
+      "links": [
+        {
+          "name": "Thanks.|thanks",
+          "link": "Thanks.|thanks"
+        }
+      ],
+      "name": "Untitled Passage",
+      "pid": "1",
+      "position": {
+        "x": "407",
+        "y": "483"
+      }
+    },
+    {
+      "text": "Day 2 is all about what fish you catch. The type of fish you catch have a big impact on the festival. Did you know that you can check the sign in the town square to see which fish have been turned in to Jacob so far? [[habitats]]",
+      "links": [
+        {
+          "name": "habitats",
+          "link": "habitats",
+          "pid": "5"
+        }
+      ],
+      "name": "thanks",
+      "pid": "2",
+      "position": {
+        "x": "185",
+        "y": "543"
+      },
+      "tags": [
+        "Day2FreeBait"
+      ]
+    },
+    {
+      "text": "Ladyfish are the small silvery fish. If you wind up catching one, you can always sell an untagged one to that creepy vendor with the backpack that comes out at night. Then it won't affect the official fish count on the sign.",
+      "name": "I'll keep that in mind.",
+      "pid": "3",
+      "position": {
+        "x": "332",
+        "y": "781"
+      }
+    },
+    {
+      "text": "Look, ladyfish are the small silvery fish. If you wind up catching one, you can always sell an untagged one to that creepy vendor with the backpack that comes out at night. Then it won't affect the official fish count on the sign, and you'll still get paid.",
+      "name": "I don't care what fish the Mayor likes as long as it pays.",
+      "pid": "4",
+      "position": {
+        "x": "480",
+        "y": "783"
+      }
+    },
+    {
+      "text": "Each of our coasts is suited to different fish habitats. My advice? Stay away from the East coast south of the dock. Ladyfish live on the east coast, and the Mayor hates it when people catch them! We all want to stay on the Mayor's good side, right?[[I'll keep that in mind.]][[I don't care what fish the Mayor likes as long as it pays.]]",
+      "links": [
+        {
+          "name": "I'll keep that in mind.",
+          "link": "I'll keep that in mind.",
+          "pid": "3"
+        },
+        {
+          "name": "I don't care what fish the Mayor likes as long as it pays.",
+          "link": "I don't care what fish the Mayor likes as long as it pays.",
+          "pid": "4"
+        }
+      ],
+      "name": "habitats",
+      "pid": "5",
+      "position": {
+        "x": "435",
+        "y": "637"
+      }
+    }
+  ],
+  "name": "FestivalCoordinatorDay2",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "77CE9D12-F50F-4286-B249-EC87F1817278"
+}

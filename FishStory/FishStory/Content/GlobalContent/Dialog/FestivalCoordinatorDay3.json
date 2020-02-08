@@ -1,0 +1,37 @@
+{
+  "passages": [
+    {
+      "text": "Welcome to Day 3 of the festival! We've got an extra-special free bait for you today![[Thanks?]]",
+      "links": [
+        {
+          "name": "Thanks?",
+          "link": "Thanks?",
+          "pid": "2"
+        }
+      ],
+      "name": "Untitled Passage",
+      "pid": "1",
+      "position": {
+        "x": "412",
+        "y": "491.5"
+      }
+    },
+    {
+      "text": "Heh heh, we're all looking forward to your next catch.",
+      "name": "Thanks?",
+      "pid": "2",
+      "position": {
+        "x": "412",
+        "y": "641.5"
+      },
+      "tags": [
+        "Day3FreeBait"
+      ]
+    }
+  ],
+  "name": "FestivalCoordinatorDay3",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "55449D3A-BF41-49BC-8838-DEA03BFB265E"
+}

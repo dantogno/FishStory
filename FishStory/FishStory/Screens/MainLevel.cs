@@ -86,7 +86,7 @@ namespace FishStory.Screens
             {CharacterNames.ElderlyMother, 11 },
             {CharacterNames.Farmer, 6 },
             {CharacterNames.FarmerSonBaitShop, 8 },
-            {CharacterNames.FestivalCoordinator, 10 },
+            {CharacterNames.FestivalCoordinator, 9 },
             {CharacterNames.FishermanBald, 11 },
             {CharacterNames.FishermanHair, 8 },
             {CharacterNames.Fishmonger, 10 },
@@ -94,7 +94,7 @@ namespace FishStory.Screens
             {CharacterNames.Mayor, 11 },
             {CharacterNames.Nun, 9 },
             {CharacterNames.Priestess, 15 },
-            {CharacterNames.Tycoon, 9},
+            {CharacterNames.Tycoon, 10},
             {CharacterNames.TycoonDaughter, 12 },
             {CharacterNames.YoungManBaitShop, 10}
         };
@@ -512,6 +512,14 @@ namespace FishStory.Screens
             });
             #endregion
             #region FestivalCoordinator
+            NPCList.FindByName(CharacterNames.FestivalCoordinator).TwineDialogId = nameof(GlobalContent.FestivalCoordinatorDay2);
+            If.Check(() => HasTag("Day2FreeBait"));
+            Do.Call(() =>
+            {
+                var npc = NPCList.FindByName(CharacterNames.FestivalCoordinator);
+                npc.TwineDialogId = nameof(GlobalContent.FestivalCoordinatorDay2Brief);
+                AwardRandomBait();
+            });
             #endregion
             #region Identifier
             #endregion
@@ -657,6 +665,14 @@ namespace FishStory.Screens
             });
             #endregion
             #region FestivalCoordinator
+            NPCList.FindByName(CharacterNames.FestivalCoordinator).TwineDialogId = nameof(GlobalContent.FestivalCoordinatorDay3);
+            If.Check(() => HasTag("Day3FreeBait"));
+            Do.Call(() =>
+            {
+                var npc = NPCList.FindByName(CharacterNames.FestivalCoordinator);
+                npc.TwineDialogId = nameof(GlobalContent.FestivalCoordinatorDay2Brief);
+                PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Strange_Bait);
+            });
             #endregion
             #region Identifier
             #endregion

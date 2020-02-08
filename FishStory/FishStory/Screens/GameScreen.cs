@@ -726,6 +726,9 @@ namespace FishStory.Screens
                 case ItemDefinition.Little_Bonito:
                     baitType = "LittleBonito";
                     break;
+                case ItemDefinition.Strange_Bait:
+                    baitType = "StrangeBait";
+                    break;
                 default:
                     break;
             }

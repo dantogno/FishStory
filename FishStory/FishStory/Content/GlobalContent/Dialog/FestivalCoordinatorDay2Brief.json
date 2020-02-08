@@ -1,0 +1,18 @@
+{
+    "passages": [
+      {
+        "text": "We're looking forward to your next catch! ...As long as it's not a Cobia or Ladyfish.",
+        "name": "Untitled Passage",
+        "pid": "1",
+        "position": {
+          "x": "407.5",
+          "y": "483.5"
+        }
+      }
+    ],
+    "name": "FestivalCoordinatorDay2Brief",
+    "startnode": "1",
+    "creator": "Twine",
+    "creator-version": "2.2.1",
+    "ifid": "83C0644F-3B56-417D-B965-8FCD79D332FC"
+  }
