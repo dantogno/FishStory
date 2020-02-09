@@ -683,11 +683,11 @@ namespace FishStory.Screens
             #region YoungManBaitShop
             #endregion
             #region BlackMarketShop
-            //NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay3);
+            NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay3);
             If.Check(() => HasTag("HasSeenBlackMarketShopDay3"));
             Do.Call(() =>
             {
-                //NPCList.FindByName(CharacterNames.FishermanHair).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay3Brief);
+                NPCList.FindByName(CharacterNames.FishermanHair).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay3Brief);
             });
             #endregion
             #region ElderlyMother
