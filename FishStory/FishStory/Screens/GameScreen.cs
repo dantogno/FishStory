@@ -675,6 +675,8 @@ namespace FishStory.Screens
             PlayerDataManager.PlayerData.AwardItem(fishCaught);
             AddNotification($"Caught {fishCaught}");
             SoundManager.Play(GlobalContent.FishCatchSound);
+            // increment the number caught so that unique items can be ignored. 
+            GlobalContent.ItemDefinition[fishCaught].TotalCaught++;
         }
 
         private void UpdatePropObjectsLights()
@@ -755,7 +757,9 @@ namespace FishStory.Screens
                 {
                     weight = (int)weightAsObject;
                 }
-
+                // if the item is unique, and has already been caught, set the weight to 0 so it doesn't get caught again.
+                if (GlobalContent.ItemDefinition[kvp.Key].IsUnique && GlobalContent.ItemDefinition[kvp.Key].TotalCaught > 0)
+                    weight = 0;
                 if(weight != 0)
                 {
                     var fishWeight = new FishWeight

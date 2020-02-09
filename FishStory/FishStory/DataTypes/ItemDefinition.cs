@@ -8,6 +8,7 @@ namespace FishStory.DataTypes
 {
     public partial class ItemDefinition
     {
+        public int TotalCaught { get; set; }
         public static string[] FishNames => GlobalContent.ItemDefinition
             .Where(item => item.Value.IsFish)
             .Select(item => item.Value.Name).ToArray();
