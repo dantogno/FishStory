@@ -2746,7 +2746,7 @@
           </Properties>
           <Name>Animation</Name>
           <Type>AnimationChainList</Type>
-          <DefaultValue xsi:type="xsd:string">Boy1</DefaultValue>
+          <DefaultValue xsi:type="xsd:string">DumpSign</DefaultValue>
           <SourceObject>SpriteInstance</SourceObject>
           <SourceObjectProperty>AnimationChains</SourceObjectProperty>
         </CustomVariable>
@@ -2788,7 +2788,7 @@
           <CustomProperty>
             <Type>FlatRedBall.Graphics.Animation.AnimationChainList</Type>
             <Member>AnimationChains</Member>
-            <ValueAsString>Boy1</ValueAsString>
+            <ValueAsString>DumpSign</ValueAsString>
           </CustomProperty>
           <CustomProperty>
             <Type>string</Type>
@@ -2804,6 +2804,7 @@
           <SourceType>FlatRedBallType</SourceType>
           <SourceClassType>Sprite</SourceClassType>
           <InstanceName>SpriteInstance</InstanceName>
+          <HasPublicProperty>true</HasPublicProperty>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -3030,6 +3031,7 @@
         <ReferencedFileSave>
           <Name>Entities/NPC/DumpSign.achx</Name>
           <IsSharedStatic>true</IsSharedStatic>
+          <HasPublicProperty>true</HasPublicProperty>
           <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
@@ -5309,7 +5311,7 @@
     <RecordLockContention>false</RecordLockContention>
   </GlobalContentSettingsSave>
   <SyncedProjects />
-  <StartUpScreen>Screens\TitleScreen</StartUpScreen>
+  <StartUpScreen>Screens\MainLevel</StartUpScreen>
   <ResolutionPresets />
   <PerformanceSettingsSave>
     <ThrowExceptionOnPostInitializeContentLoad>false</ThrowExceptionOnPostInitializeContentLoad>

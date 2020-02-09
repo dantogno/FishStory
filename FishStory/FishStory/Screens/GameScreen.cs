@@ -209,14 +209,18 @@ namespace FishStory.Screens
                 npc.Z = PlayerCharacterInstance.Z; // same as player so they sort
                 //npc.MoveToLayer(WorldLayer);
                 npc.SpawnPosition = new Vector3(npc.X, npc.Y, npc.Z);
+                // David's hack to support invisible NPCs (for signs, etc.): DumpSign is the default, and it is not used.
+                // Thus if an NPC is not given an animation in Tiled, it will use DumpSign.
+                // Designers will not assign an animation if the intent is that the sprite is hidden.
+                // So all the DumpSigns should be visible = false.
+                if (npc.Animation == NPC.DumpSign)
+                    npc.SpriteInstance.Visible = false;
             }
-            foreach(var propObject in PropObjectList)
+            foreach (var propObject in PropObjectList)
             {
                 propObject.Z = PlayerCharacterInstance.Z; // same as player so they sort
                 propObject.SetLayers(LightEffectsLayer);
             }
-
-
         }
 
         private void InitializeCamera()
@@ -532,7 +536,8 @@ namespace FishStory.Screens
                         if (DialogBox.TryShow(npc.DirectlySetDialog))
                         {
                             DialoguePortrait.SetTextureCoordinates(npcTextureRectangle);
-                            DialoguePortrait.Visible = true;
+                            // For invisible NPCs, we don't want to show the portrait.
+                            DialoguePortrait.Visible = npc.SpriteInstance.Visible;
                             PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                         }
 
@@ -542,7 +547,8 @@ namespace FishStory.Screens
                         if (DialogBox.TryShow(npc.TwineDialogId))
                         {
                             DialoguePortrait.SetTextureCoordinates(npcTextureRectangle);
-                            DialoguePortrait.Visible = true;
+                            // For invisible NPCs, we don't want to show the portrait.
+                            DialoguePortrait.Visible = npc.SpriteInstance.Visible;
                             PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
                         }
                     }
@@ -604,7 +610,7 @@ namespace FishStory.Screens
         {
             var npcTextureRectangle = npc.GetTextureRectangle();
             DialoguePortrait.SetTextureCoordinates(npcTextureRectangle);
-            DialoguePortrait.Visible = true;
+            DialoguePortrait.Visible = npc.SpriteInstance.Visible;
         }
 
         private void HandleDoorOptionSelected(DialogTreeRaw.Link selectedLink)

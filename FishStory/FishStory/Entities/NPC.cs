@@ -25,7 +25,6 @@ namespace FishStory.Entities
         private void CustomInitialize()
         {
 
-
         }
 
         private void CustomActivity()
@@ -48,16 +47,25 @@ namespace FishStory.Entities
 
         public Rectangle GetTextureRectangle()
         {
-            var idleFrame = SpriteInstance.AnimationChains[SpriteInstance.CurrentChainIndex][1];
-            var textureHeight = idleFrame.Texture.Bounds.Height;
-            var textureWidth = idleFrame.Texture.Bounds.Width;
-            var rect = new Rectangle(
-                x:(int)(textureWidth * idleFrame.LeftCoordinate),
-                y:(int)(textureHeight * idleFrame.TopCoordinate),
-                width:16,
-                height:16
-                );
-            return rect;
+            try
+            {
+                var idleFrame = SpriteInstance.AnimationChains[SpriteInstance.CurrentChainIndex][1];
+                var textureHeight = idleFrame.Texture.Bounds.Height;
+                var textureWidth = idleFrame.Texture.Bounds.Width;
+                var rect = new Rectangle(
+                    x: (int)(textureWidth * idleFrame.LeftCoordinate),
+                    y: (int)(textureHeight * idleFrame.TopCoordinate),
+                    width: 16,
+                    height: 16
+                    );
+                return rect;
+            }
+            catch (Exception)
+            {
+
+                return new Rectangle();
+            }
+
         }
         public bool WillBeOnScreenAtPosition(float x, float y)
         {
