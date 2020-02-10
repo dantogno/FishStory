@@ -3044,6 +3044,7 @@
         <ReferencedFileSave>
           <Name>Entities/NPC/CloakedGuy.achx</Name>
           <IsSharedStatic>true</IsSharedStatic>
+          <HasPublicProperty>true</HasPublicProperty>
           <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>

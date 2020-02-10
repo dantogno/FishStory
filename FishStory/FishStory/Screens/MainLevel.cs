@@ -227,7 +227,7 @@ namespace FishStory.Screens
         {
             var If = script;
             var Do = script;
-             
+
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 1);
             Do.Call(() => DoDay1Script(If, Do));
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 2);
@@ -236,6 +236,7 @@ namespace FishStory.Screens
             Do.Call(() => DoDay3Script(If, Do));
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 4);
             Do.Call(() => DoDay4Script(If, Do));
+            //DoDay4Script(If, Do);
         }
         private void HandleCharacterBedTimes(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
@@ -769,7 +770,10 @@ namespace FishStory.Screens
             });
             Do.Call(() =>
             {
-                NPCList.FindByName(CharacterNames.Conservationist).Destroy();
+                var conservationist = NPCList.FindByName(CharacterNames.Conservationist);
+                // TODO: do we need this? 
+                NPCList.Remove(conservationist);
+                conservationist.Destroy();
             });
             #endregion
             #region FishermanBald
@@ -802,6 +806,18 @@ namespace FishStory.Screens
         {
             InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(3));
             InGameDateTimeManager.ShouldTimePass = false;
+
+            // Change all the npcs but the priestess
+            // TODO and the person being sacrificed
+            NPCList.FindByName(CharacterNames.FarmerSonBaitShop).Animation = NPC.CloakedGuy;
+            foreach (var npc in NPCList)
+            {
+                if (npc.Name != CharacterNames.Priestess && !npc.Name.Contains("Sign") && !npc.Name.Contains("Board"))
+                {
+                    npc.Animation = NPC.CloakedGuy;
+                    npc.CurrentChainName = "Idle";
+                }
+            }
         }
 
 
