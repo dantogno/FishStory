@@ -16,6 +16,7 @@ namespace FishStory.Managers
         public static float SunlightEffectiveness =>MathHelper.Clamp(GetSunlightCoefficient(DistanceToNoon()), 0.35f,1.0f);
 
         public static int HourToFreezeTimeIfPlayerNeedsKeyOnDay1 = 20;
+        public static bool ShouldTimePass { get; set; } = true;
         private static double minutesElapsedPerSecond = 6;
 
         private const float minutesAtNoon = minutesPerDay/2;
@@ -43,7 +44,7 @@ namespace FishStory.Managers
                 && !PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key)
                 && TimeOfDay.Hours >= HourToFreezeTimeIfPlayerNeedsKeyOnDay1;
 
-            if (!shouldNotUpdateTimeBecausePlayerNeedsKey)
+            if (!shouldNotUpdateTimeBecausePlayerNeedsKey && ShouldTimePass)
                 OurInGameDay = OurInGameDay.AddMinutes(timeToAdd);
         }
 

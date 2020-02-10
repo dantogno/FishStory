@@ -801,6 +801,7 @@ namespace FishStory.Screens
         private void DoDay4Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
             InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(3));
+            InGameDateTimeManager.ShouldTimePass = false;
         }
 
 
