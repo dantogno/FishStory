@@ -69,7 +69,9 @@ namespace FishStory.Managers
             {
                 OurInGameDay = new DateTime(OurInGameDay.Year, OurInGameDay.Month, OurInGameDay.Day);
             }
-            OurInGameDay = OurInGameDay.AddHours(GameScreen.HourOnClockPlayerWakesIn24H);
+            // at the end of the 3rd day want the start time to be determined by the level script.
+            if (PlayerDataManager.PlayerData.CurrentDay != 3)
+                OurInGameDay = OurInGameDay.AddHours(GameScreen.HourOnClockPlayerWakesIn24H);
         }
 
         public static void SetTimeOfDay(TimeSpan time)

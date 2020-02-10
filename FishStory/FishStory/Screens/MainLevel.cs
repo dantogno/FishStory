@@ -234,6 +234,8 @@ namespace FishStory.Screens
             Do.Call(() => DoDay2Script(If, Do));
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 3);
             Do.Call(() => DoDay3Script(If, Do));
+            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 4);
+            Do.Call(() => DoDay4Script(If, Do));
         }
         private void HandleCharacterBedTimes(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
@@ -796,7 +798,11 @@ namespace FishStory.Screens
             HandleCharacterBedTimes(If, Do);
             HandleCharacterWakeTimes(If, Do);
         }
- 
+        private void DoDay4Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
+        {
+            InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(3));
+        }
+
 
         private void AwardRandomBait()
         {
