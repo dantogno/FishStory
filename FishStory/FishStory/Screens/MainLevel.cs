@@ -228,15 +228,21 @@ namespace FishStory.Screens
             var If = script;
             var Do = script;
 
-            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 1);
-            Do.Call(() => DoDay1Script(If, Do));
-            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 2);
-            Do.Call(() => DoDay2Script(If, Do));
-            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 3);
-            Do.Call(() => DoDay3Script(If, Do));
-            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 4);
-            Do.Call(() => DoDay4Script(If, Do));
-            //DoDay4Script(If, Do);
+            //If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 1);
+            //Do.Call(() => DoDay1Script(If, Do));
+            //If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 2);
+            //Do.Call(() => DoDay2Script(If, Do));
+            //If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 3);
+            //Do.Call(() => DoDay3Script(If, Do));
+            //If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 4);
+            //Do.Call(() => DoDay4Script(If, Do));
+            
+            // Below here is debug code to help facilitate testing day 4.
+            // TODO: remove.
+            PlayerCharacterInstance.X = 695;
+            PlayerCharacterInstance.Y = -855;
+            PlayerCharacterInstance.DirectionFacing = TopDownDirection.Right;
+            DoDay4Script(If, Do);
         }
         private void HandleCharacterBedTimes(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
@@ -771,7 +777,6 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var conservationist = NPCList.FindByName(CharacterNames.Conservationist);
-                // TODO: do we need this? 
                 NPCList.Remove(conservationist);
                 conservationist.Destroy();
             });

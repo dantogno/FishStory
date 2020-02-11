@@ -902,28 +902,46 @@ namespace FishStory.Screens
                 PlayerCharacterInstance.DirectionFacing = TopDownDirection.Right;
             }).After(GameScreenGum.ToBlackAnimation.Length);
 
-            float delayBetweenFadeOutAndFadeIn = 2f;
-            this.Call(FadeIn).After(GameScreenGum.ToBlackAnimation.Length + delayBetweenFadeOutAndFadeIn);
+            
 
-            // allow player movement, display notification
-            float delayBeforeShowingNotifications = 0.5f;
-            this.Call(() =>
+            if (PlayerDataManager.PlayerData.CurrentDay != 3)
             {
-                PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.OverlayInstance);
-
-                PlayerDataManager.PlayerData.CurrentDay++;
-                isBeingForcedToSleep = false;
-
-                var numberOfFishSpoiled = PlayerDataManager.PlayerData.SpoilItemsAndReturnCount();
-                if (numberOfFishSpoiled > 0)
+                float delayBeforeShowingNotifications = 0.5f;
+                this.Call(() =>
                 {
-                    SoundManager.Play(GlobalContent.FishSpoiledSound);
-                    AddNotification($"The {numberOfFishSpoiled} fish you caught yesterday went bad.");
-                }
+                    float delayBetweenFadeOutAndFadeIn = 2f;
+                    this.Call(FadeIn).After(GameScreenGum.ToBlackAnimation.Length + delayBetweenFadeOutAndFadeIn);
+                    // allow player movement, display notification
+                    PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.OverlayInstance);
 
-                AddNotification($"Fishing Festival: Day {PlayerDataManager.PlayerData.CurrentDay}");
+                    PlayerDataManager.PlayerData.CurrentDay++;
+                    isBeingForcedToSleep = false;
 
-            }).After(GameScreenGum.ToBlackAnimation.Length + GameScreenGum.ToTransparentAnimation.Length + delayBeforeShowingNotifications);
+                    var numberOfFishSpoiled = PlayerDataManager.PlayerData.SpoilItemsAndReturnCount();
+                    if (numberOfFishSpoiled > 0)
+                    {
+                        SoundManager.Play(GlobalContent.FishSpoiledSound);
+                        AddNotification($"The {numberOfFishSpoiled} fish you caught yesterday went bad.");
+                    }
+
+                    AddNotification($"Fishing Festival: Day {PlayerDataManager.PlayerData.CurrentDay}");
+
+                }).After(GameScreenGum.ToBlackAnimation.Length + GameScreenGum.ToTransparentAnimation.Length + delayBeforeShowingNotifications);
+            }
+            else
+            {
+                // TODO: knock in the middle of the night. player clicks through dialog, then fade back in
+                DialogBox.TryShow(nameof(GlobalContent.Day4Intro));
+                DialogBox.
+                //If.Check(() =>
+                //{
+                //    return true;
+                //});
+                //Do.Call(() =>
+                //{
+
+                //});
+            }
         }
 
 

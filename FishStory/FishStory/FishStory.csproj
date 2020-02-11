@@ -791,6 +791,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ConservationistDay2Brief</Name>
     </None>
+    <None Include="content\globalcontent\dialog\day4intro.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Day4Intro</Name>
+    </None>
     <None Include="content\globalcontent\dialog\dialog1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Dialog1</Name>
