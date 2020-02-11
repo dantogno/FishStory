@@ -212,11 +212,6 @@
     </State>
   </Category>
   <Instance>
-    <Name>DialogBoxInstance</Name>
-    <BaseType>DialogBox</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
     <Name>NotificationBoxInstance</Name>
     <BaseType>NotificationBox</BaseType>
     <DefinedByBase>false</DefinedByBase>
@@ -250,6 +245,11 @@
   <Instance>
     <Name>DialoguePortraitInstance</Name>
     <BaseType>DialoguePortrait</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>DialogBoxInstance</Name>
+    <BaseType>DialogBox</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
 </ScreenSave>
