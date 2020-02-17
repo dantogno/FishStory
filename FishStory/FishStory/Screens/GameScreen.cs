@@ -903,7 +903,7 @@ namespace FishStory.Screens
             }).After(GameScreenGum.ToBlackAnimation.Length);
 
             
-
+            // The transition from day 3 to 4 is a special case... (the ending)
             if (PlayerDataManager.PlayerData.CurrentDay != 3)
             {
                 float delayBeforeShowingNotifications = 0.5f;
@@ -928,19 +928,11 @@ namespace FishStory.Screens
 
                 }).After(GameScreenGum.ToBlackAnimation.Length + GameScreenGum.ToTransparentAnimation.Length + delayBeforeShowingNotifications);
             }
+            // David: TODO: handle this in the level script? That way I have refs to the ifs and dos
             else
             {
-                // TODO: knock in the middle of the night. player clicks through dialog, then fade back in
-                DialogBox.TryShow(nameof(GlobalContent.Day4Intro));
-                DialogBox.
-                //If.Check(() =>
-                //{
-                //    return true;
-                //});
-                //Do.Call(() =>
-                //{
-
-                //});
+                PlayerDataManager.PlayerData.CurrentDay++;
+                isBeingForcedToSleep = false;
             }
         }
 

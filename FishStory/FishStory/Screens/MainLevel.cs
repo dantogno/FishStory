@@ -37,6 +37,7 @@ namespace FishStory.Screens
         public const string Conservationist = "Conservationist";
         public const string FishermanBald = "FishermanBald";
         public const string FishermanHair = "FishermanHair";
+        public const string PlayerCharacter = "PlayerCharacter";
     }
     public partial class MainLevel
     {
@@ -192,6 +193,16 @@ namespace FishStory.Screens
         private bool DoesPlayerHaveFish => PlayerDataManager.PlayerData.ItemInventory
                     .Where((kvp) => GlobalContent.ItemDefinition[kvp.Key].IsFish && kvp.Value > 0).Any();
 
+        private string GetCharacterForSacrifice()
+        {
+            string characterToSacrifice = CharacterNames.PlayerCharacter;
+
+            var dictionary = GetNumberOfFishAssociatedWithCharacters();
+            characterToSacrifice = GetKeyWithHighestValue(dictionary);
+
+            return characterToSacrifice;
+        }
+
 
         private void EveryFrameScriptLogic()
         {
@@ -227,22 +238,24 @@ namespace FishStory.Screens
         {
             var If = script;
             var Do = script;
+            GameScreenGum.InputInstructionsInstance.Visible = false;
 
-            //If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 1);
-            //Do.Call(() => DoDay1Script(If, Do));
-            //If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 2);
-            //Do.Call(() => DoDay2Script(If, Do));
-            //If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 3);
-            //Do.Call(() => DoDay3Script(If, Do));
-            //If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 4);
-            //Do.Call(() => DoDay4Script(If, Do));
-            
+            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 1);
+            Do.Call(() => DoDay1Script(If, Do));
+            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 2);
+            Do.Call(() => DoDay2Script(If, Do));
+            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 3);
+            Do.Call(() => DoDay3Script(If, Do));
+            If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 4);
+            Do.Call(() => DoDay4Script(If, Do));
+
             // Below here is debug code to help facilitate testing day 4.
             // TODO: remove.
-            PlayerCharacterInstance.X = 695;
-            PlayerCharacterInstance.Y = -855;
-            PlayerCharacterInstance.DirectionFacing = TopDownDirection.Right;
-            DoDay4Script(If, Do);
+            //PlayerCharacterInstance.X = 695;
+            //PlayerCharacterInstance.Y = -855;
+            //PlayerCharacterInstance.DirectionFacing = TopDownDirection.Right;
+            //DoDay4Script(If, Do);
+            
         }
         private void HandleCharacterBedTimes(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
@@ -809,20 +822,91 @@ namespace FishStory.Screens
         }
         private void DoDay4Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
+            // TODO: remove ability to walk around!
+           // PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.OverlayInstance);
+
             InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(3));
             InGameDateTimeManager.ShouldTimePass = false;
 
-            // Change all the npcs but the priestess
-            // TODO and the person being sacrificed
-            NPCList.FindByName(CharacterNames.FarmerSonBaitShop).Animation = NPC.CloakedGuy;
-            foreach (var npc in NPCList)
+            string characterToSacrifice = CharacterNames.Farmer; //GetCharacterForSacrifice(); TODO: remove debug code!
+            bool isPlayerSacrificed = characterToSacrifice == CharacterNames.PlayerCharacter;
+            if (!isPlayerSacrificed)
+                NPCList.FindByName(characterToSacrifice).CurrentChainName = "Idle";
+            string officiant = characterToSacrifice == CharacterNames.Priestess ? CharacterNames.Nun : CharacterNames.Priestess;
+            // Change all the npcs but the priestess and the person getting sacrificed
+            var cloakedNPCs = NPCList.Where((npc) => npc.Name != officiant
+                && !npc.Name.Contains("Sign") && !npc.Name.Contains("Board")
+                && npc.Name != characterToSacrifice).ToArray();
+            foreach (var npc in cloakedNPCs)
             {
-                if (npc.Name != CharacterNames.Priestess && !npc.Name.Contains("Sign") && !npc.Name.Contains("Board"))
-                {
-                    npc.Animation = NPC.CloakedGuy;
-                    npc.CurrentChainName = "Idle";
-                }
+                npc.Animation = NPC.CloakedGuy;
+                npc.CurrentChainName = "Idle";
             }
+            // Knock in the middle of the night. player clicks through dialog, then fade back in
+            float delayBeforeKnock = 1;
+            this.Call(() => { DialogBox.TryShow(nameof(GlobalContent.Day4Intro)); }).After(delayBeforeKnock);
+            var escortGuard1 = NPCList.FindByName(characterToSacrifice == CharacterNames.Farmer ? CharacterNames.Tycoon : CharacterNames.Farmer);
+            var escortGuard2 = NPCList.FindByName(characterToSacrifice == CharacterNames.FishermanBald ? CharacterNames.Tycoon : CharacterNames.FishermanBald);
+
+            escortGuard1.Position = new Microsoft.Xna.Framework.Vector3(729, -834, PlayerCharacterInstance.Z);
+            // escortGuard1.CurrentChainName = "WalkLeft";
+            escortGuard2.Position = new Microsoft.Xna.Framework.Vector3(696, -834, PlayerCharacterInstance.Z);
+        
+            If.Check(() =>
+            {
+                return HasTag("HasSeenKnocking") && !DialogBox.Visible;
+            });
+            Do.Call(() =>
+            {
+                FadeIn();
+                SetDialoguePortraitFor(escortGuard1);
+                this.Call(() => { DialogBox.TryShow(nameof(GlobalContent.Day4Intro2)); }).After(GameScreenGum.ToBlackAnimation.Length);
+            });
+
+            If.Check(() =>
+            {
+                return HasTag("HasSeenIntro2") && !DialogBox.Visible;
+            });
+            Do.Call(() =>
+            {
+                FadeToBlack();
+                float extraFadeDelay = 1;
+                float delayBeforeOfficiantSpeaks = GameScreenGum.ToBlackAnimation.Length + extraFadeDelay + 1;
+                this.Call(FadeIn).After(GameScreenGum.ToBlackAnimation.Length + extraFadeDelay);
+                float distanceBetweenCharactersX = 16;
+                float distanceBetweenCharactersY = 15;
+                float column1X = 1064;
+                float column2X = 1102;
+                float row1Y = -1049;
+                int numPerRow = 9;
+                this.Call(() =>
+                {
+                    for (int i = 0; i < numPerRow; i++)
+                    { 
+                        cloakedNPCs[i].X = column1X + i * distanceBetweenCharactersX;
+                        cloakedNPCs[i].Y = row1Y;
+                    }
+                    for (int i = numPerRow; i < cloakedNPCs.Count(); i++)
+                    {
+                        cloakedNPCs[i].X = column2X + (i - numPerRow) * distanceBetweenCharactersX;
+                        cloakedNPCs[i].Y = row1Y - distanceBetweenCharactersY;
+                    }
+                    NPCList.FindByName(officiant).Position = new Microsoft.Xna.Framework.Vector3(1114, -1112, PlayerCharacterInstance.Z);
+                    if (isPlayerSacrificed)
+                        PlayerCharacterInstance.Position = new Microsoft.Xna.Framework.Vector3(1140, -1112, PlayerCharacterInstance.Z);
+                    else
+                    {
+                        PlayerCharacterInstance.Position = new Microsoft.Xna.Framework.Vector3(1127, -1088, PlayerCharacterInstance.Z);
+                        NPCList.FindByName(characterToSacrifice).Position = new Microsoft.Xna.Framework.Vector3(1140, -1112, PlayerCharacterInstance.Z);
+                    }
+                    PlayerCharacterInstance.DirectionFacing = TopDownDirection.Down;
+                }).After(GameScreenGum.ToBlackAnimation.Length);
+                this.Call(() =>
+                {
+                    SetDialoguePortraitFor(NPCList.FindByName(officiant));
+                    DialogBox.TryShow(nameof(GlobalContent.Day4BasicEnding));
+                }).After(delayBeforeOfficiantSpeaks);
+            });
         }
 
 

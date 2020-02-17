@@ -1,0 +1,252 @@
+{
+    "passages": [
+      {
+        "text": "Divine ocean! Mighty sea! On this day, we honor you!\n[[continue1]]",
+        "links": [
+          {
+            "name": "continue1",
+            "link": "continue1",
+            "pid": "2"
+          }
+        ],
+        "name": "Start",
+        "pid": "1",
+        "position": {
+          "x": "654",
+          "y": "488"
+        }
+      },
+      {
+        "text": "You have bestowed a great bounty upon us, and so we have feasted! You have protected us from those who are ignorant to your godliness, and so we have prospered! And now, you have called out from your deepest depths with demands of restitution. And so we have listened!\n[[What's going on?!|WhatsGoingOn]]\n[[...|silence]]",
+        "links": [
+          {
+            "name": "What's going on?!|WhatsGoingOn",
+            "link": "What's going on?!|WhatsGoingOn"
+          },
+          {
+            "name": "...|silence",
+            "link": "...|silence"
+          }
+        ],
+        "name": "continue1",
+        "pid": "2",
+        "position": {
+          "x": "654",
+          "y": "638"
+        }
+      },
+      {
+        "text": "Oh mighty ocean, we make ourselves humble before you! Even though the less educated among us may cry out in fear, we have gathered each and every citizen who has benefited from your generosity.\n[[continue2]]",
+        "links": [
+          {
+            "name": "continue2",
+            "link": "continue2",
+            "pid": "5"
+          }
+        ],
+        "name": "WhatsGoingOn",
+        "pid": "3",
+        "position": {
+          "x": "579",
+          "y": "788"
+        }
+      },
+      {
+        "text": "Oh mighty ocean, we make ourselves humble before you! And though there are strangers among us, we have gathered each and every citizen who has benefited from your generosity.\n[[continue2]] ",
+        "links": [
+          {
+            "name": "continue2",
+            "link": "continue2",
+            "pid": "5"
+          }
+        ],
+        "name": "silence",
+        "pid": "4",
+        "position": {
+          "x": "729",
+          "y": "788"
+        }
+      },
+      {
+        "text": "But only one will carry the great honor of being chosen. Only one may make the great journey into your heavenly lands!\n[[continue3]]",
+        "links": [
+          {
+            "name": "continue3",
+            "link": "continue3",
+            "pid": "6"
+          }
+        ],
+        "name": "continue2",
+        "pid": "5",
+        "position": {
+          "x": "638",
+          "y": "935"
+        }
+      },
+      {
+        "text": "You have chosen this pilgrim with your infinite and unquestionable wisdom. You have sent us an abundance of [FishType1] and [FishType2], the symbols of [Trait1] and [Trait2]. We have feasted upon their prophetic flesh, and thus, we have been nourished by your mandate.\n[[continue4]]",
+        "links": [
+          {
+            "name": "continue4",
+            "link": "continue4",
+            "pid": "7"
+          }
+        ],
+        "name": "continue3",
+        "pid": "6",
+        "position": {
+          "x": "638",
+          "y": "1085"
+        }
+      },
+      {
+        "text": "And now, we shall deliver unto you what you are owed! Bring forth the chosen, [ChosenName]!\n[[What are you doing to them?|What doing]]\n[[Stop! You can't do this!|Stop]]\n[[...|continue5]]",
+        "links": [
+          {
+            "name": "What are you doing to them?|What doing",
+            "link": "What are you doing to them?|What doing"
+          },
+          {
+            "name": "Stop! You can't do this!|Stop",
+            "link": "Stop! You can't do this!|Stop"
+          },
+          {
+            "name": "...|continue5",
+            "link": "...|continue5"
+          }
+        ],
+        "name": "continue4",
+        "pid": "7",
+        "position": {
+          "x": "638",
+          "y": "1235"
+        }
+      },
+      {
+        "text": "We are doing what's best. The greater good demands the sacrifice of the individual. [ChosenName] is happy to oblidge, even if they themself don't know it yet. [ChosenName] knew that the tides could flow in their favor.\n[[continue5]]",
+        "links": [
+          {
+            "name": "continue5",
+            "link": "continue5",
+            "pid": "10"
+          }
+        ],
+        "name": "What doing",
+        "pid": "8",
+        "position": {
+          "x": "505",
+          "y": "1369"
+        }
+      },
+      {
+        "text": "I'd advise you to calm down, stranger. You will find that you are quite powerless against the tides of fate.\n[[continuestop]]",
+        "links": [
+          {
+            "name": "continuestop",
+            "link": "continuestop",
+            "pid": "11"
+          }
+        ],
+        "name": "Stop",
+        "pid": "9",
+        "position": {
+          "x": "773",
+          "y": "1284"
+        }
+      },
+      {
+        "text": "[ChosenLine]\n[[continue6]]",
+        "links": [
+          {
+            "name": "continue6",
+            "link": "continue6",
+            "pid": "12"
+          }
+        ],
+        "name": "continue5",
+        "pid": "10",
+        "position": {
+          "x": "650",
+          "y": "1525"
+        }
+      },
+      {
+        "text": "The greater good demands the sacrifice of the individual. [ChosenName] is happy to oblidge, even if they themself don't know it yet. [ChosenName] knew that the tides could flow in their favor.\n[[continue5]]",
+        "links": [
+          {
+            "name": "continue5",
+            "link": "continue5",
+            "pid": "10"
+          }
+        ],
+        "name": "continuestop",
+        "pid": "11",
+        "position": {
+          "x": "771",
+          "y": "1402"
+        }
+      },
+      {
+        "text": "Enough. The time has come.\n[[continue7]]",
+        "links": [
+          {
+            "name": "continue7",
+            "link": "continue7",
+            "pid": "13"
+          }
+        ],
+        "name": "continue6",
+        "pid": "12",
+        "position": {
+          "x": "650",
+          "y": "1658"
+        }
+      },
+      {
+        "text": "Mighty ocean! Accept this sacrifice as a symbol of our humility! Know that our devotion is undying!\n[[continue8]]",
+        "links": [
+          {
+            "name": "continue8",
+            "link": "continue8",
+            "pid": "14"
+          }
+        ],
+        "name": "continue7",
+        "pid": "13",
+        "position": {
+          "x": "650",
+          "y": "1808"
+        }
+      },
+      {
+        "text": "[ChosenName], rejoice! Let your spirit grow light as your lungs grow heavy with brine. Feel the warmth of the sea's benevolence as the water’s cold envelops you.\n[[continue9]]",
+        "links": [
+          {
+            "name": "continue9",
+            "link": "continue9",
+            "pid": "15"
+          }
+        ],
+        "name": "continue8",
+        "pid": "14",
+        "position": {
+          "x": "650",
+          "y": "1958"
+        }
+      },
+      {
+        "text": "Rejoice, [ChosenName], as the tides flow in your favor.",
+        "name": "continue9",
+        "pid": "15",
+        "position": {
+          "x": "650",
+          "y": "2108"
+        }
+      }
+    ],
+    "name": "Day4BasicEnding",
+    "startnode": "1",
+    "creator": "Twine",
+    "creator-version": "2.2.1",
+    "ifid": "3E12F5CD-B7B3-4C4E-A399-397E9418157A"
+  }

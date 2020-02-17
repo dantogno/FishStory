@@ -1,0 +1,54 @@
+{
+    "passages": [
+      {
+        "text": "Come with us. [[What do you want?]][[OK.]]",
+        "links": [
+          {
+            "name": "What do you want?",
+            "link": "What do you want?",
+            "pid": "2"
+          },
+          {
+            "name": "OK.",
+            "link": "OK.",
+            "pid": "3"
+          }
+        ],
+        "name": "Untitled Passage",
+        "pid": "1",
+        "position": {
+          "x": "410",
+          "y": "488.6666564941406"
+        }
+      },
+      {
+        "text": "The time has come for the Choosing.",
+        "name": "What do you want?",
+        "pid": "2",
+        "position": {
+          "x": "335",
+          "y": "638.6666564941406"
+        },
+        "tags": [
+          "HasSeenIntro2"
+        ]
+      },
+      {
+        "text": "This way.",
+        "name": "OK.",
+        "pid": "3",
+        "position": {
+          "x": "485",
+          "y": "638.6666564941406"
+        },
+        "tags": [
+          "HasSeenIntro2"
+        ]
+      }
+    ],
+    "name": "Day4Intro2",
+    "startnode": "1",
+    "creator": "Twine",
+    "creator-version": "2.2.1",
+    "ifid": "F4D0FB56-3E36-41C7-B089-D83CD0E4FB8B"
+  }
