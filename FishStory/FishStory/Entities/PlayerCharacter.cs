@@ -150,10 +150,10 @@ namespace FishStory.Entities
 
             this.FishingCollision.RelativePosition = fishingVector;
 
-            if (DirectionFacing == TopDownDirection.Left ||
-                DirectionFacing == TopDownDirection.Right)
+            if (this.CurrentAnimationChainName.Contains("Left") ||
+                this.CurrentAnimationChainName.Contains("Right"))
             {
-                FishingCollision.Width = fishingCollisionUnrotatedWidth;
+                FishingCollision.Width = fishingCollisionUnrotatedWidth;a
                 FishingCollision.Height = fishingCollisionUnrotatedHeight;
             }
             else

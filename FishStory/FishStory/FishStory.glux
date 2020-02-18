@@ -3109,6 +3109,19 @@
           <Type>float</Type>
           <DefaultValue xsi:type="xsd:float">1</DefaultValue>
         </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>string</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>CurrentAnimationChainName</Name>
+          <Type>string</Type>
+          <DefaultValue xsi:type="xsd:string">IdleDown</DefaultValue>
+          <SourceObject>SpriteInstance</SourceObject>
+          <SourceObjectProperty>CurrentChainName</SourceObjectProperty>
+        </CustomVariable>
       </CustomVariables>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <Name>Entities\PlayerCharacter</Name>
