@@ -144,11 +144,11 @@ namespace FishStory.Screens
         /// For use when determining the characters to use alternative dialog in day 2.
         /// </summary>
         /// <param name="numberOfKeysToReturn">How many keys (characters to use alt dialog) in the list returned.</param>
-        private List<string> GetKeysWithTopValues(Dictionary<string, int> dictionary, int numberOfKeysToReturn)
+        public static List<string> GetKeysWithTopValues(Dictionary<string, int> dictionary, int numberOfKeysToReturn)
         {
             var list = dictionary.ToList();
             list.Sort((pair1, pair2) => pair1.Value.CompareTo(pair2.Value));
-            var keys = list.Select((kvp) => kvp.Key);
+            var keys = list.Select((kvp) => kvp.Key).Reverse();
             return keys.Take(numberOfKeysToReturn).ToList();
         }
 

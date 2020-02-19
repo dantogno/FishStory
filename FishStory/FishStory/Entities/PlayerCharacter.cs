@@ -153,7 +153,7 @@ namespace FishStory.Entities
             if (this.CurrentAnimationChainName.Contains("Left") ||
                 this.CurrentAnimationChainName.Contains("Right"))
             {
-                FishingCollision.Width = fishingCollisionUnrotatedWidth;a
+                FishingCollision.Width = fishingCollisionUnrotatedWidth;
                 FishingCollision.Height = fishingCollisionUnrotatedHeight;
             }
             else

@@ -140,9 +140,7 @@ namespace FishStory.GumRuntimes
         }
 
         public bool TryShow(RootObject rootObject, Action<Link> linkSelected = null)
-        {
-
-
+        {      
             this.linkSelected = linkSelected;
             dialogTree = rootObject;
             currentNodeId = dialogTree.startnode;
@@ -204,8 +202,18 @@ namespace FishStory.GumRuntimes
                 }
                 else
                 {
-                    this.TextInstance.Text = passage.StrippedText;
-
+                    if (passage.StrippedText.Contains("[FishType1]"))
+                    {
+                        var topFish = Screens.MainLevel.GetKeysWithTopValues(PlayerDataManager.PlayerData.TimesFishIdentified, 2);
+                        var adjustedText = passage.StrippedText.Replace("[FishType1]", topFish[0]).
+                            Replace("[FishType2]", topFish[1]);
+                        // todo: get traits next!
+                        this.TextInstance.Text = adjustedText;
+                    }
+                    else
+                    {
+                        this.TextInstance.Text = passage.StrippedText;
+                    }
 
                     ShowLinks(passage);
 
