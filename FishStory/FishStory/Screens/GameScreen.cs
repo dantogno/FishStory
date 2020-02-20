@@ -202,6 +202,14 @@ namespace FishStory.Screens
 
         private void InitializeEntitiesFromMap()
         {
+            foreach (var layer in Map.MapLayers)
+            {
+                if (layer.Name == "Labels")
+                {
+                    layer.Visible = false;
+                }
+            }
+
             TileEntityInstantiator.CreateEntitiesFrom(Map);
 
             foreach(var npc in NPCList)
