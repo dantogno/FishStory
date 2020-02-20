@@ -517,6 +517,11 @@
       <Name>StoreCloseSound</Name>
       <Link>content\globalcontent\sounds\storeclosesound.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\storeitemselectsound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>StoreItemSelectSound</Name>
+      <Link>content\globalcontent\sounds\storeitemselectsound.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\storeopensound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>StoreOpenSound</Name>
