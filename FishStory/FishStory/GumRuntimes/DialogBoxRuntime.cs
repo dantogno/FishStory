@@ -1,4 +1,5 @@
 using FishStory.Managers;
+using FishStory.Screens;
 using FlatRedBall;
 using FlatRedBall.Input;
 using Gum.Wireframe;
@@ -205,10 +206,15 @@ namespace FishStory.GumRuntimes
                     if (passage.StrippedText.Contains("[FishType1]"))
                     {
                         var topFish = Screens.MainLevel.GetKeysWithTopValues(PlayerDataManager.PlayerData.TimesFishIdentified, 2);
-                        var adjustedText = passage.StrippedText.Replace("[FishType1]", topFish[0]).
-                            Replace("[FishType2]", topFish[1]);
-                        // todo: get traits next!
+                        var adjustedText = passage.StrippedText.Replace("[FishType1]", topFish[0])
+                            .Replace("[FishType2]", topFish[1])
+                            .Replace("[Trait1]", GlobalContent.ItemDefinition[topFish[0]].AssociatedTrait)
+                            .Replace("[Trait2]", GlobalContent.ItemDefinition[topFish[1]].AssociatedTrait);                  
                         this.TextInstance.Text = adjustedText;
+                    }
+                    else if (passage.StrippedText.Contains("[ChosenName]"))
+                    {
+                        this.TextInstance.Text = passage.StrippedText.Replace("[ChosenName]", CharacterNames.DisplayNames[MainLevel.CharacterToSacrifice]);
                     }
                     else
                     {

@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework;
 namespace FishStory.Entities
 {
     public partial class NPC
-    {
+    {        
         public Vector3 SpawnPosition { get; set; }
         public RootObject DirectlySetDialog { get; set; }
         /// <summary>

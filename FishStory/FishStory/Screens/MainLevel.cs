@@ -38,6 +38,25 @@ namespace FishStory.Screens
         public const string FishermanBald = "FishermanBald";
         public const string FishermanHair = "FishermanHair";
         public const string PlayerCharacter = "PlayerCharacter";
+        public static Dictionary<string, string> DisplayNames = new Dictionary<string, string>()
+        {
+            {BlackMarketShop, "Elias" },
+            {Mayor, "Mayor Olsen" },
+            {FestivalCoordinator, "Anthony" },
+            {Identifier, "Jakob" },
+            {Fishmonger, "Oscar" },
+            {FarmerSonBaitShop, "Emil" },
+            {YoungManBaitShop, "William" },
+            {ElderlyMother, "Nora" },
+            {Priestess, Priestess },
+            {Nun, "Cinthia" },
+            {Farmer, "Issac" },
+            {Tycoon, "Mr. Petterson" },
+            {TycoonDaughter, "Emily" },
+            {Conservationist, "Sofia" },
+            {FishermanBald, "Larry" },
+            {FishermanHair, "Roger" }
+        };
     }
     public partial class MainLevel
     {
@@ -151,7 +170,7 @@ namespace FishStory.Screens
             var keys = list.Select((kvp) => kvp.Key).Reverse();
             return keys.Take(numberOfKeysToReturn).ToList();
         }
-
+        public static string CharacterToSacrifice { get; private set; }
         /// <summary>
         /// These characters represen specific traits / classes. 
         /// On day 2, if this class is threatened based on the number and type
@@ -828,15 +847,15 @@ namespace FishStory.Screens
             InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(3));
             InGameDateTimeManager.ShouldTimePass = false;
 
-            string characterToSacrifice = CharacterNames.Farmer; //GetCharacterForSacrifice(); TODO: remove debug code!
-            bool isPlayerSacrificed = characterToSacrifice == CharacterNames.PlayerCharacter;
+            CharacterToSacrifice = GetCharacterForSacrifice();
+            bool isPlayerSacrificed = CharacterToSacrifice == CharacterNames.PlayerCharacter;
             if (!isPlayerSacrificed)
-                NPCList.FindByName(characterToSacrifice).CurrentChainName = "Idle";
-            string officiant = characterToSacrifice == CharacterNames.Priestess ? CharacterNames.Nun : CharacterNames.Priestess;
+                NPCList.FindByName(CharacterToSacrifice).CurrentChainName = "Idle";
+            string officiant = CharacterToSacrifice == CharacterNames.Priestess ? CharacterNames.Nun : CharacterNames.Priestess;
             // Change all the npcs but the priestess and the person getting sacrificed
             var cloakedNPCs = NPCList.Where((npc) => npc.Name != officiant
                 && !npc.Name.Contains("Sign") && !npc.Name.Contains("Board")
-                && npc.Name != characterToSacrifice).ToArray();
+                && npc.Name != CharacterToSacrifice).ToArray();
             foreach (var npc in cloakedNPCs)
             {
                 npc.Animation = NPC.CloakedGuy;
@@ -845,8 +864,8 @@ namespace FishStory.Screens
             // Knock in the middle of the night. player clicks through dialog, then fade back in
             float delayBeforeKnock = 1;
             this.Call(() => { DialogBox.TryShow(nameof(GlobalContent.Day4Intro)); }).After(delayBeforeKnock);
-            var escortGuard1 = NPCList.FindByName(characterToSacrifice == CharacterNames.Farmer ? CharacterNames.Tycoon : CharacterNames.Farmer);
-            var escortGuard2 = NPCList.FindByName(characterToSacrifice == CharacterNames.FishermanBald ? CharacterNames.Tycoon : CharacterNames.FishermanBald);
+            var escortGuard1 = NPCList.FindByName(CharacterToSacrifice == CharacterNames.Farmer ? CharacterNames.Tycoon : CharacterNames.Farmer);
+            var escortGuard2 = NPCList.FindByName(CharacterToSacrifice == CharacterNames.FishermanBald ? CharacterNames.Tycoon : CharacterNames.FishermanBald);
 
             escortGuard1.Position = new Microsoft.Xna.Framework.Vector3(729, -834, PlayerCharacterInstance.Z);
             // escortGuard1.CurrentChainName = "WalkLeft";
@@ -897,7 +916,7 @@ namespace FishStory.Screens
                     else
                     {
                         PlayerCharacterInstance.Position = new Microsoft.Xna.Framework.Vector3(1127, -1088, PlayerCharacterInstance.Z);
-                        NPCList.FindByName(characterToSacrifice).Position = new Microsoft.Xna.Framework.Vector3(1140, -1112, PlayerCharacterInstance.Z);
+                        NPCList.FindByName(CharacterToSacrifice).Position = new Microsoft.Xna.Framework.Vector3(1140, -1112, PlayerCharacterInstance.Z);
                     }
                     PlayerCharacterInstance.DirectionFacing = TopDownDirection.Down;
                 }).After(GameScreenGum.ToBlackAnimation.Length);
