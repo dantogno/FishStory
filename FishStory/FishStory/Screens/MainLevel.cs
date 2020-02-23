@@ -83,6 +83,7 @@ namespace FishStory.Screens
         /// Tycoon requires this many fish before giving key.
         /// </summary>
         private int numFishRequiredForKey = 3;
+        private bool hasEndingStarted;
         private const int outOfWorldX = 9000;
         private const int outOfWorldY = 9000;
         bool isWaitingToGiveFreeBaitInConversation = false;
@@ -244,7 +245,10 @@ namespace FishStory.Screens
 
         private void EveryFrameScriptLogic()
         {
-            
+            if (hasEndingStarted)
+            {
+                HandleEndingMusicFadeOut();
+            }
             switch (PlayerDataManager.PlayerData.CurrentDay)
             {
                 case 1:
@@ -958,6 +962,24 @@ namespace FishStory.Screens
                 {
                     SetDialoguePortraitFor(NPCList.FindByName(officiant));
                 });
+
+                If.Check(() =>
+                {
+                    return !DialogBox.Visible && HasTag("Ending");
+                });
+                Do.Call(() =>
+                {
+                    float delayBeforeDrowningSound = 1;
+                    float delayBeforeLoadingTitleScreen = (float)GlobalContent.DrowningSound.Duration.TotalSeconds - 1;
+                    FadeToBlack();
+                    hasEndingStarted = true;
+                    this.Call(() => SoundManager.Play(GlobalContent.DrowningSound, volume: 1f))
+                        .After(GameScreenGum.ToBlackAnimation.Length + delayBeforeDrowningSound);
+                    this.Call(() =>
+                    {                        
+                        MoveToScreen(nameof(TitleScreen));
+                    }).After(delayBeforeLoadingTitleScreen);
+                });
             });
         }
 
@@ -976,6 +998,20 @@ namespace FishStory.Screens
             //FlatRedBall.Debugging.Debugger.Write($"Fish identified: {TotalFishIdentified}");
             EveryFrameScriptLogic();
         }
+        private void HandleEndingMusicFadeOut()
+        {
+            // David: I'm out of patience, I can't get it to fade
+            // So I'm just stopping the damn music.
+            if (MusicManager.IsSongPlaying)
+                MusicManager.Stop();
+            //float fadeSpeed = 1000;
+            //if (MusicManager.MusicVolumeLevel > 0)
+            //{   
+            //    MusicManager.MusicVolumeLevel -= fadeSpeed * TimeManager.SecondDifference;
+
+            //}
+        }
+
 
         void CustomDestroy()
         {

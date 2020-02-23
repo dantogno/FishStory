@@ -407,6 +407,11 @@
       <Name>DialogueAdvanceSound</Name>
       <Link>content\globalcontent\sounds\dialogueadvancesound.xnb</Link>
     </None>
+    <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\drowningsound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>DrowningSound</Name>
+      <Link>content\globalcontent\sounds\drowningsound.xnb</Link>
+    </None>
     <None Include="..\builtxnbs\desktopgl\globalcontent\sounds\fishcatchsound.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishCatchSound</Name>

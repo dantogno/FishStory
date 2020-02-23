@@ -21,6 +21,7 @@ namespace FishStory.Screens
 
         void CustomInitialize()
         {
+            MusicManager.Stop();
             InitializeEntitiesFromMap();
             
             InitializeCamera();

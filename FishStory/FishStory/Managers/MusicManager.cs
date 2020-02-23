@@ -54,6 +54,11 @@ namespace FishStory.Managers
             }
         }
 
+        public static void Stop()
+        {
+            AudioManager.StopSong();
+        }
+
         private const double a = 1e-3;
         private const double b = 6.908;
         private static float getSmoothedVolumeLevel(double value)

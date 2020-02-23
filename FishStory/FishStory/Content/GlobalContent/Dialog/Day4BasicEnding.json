@@ -14,7 +14,10 @@
       "position": {
         "x": "654",
         "y": "488"
-      }
+      },
+      "tags": [
+        "Ending"
+      ]
     },
     {
       "text": "You have bestowed a great bounty upon us, and so we have feasted! You have protected us from those who are ignorant to your godliness, and so we have prospered! And now, you have called out from your deepest depths with demands of restitution. And so we have listened!\n[[What's going on?!|WhatsGoingOn]]\n[[...|silence]]",

@@ -1,7 +1,7 @@
 {
     "passages": [
       {
-        "text": "*ahem* Divine ocean! Mighty sea! On this day, we honor you!\n[[continue1]]",
+        "text": "Divine ocean! Mighty sea! On this day, we honor you!\n[[continue1]]",
         "links": [
           {
             "name": "continue1",
@@ -14,7 +14,10 @@
         "position": {
           "x": "654",
           "y": "488"
-        }
+        },
+        "tags": [
+          "Ending"
+        ]
       },
       {
         "text": "You have bestowed a great bounty upon us, and so we have feasted! You have protected us from those who are ignorant to your godliness, and so we have prospered! And now, you have called out from your deepest depths with demands of restitution. And so we have listened!\n[[What's going on?!|WhatsGoingOn]]\n[[...|silence]]",
@@ -47,7 +50,7 @@
         "name": "WhatsGoingOn",
         "pid": "3",
         "position": {
-          "x": "568",
+          "x": "579",
           "y": "788"
         }
       },
@@ -79,7 +82,7 @@
         "name": "continue2",
         "pid": "5",
         "position": {
-          "x": "641",
+          "x": "638",
           "y": "935"
         }
       },
@@ -100,106 +103,87 @@
         }
       },
       {
-        "text": "And now, we shall deliver unto you what you are owed! Bring forth the chosen, the Priestess!\n[[What are you doing to her?|What doing]]\n[[How can you do this? Isn't she your friend?|Stop]]",
+        "text": "And now, we shall deliver unto you what you are owed! Bring forth the stranger!\n[[Me?!|me]]\n[[You won't get away with this! Someone will come looking for me!|wont get away]]",
         "links": [
           {
-            "name": "What are you doing to her?|What doing",
-            "link": "What are you doing to her?|What doing"
+            "name": "Me?!|me",
+            "link": "Me?!|me"
           },
           {
-            "name": "How can you do this? Isn't she your friend?|Stop",
-            "link": "How can you do this? Isn't she your friend?|Stop"
+            "name": "You won't get away with this! Someone will come looking for me!|wont get away",
+            "link": "You won't get away with this! Someone will come looking for me!|wont get away"
           }
         ],
         "name": "continue4",
         "pid": "7",
         "position": {
-          "x": "635",
-          "y": "1213"
+          "x": "638",
+          "y": "1235"
         }
       },
       {
-        "text": "We are doing what's best. The greater good demands the sacrifice of the individual. The priestess is more than happy to oblige. This is her purpose. She always knew that the tides could flow in her favor... as did I.\n[[continuestop]]",
+        "text": "I'd advise you to calm down, stranger. You will find that you are quite powerless against the tides of fate.\n[[continuestop]]",
         "links": [
           {
             "name": "continuestop",
             "link": "continuestop",
-            "pid": "11"
+            "pid": "10"
           }
         ],
-        "name": "What doing",
+        "name": "me",
         "pid": "8",
         "position": {
-          "x": "494",
-          "y": "1313"
+          "x": "796",
+          "y": "1239"
         }
       },
       {
-        "text": "Of course she is, that's why I'm doing this. This is her purpose. The greater good demands the sacrifice of the individual. The priestess is more than happy to oblige. She always knew that the tides could flow in her favor... as did I.\n[[continuestop]]",
-        "links": [
-          {
-            "name": "continuestop",
-            "link": "continuestop",
-            "pid": "11"
-          }
-        ],
-        "name": "Stop",
-        "pid": "9",
-        "position": {
-          "x": "787",
-          "y": "1306"
-        }
-      },
-      {
-        "text": "[ChosenLine]\n[[continue6]]",
+        "text": "Ah, my dear, we shall do nothing but witness the tranquility of the waves as they beat upon the rocks. It is the sea that will guide you on your journey, not us.\n[[continue6]]",
         "links": [
           {
             "name": "continue6",
             "link": "continue6",
-            "pid": "12"
+            "pid": "11"
           }
         ],
-        "name": "continue5",
-        "pid": "10",
+        "name": "whatgoingtodo",
+        "pid": "9",
         "position": {
-          "x": "650",
-          "y": "1525"
+          "x": "647",
+          "y": "1601"
         }
       },
       {
-        "text": "I will take her place. Just as she did long ago, I will abandon my name and my humanity, and in doing so I will become closer to the land. I will become the bridge between worlds. And my first task will be to set her down the path of the ultimate journey.\n[[continue5]]",
+        "text": "The greater good demands the sacrifice of the individual. You have partaken in the spoils of the sea, did you not? Did you expect to take without giving something in return?\n[[continueme]]",
         "links": [
           {
-            "name": "continue5",
-            "link": "continue5",
-            "pid": "10"
+            "name": "continueme",
+            "link": "continueme",
+            "pid": "16"
           }
         ],
         "name": "continuestop",
-        "pid": "11",
+        "pid": "10",
         "position": {
-          "x": "651",
-          "y": "1391"
+          "x": "798",
+          "y": "1365"
         }
       },
       {
-        "text": "Of course. Ida, I restore your forgotten name, so that you may enter into the world of the divine sea with your humanity intact and worthy of sacrifice. Go forth, Ida, and be remembered as such.\n[[continue7]]",
+        "text": "Enough. The time has come.\n[[continue7]]",
         "links": [
           {
             "name": "continue7",
             "link": "continue7",
-            "pid": "13"
+            "pid": "12"
           }
         ],
         "name": "continue6",
-        "pid": "12",
+        "pid": "11",
         "position": {
-          "x": "647",
-          "y": "1672"
-        },
-        "tags": [
-          "ShowOfficiantPortrait"
-        ]
+          "x": "650",
+          "y": "1767"
+        }
       },
       {
         "text": "Mighty ocean! Accept this sacrifice as a symbol of our humility! Know that our devotion is undying!\n[[continue8]]",
@@ -207,45 +191,91 @@
           {
             "name": "continue8",
             "link": "continue8",
-            "pid": "14"
+            "pid": "13"
           }
         ],
         "name": "continue7",
-        "pid": "13",
+        "pid": "12",
         "position": {
-          "x": "646",
-          "y": "1824"
+          "x": "650",
+          "y": "1917"
         }
       },
       {
-        "text": "Ida, rejoice! Let your spirit grow light as your lungs grow heavy with brine. Feel the warmth of the sea's benevolence as the water’s cold envelops you.\n[[continue9]]",
+        "text": "Stranger, rejoice! Let your spirit grow light as your lungs grow heavy with brine. Feel the warmth of the sea's benevolence as the water’s cold envelops you.\n[[continue9]]",
         "links": [
           {
             "name": "continue9",
             "link": "continue9",
-            "pid": "15"
+            "pid": "14"
           }
         ],
         "name": "continue8",
-        "pid": "14",
+        "pid": "13",
         "position": {
-          "x": "646",
-          "y": "1974"
+          "x": "650",
+          "y": "2067"
         }
       },
       {
-        "text": "Rejoice, Ida. The tides flow in your favor.",
+        "text": "Rejoice, Stranger. The tides flow in your favor.",
         "name": "continue9",
+        "pid": "14",
+        "position": {
+          "x": "650",
+          "y": "2217"
+        }
+      },
+      {
+        "text": "Ah, but you are wrong. Through this act, the land will achieve balance once again. And the sea will reward us for doing so, thereby protecting our way of life from those who would seek to destroy it. No one will come for you.\n[[continuegetaway]]",
+        "links": [
+          {
+            "name": "continuegetaway",
+            "link": "continuegetaway",
+            "pid": "17"
+          }
+        ],
+        "name": "wont get away",
         "pid": "15",
         "position": {
-          "x": "646",
-          "y": "2124"
+          "x": "489",
+          "y": "1333"
+        }
+      },
+      {
+        "text": "This is our greatest honor. Embrace it! You will be happy to oblige, even if you don't know it just yet.\n[[What are you going to do to me?!|whatgoingtodo]] ",
+        "links": [
+          {
+            "name": "What are you going to do to me?!|whatgoingtodo",
+            "link": "What are you going to do to me?!|whatgoingtodo"
+          }
+        ],
+        "name": "continueme",
+        "pid": "16",
+        "position": {
+          "x": "801",
+          "y": "1515"
+        }
+      },
+      {
+        "text": "The greater good demands the sacrifice of the individual. This is what's best for all of us. You will be happy to oblige, even if you don't know it just yet.\n[[What are you going to do to me?!|whatgoingtodo]] ",
+        "links": [
+          {
+            "name": "What are you going to do to me?!|whatgoingtodo",
+            "link": "What are you going to do to me?!|whatgoingtodo"
+          }
+        ],
+        "name": "continuegetaway",
+        "pid": "17",
+        "position": {
+          "x": "486",
+          "y": "1480"
         }
       }
     ],
-    "name": "Day4PriestessChosenEnding",
+    "name": "Day4PlayerChosenEnding",
     "startnode": "1",
     "creator": "Twine",
     "creator-version": "2.2.1",
-    "ifid": "DE4F9288-0878-470A-98B7-024D8D0C623A"
+    "ifid": "DEDA89D6-B701-402D-8E22-E52DC2F2ADED"
   }
