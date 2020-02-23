@@ -109,6 +109,18 @@
           <Name>HourOnClockMoonRisesIn24H</Name>
           <Type>double</Type>
         </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>bool</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>DayAndTimeDisplayIsVisible</Name>
+          <Type>bool</Type>
+          <SourceObject>DayAndTimeDisplayInstance</SourceObject>
+          <SourceObjectProperty>Visible</SourceObjectProperty>
+        </CustomVariable>
       </CustomVariables>
       <Name>Screens\GameScreen</Name>
       <ReferencedFiles>
