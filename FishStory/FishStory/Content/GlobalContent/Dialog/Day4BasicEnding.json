@@ -200,7 +200,10 @@
       "position": {
         "x": "650",
         "y": "1658"
-      }
+      },
+      "tags": [
+        "ShowOfficiantPortrait"
+      ]
     },
     {
       "text": "Mighty ocean! Accept this sacrifice as a symbol of our humility! Know that our devotion is undying!\n[[continue8]]",
@@ -219,7 +222,7 @@
       }
     },
     {
-      "text": "[ChosenName], rejoice! Let your spirit grow light as your lungs grow heavy with brine. Feel the warmth of the sea's benevolence as the waterâ€™s cold envelops you.\n[[continue9]]",
+      "text": "[ChosenName], rejoice! Let your spirit grow light as your lungs grow heavy with brine. Feel the warmth of the sea's benevolence as the water’s cold envelops you.\n[[continue9]]",
       "links": [
         {
           "name": "continue9",
@@ -247,6 +250,6 @@
   "name": "Day4BasicEnding",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.3.5",
+  "creator-version": "2.2.1",
   "ifid": "3E12F5CD-B7B3-4C4E-A399-397E9418157A"
 }

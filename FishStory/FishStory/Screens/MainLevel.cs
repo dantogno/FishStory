@@ -57,6 +57,25 @@ namespace FishStory.Screens
             {FishermanBald, "Larry" },
             {FishermanHair, "Roger" }
         };
+        public static Dictionary<string, string> ChosenLines = new Dictionary<string, string>()
+        {
+            {BlackMarketShop, "Elias" },
+            {Mayor, "Mayor Olsen" },
+            {FestivalCoordinator, "Anthony" },
+            {Identifier, "Jakob" },
+            {Fishmonger, "Oscar" },
+            {FarmerSonBaitShop, "Emil" },
+            {YoungManBaitShop, "William" },
+            {ElderlyMother, "Nora" },
+            {Priestess, Priestess },
+            {Nun, "Cinthia" },
+            {Farmer, "Issac" },
+            {Tycoon, "Mr. Petterson" },
+            {TycoonDaughter, "Emily" },
+            {Conservationist, "Sofia" },
+            {FishermanBald, "Larry" },
+            {FishermanHair, "Roger" }
+        };
     }
     public partial class MainLevel
     {
@@ -925,6 +944,15 @@ namespace FishStory.Screens
                     SetDialoguePortraitFor(NPCList.FindByName(officiant));
                     DialogBox.TryShow(nameof(GlobalContent.Day4BasicEnding));
                 }).After(delayBeforeOfficiantSpeaks);
+
+                If.Check(() =>
+                {
+                    return HasTag("ShowOfficiantPortrait");
+                });
+                Do.Call(() =>
+                {
+                    SetDialoguePortraitFor(NPCList.FindByName(officiant));
+                });
             });
         }
 

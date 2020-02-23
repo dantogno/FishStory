@@ -808,6 +808,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Day4Intro2</Name>
     </None>
+    <None Include="content\globalcontent\dialog\day4playerchosenending.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Day4PlayerChosenEnding</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\day4priestesschosenending.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Day4PriestessChosenEnding</Name>
+    </None>
     <None Include="content\globalcontent\dialog\dialog1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Dialog1</Name>

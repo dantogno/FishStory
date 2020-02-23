@@ -1,0 +1,251 @@
+{
+    "passages": [
+      {
+        "text": "*ahem* Divine ocean! Mighty sea! On this day, we honor you!\n[[continue1]]",
+        "links": [
+          {
+            "name": "continue1",
+            "link": "continue1",
+            "pid": "2"
+          }
+        ],
+        "name": "Start",
+        "pid": "1",
+        "position": {
+          "x": "654",
+          "y": "488"
+        }
+      },
+      {
+        "text": "You have bestowed a great bounty upon us, and so we have feasted! You have protected us from those who are ignorant to your godliness, and so we have prospered! And now, you have called out from your deepest depths with demands of restitution. And so we have listened!\n[[What's going on?!|WhatsGoingOn]]\n[[...|silence]]",
+        "links": [
+          {
+            "name": "What's going on?!|WhatsGoingOn",
+            "link": "What's going on?!|WhatsGoingOn"
+          },
+          {
+            "name": "...|silence",
+            "link": "...|silence"
+          }
+        ],
+        "name": "continue1",
+        "pid": "2",
+        "position": {
+          "x": "654",
+          "y": "638"
+        }
+      },
+      {
+        "text": "Oh mighty ocean, we make ourselves humble before you! Even though the less educated among us may cry out in fear, we have gathered each and every citizen who has benefited from your generosity.\n[[continue2]]",
+        "links": [
+          {
+            "name": "continue2",
+            "link": "continue2",
+            "pid": "5"
+          }
+        ],
+        "name": "WhatsGoingOn",
+        "pid": "3",
+        "position": {
+          "x": "568",
+          "y": "788"
+        }
+      },
+      {
+        "text": "Oh mighty ocean, we make ourselves humble before you! And though there are strangers among us, we have gathered each and every citizen who has benefited from your generosity.\n[[continue2]] ",
+        "links": [
+          {
+            "name": "continue2",
+            "link": "continue2",
+            "pid": "5"
+          }
+        ],
+        "name": "silence",
+        "pid": "4",
+        "position": {
+          "x": "729",
+          "y": "788"
+        }
+      },
+      {
+        "text": "But only one will carry the great honor of being chosen. Only one may make the great journey into your heavenly lands!\n[[continue3]]",
+        "links": [
+          {
+            "name": "continue3",
+            "link": "continue3",
+            "pid": "6"
+          }
+        ],
+        "name": "continue2",
+        "pid": "5",
+        "position": {
+          "x": "641",
+          "y": "935"
+        }
+      },
+      {
+        "text": "You have chosen this pilgrim with your infinite and unquestionable wisdom. You have sent us an abundance of [FishType1] and [FishType2], the symbols of [Trait1] and [Trait2]. We have feasted upon their prophetic flesh, and thus, we have been nourished by your mandate.\n[[continue4]]",
+        "links": [
+          {
+            "name": "continue4",
+            "link": "continue4",
+            "pid": "7"
+          }
+        ],
+        "name": "continue3",
+        "pid": "6",
+        "position": {
+          "x": "638",
+          "y": "1085"
+        }
+      },
+      {
+        "text": "And now, we shall deliver unto you what you are owed! Bring forth the chosen, the Priestess!\n[[What are you doing to her?|What doing]]\n[[How can you do this? Isn't she your friend?|Stop]]",
+        "links": [
+          {
+            "name": "What are you doing to her?|What doing",
+            "link": "What are you doing to her?|What doing"
+          },
+          {
+            "name": "How can you do this? Isn't she your friend?|Stop",
+            "link": "How can you do this? Isn't she your friend?|Stop"
+          }
+        ],
+        "name": "continue4",
+        "pid": "7",
+        "position": {
+          "x": "635",
+          "y": "1213"
+        }
+      },
+      {
+        "text": "We are doing what's best. The greater good demands the sacrifice of the individual. The priestess is more than happy to oblige. This is her purpose. She always knew that the tides could flow in her favor... as did I.\n[[continuestop]]",
+        "links": [
+          {
+            "name": "continuestop",
+            "link": "continuestop",
+            "pid": "11"
+          }
+        ],
+        "name": "What doing",
+        "pid": "8",
+        "position": {
+          "x": "494",
+          "y": "1313"
+        }
+      },
+      {
+        "text": "Of course she is, that's why I'm doing this. This is her purpose. The greater good demands the sacrifice of the individual. The priestess is more than happy to oblige. She always knew that the tides could flow in her favor... as did I.\n[[continuestop]]",
+        "links": [
+          {
+            "name": "continuestop",
+            "link": "continuestop",
+            "pid": "11"
+          }
+        ],
+        "name": "Stop",
+        "pid": "9",
+        "position": {
+          "x": "787",
+          "y": "1306"
+        }
+      },
+      {
+        "text": "[ChosenLine]\n[[continue6]]",
+        "links": [
+          {
+            "name": "continue6",
+            "link": "continue6",
+            "pid": "12"
+          }
+        ],
+        "name": "continue5",
+        "pid": "10",
+        "position": {
+          "x": "650",
+          "y": "1525"
+        }
+      },
+      {
+        "text": "I will take her place. Just as she did long ago, I will abandon my name and my humanity, and in doing so I will become closer to the land. I will become the bridge between worlds. And my first task will be to set her down the path of the ultimate journey.\n[[continue5]]",
+        "links": [
+          {
+            "name": "continue5",
+            "link": "continue5",
+            "pid": "10"
+          }
+        ],
+        "name": "continuestop",
+        "pid": "11",
+        "position": {
+          "x": "651",
+          "y": "1391"
+        }
+      },
+      {
+        "text": "Of course. Ida, I restore your forgotten name, so that you may enter into the world of the divine sea with your humanity intact and worthy of sacrifice. Go forth, Ida, and be remembered as such.\n[[continue7]]",
+        "links": [
+          {
+            "name": "continue7",
+            "link": "continue7",
+            "pid": "13"
+          }
+        ],
+        "name": "continue6",
+        "pid": "12",
+        "position": {
+          "x": "647",
+          "y": "1672"
+        },
+        "tags": [
+          "ShowOfficiantPortrait"
+        ]
+      },
+      {
+        "text": "Mighty ocean! Accept this sacrifice as a symbol of our humility! Know that our devotion is undying!\n[[continue8]]",
+        "links": [
+          {
+            "name": "continue8",
+            "link": "continue8",
+            "pid": "14"
+          }
+        ],
+        "name": "continue7",
+        "pid": "13",
+        "position": {
+          "x": "646",
+          "y": "1824"
+        }
+      },
+      {
+        "text": "Ida, rejoice! Let your spirit grow light as your lungs grow heavy with brine. Feel the warmth of the sea's benevolence as the water’s cold envelops you.\n[[continue9]]",
+        "links": [
+          {
+            "name": "continue9",
+            "link": "continue9",
+            "pid": "15"
+          }
+        ],
+        "name": "continue8",
+        "pid": "14",
+        "position": {
+          "x": "646",
+          "y": "1974"
+        }
+      },
+      {
+        "text": "Rejoice, Ida. The tides flow in your favor.",
+        "name": "continue9",
+        "pid": "15",
+        "position": {
+          "x": "646",
+          "y": "2124"
+        }
+      }
+    ],
+    "name": "Day4PriestessChosenEnding",
+    "startnode": "1",
+    "creator": "Twine",
+    "creator-version": "2.2.1",
+    "ifid": "DE4F9288-0878-470A-98B7-024D8D0C623A"
+  }

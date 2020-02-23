@@ -24,6 +24,7 @@ namespace FishStory.GumRuntimes
         public IPressableInput UpInput { get; set; }
         public IPressableInput DownInput { get; set; }
         public IPressableInput SelectInput { get; set; }
+        public GameScreen GameScreenInstance {get; set;}
 
         Action<Link> linkSelected;
 
@@ -218,6 +219,7 @@ namespace FishStory.GumRuntimes
                     }
                     else if (passage.StrippedText.Contains("[ChosenLine]"))
                     {
+                        GameScreenInstance.SetDialoguePortraitFor(GameScreenInstance.NPCList.FindByName(MainLevel.CharacterToSacrifice));
                         this.TextInstance.Text = passage.StrippedText.Replace("[ChosenName]", CharacterNames.ChosenLines[MainLevel.CharacterToSacrifice]);
                     }
                     else
