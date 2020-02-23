@@ -1,0 +1,281 @@
+{
+    "passages": [
+      {
+        "text": "Divine ocean! Mighty sea! On this day, we honor you!\n[[continue1]]",
+        "links": [
+          {
+            "name": "continue1",
+            "link": "continue1",
+            "pid": "2"
+          }
+        ],
+        "name": "Start",
+        "pid": "1",
+        "position": {
+          "x": "654",
+          "y": "488"
+        },
+        "tags": [
+          "Ending"
+        ]
+      },
+      {
+        "text": "You have bestowed a great bounty upon us, and so we have feasted! You have protected us from those who are ignorant to your godliness, and so we have prospered! And now, you have called out from your deepest depths with demands of restitution. And so we have listened!\n[[What's going on?!|WhatsGoingOn]]\n[[...|silence]]",
+        "links": [
+          {
+            "name": "What's going on?!|WhatsGoingOn",
+            "link": "What's going on?!|WhatsGoingOn"
+          },
+          {
+            "name": "...|silence",
+            "link": "...|silence"
+          }
+        ],
+        "name": "continue1",
+        "pid": "2",
+        "position": {
+          "x": "654",
+          "y": "638"
+        }
+      },
+      {
+        "text": "Oh mighty ocean, we make ourselves humble before you! Even though the less educated among us may cry out in fear, we have gathered each and every citizen who has benefited from your generosity.\n[[continue2]]",
+        "links": [
+          {
+            "name": "continue2",
+            "link": "continue2",
+            "pid": "5"
+          }
+        ],
+        "name": "WhatsGoingOn",
+        "pid": "3",
+        "position": {
+          "x": "579",
+          "y": "788"
+        }
+      },
+      {
+        "text": "Oh mighty ocean, we make ourselves humble before you! And though there are strangers among us, we have gathered each and every citizen who has benefited from your generosity.\n[[continue2]] ",
+        "links": [
+          {
+            "name": "continue2",
+            "link": "continue2",
+            "pid": "5"
+          }
+        ],
+        "name": "silence",
+        "pid": "4",
+        "position": {
+          "x": "729",
+          "y": "788"
+        }
+      },
+      {
+        "text": "But only one will carry the great honor of being chosen. Only one may make the great journey into your heavenly lands!\n[[continue3]]",
+        "links": [
+          {
+            "name": "continue3",
+            "link": "continue3",
+            "pid": "6"
+          }
+        ],
+        "name": "continue2",
+        "pid": "5",
+        "position": {
+          "x": "638",
+          "y": "935"
+        }
+      },
+      {
+        "text": "You have chosen this pilgrim with your infinite and unquestionable wisdom. You have sent us an abundance of [FishType1] and [FishType2], the symbols of [Trait1] and [Trait2]. We have feasted upon their prophetic flesh, and thus, we have been nourished by your mandate.\n[[continue4]]",
+        "links": [
+          {
+            "name": "continue4",
+            "link": "continue4",
+            "pid": "7"
+          }
+        ],
+        "name": "continue3",
+        "pid": "6",
+        "position": {
+          "x": "638",
+          "y": "1085"
+        }
+      },
+      {
+        "text": "And now, we shall deliver unto you what you are owed! Bring forth the stranger!\n[[Me?!|me]]\n[[You won't get away with this! Someone will come looking for me!|wont get away]]",
+        "links": [
+          {
+            "name": "Me?!|me",
+            "link": "Me?!|me"
+          },
+          {
+            "name": "You won't get away with this! Someone will come looking for me!|wont get away",
+            "link": "You won't get away with this! Someone will come looking for me!|wont get away"
+          }
+        ],
+        "name": "continue4",
+        "pid": "7",
+        "position": {
+          "x": "638",
+          "y": "1235"
+        }
+      },
+      {
+        "text": "I'd advise you to calm down, stranger. You will find that you are quite powerless against the tides of fate.\n[[continuestop]]",
+        "links": [
+          {
+            "name": "continuestop",
+            "link": "continuestop",
+            "pid": "10"
+          }
+        ],
+        "name": "me",
+        "pid": "8",
+        "position": {
+          "x": "796",
+          "y": "1239"
+        }
+      },
+      {
+        "text": "Ah, my dear, we shall do nothing but witness the tranquility of the waves as they beat upon the rocks. It is the sea that will guide you on your journey, not us.\n[[continue6]]",
+        "links": [
+          {
+            "name": "continue6",
+            "link": "continue6",
+            "pid": "11"
+          }
+        ],
+        "name": "whatgoingtodo",
+        "pid": "9",
+        "position": {
+          "x": "647",
+          "y": "1601"
+        }
+      },
+      {
+        "text": "The greater good demands the sacrifice of the individual. You have partaken in the spoils of the sea, did you not? Did you expect to take without giving something in return?\n[[continueme]]",
+        "links": [
+          {
+            "name": "continueme",
+            "link": "continueme",
+            "pid": "16"
+          }
+        ],
+        "name": "continuestop",
+        "pid": "10",
+        "position": {
+          "x": "798",
+          "y": "1365"
+        }
+      },
+      {
+        "text": "Enough. The time has come.\n[[continue7]]",
+        "links": [
+          {
+            "name": "continue7",
+            "link": "continue7",
+            "pid": "12"
+          }
+        ],
+        "name": "continue6",
+        "pid": "11",
+        "position": {
+          "x": "650",
+          "y": "1767"
+        }
+      },
+      {
+        "text": "Mighty ocean! Accept this sacrifice as a symbol of our humility! Know that our devotion is undying!\n[[continue8]]",
+        "links": [
+          {
+            "name": "continue8",
+            "link": "continue8",
+            "pid": "13"
+          }
+        ],
+        "name": "continue7",
+        "pid": "12",
+        "position": {
+          "x": "650",
+          "y": "1917"
+        }
+      },
+      {
+        "text": "Stranger, rejoice! Let your spirit grow light as your lungs grow heavy with brine. Feel the warmth of the sea's benevolence as the water’s cold envelops you.\n[[continue9]]",
+        "links": [
+          {
+            "name": "continue9",
+            "link": "continue9",
+            "pid": "14"
+          }
+        ],
+        "name": "continue8",
+        "pid": "13",
+        "position": {
+          "x": "650",
+          "y": "2067"
+        }
+      },
+      {
+        "text": "Rejoice, Stranger. The tides flow in your favor.",
+        "name": "continue9",
+        "pid": "14",
+        "position": {
+          "x": "650",
+          "y": "2217"
+        }
+      },
+      {
+        "text": "Ah, but you are wrong. Through this act, the land will achieve balance once again. And the sea will reward us for doing so, thereby protecting our way of life from those who would seek to destroy it. No one will come for you.\n[[continuegetaway]]",
+        "links": [
+          {
+            "name": "continuegetaway",
+            "link": "continuegetaway",
+            "pid": "17"
+          }
+        ],
+        "name": "wont get away",
+        "pid": "15",
+        "position": {
+          "x": "489",
+          "y": "1333"
+        }
+      },
+      {
+        "text": "This is our greatest honor. Embrace it! You will be happy to oblige, even if you don't know it just yet.\n[[What are you going to do to me?!|whatgoingtodo]] ",
+        "links": [
+          {
+            "name": "What are you going to do to me?!|whatgoingtodo",
+            "link": "What are you going to do to me?!|whatgoingtodo"
+          }
+        ],
+        "name": "continueme",
+        "pid": "16",
+        "position": {
+          "x": "801",
+          "y": "1515"
+        }
+      },
+      {
+        "text": "The greater good demands the sacrifice of the individual. This is what's best for all of us. You will be happy to oblige, even if you don't know it just yet.\n[[What are you going to do to me?!|whatgoingtodo]] ",
+        "links": [
+          {
+            "name": "What are you going to do to me?!|whatgoingtodo",
+            "link": "What are you going to do to me?!|whatgoingtodo"
+          }
+        ],
+        "name": "continuegetaway",
+        "pid": "17",
+        "position": {
+          "x": "486",
+          "y": "1480"
+        }
+      }
+    ],
+    "name": "Day4PlayerChosenEnding",
+    "startnode": "1",
+    "creator": "Twine",
+    "creator-version": "2.2.1",
+    "ifid": "DEDA89D6-B701-402D-8E22-E52DC2F2ADED"
+  }

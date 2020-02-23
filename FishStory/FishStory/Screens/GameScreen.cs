@@ -62,13 +62,13 @@ namespace FishStory.Screens
         void CustomInitialize()
         {
             script = new ScreenScript<GameScreen>(this);
-
+            
             InitializeEntitiesFromMap();
             //Map.AddToManagers(WorldLayer);
 
             DialogBox.Visible = false;
             DialoguePortrait.Visible = false;
-
+            DialogBox.GameScreenInstance = this;
             InitializePlayer();
 
             InitializeCamera();
@@ -202,6 +202,14 @@ namespace FishStory.Screens
 
         private void InitializeEntitiesFromMap()
         {
+            foreach (var layer in Map.MapLayers)
+            {
+                if (layer.Name == "Labels")
+                {
+                    layer.Visible = false;
+                }
+            }
+
             TileEntityInstantiator.CreateEntitiesFrom(Map);
 
             foreach(var npc in NPCList)
@@ -606,7 +614,7 @@ namespace FishStory.Screens
             DoFishingActivity();
         }
 
-        protected void SetDialoguePortraitFor(NPC npc)
+        public void SetDialoguePortraitFor(NPC npc)
         {
             var npcTextureRectangle = npc.GetTextureRectangle();
             DialoguePortrait.SetTextureCoordinates(npcTextureRectangle);

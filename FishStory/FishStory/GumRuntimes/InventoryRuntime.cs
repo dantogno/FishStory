@@ -1,4 +1,5 @@
 using FishStory.Forms;
+using FishStory.Managers;
 using FlatRedBall.Forms.Controls;
 using FlatRedBall.Input;
 using System;
@@ -105,6 +106,7 @@ namespace FishStory.GumRuntimes
         {
             UpdateCurrentDescription();
             UpdateSellButtonDisplay();
+            SoundManager.Play(GlobalContent.ItemSelectedSound);
         }
 
         private void UpdateSellButtonDisplay()

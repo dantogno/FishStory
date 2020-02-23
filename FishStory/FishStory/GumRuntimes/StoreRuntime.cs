@@ -48,6 +48,7 @@ namespace FishStory.GumRuntimes
         private void HandleListBoxSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             UpdateBuyButtonDisplay();
+            SoundManager.Play(GlobalContent.StoreItemSelectSound);
         }
 
         private void UpdateBuyButtonDisplay()

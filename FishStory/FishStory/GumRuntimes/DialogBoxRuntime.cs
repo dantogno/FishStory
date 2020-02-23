@@ -1,4 +1,5 @@
 using FishStory.Managers;
+using FishStory.Screens;
 using FlatRedBall;
 using FlatRedBall.Input;
 using Gum.Wireframe;
@@ -23,6 +24,7 @@ namespace FishStory.GumRuntimes
         public IPressableInput UpInput { get; set; }
         public IPressableInput DownInput { get; set; }
         public IPressableInput SelectInput { get; set; }
+        public GameScreen GameScreenInstance {get; set;}
 
         Action<Link> linkSelected;
 
@@ -140,9 +142,7 @@ namespace FishStory.GumRuntimes
         }
 
         public bool TryShow(RootObject rootObject, Action<Link> linkSelected = null)
-        {
-
-
+        {      
             this.linkSelected = linkSelected;
             dialogTree = rootObject;
             currentNodeId = dialogTree.startnode;
@@ -204,8 +204,28 @@ namespace FishStory.GumRuntimes
                 }
                 else
                 {
-                    this.TextInstance.Text = passage.StrippedText;
-
+                    if (passage.StrippedText.Contains("[FishType1]"))
+                    {
+                        var topFish = Screens.MainLevel.GetKeysWithTopValues(PlayerDataManager.PlayerData.TimesFishIdentified, 2);
+                        var adjustedText = passage.StrippedText.Replace("[FishType1]", topFish[0])
+                            .Replace("[FishType2]", topFish[1])
+                            .Replace("[Trait1]", GlobalContent.ItemDefinition[topFish[0]].AssociatedTrait)
+                            .Replace("[Trait2]", GlobalContent.ItemDefinition[topFish[1]].AssociatedTrait);                  
+                        this.TextInstance.Text = adjustedText;
+                    }
+                    else if (passage.StrippedText.Contains("[ChosenName]"))
+                    {
+                        this.TextInstance.Text = passage.StrippedText.Replace("[ChosenName]", CharacterNames.DisplayNames[MainLevel.CharacterToSacrifice]);
+                    }
+                    else if (passage.StrippedText.Contains("[ChosenLine]"))
+                    {
+                        GameScreenInstance.SetDialoguePortraitFor(GameScreenInstance.NPCList.FindByName(MainLevel.CharacterToSacrifice));
+                        this.TextInstance.Text = passage.StrippedText.Replace("[ChosenName]", CharacterNames.ChosenLines[MainLevel.CharacterToSacrifice]);
+                    }
+                    else
+                    {
+                        this.TextInstance.Text = passage.StrippedText;
+                    }
 
                     ShowLinks(passage);
 

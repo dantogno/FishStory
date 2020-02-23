@@ -38,6 +38,44 @@ namespace FishStory.Screens
         public const string FishermanBald = "FishermanBald";
         public const string FishermanHair = "FishermanHair";
         public const string PlayerCharacter = "PlayerCharacter";
+        public static Dictionary<string, string> DisplayNames = new Dictionary<string, string>()
+        {
+            {BlackMarketShop, "Elias" },
+            {Mayor, "Mayor Olsen" },
+            {FestivalCoordinator, "Anthony" },
+            {Identifier, "Jakob" },
+            {Fishmonger, "Oscar" },
+            {FarmerSonBaitShop, "Emil" },
+            {YoungManBaitShop, "William" },
+            {ElderlyMother, "Nora" },
+            {Priestess, Priestess },
+            {Nun, "Cinthia" },
+            {Farmer, "Issac" },
+            {Tycoon, "Mr. Petterson" },
+            {TycoonDaughter, "Emily" },
+            {Conservationist, "Sofia" },
+            {FishermanBald, "Larry" },
+            {FishermanHair, "Roger" }
+        };
+        public static Dictionary<string, string> ChosenLines = new Dictionary<string, string>()
+        {
+            {BlackMarketShop, "Elias" },
+            {Mayor, "Mayor Olsen" },
+            {FestivalCoordinator, "Anthony" },
+            {Identifier, "Jakob" },
+            {Fishmonger, "Oscar" },
+            {FarmerSonBaitShop, "Emil" },
+            {YoungManBaitShop, "William" },
+            {ElderlyMother, "Nora" },
+            {Priestess, Priestess },
+            {Nun, "Cinthia" },
+            {Farmer, "Issac" },
+            {Tycoon, "Mr. Petterson" },
+            {TycoonDaughter, "Emily" },
+            {Conservationist, "Sofia" },
+            {FishermanBald, "Larry" },
+            {FishermanHair, "Roger" }
+        };
     }
     public partial class MainLevel
     {
@@ -45,6 +83,7 @@ namespace FishStory.Screens
         /// Tycoon requires this many fish before giving key.
         /// </summary>
         private int numFishRequiredForKey = 3;
+        private bool hasEndingStarted;
         private const int outOfWorldX = 9000;
         private const int outOfWorldY = 9000;
         bool isWaitingToGiveFreeBaitInConversation = false;
@@ -144,14 +183,14 @@ namespace FishStory.Screens
         /// For use when determining the characters to use alternative dialog in day 2.
         /// </summary>
         /// <param name="numberOfKeysToReturn">How many keys (characters to use alt dialog) in the list returned.</param>
-        private List<string> GetKeysWithTopValues(Dictionary<string, int> dictionary, int numberOfKeysToReturn)
+        public static List<string> GetKeysWithTopValues(Dictionary<string, int> dictionary, int numberOfKeysToReturn)
         {
             var list = dictionary.ToList();
             list.Sort((pair1, pair2) => pair1.Value.CompareTo(pair2.Value));
-            var keys = list.Select((kvp) => kvp.Key);
+            var keys = list.Select((kvp) => kvp.Key).Reverse();
             return keys.Take(numberOfKeysToReturn).ToList();
         }
-
+        public static string CharacterToSacrifice { get; private set; }
         /// <summary>
         /// These characters represen specific traits / classes. 
         /// On day 2, if this class is threatened based on the number and type
@@ -206,7 +245,10 @@ namespace FishStory.Screens
 
         private void EveryFrameScriptLogic()
         {
-            
+            if (hasEndingStarted)
+            {
+                HandleEndingMusicFadeOut();
+            }
             switch (PlayerDataManager.PlayerData.CurrentDay)
             {
                 case 1:
@@ -828,15 +870,15 @@ namespace FishStory.Screens
             InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(3));
             InGameDateTimeManager.ShouldTimePass = false;
 
-            string characterToSacrifice = CharacterNames.Farmer; //GetCharacterForSacrifice(); TODO: remove debug code!
-            bool isPlayerSacrificed = characterToSacrifice == CharacterNames.PlayerCharacter;
+            CharacterToSacrifice = GetCharacterForSacrifice();
+            bool isPlayerSacrificed = CharacterToSacrifice == CharacterNames.PlayerCharacter;
             if (!isPlayerSacrificed)
-                NPCList.FindByName(characterToSacrifice).CurrentChainName = "Idle";
-            string officiant = characterToSacrifice == CharacterNames.Priestess ? CharacterNames.Nun : CharacterNames.Priestess;
+                NPCList.FindByName(CharacterToSacrifice).CurrentChainName = "Idle";
+            string officiant = CharacterToSacrifice == CharacterNames.Priestess ? CharacterNames.Nun : CharacterNames.Priestess;
             // Change all the npcs but the priestess and the person getting sacrificed
             var cloakedNPCs = NPCList.Where((npc) => npc.Name != officiant
                 && !npc.Name.Contains("Sign") && !npc.Name.Contains("Board")
-                && npc.Name != characterToSacrifice).ToArray();
+                && npc.Name != CharacterToSacrifice).ToArray();
             foreach (var npc in cloakedNPCs)
             {
                 npc.Animation = NPC.CloakedGuy;
@@ -845,8 +887,8 @@ namespace FishStory.Screens
             // Knock in the middle of the night. player clicks through dialog, then fade back in
             float delayBeforeKnock = 1;
             this.Call(() => { DialogBox.TryShow(nameof(GlobalContent.Day4Intro)); }).After(delayBeforeKnock);
-            var escortGuard1 = NPCList.FindByName(characterToSacrifice == CharacterNames.Farmer ? CharacterNames.Tycoon : CharacterNames.Farmer);
-            var escortGuard2 = NPCList.FindByName(characterToSacrifice == CharacterNames.FishermanBald ? CharacterNames.Tycoon : CharacterNames.FishermanBald);
+            var escortGuard1 = NPCList.FindByName(CharacterToSacrifice == CharacterNames.Farmer ? CharacterNames.Tycoon : CharacterNames.Farmer);
+            var escortGuard2 = NPCList.FindByName(CharacterToSacrifice == CharacterNames.FishermanBald ? CharacterNames.Tycoon : CharacterNames.FishermanBald);
 
             escortGuard1.Position = new Microsoft.Xna.Framework.Vector3(729, -834, PlayerCharacterInstance.Z);
             // escortGuard1.CurrentChainName = "WalkLeft";
@@ -897,15 +939,47 @@ namespace FishStory.Screens
                     else
                     {
                         PlayerCharacterInstance.Position = new Microsoft.Xna.Framework.Vector3(1127, -1088, PlayerCharacterInstance.Z);
-                        NPCList.FindByName(characterToSacrifice).Position = new Microsoft.Xna.Framework.Vector3(1140, -1112, PlayerCharacterInstance.Z);
+                        NPCList.FindByName(CharacterToSacrifice).Position = new Microsoft.Xna.Framework.Vector3(1140, -1112, PlayerCharacterInstance.Z);
                     }
                     PlayerCharacterInstance.DirectionFacing = TopDownDirection.Down;
                 }).After(GameScreenGum.ToBlackAnimation.Length);
                 this.Call(() =>
                 {
                     SetDialoguePortraitFor(NPCList.FindByName(officiant));
-                    DialogBox.TryShow(nameof(GlobalContent.Day4BasicEnding));
+                    if (isPlayerSacrificed)
+                        DialogBox.TryShow(nameof(GlobalContent.Day4PlayerChosenEnding));
+                    else if(CharacterToSacrifice == CharacterNames.Priestess)
+                        DialogBox.TryShow(nameof(GlobalContent.Day4PriestessChosenEnding));
+                    else
+                        DialogBox.TryShow(nameof(GlobalContent.Day4BasicEnding));
                 }).After(delayBeforeOfficiantSpeaks);
+
+                If.Check(() =>
+                {
+                    return HasTag("ShowOfficiantPortrait");
+                });
+                Do.Call(() =>
+                {
+                    SetDialoguePortraitFor(NPCList.FindByName(officiant));
+                });
+
+                If.Check(() =>
+                {
+                    return !DialogBox.Visible && HasTag("Ending");
+                });
+                Do.Call(() =>
+                {
+                    float delayBeforeDrowningSound = 1;
+                    float delayBeforeLoadingTitleScreen = (float)GlobalContent.DrowningSound.Duration.TotalSeconds - 1;
+                    FadeToBlack();
+                    hasEndingStarted = true;
+                    this.Call(() => SoundManager.Play(GlobalContent.DrowningSound, volume: 1f))
+                        .After(GameScreenGum.ToBlackAnimation.Length + delayBeforeDrowningSound);
+                    this.Call(() =>
+                    {                        
+                        MoveToScreen(nameof(TitleScreen));
+                    }).After(delayBeforeLoadingTitleScreen);
+                });
             });
         }
 
@@ -924,6 +998,20 @@ namespace FishStory.Screens
             //FlatRedBall.Debugging.Debugger.Write($"Fish identified: {TotalFishIdentified}");
             EveryFrameScriptLogic();
         }
+        private void HandleEndingMusicFadeOut()
+        {
+            // David: I'm out of patience, I can't get it to fade
+            // So I'm just stopping the damn music.
+            if (MusicManager.IsSongPlaying)
+                MusicManager.Stop();
+            //float fadeSpeed = 1000;
+            //if (MusicManager.MusicVolumeLevel > 0)
+            //{   
+            //    MusicManager.MusicVolumeLevel -= fadeSpeed * TimeManager.SecondDifference;
+
+            //}
+        }
+
 
         void CustomDestroy()
         {

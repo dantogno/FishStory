@@ -1,7 +1,7 @@
 {
   "passages": [
     {
-      "text": "Divine ocean! Mighty sea! On this day, we honor you!\n[[continue1]]",
+      "text": "*ahem* Divine ocean! Mighty sea! On this day, we honor you!\n[[continue1]]",
       "links": [
         {
           "name": "continue1",
@@ -50,7 +50,7 @@
       "name": "WhatsGoingOn",
       "pid": "3",
       "position": {
-        "x": "579",
+        "x": "568",
         "y": "788"
       }
     },
@@ -82,7 +82,7 @@
       "name": "continue2",
       "pid": "5",
       "position": {
-        "x": "638",
+        "x": "641",
         "y": "935"
       }
     },
@@ -103,46 +103,42 @@
       }
     },
     {
-      "text": "And now, we shall deliver unto you what you are owed! Bring forth the chosen, [ChosenName]!\n[[What are you doing to them?|What doing]]\n[[Stop! You can't do this!|Stop]]\n[[...|continue5]]",
+      "text": "And now, we shall deliver unto you what you are owed! Bring forth the chosen, the Priestess!\n[[What are you doing to her?|What doing]]\n[[How can you do this? Isn't she your friend?|Stop]]",
       "links": [
         {
-          "name": "What are you doing to them?|What doing",
-          "link": "What are you doing to them?|What doing"
+          "name": "What are you doing to her?|What doing",
+          "link": "What are you doing to her?|What doing"
         },
         {
-          "name": "Stop! You can't do this!|Stop",
-          "link": "Stop! You can't do this!|Stop"
-        },
-        {
-          "name": "...|continue5",
-          "link": "...|continue5"
+          "name": "How can you do this? Isn't she your friend?|Stop",
+          "link": "How can you do this? Isn't she your friend?|Stop"
         }
       ],
       "name": "continue4",
       "pid": "7",
       "position": {
-        "x": "638",
-        "y": "1235"
+        "x": "635",
+        "y": "1213"
       }
     },
     {
-      "text": "We are doing what's best. The greater good demands the sacrifice of the individual. [ChosenName] is happy to oblige, even if they themself don't know it yet. [ChosenName] knew that the tides could flow in their favor.\n[[continue5]]",
+      "text": "We are doing what's best. The greater good demands the sacrifice of the individual. The priestess is more than happy to oblige. This is her purpose. She always knew that the tides could flow in her favor... as did I.\n[[continuestop]]",
       "links": [
         {
-          "name": "continue5",
-          "link": "continue5",
-          "pid": "10"
+          "name": "continuestop",
+          "link": "continuestop",
+          "pid": "11"
         }
       ],
       "name": "What doing",
       "pid": "8",
       "position": {
-        "x": "505",
-        "y": "1369"
+        "x": "494",
+        "y": "1313"
       }
     },
     {
-      "text": "I'd advise you to calm down, stranger. You will find that you are quite powerless against the tides of fate.\n[[continuestop]]",
+      "text": "Of course she is, that's why I'm doing this. This is her purpose. The greater good demands the sacrifice of the individual. The priestess is more than happy to oblige. She always knew that the tides could flow in her favor... as did I.\n[[continuestop]]",
       "links": [
         {
           "name": "continuestop",
@@ -153,8 +149,8 @@
       "name": "Stop",
       "pid": "9",
       "position": {
-        "x": "773",
-        "y": "1284"
+        "x": "787",
+        "y": "1306"
       }
     },
     {
@@ -174,7 +170,7 @@
       }
     },
     {
-      "text": "The greater good demands the sacrifice of the individual. [ChosenName] is happy to oblige, even if they themself don't know it yet. [ChosenName] knew that the tides could flow in their favor.\n[[continue5]]",
+      "text": "I will take her place. Just as she did long ago, I will abandon my name and my humanity, and in doing so I will become closer to the land. I will become the bridge between worlds. And my first task will be to set her down the path of the ultimate journey.\n[[continue5]]",
       "links": [
         {
           "name": "continue5",
@@ -185,12 +181,12 @@
       "name": "continuestop",
       "pid": "11",
       "position": {
-        "x": "771",
-        "y": "1402"
+        "x": "651",
+        "y": "1391"
       }
     },
     {
-      "text": "Enough. The time has come.\n[[continue7]]",
+      "text": "Of course. Ida, I restore your forgotten name, so that you may enter into the world of the divine sea with your humanity intact and worthy of sacrifice. Go forth, Ida, and be remembered as such.\n[[continue7]]",
       "links": [
         {
           "name": "continue7",
@@ -201,8 +197,8 @@
       "name": "continue6",
       "pid": "12",
       "position": {
-        "x": "650",
-        "y": "1658"
+        "x": "647",
+        "y": "1672"
       },
       "tags": [
         "ShowOfficiantPortrait"
@@ -220,12 +216,12 @@
       "name": "continue7",
       "pid": "13",
       "position": {
-        "x": "650",
-        "y": "1808"
+        "x": "646",
+        "y": "1824"
       }
     },
     {
-      "text": "[ChosenName], rejoice! Let your spirit grow light as your lungs grow heavy with brine. Feel the warmth of the sea's benevolence as the water’s cold envelops you.\n[[continue9]]",
+      "text": "Ida, rejoice! Let your spirit grow light as your lungs grow heavy with brine. Feel the warmth of the sea's benevolence as the water’s cold envelops you.\n[[continue9]]",
       "links": [
         {
           "name": "continue9",
@@ -236,23 +232,23 @@
       "name": "continue8",
       "pid": "14",
       "position": {
-        "x": "650",
-        "y": "1958"
+        "x": "646",
+        "y": "1974"
       }
     },
     {
-      "text": "Rejoice, [ChosenName]. The tides flow in your favor.",
+      "text": "Rejoice, Ida. The tides flow in your favor.",
       "name": "continue9",
       "pid": "15",
       "position": {
-        "x": "650",
-        "y": "2108"
+        "x": "646",
+        "y": "2124"
       }
     }
   ],
-  "name": "Day4BasicEnding",
+  "name": "Day4PriestessChosenEnding",
   "startnode": "1",
   "creator": "Twine",
   "creator-version": "2.2.1",
-  "ifid": "3E12F5CD-B7B3-4C4E-A399-397E9418157A"
+  "ifid": "DE4F9288-0878-470A-98B7-024D8D0C623A"
 }
