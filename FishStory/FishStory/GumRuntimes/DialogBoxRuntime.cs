@@ -216,6 +216,10 @@ namespace FishStory.GumRuntimes
                     {
                         this.TextInstance.Text = passage.StrippedText.Replace("[ChosenName]", CharacterNames.DisplayNames[MainLevel.CharacterToSacrifice]);
                     }
+                    else if (passage.StrippedText.Contains("[ChosenLine]"))
+                    {
+                        this.TextInstance.Text = passage.StrippedText.Replace("[ChosenName]", CharacterNames.ChosenLines[MainLevel.CharacterToSacrifice]);
+                    }
                     else
                     {
                         this.TextInstance.Text = passage.StrippedText;
