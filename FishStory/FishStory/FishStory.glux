@@ -1193,6 +1193,30 @@
         <string>GLUE</string>
       </Tags>
       <Source>GLUE</Source>
+      <CustomVariables>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>double</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>FadeInTimeInSeconds</Name>
+          <Type>double</Type>
+          <DefaultValue xsi:type="xsd:double">3</DefaultValue>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>double</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>FadeOutTimeInSeconds</Name>
+          <Type>double</Type>
+          <DefaultValue xsi:type="xsd:double">2</DefaultValue>
+        </CustomVariable>
+      </CustomVariables>
       <Name>Screens\TitleScreen</Name>
       <ReferencedFiles>
         <ReferencedFileSave>
@@ -5360,7 +5384,7 @@
     <RecordLockContention>false</RecordLockContention>
   </GlobalContentSettingsSave>
   <SyncedProjects />
-  <StartUpScreen>Screens\MainLevel</StartUpScreen>
+  <StartUpScreen>Screens\TitleScreen</StartUpScreen>
   <ResolutionPresets />
   <PerformanceSettingsSave>
     <ThrowExceptionOnPostInitializeContentLoad>false</ThrowExceptionOnPostInitializeContentLoad>

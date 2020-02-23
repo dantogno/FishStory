@@ -30,8 +30,6 @@ namespace FishStory.Screens
             InitializeDarkness();
 
             InitializeWaterCaustics();
-
-            TitleScreenGum.IntroAnimationAnimation.Play();
         }
 
         private void InitializeDarkness()
@@ -46,6 +44,8 @@ namespace FishStory.Screens
             DarknessOverlaySprite.BlendOperation = FlatRedBall.Graphics.BlendOperation.Modulate;
 
             DarknessOverlaySprite.Alpha = 0.65f;
+
+            FadeOutSprite.Alpha = 1f;
         }
 
         private void InitializeWaterCaustics()
@@ -108,7 +108,11 @@ namespace FishStory.Screens
 
         private void HandleInputActivity()
         {
-            if (fadeHasStarted)
+            if (fadeInHasEnded == false)
+            {
+                HandleFadeIn();
+            }
+            else if (fadeOutHasStarted)
             {
                 HandleFadeOut();
             }
@@ -136,18 +140,33 @@ namespace FishStory.Screens
             }
         }
 
-        private bool fadeHasStarted = false;
+        private bool fadeInHasEnded = false;
+        private void HandleFadeIn()
+        {
+            if (FadeOutSprite.Alpha > 0)
+            {
+                FadeOutSprite.Alpha -= TimeManager.SecondDifference * (1f/(float)FadeInTimeInSeconds);
+                MusicManager.MusicVolumeLevel = MusicManager.DefaultMusicLevel - (MusicManager.DefaultMusicLevel * FadeOutSprite.Alpha);
+            }
+            else
+            {
+                fadeInHasEnded = true;
+                TitleScreenGum.IntroAnimationAnimation.Play();
+            }
+        }
+
+        private bool fadeOutHasStarted = false;
         private void HandleFadeOut()
         {
-            if (fadeHasStarted == false)
+            if (fadeOutHasStarted == false)
             {
-                fadeHasStarted = true;
+                fadeOutHasStarted = true;
                 SoundManager.Play(GlobalContent.GameStartSound);
             }
 
             if (FadeOutSprite.Alpha < 1)
             {
-                FadeOutSprite.Alpha += 0.01f;
+                FadeOutSprite.Alpha += TimeManager.SecondDifference * (1f / (float)FadeOutTimeInSeconds);
                 MusicManager.MusicVolumeLevel = MusicManager.DefaultMusicLevel - (MusicManager.DefaultMusicLevel * FadeOutSprite.Alpha);
             }
             else
