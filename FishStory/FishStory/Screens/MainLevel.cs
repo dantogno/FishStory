@@ -942,7 +942,12 @@ namespace FishStory.Screens
                 this.Call(() =>
                 {
                     SetDialoguePortraitFor(NPCList.FindByName(officiant));
-                    DialogBox.TryShow(nameof(GlobalContent.Day4BasicEnding));
+                    if (isPlayerSacrificed)
+                        DialogBox.TryShow(nameof(GlobalContent.Day4PlayerChosenEnding));
+                    else if(CharacterToSacrifice == CharacterNames.Priestess)
+                        DialogBox.TryShow(nameof(GlobalContent.Day4PriestessChosenEnding));
+                    else
+                        DialogBox.TryShow(nameof(GlobalContent.Day4BasicEnding));
                 }).After(delayBeforeOfficiantSpeaks);
 
                 If.Check(() =>
