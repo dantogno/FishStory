@@ -120,25 +120,25 @@
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance.Texture Height</Name>
-      <Value xsi:type="xsd:int">110</Value>
+      <Value xsi:type="xsd:int">125</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance.Texture Left</Name>
-      <Value xsi:type="xsd:int">1362</Value>
+      <Value xsi:type="xsd:int">1360</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance.Texture Top</Name>
-      <Value xsi:type="xsd:int">1034</Value>
+      <Value xsi:type="xsd:int">1024</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance.Texture Width</Name>
-      <Value xsi:type="xsd:int">110</Value>
+      <Value xsi:type="xsd:int">116</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -217,25 +217,25 @@
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance1.Texture Height</Name>
-      <Value xsi:type="xsd:int">110</Value>
+      <Value xsi:type="xsd:int">125</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance1.Texture Left</Name>
-      <Value xsi:type="xsd:int">1362</Value>
+      <Value xsi:type="xsd:int">1360</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance1.Texture Top</Name>
-      <Value xsi:type="xsd:int">1034</Value>
+      <Value xsi:type="xsd:int">1024</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance1.Texture Width</Name>
-      <Value xsi:type="xsd:int">110</Value>
+      <Value xsi:type="xsd:int">116</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -314,7 +314,7 @@
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance3.Texture Left</Name>
-      <Value xsi:type="xsd:int">1810</Value>
+      <Value xsi:type="xsd:int">1804</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -326,7 +326,7 @@
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance3.Texture Width</Name>
-      <Value xsi:type="xsd:int">224</Value>
+      <Value xsi:type="xsd:int">236</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
