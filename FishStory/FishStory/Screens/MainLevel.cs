@@ -970,8 +970,9 @@ namespace FishStory.Screens
                 Do.Call(() =>
                 {
                     float delayBeforeDrowningSound = 1;
-                    float delayBeforeLoadingTitleScreen = (float)GlobalContent.DrowningSound.Duration.TotalSeconds - 1;
+                    float delayBeforeLoadingTitleScreen = (float)GlobalContent.DrowningSound.Duration.TotalSeconds - 3;
                     FadeToBlack();
+                    DayAndTimeDisplayIsVisible = false;
                     hasEndingStarted = true;
                     this.Call(() => SoundManager.Play(GlobalContent.DrowningSound, volume: 1f))
                         .After(GameScreenGum.ToBlackAnimation.Length + delayBeforeDrowningSound);
