@@ -58,7 +58,7 @@
         </AnimationReferenceSave>
         <AnimationReferenceSave>
           <Name>LightTwinkle</Name>
-          <Time>0</Time>
+          <Time>0.01</Time>
         </AnimationReferenceSave>
       </Animations>
       <Events />
