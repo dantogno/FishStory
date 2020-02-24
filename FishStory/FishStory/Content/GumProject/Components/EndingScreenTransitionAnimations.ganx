@@ -2,7 +2,7 @@
 <ElementAnimationsSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Animations>
     <AnimationSave>
-      <Loops>false</Loops>
+      <Loops>true</Loops>
       <Name>GlowPulse</Name>
       <States>
         <AnimatedStateSave>
@@ -28,7 +28,7 @@
       <Events />
     </AnimationSave>
     <AnimationSave>
-      <Loops>false</Loops>
+      <Loops>true</Loops>
       <Name>LightTwinkle</Name>
       <States>
         <AnimatedStateSave>
@@ -48,7 +48,7 @@
       <Events />
     </AnimationSave>
     <AnimationSave>
-      <Loops>true</Loops>
+      <Loops>false</Loops>
       <Name>PulseAndSparkle</Name>
       <States />
       <Animations>

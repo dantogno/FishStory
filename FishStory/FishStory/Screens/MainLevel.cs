@@ -984,7 +984,9 @@ namespace FishStory.Screens
         {
             GameScreenGum.ToBlackAnimation.Stop();
             EndingScreenTransitionInstance.Visible = true;
-            EndingScreenTransitionInstance.PulseAndSparkleAnimation.Play();
+            //EndingScreenTransitionInstance.PulseAndSparkleAnimation.Play();
+            EndingScreenTransitionInstance.GlowPulseAnimation.Play();
+            EndingScreenTransitionInstance.LightTwinkleAnimation.Play();
             GameScreenGum.CurrentOverlayAnimationState = GumRuntimes.GameScreenGumRuntime.OverlayAnimation.NoOverlay;
         }
 
