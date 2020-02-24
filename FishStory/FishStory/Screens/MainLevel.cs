@@ -973,6 +973,9 @@ namespace FishStory.Screens
                     float delayBeforeLoadingTitleScreen = (float)GlobalContent.DrowningSound.Duration.TotalSeconds - 1;
                     FadeToBlack();
                     hasEndingStarted = true;
+                    
+                    this.Call(() => PlayLightShimmerAnimation())
+                        .After(GameScreenGum.ToBlackAnimation.Length+1);
                     this.Call(() => SoundManager.Play(GlobalContent.DrowningSound, volume: 1f))
                         .After(GameScreenGum.ToBlackAnimation.Length + delayBeforeDrowningSound);
                     this.Call(() =>
@@ -981,6 +984,14 @@ namespace FishStory.Screens
                     }).After(delayBeforeLoadingTitleScreen);
                 });
             });
+        }
+
+        private void PlayLightShimmerAnimation()
+        {
+            GameScreenGum.ToBlackAnimation.Stop();
+            EndingScreenTransitionInstance.Visible = true;
+            EndingScreenTransitionInstance.PulseAndSparkleAnimation.Play();
+            GameScreenGum.CurrentOverlayAnimationState = GumRuntimes.GameScreenGumRuntime.OverlayAnimation.NoOverlay;
         }
 
 

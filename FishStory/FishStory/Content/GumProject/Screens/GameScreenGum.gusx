@@ -64,6 +64,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>EndingScreenTransitionInstance.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>InputInstructionsInstance.X</Name>
       <Value xsi:type="xsd:float">0</Value>
@@ -250,6 +256,11 @@
   <Instance>
     <Name>DialogBoxInstance</Name>
     <BaseType>DialogBox</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>EndingScreenTransitionInstance</Name>
+    <BaseType>EndingScreenTransition</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
 </ScreenSave>
