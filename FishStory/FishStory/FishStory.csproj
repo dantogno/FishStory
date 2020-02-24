@@ -114,7 +114,9 @@
       <DependentUpon>DialoguePortraitRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\EndingScreenTransitionRuntime.cs" />
-    <Compile Include="GumRuntimes\EndingScreenTransitionRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\EndingScreenTransitionRuntime.Generated.cs">
+      <DependentUpon>EndingScreenTransitionRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs">
       <DependentUpon>InventoryRuntime.cs</DependentUpon>
     </Compile>

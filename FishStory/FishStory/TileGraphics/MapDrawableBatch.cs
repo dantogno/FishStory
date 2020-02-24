@@ -63,8 +63,6 @@ namespace FlatRedBall.TileGraphics
 
         Dictionary<string, List<int>> mNamedTileOrderedIndexes = new Dictionary<string, List<int>>();
 
-        public byte[] FlipFlagArray;
-
         private int mCurrentNumberOfTiles = 0;
 
         public float Red = 1;
@@ -237,7 +235,6 @@ namespace FlatRedBall.TileGraphics
 
             mTexture = texture;
             mVertices = new VertexPositionTexture[4 * numberOfTiles];
-            FlipFlagArray = new byte[numberOfTiles];
             mIndices = new int[6 * numberOfTiles];
         }
 
@@ -257,7 +254,6 @@ namespace FlatRedBall.TileGraphics
 
             mTexture = texture;
             mVertices = new VertexPositionTexture[4 * numberOfTiles];
-            FlipFlagArray = new byte[numberOfTiles];
             mIndices = new int[6 * numberOfTiles];
 
             mTileset = new Tileset(texture, textureTileDimensionWidth, textureTileDimensionHeight);
@@ -482,24 +478,21 @@ namespace FlatRedBall.TileGraphics
             Vector3 position = new Vector3();
 
 
-            TMXGlueLib.DataTypes.ReducedQuadInfo[] quads = null;
+            IEnumerable<TMXGlueLib.DataTypes.ReducedQuadInfo> quads = null;
 
             if (rtmi.NumberCellsWide > rtmi.NumberCellsTall)
             {
-                quads = reducedLayerInfo.Quads.OrderBy(item => item.LeftQuadCoordinate).ToArray();
+                quads = reducedLayerInfo.Quads.OrderBy(item => item.LeftQuadCoordinate).ToList();
                 toReturn.mSortAxis = SortAxis.X;
             }
             else
             {
-                quads = reducedLayerInfo.Quads.OrderBy(item => item.BottomQuadCoordinate).ToArray();
+                quads = reducedLayerInfo.Quads.OrderBy(item => item.BottomQuadCoordinate).ToList();
                 toReturn.mSortAxis = SortAxis.Y;
             }
 
-            var quadLength = quads.Length;
-            for (int i = 0; i < quadLength; i++)
+            foreach (var quad in quads)
             {
-                var quad = quads[i];
-
                 Vector2 tileDimensions = new Vector2(quadWidth, quadHeight);
                 if (quad.OverridingWidth != null)
                 {
@@ -552,8 +545,6 @@ namespace FlatRedBall.TileGraphics
                     textureValues.Z = textureValues.W;
                     textureValues.W = temp;
                 }
-
-                toReturn.FlipFlagArray[i] = quad.FlipFlags;
 
                 int tileIndex = toReturn.AddTile(position, tileDimensions,
                     //quad.LeftTexturePixel, quad.TopTexturePixel, quad.LeftTexturePixel + tileDimensionWidth, quad.TopTexturePixel + tileDimensionHeight);
