@@ -121,6 +121,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>EndingScreenTransition</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>InputInstructions</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

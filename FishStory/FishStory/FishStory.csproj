@@ -113,6 +113,8 @@
     <Compile Include="GumRuntimes\DialoguePortraitRuntime.Generated.cs">
       <DependentUpon>DialoguePortraitRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\EndingScreenTransitionRuntime.cs" />
+    <Compile Include="GumRuntimes\EndingScreenTransitionRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs">
       <DependentUpon>InventoryRuntime.cs</DependentUpon>
     </Compile>
@@ -1320,6 +1322,10 @@
     <None Include="content\gumproject\components\dialogueportrait.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>dialogueportrait</Name>
+    </None>
+    <None Include="content\gumproject\components\endingscreentransition.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>endingscreentransition</Name>
     </None>
     <None Include="content\gumproject\components\inputinstructions.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
