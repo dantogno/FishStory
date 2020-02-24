@@ -9,6 +9,11 @@ namespace FishStory.DataTypes
 {
     public class PlayerData
     {
+        public PlayerData()
+        {
+            if (DebuggingVariables.NextDayWillTriggerEnding)
+                CurrentDay = 3;
+        }
         public Dictionary<string, int> ItemInventory { get; set; } =
             new Dictionary<string, int>();
 
@@ -26,7 +31,7 @@ namespace FishStory.DataTypes
         /// This is only incremented after the go to bed / wake up sequence.
         /// In other words, if the player stays up to 12AM without going to bed, it's still Day 1.
         /// </summary>
-        public int CurrentDay { get; set; } = 3; // TODO: reset to 1!
+        public int CurrentDay { get; set; } 
 
         public void AwardItem(string itemKey)
         {

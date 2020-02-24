@@ -137,13 +137,16 @@ namespace FishStory.Screens
                 Award(DataTypes.ItemDefinition.Little_Bonito);
             }
 
-            if(DebuggingVariables.AwardUnidentifiedFish)
+            if(DebuggingVariables.AwardUnidentifiedFish || DebuggingVariables.NextDayWillTriggerEnding)
             {
                 foreach(var item in GlobalContent.ItemDefinition.Where(item => !string.IsNullOrEmpty(item.Value.AssociatedItem)))
                 {
                     Award(item.Key);
                 }
             }
+
+            if (DebuggingVariables.NextDayWillTriggerEnding)
+                HandleIdentify();
 
             if (DebuggingVariables.AwardIdentifiedFish)
             {

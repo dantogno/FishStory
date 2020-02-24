@@ -289,15 +289,7 @@ namespace FishStory.Screens
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 3);
             Do.Call(() => DoDay3Script(If, Do));
             If.Check(() => PlayerDataManager.PlayerData.CurrentDay == 4);
-            Do.Call(() => DoDay4Script(If, Do));
-
-            // Below here is debug code to help facilitate testing day 4.
-            // TODO: remove.
-            //PlayerCharacterInstance.X = 695;
-            //PlayerCharacterInstance.Y = -855;
-            //PlayerCharacterInstance.DirectionFacing = TopDownDirection.Right;
-            //DoDay4Script(If, Do);
-            
+            Do.Call(() => DoDay4Script(If, Do));            
         }
         private void HandleCharacterBedTimes(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
@@ -864,9 +856,10 @@ namespace FishStory.Screens
         }
         private void DoDay4Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
-            // TODO: remove ability to walk around!
-           // PlayerCharacterInstance.ObjectsBlockingInput.Remove(GameScreenGum.OverlayInstance);
-
+            if (DebuggingVariables.NextDayWillTriggerEnding)
+            {
+                
+            }
             InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(3));
             InGameDateTimeManager.ShouldTimePass = false;
 
