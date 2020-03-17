@@ -59,22 +59,22 @@ namespace FishStory.Screens
         };
         public static Dictionary<string, string> ChosenLines = new Dictionary<string, string>()
         {
-            {BlackMarketShop, "Elias" },
-            {Mayor, "Mayor Olsen" },
-            {FestivalCoordinator, "Anthony" },
-            {Identifier, "Jakob" },
+            {BlackMarketShop, "Yer' all a bunch of cowards! Why don’t you take care of me yourselves, instead of letting your petty sea-god do all yer' dirty work for you?!" },
+            {Mayor, "I... I don’t know what to say. Just... make it quick, okay? And Anthony... look after everyone once I’m gone. Make sure our way of life is protected." },
+            {FestivalCoordinator, "This is the stranger's fault! She came in here and ruined the fishing ratios! This is unfair!" },
+            {Identifier, "It's my time… And I do believe it's been my time for quite a while now. I'm ready. I do not shrink away from the abyss." },
             {Fishmonger, "Oscar" },
-            {FarmerSonBaitShop, "Emil" },
-            {YoungManBaitShop, "William" },
-            {ElderlyMother, "Nora" },
+            {FarmerSonBaitShop, "Dad?! Dad, where are you? You told me it wouldn't be me! You said you would protect me. You promised!" },
+            {YoungManBaitShop, "Wait! Before I go, someone has to check in on my mother every day. She forgets to eat sometimes, and I don’t want her to think that I've forgotten about her, even when I'm gone. Will someone promise me they'll do it? Please?!" },
+            {ElderlyMother, "Well, I suppose it was meant to be. Soon I will be with Ingrid again... I will go without making a fuss. Just promise that someone will look after William once I'm gone." },
             {Priestess, Priestess },
-            {Nun, "Cinthia" },
-            {Farmer, "Issac" },
-            {Tycoon, "Mr. Petterson" },
-            {TycoonDaughter, "Emily" },
+            {Nun, "This is best for everyone. Every year since my daughter made the journey, I prayed that the sea would take me next. I suppose my prayers have finally been answered." },
+            {Farmer, "How are you all gonna survive without me, huh?! This is a mistake! You won't last two winters!" },
+            {Tycoon, "You can't do this! It was never supposed to be me! I made this town what it is! It will crumble into the ocean without my support!" },
+            {TycoonDaughter, "No, no... This is wrong! take my father instead! He's the one who deserves it! What have I ever done, aside from what I'm told?! What did I do to deserve this?!" },
             {Conservationist, "Sofia" },
-            {FishermanBald, "Larry" },
-            {FishermanHair, "Roger" }
+            {FishermanBald, "Bah, thereain’tnothingleftformeonthisearthanyway… atleastI'llbewiththefishes." },
+            {FishermanHair, "Fine, I'll go! At least once I'm gone, I won’t have to hear you all yammering away no more!" }
         };
     }
     public partial class MainLevel

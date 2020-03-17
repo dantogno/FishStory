@@ -220,7 +220,7 @@ namespace FishStory.GumRuntimes
                     else if (passage.StrippedText.Contains("[ChosenLine]"))
                     {
                         GameScreenInstance.SetDialoguePortraitFor(GameScreenInstance.NPCList.FindByName(MainLevel.CharacterToSacrifice));
-                        this.TextInstance.Text = passage.StrippedText.Replace("[ChosenName]", CharacterNames.ChosenLines[MainLevel.CharacterToSacrifice]);
+                        this.TextInstance.Text = passage.StrippedText.Replace("[ChosenLine]", CharacterNames.ChosenLines[MainLevel.CharacterToSacrifice]);
                     }
                     else
                     {
