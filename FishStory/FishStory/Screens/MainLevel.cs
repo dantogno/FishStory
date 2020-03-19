@@ -974,8 +974,8 @@ namespace FishStory.Screens
                     this.Call(() => SoundManager.Play(GlobalContent.DrowningSound, volume: 1f))
                         .After(GameScreenGum.ToBlackAnimation.Length + delayBeforeDrowningSound);
                     this.Call(() =>
-                    {                        
-                        MoveToScreen(nameof(TitleScreen));
+                    {
+                        MoveToScreen(nameof(CreditsScreen));
                     }).After(delayBeforeLoadingTitleScreen);
                 });
             });
@@ -1008,16 +1008,14 @@ namespace FishStory.Screens
         }
         private void HandleEndingMusicFadeOut()
         {
-            // David: I'm out of patience, I can't get it to fade
-            // So I'm just stopping the damn music.
-            if (MusicManager.IsSongPlaying)
+            if (MusicManager.MusicVolumeLevel > 0)
+            {
+                MusicManager.MusicVolumeLevel -= TimeManager.SecondDifference*4;
+            }
+            else if (MusicManager.IsSongPlaying)
+            {
                 MusicManager.Stop();
-            //float fadeSpeed = 1000;
-            //if (MusicManager.MusicVolumeLevel > 0)
-            //{   
-            //    MusicManager.MusicVolumeLevel -= fadeSpeed * TimeManager.SecondDifference;
-
-            //}
+            }
         }
 
 

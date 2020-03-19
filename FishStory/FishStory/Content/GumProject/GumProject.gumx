@@ -9,6 +9,10 @@
   <RestrictFileNamesForAndroid>false</RestrictFileNamesForAndroid>
   <Guides />
   <ScreenReference>
+    <Name>CreditsScreenGum</Name>
+    <ElementType>Screen</ElementType>
+  </ScreenReference>
+  <ScreenReference>
     <Name>GameScreenGum</Name>
     <ElementType>Screen</ElementType>
   </ScreenReference>
@@ -18,6 +22,18 @@
   </ScreenReference>
   <ComponentReference>
     <Name>ActionIndicator</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>CreditsComponents/CreditDisplay</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>CreditsComponents/CreditsName</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>CreditsComponents/CreditsTitle</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>

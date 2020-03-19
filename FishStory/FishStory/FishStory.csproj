@@ -49,6 +49,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DataTypes\CreditList.Generated.cs" />
     <Compile Include="DataTypes\FishingLootTable.Generated.cs" />
     <Compile Include="DataTypes\ItemDefinition.cs" />
     <Compile Include="DataTypes\ItemDefinition.Generated.cs">
@@ -109,6 +110,16 @@
       <DependentUpon>ShaderRenderer.cs</DependentUpon>
     </Compile>
     <Compile Include="Factories\IntroFishFactory.Generated.cs" />
+    <Compile Include="GumRuntimes\CreditsComponents\CreditDisplayRuntime.cs" />
+    <Compile Include="GumRuntimes\CreditsComponents\CreditDisplayRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CreditsComponents\CreditsNameRuntime.cs" />
+    <Compile Include="GumRuntimes\CreditsComponents\CreditsNameRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CreditsComponents\CreditsTitle1Runtime.cs" />
+    <Compile Include="GumRuntimes\CreditsComponents\CreditsTitle1Runtime.Generated.cs" />
+    <Compile Include="GumRuntimes\CreditsComponents\CreditsTitleRuntime.cs" />
+    <Compile Include="GumRuntimes\CreditsComponents\CreditsTitleRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\CreditsScreenGumRuntime.cs" />
+    <Compile Include="GumRuntimes\CreditsScreenGumRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DialoguePortraitRuntime.cs" />
     <Compile Include="GumRuntimes\DialoguePortraitRuntime.Generated.cs">
       <DependentUpon>DialoguePortraitRuntime.cs</DependentUpon>
@@ -269,6 +280,10 @@
     <Compile Include="Performance\PoolList.Generated.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\CreditsScreen.cs" />
+    <Compile Include="Screens\CreditsScreen.Generated.cs">
+      <DependentUpon>creditsscreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\GameScreen.Event.cs">
       <DependentUpon>GameScreen.cs</DependentUpon>
@@ -1193,6 +1208,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>actionindicator</Name>
     </None>
+    <None Include="content\gumproject\components\creditscomponents\creditdisplay.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>creditdisplay</Name>
+    </None>
+    <None Include="content\gumproject\components\creditscomponents\creditsname.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>creditsname</Name>
+    </None>
+    <None Include="content\gumproject\components\creditscomponents\creditstitle.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>creditstitle</Name>
+    </None>
     <None Include="content\gumproject\components\custombutton.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>custombutton</Name>
@@ -1389,6 +1416,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font10Casual_Encounter_o1_0</Name>
     </None>
+    <None Include="content\gumproject\fontcache\font14casual_encounter_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>font14casual_encounter_o1</Name>
+    </None>
+    <None Include="content\gumproject\fontcache\font14casual_encounter_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font14Casual_Encounter_o1_0</Name>
+    </None>
     <None Include="content\gumproject\fontcache\font16casual_encounter_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>font16casual_encounter_o1</Name>
@@ -1424,6 +1459,10 @@
     <None Include="content\gumproject\gumproject.gumx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GumProject</Name>
+    </None>
+    <None Include="content\gumproject\screens\creditsscreengum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>creditsscreengum</Name>
     </None>
     <None Include="content\gumproject\screens\gamescreengum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1528,6 +1567,10 @@
     <None Include="content\levels\underwater.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Underwater</Name>
+    </None>
+    <None Include="content\screens\creditsscreen\creditlist.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>CreditList</Name>
     </None>
     <None Include="content\screens\titlescreen\watercaustics.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
