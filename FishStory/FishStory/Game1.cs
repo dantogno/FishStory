@@ -61,7 +61,7 @@ namespace FishStory
             GlobalContent.Initialize();
             FlatRedBallServices.GraphicsOptions.TextureFilter = TextureFilter.Point;
             			CameraSetup.SetupCamera(SpriteManager.Camera, graphics);
-            Type startScreenType = typeof(FishStory.Screens.CreditsScreen);
+            Type startScreenType = typeof(FishStory.Screens.TitleScreen);
 
             var commandLineArgs = Environment.GetCommandLineArgs();
             if (commandLineArgs.Length > 0)

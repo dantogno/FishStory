@@ -83,7 +83,6 @@ namespace FishStory.Screens
         /// Tycoon requires this many fish before giving key.
         /// </summary>
         private int numFishRequiredForKey = 3;
-        private bool hasEndingStarted;
         private const int outOfWorldX = 9000;
         private const int outOfWorldY = 9000;
         bool isWaitingToGiveFreeBaitInConversation = false;
@@ -245,10 +244,6 @@ namespace FishStory.Screens
 
         private void EveryFrameScriptLogic()
         {
-            if (hasEndingStarted)
-            {
-                HandleEndingMusicFadeOut();
-            }
             switch (PlayerDataManager.PlayerData.CurrentDay)
             {
                 case 1:
@@ -981,15 +976,6 @@ namespace FishStory.Screens
             });
         }
 
-        private void PlayLightShimmerAnimation()
-        {
-            GameScreenGum.ToBlackAnimation.Stop();
-            EndingScreenTransitionInstance.Visible = true;
-            //EndingScreenTransitionInstance.PulseAndSparkleAnimation.Play();
-            EndingScreenTransitionInstance.GlowPulseAnimation.Play();
-            EndingScreenTransitionInstance.LightTwinkleAnimation.Play();
-            GameScreenGum.CurrentOverlayAnimationState = GumRuntimes.GameScreenGumRuntime.OverlayAnimation.NoOverlay;
-        }
 
 
         private void AwardRandomBait()
@@ -1008,14 +994,7 @@ namespace FishStory.Screens
         }
         private void HandleEndingMusicFadeOut()
         {
-            if (MusicManager.MusicVolumeLevel > 0)
-            {
-                MusicManager.MusicVolumeLevel -= TimeManager.SecondDifference*4;
-            }
-            else if (MusicManager.IsSongPlaying)
-            {
-                MusicManager.Stop();
-            }
+
         }
 
 

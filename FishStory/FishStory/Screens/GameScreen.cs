@@ -478,6 +478,17 @@ namespace FishStory.Screens
                 
                 MusicManager.MusicVolumeLevel = MusicManager.DefaultMusicLevel * (minutesWhenSongMutes - (InGameDateTimeManager.TimeOfDay.Hours*60 + InGameDateTimeManager.TimeOfDay.Minutes))/ 180f;
             }
+            else if (hasEndingStarted && MusicManager.IsSongPlaying)
+            {
+                if (MusicManager.MusicVolumeLevel > 0)
+                {
+                    MusicManager.MusicVolumeLevel -= 0.3f;
+                }
+                else
+                {
+                    MusicManager.Stop();
+                }
+            }
             else if (MusicManager.MusicVolumeLevel != MusicManager.DefaultMusicLevel &&
                     InGameDateTimeManager.TimeOfDay.Hours < HourOnClockSunSetsIn24H && 
                     InGameDateTimeManager.TimeOfDay.Hours > HourOnClockPlayerForcedSleepIn24H)
@@ -486,7 +497,17 @@ namespace FishStory.Screens
             }
 
         }
+        protected void PlayLightShimmerAnimation()
+        {
+            GameScreenGum.ToBlackAnimation.Stop();
+            EndingScreenTransitionInstance.Visible = true;
+            //EndingScreenTransitionInstance.PulseAndSparkleAnimation.Play();
+            EndingScreenTransitionInstance.GlowPulseAnimation.Play();
+            EndingScreenTransitionInstance.LightTwinkleAnimation.Play();
+            GameScreenGum.CurrentOverlayAnimationState = GumRuntimes.GameScreenGumRuntime.OverlayAnimation.NoOverlay;
+        }
 
+        protected bool hasEndingStarted;
 #if DEBUG
         private void DebuggingActivity()
         {
@@ -499,7 +520,21 @@ namespace FishStory.Screens
             if(DebuggingVariables.SkipDayWithCtrlD && keyboard.IsCtrlDown && 
                 keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.D))
             {
-                GoToNewDay();
+                //GoToNewDay();
+                float delayBeforeDrowningSound = 1;
+                float delayBeforeLoadingTitleScreen = (float)GlobalContent.DrowningSound.Duration.TotalSeconds - 3;
+                FadeToBlack();
+                DayAndTimeDisplayIsVisible = false;
+                hasEndingStarted = true;
+
+                this.Call(() => PlayLightShimmerAnimation())
+                    .After(GameScreenGum.ToBlackAnimation.Length + 1);
+                this.Call(() => SoundManager.Play(GlobalContent.DrowningSound, volume: 1f))
+                    .After(GameScreenGum.ToBlackAnimation.Length + delayBeforeDrowningSound);
+                this.Call(() =>
+                {
+                    MoveToScreen(nameof(CreditsScreen));
+                }).After(delayBeforeLoadingTitleScreen);
             }
             if (DebuggingVariables.SkipDayWithCtrlD && keyboard.IsCtrlDown &&
                 keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.R))
