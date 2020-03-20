@@ -733,6 +733,7 @@ namespace FishStory.Screens
             #region FarmerSonBaitShop
             #endregion
             #region YoungManBaitShop
+            this.NPCList.FindByName(CharacterNames.YoungManBaitShop).TwineDialogId = nameof(GlobalContent.YoungManBaitShopDay3);
             #endregion
             #region BlackMarketShop
             NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay3);

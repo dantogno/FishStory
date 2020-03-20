@@ -1162,6 +1162,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>YoungManBaitShopDay2</Name>
     </None>
+    <None Include="content\globalcontent\dialog\youngmanbaitshopday3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>YoungManBaitShopDay3</Name>
+    </None>
     <None Include="content\globalcontent\fishingloottables\defaultloottable.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>DefaultLootTable</Name>
