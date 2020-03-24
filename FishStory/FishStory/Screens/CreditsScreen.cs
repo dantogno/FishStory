@@ -17,9 +17,15 @@ namespace FishStory.Screens
 {
     public partial class CreditsScreen
     {
+        //1.85 worked with just the four credits, might need to increase this number if more credits are used
+        private bool CreditsAreOffScreen => CreditDisplayContainer.Y <= (-0.4625 * NumberOfCredits * Camera.Main.OrthogonalHeight);
+
+        private int NumberOfCredits => CreditList.Values.Count;
+
         void CustomInitialize()
         {
             CreateCreditDisplays();
+            EndingScreenTransition.FadeInAnimation.Play();
         }
 
         private void CreateCreditDisplays()
@@ -36,13 +42,13 @@ namespace FishStory.Screens
 
         void CustomActivity(bool firstTimeCalled)
         {
-            if (CreditDisplayContainer.Y <= (-1.85 * Camera.Main.OrthogonalHeight) || InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Escape))
+            if (CreditsAreOffScreen || InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Escape))
             {
                 MoveToScreen(nameof(TitleScreen));
             }
             else 
             {
-                var defaultTextPixelsPerSecond = 50;
+                var defaultTextPixelsPerSecond = 60;
 
                 if (InputManager.Keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.Space) || InputManager.Mouse.ButtonPushed(Mouse.MouseButtons.LeftButton))
                     defaultTextPixelsPerSecond *= 2;

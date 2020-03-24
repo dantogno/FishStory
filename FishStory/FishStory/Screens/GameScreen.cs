@@ -500,8 +500,9 @@ namespace FishStory.Screens
         protected void PlayLightShimmerAnimation()
         {
             GameScreenGum.ToBlackAnimation.Stop();
+            EndingScreenTransitionInstance.CurrentFadeTransitionState = EndingScreenTransitionRuntime.FadeTransition.Out;
             EndingScreenTransitionInstance.Visible = true;
-            //EndingScreenTransitionInstance.PulseAndSparkleAnimation.Play();
+            EndingScreenTransitionInstance.FadeInAnimation.Play();
             EndingScreenTransitionInstance.GlowPulseAnimation.Play();
             EndingScreenTransitionInstance.LightTwinkleAnimation.Play();
             GameScreenGum.CurrentOverlayAnimationState = GumRuntimes.GameScreenGumRuntime.OverlayAnimation.NoOverlay;

@@ -968,6 +968,8 @@ namespace FishStory.Screens
                         .After(GameScreenGum.ToBlackAnimation.Length+1);
                     this.Call(() => SoundManager.Play(GlobalContent.DrowningSound, volume: 1f))
                         .After(GameScreenGum.ToBlackAnimation.Length + delayBeforeDrowningSound);
+                    this.Call(() => EndingScreenTransitionInstance.FadeOutAnimation.Play())
+                        .After(delayBeforeLoadingTitleScreen - 3);
                     this.Call(() =>
                     {
                         MoveToScreen(nameof(CreditsScreen));
