@@ -521,21 +521,25 @@ namespace FishStory.Screens
             if(DebuggingVariables.SkipDayWithCtrlD && keyboard.IsCtrlDown && 
                 keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.D))
             {
-                //GoToNewDay();
-                float delayBeforeDrowningSound = 1;
-                float delayBeforeLoadingTitleScreen = (float)GlobalContent.DrowningSound.Duration.TotalSeconds - 3;
-                FadeToBlack();
-                DayAndTimeDisplayIsVisible = false;
-                hasEndingStarted = true;
-
-                this.Call(() => PlayLightShimmerAnimation())
-                    .After(GameScreenGum.ToBlackAnimation.Length + 1);
-                this.Call(() => SoundManager.Play(GlobalContent.DrowningSound, volume: 1f))
-                    .After(GameScreenGum.ToBlackAnimation.Length + delayBeforeDrowningSound);
-                this.Call(() =>
+                if (!DebuggingVariables.NextDayWillTriggerPostEnding)
+                    GoToNewDay();
+                else
                 {
-                    MoveToScreen(nameof(CreditsScreen));
-                }).After(delayBeforeLoadingTitleScreen);
+                    float delayBeforeDrowningSound = 1;
+                    float delayBeforeLoadingTitleScreen = (float)GlobalContent.DrowningSound.Duration.TotalSeconds - 3;
+                    FadeToBlack();
+                    DayAndTimeDisplayIsVisible = false;
+                    hasEndingStarted = true;
+
+                    this.Call(() => PlayLightShimmerAnimation())
+                        .After(GameScreenGum.ToBlackAnimation.Length + 1);
+                    this.Call(() => SoundManager.Play(GlobalContent.DrowningSound, volume: 1f))
+                        .After(GameScreenGum.ToBlackAnimation.Length + delayBeforeDrowningSound);
+                    this.Call(() =>
+                    {
+                        MoveToScreen(nameof(CreditsScreen));
+                    }).After(delayBeforeLoadingTitleScreen);
+                }                
             }
             if (DebuggingVariables.SkipDayWithCtrlD && keyboard.IsCtrlDown &&
                 keyboard.KeyPushed(Microsoft.Xna.Framework.Input.Keys.R))

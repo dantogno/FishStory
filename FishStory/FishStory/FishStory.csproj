@@ -118,10 +118,6 @@
     <Compile Include="GumRuntimes\CreditsComponents\CreditsNameRuntime.Generated.cs">
       <DependentUpon>CreditsNameRuntime.cs</DependentUpon>
     </Compile>
-    <Compile Include="GumRuntimes\CreditsComponents\CreditsTitle1Runtime.cs" />
-    <Compile Include="GumRuntimes\CreditsComponents\CreditsTitle1Runtime.Generated.cs">
-      <DependentUpon>CreditsTitle1Runtime.cs</DependentUpon>
-    </Compile>
     <Compile Include="GumRuntimes\CreditsComponents\CreditsTitleRuntime.cs" />
     <Compile Include="GumRuntimes\CreditsComponents\CreditsTitleRuntime.Generated.cs">
       <DependentUpon>CreditsTitleRuntime.cs</DependentUpon>
@@ -1165,6 +1161,10 @@
     <None Include="content\globalcontent\dialog\youngmanbaitshopday2.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>YoungManBaitShopDay2</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\youngmanbaitshopday3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>YoungManBaitShopDay3</Name>
     </None>
     <None Include="content\globalcontent\fishingloottables\defaultloottable.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
