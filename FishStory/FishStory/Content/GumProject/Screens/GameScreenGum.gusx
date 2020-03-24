@@ -64,6 +64,24 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>FadeTransitionState</Type>
+      <Name>EndingScreenTransitionInstance.FadeTransitionState</Name>
+      <Value xsi:type="xsd:string">Out</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>GlowTransitionState</Type>
+      <Name>EndingScreenTransitionInstance.GlowTransitionState</Name>
+      <Value xsi:type="xsd:string">Start</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>LightTransitionState</Type>
+      <Name>EndingScreenTransitionInstance.LightTransitionState</Name>
+      <Value xsi:type="xsd:string">Start</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>bool</Type>
       <Name>EndingScreenTransitionInstance.Visible</Name>
       <Value xsi:type="xsd:boolean">false</Value>

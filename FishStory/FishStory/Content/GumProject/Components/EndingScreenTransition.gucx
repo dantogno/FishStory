@@ -573,22 +573,9 @@
         <Category>Rendering</Category>
         <SetsValue>true</SetsValue>
       </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>ColoredRectangleInstance.Alpha</Name>
-        <Value xsi:type="xsd:int">255</Value>
-        <Category>Rendering</Category>
-        <SetsValue>true</SetsValue>
-      </Variable>
     </State>
     <State>
       <Name>Out</Name>
-      <Variable>
-        <Type>int</Type>
-        <Name>ColoredRectangleInstance.Alpha</Name>
-        <Value xsi:type="xsd:int">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
       <Variable>
         <Type>int</Type>
         <Name>SpriteInstance.Alpha</Name>

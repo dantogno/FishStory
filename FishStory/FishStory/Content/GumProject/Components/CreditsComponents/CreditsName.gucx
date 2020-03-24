@@ -22,6 +22,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.Alpha</Name>
+      <ExposedAsName>TextInstanceAlpha</ExposedAsName>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>TextInstance.Font</Name>
       <Value xsi:type="xsd:string">Casual Encounter</Value>

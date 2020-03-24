@@ -95,9 +95,9 @@
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>FadeTransition/In</StateName>
-          <Time>3</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
+          <Time>10</Time>
+          <InterpolationType>Elastic</InterpolationType>
+          <Easing>InOut</Easing>
         </AnimatedStateSave>
       </States>
       <Animations />

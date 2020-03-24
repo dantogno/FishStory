@@ -500,9 +500,6 @@ namespace FishStory.Screens
         protected void PlayLightShimmerAnimation()
         {
             GameScreenGum.ToBlackAnimation.Stop();
-            EndingScreenTransitionInstance.CurrentFadeTransitionState = EndingScreenTransitionRuntime.FadeTransition.Out;
-            EndingScreenTransitionInstance.Visible = true;
-            EndingScreenTransitionInstance.FadeInAnimation.Play();
             EndingScreenTransitionInstance.GlowPulseAnimation.Play();
             EndingScreenTransitionInstance.LightTwinkleAnimation.Play();
             GameScreenGum.CurrentOverlayAnimationState = GumRuntimes.GameScreenGumRuntime.OverlayAnimation.NoOverlay;
@@ -525,20 +522,30 @@ namespace FishStory.Screens
                     GoToNewDay();
                 else
                 {
-                    float delayBeforeDrowningSound = 1;
-                    float delayBeforeLoadingTitleScreen = (float)GlobalContent.DrowningSound.Duration.TotalSeconds - 3;
+                    float delayBeforeDrowningSound = GameScreenGum.ToBlackAnimation.Length + 3;
+                    var drowningSoundDuration = GlobalContent.DrowningSound.Duration.Seconds;
+                    float delayBeforeLoadingCreditsScreen = (float)GlobalContent.DrowningSound.Duration.TotalSeconds - 3;
                     FadeToBlack();
                     DayAndTimeDisplayIsVisible = false;
                     hasEndingStarted = true;
 
+                    EndingScreenTransitionInstance.CurrentFadeTransitionState = GumRuntimes.EndingScreenTransitionRuntime.FadeTransition.Out;
+                    EndingScreenTransitionInstance.Visible = true;
+
+                    GameScreenGum.ToBlackAnimation.Play();
+
+                    this.Call(() => EndingScreenTransitionInstance.FadeInAnimation.Play())
+                        .After(GameScreenGum.ToBlackAnimation.Length);
                     this.Call(() => PlayLightShimmerAnimation())
-                        .After(GameScreenGum.ToBlackAnimation.Length + 1);
+                        .After(EndingScreenTransitionInstance.FadeInAnimation.Length + GameScreenGum.ToBlackAnimation.Length);
                     this.Call(() => SoundManager.Play(GlobalContent.DrowningSound, volume: 1f))
-                        .After(GameScreenGum.ToBlackAnimation.Length + delayBeforeDrowningSound);
+                        .After(delayBeforeDrowningSound);
+                    this.Call(() => { EndingScreenTransitionInstance.GlowPulseAnimation.Stop(); EndingScreenTransitionInstance.FadeOutAnimation.Play(); })
+                        .After(delayBeforeDrowningSound + drowningSoundDuration - EndingScreenTransitionInstance.FadeOutAnimation.Length);
                     this.Call(() =>
                     {
                         MoveToScreen(nameof(CreditsScreen));
-                    }).After(delayBeforeLoadingTitleScreen);
+                    }).After(delayBeforeDrowningSound + drowningSoundDuration);
                 }                
             }
             if (DebuggingVariables.SkipDayWithCtrlD && keyboard.IsCtrlDown &&

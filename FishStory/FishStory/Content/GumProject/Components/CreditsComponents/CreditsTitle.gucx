@@ -23,6 +23,12 @@
     </Variable>
     <Variable>
       <Type>int</Type>
+      <Name>TextInstance.Alpha</Name>
+      <ExposedAsName>TextInstanceAlpha</ExposedAsName>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
       <Name>TextInstance.Blue</Name>
       <Value xsi:type="xsd:int">204</Value>
       <SetsValue>true</SetsValue>

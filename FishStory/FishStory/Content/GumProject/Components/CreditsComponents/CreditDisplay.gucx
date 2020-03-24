@@ -35,6 +35,11 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>FadeStatusState</Type>
+      <Name>FadeStatusState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>Height</Name>
       <Value xsi:type="xsd:float">75</Value>
@@ -70,6 +75,41 @@
       <SetsValue>true</SetsValue>
     </Variable>
   </State>
+  <Category>
+    <Name>FadeStatus</Name>
+    <State>
+      <Name>Out</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CreditsNameInstance.TextInstanceAlpha</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CreditsTitleInstance.TextInstanceAlpha</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>In</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>CreditsNameInstance.TextInstanceAlpha</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <ExposedAsName>TextInstanceAlpha</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>CreditsTitleInstance.TextInstanceAlpha</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <ExposedAsName>TextInstanceAlpha</ExposedAsName>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>CreditsTitleInstance</Name>
     <BaseType>CreditsComponents/CreditsTitle</BaseType>
