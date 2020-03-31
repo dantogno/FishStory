@@ -119,7 +119,7 @@
       }
     },
     {
-      "text": "Ah, one more thing before you go... I've noticed there's been an increase in Ladyfish caughting since you arrived. Of course, this is the will of the sea and is out of our control...\n[[continuealt]]",
+      "text": "Ah, one more thing before you go... I've noticed there's been an increase in Ladyfish caught since you arrived. Of course, this is the will of the sea and is out of our control...\n[[continuealt]]",
       "links": [
         {
           "name": "continuealt",
@@ -181,6 +181,6 @@
   "name": "MayorDay2AltFemale",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.3.5",
+  "creator-version": "2.2.1",
   "ifid": "32ECAC34-FB8A-4769-A2C4-9509B9D81625"
 }

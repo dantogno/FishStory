@@ -1018,6 +1018,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>IdentifierDay1Brief</Name>
     </None>
+    <None Include="content\globalcontent\dialog\identifierday2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>IdentifierDay2</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\identifierday2alttrait.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>IdentifierDay2AltTrait</Name>
+    </None>
     <None Include="content\globalcontent\dialog\mayorafterwelcome.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>MayorAfterWelcome</Name>

@@ -573,6 +573,7 @@ namespace FishStory.Screens
             });
             #endregion
             #region Identifier
+            NPCList.FindByName(CharacterNames.Identifier).TwineDialogId = nameof(GlobalContent.IdentifierDay2);
             #endregion
             #region Fishmonger
             #endregion

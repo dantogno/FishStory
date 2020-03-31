@@ -1,0 +1,62 @@
+{
+    "passages": [
+      {
+        "text": "Greetings, traveler. [[Let's hear about some fish.]][[Identify and record fish]][[Leave]]",
+        "links": [
+          {
+            "name": "Let's hear about some fish.",
+            "link": "Let's hear about some fish.",
+            "pid": "4"
+          },
+          {
+            "name": "Identify and record fish",
+            "link": "Identify and record fish",
+            "pid": "3"
+          },
+          {
+            "name": "Leave",
+            "link": "Leave",
+            "pid": "2"
+          }
+        ],
+        "name": "Untitled Passage",
+        "pid": "1",
+        "position": {
+          "x": "412",
+          "y": "491.5"
+        }
+      },
+      {
+        "text": "Good day.",
+        "name": "Leave",
+        "pid": "2",
+        "position": {
+          "x": "665",
+          "y": "565.5"
+        }
+      },
+      {
+        "text": "id=",
+        "name": "Identify and record fish",
+        "pid": "3",
+        "position": {
+          "x": "225",
+          "y": "615.5"
+        }
+      },
+      {
+        "text": "In the Old Histories, it's told that shrimp represent the youth of the island. Before the lucrative fishing trade, couples with no children would actively fish for shrimp as an omen that they would soon be blessed with one. While those who wished to avoid children of their own would customarily cast shrimp back into the ocean after catching one.",
+        "name": "Let's hear about some fish.",
+        "pid": "4",
+        "position": {
+          "x": "412",
+          "y": "641.5"
+        }
+      }
+    ],
+    "name": "IdentifierDay2",
+    "startnode": "1",
+    "creator": "Twine",
+    "creator-version": "2.2.1",
+    "ifid": "E13C8C63-69E8-4E1C-8ED5-7D06DACAFBB9"
+  }

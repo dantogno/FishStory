@@ -1,8 +1,13 @@
 {
   "passages": [
     {
-      "text": "Stay a while and listen.\n[[Identify and record fish|Identify]] [[Leave|Leave]]",
+      "text": "Stay a while and listen.[[I'd like to hear about the native fish.]]\n[[Identify and record fish|Identify]] [[Leave|Leave]]",
       "links": [
+        {
+          "name": "I'd like to hear about the native fish.",
+          "link": "I'd like to hear about the native fish.",
+          "pid": "4"
+        },
         {
           "name": "Identify and record fish|Identify",
           "link": "Identify and record fish|Identify"
@@ -15,7 +20,7 @@
       "name": "Start",
       "pid": "1",
       "position": {
-        "x": "539",
+        "x": "537",
         "y": "572"
       }
     },
@@ -24,7 +29,7 @@
       "name": "Identify",
       "pid": "2",
       "position": {
-        "x": "539",
+        "x": "733",
         "y": "722"
       }
     },
@@ -36,11 +41,20 @@
         "x": "427",
         "y": "722"
       }
+    },
+    {
+      "text": "Island lore commonly associates colored fish with the hair color of our inhabitants. For example, an unmarried fisherman who catches up several cobia might be destined to meet a partner with dark hair; while catching trumpetfish could indicate a future fling with a blonde. ",
+      "name": "I'd like to hear about the native fish.",
+      "pid": "4",
+      "position": {
+        "x": "585",
+        "y": "726"
+      }
     }
   ],
   "name": "IdentifierDay1Brief",
   "startnode": "1",
   "creator": "Twine",
-  "creator-version": "2.3.5",
+  "creator-version": "2.2.1",
   "ifid": "F5503A4A-8F18-420F-9CB9-E3E849AE2D21"
 }
