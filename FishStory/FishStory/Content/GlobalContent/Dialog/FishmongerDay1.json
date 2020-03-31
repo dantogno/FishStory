@@ -1,7 +1,7 @@
 {
     "passages": [
       {
-        "text": "How can I help you? Here in Ensomme we offer the finest delicacies of the sea! Might I recommend this monkfish, just pulled out of the water not 10 minutes ago. [[2]]",
+        "text": "How can I help you? Here in Ensomme we offer the finest delicacies of the sea! Might I recommend this rockfish, just pulled out of the water not 10 minutes ago. [[2]]",
         "links": [
           {
             "name": "2",
@@ -20,7 +20,7 @@
         ]
       },
       {
-        "text": "Oh, a Festival Badge. In that case, I take it you're here to sell. Well then, so long as it's been tagged by the Church, I'm happy to buy your fresh catch. \n[[Tagged by the Church?|Tag Explanation]]\n[[Sell|Sell]]\n[[Leave|Leave]]",
+        "text": "Oh, a Festival Badge. In that case, I take it you're here to sell. The name's Oscar. I'm happy to buy your catch, so long as it's been tagged by the Church. \n[[Tagged by the Church?|Tag Explanation]]\n[[Sell|Sell]]\n[[Leave|Leave]]",
         "links": [
           {
             "name": "Tagged by the Church?|Tag Explanation",

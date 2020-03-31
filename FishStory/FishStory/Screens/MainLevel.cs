@@ -576,6 +576,7 @@ namespace FishStory.Screens
             NPCList.FindByName(CharacterNames.Identifier).TwineDialogId = nameof(GlobalContent.IdentifierDay2);
             #endregion
             #region Fishmonger
+            NPCList.FindByName(CharacterNames.Fishmonger).TwineDialogId = nameof(GlobalContent.FishMongerDay2);
             #endregion
             #region FarmerSonBaitShop
             #endregion
