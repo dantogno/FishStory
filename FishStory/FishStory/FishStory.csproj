@@ -906,6 +906,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FarmerDay2</Name>
     </None>
+    <None Include="content\globalcontent\dialog\farmerday2alttrait.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FarmerDay2AltTrait</Name>
+    </None>
     <None Include="content\globalcontent\dialog\farmerday2brief.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FarmerDay2Brief</Name>
@@ -1062,6 +1066,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>MayorDay2</Name>
     </None>
+    <None Include="content\globalcontent\dialog\mayorday2alttrait.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>MayorDay2AltTrait</Name>
+    </None>
     <None Include="content\globalcontent\dialog\mayorday2brief.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>MayorDay2Brief</Name>
@@ -1089,6 +1097,10 @@
     <None Include="content\globalcontent\dialog\nunday2.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>NunDay2</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\nunday2alttrait.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>NunDay2AltTrait</Name>
     </None>
     <None Include="content\globalcontent\dialog\nunday2brief.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1142,6 +1154,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TycoonDaughterDay2</Name>
     </None>
+    <None Include="content\globalcontent\dialog\tycoondaughterday2alttrait.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TycoonDaughterDay2AltTrait</Name>
+    </None>
     <None Include="content\globalcontent\dialog\tycoondaughterday2brief.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TycoonDaughterDay2Brief</Name>
@@ -1161,6 +1177,10 @@
     <None Include="content\globalcontent\dialog\tycoonday2.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TycoonDay2</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\tycoonday2alttrait.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TycoonDay2AltTrait</Name>
     </None>
     <None Include="content\globalcontent\dialog\tycoonday2brief.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
