@@ -1,0 +1,48 @@
+{
+  "passages": [
+    {
+      "text": "Hey ma'am, would you buy some bait? That way pop won't make me do so much chore'n at the farm. [[Buy]] [[Leave]]",
+      "links": [
+        {
+          "name": "Buy",
+          "link": "Buy",
+          "pid": "2"
+        },
+        {
+          "name": "Leave",
+          "link": "Leave",
+          "pid": "3"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "406",
+        "y": "195.3333330154419"
+      }
+    },
+    {
+      "text": "store=FarmerSonBaitShop",
+      "name": "Buy",
+      "pid": "2",
+      "position": {
+        "x": "331",
+        "y": "345.3333330154419"
+      }
+    },
+    {
+      "text": "Are you sure you don't need any bait?",
+      "name": "Leave",
+      "pid": "3",
+      "position": {
+        "x": "481",
+        "y": "345.3333330154419"
+      }
+    }
+  ],
+  "name": "FarmerSonBaitShopDialogDay2",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "58CC953A-406E-41F8-91C4-E93DAC682C88"
+}

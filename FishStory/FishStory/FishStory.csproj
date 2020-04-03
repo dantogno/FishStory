@@ -922,6 +922,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FarmerSonBaitShopDialog</Name>
     </None>
+    <None Include="content\globalcontent\dialog\farmersonbaitshopdialogday2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FarmerSonBaitShopDialogDay2</Name>
+    </None>
+    <None Include="content\globalcontent\dialog\farmersonbaitshopdialogday3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FarmerSonBaitShopDialogDay3</Name>
+    </None>
     <None Include="content\globalcontent\dialog\festivalcoordinatorday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FestivalCoordinatorDay1</Name>

@@ -582,11 +582,12 @@ namespace FishStory.Screens
             {
                 NPCList.FindByName(CharacterNames.Fishmonger).TwineDialogId = nameof(GlobalContent.FishMongerDay2);
             });
-                #endregion
-                #region FarmerSonBaitShop
-                #endregion
-                #region YoungManBaitShop 
-                this.NPCList.FindByName(CharacterNames.YoungManBaitShop).TwineDialogId = nameof(GlobalContent.YoungManBaitShopDay2);
+            #endregion
+            #region FarmerSonBaitShop
+            NPCList.FindByName(CharacterNames.FarmerSonBaitShop).TwineDialogId = nameof(GlobalContent.FarmerSonBaitShopDialogDay2);
+            #endregion
+            #region YoungManBaitShop 
+            this.NPCList.FindByName(CharacterNames.YoungManBaitShop).TwineDialogId = nameof(GlobalContent.YoungManBaitShopDay2);
             #endregion
             #region BlackMarketShop
             NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay2);
@@ -739,6 +740,7 @@ namespace FishStory.Screens
             NPCList.FindByName(CharacterNames.Fishmonger).TwineDialogId = nameof(GlobalContent.FishMongerDay3);
             #endregion
             #region FarmerSonBaitShop
+            NPCList.FindByName(CharacterNames.FarmerSonBaitShop).TwineDialogId = nameof(GlobalContent.FarmerSonBaitShopDialogDay3);
             #endregion
             #region YoungManBaitShop
             this.NPCList.FindByName(CharacterNames.YoungManBaitShop).TwineDialogId = nameof(GlobalContent.YoungManBaitShopDay3);
