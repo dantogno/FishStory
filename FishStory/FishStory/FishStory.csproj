@@ -1018,6 +1018,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishMongerDay2AltTrait</Name>
     </None>
+    <None Include="content\globalcontent\dialog\fishmongerday3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishMongerDay3</Name>
+    </None>
     <None Include="content\globalcontent\dialog\identifierday1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>IdentifierDay1</Name>

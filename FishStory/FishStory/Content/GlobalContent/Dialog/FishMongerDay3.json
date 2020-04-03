@@ -1,0 +1,87 @@
+{
+  "passages": [
+    {
+      "text": "Welcome back. [[Any fishing tips?]][[Why won't you buy my fish?|Explanation]][[Sell]][[Leave]]",
+      "links": [
+        {
+          "name": "Any fishing tips?",
+          "link": "Any fishing tips?",
+          "pid": "5"
+        },
+        {
+          "name": "Why won't you buy my fish?|Explanation",
+          "link": "Why won't you buy my fish?|Explanation"
+        },
+        {
+          "name": "Sell",
+          "link": "Sell",
+          "pid": "3"
+        },
+        {
+          "name": "Leave",
+          "link": "Leave",
+          "pid": "4"
+        }
+      ],
+      "name": "1",
+      "pid": "1",
+      "position": {
+        "x": "393",
+        "y": "338"
+      }
+    },
+    {
+      "text": "Plucking these riches from the sea takes a toll. By having the Church identify and catalog catches, we can repay the debt and ensure we don't take too greedily.[[Sell]] [[Leave]]",
+      "links": [
+        {
+          "name": "Sell",
+          "link": "Sell",
+          "pid": "3"
+        },
+        {
+          "name": "Leave",
+          "link": "Leave",
+          "pid": "4"
+        }
+      ],
+      "name": "Explanation",
+      "pid": "2",
+      "position": {
+        "x": "243",
+        "y": "488"
+      }
+    },
+    {
+      "text": "sell=fishmonger",
+      "name": "Sell",
+      "pid": "3",
+      "position": {
+        "x": "415",
+        "y": "605"
+      }
+    },
+    {
+      "text": "I look forward to your next catch.",
+      "name": "Leave",
+      "pid": "4",
+      "position": {
+        "x": "543",
+        "y": "488"
+      }
+    },
+    {
+      "text": "If you're looking for giant octopus, try using squid bait along the north shore of the island.",
+      "name": "Any fishing tips?",
+      "pid": "5",
+      "position": {
+        "x": "167",
+        "y": "312"
+      }
+    }
+  ],
+  "name": "FishmongerDay1Brief",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "A1A3F8CE-9651-404A-B067-9FDDB9A1690E"
+}
