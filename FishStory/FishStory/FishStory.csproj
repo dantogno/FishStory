@@ -794,6 +794,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlackMarketShopDay2</Name>
     </None>
+    <None Include="content\globalcontent\dialog\blackmarketshopday2alttrait.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BlackMarketShopDay2AltTrait</Name>
+    </None>
     <None Include="content\globalcontent\dialog\blackmarketshopday2brief.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BlackMarketShopDay2Brief</Name>

@@ -598,6 +598,14 @@ namespace FishStory.Screens
             NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay2);
             If.Check(() =>
             {
+                return HasTag("HasSeenBlackMarketShopDay2Alt");
+            });
+            Do.Call(() =>
+            {
+                NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay2);
+            });
+            If.Check(() =>
+            {
                 return HasTag("HasSeenBlackMarketShopDay2");
             });
             Do.Call(() =>
