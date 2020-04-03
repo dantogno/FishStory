@@ -116,7 +116,7 @@ namespace FishStory.Screens
             {CharacterNames.Priestess, 23 },
             {CharacterNames.Tycoon, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1},
             {CharacterNames.TycoonDaughter, 22 },
-            {CharacterNames.YoungManBaitShop, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1}
+            {CharacterNames.YoungManBaitShop, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 3}
         };
         private Dictionary<string, double> CharacterWakeTimes = new Dictionary<string, double>()
         {
@@ -135,7 +135,7 @@ namespace FishStory.Screens
             {CharacterNames.Priestess, 15 },
             {CharacterNames.Tycoon, 10},
             {CharacterNames.TycoonDaughter, 12 },
-            {CharacterNames.YoungManBaitShop, 10}
+            {CharacterNames.YoungManBaitShop, 11}
         };
         void CustomInitialize()
         {
@@ -591,7 +591,7 @@ namespace FishStory.Screens
             If.Check(() => HasTag("HasSeenYoungManBaitShopDay2AltTrait"));
             Do.Call(() =>
             {
-                NPCList.FindByName(CharacterNames.Fishmonger).TwineDialogId = nameof(GlobalContent.YoungManBaitShopDay2);
+                NPCList.FindByName(CharacterNames.YoungManBaitShop).TwineDialogId = nameof(GlobalContent.YoungManBaitShopDay2);
             });
             #endregion
             #region BlackMarketShop

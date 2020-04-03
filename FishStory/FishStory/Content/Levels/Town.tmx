@@ -146,7 +146,6 @@
     <property name="TwineDialogId" value="FishermanHairDay1"/>
    </properties>
   </object>
-  <object id="58" gid="3350" x="279.75" y="961.364" width="16" height="16"/>
   <object id="73" name="FarmerSign" gid="7" x="513.417" y="688.917" width="16" height="16">
    <properties>
     <property name="Animation" value=""/>
