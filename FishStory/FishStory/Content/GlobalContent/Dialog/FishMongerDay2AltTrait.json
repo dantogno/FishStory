@@ -1,0 +1,21 @@
+{
+    "passages": [
+      {
+        "text": "I've noticed you've been hauling in quite a few king mackerel. To be honest, it's causing a bit of a stir. The kind of attention someone new to the island might want to avoid, if  you catch my drift. My advice? Fish the east coast of the island for a while.",
+        "name": "HasSeenFishmongerDay2Alt",
+        "pid": "1",
+        "position": {
+          "x": "412",
+          "y": "491.5"
+        },
+        "tags": [
+          "HasSeenFishmongerDay2Alt"
+        ]
+      }
+    ],
+    "name": "FishmongerDay2AltTrait",
+    "startnode": "1",
+    "creator": "Twine",
+    "creator-version": "2.2.1",
+    "ifid": "7C604313-F3C3-457D-A5A9-8EB56FA3511D"
+  }

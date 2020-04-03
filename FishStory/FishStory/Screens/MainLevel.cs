@@ -577,11 +577,16 @@ namespace FishStory.Screens
             #endregion
             #region Fishmonger
             NPCList.FindByName(CharacterNames.Fishmonger).TwineDialogId = nameof(GlobalContent.FishMongerDay2);
-            #endregion
-            #region FarmerSonBaitShop
-            #endregion
-            #region YoungManBaitShop 
-            this.NPCList.FindByName(CharacterNames.YoungManBaitShop).TwineDialogId = nameof(GlobalContent.YoungManBaitShopDay2);
+            If.Check(() => HasTag("HasSeenMayorDay2Alt"));
+            Do.Call(() =>
+            {
+                NPCList.FindByName(CharacterNames.Fishmonger).TwineDialogId = nameof(GlobalContent.FishMongerDay2);
+            });
+                #endregion
+                #region FarmerSonBaitShop
+                #endregion
+                #region YoungManBaitShop 
+                this.NPCList.FindByName(CharacterNames.YoungManBaitShop).TwineDialogId = nameof(GlobalContent.YoungManBaitShopDay2);
             #endregion
             #region BlackMarketShop
             NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay2);
@@ -698,8 +703,7 @@ namespace FishStory.Screens
                 npc.TwineDialogId = nameof(GlobalContent.FishermanHairDay2Brief);
             });
             #endregion
-            // TODO: turn this back on once the alt text exists!
-            // HandleDay2TraitAlternateDialogForClassRepresentatives(If, Do);
+            HandleDay2TraitAlternateDialogForClassRepresentatives(If, Do);
 
             HandleCharacterBedTimes(If, Do);
             HandleCharacterWakeTimes(If, Do);
@@ -1001,8 +1005,8 @@ namespace FishStory.Screens
 
         void CustomActivity(bool firstTimeCalled)
         {
-            // TODO: we could make debug variables for these in glue
-            FlatRedBall.Debugging.Debugger.Write($"Player X: {PlayerCharacterInstance.X}, Player Y: {PlayerCharacterInstance.Y}");
+            if (DebuggingVariables.DisplayPlayerCoordinates)
+                FlatRedBall.Debugging.Debugger.Write($"Player X: {PlayerCharacterInstance.X}, Player Y: {PlayerCharacterInstance.Y}");
             //FlatRedBall.Debugging.Debugger.Write($"Fish identified: {TotalFishIdentified}");
             EveryFrameScriptLogic();
         }
