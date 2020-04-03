@@ -1194,6 +1194,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>YoungManBaitShopDay2</Name>
     </None>
+    <None Include="content\globalcontent\dialog\youngmanbaitshopday2alttrait.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>YoungManBaitShopDay2AltTrait</Name>
+    </None>
     <None Include="content\globalcontent\dialog\youngmanbaitshopday3.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>YoungManBaitShopDay3</Name>

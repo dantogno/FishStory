@@ -577,7 +577,7 @@ namespace FishStory.Screens
             #endregion
             #region Fishmonger
             NPCList.FindByName(CharacterNames.Fishmonger).TwineDialogId = nameof(GlobalContent.FishMongerDay2);
-            If.Check(() => HasTag("HasSeenMayorDay2Alt"));
+            If.Check(() => HasTag("HasSeenFishmongerDay2Alt"));
             Do.Call(() =>
             {
                 NPCList.FindByName(CharacterNames.Fishmonger).TwineDialogId = nameof(GlobalContent.FishMongerDay2);
@@ -588,6 +588,11 @@ namespace FishStory.Screens
             #endregion
             #region YoungManBaitShop 
             this.NPCList.FindByName(CharacterNames.YoungManBaitShop).TwineDialogId = nameof(GlobalContent.YoungManBaitShopDay2);
+            If.Check(() => HasTag("HasSeenYoungManBaitShopDay2AltTrait"));
+            Do.Call(() =>
+            {
+                NPCList.FindByName(CharacterNames.Fishmonger).TwineDialogId = nameof(GlobalContent.YoungManBaitShopDay2);
+            });
             #endregion
             #region BlackMarketShop
             NPCList.FindByName(CharacterNames.BlackMarketShop).TwineDialogId = nameof(GlobalContent.BlackMarketShopDay2);
