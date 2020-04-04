@@ -109,8 +109,8 @@ namespace FishStory.Screens
             {CharacterNames.FestivalCoordinator, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1 },
             {CharacterNames.FishermanBald, 17 },
             {CharacterNames.FishermanHair, 22 },
-            {CharacterNames.Fishmonger, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1 },
-            {CharacterNames.Identifier, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 1},
+            {CharacterNames.Fishmonger, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 - 1},
+            {CharacterNames.Identifier, InGameDateTimeManager.HourToFreezeTimeIfPlayerNeedsKeyOnDay1 + 2},
             {CharacterNames.Mayor, 19 },
             {CharacterNames.Nun, 17 },
             {CharacterNames.Priestess, 23 },
@@ -120,7 +120,7 @@ namespace FishStory.Screens
         };
         private Dictionary<string, double> CharacterWakeTimes = new Dictionary<string, double>()
         {
-            {CharacterNames.BlackMarketShop, 20},
+            {CharacterNames.BlackMarketShop, 17},
             {CharacterNames.Conservationist, 9 },
             {CharacterNames.ElderlyMother, 11 },
             {CharacterNames.Farmer, 6 },
