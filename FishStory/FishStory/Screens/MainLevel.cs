@@ -16,6 +16,7 @@ using FishStory.DataTypes;
 using FishStory.Factories;
 using FishStory.Entities;
 using FlatRedBall.Scripting;
+using FlatRedBall.Math;
 
 namespace FishStory.Screens
 {
@@ -888,25 +889,33 @@ namespace FishStory.Screens
             if (!isPlayerSacrificed)
                 NPCList.FindByName(CharacterToSacrifice).CurrentChainName = "Idle";
             string officiant = CharacterToSacrifice == CharacterNames.Priestess ? CharacterNames.Nun : CharacterNames.Priestess;
-            // Change all the npcs but the priestess and the person getting sacrificed
-            var cloakedNPCs = NPCList.Where((npc) => npc.Name != officiant
-                && !npc.Name.Contains("Sign") && !npc.Name.Contains("Board")
-                && npc.Name != CharacterToSacrifice).ToArray();
-            foreach (var npc in cloakedNPCs)
-            {
-                npc.Animation = NPC.CloakedGuy;
-                npc.CurrentChainName = "Idle";
-            }
-            // Knock in the middle of the night. player clicks through dialog, then fade back in
-            float delayBeforeKnock = 1;
-            this.Call(() => { DialogBox.TryShow(nameof(GlobalContent.Day4Intro)); }).After(delayBeforeKnock);
+
+            NPC[] cloakedNPCs = null;
             var escortGuard1 = NPCList.FindByName(CharacterToSacrifice == CharacterNames.Farmer ? CharacterNames.Tycoon : CharacterNames.Farmer);
             var escortGuard2 = NPCList.FindByName(CharacterToSacrifice == CharacterNames.FishermanBald ? CharacterNames.Tycoon : CharacterNames.FishermanBald);
+            this.Call(() =>
+            {
+                // Change all the npcs but the priestess and the person getting sacrificed
+                    cloakedNPCs = NPCList.Where((npc) => npc.Name != officiant
+                    && !npc.Name.Contains("Sign") && !npc.Name.Contains("Board")
+                    && npc.Name != CharacterToSacrifice).ToArray();
+                foreach (var npc in cloakedNPCs)
+                {
+                    npc.Animation = NPC.CloakedGuy;
+                    npc.CurrentChainName = "Idle";
+                }
+                // Knock in the middle of the night. player clicks through dialog, then fade back in
+                float delayBeforeKnock = 1;
+                this.Call(() => { DialogBox.TryShow(nameof(GlobalContent.Day4Intro)); }).After(delayBeforeKnock);
 
-            escortGuard1.Position = new Microsoft.Xna.Framework.Vector3(729, -834, PlayerCharacterInstance.Z);
-            // escortGuard1.CurrentChainName = "WalkLeft";
-            escortGuard2.Position = new Microsoft.Xna.Framework.Vector3(696, -834, PlayerCharacterInstance.Z);
-        
+
+                escortGuard1.Position = new Microsoft.Xna.Framework.Vector3(729, -834, PlayerCharacterInstance.Z);
+                // escortGuard1.CurrentChainName = "WalkLeft";
+                escortGuard2.Position = new Microsoft.Xna.Framework.Vector3(696, -834, PlayerCharacterInstance.Z);
+
+            }).After(GameScreenGum.ToBlackAnimation.Length);
+ 
+             
             If.Check(() =>
             {
                 return HasTag("HasSeenKnocking") && !DialogBox.Visible;
