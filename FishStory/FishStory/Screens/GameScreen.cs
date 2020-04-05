@@ -290,6 +290,7 @@ namespace FishStory.Screens
             store.BuyButtonClick += HandleBuyClicked;
             store.Closed += HandleStoreClosed;
             store.CancelInput = PlayerCharacterInstance.CancelInput;
+            store.InventoryInput = PlayerCharacterInstance.InventoryInput;
             store.UpInput = PlayerCharacterInstance.UpInput;
             store.DownInput = PlayerCharacterInstance.DownInput;
             store.SelectInput = PlayerCharacterInstance.TalkInput;

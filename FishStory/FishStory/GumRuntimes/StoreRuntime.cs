@@ -16,12 +16,66 @@ namespace FishStory.GumRuntimes
         public IPressableInput DownInput { get; set; }
         public IPressableInput SelectInput { get; set; }
         public IPressableInput CancelInput { get; internal set; }
+        public IPressableInput InventoryInput { get; internal set; }
         ListBox listBox;
 
         public Dictionary<string, ShopItem> CurrentStore;
         public List<string> ItemsBoughtFromThisStore;
+        public int OptionCount => listBox.Items.Count();
 
         public ShopItem SelectedShopItem => listBox.SelectedObject as ShopItem;
+        public int? SelectedIndex
+        {
+            get
+            {
+                var selectedOption = CurrentlySelectedItem;
+
+                if (selectedOption == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return listBox.Items.IndexOf(selectedOption);
+                }
+            }
+            set
+            {
+                if (value.HasValue && value.Value >= 0)
+                {
+                    listBox.SelectedObject = listBox.Items[value.Value];
+                }
+                else
+                {
+                    listBox.SelectedObject = null;
+                }
+            }
+        }
+
+        private void RefreshSelectionDisplay()
+        {
+            int itemCount = OptionCount;
+
+            for (var i = 0; i < itemCount; i++)
+            {
+                if (ListBoxInstance.FormsControl.InnerPanel.Children[i] is InventoryListItemRuntime selectableItem)
+                {
+                    if (i == SelectedIndex)
+                    {
+                        selectableItem.CurrentListBoxItemCategoryState = InventoryListItemRuntime.ListBoxItemCategory.Selected;
+                    }
+                    else
+                    {
+                        selectableItem.CurrentListBoxItemCategoryState = InventoryListItemRuntime.ListBoxItemCategory.Enabled;
+                    }
+                }
+            }
+        }
+
+        public ShopItem CurrentlySelectedItem
+        {
+            get => listBox.SelectedObject as ShopItem;
+        }
         public ItemDefinition ItemToBuy => GlobalContent.ItemDefinition[SelectedShopItem.Item];
 
         #region Events
@@ -50,6 +104,8 @@ namespace FishStory.GumRuntimes
 
         private void HandleListBoxSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
+            RefreshSelectionDisplay();
+            ListBoxInstance.FormsControl.ScrollIntoView(CurrentlySelectedItem);
             UpdateBuyButtonDisplay();
             SoundManager.Play(GlobalContent.StoreItemSelectSound);
         }
@@ -82,9 +138,66 @@ namespace FishStory.GumRuntimes
         {
             if(Visible)
             {
-                if(CancelInput.WasJustPressed)
+                HandlePlayerInput();
+            }
+        }
+
+        private void HandlePlayerInput()
+        {
+            if (CancelInput.WasJustPressed || InventoryInput.WasJustPressed)
+            {
+                Close();
+            }
+            else
+            {
+                if (UpInput.WasJustPressed)
                 {
-                    Visible = false;
+                    int index = SelectedIndex ?? 0;
+
+                    if (index == 0)
+                    {
+                        SelectedIndex = OptionCount - 1;
+                    }
+                    else
+                    {
+                        if (!SelectedIndex.HasValue)
+                        {
+                            SelectedIndex = 1;
+                        }
+                        else
+                        {
+                            SelectedIndex--;
+                        }
+                    }
+                    SoundManager.Play(GlobalContent.MenuMoveSound);
+                }
+                if (DownInput.WasJustPressed)
+                {
+                    int index = SelectedIndex ?? 0;
+
+                    if (SelectedIndex == OptionCount - 1)
+                    {
+                        SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        if (!SelectedIndex.HasValue)
+                        {
+                            SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            SelectedIndex++;
+                        }
+                    }
+                    SoundManager.Play(GlobalContent.MenuMoveSound);
+                }
+                if (SelectInput.WasJustPressed)
+                {
+                    if (BuyButton.Enabled)
+                    {
+                        BuyButton.CallClick();
+                    }
                 }
             }
         }

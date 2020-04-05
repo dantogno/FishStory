@@ -53,18 +53,11 @@ namespace FishStory.GumRuntimes
         {
             get
             {
-                ItemWithCount selectedOption = CurrentlySelectedItem;
+                var selectedOption = CurrentlySelectedItem;
 
                 if (selectedOption == null)
                 {
-                    if (listBox.Items?.Count() == 1)
-                    {
-                        return 0;
-                    }
-                    else
-                    {
-                        return null;
-                    }
+                    return null;
                 }
                 else
                 {
@@ -73,36 +66,34 @@ namespace FishStory.GumRuntimes
             }
             set
             {
-                if (value.HasValue)
+                if (value.HasValue && value.Value >= 0)
                 {
                     listBox.SelectedObject = listBox.Items[value.Value];
                 }
                 else
                 {
-                    if (listBox.SelectedObject != null)
-                        (listBox.SelectedObject as InventoryListItemRuntime).CurrentListBoxItemCategoryState = InventoryListItemRuntime.ListBoxItemCategory.Enabled;
-
                     listBox.SelectedObject = null;
                 }
+            }
+        }
 
-                int index = 0;
-                foreach (var item in listBox.Items)
+        private void RefreshSelectionDisplay()
+        {
+            int itemCount = OptionCount;
+
+            for (var i = 0; i < itemCount; i++)
+            {
+                if (ListBoxInstance.FormsControl.InnerPanel.Children[i] is InventoryListItemRuntime selectableItem)
                 {
-                    if (item is InventoryListItemRuntime selectableItem)
+                    if (i == SelectedIndex)
                     {
-                        if (index++ == value)
-                        {
-                            selectableItem.CurrentListBoxItemCategoryState = InventoryListItemRuntime.ListBoxItemCategory.Selected;
-                        }
-                        else
-                        {
-                            selectableItem.CurrentListBoxItemCategoryState = InventoryListItemRuntime.ListBoxItemCategory.Enabled;
-                        }
-                        index++;
+                        selectableItem.CurrentListBoxItemCategoryState = InventoryListItemRuntime.ListBoxItemCategory.Selected;
+                    }
+                    else
+                    {
+                        selectableItem.CurrentListBoxItemCategoryState = InventoryListItemRuntime.ListBoxItemCategory.Enabled;
                     }
                 }
-                if (CurrentlySelectedItem!= null)
-                    ListBoxInstance.FormsControl.ScrollIntoView(CurrentlySelectedItem);
             }
         }
 
@@ -157,23 +148,28 @@ namespace FishStory.GumRuntimes
             {
                 if (UpInput.WasJustPressed)
                 {
-                    if (!SelectedIndex.HasValue)
-                        SelectedIndex = 0;
+                    int index = SelectedIndex ?? 0;
 
-                    if (SelectedIndex == 0)
+                    if (index == 0)
                     {
                         SelectedIndex = OptionCount - 1;
                     }
                     else
                     {
-                        SelectedIndex--;
+                        if (!SelectedIndex.HasValue)
+                        {
+                            SelectedIndex = 1;
+                        }
+                        else
+                        {
+                            SelectedIndex--;
+                        }
                     }
                     SoundManager.Play(GlobalContent.MenuMoveSound);
                 }
                 if (DownInput.WasJustPressed)
                 {
-                    if (!SelectedIndex.HasValue)
-                        SelectedIndex = 0;
+                    int index = SelectedIndex ?? 0;
 
                     if (SelectedIndex == OptionCount - 1)
                     {
@@ -181,13 +177,20 @@ namespace FishStory.GumRuntimes
                     }
                     else
                     {
-                        SelectedIndex++;
+                        if (!SelectedIndex.HasValue)
+                        {
+                            SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            SelectedIndex++;
+                        }
                     }
                     SoundManager.Play(GlobalContent.MenuMoveSound);
                 }
                 if (SelectInput.WasJustPressed)
                 {
-                    if (CurrentViewOrSellState != ViewOrSell.View)
+                    if (CurrentViewOrSellState != ViewOrSell.View && SellButton.Enabled)
                     {
                         SellButton.CallClick();
                     }
@@ -205,6 +208,8 @@ namespace FishStory.GumRuntimes
 
         private void HandleListBoxSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
+            RefreshSelectionDisplay();
+            ListBoxInstance.FormsControl.ScrollIntoView(CurrentlySelectedItem);
             UpdateCurrentDescription();
             UpdateSellButtonDisplay();
             SoundManager.Play(GlobalContent.ItemSelectedSound);
