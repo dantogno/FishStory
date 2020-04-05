@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using static DialogTreePlugin.SaveClasses.DialogTreeRaw;
+using TimeManager = FlatRedBall.TimeManager;
 
 namespace FishStory.GumRuntimes
 {

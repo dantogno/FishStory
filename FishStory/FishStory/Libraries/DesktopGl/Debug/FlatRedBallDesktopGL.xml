@@ -1069,17 +1069,7 @@
             .nntx (Node Network XML) file type.
             </summary>
         </member>
-        <member name="M:FlatRedBall.Content.AnimationChain.AnimationChainListSave.FromAnimationChainList(FlatRedBall.Graphics.Animation.AnimationChainList)">
-            <summary>
-            Create a "save" object from a regular animation chain list
-            </summary>
-        </member>
-        <member name="T:FlatRedBall.Content.AnimationChain.AnimationChainListSaveBase`1">
-            <summary>
-            Base class for AnimationChainListSave and AnimationChainListSaveContent.
-            </summary>
-        </member>
-        <member name="F:FlatRedBall.Content.AnimationChain.AnimationChainListSaveBase`1.FileRelativeTextures">
+        <member name="F:FlatRedBall.Content.AnimationChain.AnimationChainListSave.FileRelativeTextures">
             <summary>
             Whether files (usually image files) referenced by this object (and .achx) are
             relative to the .achx itself. If false, then file references will be stored as absolute. 
@@ -1088,75 +1078,70 @@
             have valid references.
             </summary>
         </member>
-        <member name="T:FlatRedBall.Content.AnimationChain.AnimationChainSaveBase`1">
+        <member name="M:FlatRedBall.Content.AnimationChain.AnimationChainListSave.FromAnimationChainList(FlatRedBall.Graphics.Animation.AnimationChainList)">
             <summary>
-            The base class for AnimationChainSave and AnimationChainSaveContent.
+            Create a "save" object from a regular animation chain list
             </summary>
         </member>
-        <member name="F:FlatRedBall.Content.AnimationChain.AnimationChainSaveBase`1.ParentFile">
+        <member name="F:FlatRedBall.Content.AnimationChain.AnimationChainSave.ParentFile">
             <summary>
             This is used if the AnimationChain actually comes from 
             a file like a .gif.
             </summary>
         </member>
-        <member name="T:FlatRedBall.Content.AnimationChain.AnimationFrameSaveBase">
-            <summary>
-            The base class for AnimationFrameSave and AnimationFrameSaveContent.
-            </summary>
-        </member>
-        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSaveBase.FlipHorizontal">
+        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSave.FlipHorizontal">
             <summary>
             Whether the texture should be flipped horizontally.
             </summary>
         </member>
-        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSaveBase.FlipVertical">
+        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSave.FlipVertical">
             <summary>
             Whether the texture should be flipped on the vertidally.
             </summary>
         </member>
-        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSaveBase.TextureName">
+        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSave.TextureName">
             <summary>
             Used in XML Serialization of AnimationChains - this should
             not explicitly be set by the user.
             </summary>
         </member>
-        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSaveBase.FrameLength">
+        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSave.FrameLength">
             <summary>
             The amount of time in seconds the AnimationFrame should be shown for.
             </summary>
         </member>
-        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSaveBase.LeftCoordinate">
+        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSave.LeftCoordinate">
             <summary>
             The left coordinate in texture coordinates of the AnimationFrame.  Default is 0.
             This may be in UV coordinates or pixel coordinates.
             </summary>
         </member>
-        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSaveBase.RightCoordinate">
+        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSave.RightCoordinate">
             <summary>
             The right coordinate in texture coordinates of the AnimationFrame.  Default is 1.
             This may be in UV coordinates or pixel coordinates.
             </summary>
         </member>
-        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSaveBase.TopCoordinate">
+        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSave.TopCoordinate">
             <summary>
             The top coordinate in texture coordinates of the AnimationFrame.  Default is 0.
             This may be in UV coordinates or pixel coordinates.
             </summary>
         </member>
-        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSaveBase.BottomCoordinate">
+        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSave.BottomCoordinate">
             <summary>
             The bottom coordinate in texture coordinates of the AnimationFrame.  Default is 1.
             This may be in UV coordinates or pixel coordinates.
             </summary>
         </member>
-        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSaveBase.RelativeX">
+        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSave.RelativeX">
             <summary>
             The relative X position of the object that is using this AnimationFrame.  This
             is only applied if the IAnimationChainAnimatable's UseAnimationRelativePosition is
             set to true.
             </summary>
         </member>
-        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSaveBase.RelativeY">
+        <member name="F:FlatRedBall.Content.AnimationChain.AnimationFrameSave.RelativeY">
             <summary>
             The relative Y position of the object that is using this AnimationFrame.  This
             is only applied if the IAnimationChainAnimatable's UseAnimationRelativePosition is
@@ -3858,6 +3843,12 @@
             portability between FlatRedBall Managed DirectX and FlatRedBall XNA.
             </summary>
         </member>
+        <member name="P:FlatRedBall.Input.Xbox360GamePad.Deadzone">
+            <summary>
+            The deadzone amount (axis independent) between 0 and 1. Values which 
+            are smaller than this (absolute value) will be treated as 0.
+            </summary>
+        </member>
         <member name="P:FlatRedBall.Input.Xbox360GamePad.IsConnected">
             <summary>
             Returns whether the current Xbox360GamePad hardware is connected, or if 
@@ -6555,11 +6546,26 @@
             A class storing enumerations for collisions.
             </summary>
         </member>
+        <member name="T:FlatRedBall.Math.Collision.CollisionManager">
+            <summary>
+            Stores and executes collision relationships.
+            </summary>
+        </member>
         <member name="P:FlatRedBall.Math.Collision.CollisionManager.Relationships">
             <summary>
             The relationships which are currently part of the collision manager. This should not be added to
             by regular game code. This is exposed so that collision manager extension methods can add new relationships, and
             so relationships can be cleared.
+            </summary>
+        </member>
+        <member name="F:FlatRedBall.Math.Collision.LoopDirection.BackToFront">
+            <summary>
+            Indicates that loops will run from back to front (a reverse loop)
+            </summary>
+        </member>
+        <member name="F:FlatRedBall.Math.Collision.LoopDirection.FrontToBack">
+            <summary>
+            Indicates that loops will run from front to back (normal loop)
             </summary>
         </member>
         <member name="P:FlatRedBall.Math.Collision.CollisionRelationship.CollidedThisFrame">
@@ -8902,7 +8908,7 @@
         <member name="P:FlatRedBall.Screens.Screen.RestartVariables">
             <summary>
             A collection of variables to reset. This can be variables on the Screen itself or variables on objects within
-            the screen, like PlayerInstance.X
+            the screen, like this.PlayerInstance.X. Note that any objects which belong to the screen must begin with the name "this".
             </summary>
         </member>
         <member name="P:FlatRedBall.Screens.Screen.Instructions">
@@ -10081,6 +10087,13 @@
             </summary>
             <param name="vectorToMeasure">The vector to </param>
             <returns>The length squared, ignoring Z.</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Vector3ExtensionMethods.Length2D(Microsoft.Xna.Framework.Vector3)">
+            <summary>
+            Reeturns the length of the vector ignoring the Z value. The returned value is the same as first setting Z to 0 and calling Length.
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

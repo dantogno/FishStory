@@ -12,6 +12,9 @@ namespace FishStory.GumRuntimes
 {
     public partial class StoreRuntime
     {
+        public IPressableInput UpInput { get; set; }
+        public IPressableInput DownInput { get; set; }
+        public IPressableInput SelectInput { get; set; }
         public IPressableInput CancelInput { get; internal set; }
         ListBox listBox;
 

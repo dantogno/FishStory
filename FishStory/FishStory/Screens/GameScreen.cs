@@ -284,10 +284,15 @@ namespace FishStory.Screens
             #endregion
 
             #region Store
-            GameScreenGum.StoreInstance.CancelInput = PlayerCharacterInstance.CancelInput;
-            GameScreenGum.StoreInstance.Visible = false;
-            GameScreenGum.StoreInstance.BuyButtonClick += HandleBuyClicked;
-            GameScreenGum.StoreInstance.Closed += HandleStoreClosed;
+            var store = GameScreenGum.StoreInstance;
+            store.CancelInput = PlayerCharacterInstance.CancelInput;
+            store.Visible = false;
+            store.BuyButtonClick += HandleBuyClicked;
+            store.Closed += HandleStoreClosed;
+            store.CancelInput = PlayerCharacterInstance.CancelInput;
+            store.UpInput = PlayerCharacterInstance.UpInput;
+            store.DownInput = PlayerCharacterInstance.DownInput;
+            store.SelectInput = PlayerCharacterInstance.TalkInput;
             #endregion
 
             #region Inventory
@@ -298,6 +303,9 @@ namespace FishStory.Screens
             inventory.Closed += HandleInventoryClosed;
             inventory.CancelInput = PlayerCharacterInstance.CancelInput;
             inventory.InventoryInput = PlayerCharacterInstance.InventoryInput;
+            inventory.UpInput = PlayerCharacterInstance.UpInput;
+            inventory.DownInput = PlayerCharacterInstance.DownInput;
+            inventory.SelectInput = PlayerCharacterInstance.TalkInput;
             #endregion
 
             GameScreenGum.NotificationBoxInstance.UpdateVisibility();
@@ -378,6 +386,7 @@ namespace FishStory.Screens
 #if DEBUG
                 DebuggingActivity();
 #endif
+
 
                 // do script *after* the UI
                 Map?.AnimateSelf();
@@ -1004,16 +1013,28 @@ namespace FishStory.Screens
             //    GameScreenGum.NotificationBoxInstance.AddNotification($"You pushed space at {DateTime.Now.ToShortTimeString()}");
             //}
 
+
+
             DialogBox.CustomActivity();
 
             GameScreenGum.StoreInstance.CustomActivity();
 
             GameScreenGum.NotificationBoxInstance.CustomActivity();
 
+            if (GameScreenGum.InventoryInstance.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed && PlayerCharacterInstance.ObjectsBlockingInput.Any() == false)
+            {
+                ShowInventory(InventoryRuntime.ViewOrSell.View, 1.0f, InventoryRestrictions.NoRestrictions);
+            }
+            else
+            {
+                GameScreenGum.InventoryInstance.CustomActivity();
+            }
+
             DayAndTimeDisplayInstance.UpdateTime(InGameDateTimeManager.OurInGameDay);
 
-            InventoryUiActivity();
         }
+
+  
 
         protected void AddNotification(string notification) =>
             GameScreenGum.NotificationBoxInstance.AddNotification(notification);
@@ -1209,20 +1230,6 @@ namespace FishStory.Screens
             SoundManager.Play(GlobalContent.StoreBuySound);
         }
 
-        private void InventoryUiActivity()
-        {
-            var inventory = GameScreenGum.InventoryInstance;
-            if(inventory.Visible)
-            {
-                inventory.CustomActivity();
-            }
-            else if (inventory.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed && PlayerCharacterInstance.ObjectsBlockingInput.Any() == false)
-            {
-                SoundManager.Play(GlobalContent.InventoryOpenSound);
-                ShowInventory(InventoryRuntime.ViewOrSell.View, 1.0f, InventoryRestrictions.NoRestrictions);
-            }
-        }
-
         private void ShowInventory(InventoryRuntime.ViewOrSell state, 
             float sellPriceMultiplier, InventoryRestrictions inventoryRestrictions)
         {
@@ -1235,6 +1242,8 @@ namespace FishStory.Screens
             inventory.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
 
             PlayerCharacterInstance.ObjectsBlockingInput.Add(inventory);
+
+            SoundManager.Play(GlobalContent.InventoryOpenSound);
             PauseThisScreen();
         }
 

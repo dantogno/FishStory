@@ -71,21 +71,9 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>string</Type>
-      <Name>CustomNiceSliceInstance.Parent</Name>
-      <Value xsi:type="xsd:string">UpButtonInstance</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>CustomNiceSliceInstance1.Parent</Name>
-      <Value xsi:type="xsd:string">DownButtonInstance</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>float</Type>
       <Name>DownButtonInstance.Height</Name>
-      <Value xsi:type="xsd:float">28</Value>
+      <Value xsi:type="xsd:float">32</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -156,26 +144,20 @@
     <Variable>
       <Type>bool</Type>
       <Name>SpriteInstance1.FlipVertical</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>SpriteInstance1.Height</Name>
-      <Value xsi:type="xsd:float">150</Value>
+      <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>SpriteInstance1.Parent</Name>
-      <Value xsi:type="xsd:string">CustomNiceSliceInstance</Value>
+      <Value xsi:type="xsd:string">UpButtonInstance</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <IsFile>true</IsFile>
       <Type>string</Type>
       <Name>SpriteInstance1.SourceFile</Name>
-      <Value xsi:type="xsd:string">../Levels/MasterTileSheet.png</Value>
+      <Value xsi:type="xsd:string">UISpriteSheet.png</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -187,31 +169,25 @@
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance1.Texture Height</Name>
-      <Value xsi:type="xsd:int">8</Value>
+      <Value xsi:type="xsd:int">18</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance1.Texture Left</Name>
-      <Value xsi:type="xsd:int">222</Value>
+      <Value xsi:type="xsd:int">105</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance1.Texture Top</Name>
-      <Value xsi:type="xsd:int">1596</Value>
+      <Value xsi:type="xsd:int">15</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance1.Texture Width</Name>
-      <Value xsi:type="xsd:int">8</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>SpriteInstance1.Width</Name>
-      <Value xsi:type="xsd:float">150</Value>
+      <Value xsi:type="xsd:int">31</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -251,28 +227,16 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>bool</Type>
-      <Name>SpriteInstance2.FlipVertical</Name>
-      <Value xsi:type="xsd:boolean">true</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>SpriteInstance2.Height</Name>
-      <Value xsi:type="xsd:float">150</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>string</Type>
       <Name>SpriteInstance2.Parent</Name>
-      <Value xsi:type="xsd:string">CustomNiceSliceInstance1</Value>
+      <Value xsi:type="xsd:string">DownButtonInstance</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <IsFile>true</IsFile>
       <Type>string</Type>
       <Name>SpriteInstance2.SourceFile</Name>
-      <Value xsi:type="xsd:string">../Levels/MasterTileSheet.png</Value>
+      <Value xsi:type="xsd:string">UISpriteSheet.png</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -284,31 +248,25 @@
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance2.Texture Height</Name>
-      <Value xsi:type="xsd:int">8</Value>
+      <Value xsi:type="xsd:int">18</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance2.Texture Left</Name>
-      <Value xsi:type="xsd:int">222</Value>
+      <Value xsi:type="xsd:int">105</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance2.Texture Top</Name>
-      <Value xsi:type="xsd:int">1596</Value>
+      <Value xsi:type="xsd:int">15</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance2.Texture Width</Name>
-      <Value xsi:type="xsd:int">8</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>SpriteInstance2.Width</Name>
-      <Value xsi:type="xsd:float">150</Value>
+      <Value xsi:type="xsd:int">31</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -463,7 +421,7 @@
     <Variable>
       <Type>float</Type>
       <Name>UpButtonInstance.Height</Name>
-      <Value xsi:type="xsd:float">28</Value>
+      <Value xsi:type="xsd:float">32</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -523,7 +481,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">28</Value>
+      <Value xsi:type="xsd:float">36</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -575,23 +533,13 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>ThumbContainer</Name>
-    <BaseType>Container</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
     <Name>SpriteInstance2</Name>
     <BaseType>Sprite</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>CustomNiceSliceInstance</Name>
-    <BaseType>CustomNiceSlice</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>CustomNiceSliceInstance1</Name>
-    <BaseType>CustomNiceSlice</BaseType>
+    <Name>ThumbContainer</Name>
+    <BaseType>Container</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors>

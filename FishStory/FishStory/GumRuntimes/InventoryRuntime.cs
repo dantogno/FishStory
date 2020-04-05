@@ -1,7 +1,9 @@
 using FishStory.Forms;
+using FishStory.GumRuntimes.DefaultForms;
 using FishStory.Managers;
 using FlatRedBall.Forms.Controls;
 using FlatRedBall.Input;
+using Gum.Wireframe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,15 +24,22 @@ namespace FishStory.GumRuntimes
     {
         #region Fields/Properties
 
-        ListBox listBox;
+        private ListBox listBox;
+        private ScrollBar VerticalScrollBar => ListBoxInstance?.ScrollBar?.FormsControl;
 
         public Action SellClicked;
+
+        public IPressableInput UpInput { get; set; }
+        public IPressableInput DownInput { get; set; }
+        public IPressableInput SelectInput { get; set; }
 
         public IPressableInput CancelInput { get; internal set; }
         public IPressableInput InventoryInput { get; internal set; }
 
         public float LastSellPriceMultiplier { get; private set; }
         public InventoryRestrictions InventoryRestrictions { get; private set; }
+
+        public int OptionCount => listBox.Items.Count();
         public string SelectedItemName
         {
             get => CurrentlySelectedItem?.ItemName;
@@ -38,6 +47,62 @@ namespace FishStory.GumRuntimes
             {
                 listBox.SelectedObject = listBox.Items
                     .FirstOrDefault(item => ((ItemWithCount)item).ItemName == value);
+            }
+        }
+        public int? SelectedIndex
+        {
+            get
+            {
+                ItemWithCount selectedOption = CurrentlySelectedItem;
+
+                if (selectedOption == null)
+                {
+                    if (listBox.Items?.Count() == 1)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                else
+                {
+                    return listBox.Items.IndexOf(selectedOption);
+                }
+            }
+            set
+            {
+                if (value.HasValue)
+                {
+                    listBox.SelectedObject = listBox.Items[value.Value];
+                }
+                else
+                {
+                    if (listBox.SelectedObject != null)
+                        (listBox.SelectedObject as InventoryListItemRuntime).CurrentListBoxItemCategoryState = InventoryListItemRuntime.ListBoxItemCategory.Enabled;
+
+                    listBox.SelectedObject = null;
+                }
+
+                int index = 0;
+                foreach (var item in listBox.Items)
+                {
+                    if (item is InventoryListItemRuntime selectableItem)
+                    {
+                        if (index++ == value)
+                        {
+                            selectableItem.CurrentListBoxItemCategoryState = InventoryListItemRuntime.ListBoxItemCategory.Selected;
+                        }
+                        else
+                        {
+                            selectableItem.CurrentListBoxItemCategoryState = InventoryListItemRuntime.ListBoxItemCategory.Enabled;
+                        }
+                        index++;
+                    }
+                }
+                if (CurrentlySelectedItem!= null)
+                    ListBoxInstance.FormsControl.ScrollIntoView(CurrentlySelectedItem);
             }
         }
 
@@ -76,24 +141,60 @@ namespace FishStory.GumRuntimes
         {
             if (Visible)
             {
-                if (CancelInput.WasJustPressed)
+                HandlePlayerInput();
+                UpdateSellButtonDisplay();
+            }
+        }
+
+        private void HandlePlayerInput()
+        {
+            if (CancelInput.WasJustPressed ||
+                (CurrentViewOrSellState == ViewOrSell.View && InventoryInput.WasJustPressed))
+            {
+                Close();
+            }
+            else
+            {
+                if (UpInput.WasJustPressed)
                 {
-                    Close();
+                    if (!SelectedIndex.HasValue)
+                        SelectedIndex = 0;
+
+                    if (SelectedIndex == 0)
+                    {
+                        SelectedIndex = OptionCount - 1;
+                    }
+                    else
+                    {
+                        SelectedIndex--;
+                    }
+                    SoundManager.Play(GlobalContent.MenuMoveSound);
                 }
-                if (CurrentViewOrSellState == ViewOrSell.View && InventoryInput.WasJustPressed)
+                if (DownInput.WasJustPressed)
                 {
-                    Close();
+                    if (!SelectedIndex.HasValue)
+                        SelectedIndex = 0;
+
+                    if (SelectedIndex == OptionCount - 1)
+                    {
+                        SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        SelectedIndex++;
+                    }
+                    SoundManager.Play(GlobalContent.MenuMoveSound);
                 }
-                if (SellButton.Visible != (CurrentViewOrSellState == ViewOrSell.SellToBlackMarket || CurrentViewOrSellState == ViewOrSell.SellToStore))
+                if (SelectInput.WasJustPressed)
                 {
-                    SellButton.Visible = (CurrentViewOrSellState == ViewOrSell.SellToBlackMarket || CurrentViewOrSellState == ViewOrSell.SellToStore);
-                }
-                if (CurrentViewOrSellState != ViewOrSell.View)
-                {
-                    UpdateSellButtonDisplay();
+                    if (CurrentViewOrSellState != ViewOrSell.View)
+                    {
+                        SellButton.CallClick();
+                    }
                 }
             }
         }
+
 
         private void Close()
         {
@@ -111,13 +212,21 @@ namespace FishStory.GumRuntimes
 
         private void UpdateSellButtonDisplay()
         {
-            if (CurrentlySelectedItem is null || CurrentlySelectedItem.Count <= 0)
+            if (SellButton.Visible != (CurrentViewOrSellState == ViewOrSell.SellToBlackMarket || CurrentViewOrSellState == ViewOrSell.SellToStore))
             {
-                DisableSellButton();
+                SellButton.Visible = (CurrentViewOrSellState == ViewOrSell.SellToBlackMarket || CurrentViewOrSellState == ViewOrSell.SellToStore);
             }
-            else
+
+            if (CurrentViewOrSellState != ViewOrSell.View)
             {
-                EnableSellButton();
+                if (CurrentlySelectedItem is null || CurrentlySelectedItem.Count <= 0)
+                {
+                    DisableSellButton();
+                }
+                else
+                {
+                    EnableSellButton();
+                }
             }
         }
 
