@@ -10,6 +10,7 @@ using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using static DialogTreePlugin.SaveClasses.DialogTreeRaw;
 using Microsoft.Xna.Framework;
+using FlatRedBall.Graphics;
 
 namespace FishStory.Entities
 {
@@ -22,9 +23,27 @@ namespace FishStory.Entities
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not
         /// added to managers will not have this method called.
         /// </summary>
+        /// 
+        public void SetDialogue(string dialogueId, bool showSpeechBubble = true)
+        {
+            this.TwineDialogId = dialogueId;
+            EmotiveIconInstance.CurrentIconDisplayState = EmotiveIcon.IconDisplay.Idea;
+            EmotiveIconInstance.CurrentDisplayState = EmotiveIcon.Display.Cycle;
+            EmotiveIconInstance.Visible = showSpeechBubble;
+        }
+
+        public void HandleDialogueSeen()
+        {
+            EmotiveIconInstance.Visible = false;
+        }
         private void CustomInitialize()
         {
 
+        }
+
+        public void MoveDisplayElementsToUiLayer(Layer uiLayer)
+        {
+            EmotiveIconInstance.MoveToLayer(uiLayer);
         }
 
         private void CustomActivity()

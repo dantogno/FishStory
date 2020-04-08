@@ -225,7 +225,11 @@ namespace FishStory.Screens
                 // Designers will not assign an animation if the intent is that the sprite is hidden.
                 // So all the DumpSigns should be visible = false.
                 if (npc.Animation == NPC.DumpSign)
+                {
                     npc.SpriteInstance.Visible = false;
+                }
+                else
+                    npc.MoveDisplayElementsToUiLayer(UILayer);
             }
             foreach (var propObject in PropObjectList)
             {
@@ -607,6 +611,7 @@ namespace FishStory.Screens
                             // For invisible NPCs, we don't want to show the portrait.
                             DialoguePortrait.Visible = npc.SpriteInstance.Visible;
                             PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                            npc.HandleDialogueSeen();
                         }
 
                     }
@@ -618,6 +623,7 @@ namespace FishStory.Screens
                             // For invisible NPCs, we don't want to show the portrait.
                             DialoguePortrait.Visible = npc.SpriteInstance.Visible;
                             PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                            npc.HandleDialogueSeen();
                         }
                     }
                 }
