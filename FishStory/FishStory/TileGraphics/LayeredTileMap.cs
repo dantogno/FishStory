@@ -393,10 +393,6 @@ namespace FlatRedBall.TileGraphics
                         matchingLayer.Visible = mapLayer.visible == 1;
                         matchingLayer.Alpha = mapLayer.Opacity;
                     }
-                    else if (layer is mapObjectgroup objectLayer)
-                    {
-                        matchingLayer.Visible = objectLayer.IsVisible;
-                    }
                 }
             }
 
@@ -486,7 +482,7 @@ namespace FlatRedBall.TileGraphics
                 mdb.Alpha = imageLayer.Opacity;
                 mdb.AttachTo(toReturn, false);
                 mdb.Paste(newSprite);
-                mdb.Visible = imageLayer.IsVisible;
+                mdb.Visible = imageLayer.Visible;
 
                 toReturn.mMapLists.Add(mdb);
             }

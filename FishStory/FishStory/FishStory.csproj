@@ -139,7 +139,9 @@
       <DependentUpon>InventoryRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\PauseMenuRuntime.cs" />
-    <Compile Include="GumRuntimes\PauseMenuRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\PauseMenuRuntime.Generated.cs">
+      <DependentUpon>PauseMenuRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.cs" />
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.Generated.cs">
       <DependentUpon>TitleScreenGumRuntime.cs</DependentUpon>
