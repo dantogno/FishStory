@@ -54,6 +54,8 @@ namespace FishStory.Screens
         Dictionary<string, List<string>> ItemsBought = new Dictionary<string, List<string>>();
 
         private bool FadeInComplete => FadeInSprite.Alpha <= 0f;
+        private StoreRuntime StoreInstance => GameScreenGum.StoreInstance;
+        private InventoryRuntime InventoryInstance => GameScreenGum.InventoryInstance;
 
         #endregion
 
@@ -288,34 +290,44 @@ namespace FishStory.Screens
             #endregion
 
             #region Store
-            var store = GameScreenGum.StoreInstance;
-            store.CancelInput = PlayerCharacterInstance.CancelInput;
-            store.Visible = false;
-            store.BuyButtonClick += HandleBuyClicked;
-            store.Closed += HandleStoreClosed;
-            store.CancelInput = PlayerCharacterInstance.CancelInput;
-            store.InventoryInput = PlayerCharacterInstance.InventoryInput;
-            store.UpInput = PlayerCharacterInstance.UpInput;
-            store.DownInput = PlayerCharacterInstance.DownInput;
-            store.SelectInput = PlayerCharacterInstance.TalkInput;
+            StoreInstance.CancelInput = PlayerCharacterInstance.CancelInput;
+            StoreInstance.Visible = false;
+            StoreInstance.BuyButtonClick += HandleBuyClicked;
+            StoreInstance.Closed += HandleStoreClosed;
+            StoreInstance.CancelInput = PlayerCharacterInstance.CancelInput;
+            StoreInstance.InventoryInput = PlayerCharacterInstance.InventoryInput;
+            StoreInstance.UpInput = PlayerCharacterInstance.UpInput;
+            StoreInstance.DownInput = PlayerCharacterInstance.DownInput;
+            StoreInstance.SelectInput = PlayerCharacterInstance.TalkInput;
             #endregion
 
             #region Inventory
-
-            var inventory = GameScreenGum.InventoryInstance;
-            inventory.Visible = false;
-            inventory.SellClicked += HandleSellClicked;
-            inventory.Closed += HandleInventoryClosed;
-            inventory.CancelInput = PlayerCharacterInstance.CancelInput;
-            inventory.InventoryInput = PlayerCharacterInstance.InventoryInput;
-            inventory.UpInput = PlayerCharacterInstance.UpInput;
-            inventory.DownInput = PlayerCharacterInstance.DownInput;
-            inventory.SelectInput = PlayerCharacterInstance.TalkInput;
+            InventoryInstance.Visible = false;
+            InventoryInstance.SellClicked += HandleSellClicked;
+            InventoryInstance.Closed += HandleInventoryClosed;
+            InventoryInstance.CancelInput = PlayerCharacterInstance.CancelInput;
+            InventoryInstance.InventoryInput = PlayerCharacterInstance.InventoryInput;
+            InventoryInstance.UpInput = PlayerCharacterInstance.UpInput;
+            InventoryInstance.DownInput = PlayerCharacterInstance.DownInput;
+            InventoryInstance.SelectInput = PlayerCharacterInstance.TalkInput;
             #endregion
 
+            #region Pause Screen
+            GameScreenGum.PauseMenuInstance.UpInput = PlayerCharacterInstance.UpInput;
+            GameScreenGum.PauseMenuInstance.DownInput = PlayerCharacterInstance.DownInput;
+            GameScreenGum.PauseMenuInstance.SelectInput = PlayerCharacterInstance.TalkInput;
+            GameScreenGum.PauseMenuInstance.CancelInput = PlayerCharacterInstance.CancelInput;
+            GameScreenGum.PauseMenuInstance.Closed += PauseMenuInstance_Closed;
+            #endregion
             GameScreenGum.NotificationBoxInstance.UpdateVisibility();
 
             GameScreenGum.MoveToFrbLayer(UILayer, UILayerGum);
+        }
+
+        private void PauseMenuInstance_Closed()
+        {
+            GameScreenGum.PauseMenuInstance.Visible = false;
+            UnpauseThisScreen();
         }
 
         private void HandleStoreClosed()
@@ -1019,26 +1031,37 @@ namespace FishStory.Screens
             //{
             //    GameScreenGum.NotificationBoxInstance.AddNotification($"You pushed space at {DateTime.Now.ToShortTimeString()}");
             //}
-
-
-
-            DialogBox.CustomActivity();
-
-            GameScreenGum.StoreInstance.CustomActivity();
-
-            GameScreenGum.NotificationBoxInstance.CustomActivity();
-
-            if (GameScreenGum.InventoryInstance.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed && PlayerCharacterInstance.ObjectsBlockingInput.Any() == false)
+            var anyInterfaceVisible = DialogBox.Visible || InventoryInstance.Visible|| StoreInstance.Visible;
+            if (!IsPaused && PlayerCharacterInstance.PauseInput.WasJustPressed)
             {
-                ShowInventory(InventoryRuntime.ViewOrSell.View, 1.0f, InventoryRestrictions.NoRestrictions);
+                GameScreenGum.PauseMenuInstance.Visible = true;
+                PauseThisScreen();
+            }
+
+            if (IsPaused && !anyInterfaceVisible)
+            {
+                //Pause screen interface
+                GameScreenGum.PauseMenuInstance.CustomActivity();
             }
             else
             {
-                GameScreenGum.InventoryInstance.CustomActivity();
+                DialogBox.CustomActivity();
+
+                GameScreenGum.StoreInstance.CustomActivity();
+
+                GameScreenGum.NotificationBoxInstance.CustomActivity();
+
+                if (InventoryInstance.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed && PlayerCharacterInstance.ObjectsBlockingInput.Any() == false)
+                {
+                    ShowInventory(InventoryRuntime.ViewOrSell.View, 1.0f, InventoryRestrictions.NoRestrictions);
+                }
+                else
+                {
+                    InventoryInstance.CustomActivity();
+                }
+
+                DayAndTimeDisplayInstance.UpdateTime(InGameDateTimeManager.OurInGameDay);
             }
-
-            DayAndTimeDisplayInstance.UpdateTime(InGameDateTimeManager.OurInGameDay);
-
         }
 
   

@@ -28,6 +28,7 @@ namespace FishStory.Entities
         public IPressableInput InventoryInput;
         public IPressableInput UpInput;
         public IPressableInput DownInput;
+        public IPressableInput PauseInput;
 
         public NPC NpcForAction { get; set; }
 
@@ -77,6 +78,9 @@ namespace FishStory.Entities
                     .Or(keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.W));
                 DownInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Down)
                     .Or(keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.S));
+                PauseInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.M)
+                    .Or(keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.F1))
+                    .Or(keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Pause));
             }
             else if(InputDevice is Xbox360GamePad gamepad)
             {
@@ -87,6 +91,7 @@ namespace FishStory.Entities
                     .Or(gamepad.LeftStick.UpAsButton);
                 DownInput = gamepad.GetButton(Xbox360GamePad.Button.DPadDown)
                     .Or(gamepad.LeftStick.DownAsButton);
+                PauseInput = gamepad.GetButton(Xbox360GamePad.Button.Start);
             }
         }
 
