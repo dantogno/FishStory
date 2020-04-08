@@ -165,6 +165,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>PauseMenu</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>SelectableOption</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
