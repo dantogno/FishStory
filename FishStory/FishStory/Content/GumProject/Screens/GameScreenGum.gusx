@@ -212,6 +212,12 @@
       <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>PauseMenuInstance.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
   </State>
   <Category>
     <Name>OverlayAnimation</Name>
@@ -279,6 +285,11 @@
   <Instance>
     <Name>EndingScreenTransitionInstance</Name>
     <BaseType>EndingScreenTransition</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>PauseMenuInstance</Name>
+    <BaseType>PauseMenu</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
 </ScreenSave>

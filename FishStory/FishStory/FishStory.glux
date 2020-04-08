@@ -2002,6 +2002,33 @@
           <Name>IconDisplay</Name>
           <SharesVariablesWithOtherCategories>false</SharesVariablesWithOtherCategories>
         </StateSaveCategory>
+        <StateSaveCategory>
+          <States>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>SpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>Appear</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>Appearing</Name>
+            </StateSave>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>SpriteInstanceCurrentChainName</Member>
+                  <ValueAsString>Cycle</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>Cycle</Name>
+            </StateSave>
+          </States>
+          <ExcludedVariables />
+          <Name>Display</Name>
+          <SharesVariablesWithOtherCategories>false</SharesVariablesWithOtherCategories>
+        </StateSaveCategory>
       </StateCategoryList>
       <CustomVariables>
         <CustomVariable>
@@ -2056,6 +2083,19 @@
           <DefaultValue xsi:type="xsd:string">ExclamationIcon</DefaultValue>
           <SourceObject>SpriteInstance</SourceObject>
           <SourceObjectProperty>AnimationChains</SourceObjectProperty>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>string</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>SpriteInstanceCurrentChainName</Name>
+          <Type>string</Type>
+          <DefaultValue xsi:type="xsd:string">Appear</DefaultValue>
+          <SourceObject>SpriteInstance</SourceObject>
+          <SourceObjectProperty>CurrentChainName</SourceObjectProperty>
         </CustomVariable>
       </CustomVariables>
       <ImplementsIVisible>true</ImplementsIVisible>
@@ -3086,6 +3126,30 @@
           <SourceClassType>Circle</SourceClassType>
           <InstanceName>BodyCollision</InstanceName>
           <HasPublicProperty>true</HasPublicProperty>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>Y</Member>
+            <ValueAsFloat>24</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>bool</Type>
+            <Member>Visible</Member>
+            <ValueAsBool>false</ValueAsBool>
+          </CustomProperty>
+          <Properties>
+            <PropertySave>
+              <Name>SourceType</Name>
+              <ValueAsObject xsi:type="SourceType">Entity</ValueAsObject>
+            </PropertySave>
+          </Properties>
+          <SourceType>Entity</SourceType>
+          <SourceClassType>Entities\EmotiveIcon</SourceClassType>
+          <InstanceName>EmotiveIconInstance</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -4309,10 +4373,6 @@
     <ReferencedFileSave>
       <Properties>
         <PropertySave>
-          <Name>FileAdditionBehavior</Name>
-          <ValueAsInt>1</ValueAsInt>
-        </PropertySave>
-        <PropertySave>
           <Name>ShowMouse</Name>
           <ValueAsBool>true</ValueAsBool>
         </PropertySave>
@@ -4323,6 +4383,10 @@
         <PropertySave>
           <Name>IncludeComponentToFormsAssociation</Name>
           <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+        <PropertySave>
+          <Name>FileAdditionBehavior</Name>
+          <ValueAsInt>1</ValueAsInt>
         </PropertySave>
       </Properties>
       <Name>GumProject/GumProject.gumx</Name>

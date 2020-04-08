@@ -10,6 +10,7 @@ using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using static DialogTreePlugin.SaveClasses.DialogTreeRaw;
 using Microsoft.Xna.Framework;
+using FlatRedBall.Graphics;
 
 namespace FishStory.Entities
 {
@@ -22,9 +23,27 @@ namespace FishStory.Entities
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not
         /// added to managers will not have this method called.
         /// </summary>
+        /// 
+        public void SetDialogue(string dialogueId, bool showSpeechBubble = true)
+        {
+            this.TwineDialogId = dialogueId;
+            EmotiveIconInstance.CurrentIconDisplayState = EmotiveIcon.IconDisplay.Idea;
+            EmotiveIconInstance.CurrentDisplayState = EmotiveIcon.Display.Cycle;
+            EmotiveIconInstance.Visible = showSpeechBubble;
+        }
+
+        public void HandleDialogueSeen()
+        {
+            EmotiveIconInstance.Visible = false;
+        }
         private void CustomInitialize()
         {
 
+        }
+
+        public void MoveDisplayElementsToUiLayer(Layer uiLayer)
+        {
+            EmotiveIconInstance.MoveToLayer(uiLayer);
         }
 
         private void CustomActivity()
@@ -52,11 +71,23 @@ namespace FishStory.Entities
                 var idleFrame = SpriteInstance.AnimationChains[SpriteInstance.CurrentChainIndex][1];
                 var textureHeight = idleFrame.Texture.Bounds.Height;
                 var textureWidth = idleFrame.Texture.Bounds.Width;
+
+                var frameTopPixel = (int)(textureHeight * idleFrame.TopCoordinate);
+                var frameLeftPixel = (int)(textureWidth * idleFrame.LeftCoordinate);
+                var frameBottomPixel = (int)(textureHeight * idleFrame.BottomCoordinate);
+                var frameRightPixel = (int)(textureWidth * idleFrame.RightCoordinate);
+
+                var frameWidth = frameRightPixel - frameLeftPixel;
+                var frameHeight = frameBottomPixel - frameTopPixel;
+
+                var portraitHeight = 16;
+                var portraitWidth = 16;
+
                 var rect = new Rectangle(
-                    x: (int)(textureWidth * idleFrame.LeftCoordinate),
-                    y: (int)(textureHeight * idleFrame.TopCoordinate),
-                    width: 16,
-                    height: 16
+                    x: frameLeftPixel + (frameWidth / 2) - (portraitWidth/2) - (int)idleFrame.RelativeX,
+                    y: frameTopPixel,
+                    width: portraitWidth,
+                    height: portraitHeight
                     );
                 return rect;
             }

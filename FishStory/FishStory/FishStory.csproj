@@ -126,6 +126,7 @@
     <Compile Include="GumRuntimes\CreditsScreenGumRuntime.Generated.cs">
       <DependentUpon>CreditsScreenGumRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\DefaultForms\ListBoxRuntime.cs" />
     <Compile Include="GumRuntimes\DialoguePortraitRuntime.cs" />
     <Compile Include="GumRuntimes\DialoguePortraitRuntime.Generated.cs">
       <DependentUpon>DialoguePortraitRuntime.cs</DependentUpon>
@@ -137,6 +138,8 @@
     <Compile Include="GumRuntimes\InventoryRuntime.Generated.cs">
       <DependentUpon>InventoryRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\PauseMenuRuntime.cs" />
+    <Compile Include="GumRuntimes\PauseMenuRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.cs" />
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.Generated.cs">
       <DependentUpon>TitleScreenGumRuntime.cs</DependentUpon>
@@ -214,7 +217,9 @@
       <DependentUpon>InventoryListItemRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\DefaultForms\ListBoxItemRuntime.Generated.cs" />
-    <Compile Include="GumRuntimes\DefaultForms\ListBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\DefaultForms\ListBoxRuntime.Generated.cs">
+      <DependentUpon>ListBoxRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\DefaultForms\PasswordBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\RadioButtonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\DefaultForms\ScrollBarRuntime.Generated.cs" />
@@ -1453,6 +1458,10 @@
     <None Include="content\gumproject\components\optionsmarker.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>optionsmarker</Name>
+    </None>
+    <None Include="content\gumproject\components\pausemenu.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>pausemenu</Name>
     </None>
     <None Include="content\gumproject\components\selectableoption.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

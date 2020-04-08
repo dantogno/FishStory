@@ -26,6 +26,9 @@ namespace FishStory.Entities
         public IPressableInput TalkInput;
         public IPressableInput CancelInput;
         public IPressableInput InventoryInput;
+        public IPressableInput UpInput;
+        public IPressableInput DownInput;
+        public IPressableInput PauseInput;
 
         public NPC NpcForAction { get; set; }
 
@@ -71,12 +74,24 @@ namespace FishStory.Entities
                 TalkInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Space);
                 CancelInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Escape);
                 InventoryInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.I);
+                UpInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Up)
+                    .Or(keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.W));
+                DownInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Down)
+                    .Or(keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.S));
+                PauseInput = keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.M)
+                    .Or(keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.F1))
+                    .Or(keyboard.GetKey(Microsoft.Xna.Framework.Input.Keys.Pause));
             }
             else if(InputDevice is Xbox360GamePad gamepad)
             {
                 TalkInput = gamepad.GetButton(Xbox360GamePad.Button.A);
                 CancelInput = gamepad.GetButton(Xbox360GamePad.Button.B);
                 InventoryInput = gamepad.GetButton(Xbox360GamePad.Button.X);
+                UpInput = gamepad.GetButton(Xbox360GamePad.Button.DPadUp)
+                    .Or(gamepad.LeftStick.UpAsButton);
+                DownInput = gamepad.GetButton(Xbox360GamePad.Button.DPadDown)
+                    .Or(gamepad.LeftStick.DownAsButton);
+                PauseInput = gamepad.GetButton(Xbox360GamePad.Button.Start);
             }
         }
 

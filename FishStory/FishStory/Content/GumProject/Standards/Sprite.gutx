@@ -32,6 +32,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>CurrentChainName</Name>
+      <Category>Animation</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>bool</Type>
       <Name>Custom Texture Coordinates</Name>
       <Value xsi:type="xsd:boolean">false</Value>

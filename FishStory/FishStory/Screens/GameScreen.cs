@@ -54,6 +54,8 @@ namespace FishStory.Screens
         Dictionary<string, List<string>> ItemsBought = new Dictionary<string, List<string>>();
 
         private bool FadeInComplete => FadeInSprite.Alpha <= 0f;
+        private StoreRuntime StoreInstance => GameScreenGum.StoreInstance;
+        private InventoryRuntime InventoryInstance => GameScreenGum.InventoryInstance;
 
         #endregion
 
@@ -225,7 +227,11 @@ namespace FishStory.Screens
                 // Designers will not assign an animation if the intent is that the sprite is hidden.
                 // So all the DumpSigns should be visible = false.
                 if (npc.Animation == NPC.DumpSign)
+                {
                     npc.SpriteInstance.Visible = false;
+                }
+                else
+                    npc.MoveDisplayElementsToUiLayer(UILayer);
             }
             foreach (var propObject in PropObjectList)
             {
@@ -284,25 +290,44 @@ namespace FishStory.Screens
             #endregion
 
             #region Store
-            GameScreenGum.StoreInstance.CancelInput = PlayerCharacterInstance.CancelInput;
-            GameScreenGum.StoreInstance.Visible = false;
-            GameScreenGum.StoreInstance.BuyButtonClick += HandleBuyClicked;
-            GameScreenGum.StoreInstance.Closed += HandleStoreClosed;
+            StoreInstance.CancelInput = PlayerCharacterInstance.CancelInput;
+            StoreInstance.Visible = false;
+            StoreInstance.BuyButtonClick += HandleBuyClicked;
+            StoreInstance.Closed += HandleStoreClosed;
+            StoreInstance.CancelInput = PlayerCharacterInstance.CancelInput;
+            StoreInstance.InventoryInput = PlayerCharacterInstance.InventoryInput;
+            StoreInstance.UpInput = PlayerCharacterInstance.UpInput;
+            StoreInstance.DownInput = PlayerCharacterInstance.DownInput;
+            StoreInstance.SelectInput = PlayerCharacterInstance.TalkInput;
             #endregion
 
             #region Inventory
-
-            var inventory = GameScreenGum.InventoryInstance;
-            inventory.Visible = false;
-            inventory.SellClicked += HandleSellClicked;
-            inventory.Closed += HandleInventoryClosed;
-            inventory.CancelInput = PlayerCharacterInstance.CancelInput;
-            inventory.InventoryInput = PlayerCharacterInstance.InventoryInput;
+            InventoryInstance.Visible = false;
+            InventoryInstance.SellClicked += HandleSellClicked;
+            InventoryInstance.Closed += HandleInventoryClosed;
+            InventoryInstance.CancelInput = PlayerCharacterInstance.CancelInput;
+            InventoryInstance.InventoryInput = PlayerCharacterInstance.InventoryInput;
+            InventoryInstance.UpInput = PlayerCharacterInstance.UpInput;
+            InventoryInstance.DownInput = PlayerCharacterInstance.DownInput;
+            InventoryInstance.SelectInput = PlayerCharacterInstance.TalkInput;
             #endregion
 
+            #region Pause Screen
+            GameScreenGum.PauseMenuInstance.UpInput = PlayerCharacterInstance.UpInput;
+            GameScreenGum.PauseMenuInstance.DownInput = PlayerCharacterInstance.DownInput;
+            GameScreenGum.PauseMenuInstance.SelectInput = PlayerCharacterInstance.TalkInput;
+            GameScreenGum.PauseMenuInstance.CancelInput = PlayerCharacterInstance.CancelInput;
+            GameScreenGum.PauseMenuInstance.Closed += PauseMenuInstance_Closed;
+            #endregion
             GameScreenGum.NotificationBoxInstance.UpdateVisibility();
 
             GameScreenGum.MoveToFrbLayer(UILayer, UILayerGum);
+        }
+
+        private void PauseMenuInstance_Closed()
+        {
+            GameScreenGum.PauseMenuInstance.Visible = false;
+            UnpauseThisScreen();
         }
 
         private void HandleStoreClosed()
@@ -378,6 +403,7 @@ namespace FishStory.Screens
 #if DEBUG
                 DebuggingActivity();
 #endif
+
 
                 // do script *after* the UI
                 Map?.AnimateSelf();
@@ -597,6 +623,7 @@ namespace FishStory.Screens
                             // For invisible NPCs, we don't want to show the portrait.
                             DialoguePortrait.Visible = npc.SpriteInstance.Visible;
                             PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                            npc.HandleDialogueSeen();
                         }
 
                     }
@@ -608,6 +635,7 @@ namespace FishStory.Screens
                             // For invisible NPCs, we don't want to show the portrait.
                             DialoguePortrait.Visible = npc.SpriteInstance.Visible;
                             PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
+                            npc.HandleDialogueSeen();
                         }
                     }
                 }
@@ -1003,17 +1031,40 @@ namespace FishStory.Screens
             //{
             //    GameScreenGum.NotificationBoxInstance.AddNotification($"You pushed space at {DateTime.Now.ToShortTimeString()}");
             //}
+            var anyInterfaceVisible = DialogBox.Visible || InventoryInstance.Visible|| StoreInstance.Visible;
+            if (!IsPaused && PlayerCharacterInstance.PauseInput.WasJustPressed)
+            {
+                GameScreenGum.PauseMenuInstance.Visible = true;
+                PauseThisScreen();
+            }
 
-            DialogBox.CustomActivity();
+            if (IsPaused && !anyInterfaceVisible)
+            {
+                //Pause screen interface
+                GameScreenGum.PauseMenuInstance.CustomActivity();
+            }
+            else
+            {
+                DialogBox.CustomActivity();
 
-            GameScreenGum.StoreInstance.CustomActivity();
+                GameScreenGum.StoreInstance.CustomActivity();
 
-            GameScreenGum.NotificationBoxInstance.CustomActivity();
+                GameScreenGum.NotificationBoxInstance.CustomActivity();
 
-            DayAndTimeDisplayInstance.UpdateTime(InGameDateTimeManager.OurInGameDay);
+                if (InventoryInstance.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed && PlayerCharacterInstance.ObjectsBlockingInput.Any() == false)
+                {
+                    ShowInventory(InventoryRuntime.ViewOrSell.View, 1.0f, InventoryRestrictions.NoRestrictions);
+                }
+                else
+                {
+                    InventoryInstance.CustomActivity();
+                }
 
-            InventoryUiActivity();
+                DayAndTimeDisplayInstance.UpdateTime(InGameDateTimeManager.OurInGameDay);
+            }
         }
+
+  
 
         protected void AddNotification(string notification) =>
             GameScreenGum.NotificationBoxInstance.AddNotification(notification);
@@ -1209,20 +1260,6 @@ namespace FishStory.Screens
             SoundManager.Play(GlobalContent.StoreBuySound);
         }
 
-        private void InventoryUiActivity()
-        {
-            var inventory = GameScreenGum.InventoryInstance;
-            if(inventory.Visible)
-            {
-                inventory.CustomActivity();
-            }
-            else if (inventory.Visible == false && PlayerCharacterInstance.InventoryInput.WasJustPressed && PlayerCharacterInstance.ObjectsBlockingInput.Any() == false)
-            {
-                SoundManager.Play(GlobalContent.InventoryOpenSound);
-                ShowInventory(InventoryRuntime.ViewOrSell.View, 1.0f, InventoryRestrictions.NoRestrictions);
-            }
-        }
-
         private void ShowInventory(InventoryRuntime.ViewOrSell state, 
             float sellPriceMultiplier, InventoryRestrictions inventoryRestrictions)
         {
@@ -1235,6 +1272,8 @@ namespace FishStory.Screens
             inventory.PlayerMoneyText = "$" + PlayerDataManager.PlayerData.Money.ToString();
 
             PlayerCharacterInstance.ObjectsBlockingInput.Add(inventory);
+
+            SoundManager.Play(GlobalContent.InventoryOpenSound);
             PauseThisScreen();
         }
 
