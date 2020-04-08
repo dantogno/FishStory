@@ -52,11 +52,23 @@ namespace FishStory.Entities
                 var idleFrame = SpriteInstance.AnimationChains[SpriteInstance.CurrentChainIndex][1];
                 var textureHeight = idleFrame.Texture.Bounds.Height;
                 var textureWidth = idleFrame.Texture.Bounds.Width;
+
+                var frameTopPixel = (int)(textureHeight * idleFrame.TopCoordinate);
+                var frameLeftPixel = (int)(textureWidth * idleFrame.LeftCoordinate);
+                var frameBottomPixel = (int)(textureHeight * idleFrame.BottomCoordinate);
+                var frameRightPixel = (int)(textureWidth * idleFrame.RightCoordinate);
+
+                var frameWidth = frameRightPixel - frameLeftPixel;
+                var frameHeight = frameBottomPixel - frameTopPixel;
+
+                var portraitHeight = 16;
+                var portraitWidth = 16;
+
                 var rect = new Rectangle(
-                    x: (int)(textureWidth * idleFrame.LeftCoordinate),
-                    y: (int)(textureHeight * idleFrame.TopCoordinate),
-                    width: 16,
-                    height: 16
+                    x: frameLeftPixel + (frameWidth / 2) - (portraitWidth/2) - (int)idleFrame.RelativeX,
+                    y: frameTopPixel,
+                    width: portraitWidth,
+                    height: portraitHeight
                     );
                 return rect;
             }
