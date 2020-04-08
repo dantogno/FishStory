@@ -345,7 +345,7 @@ namespace FishStory.Screens
         {
             PlayerCharacterInstance.DirectionFacing = TopDownDirection.Left;
             GameScreenGum.InputInstructionsInstance.Visible = true;
-            var secondsToShowInputCallout = 7;
+            var secondsToShowInputCallout = 14;
             this
                 .Call(() => GameScreenGum.InputInstructionsInstance.Visible = false)
                 .After(secondsToShowInputCallout);
