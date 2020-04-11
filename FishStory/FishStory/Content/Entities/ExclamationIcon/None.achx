@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnimationChainArraySave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileRelativeTextures>true</FileRelativeTextures>
+  <TimeMeasurementUnit>Undefined</TimeMeasurementUnit>
+  <CoordinateType>Pixel</CoordinateType>
+  <AnimationChain>
+    <Name>Appear</Name>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>1</LeftCoordinate>
+      <RightCoordinate>2</RightCoordinate>
+      <TopCoordinate>1600</TopCoordinate>
+      <BottomCoordinate>1601</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Cycle</Name>
+    <Frame>
+      <TextureName>../../levels/mastertilesheet.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>1</LeftCoordinate>
+      <RightCoordinate>2</RightCoordinate>
+      <TopCoordinate>1600</TopCoordinate>
+      <BottomCoordinate>1601</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+</AnimationChainArraySave>

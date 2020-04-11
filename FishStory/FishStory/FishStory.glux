@@ -1964,7 +1964,13 @@
               <Name>Exclamation</Name>
             </StateSave>
             <StateSave>
-              <InstructionSaves />
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>SpriteInstanceAnimationChains</Member>
+                  <ValueAsString>ThoughtIcon</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
               <Name>Thought</Name>
             </StateSave>
             <StateSave>
@@ -1996,6 +2002,36 @@
                 </InstructionSave>
               </InstructionSaves>
               <Name>Idea</Name>
+            </StateSave>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>SpriteInstanceAnimationChains</Member>
+                  <ValueAsString>HeartIcon</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>Heart</Name>
+            </StateSave>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>SpriteInstanceAnimationChains</Member>
+                  <ValueAsString>AngerIcon</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>Angry</Name>
+            </StateSave>
+            <StateSave>
+              <InstructionSaves>
+                <InstructionSave>
+                  <Type>String</Type>
+                  <Member>SpriteInstanceAnimationChains</Member>
+                  <ValueAsString>None</ValueAsString>
+                </InstructionSave>
+              </InstructionSaves>
+              <Name>None</Name>
             </StateSave>
           </States>
           <ExcludedVariables />
@@ -2189,6 +2225,24 @@
         </ReferencedFileSave>
         <ReferencedFileSave>
           <Name>Entities/ExclamationIcon/TiredIcon.achx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Entities/ExclamationIcon/AngerIcon.achx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Entities/ExclamationIcon/HeartIcon.achx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Entities/ExclamationIcon/None.achx</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
           <ProjectsToExcludeFrom />

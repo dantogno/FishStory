@@ -589,6 +589,10 @@
       <Name>TypewriterKey5Sound</Name>
       <Link>content\globalcontent\sounds\typewriterkey5sound.xnb</Link>
     </None>
+    <None Include="content\entities\exclamationicon\angericon.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>AngerIcon</Name>
+    </None>
     <None Include="content\entities\exclamationicon\exclamationicon.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ExclamationIcon</Name>
@@ -597,9 +601,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ExplitiveIcon</Name>
     </None>
+    <None Include="content\entities\exclamationicon\hearticon.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>HeartIcon</Name>
+    </None>
     <None Include="content\entities\exclamationicon\ideaicon.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>IdeaIcon</Name>
+    </None>
+    <None Include="content\entities\exclamationicon\none.achx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>None</Name>
     </None>
     <None Include="content\entities\exclamationicon\thoughticon.achx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

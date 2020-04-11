@@ -24,13 +24,14 @@ namespace FishStory.Entities
         /// added to managers will not have this method called.
         /// </summary>
         /// 
-        public void SetDialogue(string dialogueId, EmotiveIcon.IconDisplay iconDisplay)
+        public void SetDialogue(string dialogueId, EmotiveIcon.IconDisplay iconDisplay = null)
         {
             this.TwineDialogId = dialogueId;
 
-            EmotiveIconInstance.CurrentIconDisplayState = iconDisplay ?? EmotiveIcon.IconDisplay.Idea;
+            EmotiveIconInstance.CurrentIconDisplayState = iconDisplay ?? EmotiveIcon.IconDisplay.Thought;
             EmotiveIconInstance.CurrentDisplayState = EmotiveIcon.Display.Appearing;
             EmotiveIconInstance.Visible = true;
+            EmotiveIconInstance.BeginAnimations(shouldHideAfter:false);
         }
 
         public void HandleDialogueSeen()
