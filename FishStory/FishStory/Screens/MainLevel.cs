@@ -461,11 +461,12 @@ namespace FishStory.Screens
             #region Mayor
             if (!DebuggingVariables.ShouldSkipDay1MayorIntro)
             {
+                this.NPCList.FindByName(CharacterNames.Mayor).SetDialogue(nameof(GlobalContent.WelcomeDialog), EmotiveIcon.IconDisplay.Exclamation);
                 If.Check(() => !HasTag("HasSeenWelcomeDialog") && PlayerCharacterInstance.X < 1525);
                 Do.Call(() =>
                 {
                     SetDialoguePortraitFor(NPCList.FindByName(CharacterNames.Mayor));
-                    if (DialogBox.TryShow("WelcomeDialog"))
+                    if (DialogBox.TryShow(nameof(GlobalContent.WelcomeDialog)))
                     {
                         SetDialoguePortraitFor(NPCList.FindByName(CharacterNames.Mayor));
                         PlayerCharacterInstance.ObjectsBlockingInput.Add(DialogBox);
@@ -477,7 +478,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Mayor);
-                npc.SetDialogue(nameof(GlobalContent.MayorAfterWelcome));
+                npc.SetDialogue(nameof(GlobalContent.MayorAfterWelcome), EmotiveIcon.IconDisplay.None);
                 PlayerDataManager.PlayerData.AwardItem("Festival Badge");
                 PlayerDataManager.PlayerData.AwardItem("Festival Pamphlet");
                 // Magic numbers to save time here... this is referenced in dialog as well.
