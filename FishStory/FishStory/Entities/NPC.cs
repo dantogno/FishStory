@@ -30,7 +30,7 @@ namespace FishStory.Entities
             SetEmoteIcon(iconDisplay);
         }
 
-        private void SetEmoteIcon(EmotiveIcon.IconDisplay iconDisplay = null)
+        public void SetEmoteIcon(EmotiveIcon.IconDisplay iconDisplay = null)
         {
             EmotiveIconInstance.CurrentIconDisplayState = iconDisplay ?? EmotiveIcon.IconDisplay.Thought;
             EmotiveIconInstance.CurrentDisplayState = EmotiveIcon.Display.Appearing;
