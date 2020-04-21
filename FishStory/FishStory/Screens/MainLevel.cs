@@ -142,6 +142,15 @@ namespace FishStory.Screens
         {
             InitializeScript();
         }
+
+        private void InitializeNPCEmoteIcons()
+        {
+            foreach (var npc in NPCList)
+            {
+                npc.InitializeEmoteIcon();
+            }
+        }
+
         /// <summary>
         /// Calculate how many identified fish are associated with each character.
         /// </summary>
@@ -343,15 +352,14 @@ namespace FishStory.Screens
 
         private void DoDay1Script(ScreenScript<GameScreen> If, ScreenScript<GameScreen> Do)
         {
+            InitializeNPCEmoteIcons();
             PlayerCharacterInstance.DirectionFacing = TopDownDirection.Left;
             GameScreenGum.InputInstructionsInstance.Visible = true;
             var secondsToShowInputCallout = 14;
             this
                 .Call(() => GameScreenGum.InputInstructionsInstance.Visible = false)
                 .After(secondsToShowInputCallout);
-
-            InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(12));           
-
+            
             #region Priestess
             If.Check(() => HasTag("HasSeenPriestessDay1"));
             Do.Call(() =>

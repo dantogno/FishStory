@@ -53,7 +53,10 @@ namespace FishStory.Managers
             minutesElapsedPerSecond = (minutesPerDay / GameScreen.RealMinutesPerDay) / minutesPerHour;
 
             OurInGameDay = new DateTime(2020, 1, 5);
-            OurInGameDay = OurInGameDay.AddHours(GameScreen.HourOnClockPlayerWakesIn24H);
+            if (PlayerDataManager.PlayerData.CurrentDay == 1)
+                OurInGameDay = OurInGameDay.AddHours(12);
+            else
+                OurInGameDay = OurInGameDay.AddHours(GameScreen.HourOnClockPlayerWakesIn24H);
         }
 
         public static void ResetDay()

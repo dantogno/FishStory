@@ -27,11 +27,15 @@ namespace FishStory.Entities
         public void SetDialogue(string dialogueId, EmotiveIcon.IconDisplay iconDisplay = null)
         {
             this.TwineDialogId = dialogueId;
+            SetEmoteIcon(iconDisplay);
+        }
 
+        private void SetEmoteIcon(EmotiveIcon.IconDisplay iconDisplay = null)
+        {
             EmotiveIconInstance.CurrentIconDisplayState = iconDisplay ?? EmotiveIcon.IconDisplay.Thought;
             EmotiveIconInstance.CurrentDisplayState = EmotiveIcon.Display.Appearing;
             EmotiveIconInstance.Visible = true;
-            EmotiveIconInstance.BeginAnimations(shouldHideAfter:false);
+            EmotiveIconInstance.BeginAnimations(shouldHideAfter: false);
         }
 
         public void HandleDialogueSeen()
@@ -117,6 +121,14 @@ namespace FishStory.Entities
                 SpriteInstance.Y > camera.Y + camera.OrthogonalHeight / 2 + SpriteInstance.Height / 2 ||
                 SpriteInstance.Y < camera.Y - camera.OrthogonalHeight / 2 - SpriteInstance.Height / 2;
             return !isOffScreen;
+        }
+
+        internal void InitializeEmoteIcon()
+        {
+            if (!string.IsNullOrWhiteSpace(TwineDialogId))
+            {
+                SetEmoteIcon();
+            }
         }
     }
 }
