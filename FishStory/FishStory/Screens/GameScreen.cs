@@ -227,6 +227,11 @@ namespace FishStory.Screens
                 else
                     npc.MoveDisplayElementsToUiLayer(UILayer);
             }
+            foreach (var sign in FishIdentifiedSignList)
+            {
+                sign.MoveDisplayElementsToUiLayer(UILayer);
+                sign.SetEmoteIcon(EmotiveIcon.IconDisplay.Exclamation);
+            }
             foreach (var propObject in PropObjectList)
             {
                 propObject.Z = PlayerCharacterInstance.Z; // same as player so they sort
@@ -364,6 +369,13 @@ namespace FishStory.Screens
 #endif
             if (FadeInComplete == false)
             {
+                CameraActivity();
+                Map?.AnimateSelf();
+                UpdatePropObjectsLights();
+#if DEBUG
+                DebuggingActivity();
+#endif
+
                 if (firstTimeCalled)
                 {
                     InGameDateTimeManager.Activity(firstTimeCalled);
@@ -371,7 +383,11 @@ namespace FishStory.Screens
                 }
                 else if (boatHornSound == null || boatHornSound.IsDisposed || boatHornSound.State != SoundState.Playing)
                 {
-                    FadeInSprite.Alpha -= 0.01f;
+                    InGameDateTimeManager.Activity(firstTimeCalled);
+                    FadeInSprite.Alpha -= 0.075f;
+                    PlayTimeBasedSounds();
+                    script.Activity();
+                    PlaySongForDay();
                 }
             }
             else
@@ -397,7 +413,6 @@ namespace FishStory.Screens
 #if DEBUG
                 DebuggingActivity();
 #endif
-
 
                 // do script *after* the UI
                 Map?.AnimateSelf();
@@ -666,6 +681,7 @@ namespace FishStory.Screens
                     if(!hasIdentifiedAny)
                     {
                         text = "\"203rd Ensomme Fishing Festival recorded fish counts will be posted here throughout the day!\"";
+                        FishIdentifiedSignList.First().SetEmoteIcon(EmotiveIcon.IconDisplay.None);
                     }
                     else
                     {
@@ -757,6 +773,11 @@ namespace FishStory.Screens
             SoundManager.Play(GlobalContent.FishCatchSound);
             // increment the number caught so that unique items can be ignored. 
             GlobalContent.ItemDefinition[fishCaught].TotalCaught++;
+
+            if (GetPlayerUnidentifiedItems().Any())
+            {
+                FishIdentifiedSignList.First().SetEmoteIcon(EmotiveIcon.IconDisplay.Exclamation);
+            }
         }
 
         private void UpdatePropObjectsLights()
@@ -1103,16 +1124,7 @@ namespace FishStory.Screens
         //todo - need to actually call this if text is "id="
         private void HandleIdentify()
         {
-            var itemDefinitions = GlobalContent.ItemDefinition;
-
-            bool IsUnidentified(string itemName)
-            {
-                return !string.IsNullOrEmpty(itemDefinitions[itemName].AssociatedItem);
-            }
-
-            var toConvert = PlayerDataManager.PlayerData.ItemInventory
-                .Where(item => IsUnidentified(item.Key))
-                .ToArray();
+            var toConvert = GetPlayerUnidentifiedItems();
 
             Dictionary<string, int> newItemCounts = new Dictionary<string, int>();
 
@@ -1147,6 +1159,22 @@ namespace FishStory.Screens
                 AddNotification("You have nothing to identify.");
             }
             SoundManager.Play(GlobalContent.FishIdentificationSound);
+        }
+
+        private KeyValuePair<string, int>[] GetPlayerUnidentifiedItems()
+        {
+            var itemDefinitions = GlobalContent.ItemDefinition;
+
+            bool IsUnidentified(string itemName)
+            {
+                return !string.IsNullOrEmpty(itemDefinitions[itemName].AssociatedItem);
+            }
+
+            var toConvert = PlayerDataManager.PlayerData.ItemInventory
+                .Where(item => IsUnidentified(item.Key))
+                .ToArray();
+
+            return toConvert;
         }
 
         private void HandleSellClicked()

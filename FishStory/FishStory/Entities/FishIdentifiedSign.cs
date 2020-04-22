@@ -8,6 +8,7 @@ using FlatRedBall.AI.Pathfinding;
 using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
+using FlatRedBall.Graphics;
 
 namespace FishStory.Entities
 {
@@ -40,6 +41,19 @@ namespace FishStory.Entities
         {
 
 
+        }
+
+        public void MoveDisplayElementsToUiLayer(Layer uiLayer)
+        {
+            EmotiveIconInstance.MoveToLayer(uiLayer);
+        }
+
+        public void SetEmoteIcon(EmotiveIcon.IconDisplay iconDisplay = null)
+        {
+            EmotiveIconInstance.CurrentIconDisplayState = iconDisplay ?? EmotiveIcon.IconDisplay.Thought;
+            EmotiveIconInstance.CurrentDisplayState = EmotiveIcon.Display.Appearing;
+            EmotiveIconInstance.Visible = true;
+            EmotiveIconInstance.BeginAnimations(shouldHideAfter: false);
         }
     }
 }

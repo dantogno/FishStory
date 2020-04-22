@@ -36,6 +36,9 @@ namespace FishStory.Entities
             EmotiveIconInstance.CurrentDisplayState = EmotiveIcon.Display.Appearing;
             EmotiveIconInstance.Visible = true;
             EmotiveIconInstance.BeginAnimations(shouldHideAfter: false);
+
+            if (Name.Contains("Sign"))
+                EmotiveIconInstance.Y = 12;
         }
 
         public void HandleDialogueSeen()
