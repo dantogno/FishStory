@@ -16,6 +16,10 @@ namespace FishStory.Entities
 {
     public partial class NPC
     {        
+        public bool IsSign => Name?.Contains("Sign") == true;
+
+        public Func<bool> CanPerformMovement = null;
+
         public Vector3 SpawnPosition { get; set; }
         public RootObject DirectlySetDialog { get; set; }
         /// <summary>
@@ -37,7 +41,7 @@ namespace FishStory.Entities
             EmotiveIconInstance.Visible = true;
             EmotiveIconInstance.BeginAnimations(shouldHideAfter: false);
 
-            if (Name.Contains("Sign"))
+            if (IsSign)
                 EmotiveIconInstance.Y = 12;
         }
 
@@ -57,7 +61,23 @@ namespace FishStory.Entities
 
         private void CustomActivity()
         {
+            if (!IsSign)
+            {
+                ConsiderWalkActivity();
+            }
 
+        }
+
+        private void ConsiderWalkActivity()
+        {
+            if (CanPerformMovement?.Invoke() == true)
+            {
+                PerformWalkActivity();
+            }
+        }
+
+        private void PerformWalkActivity()
+        {
 
         }
 

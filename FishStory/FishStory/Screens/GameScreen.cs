@@ -51,6 +51,8 @@ namespace FishStory.Screens
         private StoreRuntime StoreInstance => GameScreenGum.StoreInstance;
         private InventoryRuntime InventoryInstance => GameScreenGum.InventoryInstance;
 
+        private bool NPCsAllowedMovement => FadeInComplete && DayAndTimeDisplayIsVisible && DialogBox.Visible == false && IsPaused == false && hasEndingStarted == false;
+
         #endregion
 
         #region Initialize
@@ -226,6 +228,8 @@ namespace FishStory.Screens
                 }
                 else
                     npc.MoveDisplayElementsToUiLayer(UILayer);
+
+                npc.CanPerformMovement = () => { return this.DialogBox.Visible == false; };
             }
             foreach (var sign in FishIdentifiedSignList)
             {
