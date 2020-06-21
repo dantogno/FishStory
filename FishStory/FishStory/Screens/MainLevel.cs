@@ -345,7 +345,7 @@ namespace FishStory.Screens
             {
                 Do.Call(() =>
                 {
-                    NPCList.FindByName(classRepresentatives[item]).SetDialogue(classRepresentatives[item] + "Day2AltTrait");
+                    NPCList.FindByName(classRepresentatives[item]).SetDialogue(classRepresentatives[item] + "Day2AltTrait", EmotiveIcon.IconDisplay.Exclamation);
                 });
             }
         }
@@ -365,7 +365,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Priestess);
-                npc.SetDialogue(nameof(GlobalContent.PriestessDay1Brief));
+                npc.SetDialogue(nameof(GlobalContent.PriestessDay1Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region ElderlyMother
@@ -373,7 +373,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.ElderlyMother);
-                npc.SetDialogue(nameof(GlobalContent.ElderlyMotherDay1Brief));
+                npc.SetDialogue(nameof(GlobalContent.ElderlyMotherDay1Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region Nun
@@ -381,7 +381,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Nun);
-                npc.SetDialogue(nameof(GlobalContent.NunDay1Brief));
+                npc.SetDialogue(nameof(GlobalContent.NunDay1Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region Farmer
@@ -393,34 +393,39 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Farmer);
-                npc.SetDialogue(nameof(GlobalContent.FarmerDay1Brief));
+                npc.SetDialogue(nameof(GlobalContent.FarmerDay1Brief), EmotiveIcon.IconDisplay.None);
             });
 
             #endregion
             #region Identifier
+            NPCList.FindByName(CharacterNames.Identifier).SetDialogue(nameof(GlobalContent.IdentifierDay1), EmotiveIcon.IconDisplay.Exclamation);
+
             If.Check(() => HasTag("HasSeenIdentifierDay1"));
             Do.Call(() =>
             {
-                NPCList.FindByName(CharacterNames.Identifier).SetDialogue(nameof(GlobalContent.IdentifierDay1Brief));
+                NPCList.FindByName(CharacterNames.Identifier).SetDialogue(nameof(GlobalContent.IdentifierDay1Brief), EmotiveIcon.IconDisplay.Exclamation);
             });
+            If.Check(() => TotalFishIdentified >= numFishRequiredForKey);
+            Do.Call(()=> NPCList.FindByName(CharacterNames.Identifier).SetDialogue(nameof(GlobalContent.IdentifierDay1Brief), EmotiveIcon.IconDisplay.None));
             #endregion
             #region Fishmonger
             If.Check(() => HasTag("HasTalkedToFishMongerDay1"));
             Do.Call(() =>
             {
-                NPCList.FindByName(CharacterNames.Fishmonger).SetDialogue(nameof(GlobalContent.FishMongerDay1Brief));
+                NPCList.FindByName(CharacterNames.Fishmonger).SetDialogue(nameof(GlobalContent.FishMongerDay1Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region Tycoon
+            NPCList.FindByName(CharacterNames.Tycoon).SetDialogue(nameof(GlobalContent.TycoonIntro), EmotiveIcon.IconDisplay.Exclamation);
             If.Check(() => HasTag("HasTalkedToTycoonDay1"));
             Do.Call(() =>
             {
-                NPCList.FindByName(CharacterNames.Tycoon).SetDialogue("TycoonNoFishNoKey");
+                NPCList.FindByName(CharacterNames.Tycoon).SetDialogue("TycoonNoFishNoKey", EmotiveIcon.IconDisplay.Exclamation);
             });
             If.Check(() => HasTag("HasTalkedToTycoonDay1") && TotalFishIdentified >= numFishRequiredForKey);
             Do.Call(() =>
             {
-                NPCList.FindByName(CharacterNames.Tycoon).SetDialogue("TycoonYesFishNoKey");
+                NPCList.FindByName(CharacterNames.Tycoon).SetDialogue("TycoonYesFishNoKey", EmotiveIcon.IconDisplay.Exclamation);
             });
             If.Check(() => HasTag("GiveTrailerKey"));
             Do.Call(() =>
@@ -431,7 +436,7 @@ namespace FishStory.Screens
             If.Check(() => PlayerDataManager.PlayerData.Has(ItemDefinition.Trailer_Key));
             Do.Call(() =>
             {
-                NPCList.FindByName(CharacterNames.Tycoon).SetDialogue("TycoonYesKey");
+                NPCList.FindByName(CharacterNames.Tycoon).SetDialogue("TycoonYesKey", EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region TycoonDaughter
@@ -439,7 +444,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.TycoonDaughter);
-                npc.SetDialogue(nameof(GlobalContent.TycoonDaughterDay1Brief));
+                npc.SetDialogue(nameof(GlobalContent.TycoonDaughterDay1Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region Conservationist
@@ -447,7 +452,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Conservationist);
-                npc.SetDialogue(nameof(GlobalContent.ConservationistDay1Brief));
+                npc.SetDialogue(nameof(GlobalContent.ConservationistDay1Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region FishermanBald
@@ -455,7 +460,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.FishermanBald);
-                npc.SetDialogue(nameof(GlobalContent.FishermanBaldDay1Brief));
+                npc.SetDialogue(nameof(GlobalContent.FishermanBaldDay1Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region FishermanHair
@@ -463,7 +468,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.FishermanHair);
-                npc.SetDialogue(nameof(GlobalContent.FishermanHairDay1Brief));
+                npc.SetDialogue(nameof(GlobalContent.FishermanHairDay1Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region Mayor
@@ -498,6 +503,7 @@ namespace FishStory.Screens
             #endregion
             #region FestivalCoordinator
             // FestivalCoordinator
+            this.NPCList.FindByName(CharacterNames.FestivalCoordinator).SetDialogue(nameof(GlobalContent.FestivalCoordinatorDay1), EmotiveIcon.IconDisplay.Exclamation);
             If.Check(() => HasTag("AwardFishingRod"));
             Do.Call(() =>
             {
@@ -509,7 +515,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = NPCList.FindByName(CharacterNames.FestivalCoordinator);
-                npc.SetDialogue(nameof(GlobalContent.FestivalCoordinatorDay1Brief));
+                npc.SetDialogue(nameof(GlobalContent.FestivalCoordinatorDay1Brief), EmotiveIcon.IconDisplay.None);
                 AwardRandomBait();
             });
             #endregion
@@ -527,6 +533,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 blackMarketShop.Position = blackMarketShop.SpawnPosition;
+                this.NPCList.FindByName(CharacterNames.BlackMarketShop).SetDialogue(nameof(GlobalContent.BlackMarketShopDay1Brief), EmotiveIcon.IconDisplay.Exclamation);
             });
             If.Check(() =>
             {
@@ -534,14 +541,14 @@ namespace FishStory.Screens
             });
             Do.Call(() =>
             {
-                blackMarketShop.SetDialogue(nameof(GlobalContent.BlackMarketShopDay1Brief));
+                blackMarketShop.SetDialogue(nameof(GlobalContent.BlackMarketShopDay1Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region YoungManBaitShop  
             If.Check(() => HasTag("HasSeenFancyBaitShopDialog"));
             Do.Call(() =>
             {
-                NPCList.FindByName(CharacterNames.YoungManBaitShop).SetDialogue(nameof(GlobalContent.FancyBaitShopDay1Brief));
+                NPCList.FindByName(CharacterNames.YoungManBaitShop).SetDialogue(nameof(GlobalContent.FancyBaitShopDay1Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
 
@@ -569,16 +576,16 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Mayor);
-                npc.SetDialogue(nameof(GlobalContent.MayorDay2Brief));
+                npc.SetDialogue(nameof(GlobalContent.MayorDay2Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region FestivalCoordinator
-            NPCList.FindByName(CharacterNames.FestivalCoordinator).SetDialogue(nameof(GlobalContent.FestivalCoordinatorDay2));
+            NPCList.FindByName(CharacterNames.FestivalCoordinator).SetDialogue(nameof(GlobalContent.FestivalCoordinatorDay2), EmotiveIcon.IconDisplay.Exclamation);
             If.Check(() => HasTag("Day2FreeBait"));
             Do.Call(() =>
             {
                 var npc = NPCList.FindByName(CharacterNames.FestivalCoordinator);
-                npc.SetDialogue(nameof(GlobalContent.FestivalCoordinatorDay2Brief));
+                npc.SetDialogue(nameof(GlobalContent.FestivalCoordinatorDay2Brief), EmotiveIcon.IconDisplay.None);
                 AwardRandomBait();
             });
             #endregion
@@ -620,7 +627,7 @@ namespace FishStory.Screens
             });
             Do.Call(() =>
             {
-                NPCList.FindByName(CharacterNames.BlackMarketShop).SetDialogue(nameof(GlobalContent.BlackMarketShopDay2Brief));
+                NPCList.FindByName(CharacterNames.BlackMarketShop).SetDialogue(nameof(GlobalContent.BlackMarketShopDay2Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region ElderlyMother
@@ -632,7 +639,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.ElderlyMother);
-                npc.SetDialogue(nameof(GlobalContent.ElderlyMotherDay2Brief));
+                npc.SetDialogue(nameof(GlobalContent.ElderlyMotherDay2Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region Priestess
@@ -643,7 +650,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Priestess);
-                npc.SetDialogue(nameof(GlobalContent.PriestessDay2Brief));
+                npc.SetDialogue(nameof(GlobalContent.PriestessDay2Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region Nun
@@ -654,7 +661,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Nun);
-                npc.SetDialogue(nameof(GlobalContent.NunDay2Brief));
+                npc.SetDialogue(nameof(GlobalContent.NunDay2Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region Farmer
@@ -667,7 +674,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Farmer);
-                npc.SetDialogue(nameof(GlobalContent.FarmerDay2Brief));
+                npc.SetDialogue(nameof(GlobalContent.FarmerDay2Brief), EmotiveIcon.IconDisplay.None);
             });
 
             #endregion
@@ -679,7 +686,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Tycoon);
-                npc.SetDialogue(nameof(GlobalContent.TycoonDay2Brief));
+                npc.SetDialogue(nameof(GlobalContent.TycoonDay2Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region TycoonDaughter
@@ -691,7 +698,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.TycoonDaughter);
-                npc.SetDialogue(nameof(GlobalContent.TycoonDaughterDay2Brief));
+                npc.SetDialogue(nameof(GlobalContent.TycoonDaughterDay2Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region Conservationist
@@ -702,7 +709,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Conservationist);
-                npc.SetDialogue(nameof(GlobalContent.ConservationistDay2Brief));
+                npc.SetDialogue(nameof(GlobalContent.ConservationistDay2Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region FishermanBald
@@ -713,7 +720,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.FishermanBald);
-                npc.SetDialogue(nameof(GlobalContent.FishermanBaldDay2Brief));
+                npc.SetDialogue(nameof(GlobalContent.FishermanBaldDay2Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region FishermanHair
@@ -724,7 +731,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.FishermanHair);
-                npc.SetDialogue(nameof(GlobalContent.FishermanHairDay2Brief));
+                npc.SetDialogue(nameof(GlobalContent.FishermanHairDay2Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             HandleDay2TraitAlternateDialogForClassRepresentatives(If, Do);
@@ -743,16 +750,16 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Mayor);
-                npc.SetDialogue(nameof(GlobalContent.MayorDay3Brief));
+                npc.SetDialogue(nameof(GlobalContent.MayorDay3Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region FestivalCoordinator
-            NPCList.FindByName(CharacterNames.FestivalCoordinator).SetDialogue(nameof(GlobalContent.FestivalCoordinatorDay3));
+            NPCList.FindByName(CharacterNames.FestivalCoordinator).SetDialogue(nameof(GlobalContent.FestivalCoordinatorDay3), EmotiveIcon.IconDisplay.Exclamation);
             If.Check(() => HasTag("Day3FreeBait"));
             Do.Call(() =>
             {
                 var npc = NPCList.FindByName(CharacterNames.FestivalCoordinator);
-                npc.SetDialogue(nameof(GlobalContent.FestivalCoordinatorDay2Brief));
+                npc.SetDialogue(nameof(GlobalContent.FestivalCoordinatorDay2Brief), EmotiveIcon.IconDisplay.None);
                 PlayerDataManager.PlayerData.AwardItem(ItemDefinition.Strange_Bait);
             });
             #endregion
@@ -773,7 +780,7 @@ namespace FishStory.Screens
             If.Check(() => HasTag("HasSeenBlackMarketShopDay3"));
             Do.Call(() =>
             {
-                NPCList.FindByName(CharacterNames.FishermanHair).SetDialogue(nameof(GlobalContent.BlackMarketShopDay3Brief));
+                NPCList.FindByName(CharacterNames.FishermanHair).SetDialogue(nameof(GlobalContent.BlackMarketShopDay3Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region ElderlyMother
@@ -784,7 +791,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.ElderlyMother);
-                npc.SetDialogue(nameof(GlobalContent.ElderlyMotherDay3Brief));
+                npc.SetDialogue(nameof(GlobalContent.ElderlyMotherDay3Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region Priestess
@@ -795,7 +802,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Priestess);
-                npc.SetDialogue(nameof(GlobalContent.PriestessDay3Brief));
+                npc.SetDialogue(nameof(GlobalContent.PriestessDay3Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region Nun
@@ -806,7 +813,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Nun);
-                npc.SetDialogue(nameof(GlobalContent.NunDay3Brief));
+                npc.SetDialogue(nameof(GlobalContent.NunDay3Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region Farmer
@@ -819,7 +826,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Farmer);
-                npc.SetDialogue(nameof(GlobalContent.FarmerDay3Brief));
+                npc.SetDialogue(nameof(GlobalContent.FarmerDay3Brief), EmotiveIcon.IconDisplay.None);
             });
 
             #endregion
@@ -831,7 +838,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.Tycoon);
-                npc.SetDialogue(nameof(GlobalContent.TycoonDay3Brief));
+                npc.SetDialogue(nameof(GlobalContent.TycoonDay3Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region TycoonDaughter
@@ -842,7 +849,7 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.TycoonDaughter);
-                npc.SetDialogue(nameof(GlobalContent.TycoonDaughterDay3Brief));
+                npc.SetDialogue(nameof(GlobalContent.TycoonDaughterDay3Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region Conservationist
@@ -866,18 +873,18 @@ namespace FishStory.Screens
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.FishermanBald);
-                npc.SetDialogue(nameof(GlobalContent.FishermanBaldDay3Brief));
+                npc.SetDialogue(nameof(GlobalContent.FishermanBaldDay3Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
             #region FishermanHair
             var hair = this.NPCList.FindByName(CharacterNames.FishermanHair);
-            hair.SetDialogue(nameof(GlobalContent.FishermanHairDay3));
+            hair.SetDialogue(nameof(GlobalContent.FishermanHairDay3), EmotiveIcon.IconDisplay.None);
 
             If.Check(() => HasTag("HasSeenFishermanHairDay3"));
             Do.Call(() =>
             {
                 var npc = this.NPCList.FindByName(CharacterNames.FishermanHair);
-                npc.SetDialogue(nameof(GlobalContent.FishermanHairDay3Brief));
+                npc.SetDialogue(nameof(GlobalContent.FishermanHairDay3Brief), EmotiveIcon.IconDisplay.None);
             });
             #endregion
 
@@ -889,6 +896,10 @@ namespace FishStory.Screens
             if (DebuggingVariables.NextDayWillTriggerEnding)
             {
                 
+            }
+            foreach (var item in NPCList)
+            {
+                item.SetEmoteIcon(EmotiveIcon.IconDisplay.None);
             }
             InGameDateTimeManager.SetTimeOfDay(TimeSpan.FromHours(3));
             InGameDateTimeManager.ShouldTimePass = false;
