@@ -110,6 +110,45 @@
       <DependentUpon>ShaderRenderer.cs</DependentUpon>
     </Compile>
     <Compile Include="Factories\IntroFishFactory.Generated.cs" />
+    <Compile Include="Forms\Components\InventoryForms.cs" />
+    <Compile Include="Forms\Components\InventoryForms.Generated.cs" />
+    <Compile Include="Forms\Components\StoreForms.cs" />
+    <Compile Include="Forms\Components\StoreForms.Generated.cs" />
+    <Compile Include="Forms\Screens\CreditsScreenGumForms.cs" />
+    <Compile Include="Forms\Screens\CreditsScreenGumForms.Generated.cs" />
+    <Compile Include="Forms\Screens\GameScreenGumForms.cs" />
+    <Compile Include="Forms\Screens\GameScreenGumForms.Generated.cs" />
+    <Compile Include="Forms\Screens\TitleScreenGumForms.cs" />
+    <Compile Include="Forms\Screens\TitleScreenGumForms.Generated.cs" />
+    <Compile Include="GlueControl\CommandReceiver.Generated.cs" />
+    <Compile Include="GlueControl\Dtos.Generated.cs" />
+    <Compile Include="GlueControl\Editing\CameraLogic.Generated.cs" />
+    <Compile Include="GlueControl\Editing\CopyPasteManager.Generated.cs" />
+    <Compile Include="GlueControl\Editing\EditingManager.Generated.cs" />
+    <Compile Include="GlueControl\Editing\EditorVisuals.Generated.cs" />
+    <Compile Include="GlueControl\Editing\Guides.Generated.cs" />
+    <Compile Include="GlueControl\Editing\Managers\GenerateCodeCommands.Generated.cs" />
+    <Compile Include="GlueControl\Editing\Managers\GlueCommands.Generated.cs" />
+    <Compile Include="GlueControl\Editing\Managers\GlueCommandsStateBase.Generated.cs" />
+    <Compile Include="GlueControl\Editing\Managers\GlueState.Generated.cs" />
+    <Compile Include="GlueControl\Editing\Managers\GluxCommands.Generated.cs" />
+    <Compile Include="GlueControl\Editing\Managers\RefreshCommands.Generated.cs" />
+    <Compile Include="GlueControl\Editing\Markers\SelectionMarker.Generated.cs" />
+    <Compile Include="GlueControl\Editing\Markers\TileShapeCollectionMarker.Generated.cs" />
+    <Compile Include="GlueControl\Editing\MoveObjectToContainerLogic.Generated.cs" />
+    <Compile Include="GlueControl\Editing\SelectionLogic.Generated.cs" />
+    <Compile Include="GlueControl\Editing\VariableAssignmentLogic.Generated.cs" />
+    <Compile Include="GlueControl\Editing\Visuals\Arrow.Generated.cs" />
+    <Compile Include="GlueControl\Forms\ObjectCreationWindow.Generated.cs" />
+    <Compile Include="GlueControl\InstanceLogic.Generated.cs" />
+    <Compile Include="GlueControl\Models\CustomVariable.Generated.cs" />
+    <Compile Include="GlueControl\Models\GlueElement.Generated.cs" />
+    <Compile Include="GlueControl\Models\IElementExtensionMethods.Generated.cs" />
+    <Compile Include="GlueControl\Models\NamedObjectSave.Generated.cs" />
+    <Compile Include="GlueControl\Models\StateSave.Generated.cs" />
+    <Compile Include="GlueControl\Models\StateSaveCategory.Generated.cs" />
+    <Compile Include="GlueControl\Runtime\DynamicEntity.Generated.cs" />
+    <Compile Include="GlueControl\Screens\EntityViewingScreen.Generated.cs" />
     <Compile Include="GumRuntimes\CreditsComponents\CreditDisplayRuntime.cs" />
     <Compile Include="GumRuntimes\CreditsComponents\CreditDisplayRuntime.Generated.cs">
       <DependentUpon>CreditDisplayRuntime.cs</DependentUpon>
@@ -345,6 +384,7 @@
     <Compile Include="TopDown\Enums.Generated.cs" />
     <Compile Include="TopDown\Interfaces.Generated.cs" />
     <Compile Include="TopDown\TopDownAiInput.Generated.cs" />
+    <Compile Include="TopDown\TopDownAiTargetLogic.Generated.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FlatRedBall.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">

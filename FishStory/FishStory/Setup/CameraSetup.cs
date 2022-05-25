@@ -5,17 +5,19 @@
     {
         public class CameraSetupData
         {
+            public bool IsGenerateCameraDisplayCodeEnabled { get; set; }
             public float Scale { get; set; }
             public float ScaleGum { get; set; }
             public bool Is2D { get; set; }
             public int ResolutionWidth { get; set; }
             public int ResolutionHeight { get; set; }
             public decimal? AspectRatio { get; set; }
-            public bool AllowWidowResizing { get; set; }
+            public bool AllowWindowResizing { get; set; }
             public bool IsFullScreen { get; set; }
             public ResizeBehavior ResizeBehavior { get; set; }
             public ResizeBehavior ResizeBehaviorGum { get; set; }
             public WidthOrHeight DominantInternalCoordinates { get; set; }
+            public Microsoft.Xna.Framework.Graphics.TextureFilter TextureFilter { get; set; }
         }
         public enum ResizeBehavior
         {
@@ -33,18 +35,23 @@
             public static CameraSetupData Data = new CameraSetupData
             {
                 Scale = 200f,
+                IsGenerateCameraDisplayCodeEnabled = true,
                 ResolutionWidth = 640,
                 ResolutionHeight = 480,
                 Is2D = true,
                 AspectRatio = 1.3333333333333333333333333333m,
                 IsFullScreen = true,
-                AllowWidowResizing = false,
+                AllowWindowResizing = false,
+                TextureFilter = Microsoft.Xna.Framework.Graphics.TextureFilter.Linear,
                 ResizeBehavior = ResizeBehavior.StretchVisibleArea,
                 ScaleGum = 100f,
                 ResizeBehaviorGum = ResizeBehavior.StretchVisibleArea,
                 DominantInternalCoordinates = WidthOrHeight.Height,
             }
             ;
+            /// Applies resolution and aspect ratio values to the FlatRedBall camera. If Gum is part of the project,
+            /// then the Gum resolution will be applied. Note that this does not call Layout on the contained Gum objects,
+            /// so this may need to be called explicitly if ResetCamera is called in custom code.
             internal static void ResetCamera (Camera cameraToReset = null) 
             {
                 if (cameraToReset == null)
@@ -61,15 +68,16 @@
                 else
                 {
                     cameraToReset.UsePixelCoordinates3D(0);
+                    var zoom = cameraToReset.DestinationRectangle.Height / (float)Data.ResolutionHeight;
+                    cameraToReset.Z /= zoom; 
                 }
-                if (Data.AspectRatio != null)
-                {
-                    SetAspectRatioTo(Data.AspectRatio.Value, Data.DominantInternalCoordinates, Data.ResolutionWidth, Data.ResolutionHeight);
-                }
+                SetAspectRatioTo(Data.AspectRatio, Data.DominantInternalCoordinates, Data.ResolutionWidth, Data.ResolutionHeight);
+                ResetGumResolutionValues();
             }
             internal static void SetupCamera (Camera cameraToSetUp, Microsoft.Xna.Framework.GraphicsDeviceManager graphicsDeviceManager) 
             {
                 CameraSetup.graphicsDeviceManager = graphicsDeviceManager;
+                FlatRedBall.FlatRedBallServices.GraphicsOptions.TextureFilter = Data.TextureFilter;
                 ResetWindow();
                 ResetCamera(cameraToSetUp);
                 ResetGumResolutionValues();
@@ -78,11 +86,12 @@
             internal static void ResetWindow () 
             {
                 #if WINDOWS || DESKTOP_GL
-                FlatRedBall.FlatRedBallServices.Game.Window.AllowUserResizing = Data.AllowWidowResizing;
+                FlatRedBall.FlatRedBallServices.Game.Window.AllowUserResizing = Data.AllowWindowResizing;
                 if (Data.IsFullScreen)
                 {
                     #if DESKTOP_GL
                     graphicsDeviceManager.HardwareModeSwitch = false;
+                    FlatRedBall.FlatRedBallServices.Game.Window.Position = new Microsoft.Xna.Framework.Point(0,0);
                     FlatRedBall.FlatRedBallServices.GraphicsOptions.SetResolution(Microsoft.Xna.Framework.Graphics.GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, Microsoft.Xna.Framework.Graphics.GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height, FlatRedBall.Graphics.WindowedFullscreenMode.FullscreenBorderless);
                     #elif WINDOWS
                     System.IntPtr hWnd = FlatRedBall.FlatRedBallServices.Game.Window.Handle;
@@ -101,6 +110,10 @@
                     var maxHeight = Microsoft.Xna.Framework.Graphics.GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height - 28;
                     width = System.Math.Min(width, maxWidth);
                     height = System.Math.Min(height, maxHeight);
+                    if (FlatRedBall.FlatRedBallServices.Game.Window.Position.Y < 25)
+                    {
+                        FlatRedBall.FlatRedBallServices.Game.Window.Position = new Microsoft.Xna.Framework.Point(FlatRedBall.FlatRedBallServices.Game.Window.Position.X, 25);
+                    }
                     FlatRedBall.FlatRedBallServices.GraphicsOptions.SetResolution(width, height);
                 }
                 #elif IOS || ANDROID
@@ -120,10 +133,7 @@
             }
             private static void HandleResolutionChange (object sender, System.EventArgs args) 
             {
-                if (Data.AspectRatio != null)
-                {
-                    SetAspectRatioTo(Data.AspectRatio.Value, Data.DominantInternalCoordinates, Data.ResolutionWidth, Data.ResolutionHeight);
-                }
+                SetAspectRatioTo(Data.AspectRatio, Data.DominantInternalCoordinates, Data.ResolutionWidth, Data.ResolutionHeight);
                 if (Data.Is2D && Data.ResizeBehavior == ResizeBehavior.IncreaseVisibleArea)
                 {
                     FlatRedBall.Camera.Main.OrthogonalHeight = FlatRedBall.Camera.Main.DestinationRectangle.Height / (Data.Scale/ 100.0f);
@@ -141,12 +151,12 @@
                 }
                 else
                 {
-                    Gum.Wireframe.GraphicalUiElement.CanvasWidth = Data.ResolutionWidth / (Data.ScaleGum/100.0f);
                     Gum.Wireframe.GraphicalUiElement.CanvasHeight = Data.ResolutionHeight / (Data.ScaleGum/100.0f);
                     if (Data.AspectRatio != null)
                     {
                         
 
+                    Gum.Wireframe.GraphicalUiElement.CanvasWidth = Data.ResolutionWidth / (Data.ScaleGum/100.0f);
                     var resolutionAspectRatio = FlatRedBall.FlatRedBallServices.GraphicsOptions.ResolutionWidth / (decimal)FlatRedBall.FlatRedBallServices.GraphicsOptions.ResolutionHeight;
                     int destinationRectangleWidth;
                     int destinationRectangleHeight;
@@ -168,6 +178,14 @@
                     if(global::RenderingLibrary.SystemManagers.Default != null)
                     {
                         global::RenderingLibrary.SystemManagers.Default.Renderer.Camera.Zoom = zoom;
+
+                        foreach(var layer in global::RenderingLibrary.SystemManagers.Default.Renderer.Layers)
+                        {
+                            if(layer.LayerCameraSettings != null)
+                            {
+                                layer.LayerCameraSettings.Zoom = zoom;
+                            }
+                        }
                     }
                     
 
@@ -175,25 +193,45 @@
                     else
                     {
                         
+
+                    // since a fixed aspect ratio isn't specified, adjust the width according to the 
+                    // current game aspect ratio and the canvas height
+                    var currentAspectRatio = FlatRedBall.FlatRedBallServices.GraphicsOptions.ResolutionWidth / (float)
+                        FlatRedBall.FlatRedBallServices.GraphicsOptions.ResolutionHeight;
+                    Gum.Wireframe.GraphicalUiElement.CanvasWidth =
+                        Gum.Wireframe.GraphicalUiElement.CanvasHeight * currentAspectRatio;
+
                     var graphicsHeight = Gum.Wireframe.GraphicalUiElement.CanvasHeight;
                     var windowHeight = FlatRedBall.Camera.Main.DestinationRectangle.Height;
                     var zoom = windowHeight / (float)graphicsHeight;
                     if(global::RenderingLibrary.SystemManagers.Default != null)
                     {
                         global::RenderingLibrary.SystemManagers.Default.Renderer.Camera.Zoom = zoom;
+                        foreach(var layer in global::RenderingLibrary.SystemManagers.Default.Renderer.Layers)
+                        {
+                            if(layer.LayerCameraSettings != null)
+                            {
+                                layer.LayerCameraSettings.Zoom = zoom;
+                            }
+                        }
                     }
                     
                     }
                 }
             }
-            private static void SetAspectRatioTo (decimal aspectRatio, WidthOrHeight dominantInternalCoordinates, int desiredWidth, int desiredHeight) 
+            private static void SetAspectRatioTo (decimal? aspectRatio, WidthOrHeight dominantInternalCoordinates, int desiredWidth, int desiredHeight) 
             {
                 var resolutionAspectRatio = FlatRedBall.FlatRedBallServices.GraphicsOptions.ResolutionWidth / (decimal)FlatRedBall.FlatRedBallServices.GraphicsOptions.ResolutionHeight;
                 int destinationRectangleWidth;
                 int destinationRectangleHeight;
                 int x = 0;
                 int y = 0;
-                if (aspectRatio > resolutionAspectRatio)
+                if (aspectRatio == null)
+                {
+                    destinationRectangleWidth = FlatRedBall.FlatRedBallServices.GraphicsOptions.ResolutionWidth;
+                    destinationRectangleHeight = FlatRedBall.FlatRedBallServices.GraphicsOptions.ResolutionHeight;
+                }
+                else if (aspectRatio > resolutionAspectRatio)
                 {
                     destinationRectangleWidth = FlatRedBall.FlatRedBallServices.GraphicsOptions.ResolutionWidth;
                     destinationRectangleHeight = FlatRedBall.Math.MathFunctions.RoundToInt(destinationRectangleWidth / (float)aspectRatio);
