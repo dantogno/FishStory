@@ -18,3 +18,4 @@ FishStory/FishStory/GlueSettings/CompilerSettings.json
 *.csvSettings
 FishStory/BuiltXnbs/DesktopGL/obj/*
 FishStory/BuiltXnbs/
+FishStory/packages/*

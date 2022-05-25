@@ -13,7 +13,7 @@
     <AssemblyName>FishStory</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>DesktopGL</MonoGamePlatform>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -111,15 +111,25 @@
     </Compile>
     <Compile Include="Factories\IntroFishFactory.Generated.cs" />
     <Compile Include="Forms\Components\InventoryForms.cs" />
-    <Compile Include="Forms\Components\InventoryForms.Generated.cs" />
+    <Compile Include="Forms\Components\InventoryForms.Generated.cs">
+      <DependentUpon>InventoryForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Components\StoreForms.cs" />
-    <Compile Include="Forms\Components\StoreForms.Generated.cs" />
+    <Compile Include="Forms\Components\StoreForms.Generated.cs">
+      <DependentUpon>StoreForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Screens\CreditsScreenGumForms.cs" />
-    <Compile Include="Forms\Screens\CreditsScreenGumForms.Generated.cs" />
+    <Compile Include="Forms\Screens\CreditsScreenGumForms.Generated.cs">
+      <DependentUpon>CreditsScreenGumForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Screens\GameScreenGumForms.cs" />
-    <Compile Include="Forms\Screens\GameScreenGumForms.Generated.cs" />
+    <Compile Include="Forms\Screens\GameScreenGumForms.Generated.cs">
+      <DependentUpon>GameScreenGumForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Screens\TitleScreenGumForms.cs" />
-    <Compile Include="Forms\Screens\TitleScreenGumForms.Generated.cs" />
+    <Compile Include="Forms\Screens\TitleScreenGumForms.Generated.cs">
+      <DependentUpon>TitleScreenGumForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlueControl\CommandReceiver.Generated.cs" />
     <Compile Include="GlueControl\Dtos.Generated.cs" />
     <Compile Include="GlueControl\Editing\CameraLogic.Generated.cs" />
@@ -398,6 +408,9 @@
     <Reference Include="MonoGame.Framework, Version=3.5.1.1679, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libraries\DesktopGl\Debug\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NVorbis, Version=0.8.4.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -1724,6 +1737,7 @@
     <Content Include="libSDL2-2.0.0.dylib">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="packages.config" />
     <None Include="Snippets\ifdo.snippet" />
     <None Include="x64\SDL2.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
