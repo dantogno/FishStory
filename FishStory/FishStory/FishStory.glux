@@ -1939,6 +1939,12 @@
           <IsShared>true</IsShared>
         </CustomVariable>
       </CustomVariables>
+      <Properties>
+        <PropertySave>
+          <Name>InputDevice</Name>
+          <ValueAsInt>0</ValueAsInt>
+        </PropertySave>
+      </Properties>
       <Name>Entities\DebuggingVariables</Name>
       <CustomClassesForExport />
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
@@ -2217,7 +2223,13 @@
               </InstructionSaves>
             </StateSave>
           </States>
-          <ExcludedVariables />
+          <ExcludedVariables>
+            <string>X</string>
+            <string>Y</string>
+            <string>Z</string>
+            <string>Visible</string>
+            <string>SpriteInstanceCurrentChainName</string>
+          </ExcludedVariables>
         </StateSaveCategory>
         <StateSaveCategory>
           <Name>Display</Name>
@@ -2243,7 +2255,13 @@
               </InstructionSaves>
             </StateSave>
           </States>
-          <ExcludedVariables />
+          <ExcludedVariables>
+            <string>X</string>
+            <string>Y</string>
+            <string>Z</string>
+            <string>Visible</string>
+            <string>SpriteInstanceAnimationChains</string>
+          </ExcludedVariables>
         </StateSaveCategory>
       </StateCategoryList>
       <Name>Entities\EmotiveIcon</Name>
@@ -2936,7 +2954,14 @@
               </InstructionSaves>
             </StateSave>
           </States>
-          <ExcludedVariables />
+          <ExcludedVariables>
+            <string>X</string>
+            <string>Y</string>
+            <string>Z</string>
+            <string>FishSpriteInstanceCurrentChainName</string>
+            <string>ShadowSpriteInstanceCurrentChainName</string>
+            <string>FishLightSpriteInstanceCurrentChainName</string>
+          </ExcludedVariables>
         </StateSaveCategory>
         <StateSaveCategory>
           <Name>SwimDirection</Name>
@@ -3022,7 +3047,13 @@
               </InstructionSaves>
             </StateSave>
           </States>
-          <ExcludedVariables />
+          <ExcludedVariables>
+            <string>X</string>
+            <string>Y</string>
+            <string>Z</string>
+            <string>FishSpriteInstanceAnimationChains</string>
+            <string>FishLightSpriteInstanceAnimationChains</string>
+          </ExcludedVariables>
         </StateSaveCategory>
       </StateCategoryList>
       <Name>Entities\IntroFish</Name>
