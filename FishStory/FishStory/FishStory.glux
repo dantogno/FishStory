@@ -6244,11 +6244,6 @@
         <Version>2.7.0.1</Version>
         <VersionRequirement>EqualToOrNewerThan</VersionRequirement>
       </PluginRequirement>
-      <PluginRequirement>
-        <Name>Animation Editor</Name>
-        <Version>3.2.1</Version>
-        <VersionRequirement>EqualToOrNewerThan</VersionRequirement>
-      </PluginRequirement>
     </RequiredPlugins>
   </PluginData>
   <DisplaySettings>
