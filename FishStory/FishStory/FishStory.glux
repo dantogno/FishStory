@@ -6196,14 +6196,14 @@
     <AspectRatioHeight>3</AspectRatioHeight>
     <SupportLandscape>true</SupportLandscape>
     <SupportPortrait>false</SupportPortrait>
-    <RunInFullScreen>true</RunInFullScreen>
+    <RunInFullScreen>false</RunInFullScreen>
     <AllowWindowResizing>false</AllowWindowResizing>
     <Scale>200</Scale>
     <ScaleGum>100</ScaleGum>
     <ResizeBehavior>StretchVisibleArea</ResizeBehavior>
     <ResizeBehaviorGum>StretchVisibleArea</ResizeBehaviorGum>
     <DominantInternalCoordinates>Height</DominantInternalCoordinates>
-    <TextureFilter>0</TextureFilter>
+    <TextureFilter>1</TextureFilter>
   </DisplaySettings>
   <AllDisplaySettings />
   <UsesTranslation>false</UsesTranslation>
