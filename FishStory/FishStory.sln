@@ -12,6 +12,10 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GumCoreShared", "..\..\Gum\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GumCoreDesktopGL", "..\..\Gum\GumCore\GumCoreXnaPc\GumCoreDesktopGL.csproj", "{FC2030B0-E60B-434D-A513-400270B8D7C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlatRedBall.Forms.DesktopGL", "..\..\FlatRedBall\Engines\Forms\FlatRedBall.Forms\FlatRedBall.Forms\FlatRedBall.Forms.DesktopGL.csproj", "{AA2297A1-6BB4-4165-89A6-C099F687085F}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FlatRedBall.Forms.Shared", "..\..\FlatRedBall\Engines\Forms\FlatRedBall.Forms\FlatRedBall.Forms.Shared\FlatRedBall.Forms.Shared.shproj", "{728151F0-03E0-4253-94FE-46B9C77EDEA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,22 @@ Global
 		{FC2030B0-E60B-434D-A513-400270B8D7C6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC2030B0-E60B-434D-A513-400270B8D7C6}.Release|x86.ActiveCfg = Release|Any CPU
 		{FC2030B0-E60B-434D-A513-400270B8D7C6}.Release|x86.Build.0 = Release|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.Debug|x86.Build.0 = Debug|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.Debug2|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.Debug2|Any CPU.Build.0 = Debug|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.Debug2|x86.ActiveCfg = Debug|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.Debug2|x86.Build.0 = Debug|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.DebugWindows|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.DebugWindows|Any CPU.Build.0 = Debug|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.DebugWindows|x86.ActiveCfg = Debug|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.DebugWindows|x86.Build.0 = Debug|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.Release|x86.ActiveCfg = Release|Any CPU
+		{AA2297A1-6BB4-4165-89A6-C099F687085F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +99,8 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\..\FlatRedBall\Engines\FlatRedBallXNA\FlatRedBall\FlatRedBallShared.projitems*{0bb8cbe3-8503-46c1-9272-d98e153a230e}*SharedItemsImports = 13
 		..\..\FlatRedBall\Engines\FlatRedBallXNA\FlatRedBall\FlatRedBallShared.projitems*{10bda06c-7269-4cce-ae2a-d445f414520a}*SharedItemsImports = 4
+		..\..\FlatRedBall\Engines\Forms\FlatRedBall.Forms\FlatRedBall.Forms.Shared\FlatRedBall.Forms.Shared.projitems*{728151f0-03e0-4253-94fe-46b9c77edea6}*SharedItemsImports = 13
+		..\..\FlatRedBall\Engines\Forms\FlatRedBall.Forms\FlatRedBall.Forms.Shared\FlatRedBall.Forms.Shared.projitems*{aa2297a1-6bb4-4165-89a6-c099f687085f}*SharedItemsImports = 4
 		..\..\Gum\GumCoreShared.projitems*{f919c045-eac7-4806-9a1f-ce421f923e97}*SharedItemsImports = 13
 		..\..\FlatRedBall\FRBDK\Glue\GumPlugin\GumPlugin\GumCoreShared.FlatRedBall.projitems*{fc2030b0-e60b-434d-a513-400270b8d7c6}*SharedItemsImports = 4
 		..\..\Gum\GumCoreShared.projitems*{fc2030b0-e60b-434d-a513-400270b8d7c6}*SharedItemsImports = 4

@@ -5,6 +5,7 @@ using FishStory.DataTypes;
 using FishStory.GumRuntimes.DefaultForms;
 using FishStory.Managers;
 using FlatRedBall.Forms.Controls;
+using FlatRedBall.Forms.Extensions;
 using FlatRedBall.Input;
 using FlatRedBall.IO;
 
@@ -21,7 +22,7 @@ namespace FishStory.GumRuntimes
 
         public Dictionary<string, ShopItem> CurrentStore;
         public List<string> ItemsBoughtFromThisStore;
-        public int OptionCount => listBox.Items.Count();
+        public int OptionCount => listBox.Items.Count;
 
         public ShopItem SelectedShopItem => listBox.SelectedObject as ShopItem;
         public int? SelectedIndex

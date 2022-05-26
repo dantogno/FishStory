@@ -2,6 +2,7 @@ using FishStory.Forms;
 using FishStory.GumRuntimes.DefaultForms;
 using FishStory.Managers;
 using FlatRedBall.Forms.Controls;
+using FlatRedBall.Forms.Extensions;
 using FlatRedBall.Input;
 using Gum.Wireframe;
 using System;
@@ -39,7 +40,7 @@ namespace FishStory.GumRuntimes
         public float LastSellPriceMultiplier { get; private set; }
         public InventoryRestrictions InventoryRestrictions { get; private set; }
 
-        public int OptionCount => listBox.Items.Count();
+        public int OptionCount => listBox.Items.Count;
         public string SelectedItemName
         {
             get => CurrentlySelectedItem?.ItemName;
