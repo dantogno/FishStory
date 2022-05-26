@@ -788,17 +788,20 @@ namespace FishStory.Screens
         {
             var lightShouldBeOn = InGameDateTimeManager.TimeOfDay.TotalHours >= HourOnClockLightPostsTurnOnIn24H ||
                                 InGameDateTimeManager.TimeOfDay.TotalHours < HourOnClockLightPostsTurnOffIn24H;
-            var lights = PropObjectList.Where(po => po.CurrentPropNameState == PropName.StreetLight || po.CurrentPropNameState == PropName.TriStreetLight);
-            foreach (var lightSource in lights)
-            {
-                if (lightShouldBeOn && lightSource.CurrentChainName != "On")
-                {
-                    lightSource.ShowLight();
 
-                }
-                else if (!lightShouldBeOn && lightSource.CurrentChainName != "Off")
+            foreach (var lightSource in PropObjectList)
+            {
+                if(lightSource.CurrentPropNameState == PropName.StreetLight || lightSource.CurrentPropNameState == PropName.TriStreetLight)
                 {
-                    lightSource.HideLight();
+                    if (lightShouldBeOn && lightSource.CurrentChainName != "On")
+                    {
+                        lightSource.ShowLight();
+
+                    }
+                    else if (!lightShouldBeOn && lightSource.CurrentChainName != "Off")
+                    {
+                        lightSource.HideLight();
+                    }
                 }
             }
             if (PlayerCharacterInstance.Lantern.SpriteInstanceVisible != lightShouldBeOn)

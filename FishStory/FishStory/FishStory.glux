@@ -4304,7 +4304,15 @@
               </InstructionSaves>
             </StateSave>
           </States>
-          <ExcludedVariables />
+          <ExcludedVariables>
+            <string>X</string>
+            <string>Y</string>
+            <string>LightXOffset</string>
+            <string>LightYOffset</string>
+            <string>CurrentPropNameState</string>
+            <string>CurrentChainName</string>
+            <string>SpriteInstanceVisible</string>
+          </ExcludedVariables>
         </StateSaveCategory>
         <StateSaveCategory>
           <Name>LightStatus</Name>
@@ -4340,7 +4348,20 @@
               </InstructionSaves>
             </StateSave>
           </States>
-          <ExcludedVariables />
+          <ExcludedVariables>
+            <string>X</string>
+            <string>Y</string>
+            <string>Z</string>
+            <string>Animation</string>
+            <string>LightXOffset</string>
+            <string>LightYOffset</string>
+            <string>CurrentPropNameState</string>
+            <string>CurrentChainName</string>
+            <string>CreatesLight</string>
+            <string>SpriteInstanceVisible</string>
+            <string>NormalizedLightRadius</string>
+            <string>LightSpriteIntensity</string>
+          </ExcludedVariables>
         </StateSaveCategory>
         <StateSaveCategory>
           <Name>LightIntensity</Name>
@@ -4376,7 +4397,20 @@
               </InstructionSaves>
             </StateSave>
           </States>
-          <ExcludedVariables />
+          <ExcludedVariables>
+            <string>X</string>
+            <string>Y</string>
+            <string>Z</string>
+            <string>LightXOffset</string>
+            <string>LightYOffset</string>
+            <string>CurrentPropNameState</string>
+            <string>NormalizedLightRadius</string>
+            <string>Animation</string>
+            <string>CurrentChainName</string>
+            <string>CreatesLight</string>
+            <string>LightSpriteInstanceVisible</string>
+            <string>SpriteInstanceVisible</string>
+          </ExcludedVariables>
         </StateSaveCategory>
       </StateCategoryList>
       <Name>Entities\PropObject</Name>
