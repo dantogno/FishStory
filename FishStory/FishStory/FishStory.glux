@@ -3587,6 +3587,10 @@
           <Name>IsTopDown</Name>
           <ValueAsBool>true</ValueAsBool>
         </PropertySave>
+        <PropertySave>
+          <Name>InputDevice</Name>
+          <ValueAsInt>0</ValueAsInt>
+        </PropertySave>
       </Properties>
       <NamedObjects>
         <NamedObjectSave>
